@@ -4,7 +4,8 @@ import type { Food, Habitat } from '../data/types';
 import { B } from './balance';
 import { BUILDINGS, type BuildingId } from './content';
 
-export const SAVE_VERSION = 1;
+/** 2 = park 2.0 (islands, map objects, pens) */
+export const SAVE_VERSION = 2;
 
 export type Tool = 'brush' | 'hammer' | 'charge';
 export type Quality = 0 | 1 | 2;
@@ -39,9 +40,41 @@ export interface Burn { tile: number; until: number; dps: number }
 export interface SiteState { depth: number; tiles: Tile[]; items: LayerItem[]; layersDone: number; fossilsFound: number; lastDone?: LayerOutcome; burns?: Burn[] }
 
 export interface Job { genusId: number; quality: Quality; t: number; dur: number }
-export interface Incubation { genusId: number; t: number; dur: number; habitatId: number; chance: number; cost: number }
-export interface Animal { uid: number; genusId: number; level: number; stage: number; habitatId: number; born: number }
-export interface HabitatState { id: number; type: Habitat; level: number }
+export interface Incubation { genusId: number; t: number; dur: number; chance: number; cost: number }
+/** enc = enclosure object id (0 = waiting in the Transporter), pen = pen index inside it */
+export interface Animal { uid: number; genusId: number; level: number; stage: number; enc: number; pen: number; born: number }
+
+/** something placed on an island (enclosure, station, farm, visitor building, decoration, gate) */
+export interface ParkObject {
+  id: number;
+  def: string;
+  island: number;
+  /** top-left tile */
+  x: number;
+  y: number;
+  /** 1 = rotated by 90° (width and height swapped) */
+  rot: 0 | 1;
+  /** enclosures, farms, shops; stations keep their level in s.buildings */
+  level: number;
+  /** uncollected coins (enclosures, shops, museum) or food units (farms) */
+  store: number;
+  /** placed at */
+  t: number;
+  /** enclosures: number of pens */
+  pens?: number;
+  /** enclosures: interior decorations */
+  decor?: string[];
+}
+export interface IslandState { bought: number; cleared: number[] }
+export interface ParkState {
+  islands: Record<number, IslandState>;
+  objects: ParkObject[];
+  nextId: number;
+  /** path tiles per island (tile index y·w + x) */
+  paths: Record<number, number[]>;
+  /** bumped on every map change (cache key) */
+  rev: number;
+}
 
 export type ContractKind = 'fossils' | 'genome' | 'animal' | 'hatch' | 'evolve';
 export interface Contract {
@@ -94,7 +127,6 @@ export interface GameState {
   pb: number;
   mutagen: number;
   fame: number;
-  bank: number;
   food: Record<Food, number>;
   fossils: Record<number, [number, number, number]>;
   genome: Record<number, number>;
@@ -105,11 +137,9 @@ export interface GameState {
   completedClades: Record<number, number>;
   tech: Record<string, number>;
   buildings: Record<BuildingId, number>;
-  habitats: HabitatState[];
-  nextHabitatId: number;
+  park: ParkState;
   animals: Animal[];
   nextUid: number;
-  plots: number;
   unlockedSites: Record<string, number>;
   activeSite: string;
   sites: Record<string, SiteState>;
@@ -152,7 +182,6 @@ export function newGame(now = Date.now(), seed = (now ^ 0x5bd1e995) >>> 0): Game
     pb: 0,
     mutagen: 0,
     fame: 0,
-    bank: 0,
     food: { meat: B.startFood, plants: B.startFood, fish: B.startFood, plankton: B.startFood },
     fossils: {},
     genome: {},
@@ -163,11 +192,9 @@ export function newGame(now = Date.now(), seed = (now ^ 0x5bd1e995) >>> 0): Game
     completedClades: {},
     tech: {},
     buildings,
-    habitats: [{ id: 1, type: 'land', level: 1 }],
-    nextHabitatId: 2,
+    park: { islands: {}, objects: [], nextId: 1, paths: {}, rev: 0 },
     animals: [],
     nextUid: 1,
-    plots: B.startPlots,
     unlockedSites: { morrison: now },
     activeSite: 'morrison',
     sites: {},

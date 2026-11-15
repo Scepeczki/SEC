@@ -5,7 +5,11 @@ import { HABITAT_ICONS, fmt } from '../../game/balance';
 import { BUILDINGS, TECH, TECH_CATS, buildingCost, type TechCat } from '../../game/content';
 import { SAVE_KEY, deserialize, serialize, startGame } from '../../game/engine';
 import { claimContract, rerollContract, rerollCost } from '../../game/meta';
-import { buyTech, canBuyTech, canUpgradeBuilding, upgradeBuilding } from '../../game/park';
+import { buyTech, canBuyTech, canUpgradeBuilding, stationBuilt, upgradeBuilding } from '../../game/park';
+import { parkLevel } from '../../game/meta';
+import { stationDefId } from '../../game/parkContent';
+import { usePark } from '../park/parkUi';
+import { focusObject } from '../park/Panels';
 import { STAGE_NAMES } from '../../sprites/generator';
 import { Bar, Btn, Cost, SpriteImg } from '../components';
 import { save, useGame, useStore } from '../store';
@@ -45,22 +49,37 @@ export function ResearchScreen() {
 export function BuildingsScreen() {
   const s = useGame();
   const act = useStore((x) => x.act);
+  const setTab = useStore((x) => x.setTab);
+  const showOnMap = (defId: string) => {
+    const o = s.park.objects.find((x) => x.def === defId);
+    setTab('park');
+    const p = usePark.getState();
+    if (o) { p.select({ kind: 'obj', id: o.id }); setTimeout(() => focusObject(s, o), 50); }
+    else { p.setBuild(true); p.setCat('station'); p.setTool({ kind: 'place', defId, rot: 0 }); }
+  };
   return (
     <div className="col">
-      <div className="panel"><h2 style={{ margin: 0 }}>🏗️ Stacje i budynki</h2><div className="muted small">Każdy poziom przyspiesza zdobywanie i hodowlę zwierząt. Koszty rosną wykładniczo — zawsze jest co rozbudowywać.</div></div>
+      <div className="panel"><h2 style={{ margin: 0 }}>🏗️ Stacje</h2><div className="muted small">Stacje stoją na mapie parku. Nową stację najpierw stawiasz w Parku (Buduj → Stacje), potem ulepszasz tutaj albo klikając budynek. Farmy, sklepy i dekoracje znajdziesz w trybie budowy w Parku.</div></div>
       <div className="grid cards">
         {BUILDINGS.map((b) => {
           const lvl = s.buildings[b.id];
+          const built = stationBuilt(s, b.id);
           const c = canUpgradeBuilding(s, b.id);
+          const defId = stationDefId(b.id);
           return (
             <div key={b.id} className="panel col">
-              <div className="row"><span style={{ fontSize: 22 }}>{b.icon}</span><b>{b.name}</b><span className="spacer" /><span className="tag" style={{ color: '#d9a441' }}>poz. {lvl}</span></div>
+              <div className="row"><span style={{ fontSize: 22 }}>{b.icon}</span><b>{b.name}</b><span className="spacer" /><span className="tag" style={{ color: '#d9a441' }}>{built ? `poz. ${lvl}` : 'nie stoi'}</span></div>
               <div className="small muted">{b.desc}</div>
-              <div className="small">Teraz: {lvl > 0 ? b.effect(lvl) : <span className="muted">nie zbudowano</span>}</div>
-              {lvl < b.maxLevel && <div className="small muted">Następny: {b.effect(lvl + 1)}</div>}
+              <div className="small">Teraz: {built ? b.effect(lvl) : <span className="muted">nie zbudowano</span>}</div>
+              {lvl < b.maxLevel && <div className="small muted">{built ? 'Następny' : 'Po postawieniu'}: {b.effect(lvl + 1)}</div>}
               <div className="row">
-                <Btn kind="primary" onClick={() => act((g) => upgradeBuilding(g, b.id))} disabled={!c.ok} why={c.why}>{lvl === 0 ? 'Zbuduj' : 'Rozbuduj'} 💰 {fmt(buildingCost(b, lvl + 1))}</Btn>
-                {!c.ok && <span className="why">{c.why}</span>}
+                {built ? (
+                  <Btn kind="primary" onClick={() => act((g) => upgradeBuilding(g, b.id))} disabled={!c.ok} why={c.why}>Rozbuduj 💰 {fmt(buildingCost(b, lvl + 1))}</Btn>
+                ) : (
+                  <Btn kind="primary" onClick={() => showOnMap(defId)} disabled={parkLevel(s) < b.unlockLevel} why={`Wymaga poziomu parku ${b.unlockLevel}`}>Postaw w parku 💰 {fmt(buildingCost(b, 1))}</Btn>
+                )}
+                {built && <Btn small onClick={() => showOnMap(defId)}>Pokaż na mapie</Btn>}
+                {built && !c.ok && <span className="why">{c.why}</span>}
               </div>
             </div>
           );

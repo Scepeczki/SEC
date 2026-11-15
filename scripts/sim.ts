@@ -8,9 +8,32 @@ import { catchUp, startGame, tick } from '../src/game/engine';
 import { canSynthesize, queueAll, synthesize } from '../src/game/lab';
 import { canResearchClade, claimContract, cladeCost, gateOf, parkLevel, researchClade, unlockSite, canUnlockSite, uniqueHatched } from '../src/game/meta';
 import { mods } from '../src/game/mods';
-import { buildHabitat, buyPlot, buyTech, canBuildHabitat, canEvolve, canUpgradeBuilding, collectBank, evolve, feed, incomePerSec, plotCost, upgradeBuilding } from '../src/game/park';
+import { buyTech, canEvolve, canUpgradeBuilding, evolve, feed, incomePerSec, stationBuilt, upgradeBuilding } from '../src/game/park';
 import type { GameState } from '../src/game/state';
+import type { Habitat } from '../src/data/types';
 import { fmt } from '../src/game/balance';
+import {
+  autoPlace, boughtIslands, buyIsland, canBuyIsland, canClear, canPlace, canUpgrade, clearChunk, collect, countOf, defOf, enclosures, findSpot,
+  layStreets, place, transporter, upgradeObject,
+} from '../src/game/parkmap';
+import { ISLANDS, enclosureDefId, placeCost, PLACE_BY_ID, stationDefId } from '../src/game/parkContent';
+import { terrain } from '../src/game/islands';
+
+/** place something wherever it fits (paying for it), clearing land or buying an island when needed */
+function buildSomewhere(st: GameState, defId: string): boolean {
+  const def = PLACE_BY_ID.get(defId)!;
+  if (st.coins < placeCost(def, countOf(st, defId)) * 1.2) return false;
+  for (const id of boughtIslands(st)) {
+    const at = findSpot(st, id, defId);
+    if (at && canPlace(st, defId, id, at.x, at.y, at.rot).ok) return !!place(st, defId, id, at.x, at.y, at.rot);
+  }
+  // more room: clear a chunk on any island, then lay streets there
+  for (const id of boughtIslands(st)) {
+    const t = terrain(id);
+    for (const c of t.landChunks) if (canClear(st, id, c).ok) { clearChunk(st, id, c); layStreets(st, id); return false; }
+  }
+  return false;
+}
 
 const days = Number(process.argv[2] ?? 14);
 const sessions = Number(process.argv[3] ?? 3);
@@ -44,7 +67,7 @@ function click(st: GameState) {
 }
 
 function policy(st: GameState) {
-  collectBank(st);
+  for (const o of st.park.objects) collect(st, o.id);
   for (const c of [...st.contracts]) claimContract(st, c.id);
   // research gates of discovered genera, cheapest first
   const gates = [...new Set(Object.keys(st.discovered).map((id) => gateOf(Number(id))))].filter((g) => !st.researchedClades[g]).sort((a, b) => cladeCost(a) - cladeCost(b));
@@ -58,15 +81,29 @@ function policy(st: GameState) {
     if (st.hatched[id] && st.animals.filter((a) => a.genusId === id).length >= 1) continue;
     const c = canSynthesize(st, id, m);
     if (c.ok) synthesize(st, id, m);
-    else if (c.why?.startsWith('Brak miejsca')) {
-      const hab = GENERA.get(id)!.habitat;
-      if (st.habitats.length >= st.plots && st.coins > plotCost(st) * 2) buyPlot(st);
-      if (canBuildHabitat(st, hab).ok) buildHabitat(st, hab);
-      else {
-        const h = st.habitats.filter((x) => x.type === hab).sort((a, b) => a.level - b.level)[0];
-        if (h && st.coins > 400 * Math.pow(1.8, h.level - 1) * 2) { st.coins -= Math.round(400 * Math.pow(1.8, h.level - 1)); h.level++; }
-      }
-    }
+  }
+  // animals waiting in the Transporter: make room for them
+  for (const a of transporter(st)) {
+    if (autoPlace(st, a.uid)) continue;
+    const hab: Habitat = GENERA.get(a.genusId)!.habitat;
+    const own = enclosures(st).filter((o) => defOf(o).habitat === hab).sort((x, y) => x.level - y.level);
+    const up = own.find((o) => canUpgrade(st, o.id).ok && st.coins > canUpgrade(st, o.id).cost * 1.5);
+    if (up) upgradeObject(st, up.id);
+    else buildSomewhere(st, enclosureDefId(hab));
+    autoPlace(st, a.uid);
+  }
+  // stations that are not on the map yet
+  for (const b of BUILDINGS) if (!stationBuilt(st, b.id) && parkLevel(st) >= b.unlockLevel) buildSomewhere(st, stationDefId(b.id));
+  // a few shops and islands
+  if (countOf(st, 'v_kiosk') < boughtIslands(st).length && parkLevel(st) >= 1) buildSomewhere(st, 'v_kiosk');
+  if (countOf(st, 'v_bar') < boughtIslands(st).length && parkLevel(st) >= 2) buildSomewhere(st, 'v_bar');
+  for (const d of ISLANDS) if (canBuyIsland(st, d.id).ok && st.coins > d.cost * 3) { buyIsland(st, d.id); layStreets(st, d.id); }
+  // farms keep up with the food the animals eat
+  for (const [f, defId] of [['meat', 'farm_meat'], ['plants', 'farm_plants'], ['fish', 'farm_aqua']] as const) {
+    if (st.food[f] > 400) continue;
+    const farm = st.park.objects.filter((o) => o.def === defId).sort((x, y) => x.level - y.level)[0];
+    if (farm && canUpgrade(st, farm.id).ok && st.coins > canUpgrade(st, farm.id).cost * 2) upgradeObject(st, farm.id);
+    else if (!farm) buildSomewhere(st, defId);
   }
   // feed & evolve
   for (const a of [...st.animals].sort((x, y) => x.level - y.level)) {
@@ -80,7 +117,7 @@ function policy(st: GameState) {
   let best = st.activeSite, bestN = -1;
   for (const id of Object.keys(st.unlockedSites)) { const site = SITES.find((x) => x.id === id)!; const n = site.fauna.filter((f) => !st.hatched[f.genusId]).length; if (n > bestN) { bestN = n; best = id; } }
   st.activeSite = best;
-  // buildings: cheapest affordable with reserve
+  // stations: cheapest affordable upgrade with a reserve
   for (let k = 0; k < 5; k++) {
     const opts = BUILDINGS.map((b) => ({ b, c: canUpgradeBuilding(st, b.id) })).filter((x) => x.c.ok && st.coins > x.c.cost * 1.6).sort((a, b) => a.c.cost - b.c.cost);
     if (!opts.length) break;
@@ -114,7 +151,7 @@ for (let d = 0; d < days; d++) {
     }
   }
   const hatchedSlice = [...sliceGenera].filter((id) => s.hatched[id]).length;
-  console.log(`dzień ${String(d + 1).padStart(2)}: poziom ${parkLevel(s)}, kolekcja ${uniqueHatched(s)} (wycinek ${hatchedSlice}/${sliceGenera.size}), odkryte ${Object.keys(s.discovered).length}, skam. ${s.stats.fossils}, zwierząt ${s.animals.length}, monety ${fmt(s.coins)}, dochód ${fmt(incomePerSec(s))}/s, PB ${fmt(s.pb)}, mutagen ${s.mutagen}, stanowiska ${Object.keys(s.unlockedSites).length}, max stadium ${Math.max(0, ...s.animals.map((a) => a.stage))}`);
+  console.log(`dzień ${String(d + 1).padStart(2)}: wyspy ${boughtIslands(s).length}, wybiegi ${enclosures(s).length}, transporter ${transporter(s).length}, poziom ${parkLevel(s)}, kolekcja ${uniqueHatched(s)} (wycinek ${hatchedSlice}/${sliceGenera.size}), odkryte ${Object.keys(s.discovered).length}, skam. ${s.stats.fossils}, zwierząt ${s.animals.length}, monety ${fmt(s.coins)}, dochód ${fmt(incomePerSec(s))}/s, PB ${fmt(s.pb)}, mutagen ${s.mutagen}, stanowiska ${Object.keys(s.unlockedSites).length}, max stadium ${Math.max(0, ...s.animals.map((a) => a.stage))}`);
 }
 console.log('\nKAMIENIE MILOWE (czas rzeczywisty / czas aktywnej gry):');
 for (const [l, t, a] of milestones) console.log(`  ${l.padEnd(28)} ${fmtT(t).padStart(9)}   aktywnie ${fmtT(a)}`);

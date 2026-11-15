@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { CLADES, GENERA } from '../../data/db';
 import { HABITAT_ICONS, QUALITY_NAMES, fmt, fmtTime } from '../../game/balance';
-import { canExtract, canSynthesize, queueAll, queueExtraction, spaceInfo, synthesize } from '../../game/lab';
+import { canExtract, canSynthesize, queueAll, queueExtraction, spaceFor, synthesize } from '../../game/lab';
 import { SIZE_SLOTS } from '../../data/archetypes';
 import { canResearchClade, cladeCost, gateOf, isGateOpen, researchClade } from '../../game/meta';
 import { mods } from '../../game/mods';
-import { buildHabitat, canBuildHabitat, donateFossil, donateValue, habitatUpgradeCost, upgradeHabitat } from '../../game/park';
-import { HABITAT_NAMES, SIZE_NAMES } from '../../game/balance';
+import { donateFossil, donateValue } from '../../game/park';
+import { SIZE_NAMES } from '../../game/balance';
+import { ENCLOSURE_NAMES, enclosureDefId } from '../../game/parkContent';
+import { usePark } from '../park/parkUi';
 import type { GameState, Quality } from '../../game/state';
 import { Bar, Btn, Empty, Rarity, SpriteImg } from '../components';
 import { useGame, useStore } from '../store';
@@ -127,7 +129,7 @@ function Hatchery({ s }: { s: GameState }) {
               <div className="col" style={{ alignItems: 'flex-end', gap: 2 }}>
                 <Btn kind="primary" onClick={() => { if (!act((st) => synthesize(st, id))) toast(c.why ?? 'Nie można', 'bad'); }} disabled={!c.ok} why={c.why}>Syntezuj 💰 {fmt(c.cost)}</Btn>
                 {!c.ok && <span className="why">{c.why}</span>}
-                {!c.ok && (c.why?.startsWith('Brak miejsca') || c.why?.startsWith('Brak habitatu')) && <SpaceFix s={s} genusId={id} />}
+                <SpaceFix s={s} genusId={id} />
               </div>
             </div>
           );
@@ -137,20 +139,17 @@ function Hatchery({ s }: { s: GameState }) {
   );
 }
 
+/** no free pen right now: the newborn will wait in the Transporter — offer a shortcut to build one */
 function SpaceFix({ s, genusId }: { s: GameState; genusId: number }) {
-  const act = useStore((x) => x.act);
+  const setTab = useStore((x) => x.setTab);
   const g = GENERA.get(genusId)!;
-  const sp = spaceInfo(s, genusId);
-  const h = s.habitats.find((x) => x.id === sp.bestId);
-  const nb = canBuildHabitat(s, g.habitat);
+  const sp = spaceFor(s, genusId);
+  if (sp.ok) return null;
+  const name = ENCLOSURE_NAMES[g.habitat];
   return (
-    <div className="row" style={{ gap: 4 }}>
-      {h && (() => {
-        const lv = Math.ceil(Math.max(0, sp.need - sp.bestFree) / 2);
-        const cost = Array.from({ length: lv }, (_, i) => habitatUpgradeCost(h.level + i)).reduce((a, b) => a + b, 0);
-        return <Btn small onClick={() => act((st) => { for (let i = 0; i < lv; i++) upgradeHabitat(st, h.id); })} disabled={s.coins < cost} why="Za mało monet" title={`Powiększ o ${lv * 2} miejsca`}>⬆ Powiększ {HABITAT_NAMES[h.type]} #{h.id} 💰 {fmt(cost)}</Btn>;
-      })()}
-      <Btn small onClick={() => act((st) => buildHabitat(st, g.habitat))} disabled={!nb.ok} why={nb.why}>+ Nowy {HABITAT_NAMES[g.habitat].toLowerCase()} 💰 {fmt(nb.cost)}</Btn>
+    <div className="col" style={{ gap: 2, alignItems: 'flex-end' }}>
+      <span className="small muted">{sp.enclosures ? `Brak wolnej zagrody (${name.toLowerCase()})` : `Nie masz jeszcze: ${name.toLowerCase()}`} — zwierzę poczeka w Transporterze.</span>
+      <Btn small onClick={() => { setTab('park'); const p = usePark.getState(); p.setBuild(true); p.setCat('enclosure'); p.setTool({ kind: 'place', defId: enclosureDefId(g.habitat), rot: 0 }); }}>Postaw: {name}</Btn>
     </div>
   );
 }

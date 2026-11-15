@@ -1,8 +1,10 @@
 // Buildings, research tree and contract institutions.
 
 export type BuildingId =
-  | 'expedition' | 'prep' | 'sequencer' | 'hatchery' | 'ranch' | 'greenhouse' | 'aquaculture'
+  | 'expedition' | 'prep' | 'sequencer' | 'hatchery'
   | 'mutation' | 'museum' | 'visitor' | 'research';
+/** farms of version ≤ 0.2 (single global buildings; now farm objects on the map) */
+export const OLD_FARM_IDS = ['ranch', 'greenhouse', 'aquaculture'] as const;
 
 export interface BuildingDef {
   id: BuildingId;
@@ -26,16 +28,10 @@ export const BUILDINGS: BuildingDef[] = [
     effect: (l) => `${1 + Math.floor(l / 4)} stanowisk, tempo ×${(1 + 0.1 * (l - 1)).toFixed(2)}, genom +${3 * (l - 1)}%` },
   { id: 'hatchery', name: 'Wylęgarnia', icon: '🥚', desc: 'Synteza zwierząt z genomu: więcej inkubatorów, szybciej, pewniej.', baseCost: 400, growth: 2.15, maxLevel: 40, unlockLevel: 1, startLevel: 1,
     effect: (l) => `${1 + Math.floor(l / 5)} inkubatorów, tempo ×${(1 + 0.1 * (l - 1)).toFixed(2)}, szansa +${2 * (l - 1)}%` },
-  { id: 'ranch', name: 'Hodowla', icon: '🥩', desc: 'Produkuje mięso dla drapieżników.', baseCost: 200, growth: 2.0, maxLevel: 40, unlockLevel: 1, startLevel: 1,
-    effect: (l) => `${(foodRate(l) * 60).toFixed(1)} mięsa / min` },
-  { id: 'greenhouse', name: 'Szklarnia paleobotaniczna', icon: '🌿', desc: 'Paprocie, sagowce i skrzypy dla roślinożerców.', baseCost: 200, growth: 2.0, maxLevel: 40, unlockLevel: 1, startLevel: 1,
-    effect: (l) => `${(foodRate(l) * 60).toFixed(1)} roślin / min` },
-  { id: 'aquaculture', name: 'Akwakultura', icon: '🐟', desc: 'Ryby i plankton dla zwierząt wodnych.', baseCost: 600, growth: 2.05, maxLevel: 40, unlockLevel: 3, startLevel: 0,
-    effect: (l) => `${(foodRate(l) * 60).toFixed(1)} ryb i planktonu / min` },
-  { id: 'museum', name: 'Muzeum', icon: '🏛️', desc: 'Wystawa skamieniałości: pasywny dochód za każdy odkryty rodzaj. Możesz przekazywać zbędne skamieniałości.', baseCost: 800, growth: 2.1, maxLevel: 40, unlockLevel: 2, startLevel: 0,
+  { id: 'museum', name: 'Muzeum', icon: '🏛️', desc: 'Wystawa skamieniałości: zarabia za każdy odkryty rodzaj (zbierasz klikiem). Możesz przekazywać zbędne skamieniałości.', baseCost: 800, growth: 2.1, maxLevel: 40, unlockLevel: 2, startLevel: 0,
     effect: (l) => `${(0.02 * l).toFixed(2)} monet/s za każdy odkryty rodzaj` },
-  { id: 'visitor', name: 'Centrum dla Zwiedzających', icon: '🎟️', desc: 'Więcej zwiedzających: wyższy dochód i większa kasa.', baseCost: 1000, growth: 2.2, maxLevel: 40, unlockLevel: 2, startLevel: 0,
-    effect: (l) => `dochód +${5 * l}%, kasa +${(0.25 * l).toFixed(2)} h` },
+  { id: 'visitor', name: 'Centrum dla Zwiedzających', icon: '🎟️', desc: 'Więcej zwiedzających: wyższy dochód i większe kasy wybiegów.', baseCost: 1000, growth: 2.2, maxLevel: 40, unlockLevel: 2, startLevel: 0,
+    effect: (l) => `dochód +${5 * l}%, kasy wybiegów +${(0.25 * l).toFixed(2)} h` },
   { id: 'research', name: 'Centrum Badawcze', icon: '🔬', desc: 'Naukowcy generują Punkty Badań.', baseCost: 900, growth: 2.15, maxLevel: 40, unlockLevel: 3, startLevel: 0,
     effect: (l) => `${(pbRate(l) * 60).toFixed(1)} PB / min` },
   { id: 'mutation', name: 'Laboratorium Mutacji', icon: '☣️', desc: 'Potrzebne do wyższych stadiów ewolucji. Powoli wytwarza mutagen.', baseCost: 1500, growth: 2.25, maxLevel: 40, unlockLevel: 4, startLevel: 0,
@@ -84,12 +80,17 @@ export const TECH: TechDef[] = [
   { id: 'gen7', cat: 'gen', name: 'Mutageneza kierowana', desc: 'Ewolucja zużywa 25% mniej mutagenu.', cost: 1200, req: ['gen4'] },
   { id: 'gen8', cat: 'gen', name: 'Klonowanie', desc: 'Synteza tańsza o 30%.', cost: 3000, req: ['gen5', 'gen7'] },
   { id: 'park1', cat: 'park', name: 'Ścieżki dla zwiedzających', desc: 'Dochód parku +10%.', cost: 20, req: [] },
-  { id: 'park2', cat: 'park', name: 'Automatyczne kasy', desc: 'Kasa parku opróżnia się sama.', cost: 80, req: ['park1'] },
+  { id: 'park2', cat: 'park', name: 'Automatyczne kasy', desc: 'Wybiegi, sklepy, farmy i muzeum oddają zarobek same, bez klikania.', cost: 80, req: ['park1'] },
   { id: 'park3', cat: 'park', name: 'Dieta zbilansowana', desc: 'Karmienie tańsze o 10%.', cost: 60, req: [] },
   { id: 'park4', cat: 'park', name: 'Marketing', desc: 'Dochód parku +20%.', cost: 250, req: ['park1'] },
-  { id: 'park5', cat: 'park', name: 'Kolejka gondolowa', desc: 'Kasa mieści 2 h dochodu więcej.', cost: 800, req: ['park2'] },
+  { id: 'park5', cat: 'park', name: 'Pancerne sejfy', desc: 'Kasy wybiegów mieszczą 2 h dochodu więcej.', cost: 800, req: ['park2'] },
   { id: 'park6', cat: 'park', name: 'Programy hodowlane', desc: 'Karmienie tańsze o kolejne 20%.', cost: 1500, req: ['park3'] },
   { id: 'park7', cat: 'park', name: 'Festiwal paleontologii', desc: 'Dochód parku +40%.', cost: 4000, req: ['park4', 'park5'] },
+  { id: 'park8', cat: 'park', name: 'Szersze zagrody', desc: '+2 miejsca w każdej zagrodzie każdego wybiegu.', cost: 400, req: ['park1'] },
+  { id: 'park9', cat: 'park', name: 'Dodatkowe przegrody', desc: 'Każdy wybieg może mieć o 2 zagrody więcej.', cost: 1200, req: ['park8'] },
+  { id: 'park10', cat: 'park', name: 'Rozległe wybiegi', desc: 'Wybiegi można ulepszyć do poziomu 6: 14×12 pól, do 10 zagród po 12 miejsc.', cost: 3500, req: ['park9'] },
+  { id: 'park11', cat: 'park', name: 'Rezerwaty', desc: 'Wybiegi można ulepszyć do poziomu 7: 16×14 pól, do 12 zagród po 14 miejsc.', cost: 12000, req: ['park10'] },
+  { id: 'park12', cat: 'park', name: 'Ciężki sprzęt', desc: 'Oczyszczanie dzikiego terenu o 40% tańsze.', cost: 300, req: [] },
   { id: 'log1', cat: 'log', name: 'Magazyn chłodniczy', desc: 'Park pracuje offline o 4 h dłużej.', cost: 40, req: [] },
   { id: 'log2', cat: 'log', name: 'Logistyka paszy', desc: 'Farmy produkują o 25% więcej.', cost: 100, req: [] },
   { id: 'log3', cat: 'log', name: 'Kontrakty instytucjonalne', desc: '+1 kontrakt naraz, nagrody +20%.', cost: 150, req: ['log1'] },

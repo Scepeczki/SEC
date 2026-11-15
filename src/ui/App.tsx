@@ -3,14 +3,15 @@ import { TAXA } from '../data/db';
 import { FOOD_NAMES, fmt, fmtTime, parkLevelFromFame } from '../game/balance';
 import { Beef, BookOpen, Building2, Coins, Droplets, Fish, FlaskConical, House, Leaf, type LucideIcon, Microscope, Pickaxe, ScrollText, Settings, Syringe, Ticket, TreeDeciduous } from 'lucide-react';
 import { mods } from '../game/mods';
-import { bankCap, collectBank, incomePerSec } from '../game/park';
+import { incomePerSec } from '../game/park';
+import { produces, storeFill } from '../game/parkmap';
 import { uniqueHatched } from '../game/meta';
 import type { Food } from '../data/types';
 import { Btn } from './components';
 import logoUrl from '../../electron/icon.png';
 import { save, startLoop, useGame, useStore } from './store';
 import { desktop, type UpdateEvent } from './desktop';
-import { ParkScreen } from './screens/Park';
+import { ParkScreen } from './park/ParkScreen';
 import { DigScreen } from './screens/Dig';
 import { LabScreen } from './screens/Lab';
 import { TreeScreen } from './screens/Tree';
@@ -49,13 +50,11 @@ function LevelRing({ value, max, level }: { value: number; max: number; level: n
 
 function TopBar() {
   const s = useGame();
-  const act = useStore((x) => x.act);
   const setTab = useStore((x) => x.setTab);
   const m = mods(s);
+  const ready = s.park.objects.filter((o) => produces(o) && storeFill(s, o, m) >= 0.98).length;
   const inc = incomePerSec(s, m);
-  const cap = bankCap(s, m, inc);
   const lvl = parkLevelFromFame(s.fame);
-  const full = s.bank >= cap * 0.99;
   return (
     <header className="topbar">
       <span className="brand" title="Self-Organizing Entropic Complex"><img className="logo-img pixel" src={logoUrl} width={34} height={34} alt="" /><span className="brand-name">SEC<small>Self-Organizing Entropic Complex</small></span></span>
@@ -66,11 +65,11 @@ function TopBar() {
       <span className="resgroup">
         <span className="lbl">Kasa</span>
         <span className="res" title="Monety — do wydania na budowy, wybiegi i hodowlę"><Coins className="ic" />{fmt(s.coins)}</span>
-        <span className="res" title={`Bilety: zwiedzający płacą za oglądanie Twoich zwierząt.
-${m.autoCollect ? 'Automatyczne kasy: monety trafiają prosto do portfela.' : `Utarg zbiera się w kasie (mieści ${fmt(m.bankHours)} h) — kliknij „Zbierz”.`}`}><Ticket className="ic" />+{fmt(inc)}<small>/s</small></span>
-        {!m.autoCollect && (
-          <button className={`collect ${full ? 'full' : ''}`} onClick={() => act(collectBank)} disabled={s.bank < 1} title="Przelej utarg z kasy biletowej do monet">
-            {full ? 'Kasa pełna! ' : 'Zbierz '}{fmt(s.bank)} <small>/ {fmt(cap)}</small>
+        <span className="res" title={`Dochód parku: bilety z wybiegów, sklepy i muzeum.
+${m.autoCollect ? 'Automatyczne kasy: monety trafiają prosto do portfela.' : 'Utarg zbiera się w kasach wybiegów i sklepów — kliknij dymek z monetą w Parku.'}`}><Ticket className="ic" />+{fmt(inc)}<small>/s</small></span>
+        {!m.autoCollect && ready > 0 && (
+          <button className={`collect ${ready >= 3 ? 'full' : ''}`} onClick={() => setTab('park')} title="W parku czeka utarg do zebrania">
+            Do zebrania: {ready}
           </button>
         )}
       </span>
@@ -132,7 +131,7 @@ function OfflineModal() {
         <h2>Gdy Cię nie było… ({fmtTime(off.seconds)})</h2>
         {off.capped && <p className="muted small">Park pracuje bez Ciebie maksymalnie przez ograniczony czas — rozbuduj Logistykę w Badaniach, by go wydłużyć.</p>}
         <div className="col">
-          <div>💰 Monety: +{fmt(off.coins)} {off.bank > 0 && <span className="muted">(+{fmt(off.bank)} czeka w kasie)</span>}</div>
+          <div>💰 Monety: +{fmt(off.coins)} {off.stored > 0 && <span className="muted">(+{fmt(off.stored)} czeka w kasach parku — zbierz klikając dymki)</span>}</div>
           <div>🔬 Punkty Badań: +{fmt(off.pb)}</div>
           <div>🦴 Skamieniałości wykopane przez ekipy: {off.fossils}</div>
           {off.discoveries > 0 && <div style={{ color: '#f2c14e' }}>✨ Nowe gatunki: {off.discoveries} — zobacz w Wykopaliskach</div>}
@@ -179,10 +178,10 @@ export function App() {
   const tab = useStore((x) => x.tab);
   useEffect(() => startLoop(), []);
   return (
-    <div className="app">
+    <div className={`app ${tab === 'park' ? 'full' : ''}`}>
       <TopBar />
       <Nav />
-      <div className="main">
+      <div className={`main ${tab === 'park' ? 'full' : ''}`}>
         {tab === 'park' && <ParkScreen />}
         {tab === 'dig' && <DigScreen />}
         {tab === 'lab' && <LabScreen />}

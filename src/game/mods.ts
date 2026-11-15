@@ -1,7 +1,7 @@
 // Derived modifiers from buildings + research. Recomputed on demand (cheap).
 
 import { B } from './balance';
-import { crewsAt, foodRate, pbRate } from './content';
+import { crewsAt, pbRate } from './content';
 import type { GameState } from './state';
 import { toolLevel } from './tools';
 
@@ -81,11 +81,9 @@ export interface Mods {
   bankHours: number;
   autoCollect: boolean;
   foodDiscount: number;
+  /** farm output multiplier (each farm makes foodRate(level) × farmMult) */
   farmMult: number;
-  meatRate: number;
-  plantRate: number;
-  fishRate: number;
-  planktonRate: number;
+  /** museum: coins per second per discovered genus */
   museumRate: number;
   pbRate: number;
   mutagenPerHour: number;
@@ -94,6 +92,11 @@ export interface Mods {
   offlineHours: number;
   contractSlots: number;
   contractRewardMult: number;
+  /** park research: extra slots per pen, extra pens per enclosure, highest enclosure level, cheaper clearing */
+  penSlotBonus: number;
+  penCountBonus: number;
+  encMaxLevel: number;
+  clearDiscount: number;
 }
 
 export function mods(s: GameState): Mods {
@@ -161,10 +164,6 @@ export function mods(s: GameState): Mods {
     autoCollect: t('park2'),
     foodDiscount: (t('park3') ? 0.1 : 0) + (t('park6') ? 0.2 : 0),
     farmMult,
-    meatRate: foodRate(b.ranch) * farmMult,
-    plantRate: foodRate(b.greenhouse) * farmMult,
-    fishRate: foodRate(b.aquaculture) * farmMult,
-    planktonRate: foodRate(b.aquaculture) * farmMult,
     museumRate: 0.02 * b.museum * (t('log4') ? 2 : 1),
     pbRate: pbRate(b.research),
     mutagenPerHour: 0.25 * b.mutation,
@@ -173,5 +172,9 @@ export function mods(s: GameState): Mods {
     offlineHours: B.offlineCapHours + (t('log1') ? 4 : 0) + (t('log5') ? 8 : 0),
     contractSlots: 3 + (t('log3') ? 1 : 0),
     contractRewardMult: t('log3') ? 1.2 : 1,
+    penSlotBonus: t('park8') ? 2 : 0,
+    penCountBonus: t('park9') ? 2 : 0,
+    encMaxLevel: 5 + (t('park10') ? 1 : 0) + (t('park11') ? 1 : 0),
+    clearDiscount: t('park12') ? 0.4 : 0,
   };
 }

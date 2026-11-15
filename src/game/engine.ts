@@ -6,10 +6,15 @@ import { hatchTick, labTick } from './lab';
 import { gateOf, updateContracts } from './meta';
 import { mods } from './mods';
 import { parkTick } from './park';
-import { type GameState, SAVE_VERSION, log, newGame } from './state';
+import { type Animal, type GameState, SAVE_VERSION, log, newGame } from './state';
+import { B } from './balance';
+import { autoBuild, autoPlace, buyIsland, defOf, initPark, layStreets, levelFor, slotsOf } from './parkmap';
+import { STATION_IDS, enclosureDefId, stationDefId } from './parkContent';
+import type { Habitat } from '../data/types';
 
 export function startGame(now = Date.now(), seed?: number): GameState {
   const s = newGame(now, seed);
+  initPark(s);
   const tg = tutorialGenus('morrison');
   if (tg !== undefined) s.researchedClades[gateOf(tg)] = now;
   siteState(s, 'morrison');
@@ -37,7 +42,8 @@ export interface OfflineSummary {
   seconds: number;
   capped: boolean;
   coins: number;
-  bank: number;
+  /** coins waiting in enclosures, shops and the museum to be collected */
+  stored: number;
   pb: number;
   fossils: number;
   hatched: number;
@@ -55,7 +61,7 @@ export function catchUp(s: GameState, nowMs = Date.now()): OfflineSummary | null
   }
   const capS = mods(s).offlineHours * 3600;
   const sim = Math.min(elapsed, capS);
-  const before = { disc: Object.keys(s.discovered).length, coins: s.coins, bank: s.bank, pb: s.pb, fossils: s.stats.fossils, hatched: s.animals.length, ext: s.stats.extractions, mutagen: s.mutagen };
+  const before = { disc: Object.keys(s.discovered).length, coins: s.coins, stored: storedCoins(s), pb: s.pb, fossils: s.stats.fossils, hatched: s.animals.length, ext: s.stats.extractions, mutagen: s.mutagen };
   const step = 20;
   let left = sim;
   while (left > 0) {
@@ -68,7 +74,7 @@ export function catchUp(s: GameState, nowMs = Date.now()): OfflineSummary | null
     seconds: sim,
     capped: elapsed > capS,
     coins: s.coins - before.coins,
-    bank: s.bank - before.bank,
+    stored: Math.max(0, storedCoins(s) - before.stored),
     pb: s.pb - before.pb,
     fossils: s.stats.fossils - before.fossils,
     hatched: s.animals.length - before.hatched,
@@ -95,9 +101,52 @@ export function deserialize(json: string): GameState | null {
   }
 }
 
+const storedCoins = (s: GameState) => s.park.objects.reduce((n, o) => n + (defOf(o).cat === 'farm' ? 0 : o.store), 0);
+
+/** 0.2 → 0.3: habitats, plots and the shared till become enclosures and buildings on Island 1 */
+function migratePark(s: GameState): void {
+  const old = s as unknown as {
+    habitats?: { id: number; type: Habitat; level: number }[]; plots?: number; bank?: number; nextHabitatId?: number;
+    buildings: Record<string, number>;
+  };
+  s.park = { islands: {}, objects: [], nextId: 1, paths: {}, rev: 0 };
+  buyIsland(s, 1, true);
+  layStreets(s, 1);
+  // money spent on plots and the till's takings come back as coins
+  let refund = Math.round(old.bank ?? 0);
+  for (let p = B.startPlots; p < (old.plots ?? B.startPlots); p++) refund += Math.round(B.plotCost * Math.pow(B.plotCostGrowth, p - B.startPlots));
+  s.coins += refund;
+  for (const b of STATION_IDS) if ((s.buildings[b] ?? 0) > 0) autoBuild(s, 1, stationDefId(b), 1, { grow: true });
+  const farms: [string, string][] = [['ranch', 'farm_meat'], ['greenhouse', 'farm_plants'], ['aquaculture', 'farm_aqua']];
+  for (const [oldId, defId] of farms) {
+    const lvl = old.buildings[oldId] ?? 0;
+    if (lvl > 0) {
+      const o = autoBuild(s, 1, defId, 1, { grow: true });
+      if (o) o.level = lvl;
+    }
+    delete old.buildings[oldId];
+  }
+  // every habitat becomes an enclosure with enough pens for its animals
+  const animals = s.animals as unknown as (Animal & { habitatId?: number })[];
+  for (const a of animals) { a.enc = 0; a.pen = 0; }
+  for (const h of old.habitats ?? []) {
+    const inside = animals.filter((a) => a.habitatId === h.id);
+    const slots = inside.reduce((n, a) => n + slotsOf(a.genusId), 0);
+    const o = autoBuild(s, 1, enclosureDefId(h.type), levelFor(Math.max(slots, 4)), { grow: true });
+    if (!o) continue;
+    for (const a of inside) autoPlace(s, a.uid, o.id);
+  }
+  for (const a of animals) { if (!a.enc) autoPlace(s, a.uid); delete a.habitatId; }
+  for (const inc of s.incubating as unknown as { habitatId?: number }[]) delete inc.habitatId;
+  delete old.habitats; delete old.plots; delete old.bank; delete old.nextHabitatId;
+  if (refund > 0) log(s, `Nowy park! Działki i kasa zamieniły się w ${refund} monet. Wszystko stoi na Wyspie Startowej — możesz to dowolnie poprzestawiać.`, 'good');
+}
+
 function migrate(s: GameState): GameState | null {
   if (!s || typeof s !== 'object' || typeof s.v !== 'number') return null;
-  // future: if (s.v < 2) { ... s.v = 2 }
+  // drop references to genera that no longer exist in data
+  s.animals = (s.animals ?? []).filter((a) => GENERA.has(a.genusId));
+  if (s.v < 2 || !s.park) migratePark(s);
   const fresh = newGame(s.now, s.seed);
   // fill any missing fields from a fresh state (forward compatible)
   for (const k of Object.keys(fresh) as (keyof GameState)[]) {
@@ -113,8 +162,9 @@ function migrate(s: GameState): GameState | null {
   s.shards ??= 0;
   s.charges ??= { n: 1, acc: 0 };
   s.chests ??= [];
-  // drop references to genera that no longer exist in data
-  s.animals = s.animals.filter((a) => GENERA.has(a.genusId));
+  // animals whose enclosure is gone wait in the Transporter
+  const ids = new Set(s.park.objects.map((o) => o.id));
+  for (const a of s.animals) if (a.enc && !ids.has(a.enc)) { a.enc = 0; a.pen = 0; }
   s.v = SAVE_VERSION;
   return s;
 }

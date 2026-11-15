@@ -15,7 +15,7 @@ import { Workshop } from '../dig/Workshop';
 import { ChestArt, ChestModal, TIER_COLOR } from '../dig/Chest';
 import { COMMON_MINERALS, MINERALS, MINERAL_BY_ID, type Mineral, siteMinerals, strataFrom, stratumAt } from '../../game/geology';
 import { mods, type Mods } from '../../game/mods';
-import { bankCap, collectBank, incomePerSec } from '../../game/park';
+import { incomePerSec } from '../../game/park';
 import type { CrewMode, FindEntry, GameState, ItemKind, LayerItem, PendingChest, SiteState } from '../../game/state';
 import { periodLabel } from '../../data/geotime';
 import { GLOW_CSS, GW, GH, TS, type LayerArt, artFor, cachedArt, drawFrame, iconUrl, itemUrl, radarZones } from '../dig/art';
@@ -714,13 +714,11 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
 
 function FocusCash() {
   const s = useGame();
-  const act = useStore((x) => x.act);
   const m = mods(s);
-  const cap = bankCap(s, m, incomePerSec(s, m));
   return (
     <span className="row" style={{ gap: 10 }}>
       <span className="res"><Coins className="ic" style={{ color: 'var(--accent)' }} />{fmt(s.coins)}</span>
-      {!m.autoCollect && <button className={`collect ${s.bank >= cap * 0.99 ? 'full' : ''}`} onClick={() => act(collectBank)} disabled={s.bank < 1}>Zbierz {fmt(s.bank)}</button>}
+      <span className="res muted small">+{fmt(incomePerSec(s, m))}/s</span>
     </span>
   );
 }

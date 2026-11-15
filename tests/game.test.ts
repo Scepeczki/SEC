@@ -10,6 +10,196 @@ import { TOOL_NODES, TOOL_NODE_BY_ID, buyToolNode } from '../src/game/tools';
 import { canSynthesize, queueAll } from '../src/game/lab';
 import { canEvolve, canFeed, feed } from '../src/game/park';
 import { mods } from '../src/game/mods';
+import {
+  animalsIn, autoPlace, buildable, canClear, canPlace, canPut, canUpgrade, collect, connected, defOf, enclosureRate, enclosures, findSpot,
+  islandCache, maxPens, objectsOn, penSlots, place, putAnimal, rectOf, setPaths, transporter, upgradeObject,
+} from '../src/game/parkmap';
+import { terrain } from '../src/game/islands';
+import { synthesize } from '../src/game/lab';
+import type { GameState } from '../src/game/state';
+
+/** an animal of a genus straight into the park (Transporter) */
+function addAnimal(s: GameState, name: string): number {
+  const uid = s.nextUid++;
+  s.animals.push({ uid, genusId: GENUS_BY_NAME.get(name)!.id, level: 1, stage: 0, enc: 0, pen: 0, born: s.now });
+  return uid;
+}
+
+describe('park 2.0: map', () => {
+  it('a new game starts on Island 1 with a gate, stations, farms and an enclosure, all reachable and not overlapping', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 1);
+    expect(Object.keys(s.park.islands)).toEqual(['1']);
+    const objs = objectsOn(s, 1);
+    for (const id of ['gate', 'st_expedition', 'st_prep', 'st_sequencer', 'st_hatchery', 'enc_land', 'farm_meat', 'farm_plants']) {
+      expect(objs.some((o) => o.def === id), id).toBe(true);
+    }
+    const seen = new Set<number>();
+    const t = terrain(1);
+    for (const o of objs) {
+      const r = rectOf(o);
+      for (let y = r.y; y < r.y + r.h; y++) for (let x = r.x; x < r.x + r.w; x++) {
+        expect(buildable(s, 1, x, y), `${o.def} @${x},${y}`).toBe(true);
+        expect(seen.has(y * t.w + x), `overlap ${o.def}`).toBe(false);
+        seen.add(y * t.w + x);
+      }
+    }
+    expect(connected(s, enclosures(s)[0])).toBe(true);
+  });
+
+  it('placing checks water, wild land, overlaps, paths, unique stations and money', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 1);
+    s.coins = 1e9;
+    expect(canPlace(s, 'd_fern', 1, 0, 0, 0).why).toMatch(/wodzie|poza/);
+    const t = terrain(1);
+    const wild = [...t.landChunks].find((c) => !islandCache(s, 1).cleared.has(c))!;
+    const wx = (wild % t.cw) * 4, wy = Math.floor(wild / t.cw) * 4;
+    const wt = [[0, 0], [1, 0], [0, 1], [1, 1], [2, 2], [3, 3]].map(([dx, dy]) => [wx + dx, wy + dy]).find(([x, y]) => t.tiles[y * t.w + x] >= 2)!;
+    expect(canPlace(s, 'd_fern', 1, wt[0], wt[1], 0).why).toMatch(/oczyszczony/);
+    const enc = enclosures(s)[0];
+    expect(canPlace(s, 'd_fern', 1, enc.x, enc.y, 0).why).toMatch(/Zajęte/);
+    const p = s.park.paths[1][0];
+    expect(canPlace(s, 'd_fern', 1, p % t.w, Math.floor(p / t.w), 0).why).toMatch(/ścieżka/);
+    expect(canPlace(s, 'st_prep', 1, 1, 1, 0).why).toMatch(/już stoi/);
+    const spot = findSpot(s, 1, 'v_kiosk')!;
+    s.coins = 0;
+    expect(canPlace(s, 'v_kiosk', 1, spot.x, spot.y, spot.rot).why).toMatch(/monet/);
+    s.coins = 1000;
+    expect(place(s, 'v_kiosk', 1, spot.x, spot.y, spot.rot)).not.toBeNull();
+    expect(s.coins).toBe(750);
+  });
+
+  it('an enclosure earns only when a path connects it to the gate', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 2);
+    const enc = enclosures(s)[0];
+    const uid = addAnimal(s, 'Camarasaurus');
+    expect(putAnimal(s, uid, enc.id, 0)).toBe(true);
+    expect(enclosureRate(s, enc)).toBeGreaterThan(0);
+    // take away every path tile around it
+    const t = terrain(1);
+    const r = rectOf(enc);
+    const around: [number, number][] = [];
+    for (let x = r.x - 1; x <= r.x + r.w; x++) around.push([x, r.y - 1], [x, r.y + r.h]);
+    for (let y = r.y; y < r.y + r.h; y++) around.push([r.x - 1, y], [r.x + r.w, y]);
+    setPaths(s, 1, around.filter(([x, y]) => x >= 0 && y >= 0 && x < t.w && y < t.h), false);
+    expect(connected(s, enc)).toBe(false);
+    expect(enclosureRate(s, enc)).toBe(0);
+  });
+
+  it('pens: habitat, space and the carnivore rule', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 3);
+    const enc = enclosures(s)[0];
+    const a = addAnimal(s, 'Camarasaurus'), b = addAnimal(s, 'Stegosaurus'), c = addAnimal(s, 'Allosaurus'), d = addAnimal(s, 'Allosaurus');
+    const fish = addAnimal(s, 'Dunkleosteus');
+    expect(canPut(s, fish, enc.id, 0).why).toMatch(/nie pasuje/);
+    expect(putAnimal(s, a, enc.id, 0)).toBe(true);
+    // level 1: 4 slots per pen, an XL sauropod fills it
+    expect(canPut(s, b, enc.id, 0).why).toMatch(/Brak miejsca/);
+    enc.level = 5; // 10 slots per pen
+    expect(putAnimal(s, b, enc.id, 0)).toBe(true); // two herbivores mix
+    expect(putAnimal(s, c, enc.id, 1)).toBe(true);
+    expect(canPut(s, b, enc.id, 1).why).toMatch(/mięsożerca/);
+    expect(canPut(s, c, enc.id, 0).why).toMatch(/mięsożerca/);
+    expect(putAnimal(s, d, enc.id, 1)).toBe(true); // own genus is fine
+    expect(animalsIn(s, enc.id, 1).length).toBe(2);
+  });
+
+  it('a newborn goes to the best pen, or waits in the Transporter — synthesis is never blocked by space', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 4);
+    s.coins = 1e9;
+    const g = GENUS_BY_NAME.get('Dunkleosteus')!; // marine: no lagoon yet
+    s.genome[g.id] = 100;
+    s.hatched[GENUS_BY_NAME.get('Allosaurus')!.id] = 1; // not the first animal → chance = genome
+    expect(synthesize(s, g.id)).toBe(true);
+    tick(s, 10000);
+    expect(transporter(s).some((a) => a.genusId === g.id)).toBe(true);
+    const uid = addAnimal(s, 'Camarasaurus');
+    expect(autoPlace(s, uid)).toBe(true);
+  });
+
+  it('storage fills up to its cap and is collected by a click; farms give food', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 5);
+    const enc = enclosures(s)[0];
+    putAnimal(s, addAnimal(s, 'Camarasaurus'), enc.id, 0);
+    tick(s, 3 * 3600);
+    expect(enc.store).toBeGreaterThan(0);
+    const before = s.coins;
+    const got = collect(s, enc.id)!;
+    expect(got.coins).toBeGreaterThan(0);
+    expect(s.coins - before).toBe(got.coins);
+    const farm = s.park.objects.find((o) => o.def === 'farm_meat')!;
+    const meat = s.food.meat;
+    expect(collect(s, farm.id)!.food!.meat).toBeGreaterThan(0);
+    expect(s.food.meat).toBeGreaterThan(meat);
+  });
+
+  it('upgrading an enclosure makes it physically bigger and keeps its animals', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 6);
+    s.coins = 1e9;
+    const enc = enclosures(s)[0];
+    const uid = addAnimal(s, 'Camarasaurus');
+    putAnimal(s, uid, enc.id, 0);
+    const before = rectOf(enc);
+    const c = canUpgrade(s, enc.id);
+    if (c.ok) {
+      expect(upgradeObject(s, enc.id)).toBe(true);
+      const after = rectOf(enc);
+      expect(after.w * after.h).toBeGreaterThan(before.w * before.h);
+      expect(animalsIn(s, enc.id).map((a) => a.uid)).toEqual([uid]);
+    } else expect(c.why).toMatch(/miejsca/);
+  });
+
+  it('park research gives bigger pens, more pens and enclosure levels 6–7', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 9);
+    const enc = enclosures(s)[0];
+    expect(penSlots(s, enc)).toBe(4);
+    expect(maxPens(s, enc)).toBe(2);
+    s.tech.park8 = 1; s.tech.park9 = 1;
+    expect(penSlots(s, enc)).toBe(6);
+    expect(maxPens(s, enc)).toBe(4);
+    enc.level = 5;
+    s.coins = 1e12;
+    expect(canUpgrade(s, enc.id).why).toMatch(/Badaniach/);
+    s.tech.park10 = 1; s.tech.park11 = 1;
+    expect(canUpgrade(s, enc.id).why ?? '').not.toMatch(/Badaniach/);
+  });
+
+  it('wild land is cleared chunk by chunk from the edge of the free area', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 7);
+    s.coins = 1e9;
+    const t = terrain(1);
+    const wild = [...t.landChunks].filter((c) => !islandCache(s, 1).cleared.has(c));
+    expect(wild.length).toBeGreaterThan(0);
+    expect(wild.some((c) => canClear(s, 1, c).ok)).toBe(true);
+    expect(wild.some((c) => canClear(s, 1, c).why?.startsWith('Oczyszczaj'))).toBe(true);
+  });
+
+  it('old saves (habitats, plots, till) move onto Island 1', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 8);
+    const old = JSON.parse(serialize(s));
+    const camara = GENUS_BY_NAME.get('Camarasaurus')!.id, allo = GENUS_BY_NAME.get('Allosaurus')!.id;
+    delete old.park;
+    old.v = 1;
+    old.habitats = [{ id: 1, type: 'land', level: 4 }, { id: 2, type: 'land', level: 1 }];
+    old.plots = 8;
+    old.bank = 500;
+    old.buildings.ranch = 3; old.buildings.greenhouse = 2; old.buildings.aquaculture = 0;
+    old.animals = [
+      { uid: 1, genusId: camara, level: 5, stage: 1, habitatId: 1, born: 0 },
+      { uid: 2, genusId: camara, level: 3, stage: 0, habitatId: 1, born: 0 },
+      { uid: 3, genusId: allo, level: 3, stage: 0, habitatId: 2, born: 0 },
+    ];
+    const coins = old.coins;
+    const r = deserialize(JSON.stringify(old))!;
+    expect(r.v).toBe(2);
+    expect(r.coins).toBe(coins + 500 + 1000 + 1450);
+    expect(enclosures(r).length).toBe(2);
+    expect(r.animals.every((a) => a.enc > 0)).toBe(true);
+    expect(r.park.objects.find((o) => o.def === 'farm_meat')!.level).toBe(3);
+    expect((r as unknown as Record<string, unknown>).habitats).toBeUndefined();
+    expect('ranch' in r.buildings).toBe(false);
+    for (const o of r.park.objects) expect(defOf(o)).toBeTruthy();
+  });
+});
 
 describe('data', () => {
   it('has 2000–3000 genera, each with archetype, habitat and a parent clade', () => {
@@ -91,8 +281,7 @@ describe('game loop', () => {
   it('feeding is capped by stage and evolution needs the cap', () => {
     const s = startGame(Date.UTC(2026, 0, 1), 5);
     const g = GENUS_BY_NAME.get('Camarasaurus')!;
-    s.habitats[0].level = 5;
-    s.animals.push({ uid: 99, genusId: g.id, level: 1, stage: 0, habitatId: s.habitats[0].id, born: s.now });
+    s.animals.push({ uid: 99, genusId: g.id, level: 1, stage: 0, enc: enclosures(s)[0].id, pen: 0, born: s.now });
     s.food.plants = 1e9;
     s.coins = 1e9;
     s.pb = 1e6;

@@ -1,113 +1,23 @@
-// Park: habitats & plots, income & bank, feeding & evolution, buildings, research tech, food market, museum.
+// Park economy around the map: per-second tick, feeding & evolution, station upgrades, research tech, food market,
+// museum donations. The map itself (islands, objects, pens, storage) lives in parkmap.ts.
 
 import { GENERA } from '../data/db';
-import type { Food, Habitat } from '../data/types';
-import { B, animalIncome, evolveCost, foodCost } from './balance';
-import { BUILDING_BY_ID, HABITAT_UNLOCK, TECH_BY_ID, buildingCost, type BuildingId } from './content';
+import type { Food } from '../data/types';
+import { B, evolveCost, foodCost } from './balance';
+import { BUILDING_BY_ID, TECH_BY_ID, buildingCost, type BuildingId } from './content';
 import { type Mods, mods } from './mods';
 import { type Animal, type GameState, log } from './state';
-import { addFame, collectionBonus, parkLevel } from './meta';
-import { habitatCapacity, habitatUsed } from './lab';
-
-// ---------------------------------------------------------------- habitats / plots
-
-export function habitatBuildCost(s: GameState, type: Habitat): number {
-  const n = s.habitats.filter((h) => h.type === type).length;
-  return Math.round(B.habitatCost[type] * Math.pow(B.habitatCostGrowth, n));
-}
-
-export function canBuildHabitat(s: GameState, type: Habitat): { ok: boolean; why?: string; cost: number } {
-  const cost = habitatBuildCost(s, type);
-  if (parkLevel(s) < HABITAT_UNLOCK[type]) return { ok: false, why: `Wymaga poziomu parku ${HABITAT_UNLOCK[type]}`, cost };
-  if (s.habitats.length >= s.plots) return { ok: false, why: 'Brak wolnej działki', cost };
-  if (s.coins < cost) return { ok: false, why: 'Za mało monet', cost };
-  return { ok: true, cost };
-}
-
-export function buildHabitat(s: GameState, type: Habitat): boolean {
-  const c = canBuildHabitat(s, type);
-  if (!c.ok) return false;
-  s.coins -= c.cost;
-  s.habitats.push({ id: s.nextHabitatId++, type, level: 1 });
-  return true;
-}
-
-export function habitatUpgradeCost(level: number): number {
-  return Math.round(B.habitatUpgradeCost * Math.pow(B.habitatUpgradeGrowth, level - 1));
-}
-
-export function upgradeHabitat(s: GameState, id: number): boolean {
-  const h = s.habitats.find((x) => x.id === id);
-  if (!h) return false;
-  const cost = habitatUpgradeCost(h.level);
-  if (s.coins < cost) return false;
-  s.coins -= cost;
-  h.level++;
-  return true;
-}
-
-export function plotCost(s: GameState): number {
-  return Math.round(B.plotCost * Math.pow(B.plotCostGrowth, s.plots - B.startPlots));
-}
-
-export function buyPlot(s: GameState): boolean {
-  const c = plotCost(s);
-  if (s.coins < c) return false;
-  s.coins -= c;
-  s.plots++;
-  return true;
-}
-
-export function moveAnimal(s: GameState, uid: number, habitatId: number): boolean {
-  const a = s.animals.find((x) => x.uid === uid);
-  const h = s.habitats.find((x) => x.id === habitatId);
-  if (!a || !h || a.habitatId === habitatId) return false;
-  const g = GENERA.get(a.genusId)!;
-  if (h.type !== g.habitat) return false;
-  const need = { XS: 1, S: 1, M: 2, L: 3, XL: 4 }[g.size];
-  if (habitatCapacity(h.level) - habitatUsed(s, h.id) < need) return false;
-  a.habitatId = habitatId;
-  return true;
-}
+import { addFame, parkLevel } from './meta';
+import { animalRate, countOf, parkIncome, produceTick } from './parkmap';
+import { stationDefId } from './parkContent';
 
 // ---------------------------------------------------------------- income
 
-export function animalIncomeOf(s: GameState, a: Animal, m: Mods, bonus = collectionBonus(s)): number {
-  const g = GENERA.get(a.genusId)!;
-  return animalIncome(g.rarity, a.level, a.stage) * (1 + bonus) * m.incomeMult;
-}
-
-export function incomePerSec(s: GameState, m: Mods = mods(s)): number {
-  const bonus = collectionBonus(s);
-  let sum = 0;
-  for (const a of s.animals) sum += animalIncomeOf(s, a, m, bonus);
-  return sum;
-}
-
-export function bankCap(s: GameState, m: Mods = mods(s), inc = incomePerSec(s, m)): number {
-  return Math.max(200, inc * 3600 * m.bankHours);
-}
-
-export function collectBank(s: GameState): number {
-  const n = s.bank;
-  s.coins += n;
-  s.bank = 0;
-  return n;
-}
-
-export function discoveredCount(s: GameState): number {
-  return Object.keys(s.discovered).length;
-}
+export const animalIncomeOf = (s: GameState, a: Animal, m: Mods = mods(s)) => animalRate(s, a, m);
+export const incomePerSec = (s: GameState, m: Mods = mods(s)) => parkIncome(s, m);
 
 export function parkTick(s: GameState, dt: number, m: Mods): void {
-  const inc = incomePerSec(s, m);
-  if (m.autoCollect) s.coins += inc * dt;
-  else s.bank = Math.min(bankCap(s, m, inc), s.bank + inc * dt);
-  s.coins += m.museumRate * discoveredCount(s) * dt;
-  s.food.meat += m.meatRate * dt;
-  s.food.plants += m.plantRate * dt;
-  s.food.fish += m.fishRate * dt;
-  s.food.plankton += m.planktonRate * dt;
+  produceTick(s, dt, m);
   s.pb += m.pbRate * dt;
   s.mutagenAcc += (m.mutagenPerHour / 3600) * dt;
   if (s.mutagenAcc >= 1) {
@@ -192,12 +102,16 @@ export function buyFood(s: GameState, food: Food, amount: number): boolean {
   return true;
 }
 
-// ---------------------------------------------------------------- buildings & tech
+// ---------------------------------------------------------------- stations & tech
+
+/** a station has to stand on the map before it can be upgraded */
+export const stationBuilt = (s: GameState, id: BuildingId) => countOf(s, stationDefId(id)) > 0;
 
 export function canUpgradeBuilding(s: GameState, id: BuildingId): { ok: boolean; why?: string; cost: number } {
   const def = BUILDING_BY_ID[id];
   const lvl = s.buildings[id];
   const cost = buildingCost(def, lvl + 1);
+  if (!stationBuilt(s, id)) return { ok: false, why: 'Najpierw postaw budynek na mapie parku', cost };
   if (lvl >= def.maxLevel) return { ok: false, why: 'Maksymalny poziom', cost };
   if (parkLevel(s) < def.unlockLevel) return { ok: false, why: `Wymaga poziomu parku ${def.unlockLevel}`, cost };
   if (s.coins < cost) return { ok: false, why: 'Za mało monet', cost };
@@ -209,7 +123,6 @@ export function upgradeBuilding(s: GameState, id: BuildingId): boolean {
   if (!c.ok) return false;
   s.coins -= c.cost;
   s.buildings[id]++;
-  if (s.buildings[id] === 1) log(s, `Zbudowano: ${BUILDING_BY_ID[id].name}`, 'good');
   return true;
 }
 

@@ -1,5 +1,22 @@
 # Zmiany
 
+## 0.3.0
+
+Park zbudowany od nowa: wyspy, mapa z przybliżaniem i wszystko stawiasz sam. Pełny opis: [docs/park-2.0-projekt.md](https://github.com/Scepeczki/SEC/blob/main/docs/park-2.0-projekt.md).
+
+- **Archipelag:** park to morze z wyspami. Kamerę przeciąga się myszą, kółkiem przybliża od widoku całego archipelagu aż do zwierząt chodzących po zagrodach. Do kupienia jest 5 kolejnych wysp, każda z innym klimatem i premią (np. na Mokradłach bagna zarabiają +20%).
+- **Tryb budowy (klawisz B):** wybiegi, stacje, farmy, sklepy i dekoracje stawiasz na mapie. Podgląd na zielono albo na czerwono z powodem, **R** obraca, **X** rozbiera, budynki przesuwa się za darmo. Ścieżki maluje się przeciąganiem.
+- **Ścieżki mają znaczenie:** wybiegi, sklepy i muzeum zarabiają tylko wtedy, gdy ścieżka łączy je z bramą wyspy.
+- **Oczyszczanie terenu zamiast działek:** dżunglę, skały i bagno usuwa się kawałkami 4×4.
+- **Nowe badania parku:** Szersze zagrody (+2 miejsca w każdej zagrodzie), Dodatkowe przegrody (+2 zagrody w każdym wybiegu), Rozległe wybiegi i Rezerwaty (wybiegi poziomu 6 i 7, aż do 16×14 pól i 12 zagród) oraz Ciężki sprzęt (oczyszczanie terenu o 40% tańsze).
+- **Zagrody:** wybieg dzieli się na zagrody. Stado jednego rodzaju zarabia więcej, zagroda mieszana też (mięsożercy mieszkają tylko z własnym rodzajem). Ulepszenie fizycznie powiększa wybieg i daje więcej zagród.
+- **Przenoszenie zwierząt:** przeciągnij zwierzę z mapy, listy albo Transportera na dowolną zagrodę, także na innej wyspie. Nowo wyklute zwierzę samo szuka miejsca, a gdy go nie ma, czeka w Transporterze. Synteza nie jest już blokowana brakiem miejsca.
+- **Zbieranie klikiem:** wybiegi, sklepy, muzeum i farmy zbierają utarg i paszę we własnych magazynach. Nad nimi pojawia się dymek, kliknięcie zbiera.
+- **Nowe budynki dla zwiedzających:** kiosk, bar, toalety, restauracja, punkt widokowy, balon i hotel. Zarabiają część dochodu z biletów całej wyspy.
+- **Dekoracje i zadowolenie:** dekoracje wokół i wystrój w środku wybiegu podnoszą zadowolenie zwierząt, a ono mnoży dochód.
+- **Widok wybiegu od środka (Enter):** scena z boku z zagrodami, karty zwierząt do przeciągania, wystrój, ulepszenie.
+- **Stare zapisy przenoszą się same:** habitaty i stacje stają na Wyspie Startowej, a pieniądze wydane na działki wracają.
+
 ## 0.2.1
 
 Drobne poprawki po 0.2.0 i automatyczne kopanie.
