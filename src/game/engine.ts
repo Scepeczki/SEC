@@ -8,8 +8,8 @@ import { mods } from './mods';
 import { parkTick } from './park';
 import { type Animal, type GameState, SAVE_VERSION, log, newGame } from './state';
 import { B } from './balance';
-import { autoBuild, autoPlace, buyIsland, defOf, initPark, layStreets, levelFor, slotsOf } from './parkmap';
-import { STATION_IDS, enclosureDefId, stationDefId } from './parkContent';
+import { autoBuild, autoPlace, buyIsland, defOf, initPark, layStreets, levelFor, resizeEnclosures, slotsOf, touch } from './parkmap';
+import { ISLAND_BY_ID, LEGACY_ENC_SIZE, STATION_IDS, enclosureDefId, stationDefId } from './parkContent';
 import type { Habitat } from '../data/types';
 
 export function startGame(now = Date.now(), seed?: number): GameState {
@@ -147,6 +147,12 @@ function migrate(s: GameState): GameState | null {
   // drop references to genera that no longer exist in data
   s.animals = (s.animals ?? []).filter((a) => GENERA.has(a.genusId));
   if (s.v < 2 || !s.park) migratePark(s);
+  else if (s.v < 3) {
+    // 0.3.0 → 0.3.1: islands keep the larger clear area they were bought with; enclosures get one fixed footprint
+    for (const [id, st] of Object.entries(s.park.islands)) st.start ??= ISLAND_BY_ID.get(Number(id))?.legacyClear;
+    touch(s);
+    resizeEnclosures(s, LEGACY_ENC_SIZE);
+  }
   const fresh = newGame(s.now, s.seed);
   // fill any missing fields from a fresh state (forward compatible)
   for (const k of Object.keys(fresh) as (keyof GameState)[]) {

@@ -13,12 +13,13 @@ import {
 } from '../../game/parkmap';
 import type { Animal, GameState, ParkObject } from '../../game/state';
 import { Bar, Btn, SpriteImg } from '../components';
-import { sfx } from '../sound';
+import { chorus, sfx, voice } from '../sound';
 import { genusSpec, spriteCanvas } from '../sprites';
 import { useGame, useStore } from '../store';
+import { voiceName } from '../voices';
 import { startAnimalDrag } from './ParkMap';
 import { AnimalPanel, objName } from './Panels';
-import { usePark } from './parkUi';
+import { drawFeed, feedEvents, usePark } from './parkUi';
 
 const SCENE_H = 220;
 
@@ -112,6 +113,8 @@ function Scene({ s, o, selected, onSelect }: { s: GameState; o: ParkObject; sele
         ctx.save(); ctx.translate(m.x, m.y - h + 4);
         if (m.dir < 0) { ctx.scale(-1, 1); ctx.drawImage(sc, -w / 2, 0, w, h); } else ctx.drawImage(sc, -w / 2, 0, w, h);
         ctx.restore();
+        const fe = feedEvents.find((e) => e.uid === a.uid);
+        if (fe) { m.wait = Math.max(m.wait, 0.3); drawFeed(ctx, fe, now, m.x, m.y + 4, 2, h); }
       }
       if (!here.length) { ctx.fillStyle = '#14130ecc'; ctx.font = '800 15px Nunito, sans-serif'; ctx.textAlign = 'center'; ctx.fillText('Pusto — przeciągnij tu zwierzę z Transportera albo wyhoduj je w Laboratorium', W / 2, 24); }
     };
@@ -123,7 +126,16 @@ function Scene({ s, o, selected, onSelect }: { s: GameState; o: ParkObject; sele
     const x = e.clientX - r.left, y = e.clientY - r.top;
     let best: number | null = null, bd = 50;
     for (const [uid, m] of movers.current) { const d = Math.hypot(m.x - x, m.y - 18 - y); if (d < bd && animalsIn(live.current.s, live.current.o.id).some((a) => a.uid === uid)) { bd = d; best = uid; } }
-    if (best !== null) onSelect(best);
+    if (best !== null) {
+      onSelect(best);
+      const a = live.current.s.animals.find((q) => q.uid === best);
+      if (a) voice(a.genusId, { stage: a.stage });
+      return;
+    }
+    // empty spot in a pen: the whole pen calls
+    const pens = live.current.o.pens ?? 1;
+    const p = Math.floor((x / r.width) * pens);
+    chorus(animalsIn(live.current.s, live.current.o.id, p).map((a) => ({ genusId: a.genusId, stage: a.stage })));
   };
   return <canvas ref={ref} height={SCENE_H} className="interior-scene pixel" onClick={onClick} />;
 }
@@ -131,7 +143,7 @@ function Scene({ s, o, selected, onSelect }: { s: GameState; o: ParkObject; sele
 function AnimalCard({ s, a, onSelect, selected }: { s: GameState; a: Animal; onSelect: () => void; selected: boolean }) {
   const g = GENERA.get(a.genusId)!;
   return (
-    <div className={`animal-card ${selected ? 'on' : ''}`} onPointerDown={(e) => { if (e.button === 0) { e.preventDefault(); startAnimalDrag(a.uid); } }} onClick={onSelect} title="Kliknij: szczegóły · przeciągnij: przenieś">
+    <div className={`animal-card ${selected ? 'on' : ''}`} onPointerDown={(e) => { if (e.button === 0) { e.preventDefault(); startAnimalDrag(a.uid); } }} onClick={() => { onSelect(); voice(a.genusId, { stage: a.stage }); }} title={`Kliknij: szczegóły i głos (${voiceName(a.genusId)}) · przeciągnij: przenieś`}>
       <SpriteImg genusId={a.genusId} stage={a.stage} scale={1} />
       <div className="col" style={{ gap: 0, minWidth: 0 }}>
         <b className="ellipsis">{g.name}</b>
@@ -181,8 +193,8 @@ export function Interior({ id }: { id: number }) {
               const pb = penBonus(s, o.id, p);
               return (
                 <div key={p} className="pen-col panel" data-drop="pen" data-enc={o.id} data-pen={p}>
-                  <div className="row" style={{ gap: 6 }}>
-                    <b>Zagroda {p + 1}</b><span className="spacer" />
+                  <div className="row clickable" style={{ gap: 6 }} title="Kliknij, by usłyszeć zagrodę" onClick={() => chorus(here.map((a) => ({ genusId: a.genusId, stage: a.stage })))}>
+                    <b>Zagroda {p + 1}</b>{here.length > 0 && <span className="small muted">🔊</span>}<span className="spacer" />
                     <span className="small muted">{penUsed(s, o.id, p)}/{penSlots(s, o)}</span>
                   </div>
                   <Bar value={penUsed(s, o.id, p)} max={penSlots(s, o)} kind="blue" />
@@ -208,7 +220,7 @@ export function Interior({ id }: { id: number }) {
                 <span className="lbl">Kasa wybiegu</span>
                 <div className="row small"><b>💰 {fmt(o.store)}</b><span className="muted">/ {fmt(cap)}</span><span className="spacer" /><span className="muted">+{fmt(rate)}/s</span></div>
                 <Bar value={o.store} max={cap} kind="gold" />
-                <Btn kind="gold" onClick={() => { if (act((st) => collect(st, o.id))) sfx.loot(1, 0); }} disabled={o.store < 1} why="Jeszcze nic się nie uzbierało">Zbierz</Btn>
+                <Btn kind="gold" onClick={() => { const g = act((st) => collect(st, o.id)); if (g?.coins) sfx.coins(g.coins); }} disabled={o.store < 1} why="Jeszcze nic się nie uzbierało">Zbierz</Btn>
               </div>
               <div className="panel col">
                 <span className="lbl">Zadowolenie · {Math.round(h.total)}%</span>
@@ -223,8 +235,8 @@ export function Interior({ id }: { id: number }) {
               </div>
               <div className="panel col">
                 <span className="lbl">Ulepszenie</span>
-                {next ? <div className="small">Poziom {o.level + 1}: {next.size[0]}×{next.size[1]} pól, do {next.pens + mods(s).penCountBonus} zagród po {next.penSlots + mods(s).penSlotBonus} miejsc, wystrój {interiorSlots(o.level + 1)}, zadowolenie +{P.happyPerLevel}.</div> : <div className="small muted">Maksymalny poziom.</div>}
-                {next && <Btn kind="gold" onClick={() => { if (act((st) => upgradeObject(st, o.id))) sfx.layer(); }} disabled={!up.ok} why={up.why}>Ulepsz · 💰 {fmt(up.cost)}</Btn>}
+                {next ? <div className="small">Poziom {o.level + 1}: ten sam teren, do {next.pens + mods(s).penCountBonus} zagród po {next.penSlots + mods(s).penSlotBonus} miejsc, wystrój {interiorSlots(o.level + 1)}, zadowolenie +{P.happyPerLevel}.</div> : <div className="small muted">Maksymalny poziom.</div>}
+                {next && <Btn kind="gold" onClick={() => { if (act((st) => upgradeObject(st, o.id))) sfx.upgrade(); }} disabled={!up.ok} why={up.why}>Ulepsz · 💰 {fmt(up.cost)}</Btn>}
                 {next && !up.ok && <span className="why">{up.why}</span>}
               </div>
               <div className="panel col">

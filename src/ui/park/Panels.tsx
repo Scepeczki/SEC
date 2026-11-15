@@ -16,11 +16,11 @@ import { animalIncomeOf, buyFood, canEvolve, canFeed, evolve, evolveCostFor, fee
 import type { GameState, ParkObject } from '../../game/state';
 import { STAGE_NAMES } from '../../sprites/generator';
 import { Bar, Btn, Cost, Rarity, SpriteImg } from '../components';
-import { sfx } from '../sound';
+import { chorus, sfx, voice } from '../sound';
 import { useGame, useStore } from '../store';
 import { TS } from './art';
 import { startAnimalDrag } from './ParkMap';
-import { mapApi, usePark } from './parkUi';
+import { mapApi, pushFeed, usePark } from './parkUi';
 
 /** "Wybieg 2", "Hodowla 3": ordinal among objects of the same kind */
 export function objName(s: GameState, o: ParkObject): string {
@@ -61,7 +61,7 @@ function StoreRow({ s, o }: { s: GameState; o: ParkObject }) {
     <div className="col" style={{ gap: 4 }}>
       <div className="row small"><span>{farm ? 'Magazyn' : 'Kasa'}: <b>{unit} {fmt(o.store)}</b> / {fmt(cap)}</span><span className="spacer" /><span className="muted">{farm ? `${fmt(rate * 60)} / min` : `+${fmt(rate)}/s`}</span></div>
       <Bar value={o.store} max={cap} kind="gold" />
-      {!m.autoCollect && <Btn kind="gold" onClick={() => { const g = act((st) => collect(st, o.id)); if (g) sfx.loot(1, 0); }} disabled={o.store < 1} why="Jeszcze nic się nie uzbierało">Zbierz {unit} {fmt(Math.floor(o.store))}</Btn>}
+      {!m.autoCollect && <Btn kind="gold" onClick={() => { const g = act((st) => collect(st, o.id)); if (g?.coins) sfx.coins(g.coins); else if (g) sfx.harvest(); }} disabled={o.store < 1} why="Jeszcze nic się nie uzbierało">Zbierz {unit} {fmt(Math.floor(o.store))}</Btn>}
       {m.autoCollect && <span className="small muted">Automatyczne kasy zbierają same.</span>}
     </div>
   );
@@ -77,7 +77,7 @@ function Actions({ s, o }: { s: GameState; o: ParkObject }) {
   return (
     <div className="col" style={{ gap: 6 }}>
       {lvl < def.maxLevel && (
-        <Btn kind="gold" onClick={() => { if (act((st) => upgradeObject(st, o.id))) sfx.layer(); }} disabled={!up.ok} why={up.why}>Ulepsz do poz. {lvl + 1} · 💰 {fmt(up.cost)}</Btn>
+        <Btn kind="gold" onClick={() => { if (act((st) => upgradeObject(st, o.id))) sfx.upgrade(); }} disabled={!up.ok} why={up.why}>Ulepsz do poz. {lvl + 1} · 💰 {fmt(up.cost)}</Btn>
       )}
       {!up.ok && up.why && lvl < def.maxLevel && <span className="why">{up.why}</span>}
       <div className="row" style={{ gap: 6 }}>
@@ -98,22 +98,23 @@ function EnclosurePanel({ s, o }: { s: GameState; o: ParkObject }) {
   const ui = usePark();
   const def = defOf(o);
   const h = happiness(s, o);
-  const lv = encLevel(o.level), next = o.level < 7 ? encLevel(o.level + 1) : null;
+  const next = o.level < 7 ? encLevel(o.level + 1) : null;
   const ap = canAddPen(s, o.id);
   const animals = animalsIn(s, o.id);
   const isle = ISLAND_BY_ID.get(o.island)!;
   return (
     <>
-      <Head title={objName(s, o)} sub={`${HABITAT_ICONS[def.habitat!]} poziom ${o.level} · ${lv.size[0]}×${lv.size[1]} pól · ${isle.name}`} onClose={() => ui.select(null)} />
+      <Head title={objName(s, o)} sub={`${HABITAT_ICONS[def.habitat!]} poziom ${o.level} · ${rectOf(o).w}×${rectOf(o).h} pól · ${isle.name}`} onClose={() => ui.select(null)} />
       {lacksPath(s, o) && <div className="warn">Brak ścieżki do bramy — zwiedzający tu nie dochodzą, wybieg nic nie zarabia.</div>}
       <div className="pens-mini">
         {Array.from({ length: o.pens ?? 0 }, (_, p) => {
           const here = animalsIn(s, o.id, p);
           return (
-            <div key={p} className="pen-mini" data-drop="pen" data-enc={o.id} data-pen={p} title={`Zagroda ${p + 1}: ${penUsed(s, o.id, p)}/${penSlots(s, o)} miejsc`}>
+            <div key={p} className="pen-mini" data-drop="pen" data-enc={o.id} data-pen={p} title={`Zagroda ${p + 1}: ${penUsed(s, o.id, p)}/${penSlots(s, o)} miejsc · kliknij, by usłyszeć`}
+              onClick={(e) => { if (e.target === e.currentTarget || (e.target as HTMLElement).classList.contains('lbl')) chorus(here.map((a) => ({ genusId: a.genusId, stage: a.stage }))); }}>
               <span className="lbl">{p + 1}</span>
               <div className="row" style={{ gap: 2 }}>
-                {here.map((a) => <span key={a.uid} className="clickable" onPointerDown={(e) => { e.preventDefault(); startAnimalDrag(a.uid); }} onClick={() => ui.select({ kind: 'animal', uid: a.uid })}><SpriteImg genusId={a.genusId} stage={a.stage} scale={1} /></span>)}
+                {here.map((a) => <span key={a.uid} className="clickable" onPointerDown={(e) => { e.preventDefault(); startAnimalDrag(a.uid); }} onClick={() => { ui.select({ kind: 'animal', uid: a.uid }); voice(a.genusId, { stage: a.stage }); }}><SpriteImg genusId={a.genusId} stage={a.stage} scale={1} /></span>)}
               </div>
               <Bar value={penUsed(s, o.id, p)} max={penSlots(s, o)} kind="blue" />
             </div>
@@ -129,7 +130,7 @@ function EnclosurePanel({ s, o }: { s: GameState; o: ParkObject }) {
         {biomeBonus(o) > 1 && <><span>Premia wyspy</span><b>+{Math.round((biomeBonus(o) - 1) * 100)}%</b></>}
       </div>
       {(o.pens ?? 0) < maxPens(s, o) && <Btn onClick={() => act((st) => addPen(st, o.id))} disabled={!ap.ok} why={ap.why}>+ Zagroda · 💰 {fmt(ap.cost)}</Btn>}
-      {next && <div className="small muted">Poziom {o.level + 1}: {next.size[0]}×{next.size[1]} pól, do {next.pens + mods(s).penCountBonus} zagród po {next.penSlots + mods(s).penSlotBonus} miejsc, wystrój {interiorSlots(o.level + 1)}.</div>}
+      {next && <div className="small muted">Poziom {o.level + 1}: {o.fp ? 'wybieg urośnie do 8×8 pól, jeśli obok jest miejsce' : 'ten sam teren'}, do {next.pens + mods(s).penCountBonus} zagród po {next.penSlots + mods(s).penSlotBonus} miejsc, wystrój {interiorSlots(o.level + 1)}.</div>}
       <Actions s={s} o={o} />
     </>
   );
@@ -242,11 +243,24 @@ function ChunkPanel({ s, island, chunk }: { s: GameState; island: number; chunk:
     <>
       <Head title="Dziki teren" sub={ISLAND_BY_ID.get(island)!.name} onClose={() => ui.select(null)} />
       <div className="small">Dżungla, skały albo bagno. Po oczyszczeniu (kawałek 4×4 pola) można tu budować.</div>
-      <Btn kind="gold" onClick={() => { if (act((st) => clearChunk(st, island, chunk))) { sfx.crumble(true); ui.select(null); } }} disabled={!c.ok} why={c.why}>Oczyść · 💰 {fmt(c.cost)}</Btn>
+      <Btn kind="gold" onClick={() => { if (act((st) => clearChunk(st, island, chunk))) { sfx.clear(); ui.select(null); } }} disabled={!c.ok} why={c.why}>Oczyść · 💰 {fmt(c.cost)}</Btn>
       {!c.ok && <span className="why">{c.why}</span>}
       <Btn small onClick={() => { ui.setBuild(true); ui.setCat('land'); ui.setTool({ kind: 'clear' }); }}>Tryb oczyszczania</Btn>
     </>
   );
+}
+
+/** feed an animal: chomping sounds, food falling onto it on the map / in the enclosure view, then a happy call */
+export function feedAnimal(uid: number, times: number) {
+  const st = useStore.getState();
+  const a = st.s.animals.find((x) => x.uid === uid);
+  if (!a) return;
+  const food = GENERA.get(a.genusId)!.food;
+  const n = st.act((g) => feed(g, uid, times));
+  if (!n) return;
+  sfx.feed(food, n);
+  pushFeed(uid, food, n);
+  voice(a.genusId, { stage: a.stage, delay: 0.9, gain: 0.7 });
 }
 
 export function AnimalPanel({ s, uid }: { s: GameState; uid: number }) {
@@ -283,16 +297,17 @@ export function AnimalPanel({ s, uid }: { s: GameState; uid: number }) {
       <Bar value={a.level} max={cap} />
       <div className="small">{FOOD_ICONS[fc.food]} Karmienie: {fmt(fc.amount)} ({FOOD_NAMES[fc.food].toLowerCase()}, masz {fmt(s.food[fc.food])})</div>
       <div className="row" style={{ gap: 6 }}>
-        <Btn kind="primary" onClick={() => act((st) => feed(st, uid, 1))} disabled={!cf.ok} why={cf.why}>Nakarm</Btn>
-        <Btn small onClick={() => act((st) => feed(st, uid, 10))} disabled={!cf.ok} why={cf.why}>×10</Btn>
-        <Btn small onClick={() => act((st) => feed(st, uid, 99))} disabled={!cf.ok} why={cf.why}>Maks</Btn>
+        <Btn kind="primary" onClick={() => feedAnimal(uid, 1)} disabled={!cf.ok} why={cf.why}>Nakarm</Btn>
+        <Btn small onClick={() => feedAnimal(uid, 10)} disabled={!cf.ok} why={cf.why}>×10</Btn>
+        <Btn small onClick={() => feedAnimal(uid, 99)} disabled={!cf.ok} why={cf.why}>Maks</Btn>
+        <Btn small onClick={() => voice(g.id, { stage: a.stage })} title="Posłuchaj głosu">🔊</Btn>
       </div>
       {!cf.ok && cf.why === 'Za mało pokarmu' && (
         <Btn small onClick={() => act((st) => buyFood(st, fc.food, fc.amount * 3) || toast('Za mało monet', 'bad'))}>Kup {fmt(fc.amount * 3)} za 💰 {fmt(fc.amount * 3 * B.foodBuyPrice)}</Btn>
       )}
       {a.stage < 4 && (
         <div className="col" style={{ gap: 4 }}>
-          <Btn kind="gold" onClick={() => act((st) => evolve(st, uid))} disabled={!ce.ok} why={ce.why}>Ewolucja → {STAGE_NAMES[a.stage + 1]}</Btn>
+          <Btn kind="gold" onClick={() => { if (act((st) => evolve(st, uid))) { sfx.evolve(); voice(g.id, { stage: a.stage + 1, delay: 0.9 }); } }} disabled={!ce.ok} why={ce.why}>Ewolucja → {STAGE_NAMES[a.stage + 1]}</Btn>
           <Cost coins={ec.coins} pb={ec.pb} mutagen={ec.mutagen} />
           {!ce.ok && <span className="why">{ce.why}</span>}
         </div>

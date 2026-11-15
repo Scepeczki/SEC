@@ -7,11 +7,11 @@ import { GENERA } from '../data/db';
 import type { Food, Habitat } from '../data/types';
 import { animalIncome } from './balance';
 import { BUILDING_BY_ID, buildingCost, foodRate } from './content';
-import { chunkOf, inside, isWater, terrain, Tile, type Terrain } from './islands';
+import { chunkOf, inside, isWater, startChunksFor, terrain, Tile, type Terrain } from './islands';
 import { addFame, collectionBonus, parkLevel } from './meta';
 import { type Mods, mods } from './mods';
 import {
-  CHUNK, ENCLOSURE_NAMES, INTERIOR_BY_ID, ISLAND_BY_ID, P, PATH_COST, PLACE_BY_ID, STATION_IDS, clearCost, encLevel, enclosureDefId, interiorSlots,
+  CHUNK, ENC_SIZE, ENCLOSURE_NAMES, INTERIOR_BY_ID, ISLAND_BY_ID, P, PATH_COST, PLACE_BY_ID, STATION_IDS, clearCost, encLevel, enclosureDefId, interiorSlots,
   penCost, placeCost, stationDefId, upgradeCost, type PlaceDef,
 } from './parkContent';
 import { type Animal, type GameState, type ParkObject, log } from './state';
@@ -31,8 +31,14 @@ export function sizeAt(def: PlaceDef, level: number, rot: 0 | 1): [number, numbe
 /** level used for drawing and effects (stations keep it in s.buildings) */
 export const levelOf = (s: GameState, o: ParkObject) => (defOf(o).station ? s.buildings[defOf(o).station!] : o.level);
 
+/** footprint of a placed object (an old save may keep its own) */
+export const footprint = (o: ParkObject): [number, number] => {
+  if (!o.fp) return sizeAt(defOf(o), o.level, o.rot);
+  return o.rot ? [o.fp[1], o.fp[0]] : o.fp;
+};
+
 export function rectOf(o: ParkObject): Rect {
-  const [w, h] = sizeAt(defOf(o), o.level, o.rot);
+  const [w, h] = footprint(o);
   return { x: o.x, y: o.y, w, h };
 }
 
@@ -62,7 +68,7 @@ export function islandCache(s: GameState, island: number): IslandCache {
     for (let y = r.y; y < r.y + r.h; y++) for (let x = r.x; x < r.x + r.w; x++) if (inside(t, x, y)) occ[y * t.w + x] = o.id;
   }
   const paths = new Set(s.park.paths[island] ?? []);
-  const cleared = new Set([...t.startChunks, ...(s.park.islands[island]?.cleared ?? [])]);
+  const cleared = new Set([...startChunksFor(t, s.park.islands[island]?.start), ...(s.park.islands[island]?.cleared ?? [])]);
   // paths connected to the gate
   const conn = new Set<number>();
   const gate = objectsOn(s, island).find((o) => o.def === 'gate');
@@ -128,7 +134,7 @@ export function canPlace(s: GameState, defId: string, island: number, x: number,
     if (def.unique && countOf(s, defId) > 0) return no('Ten budynek już stoi w parku');
   }
   const level = opts.level ?? opts.moving?.level ?? 1;
-  const [w, h] = sizeAt(def, level, rot);
+  const [w, h] = opts.moving?.fp && opts.level === undefined ? (rot ? [opts.moving.fp[1], opts.moving.fp[0]] : opts.moving.fp) : sizeAt(def, level, rot);
   const t = terrain(island);
   const { occ, paths } = islandCache(s, island);
   const self = opts.moving && opts.moving.island === island ? opts.moving.id : -1;
@@ -198,6 +204,68 @@ export function removeObject(s: GameState, id: number): boolean {
 
 // ---------------------------------------------------------------- upgrading
 
+/** does a rectangle touch a path connected to the gate */
+function touchesPath(s: GameState, island: number, r: Rect): boolean {
+  const t = terrain(island);
+  const { conn } = islandCache(s, island);
+  return ring(r).some(([x, y]) => inside(t, x, y) && conn.has(y * t.w + x));
+}
+
+/**
+ * 0.3.0 → 0.3.1: enclosures no longer grow with their level. Bigger ones shrink to the standard footprint inside
+ * their old area (keeping their path), smaller ones grow if there is room, otherwise keep their size until the next upgrade.
+ */
+export function resizeEnclosures(s: GameState, legacy: [number, number][]): void {
+  const encs = s.park.objects.filter((o) => defOf(o).cat === 'enclosure');
+  const [nw, nh] = ENC_SIZE;
+  const shrink: ParkObject[] = [], grow: ParkObject[] = [];
+  for (const o of encs) {
+    const l = legacy[Math.max(0, Math.min(legacy.length, o.level) - 1)];
+    const [ow, oh] = o.rot ? [l[1], l[0]] : l;
+    if (ow === nw && oh === nh) continue;
+    if (ow >= nw && oh >= nh) shrink.push(o);
+    else { o.fp = l; grow.push(o); }
+    (o as ParkObject & { old?: Rect }).old = { x: o.x, y: o.y, w: ow, h: oh };
+  }
+  for (const o of shrink) {
+    const r = (o as ParkObject & { old?: Rect }).old!;
+    const cand: [number, number][] = [];
+    for (let dy = 0; dy <= r.h - nh; dy++) for (let dx = 0; dx <= r.w - nw; dx++) cand.push([r.x + dx, r.y + dy]);
+    const mid = (p: [number, number]) => Math.abs(p[0] - (r.x + (r.w - nw) / 2)) + Math.abs(p[1] - (r.y + (r.h - nh) / 2));
+    const linked = (p: [number, number]) => (touchesPath(s, o.island, { x: p[0], y: p[1], w: nw, h: nh }) ? 1 : 0);
+    cand.sort((a, b) => linked(b) - linked(a) || mid(a) - mid(b));
+    [o.x, o.y] = cand[0];
+  }
+  touch(s);
+  for (const o of grow) {
+    const fit = growAnchor(s, o);
+    if (fit.at) { [o.x, o.y] = fit.at; delete o.fp; touch(s); }
+  }
+  for (const o of encs) delete (o as ParkObject & { old?: Rect }).old;
+  touch(s);
+}
+
+/** where an enclosure with an old footprint can take the standard one, covering its old area */
+export function growAnchor(s: GameState, o: ParkObject): { at?: [number, number]; w: number; h: number; why: string } {
+  const r = rectOf(o);
+  const [nw, nh] = sizeAt(defOf(o), o.level, o.rot);
+  let why = '';
+  // anchors whose rectangle overlaps the old one as much as possible, nearest first
+  const cand: [number, number][] = [];
+  for (let dy = -(nh - 1); dy < r.h; dy++) for (let dx = -(nw - 1); dx < r.w; dx++) cand.push([r.x + dx, r.y + dy]);
+  const overlap = ([x, y]: [number, number]) => Math.max(0, Math.min(x + nw, r.x + r.w) - Math.max(x, r.x)) * Math.max(0, Math.min(y + nh, r.y + r.h) - Math.max(y, r.y));
+  const linked = ([x, y]: [number, number]) => (touchesPath(s, o.island, { x, y, w: nw, h: nh }) ? 1 : 0);
+  cand.sort((a, b) => linked(b) - linked(a) || overlap(b) - overlap(a));
+  const probe = { ...o, fp: undefined };
+  for (const [x, y] of cand) {
+    if (overlap([x, y]) <= 0) break;
+    const c = canPlace(s, o.def, o.island, x, y, o.rot, { moving: probe, level: o.level });
+    if (c.ok) return { at: [x, y], w: nw, h: nh, why };
+    why ||= c.why ?? '';
+  }
+  return { w: nw, h: nh, why };
+}
+
 export function canUpgrade(s: GameState, id: number): Check & { at?: [number, number] } {
   const o = objById(s, id);
   if (!o) return { ok: false, why: 'Nie ma takiego obiektu', cost: 0 };
@@ -211,17 +279,8 @@ export function canUpgrade(s: GameState, id: number): Check & { at?: [number, nu
     if (parkLevel(s) < b.unlockLevel) return { ok: false, why: `Wymaga poziomu parku ${b.unlockLevel}`, cost };
   }
   let at: [number, number] | undefined;
-  if (def.cat === 'enclosure') {
-    // a bigger enclosure must fit; try every anchor that still covers the old area
-    const [ow, oh] = sizeAt(def, lvl, o.rot), [nw, nh] = sizeAt(def, lvl + 1, o.rot);
-    let why = '';
-    for (let dy = 0; dy <= nh - oh && !at; dy++) for (let dx = 0; dx <= nw - ow && !at; dx++) {
-      const c = canPlace(s, o.def, o.island, o.x - dx, o.y - dy, o.rot, { moving: o, level: lvl + 1 });
-      if (c.ok) at = [o.x - dx, o.y - dy];
-      else why ||= c.why ?? '';
-    }
-    if (!at) return { ok: false, why: `Za mało miejsca na powiększenie (${nw}×${nh}): ${why.toLowerCase()}`, cost };
-  }
+  // an old, smaller enclosure grows to the standard footprint on an upgrade when there is room; otherwise it stays as it is
+  if (def.cat === 'enclosure' && o.fp) at = growAnchor(s, o).at;
   if (s.coins < cost) return { ok: false, why: 'Za mało monet', cost, at };
   return { ok: true, cost, at };
 }
@@ -234,7 +293,7 @@ export function upgradeObject(s: GameState, id: number): boolean {
   s.coins -= c.cost;
   if (def.station) s.buildings[def.station]++;
   else o.level++;
-  if (c.at) { o.x = c.at[0]; o.y = c.at[1]; }
+  if (c.at) { o.x = c.at[0]; o.y = c.at[1]; delete o.fp; }
   touch(s);
   addFame(s, def.cat === 'enclosure' ? 15 : 3);
   return true;

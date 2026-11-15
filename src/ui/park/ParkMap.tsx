@@ -11,11 +11,11 @@ import {
   objectsOn, objById, objectRate, place, produces, rectOf, removeObject, setPaths, sizeAt, storeFill, clearChunk, canRemove, animalsIn, enclosures,
 } from '../../game/parkmap';
 import type { GameState, ParkObject } from '../../game/state';
-import { sfx } from '../sound';
+import { chorus, sfx, voice } from '../sound';
 import { genusSpec, spriteCanvas } from '../sprites';
 import { useStore } from '../store';
 import { TS, WATER_DEEP, drawIsland, liftOf, objectArt, penRects } from './art';
-import { ZOOM_MAX, ZOOM_MIN, camera, mapApi, pointer, usePark } from './parkUi';
+import { ZOOM_MAX, ZOOM_MIN, camera, drawFeed, feedEvents, mapApi, pointer, usePark } from './parkUi';
 
 interface Mover { x: number; y: number; tx: number; ty: number; wait: number; dir: number; enc: number; pen: number }
 interface Walker { island: number; at: number; to: number; p: number; col: string; speed: number }
@@ -232,7 +232,7 @@ export function ParkMap() {
       const list = here.map((a) => {
         let m = movers.get(a.uid);
         const p = pens[a.pen] ?? pens[0];
-        const rnd = () => [p.x + 6 + Math.random() * Math.max(1, p.w - 12), p.y + 10 + Math.random() * Math.max(1, p.h - 14)];
+        const rnd = () => [p.x + 4 + Math.random() * Math.max(1, p.w - 8), p.y + 7 + Math.random() * Math.max(1, p.h - 9)];
         if (!m || m.enc !== o.id || m.pen !== a.pen) {
           const [x, y] = rnd();
           m = { x, y, tx: x, ty: y, wait: Math.random() * 2, dir: Math.random() < 0.5 ? -1 : 1, enc: o.id, pen: a.pen };
@@ -242,14 +242,15 @@ export function ParkMap() {
         else {
           const dx = m.tx - m.x, dy = m.ty - m.y, d = Math.hypot(dx, dy);
           if (d < 1) { m.wait = 1 + Math.random() * 4; [m.tx, m.ty] = rnd(); }
-          else { const v = 7 * dt; m.x += (dx / d) * Math.min(v, d); m.y += (dy / d) * Math.min(v, d); if (Math.abs(dx) > 0.5) m.dir = dx < 0 ? -1 : 1; }
+          else { const v = 5 * dt; m.x += (dx / d) * Math.min(v, d); m.y += (dy / d) * Math.min(v, d); if (Math.abs(dx) > 0.5) m.dir = dx < 0 ? -1 : 1; }
         }
-        return { a, m };
+        return { a, m, p: pens[a.pen] ?? pens[0] };
       }).sort((p, q) => p.m.y - q.m.y);
       const sel = usePark.getState().sel;
-      for (const { a, m } of list) {
+      for (const { a, m, p } of list) {
         const sc = spriteCanvas(genusSpec(a.genusId), a.stage, m.wait <= 0 ? frame : 0);
-        const k = 0.5 * camera.z;
+        // small figures that always fit their pen, however many pens the enclosure has
+        const k = Math.min(0.4, (p.w * 0.7) / sc.width, (p.h * 0.6) / sc.height) * camera.z;
         const w = sc.width * k, h = sc.height * k;
         const [sx, sy] = toScreen(m.x, m.y);
         if (sx < -w || sx > W + w || sy < -h || sy > H + h) continue;
@@ -259,6 +260,8 @@ export function ParkMap() {
         ctx.translate(sx, sy - h);
         if (m.dir < 0) { ctx.scale(-1, 1); ctx.drawImage(sc, -w / 2, 0, w, h); } else ctx.drawImage(sc, -w / 2, 0, w, h);
         ctx.restore();
+        const fe = feedEvents.find((e) => e.uid === a.uid);
+        if (fe) drawFeed(ctx, fe, now, sx, sy, Math.max(0.7, camera.z * 0.7), h);
       }
     }
 
@@ -499,6 +502,14 @@ export function ParkMap() {
 
     let down: { x: number; y: number; button: number; panning: boolean; cam: [number, number]; animal: number | null; painted: Set<string> } | null = null;
     let lastPaint: Hover | null = null;
+    let lastPathSfx = 0;
+    const loud = () => Math.max(0.35, Math.min(1, camera.z / 1.4));
+    /** sound + floating numbers for something collected */
+    const collected = (got: ReturnType<typeof collect>, cx: number, cy: number) => {
+      if (!got) return;
+      if (got.coins) { mapApi.floatText!(cx, cy, `+${fmt(got.coins)}`, '#f2c14e'); sfx.coins(got.coins); }
+      if (got.food) for (const [f, n] of Object.entries(got.food)) { mapApi.floatText!(cx, cy - (got.coins ? 18 : 0), `+${fmt(n!)} ${FOOD_NAMES[f as keyof typeof FOOD_NAMES].toLowerCase()}`, '#9fd47a'); sfx.harvest(); break; }
+    };
 
     function setHover(sx: number, sy: number) {
       const [wx, wy] = toWorld(sx, sy);
@@ -517,6 +528,7 @@ export function ParkMap() {
       lastPaint = h;
       const before = S().coins;
       const changed = act((s) => setPaths(s, h.island, tiles, on));
+      if (changed > 0 && performance.now() - lastPathSfx > 90) { lastPathSfx = performance.now(); sfx.path(); }
       if (on && changed === 0 && S().coins < 5 && before < 5) toast('Za mało monet na ścieżkę');
     }
 
@@ -581,8 +593,8 @@ export function ParkMap() {
         if (!ghost.ok) { toast(ghost.why ?? 'Nie można tu postawić'); return; }
         const o = act((st) => place(st, ghost!.defId, ghost!.island, ghost!.x, ghost!.y, tool.rot));
         if (o) {
-          sfx.land();
           const def = PLACE_BY_ID.get(tool.defId)!;
+          if (def.cat === 'decor') sfx.land(); else sfx.build(def.cat === 'enclosure' || def.cat === 'station');
           if (def.cat !== 'decor') { ui.setTool(null); ui.select({ kind: 'obj', id: o.id }); }
           mapApi.floatText!(cx, cy, `−${fmt(ghost.cost)}`, '#f2c14e');
         }
@@ -601,7 +613,7 @@ export function ParkMap() {
         const c = canClear(s, h.island, chunkOf(t, h.x, h.y));
         if (!c.ok) { toast(c.why ?? 'Nie można'); return; }
         act((st) => clearChunk(st, h.island, chunkOf(t, h.x, h.y)));
-        sfx.crumble(true);
+        sfx.clear();
         mapApi.floatText!(cx, cy, `−${fmt(c.cost)}`, '#f2c14e');
         return;
       }
@@ -613,7 +625,7 @@ export function ParkMap() {
         const n = animalsIn(s, o.id).length;
         if (!confirm(`Rozebrać: ${defOf(o).name}?${n ? ` ${n} zwierząt trafi do Transportera.` : ''} Zwrot: ${fmt(c.refund)} monet.`)) return;
         act((st) => removeObject(st, o.id));
-        sfx.boom(false);
+        sfx.demolish();
         if (ui.sel?.kind === 'obj' && ui.sel.id === o.id) ui.select(null);
         return;
       }
@@ -621,25 +633,28 @@ export function ParkMap() {
       for (const b of bubbles) {
         if (Math.hypot(b.x - sx, b.y - sy) <= b.r) {
           const o = objById(s, b.id)!;
-          const got = act((st) => collect(st, b.id));
-          if (got) {
-            if (got.coins) { mapApi.floatText!(cx, cy, `+${fmt(got.coins)}`, '#f2c14e'); sfx.loot(1, 0); }
-            if (got.food) for (const [f, n] of Object.entries(got.food)) { mapApi.floatText!(cx, cy - 18, `+${fmt(n!)} ${FOOD_NAMES[f as keyof typeof FOOD_NAMES].toLowerCase()}`, '#9fd47a'); sfx.loot(1, 0); break; }
-          }
+          collected(act((st) => collect(st, b.id)), cx, cy);
           if (ui.build && !ui.tool) ui.setTool({ kind: 'move', id: o.id, rot: o.rot });
           return;
         }
       }
       // animals
       const uid = !ui.build ? animalAt(s, sx, sy) : null;
-      if (uid !== null) { ui.select({ kind: 'animal', uid }); return; }
+      if (uid !== null) {
+        ui.select({ kind: 'animal', uid });
+        const a = s.animals.find((x) => x.uid === uid);
+        if (a) voice(a.genusId, { stage: a.stage, gain: loud() });
+        return;
+      }
       const o = objectAtTile(s, h);
       if (o) {
         if (ui.build && !tool && !defOf(o).fixed) { ui.setTool({ kind: 'move', id: o.id, rot: o.rot }); return; }
-        if (!ui.build && produces(o) && worthCollecting(s, o)) {
-          const got = act((st) => collect(st, o.id));
-          if (got?.coins) { mapApi.floatText!(cx, cy, `+${fmt(got.coins)}`, '#f2c14e'); sfx.loot(1, 0); }
-          if (got?.food) for (const [f, n] of Object.entries(got.food)) { mapApi.floatText!(cx, cy, `+${fmt(n!)} ${FOOD_NAMES[f as keyof typeof FOOD_NAMES].toLowerCase()}`, '#9fd47a'); sfx.loot(1, 0); break; }
+        if (!ui.build && produces(o) && worthCollecting(s, o)) collected(act((st) => collect(st, o.id)), cx, cy);
+        else if (!ui.build && defOf(o).cat === 'enclosure') {
+          // clicking a pen on the map: its animals call
+          const [wx, wy] = toWorld(sx, sy);
+          const at = penAtWorld(s, wx, wy);
+          if (at) chorus(animalsIn(s, o.id, at.pen).map((a) => ({ genusId: a.genusId, stage: a.stage })));
         }
         ui.select({ kind: 'obj', id: o.id });
         return;
@@ -754,4 +769,6 @@ function dropAnimal(uid: number, cx: number, cy: number) {
   if (!c.ok) { st.toast(c.why ?? 'Nie można', 'bad'); return; }
   st.act((s) => { const a = s.animals.find((x) => x.uid === uid)!; a.enc = target!.enc; a.pen = target!.pen; });
   sfx.land();
+  const a = st.s.animals.find((x) => x.uid === uid);
+  if (a) voice(a.genusId, { stage: a.stage, delay: 0.15 });
 }

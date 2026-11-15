@@ -23,17 +23,19 @@ export interface IslandDef {
   /** habitat with an income bonus here */
   bonusHabitat?: Habitat;
   bonus: number;
-  /** share of the island (0–1, as an ellipse) that is clear when bought */
+  /** radius (0–1 of the island ellipse) that is clear when bought — the same land as on the smaller 0.2 islands */
   startClear: number;
+  /** the radius 0.3.0 used (saves from that version keep it) */
+  legacyClear: number;
 }
 
 export const ISLANDS: IslandDef[] = [
-  { id: 1, name: 'Wyspa Startowa', biome: 'meadow', w: 56, h: 42, wx: 0, wy: 0, level: 1, cost: 0, bonusHabitat: 'land', bonus: 0.1, startClear: 0.6 },
-  { id: 2, name: 'Mokradła', biome: 'marsh', w: 64, h: 46, wx: 84, wy: -24, level: 5, cost: 8000, bonusHabitat: 'freshwater', bonus: 0.2, startClear: 0.5 },
-  { id: 3, name: 'Laguna Rafowa', biome: 'reef', w: 68, h: 50, wx: -100, wy: 10, level: 9, cost: 40000, bonusHabitat: 'marine', bonus: 0.2, startClear: 0.5 },
-  { id: 4, name: 'Klify', biome: 'cliffs', w: 72, h: 52, wx: -8, wy: 74, level: 14, cost: 250000, bonusHabitat: 'air', bonus: 0.2, startClear: 0.48 },
-  { id: 5, name: 'Wyspa Wulkaniczna', biome: 'volcanic', w: 84, h: 60, wx: 96, wy: 58, level: 20, cost: 2000000, bonus: 0.1, startClear: 0.45 },
-  { id: 6, name: 'Wielki Ląd', biome: 'mainland', w: 104, h: 72, wx: -150, wy: -110, level: 28, cost: 20000000, bonus: 0, startClear: 0.45 },
+  { id: 1, name: 'Wyspa Startowa', biome: 'meadow', w: 56, h: 42, wx: 0, wy: 0, level: 1, cost: 0, bonusHabitat: 'land', bonus: 0.1, startClear: 0.44, legacyClear: 0.6 },
+  { id: 2, name: 'Mokradła', biome: 'marsh', w: 64, h: 46, wx: 84, wy: -24, level: 5, cost: 8000, bonusHabitat: 'freshwater', bonus: 0.2, startClear: 0.36, legacyClear: 0.5 },
+  { id: 3, name: 'Laguna Rafowa', biome: 'reef', w: 68, h: 50, wx: -100, wy: 10, level: 9, cost: 40000, bonusHabitat: 'marine', bonus: 0.2, startClear: 0.36, legacyClear: 0.5 },
+  { id: 4, name: 'Klify', biome: 'cliffs', w: 72, h: 52, wx: -8, wy: 74, level: 14, cost: 250000, bonusHabitat: 'air', bonus: 0.2, startClear: 0.34, legacyClear: 0.48 },
+  { id: 5, name: 'Wyspa Wulkaniczna', biome: 'volcanic', w: 84, h: 60, wx: 96, wy: 58, level: 20, cost: 2000000, bonus: 0.1, startClear: 0.32, legacyClear: 0.45 },
+  { id: 6, name: 'Wielki Ląd', biome: 'mainland', w: 104, h: 72, wx: -150, wy: -110, level: 28, cost: 20000000, bonus: 0, startClear: 0.32, legacyClear: 0.45 },
 ];
 export const ISLAND_BY_ID = new Map(ISLANDS.map((i) => [i.id, i]));
 
@@ -84,18 +86,21 @@ export interface PlaceDef {
 
 const fixed = (w: number, h: number) => () => [w, h] as [number, number];
 
-// ---- enclosures: the level is their physical size
-export interface EnclosureLevel { size: [number, number]; pens: number; penSlots: number }
+// ---- enclosures: one fixed footprint; a level adds pens and room inside, never land
+export const ENC_SIZE: [number, number] = [8, 8];
+export interface EnclosureLevel { pens: number; penSlots: number }
 export const ENCLOSURE_LEVELS: EnclosureLevel[] = [
-  { size: [6, 6], pens: 2, penSlots: 4 },
-  { size: [8, 6], pens: 3, penSlots: 5 },
-  { size: [8, 8], pens: 4, penSlots: 6 },
-  { size: [10, 8], pens: 6, penSlots: 8 },
-  { size: [12, 10], pens: 8, penSlots: 10 },
+  { pens: 2, penSlots: 4 },
+  { pens: 3, penSlots: 5 },
+  { pens: 4, penSlots: 6 },
+  { pens: 6, penSlots: 8 },
+  { pens: 8, penSlots: 10 },
   // research: Rozległe wybiegi, Rezerwaty
-  { size: [14, 12], pens: 10, penSlots: 12 },
-  { size: [16, 14], pens: 12, penSlots: 14 },
+  { pens: 10, penSlots: 12 },
+  { pens: 12, penSlots: 14 },
 ];
+/** footprints of 0.3.0, when the level was the physical size (save migration) */
+export const LEGACY_ENC_SIZE: [number, number][] = [[6, 6], [8, 6], [8, 8], [10, 8], [12, 10], [14, 12], [16, 14]];
 /** enclosure levels open without research */
 export const ENC_BASE_MAX = 5;
 export const encLevel = (level: number) => ENCLOSURE_LEVELS[Math.max(0, Math.min(ENCLOSURE_LEVELS.length, level) - 1)];
@@ -115,7 +120,7 @@ const enclosures: PlaceDef[] = (['land', 'freshwater', 'marine', 'air'] as Habit
   cat: 'enclosure',
   name: ENCLOSURE_NAMES[h],
   desc: ENCLOSURE_DESC[h],
-  size: (l) => encLevel(l).size,
+  size: () => ENC_SIZE,
   unlockLevel: HABITAT_UNLOCK_LEVEL[h],
   maxLevel: ENCLOSURE_LEVELS.length,
   habitat: h,

@@ -22,6 +22,8 @@ export interface Terrain {
   landChunks: Set<number>;
   /** chunks clear from the start */
   startChunks: Set<number>;
+  /** distance of each land chunk's centre from the island centre (1 = the ellipse edge) */
+  chunkR: Map<number, number>;
   /** top-left of the gate (4×2) */
   gate: [number, number];
 }
@@ -81,7 +83,7 @@ export function terrain(islandId: number): Terrain {
   for (let y = 0; y < h; y++) { tiles[y * w] = Tile.Deep; tiles[y * w + w - 1] = Tile.Deep; }
 
   const cw = Math.ceil(w / CHUNK), ch = Math.ceil(h / CHUNK);
-  const landChunks = new Set<number>(), startChunks = new Set<number>();
+  const landChunks = new Set<number>(), startChunks = new Set<number>(), chunkR = new Map<number, number>();
   for (let cy2 = 0; cy2 < ch; cy2++) for (let cx2 = 0; cx2 < cw; cx2++) {
     let land = 0;
     for (let y = cy2 * CHUNK; y < Math.min(h, cy2 * CHUNK + CHUNK); y++) for (let x = cx2 * CHUNK; x < Math.min(w, cx2 * CHUNK + CHUNK); x++) if (tiles[y * w + x] >= Tile.Sand) land++;
@@ -89,6 +91,7 @@ export function terrain(islandId: number): Terrain {
     const c = cy2 * cw + cx2;
     landChunks.add(c);
     const dx = ((cx2 + 0.5) * CHUNK - cx) / (w / 2), dy = ((cy2 + 0.5) * CHUNK - cy) / (h / 2);
+    chunkR.set(c, Math.hypot(dx, dy));
     if (Math.hypot(dx, dy) < def.startClear) startChunks.add(c);
   }
   // gate: the lowest 4×2 spot on the middle column that is clear from the start
@@ -102,9 +105,17 @@ export function terrain(islandId: number): Terrain {
     gate = [gx, y];
     break;
   }
-  t = { def, w, h, tiles, wild, vary, cw, ch, landChunks, startChunks, gate };
+  t = { def, w, h, tiles, wild, vary, cw, ch, landChunks, startChunks, chunkR, gate };
   cache.set(islandId, t);
   return t;
+}
+
+/** chunks clear from the start for a given radius (saves from 0.3.0 keep their larger start) */
+export function startChunksFor(t: Terrain, r?: number): Set<number> {
+  if (r === undefined || r === t.def.startClear) return t.startChunks;
+  const out = new Set<number>();
+  for (const [c, d] of t.chunkR) if (d < r) out.add(c);
+  return out;
 }
 
 export const chunkOf = (t: Terrain, x: number, y: number) => Math.floor(y / CHUNK) * t.cw + Math.floor(x / CHUNK);

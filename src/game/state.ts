@@ -5,7 +5,7 @@ import { B } from './balance';
 import { BUILDINGS, type BuildingId } from './content';
 
 /** 2 = park 2.0 (islands, map objects, pens) */
-export const SAVE_VERSION = 2;
+export const SAVE_VERSION = 3;
 
 export type Tool = 'brush' | 'hammer' | 'charge';
 export type Quality = 0 | 1 | 2;
@@ -64,8 +64,15 @@ export interface ParkObject {
   pens?: number;
   /** enclosures: interior decorations */
   decor?: string[];
+  /** footprint kept from an older save when the standard one does not fit there */
+  fp?: [number, number];
 }
-export interface IslandState { bought: number; cleared: number[] }
+export interface IslandState {
+  bought: number;
+  cleared: number[];
+  /** start radius bought with (islands bought in 0.3.0 keep their larger clear area) */
+  start?: number;
+}
 export interface ParkState {
   islands: Record<number, IslandState>;
   objects: ParkObject[];

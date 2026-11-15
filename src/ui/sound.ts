@@ -1,9 +1,12 @@
 // Soft, "ASMR" dig sounds synthesised with Web Audio — no audio files. Everything is short, filtered noise
 // (brush strokes, gravel, chips) and gentle bell tones (discoveries). Volume 0 = silent.
 
+import { renderVoice } from './voices';
+
 type Ctx = AudioContext;
 let ctx: Ctx | null = null;
 let master: GainNode | null = null;
+let voiceBus: GainNode | null = null;
 let noiseBuf: AudioBuffer | null = null;
 let volume = 0.6;
 
@@ -39,6 +42,13 @@ function ac(): Ctx | null {
       b0 = 0.997 * b0 + w * 0.029591; b1 = 0.985 * b1 + w * 0.032534; b2 = 0.95 * b2 + w * 0.048056;
       d[i] = (b0 + b1 + b2 + w * 0.05) * 2.2;
     }
+    // animal voices: their own bus with a gentle compressor so a roar and a chirp sit at a similar loudness
+    voiceBus = ctx.createGain();
+    voiceBus.gain.value = 0.9;
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -20; comp.knee.value = 12; comp.ratio.value = 4; comp.attack.value = 0.01; comp.release.value = 0.25;
+    voiceBus.connect(comp);
+    comp.connect(master);
   }
   if (ctx.state === 'suspended') void ctx.resume();
   return ctx;
@@ -202,4 +212,125 @@ export const sfx = {
     const c = ac(); if (!c) return;
     tone(c, c.currentTime, 880, 0.08, 0.05, 'triangle');
   },
+
+  // ---------------------------------------------------------------- park
+
+  /** something is built: a few hammer knocks on wood, a settling thud, a small chime */
+  build(big = false) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    const n = big ? 4 : 3;
+    for (let i = 0; i < n; i++) {
+      const at = t + i * rnd(0.09, 0.13);
+      tone(c, at, rnd(190, 240), 0.09, 0.22, 'triangle', 0.6);
+      noise(c, at, 0.05, rnd(1600, 2400), 2, 0.14);
+    }
+    const end = t + n * 0.11;
+    tone(c, end, 75, 0.3, 0.45, 'sine', 0.6);
+    noise(c, end, 0.28, 300, 0.7, 0.3, 'lowpass', 0.005);
+    for (let i = 0; i < 6; i++) noise(c, end + 0.05 + i * rnd(0.02, 0.04), 0.03, rnd(1500, 3500), 2.5, 0.06);
+    [659.25, 987.77].forEach((f, i) => tone(c, end + 0.12 + i * 0.07, f, 0.5, 0.05));
+  },
+  /** an upgrade: building noises and a rising fanfare */
+  upgrade() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    for (let i = 0; i < 3; i++) { tone(c, t + i * 0.08, rnd(200, 260), 0.07, 0.16, 'triangle', 0.6); noise(c, t + i * 0.08, 0.04, 2000, 2, 0.1); }
+    [392, 493.88, 587.33, 783.99, 987.77].forEach((f, i) => tone(c, t + 0.26 + i * 0.07, f, 0.8, 0.06, i % 2 ? 'sine' : 'triangle'));
+    noise(c, t + 0.26, 0.5, 6000, 0.7, 0.03, 'highpass', 0.05);
+  },
+  /** a path tile: gravel under a shovel */
+  path() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    for (let i = 0; i < 3; i++) noise(c, t + i * rnd(0.01, 0.025), rnd(0.02, 0.04), rnd(1800, 3800), 2.2, rnd(0.05, 0.09));
+    noise(c, t, 0.08, 500, 0.8, 0.07, 'lowpass', 0.005);
+  },
+  /** wild land cleared: rustling leaves, a falling trunk, gravel */
+  clear() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    noise(c, t, 0.6, 5000, 0.9, 0.12, 'bandpass', 0.08);
+    for (let i = 0; i < 10; i++) noise(c, t + i * rnd(0.03, 0.06), 0.04, rnd(3000, 7000), 3, 0.05);
+    tone(c, t + 0.45, 70, 0.4, 0.5, 'sine', 0.55);
+    noise(c, t + 0.45, 0.4, 350, 0.7, 0.3, 'lowpass', 0.005);
+  },
+  /** coins out of a building: a little jingle that grows with the amount */
+  coins(n = 1) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    const k = Math.min(7, 2 + Math.floor(Math.log10(Math.max(1, n))));
+    for (let i = 0; i < k; i++) {
+      const f = rnd(1900, 2600);
+      tone(c, t + i * rnd(0.035, 0.06), f, 0.25, 0.045, 'triangle');
+      tone(c, t + i * 0.05 + 0.01, f * 1.5, 0.18, 0.025);
+    }
+  },
+  /** food from a farm: a crate set down, rustle */
+  harvest() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    tone(c, t, 140, 0.12, 0.25, 'triangle', 0.7);
+    noise(c, t, 0.1, 900, 1.2, 0.15);
+    noise(c, t + 0.06, 0.3, 4200, 1, 0.07, 'bandpass', 0.03);
+    tone(c, t + 0.12, 784, 0.3, 0.04);
+  },
+  /** an animal eats: chomps for meat, crunchy leaves for plants, a splash and a gulp for fish */
+  feed(food: 'meat' | 'plants' | 'fish' | 'plankton', times = 1) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    const bites = Math.min(6, 2 + times);
+    for (let i = 0; i < bites; i++) {
+      const at = t + 0.08 + i * rnd(0.13, 0.19);
+      if (food === 'meat') { noise(c, at, 0.09, rnd(350, 600), 1.4, 0.32, 'bandpass', 0.006); tone(c, at, rnd(90, 120), 0.08, 0.18, 'sine', 0.6); }
+      else if (food === 'plants') { noise(c, at, 0.07, rnd(2500, 4200), 1.6, 0.22, 'bandpass', 0.004); for (let k = 0; k < 3; k++) noise(c, at + k * 0.015, 0.015, rnd(4000, 7000), 3, 0.08); }
+      else { noise(c, at, 0.06, rnd(900, 1500), 1.2, 0.18); tone(c, at, rnd(300, 420), 0.07, 0.12, 'sine', 2.2); }
+    }
+    if (food === 'fish' || food === 'plankton') noise(c, t, 0.25, 1200, 0.6, 0.2, 'bandpass', 0.01);
+    const end = t + 0.1 + bites * 0.16;
+    tone(c, end, 523.25, 0.4, 0.05, 'triangle'); tone(c, end + 0.07, 783.99, 0.5, 0.05);
+  },
+  /** an animal evolves */
+  evolve() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    for (let i = 0; i < 12; i++) tone(c, t + i * 0.04, 400 * 2 ** (i / 8), 0.3, 0.04, i % 2 ? 'sine' : 'triangle');
+    [523.25, 659.25, 783.99, 1046.5].forEach((f) => tone(c, t + 0.5, f, 1.4, 0.06));
+  },
+  /** demolition: crack, crash, rubble */
+  demolish() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    noise(c, t, 0.05, 2500, 1.5, 0.3, 'bandpass', 0.002);
+    tone(c, t + 0.04, 60, 0.5, 0.5, 'sine', 0.5);
+    noise(c, t + 0.04, 0.6, 400, 0.6, 0.35, 'lowpass', 0.01);
+    for (let i = 0; i < 12; i++) noise(c, t + 0.15 + i * rnd(0.03, 0.06), rnd(0.02, 0.05), rnd(1500, 4500), 2.5, rnd(0.04, 0.1));
+  },
 };
+
+// ---------------------------------------------------------------- animal voices
+
+let lastVoice = 0;
+/** play a genus's call (see voices.ts). `gain` 0–1 (quieter from far away on the map). */
+export function voice(genusId: number, opts: { stage?: number; gain?: number; delay?: number } = {}): number {
+  const c = ac(); if (!c || !voiceBus) return 0;
+  const now = c.currentTime;
+  if (!opts.delay && now - lastVoice < 0.12) return 0;
+  lastVoice = now;
+  const g = c.createGain();
+  g.gain.value = Math.max(0, Math.min(1, opts.gain ?? 1));
+  g.connect(voiceBus);
+  const len = renderVoice({ c, out: g, nb: noiseBuf! }, genusId, now + 0.02 + (opts.delay ?? 0), { stage: opts.stage });
+  window.setTimeout(() => g.disconnect(), (len + (opts.delay ?? 0) + 1.5) * 1000);
+  return len;
+}
+
+/** a pen calls: up to three of its animals, one after another and overlapping a little */
+export function chorus(animals: { genusId: number; stage?: number }[]): void {
+  const pick = [...animals].sort(() => Math.random() - 0.5).slice(0, 3);
+  let at = 0;
+  pick.forEach((a, i) => {
+    const len = voice(a.genusId, { stage: a.stage, delay: at, gain: i ? 0.75 : 1 });
+    at += Math.max(0.25, len * 0.55);
+  });
+}

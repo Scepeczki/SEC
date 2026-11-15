@@ -144,11 +144,18 @@ export const tierOf = (level: number) => (level >= 20 ? 4 : level >= 10 ? 3 : le
 /** pens inside an enclosure, in tiles relative to its top-left (inset by the fence) */
 export function penRects(w: number, h: number, pens: number): { x: number; y: number; w: number; h: number }[] {
   const iw = w - 1, ih = h - 1;
-  const rows = pens > 4 ? 2 : pens > 2 && h > w ? 2 : 1;
+  pens = Math.max(1, pens);
+  // the grid whose cells are closest to square, with few empty cells (the last row stretches to fill)
+  let rows = 1, best = Infinity;
+  for (let r = 1; r <= pens; r++) {
+    const cols = Math.ceil(pens / r);
+    const score = Math.abs(Math.log((iw / cols) / (ih / r))) + (r * cols - pens) * 0.35;
+    if (score < best - 1e-9) { best = score; rows = r; }
+  }
+  const cols = Math.ceil(pens / rows);
   const out: { x: number; y: number; w: number; h: number }[] = [];
-  const perRow = [Math.ceil(pens / rows), pens - Math.ceil(pens / rows)];
   for (let r = 0; r < rows; r++) {
-    const n = perRow[r];
+    const n = Math.min(cols, pens - r * cols);
     for (let k = 0; k < n; k++) out.push({ x: 0.5 + (iw * k) / n, y: 0.5 + (ih * r) / rows, w: iw / n, h: ih / rows });
   }
   return out;

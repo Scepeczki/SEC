@@ -53,19 +53,21 @@ Cztery rodzaje jak teraz: **Wybieg** (ląd), **Bagno**, **Laguna**, **Woliera**.
   - **jednogatunkowa (stado):** każdy kolejny osobnik tego samego rodzaju daje +10% dochodu zagrody, maks. +30%.
   - **mieszana:** różne rodzaje razem, +5% za każdy rodzaj (zwiedzający lubią różnorodność). Reguła zgodności: **mięsożercy nie dzielą zagrody z innymi rodzajami** (z własnym rodzajem tak). Roślinożercy, rybożercy i planktonożercy mieszają się swobodnie.
 
-### Poziom wybiegu = fizyczna rozbudowa
+### Poziom wybiegu = więcej miejsca w środku
 
-| Poziom | Wymiar na mapie | Maks. zagród | Miejsc w zagrodzie | Wygląd |
-|---|---|---|---|---|
-| 1 | 6×6 | 2 | 4 | drewniany płot |
-| 2 | 8×6 | 3 | 5 | mocniejszy płot, więcej roślin |
-| 3 | 8×8 | 4 | 6 | kamienny mur, poidło |
-| 4 | 10×8 | 6 | 8 | mur + wieżyczka widokowa |
-| 5 | 12×10 | 8 | 10 | ogrodzenie elektryczne, pełna roślinność |
+Od 0.3.1 każdy wybieg zajmuje na mapie **8×8 pól na każdym poziomie**. Ulepszenie dokłada zagrody i miejsca w nich oraz zmienia wygląd, ale nie zajmuje więcej ziemi. Zwierzęta są małymi figurkami dopasowanymi do wielkości zagrody.
 
-Badania w zakładce Park dokładają: **Szersze zagrody** (+2 miejsca w każdej zagrodzie), **Dodatkowe przegrody** (+2 zagrody), **Rozległe wybiegi** (poziom 6: 14×12, 10 zagród po 12 miejsc) i **Rezerwaty** (poziom 7: 16×14, 12 zagród po 14 miejsc). **Ciężki sprzęt** obniża koszt oczyszczania terenu o 40%.
+| Poziom | Maks. zagród | Miejsc w zagrodzie | Wygląd |
+|---|---|---|---|
+| 1 | 2 | 4 | drewniany płot |
+| 2 | 3 | 5 | mocniejszy płot, więcej roślin |
+| 3 | 4 | 6 | kamienny mur, poidło |
+| 4 | 6 | 8 | mur + wieżyczka widokowa |
+| 5 | 8 | 10 | ogrodzenie elektryczne, pełna roślinność |
 
-Ulepszenie **powiększa wybieg na mapie**, więc potrzebuje wolnego miejsca obok. Jeśli go nie ma, gra mówi gdzie brakuje i proponuje przesunięcie.
+Badania w zakładce Park dokładają: **Szersze zagrody** (+2 miejsca w każdej zagrodzie), **Dodatkowe przegrody** (+2 zagrody), **Rozległe wybiegi** (poziom 6: 10 zagród po 12 miejsc) i **Rezerwaty** (poziom 7: 12 zagród po 14 miejsc). **Ciężki sprzęt** obniża koszt oczyszczania terenu o 40%.
+
+Wybiegi z zapisów 0.3.0 (wtedy poziom zmieniał wymiar) dostają rozmiar 8×8 w obrębie dawnego miejsca, przy tej samej ścieżce. Mniejsze, dla których zabrakło miejsca, zostają przy starym rozmiarze i rosną przy ulepszeniu, jeśli obok zrobi się miejsce.
 
 ### Zadowolenie zwierząt (0–100%)
 

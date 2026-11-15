@@ -12,7 +12,7 @@ import { canEvolve, canFeed, feed } from '../src/game/park';
 import { mods } from '../src/game/mods';
 import {
   animalsIn, autoPlace, buildable, canClear, canPlace, canPut, canUpgrade, collect, connected, defOf, enclosureRate, enclosures, findSpot,
-  islandCache, maxPens, objectsOn, penSlots, place, putAnimal, rectOf, setPaths, transporter, upgradeObject,
+  islandCache, lacksPath, maxPens, objById, objectsOn, penSlots, place, putAnimal, rectOf, setPaths, transporter, upgradeObject,
 } from '../src/game/parkmap';
 import { terrain } from '../src/game/islands';
 import { synthesize } from '../src/game/lab';
@@ -132,20 +132,40 @@ describe('park 2.0: map', () => {
     expect(s.food.meat).toBeGreaterThan(meat);
   });
 
-  it('upgrading an enclosure makes it physically bigger and keeps its animals', () => {
+  it('upgrading an enclosure adds room inside but never land, and keeps its animals', () => {
     const s = startGame(Date.UTC(2026, 0, 1), 6);
     s.coins = 1e9;
     const enc = enclosures(s)[0];
     const uid = addAnimal(s, 'Camarasaurus');
     putAnimal(s, uid, enc.id, 0);
-    const before = rectOf(enc);
-    const c = canUpgrade(s, enc.id);
-    if (c.ok) {
-      expect(upgradeObject(s, enc.id)).toBe(true);
-      const after = rectOf(enc);
-      expect(after.w * after.h).toBeGreaterThan(before.w * before.h);
-      expect(animalsIn(s, enc.id).map((a) => a.uid)).toEqual([uid]);
-    } else expect(c.why).toMatch(/miejsca/);
+    const before = rectOf(enc), slots = penSlots(s, enc);
+    for (let k = 0; k < 4; k++) expect(upgradeObject(s, enc.id)).toBe(true);
+    expect(rectOf(enc)).toEqual(before);
+    expect(penSlots(s, enc)).toBeGreaterThan(slots);
+    expect(maxPens(s, enc)).toBe(8);
+    expect(animalsIn(s, enc.id).map((a) => a.uid)).toEqual([uid]);
+  });
+
+  it('0.3.0 saves keep their clear land; enclosures get the fixed footprint and keep their paths', () => {
+    const s = startGame(Date.UTC(2026, 0, 1), 12);
+    s.coins = 1e9;
+    const enc = enclosures(s)[0];
+    const old = JSON.parse(serialize(s));
+    old.v = 2;
+    delete old.park.islands[1].start;
+    // pretend it was a level-5 enclosure of 12×10 in 0.3.0, anchored 2 left and 1 up
+    const o = old.park.objects.find((x: { id: number }) => x.id === enc.id);
+    o.level = 5; o.x -= 2; o.y -= 1;
+    const r = deserialize(JSON.stringify(old))!;
+    expect(r.v).toBe(3);
+    expect(r.park.islands[1].start).toBe(0.6);
+    expect(islandCache(r, 1).cleared.size).toBeGreaterThan(islandCache(s, 1).cleared.size);
+    const e = objById(r, enc.id)!;
+    expect(rectOf(e).w).toBe(8);
+    expect(rectOf(e).h).toBe(8);
+    expect(e.x).toBeGreaterThanOrEqual(o.x);
+    expect(e.x + 8).toBeLessThanOrEqual(o.x + 12);
+    expect(lacksPath(r, e)).toBe(false);
   });
 
   it('park research gives bigger pens, more pens and enclosure levels 6–7', () => {
@@ -190,7 +210,7 @@ describe('park 2.0: map', () => {
     ];
     const coins = old.coins;
     const r = deserialize(JSON.stringify(old))!;
-    expect(r.v).toBe(2);
+    expect(r.v).toBe(3);
     expect(r.coins).toBe(coins + 500 + 1000 + 1450);
     expect(enclosures(r).length).toBe(2);
     expect(r.animals.every((a) => a.enc > 0)).toBe(true);

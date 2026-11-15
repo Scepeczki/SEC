@@ -1,5 +1,17 @@
 # Zmiany
 
+## 0.3.1
+
+Dźwięki w parku, głosy zwierząt i wykopaliska bez przewijania.
+
+- **Głosy zwierząt:** kliknij zwierzę na mapie, w wybiegu albo na liście, a się odezwie. Kliknięcie zagrody odtwarza głosy kilku jej mieszkańców. Każdy z 2255 rodzajów ma własny głos, generowany w grze (to nie nagrania). Rodzina dźwięku zależy od budowy ciała: ryk, trąbienie grzebieniem, pomruk, ryczenie, wrzask, świergot, rechot, syk, bąbelki, klikanie, warczenie, rżenie i inne. Na tej podstawie rozmiar ustala wysokość i długość głosu, a każdy rodzaj ma do tego stały „odcisk”: barwę, liczbę sylab i chropowatość. Młode brzmią wyżej.
+- **Dźwięki parku:** stawianie budynków, ulepszanie, malowanie ścieżek, oczyszczanie terenu, rozbiórka, brzęk monet przy zbieraniu, skrzynka przy paszy z farmy i ewolucja.
+- **Karmienie widać i słychać:** jedzenie spada na zwierzę, słychać chrupanie (mięso, rośliny albo ryby), a potem pojawiają się serduszka, „+poziom” i zadowolony głos.
+- **Wybiegi już nie rosną:** każdy wybieg zajmuje 8×8 pól na każdym poziomie. Ulepszenie dodaje zagrody i miejsca w środku, a nie ziemię. Zwierzęta to małe figurki, które zawsze mieszczą się w swojej zagrodzie. Wybiegi ze starego zapisu dostają nowy rozmiar w tym samym miejscu i z tą samą ścieżką. Małe, którym brakuje miejsca, zostają takie jak były.
+- **Wyspy:** są większe, ale na start oczyszczony jest tylko tyle terenu co dawniej. Resztę odkrywasz sam. Wyspy kupione w 0.3.0 zachowują swój oczyszczony teren.
+- **Wykopaliska bez przewijania:** cały ekran mieści się w oknie i nie ma pustych boków. Z lewej zakładki Przekrój, Fauna, Minerały i Odkrycia (z licznikiem nowych), w środku siatka dopasowana do okna, z prawej schowek, szanse i ekipy. Dziennik wykopu otwiera się przyciskiem przy szansach.
+- **Mapa świata:** zajmuje całą szerokość. Nazwa stanowiska pojawia się tylko po najechaniu, więc po odznaczeniu nic nie zasłania innych. Fauna w panelu stanowiska mieści się w zielonym polu, a oś czasu jest niższa.
+
 ## 0.3.0
 
 Park zbudowany od nowa: wyspy, mapa z przybliżaniem i wszystko stawiasz sam. Pełny opis: [docs/park-2.0-projekt.md](https://github.com/Scepeczki/SEC/blob/main/docs/park-2.0-projekt.md).

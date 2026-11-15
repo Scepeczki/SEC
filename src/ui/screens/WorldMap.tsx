@@ -402,7 +402,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
                 <button key={id} className={`pin ${ps} ${id === sel ? 'sel' : ''} ${eraOk(id) ? '' : 'dim'}`} style={{ left: m2.x || 0, top: m2.y || 0 }}
                   onClick={() => { if (!drag.current?.moved) setSel(id); }} onMouseEnter={() => setHover(id)} onMouseLeave={() => setHover(null)} aria-label={site.name}>
                   <PinIcon st={ps} />
-                  {(id === hover || (id === sel && !hover) || (ps === 'active' && !hover && sel !== id)) && <span className="pin-label">{site.name}<small>{sub}</small></span>}
+                  {id === hover && <span className="pin-label">{site.name}<small>{sub}</small></span>}
                 </button>
               );
             })}
@@ -523,12 +523,13 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
       </div>
       <p className="small" style={{ margin: 0, lineHeight: 1.45 }}>{site.description}</p>
       <div className="fauna-strip">
-        {site.fauna.slice(0, 18).map((f) => {
+        {site.fauna.slice(0, 20).map((f) => {
           const g = GENERA.get(f.genusId);
           if (!g) return null;
           const known = !!s.discovered[g.id] || s.settings.revealAll;
           return <span key={g.id} className={known ? 'clickable' : ''} onClick={() => known && openGenus(g.id)} title={known ? g.name : 'Nieodkryty'}><SpriteImg genusId={g.id} scale={1} silhouette={!s.hatched[g.id]} /></span>;
         })}
+        {site.fauna.length > 20 && <span className="more">+{site.fauna.length - 20}</span>}
       </div>
       <div className="row small" style={{ justifyContent: 'space-between' }}><b>Fauna {discovered} / {site.fauna.length}</b><span className="muted">{hatched} w kolekcji</span></div>
       <div className="col" style={{ gap: 6 }}>

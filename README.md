@@ -42,6 +42,6 @@ npm run release    # wydanie na GitHubie (wersja z package.json, opis z CHANGELO
 - `src/sprites/` — proceduralny pixel art: rigi (`buildTetra`, `buildOthers`), presety szablonów, cechy kladów (`traits.ts`), stadia ewolucji.
 - `src/game/` — logika (czyste funkcje): `balance.ts` (wszystkie liczby), `content.ts` (budynki, badania, odblokowania), `dig`, `lab`, `park`, `meta` (badanie gałęzi, kolekcje, kontrakty), `engine` (tick, offline, zapis i migracja starych zapisów).
 - Park (od 0.3.0): `parkContent.ts` (wyspy, wszystko co da się postawić, liczby parku), `islands.ts` (teren wysp), `parkmap.ts` (stawianie, ścieżki, zagrody, zadowolenie, magazyny, układ automatyczny). Projekt: [docs/park-2.0-projekt.md](docs/park-2.0-projekt.md).
-- `src/ui/` — React: Park (`src/ui/park/`: mapa, panele, tryb budowy, wnętrze wybiegu), Wykopaliska, Laboratorium, Drzewo życia (+ oś czasu), Badania, Stacje, Kontrakty, Inne (zapis, galeria, źródła).
+- `src/ui/` — React: Park (`src/ui/park/`: mapa, panele, tryb budowy, wnętrze wybiegu), Wykopaliska, Laboratorium, Drzewo życia (+ oś czasu), Badania, Stacje, Kontrakty, Inne (zapis, galeria, źródła). Dźwięk jest syntezowany w Web Audio, bez plików: `src/ui/sound.ts` (efekty) i `src/ui/voices.ts` (głosy wszystkich rodzajów, z budowy ciała, rozmiaru i stałego odcisku z id).
 
 Dane: The Paleobiology Database, CC BY 4.0. Grafika generowana — uproszczone przybliżenia, nie rekonstrukcje.

@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
-  ArrowLeft, Bone, Check, ChevronDown, ChevronRight, Clock, Coins, Flame, Hammer, Layers, Lock, Map as MapIcon, Maximize2,
+  ArrowLeft, Bone, BookOpen, Check, ChevronDown, ChevronRight, Clock, Coins, Flame, Hammer, Layers, Lock, Map as MapIcon, Maximize2,
   Microscope, Minimize2, Paintbrush, Pickaxe, Radar, Shell, Sparkles, Users, Archive, Volume2, VolumeX, Wrench, Bomb, Hexagon, MousePointer2,
 } from 'lucide-react';
 import { genusSpec, spriteUrl } from '../sprites';
@@ -233,6 +233,8 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
   const msg = useRef<Msg | null>(null);
   const chest = useRef<ChestPop | null>(null);
   const [chestOpen, setChestOpen] = useState<PendingChest | null>(null);
+  const [log, setLog] = useState(false);
+  const fit = useFits();
   const fuse = useRef(false);
   const hintShown = useRef(false);
   const say = (m2: Omit<Msg, 'until'>, ms = 3000) => { msg.current = { ...m2, until: performance.now() + ms }; };
@@ -243,18 +245,18 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     return () => { fx.dispose(); clearTimeout(doneTimer.current); };
   }, [fx]);
 
-  // integer pixel scale that fits the available space (width, and height in focus mode)
+  // integer pixel scale that fits the available space (width, and height when the screen fits the window)
   useEffect(() => {
     const el = fieldRef.current;
     if (!el) return;
     const ro = new ResizeObserver(() => {
       const w = Math.floor((el.clientWidth - 24) / GW);
-      const h = focus ? Math.floor((el.clientHeight - 24) / GH) : 99;
-      setScale(Math.max(2, Math.min(6, w, h)));
+      const h = focus || fitsWindow() ? Math.floor((el.clientHeight - 24) / GH) : 99;
+      setScale(Math.max(2, Math.min(7, w, h)));
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, [focus]);
+  }, [focus, fit]);
 
   /** centre of a tile in particle-canvas coordinates (+ screen coordinates) */
   const center = (idx: number) => {
@@ -599,7 +601,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
   };
 
   const field = (
-    <div ref={fieldRef} className="dig-main" style={focus ? { height: '100%', justifyContent: 'center' } : undefined}>
+    <div ref={fieldRef} className="dig-main" style={focus || fit ? { height: '100%', justifyContent: 'center' } : undefined}>
       <div ref={stageRef} className="dig-stage">
         <canvas
           ref={canvasRef}
@@ -693,7 +695,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
 
   return (
     <div className="dig-layout">
-      <StrataColumn s={s} st={st} />
+      <LeftPanel s={s} st={st} />
       <div className="panel dig-center">
         <div className="dig-center-head">
           <div className="title"><span className="lbl">Warstwa {st.depth + 1}</span><b>{at.s.name}</b></div>
@@ -705,8 +707,77 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       </div>
       <div className="dig-right">
         {stash}
-        <OddsPanel s={s} />
+        <OddsPanel s={s} onLog={() => setLog(true)} />
         <div className="panel"><CrewSwitch s={s} /></div>
+      </div>
+      {log && <LogModal s={s} onClose={() => setLog(false)} />}
+    </div>
+  );
+}
+
+/** the dig screen fills the window (no page scrolling) when the window is big enough — same query as in styles.css */
+const FIT_QUERY = '(min-width: 1101px) and (min-height: 641px)';
+const fitsWindow = () => typeof window !== 'undefined' && !!window.matchMedia?.(FIT_QUERY).matches;
+function useFits(): boolean {
+  const [fit, setFit] = useState(fitsWindow);
+  useEffect(() => {
+    const mq = window.matchMedia?.(FIT_QUERY);
+    if (!mq) return;
+    const on = () => setFit(mq.matches);
+    mq.addEventListener('change', on);
+    return () => mq.removeEventListener('change', on);
+  }, []);
+  return fit;
+}
+
+// ---------------------------------------------------------------- left: section · fauna · minerals · new discoveries
+
+type LeftTab = 'section' | 'fauna' | 'minerals' | 'new';
+let leftTabMemo: LeftTab = 'fauna';
+
+function LeftPanel({ s, st }: { s: GameState; st: SiteState }) {
+  const [tab, setTab] = useState<LeftTab>(leftTabMemo);
+  const unseen = (s.discoveries ?? []).filter((d) => !d.seen).length;
+  const site = SITE_BY_ID.get(s.activeSite)!;
+  const disc = site.fauna.filter((f) => s.discovered[f.genusId]).length;
+  const own = siteMinerals(s.activeSite);
+  const tabs: [LeftTab, string, string?][] = [
+    ['section', 'Przekrój'],
+    ['fauna', 'Fauna', `${disc}/${site.fauna.length}`],
+    ['minerals', 'Minerały', `${own.filter((x) => s.minerals?.[x.id]).length}/${own.length}`],
+    ['new', 'Odkrycia', unseen ? (unseen > 99 ? '99+' : String(unseen)) : undefined],
+  ];
+  const pick = (t: LeftTab) => { leftTabMemo = t; setTab(t); };
+  return (
+    <div className="panel dig-left">
+      <div className="seg-tabs" role="tablist" aria-label="Stanowisko">
+        {tabs.map(([id, label, n]) => (
+          <button key={id} role="tab" aria-selected={tab === id} className={tab === id ? 'on' : ''} onClick={() => pick(id)}>
+            {label}{n && <span className={id === 'new' ? 'count' : 'n'}>{n}</span>}
+          </button>
+        ))}
+      </div>
+      <div className="dig-left-body">
+        {tab === 'section' && <StrataColumn s={s} st={st} />}
+        {tab === 'fauna' && <FaunaTab s={s} />}
+        {tab === 'minerals' && <MineralsTab s={s} />}
+        {tab === 'new' && <Discoveries s={s} />}
+      </div>
+    </div>
+  );
+}
+
+function LogModal({ s, onClose }: { s: GameState; onClose: () => void }) {
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', k);
+    return () => window.removeEventListener('keydown', k);
+  }, []);
+  return (
+    <div className="modal-bg" onClick={onClose}>
+      <div className="modal log-modal" onClick={(e) => e.stopPropagation()} role="dialog" aria-label="Dziennik wykopu">
+        <button className="btn small close" onClick={onClose} aria-label="Zamknij">✕</button>
+        <DigLog s={s} />
       </div>
     </div>
   );
@@ -750,8 +821,7 @@ function StrataColumn({ s, st }: { s: GameState; st: SiteState }) {
   for (let d = Math.ceil((from + 1) / B.chestEvery) * B.chestEvery; d <= from + SECTION_ROWS; d += B.chestEvery) chests.push(d);
   const toChest = B.chestEvery - (st.depth % B.chestEvery);
   return (
-    <div className="panel strata-col">
-      <div className="panel-head" style={{ marginBottom: 6 }}><span className="lbl">Przekrój stanowiska</span><Layers className="ic muted" /></div>
+    <div className="strata-col">
       <div className="section" style={{ height: SECTION_ROWS * ROW_H }}>
         <div className="section-rock">
           {rocks.map((r, k) => (
@@ -832,7 +902,7 @@ function OddsBar({ parts }: { parts: [string, number, string][] }) {
   );
 }
 
-function OddsPanel({ s, compact }: { s: GameState; compact?: boolean }) {
+function OddsPanel({ s, compact, onLog }: { s: GameState; compact?: boolean; onLog?: () => void }) {
   const [open, setOpen] = useState(true);
   const st = siteState(s, s.activeSite);
   const m = mods(s);
@@ -842,7 +912,10 @@ function OddsPanel({ s, compact }: { s: GameState; compact?: boolean }) {
     <div className="panel">
       <div className="panel-head" style={open ? undefined : { marginBottom: 0 }}>
         <span className="lbl">Szanse na −{depthMeters(st.depth)} m</span>
-        <button className="collapse-btn" aria-label={open ? 'Zwiń' : 'Rozwiń'} onClick={() => setOpen(!open)}><ChevronDown className="ic" style={{ transform: open ? undefined : 'rotate(-90deg)' }} /></button>
+        <span className="row" style={{ gap: 4 }}>
+          {onLog && <button className="btn small" onClick={onLog} title="Dziennik wykopu: ostatnie znaleziska"><BookOpen className="ic" />Dziennik</button>}
+          <button className="collapse-btn" aria-label={open ? 'Zwiń' : 'Rozwiń'} onClick={() => setOpen(!open)}><ChevronDown className="ic" style={{ transform: open ? undefined : 'rotate(-90deg)' }} /></button>
+        </span>
       </div>
       {open && (compact ? (
         <div className="kv small">
@@ -913,13 +986,10 @@ function FaunaTab({ s }: { s: GameState }) {
   const hatched = list.filter((g) => s.hatched[g.id]).length;
   return (
     <div className="col" style={{ gap: 10 }}>
-      <div className="row">
-        <div className="segmented" style={{ width: 330 }}>
-          {([['all', 'Wszystkie'], ['known', 'Odkryte'], ['missing', 'Brakujące']] as const).map(([id, label]) => <button key={id} className={filter === id ? 'on' : ''} onClick={() => setFilter(id)}>{label}</button>)}
-        </div>
-        <span className="spacer" />
-        <span style={{ color: 'var(--accent)', fontWeight: 900 }}>{disc} / {list.length} odkryte · {hatched} w parku</span>
+      <div className="segmented">
+        {([['all', 'Wszystkie'], ['known', 'Odkryte'], ['missing', 'Brakujące']] as const).map(([id, label]) => <button key={id} className={filter === id ? 'on' : ''} onClick={() => setFilter(id)}>{label}</button>)}
       </div>
+      <span style={{ color: 'var(--accent)', fontWeight: 900 }}>{disc} / {list.length} odkryte · {hatched} w parku</span>
       <div className="fauna-shelf">
         <div className="shelf">
           {shown.map((g) => {
@@ -935,8 +1005,8 @@ function FaunaTab({ s }: { s: GameState }) {
           })}
         </div>
       </div>
-      <div className="row small muted"><span>Pasek pod zwierzęciem: postęp genomu, zielony = już w parku.</span><span className="spacer" /><span>dane: Paleobiology Database</span></div>
       <Bar value={disc + hatched} max={list.length * 2} kind="gold" title="Ukończenie fauny stanowiska (odkrycia + hodowla)" />
+      <span className="small muted">Pasek pod zwierzęciem: postęp genomu, zielony = już w parku. Kliknij, by otworzyć kartę gatunku. Dane: Paleobiology Database.</span>
     </div>
   );
 }
@@ -1033,35 +1103,27 @@ function DigLog({ s }: { s: GameState }) {
   );
 }
 
-function LowerRow({ s }: { s: GameState }) {
-  const [tab, setTab] = useState<'fauna' | 'minerals'>('fauna');
-  return (
-    <div className="dig-lower">
-      <div className="panel">
-        <div className="tabs">
-          <button className={tab === 'fauna' ? 'on' : ''} onClick={() => setTab('fauna')}>Fauna tego stanowiska</button>
-          <button className={tab === 'minerals' ? 'on' : ''} onClick={() => setTab('minerals')}>Minerały</button>
-        </div>
-        {tab === 'fauna' ? <FaunaTab s={s} /> : <MineralsTab s={s} />}
-      </div>
-      <DigLog s={s} />
-    </div>
-  );
-}
-
+/** new species found by the crews while you were away or busy */
 function Discoveries({ s }: { s: GameState }) {
   const act = useStore((x) => x.act);
   const openGenus = useStore((x) => x.openGenus);
   const unseen = (s.discoveries ?? []).filter((d) => !d.seen);
-  if (!unseen.length) return null;
-  return (
-    <div className="panel col" style={{ borderColor: '#a2762a', boxShadow: '0 0 0 1px #a2762a inset' }}>
-      <div className="row">
-        <h3 style={{ margin: 0, color: 'var(--accent)' }}><Sparkles className="ic" style={{ verticalAlign: -2, marginRight: 6 }} />Nowe odkrycia ({unseen.length})</h3>
-        <span className="spacer" />
-        <Btn small onClick={() => act((g) => g.discoveries.forEach((d) => { d.seen = true; }))}>Oznacz wszystkie jako obejrzane</Btn>
+  if (!unseen.length) {
+    return (
+      <div className="col small muted" style={{ gap: 8, padding: '6px 2px' }}>
+        <span><Sparkles className="ic" style={{ verticalAlign: -2, marginRight: 6, color: 'var(--accent)' }} /><b style={{ color: 'var(--text)' }}>Nic nowego</b></span>
+        <span>Gatunki, które odkryją ekipy (także gdy gra jest wyłączona), pojawią się tutaj — z liczbą na zakładce.</span>
       </div>
-      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 8 }}>
+    );
+  }
+  return (
+    <div className="col" style={{ gap: 10 }}>
+      <div className="row">
+        <b style={{ color: 'var(--accent)' }}><Sparkles className="ic" style={{ verticalAlign: -2, marginRight: 6 }} />Nowe odkrycia ({unseen.length})</b>
+        <span className="spacer" />
+        <Btn small onClick={() => act((g) => g.discoveries.forEach((d) => { d.seen = true; }))}>Obejrzane</Btn>
+      </div>
+      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 8 }}>
         {unseen.slice(0, 24).map((d) => {
           const g = GENERA.get(d.genusId)!;
           return (
@@ -1124,8 +1186,6 @@ export function DigScreen() {
     <div className="dig-screen">
       <SiteHead s={s} openMap={() => setView('map')} setFocus={setFocus} />
       <DigBoard key={s.activeSite} s={s} focus={focus} setFocus={setFocus} openShop={() => setShop(true)} />
-      {!focus && <LowerRow s={s} />}
-      {!focus && <Discoveries s={s} />}
       {shop && <Workshop s={s} onClose={() => setShop(false)} />}
     </div>
   );

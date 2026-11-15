@@ -178,10 +178,10 @@ export function App() {
   const tab = useStore((x) => x.tab);
   useEffect(() => startLoop(), []);
   return (
-    <div className={`app ${tab === 'park' ? 'full' : ''}`}>
+    <div className={`app ${tab === 'park' ? 'full' : tab === 'dig' ? 'fit' : ''}`}>
       <TopBar />
       <Nav />
-      <div className={`main ${tab === 'park' ? 'full' : ''}`}>
+      <div className={`main ${tab === 'park' ? 'full' : tab === 'dig' ? 'fit' : ''}`}>
         {tab === 'park' && <ParkScreen />}
         {tab === 'dig' && <DigScreen />}
         {tab === 'lab' && <LabScreen />}
