@@ -15,8 +15,16 @@ function toCanvas(img: SpriteImage, silhouette: boolean): HTMLCanvasElement {
   const ctx = c.getContext('2d')!;
   const data = new Uint8ClampedArray(img.data);
   if (silhouette) {
-    for (let i = 0; i < data.length; i += 4) {
-      if (data[i + 3] > 0) { data[i] = 38; data[i + 1] = 44; data[i + 2] = 40; data[i + 3] = data[i + 3] > 120 ? 255 : 0; }
+    // dark fill + a light 1 px rim, so the shape reads on dark cards and on the green shelf alike
+    const solid = new Uint8Array(img.w * img.h);
+    for (let p = 0; p < solid.length; p++) solid[p] = data[p * 4 + 3] > 120 ? 1 : 0;
+    for (let y = 0; y < img.h; y++) for (let x = 0; x < img.w; x++) {
+      const p = y * img.w + x, i = p * 4;
+      if (solid[p]) {
+        const edge = x === 0 || y === 0 || x === img.w - 1 || y === img.h - 1 || !solid[p - 1] || !solid[p + 1] || !solid[p - img.w] || !solid[p + img.w];
+        const c = edge ? [150, 146, 124] : [62, 66, 58];
+        data[i] = c[0]; data[i + 1] = c[1]; data[i + 2] = c[2]; data[i + 3] = 255;
+      } else data[i + 3] = 0;
     }
   }
   ctx.putImageData(new ImageData(data, img.w, img.h), 0, 0);

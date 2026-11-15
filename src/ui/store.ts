@@ -3,6 +3,7 @@
 import { create } from 'zustand';
 import { SAVE_KEY, catchUp, deserialize, serialize, startGame, tick, type OfflineSummary } from '../game/engine';
 import { desktop } from './desktop';
+import { setVolume } from './sound';
 import type { GameState } from '../game/state';
 
 export interface Toast { id: number; text: string; kind: 'good' | 'info' | 'bad' }
@@ -85,6 +86,7 @@ let started = false;
 export function startLoop(): void {
   if (started) return;
   started = true;
+  setVolume(useStore.getState().s.settings.sound ?? 0.6);
   let last = Date.now();
   let seenLog = useStore.getState().s.log[0]?.t ?? 0;
   setInterval(() => {

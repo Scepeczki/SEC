@@ -52,6 +52,9 @@ export interface Mods {
   /** hammer: only the centre tile can hurt a bone */
   hammerCenterRisk: boolean;
   hammerAfter: number;
+  /** hits per second while the cursor rests on the field (workshop: Pędzel mechaniczny / Młot udarowy) */
+  autoBrush: number;
+  autoHammer: number;
   // ---- charges
   charge: boolean;
   chargeCd: number;
@@ -133,6 +136,8 @@ export function mods(s: GameState): Mods {
     wildfire: 0.25 * L('b_wild'),
     hammerCenterRisk: L('h_feather') > 0,
     hammerAfter: 0.25 * L('h_after'),
+    autoBrush: [0, 2, 3, 4][L('b_auto')] ?? 4,
+    autoHammer: [0, 1, 1.5, 2][L('h_auto')] ?? 2,
     charge: L('x_unlock') > 0,
     chargeCd: 90 * (1 - 0.12 * L('x_fuse')) * (L('x_mega') ? 0.5 : 1),
     chargeMax: 1 + L('x_bag'),

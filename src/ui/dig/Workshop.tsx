@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react';
 import {
   Backpack, Bomb, Brush, Check, Crosshair, Crown, Droplets, Dumbbell, Expand, Feather, Filter, Flame, FlameKindling, Gem, Grid3x3,
   Hammer, HandHeart, HardHat, Hexagon, Link, Lock, Map as MapIcon, Microscope, Mountain, Music, Paintbrush, Pickaxe, Radar, Radio,
-  Repeat, ScanSearch, Shield, Sparkles, Tent, Timer, UserPlus, Users, Waves, Wrench, X, Zap,
+  Repeat, ScanSearch, Shield, Sparkles, Tent, Timer, UserPlus, Users, Waves, Wrench, X, Zap, MousePointer2, Drill,
 } from 'lucide-react';
 import { fmt } from '../../game/balance';
 import { mods } from '../../game/mods';
@@ -21,6 +21,7 @@ const BRANCH_COLOR: Record<ToolId, string> = { brush: '#e0a84a', hammer: '#d07a5
 const NODE_ICON: Record<string, Icon> = {
   b_power: Brush, b_crit: Crosshair, b_care: HandHeart, b_splash: Droplets, b_combo: Music, b_sweep: Waves, b_ember: FlameKindling, b_fever: Flame, b_wild: Flame, b_master: Crown,
   h_unlock: Hammer, h_power: Dumbbell, h_safe: Shield, h_crit: Zap, h_area: Grid3x3, h_feather: Feather, h_after: Repeat, h_quake: Mountain, h_titan: Crown,
+  b_auto: MousePointer2, h_auto: Drill,
   x_unlock: Bomb, x_fuse: Timer, x_power: Expand, x_bag: Backpack, x_crush: Pickaxe, x_chain: Link, x_mega: Crown,
   r_res: Radar, r_glint: Gem, r_sonar: Radio, r_lucky: Sparkles, r_rare: ScanSearch, r_tomo: Crown,
   k_speed: Pickaxe, k_power: Hammer, k_hire: UserPlus, r_crew: MapIcon, k_sift: Filter, k_boss: HardHat, k_expo: Tent,

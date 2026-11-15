@@ -3,6 +3,7 @@
 // renderer with soft tile lighting. Everything is drawn in base pixels and scaled up by CSS.
 
 import { B } from '../../game/balance';
+import { GENERA } from '../../data/db';
 import { type Grain, MINERAL_BY_ID, STRATA, type Stratum, stratumAt } from '../../game/geology';
 import type { ItemKind, LayerItem, SiteState } from '../../game/state';
 
@@ -651,7 +652,7 @@ export interface FrameState {
   press: Map<number, number>; // tile → end of the "pressed in" look after a hit
   glow: (item: number) => number; // shown rarity of a partially uncovered fossil, -1 = none
   glowFlash: (item: number) => number; // 0..1 brightness boost after the glow went up
-  /** georadar upgrades */
+  /** georadar upgrades: sonar = bone zones show rarity colours */
   sonar?: boolean;
   glintAll?: boolean;
 }
@@ -835,7 +836,10 @@ export function drawFrame(img: ImageData, f: FrameState): void {
   // georadar: low levels show rough zones (with empty rock around), higher levels sharpen them
   if (f.scanner) {
     const W2 = B.gridW;
-    for (const z of radarZones(st, f.scanner)) {
+    for (const z0 of radarZones(st, f.scanner)) {
+      // Sonar upgrade: a bone's zone glows in the colour of its rarity
+      const zi = st.items[z0.item];
+      const z = f.sonar && zi.kind === 'fossil' ? { ...z0, color: hex(GLOW_CSS[GENERA.get(zi.genusId ?? -1)?.rarity ?? 0]) } : z0;
       const it = st.items[z.item];
       if (it.found || it.cells.some((c) => cleared[c])) continue;
       const inZone = (t: number) => z.tiles.has(t) && !cleared[t];
@@ -855,20 +859,6 @@ export function drawFrame(img: ImageData, f: FrameState): void {
           if (tx === W2 - 1 || !inZone(ti + 1)) put(x0 + e - 1, y0 + k, z.color, 0.7);
         }
       }
-    }
-  }
-
-  // echo: a dug tile next to something still hidden shows faint ripples (8 neighbours when only one find is left)
-  const left = st.items.filter((it) => !it.found).length;
-  const echoC: RGB = [120, 200, 240];
-  for (let ti = 0; ti < st.tiles.length; ti++) {
-    if (!cleared[ti] || st.tiles[ti].item >= 0) continue;
-    if (!echoNear(st, ti, f.sonar ? 1 : left)) continue;
-    const cx = tx0(ti) + 8, cy = ty0(ti) + 10;
-    const ph = (f.t / 700 + ti * 0.37) % 1;
-    for (const [rad, a] of [[3, 0.7], [5.5, 0.45]] as [number, number][]) {
-      const al = a * (0.5 + 0.5 * Math.sin((ph + rad / 8) * Math.PI * 2));
-      for (let ang = -2.5; ang <= -0.64; ang += 0.18) put(Math.round(cx + Math.cos(ang) * rad), Math.round(cy + Math.sin(ang) * rad), echoC, al);
     }
   }
 
@@ -894,21 +884,6 @@ export function drawFrame(img: ImageData, f: FrameState): void {
     const w = TS - 4, fill = Math.max(1, Math.round((t.hp / t.max) * w));
     for (let k = 0; k < w; k++) { put(x0 + k, y0, k < fill ? [226, 196, 140] : [30, 24, 20], k < fill ? 0.9 : 0.7); put(x0 + k, y0 + 1, [20, 16, 12], 0.6); }
   }
-}
-
-/** a dug tile that has something still hidden right next to it */
-export function echoNear(st: SiteState, ti: number, left = st.items.filter((it) => !it.found).length): boolean {
-  const W = B.gridW;
-  const x = ti % W, y = (ti / W) | 0;
-  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
-    if (!dx && !dy) continue;
-    if (dx && dy && left > 1) continue;
-    const nx = x + dx, ny = y + dy;
-    if (nx < 0 || ny < 0 || nx >= W || ny >= B.gridH) continue;
-    const t = st.tiles[ny * W + nx];
-    if (t.hp > 0 && t.item >= 0 && !st.items[t.item].found) return true;
-  }
-  return false;
 }
 
 // ---------------------------------------------------------------- georadar zones

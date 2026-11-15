@@ -9,8 +9,10 @@ import path from 'node:path';
 import { SITES } from './config';
 
 const RAW = 'data-raw';
-const PER_SITE = 20;
-const BUCKETS = [8, 6, 4, 2]; // rarity 0..3 per site
+/** each site gets its own number of minerals, 20–30 */
+const perSite = (siteId: string) => 20 + Math.floor(hash('count:' + siteId) * 11);
+/** how many of each rarity (0..3) a site with n minerals has: legendary ones stay few */
+const buckets = (n: number) => { const r3 = n >= 27 ? 3 : 2, r2 = Math.round(n * 0.18), r1 = Math.round(n * 0.3); return [n - r1 - r2 - r3, r1, r2, r3]; };
 
 interface WdMineral { en: string; pl: string; formula: string }
 
@@ -171,8 +173,11 @@ async function main() {
     return sc + c.common * 0.8 + hash(siteId + c.pl) * 0.6;
   };
   // round-robin so every site gets its best remaining match
-  for (let round = 0; round < PER_SITE; round++) {
+  const quota = new Map(siteIds.map((id) => [id, perSite(id)]));
+  const rounds = Math.max(...quota.values());
+  for (let round = 0; round < rounds; round++) {
     for (const id of siteIds) {
+      if (round >= quota.get(id)!) continue;
       let best: (typeof pool)[number] | undefined, bs = -1;
       for (const c of pool) {
         if (used.has(c.pl)) continue;
@@ -189,13 +194,14 @@ async function main() {
   for (const id of siteIds) {
     const list = picked.get(id)!.sort((a, b) => b.common - a.common || a.pl.localeCompare(b.pl));
     let k = 0;
-    BUCKETS.forEach((n, rarity) => {
+    buckets(list.length).forEach((n, rarity) => {
       for (let i = 0; i < n && k < list.length; i++, k++) {
         const c = list[k];
         const name = c.pl[0].toUpperCase() + c.pl.slice(1);
         // unlock depth (layers): commons from the start, legendary ones deep down
-        const minDepth = [0, 8, 22, 40][rarity] + Math.round(i * [1.2, 2, 4, 9][rarity]);
-        const coins = Math.round([35, 90, 240, 700][rarity] * (0.85 + hash(name + '$') * 0.3));
+        // legendary ones only far down (−180 m and deeper)
+        const minDepth = [0, 8, 24, 60][rarity] + Math.round(i * [1.2, 2, 4, 14][rarity]);
+        const coins = Math.round([35, 90, 260, 1500][rarity] * (0.85 + hash(name + '$') * 0.3));
         out.push({
           id: 'm_' + c.en.toLowerCase().replace(/[^a-z0-9]+/g, '_'),
           name,

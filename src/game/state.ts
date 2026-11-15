@@ -121,7 +121,7 @@ export interface GameState {
   nextContractId: number;
   stats: { clicks: number; fossils: number; layers: number; minor: number; amber: number; hatchFails: number; extractions: number; evolutions: number };
   log: LogEntry[];
-  settings: { revealAll: boolean; tool: Tool; crewMode?: CrewMode; /** 0–1 */ sound?: number };
+  settings: { revealAll: boolean; tool: Tool; crewMode?: CrewMode; /** 0–1 */ sound?: number; /** automatic digging under the cursor (when unlocked) */ autoDig?: boolean };
   /** tool upgrade levels (see tools.ts) */
   tools: Record<string, number>;
   mutagenAcc: number;

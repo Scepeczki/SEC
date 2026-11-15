@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ArrowLeft, Bone, Check, ChevronDown, ChevronRight, Clock, Coins, Flame, Hammer, Layers, Lock, Map as MapIcon, Maximize2,
-  Microscope, Minimize2, Paintbrush, Pickaxe, Radar, Shell, Sparkles, Users, Archive, Volume2, VolumeX, Wrench, Bomb, Hexagon,
+  Microscope, Minimize2, Paintbrush, Pickaxe, Radar, Shell, Sparkles, Users, Archive, Volume2, VolumeX, Wrench, Bomb, Hexagon, MousePointer2,
 } from 'lucide-react';
 import { genusSpec, spriteUrl } from '../sprites';
 import { Particles } from '../particles';
@@ -18,7 +18,7 @@ import { mods, type Mods } from '../../game/mods';
 import { bankCap, collectBank, incomePerSec } from '../../game/park';
 import type { CrewMode, FindEntry, GameState, ItemKind, LayerItem, PendingChest, SiteState } from '../../game/state';
 import { periodLabel } from '../../data/geotime';
-import { GLOW_CSS, GW, GH, TS, type LayerArt, artFor, cachedArt, drawFrame, echoNear, iconUrl, itemUrl, radarZones } from '../dig/art';
+import { GLOW_CSS, GW, GH, TS, type LayerArt, artFor, cachedArt, drawFrame, iconUrl, itemUrl, radarZones } from '../dig/art';
 import { Bar, Btn, SpriteImg } from '../components';
 import { useGame, useStore } from '../store';
 import { WorldMap } from './WorldMap';
@@ -123,11 +123,10 @@ function TileTip({ live, hover, golden, scale }: { live: React.MutableRefObject<
     if (st.burns?.some((b) => b.tile === i)) lines.push(<span key="b" style={{ color: '#ffa860' }}>Tli się — samo słabnie</span>);
     if (it && !it.found && it.cells.some((c) => st.tiles[c].hp <= 0)) lines.push(<span key="p" className="gold">Tu leży dalsza część kości</span>);
     else if (m.scanner >= 3 && it && !it.found && radarZones(st, m.scanner).some((z) => z.item === t.item)) lines.push(<span key="s" style={{ color: KIND_COLOR[it.kind] }}>Georadar: {it.kind === 'fossil' ? 'kość' : it.kind === 'minor' ? 'drobna skamieniałość' : it.kind === 'amber' ? 'bursztyn' : 'minerał'}</span>);
-    else if (m.scanner && radarZones(st, m.scanner).some((z) => z.tiles.has(i) && !st.items[z.item].found)) lines.push(<span key="s" className="blue">Georadar: {m.scanner >= 3 ? 'echo tuż obok' : 'coś leży w tej okolicy'}</span>);
+    else if (m.scanner && radarZones(st, m.scanner).some((z) => z.tiles.has(i) && !st.items[z.item].found)) lines.push(<span key="s" className="blue">Georadar: {m.scanner >= 3 ? 'tuż obok coś leży' : 'coś leży w tej okolicy'}</span>);
     if (hammer && hammerCells(st, i, m.hammerSquare).some((c) => hammerRisk(st, c, i, m))) lines.push(<span key="x" className="warn">Młot może uszkodzić kość ({pct(m.hammerRisk)})</span>);
   } else {
     if (it && !it.found) { title = 'Odsłonięta część znaleziska'; lines.push(<span key="p">Odkop pola ze złotymi narożnikami obok.</span>); }
-    else if (echoNear(st, i, m.sonar ? 1 : undefined)) { title = 'Echo'; lines.push(<span key="e" className="blue">Tuż obok coś jeszcze leży.</span>); }
     else return null;
   }
   const segs = Math.min(8, Math.max(1, Math.ceil(t.max / power)));
@@ -521,13 +520,13 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     }, 700);
   };
 
-  const onHit = (i: number) => {
+  const onHit = (i: number, auto = false) => {
     const now = performance.now();
-    if (golden.current.idx === i) { claimGoldenFlash(i); return; }
+    if (golden.current.idx === i) { if (!auto) claimGoldenFlash(i); return; }
     if (s.settings.tool === 'charge' && m.charge) { placeCharge(i); return; }
     const c = combo.current;
     const fever = now < c.feverUntil;
-    if (!fever && m.combo) {
+    if (!fever && m.combo && !auto) {
       c.n = Math.min(FEVER_AT, streakNow(c, now) + 1);
       c.best = Math.max(c.best, c.n);
       if (c.n >= FEVER_AT && now > c.coolUntil && m.feverSec) startFever(now);
@@ -555,7 +554,26 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     for (const ci of res.extra ?? []) { const p = center(ci); fx.chips(p.x, p.y, [art.tileCss[ci], ...DUST], 6, 1); playerHits.current.add(ci); }
   };
 
-  // keyboard: 1 brush · 2 hammer · F focus mode · Esc leave it · U workshop
+  // automatic digging: the tool keeps hitting the tile under the cursor (workshop upgrades)
+  const onHitRef = useRef(onHit);
+  onHitRef.current = onHit;
+  useEffect(() => {
+    let last = performance.now(), acc = 0;
+    const id = window.setInterval(() => {
+      const now = performance.now();
+      const dt = Math.min(0.25, (now - last) / 1000);
+      last = now;
+      const { s, st, m } = live.current;
+      const i = hover.current.idx;
+      const rate = s.settings.autoDig === false ? 0 : s.settings.tool === 'hammer' && m.hammer ? m.autoHammer : s.settings.tool === 'brush' || (s.settings.tool === 'hammer' && !m.hammer) ? m.autoBrush : 0;
+      if (!rate || i < 0 || !st.tiles[i] || st.tiles[i].hp <= 0 || document.hidden || !document.hasFocus()) { acc = 0; return; }
+      acc += dt * rate;
+      if (acc >= 1) { acc -= 1; onHitRef.current(i, true); }
+    }, 40);
+    return () => clearInterval(id);
+  }, []);
+
+  // keyboard: 1 brush · 2 hammer · 3 charge · A auto-dig · F focus mode · Esc leave it · U workshop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
@@ -564,6 +582,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       if (e.key === '1') act((g) => { g.settings.tool = 'brush'; });
       else if (e.key === '2' && m.hammer) act((g) => { g.settings.tool = 'hammer'; });
       else if (e.key === '3' && m.charge) act((g) => { g.settings.tool = 'charge'; });
+      else if ((e.key === 'a' || e.key === 'A') && (m.autoBrush || m.autoHammer)) act((g) => { g.settings.autoDig = g.settings.autoDig === false; });
       else if (e.key === 'f' || e.key === 'F') setFocus(!focus);
       else if (e.key === 'u' || e.key === 'U') openShop();
       else if (e.key === 'Escape' && focus) setFocus(false);
@@ -622,6 +641,12 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       <button className={`tool passive ${m.scanner ? 'on' : ''}`} onClick={openShop} title={m.scanner ? `Georadar poziom ${m.scanner}: działa sam. Ulepszaj w Warsztacie.` : 'Odblokuj w Warsztacie: Georadar'}>
         {!m.scanner && <Lock className="lock" />}<Radar className="ic" style={{ width: 22, height: 22 }} />Georadar<small>{m.scanner ? `poziom ${['', 'I', 'II', 'III', 'IV'][m.scanner]}` : 'Warsztat'}</small>
       </button>
+      {(m.autoBrush > 0 || m.autoHammer > 0) && (
+        <button className={`tool auto ${s.settings.autoDig !== false ? 'on' : ''}`} onClick={() => act((g) => { g.settings.autoDig = g.settings.autoDig === false; })}
+          title="Automatyczne kopanie: narzędzie samo uderza w pole pod kursorem — wystarczy wodzić myszką (klawisz A)">
+          <kbd className="key">A</kbd><MousePointer2 className="ic" style={{ width: 22, height: 22 }} />Auto<small>{s.settings.autoDig !== false ? `${s.settings.tool === 'hammer' && m.hammer ? m.autoHammer : m.autoBrush}/s` : 'wyłączone'}</small>
+        </button>
+      )}
       <button className="tool shop" onClick={openShop} title="Drzewko ulepszeń narzędzi i ekip (klawisz U)">
         <kbd className="key">U</kbd><Wrench className="ic" style={{ width: 22, height: 22 }} />Warsztat<small><Hexagon className="ic" style={{ width: 11, height: 11, verticalAlign: -1 }} /> {fmt(s.shards ?? 0)}</small>
       </button>
@@ -1004,7 +1029,7 @@ function DigLog({ s }: { s: GameState }) {
         <p><b>Warstwa</b> kończy się dopiero, gdy wykopiesz każdy kamień. Ile w niej kości i skarbów — nie wiesz, dopóki ich nie odkopiesz.</p>
         <p><b>Kość</b> zajmuje 2–4 pola i zalicza się po odsłonięciu wszystkich. Obwódka świeci kolorem rzadkości i może urosnąć, gdy odsłaniasz więcej.</p>
         <p><b>Drobne</b> dają punkty badań i monety, <b>bursztyn</b> mutagen, <b>minerał</b> monety i miejsce w kolekcji. Bursztyn i minerały błyskają przez popękaną skałę.</p>
-        <p><b>Warsztat</b> (klawisz U): siła, krytyki, seria, Gorączka, rozprysk i tlenie pędzla, młot i georadar. <b>Echo</b>: niebieskie fale = tuż obok coś leży. <b>Złoty błysk</b>: kliknij po nagrodę.</p>
+        <p><b>Warsztat</b> (klawisz U): siła, krytyki, seria, Gorączka, rozprysk i tlenie pędzla, młot i georadar. <b>Złoty błysk</b>: kliknij po nagrodę.</p>
       </details>
     </div>
   );
@@ -1059,7 +1084,7 @@ function Discoveries({ s }: { s: GameState }) {
 
 // ---------------------------------------------------------------- screen
 
-function SoundControl({ s }: { s: GameState }) {
+export function SoundControl({ s }: { s: GameState }) {
   const act = useStore((x) => x.act);
   const v = s.settings.sound ?? 0.6;
   const set = (x: number) => { act((g) => { g.settings.sound = x; }); setVolume(x); if (x > 0) sfx.hit('brush'); };
@@ -1085,7 +1110,6 @@ function SiteHead({ s, openMap, setFocus }: { s: GameState; openMap: () => void;
       <span className="statpill" title="Ukończone warstwy"><Layers className="ic" /><b>{st.layersDone}</b>warstw</span>
       <span className="statpill" title="Kości wykopane na tym stanowisku"><Pickaxe className="ic" /><b>{st.fossilsFound}</b>kości stąd</span>
       <span className="statpill" title="Odłamki skalne: zdobywasz je kopiąc, wydajesz w Warsztacie"><Hexagon className="ic" /><b>{fmt(s.shards ?? 0)}</b>odłamków</span>
-      <SoundControl s={s} />
       <button className="iconbtn framed" onClick={() => setFocus(true)} aria-label="Tryb skupienia" title="Tryb skupienia: duże pole, mniej paneli (klawisz F)"><Maximize2 className="ic" /></button>
     </div>
   );

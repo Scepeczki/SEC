@@ -246,7 +246,29 @@ function PinIcon({ st }: { st: PinState }) {
   return st === 'locked' ? <Lock className="ic" /> : st === 'ready' ? <LockOpen className="ic" /> : <Pickaxe className="ic" />;
 }
 
-const ZOOMS = [1, 1.6, 2.5, 4];
+const ZOOMS = [1, 1.6, 2.5, 4, 6.5];
+
+/**
+ * Pin positions in map pixels. Sites that lie almost on top of each other (Kem Kem and Fezouata, the
+ * Mongolian pair, Morrison and White River…) are pushed a little apart so each gets its own pin when zoomed in.
+ */
+const PIN_POS: Map<string, [number, number]> = (() => {
+  const MIN = 3.4; // map pixels (~2.5°)
+  const pts = SITES.map((x) => { const [px, py] = toPx(x.lat, x.lng); return { id: x.id, x: px, y: py }; });
+  for (let it = 0; it < 80; it++) {
+    for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+      const a = pts[i], b = pts[j];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      const d = Math.hypot(dx, dy);
+      if (d >= MIN) continue;
+      if (d < 1e-3) { dx = 1; dy = 0; }
+      const push = (MIN - d) / 2 / (d || 1);
+      a.x -= dx * push; a.y -= dy * push; b.x += dx * push; b.y += dy * push;
+    }
+  }
+  return new Map(pts.map((p) => [p.id, [p.x, p.y]]));
+})();
+const pinPx = (id: string) => PIN_POS.get(id)!;
 const MINI_W = 220;
 
 export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
@@ -286,7 +308,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
   useEffect(() => {
     const a = SITE_BY_ID.get(s.activeSite);
     if (!a) return;
-    const [x, y] = toPx(a.lat, a.lng);
+    const [x, y] = pinPx(a.id);
     setPan(clamp({ x: size.w * 0.38 - x * S, y: size.h / 2 - y * S }));
   }, [size.w, size.h]);
   useEffect(() => {
@@ -304,7 +326,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
 
   const eraOk = (id: string) => era === null || eraOf(midMa(SITE_BY_ID.get(id)!)) === era;
   const marks = useMemo(() => {
-    const pts = SITES.map((x) => { const [mx, my] = toPx(x.lat, x.lng); return { id: x.id, x: wrapX(mx * S + cpan.x), y: my * S + cpan.y }; });
+    const pts = SITES.map((x) => { const [mx, my] = pinPx(x.id); return { id: x.id, x: wrapX(mx * S + cpan.x), y: my * S + cpan.y }; });
     const solo = new Set([s.activeSite, sel ?? '']);
     const used = new Set<string>();
     const out: { ids: string[]; x: number; y: number }[] = [];
@@ -315,7 +337,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
       if (!solo.has(p.id)) {
         for (const q of pts) {
           if (used.has(q.id) || solo.has(q.id)) continue;
-          if (Math.hypot(q.x - p.x, q.y - p.y) < 34) { group.push(q); used.add(q.id); }
+          if (Math.hypot(q.x - p.x, q.y - p.y) < 30) { group.push(q); used.add(q.id); }
         }
       }
       out.push({ ids: group.map((g) => g.id), x: group.reduce((a, g) => a + g.x, 0) / group.length, y: group.reduce((a, g) => a + g.y, 0) / group.length });
@@ -340,8 +362,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
   const onUp = () => { drag.current = null; };
   const pick = (id: string) => {
     setSel(id);
-    const x = SITE_BY_ID.get(id)!;
-    const [mx, my] = toPx(x.lat, x.lng);
+    const [mx, my] = pinPx(id);
     const sx = wrapX(mx * S + cpan.x), sy = my * S + cpan.y;
     if (sx < 40 || sx > size.w - 420 || sy < 40 || sy > size.h - 40) setPan(clamp({ x: (size.w - 380) / 2 - mx * S, y: size.h / 2 - my * S }));
   };

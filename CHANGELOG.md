@@ -1,5 +1,16 @@
 # Zmiany
 
+## 0.2.1
+
+Drobne poprawki po 0.2.0 i automatyczne kopanie.
+
+- **Automatyczne kopanie:** nowe węzły w Warsztacie, Pędzel mechaniczny (2/3/4 pociągnięcia na sekundę) i Młot udarowy (1/1,5/2 uderzenia na sekundę). Po zakupie wystarczy wodzić myszką. Włącza się i wyłącza przyciskiem Auto albo klawiszem A.
+- **Bez echa:** zniknęły niebieskie fale. Sonar pokazuje teraz kolor rzadkości kości na georadarze.
+- **Wyraźniejsze sylwetki** nieodkrytych zwierząt: ciemne wypełnienie i jasny obrys.
+- **Mapa:** mocniejsze przybliżenie, a bliskie stanowiska (np. Kem Kem i Fezouata) są rozsunięte i da się je kliknąć osobno.
+- **Głośność** przeniesiona do Inne → Dźwięk.
+- **Minerały:** od 20 do 30 na stanowisko (razem 654). Legendarne są dopiero od ok. −180 m, bardzo rzadkie i więcej warte.
+
 ## 0.2.0
 
 Nowa nazwa gry, więcej zwierząt i stanowisk, setki minerałów i bardziej różnorodna skała. Pełna rozpiska: [docs/wersja-0.2.0.md](https://github.com/Scepeczki/SEC/blob/main/docs/wersja-0.2.0.md).

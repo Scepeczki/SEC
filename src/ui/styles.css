@@ -405,7 +405,7 @@ kbd { display: inline-flex; align-items: center; justify-content: center; min-wi
 .fauna-shelf .shelf { display: flex; flex-wrap: wrap; gap: 14px 20px; align-items: flex-end; justify-content: center; padding: 6px 4px; }
 .fauna-shelf .shelf span { display: inline-flex; align-items: flex-end; position: relative; transition: transform 0.12s; }
 .fauna-shelf .shelf span.known:hover { transform: translateY(-3px) scale(1.06); }
-.fauna-shelf .shelf span.unknown { opacity: 0.38; }
+.fauna-shelf .shelf span.unknown { opacity: 0.55; }
 .fauna-shelf .shelf span.known::after { content: ''; position: absolute; left: 15%; right: 15%; bottom: -5px; height: 3px; border-radius: 99px; background: var(--rc); }
 .fauna-shelf .shelf img { max-height: 42px; width: auto; }
 .timeline .tsite .stem { width: 1px; background: #8f857066; }

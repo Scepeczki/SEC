@@ -10,6 +10,7 @@ import { STAGE_NAMES } from '../../sprites/generator';
 import { Bar, Btn, Cost, SpriteImg } from '../components';
 import { save, useGame, useStore } from '../store';
 import { desktop } from '../desktop';
+import { SoundControl } from './Dig';
 
 export function ResearchScreen() {
   const s = useGame();
@@ -162,6 +163,10 @@ export function SettingsScreen() {
         </div>
       </div>
       <div className="col">
+        <div className="panel col">
+          <h2>🔊 Dźwięk</h2>
+          <div className="row" style={{ gap: 12 }}><SoundControl s={s} /><span className="small muted">Dźwięki kopania, znalezisk i skrzyń. Suwak na zero wycisza grę.</span></div>
+        </div>
         <div className="panel col">
           <h2>💾 Zapis</h2>
           {desktop ? (

@@ -248,11 +248,14 @@ for (const m of SITE_MINERALS) { if (!BY_SITE.has(m.site!)) BY_SITE.set(m.site!,
 export const siteMinerals = (siteId: string): Mineral[] => BY_SITE.get(siteId) ?? [];
 
 const MINERAL_RARITY_WEIGHT = [1, 0.35, 0.1, 0.025];
+/** the site's own minerals: steeper — very rare and legendary ones are hard to get */
+const SITE_RARITY_WEIGHT = [1, 0.3, 0.05, 0.015];
 
 /** relative odds of each mineral at a site and depth */
 export function mineralWeights(siteId: string, depth: number): [Mineral, number][] {
   const out: [Mineral, number][] = COMMON_MINERALS.map((m) => [m, MINERAL_RARITY_WEIGHT[m.rarity] * (m.sites?.includes(siteId) ? 4 : 1) * (1 + depth * 0.03 * m.rarity)]);
   // the site's own minerals: once unlocked by depth, they are the main thing you find
-  for (const m of siteMinerals(siteId)) if (depth >= (m.minDepth ?? 0)) out.push([m, MINERAL_RARITY_WEIGHT[m.rarity] * 3 * (1 + depth * 0.02 * m.rarity)]);
+  // legendary ones are meant to be a real event: roughly one per several hundred layers
+  for (const m of siteMinerals(siteId)) if (depth >= (m.minDepth ?? 0)) out.push([m, SITE_RARITY_WEIGHT[m.rarity] * 3 * (1 + depth * 0.006 * m.rarity)]);
   return out;
 }

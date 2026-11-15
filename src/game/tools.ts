@@ -46,7 +46,8 @@ export const TOOL_NODES: ToolNode[] = [
   { id: 'b_ember', tool: 'brush', x: 2, y: 2, req: [['b_splash', 2]], name: 'Żarzące włosie', desc: 'Co piąte uderzenie podpala pole: tli się ono i sąsiedzi.', max: 3, cost: geo(5000, 2.2, 25, 25), effect: (l) => `tlenie przez 4 s: −${(0.12 * l).toFixed(2)} siły na sekundę` },
   { id: 'b_fever', tool: 'brush', x: 0, y: 3, req: [['b_combo', 2]], name: 'Gorączka', desc: 'Pełna seria (30) włącza Gorączkę: każde trafienie krytyczne.', max: 3, cost: geo(20000, 2.4, 80, 60), effect: (l) => `Gorączka trwa ${2 + l} s` },
   { id: 'b_wild', tool: 'brush', x: 2, y: 3, req: [['b_ember', 2]], name: 'Pożar', desc: 'Wygasające pole może zapalić sąsiada.', max: 3, cost: geo(18000, 2.4, 80, 60), effect: (l) => `${25 * l}% szansy, że ogień przeskoczy dalej` },
-  { id: 'b_master', tool: 'brush', x: 1, y: 4, cap: true, req: [['b_fever', 1], ['b_sweep', 1], ['b_wild', 1]], name: 'Mistrz pędzla', desc: 'Zwieńczenie gałęzi: lata praktyki w jednym ruchu.', max: 1, cost: once(250000, 1500), effect: () => 'siła pędzla ×2, krytyki ×1,5' },
+  { id: 'b_auto', tool: 'brush', x: 1, y: 3, req: [['b_sweep', 1]], name: 'Pędzel mechaniczny', desc: 'Wystarczy wodzić myszką: pędzel sam szoruje pole pod kursorem.', max: 3, cost: geo(5000, 2.4, 25, 25), effect: (l) => `${[0, 2, 3, 4][l]} pociągnięcia na sekundę bez klikania` },
+  { id: 'b_master', tool: 'brush', x: 1, y: 4, cap: true, req: [['b_fever', 1], ['b_auto', 1], ['b_wild', 1]], name: 'Mistrz pędzla', desc: 'Zwieńczenie gałęzi: lata praktyki w jednym ruchu.', max: 1, cost: once(250000, 1500), effect: () => 'siła pędzla ×2, krytyki ×1,5' },
 
   // ---------------- hammer (columns 3–5)
   { id: 'h_unlock', tool: 'hammer', x: 4, y: 0, name: 'Młot pneumatyczny', desc: 'Nowe narzędzie: uderza w plus z 5 pól.', max: 1, cost: once(1200, 15), effect: () => 'odblokowany (klawisz 2)' },
@@ -57,6 +58,7 @@ export const TOOL_NODES: ToolNode[] = [
   { id: 'h_feather', tool: 'hammer', x: 5, y: 2, req: [['h_safe', 3]], name: 'Czułe ramię', desc: 'Młot ryzykuje kość tylko w środku uderzenia.', max: 1, cost: once(12000, 60), effect: () => 'boczne pola nigdy nie uszkadzają kości' },
   { id: 'h_after', tool: 'hammer', x: 3, y: 3, req: [['h_crit', 2]], name: 'Wstrząs wtórny', desc: 'Krytyk młota odbija się drugim ciosem obok.', max: 3, cost: geo(16000, 2.3, 60, 50), effect: (l) => `${25 * l}% szansy na drugi cios po krytyku` },
   { id: 'h_quake', tool: 'hammer', x: 4, y: 3, req: [['h_area', 1]], name: 'Fala uderzeniowa', desc: 'Każde uderzenie młota wstrząsa całą warstwą.', max: 3, cost: geo(20000, 2.3, 80, 60), effect: (l) => `wszystkie pola tracą ${1.5 * l}% wytrzymałości (nigdy nie pękają od fali)` },
+  { id: 'h_auto', tool: 'hammer', x: 5, y: 3, req: [['h_feather', 1]], name: 'Młot udarowy', desc: 'Młot sam uderza w pole pod kursorem — tylko prowadzisz go myszką.', max: 3, cost: geo(14000, 2.4, 60, 50), effect: (l) => `${[0, 1, 1.5, 2][l]} uderzenia na sekundę bez klikania` },
   { id: 'h_titan', tool: 'hammer', x: 4, y: 4, cap: true, req: [['h_quake', 1], ['h_after', 1]], name: 'Kafar', desc: 'Zwieńczenie gałęzi: młot, który kruszy góry.', max: 1, cost: once(250000, 1500), effect: () => 'siła młota ×2, krytyki młota ×1,5' },
 
   // ---------------- charges (columns 6–8)
@@ -73,7 +75,7 @@ export const TOOL_NODES: ToolNode[] = [
     cost: (l) => ({ shards: [2500, 12000, 45000, 150000][l] ?? 0, pb: [25, 100, 300, 800][l] ?? 0 }),
     effect: (l) => ['', 'rozmyte strefy wokół kości (z pustą skałą dookoła)', 'węższe strefy, także bursztyn i minerały', 'prawie dokładne kontury w kolorach rodzaju', 'dokładne kontury wszystkich znalezisk'][l] },
   { id: 'r_glint', tool: 'radar', x: 9, y: 1, req: [['r_res', 1]], name: 'Czujnik kryształów', desc: 'Bursztyn i minerały błyskają nawet przez nietkniętą skałę.', max: 1, cost: once(9000, 50), effect: () => 'błyski przez całą skałę' },
-  { id: 'r_sonar', tool: 'radar', x: 11, y: 1, req: [['r_res', 2]], name: 'Sonar', desc: 'Echo zawsze sprawdza wszystkie 8 sąsiednich pól.', max: 1, cost: once(16000, 90), effect: () => 'echo z 8 pól' },
+  { id: 'r_sonar', tool: 'radar', x: 11, y: 1, req: [['r_res', 2]], name: 'Sonar', desc: 'Strefy kości na georadarze świecą kolorem rzadkości: od razu widać, gdzie leży coś cennego.', max: 1, cost: once(16000, 90), effect: () => 'kolor rzadkości w strefach kości' },
   { id: 'r_lucky', tool: 'radar', x: 9, y: 2, req: [['r_glint', 1]], name: 'Wykrywacz anomalii', desc: 'Złote błyski pojawiają się częściej.', max: 3, cost: geo(10000, 2.2, 40, 40), effect: (l) => `złote błyski ${Math.round(100 / (1 - 0.2 * l) - 100)}% częściej` },
   { id: 'r_rare', tool: 'radar', x: 11, y: 2, req: [['r_sonar', 1]], name: 'Analiza widmowa', desc: 'Namierza rzadsze okazy w skale.', max: 5, cost: geo(9000, 2, 40, 30), effect: (l) => `rzadkie kości +${10 * l}%` },
   { id: 'r_tomo', tool: 'radar', x: 10, y: 3, cap: true, req: [['r_res', 4], ['r_lucky', 1], ['r_rare', 2]], name: 'Tomograf', desc: 'Zwieńczenie gałęzi: skała przezroczysta jak szkło.', max: 1, cost: once(250000, 1500), effect: () => 'rzadkie kości ×1,5, minerały ×1,5, +5% jakości' },
