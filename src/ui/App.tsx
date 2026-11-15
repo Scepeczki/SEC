@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { TAXA } from '../data/db';
 import { FOOD_NAMES, fmt, fmtTime, parkLevelFromFame } from '../game/balance';
-import { Beef, Bone, BookOpen, Building2, Coins, Droplets, Fish, FlaskConical, House, Leaf, type LucideIcon, Microscope, Pickaxe, ScrollText, Settings, Syringe, Ticket, TreeDeciduous } from 'lucide-react';
+import { Beef, BookOpen, Building2, Coins, Droplets, Fish, FlaskConical, House, Leaf, type LucideIcon, Microscope, Pickaxe, ScrollText, Settings, Syringe, Ticket, TreeDeciduous } from 'lucide-react';
 import { mods } from '../game/mods';
 import { bankCap, collectBank, incomePerSec } from '../game/park';
 import { uniqueHatched } from '../game/meta';
 import type { Food } from '../data/types';
 import { Btn } from './components';
+import logoUrl from '../../electron/icon.png';
 import { save, startLoop, useGame, useStore } from './store';
 import { desktop, type UpdateEvent } from './desktop';
 import { ParkScreen } from './screens/Park';
@@ -57,7 +58,7 @@ function TopBar() {
   const full = s.bank >= cap * 0.99;
   return (
     <header className="topbar">
-      <span className="brand"><span className="logo"><Bone className="ic" /></span>Park Wymarłych</span>
+      <span className="brand" title="Self-Organizing Entropic Complex"><img className="logo-img pixel" src={logoUrl} width={34} height={34} alt="" /><span className="brand-name">SEC<small>Self-Organizing Entropic Complex</small></span></span>
       <span className="level" title={`Poziom parku ${lvl.level}. Sława ${fmt(s.fame)} / ${fmt(lvl.next)} — rośnie za nowe gatunki, ewolucje i ukończone warstwy.`}>
         <LevelRing value={s.fame - lvl.cur} max={lvl.next - lvl.cur} level={lvl.level} />
         <small>Poz.<br />parku</small>

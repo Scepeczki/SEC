@@ -2,6 +2,8 @@
 // The sequences are simplified game versions of the real formations: names and colours follow the
 // typical rocks of each place, thicknesses are game layers, not metres.
 
+import siteMineralData from '../data/minerals.json';
+
 export type Grain = 'sand' | 'mud' | 'shale' | 'lime' | 'chalk' | 'coal' | 'tuff' | 'loess';
 
 export interface Stratum {
@@ -111,6 +113,56 @@ export const STRATA: Record<string, Stratum[]> = {
     S('Gleby kopalne', 'ciemne poziomy dawnych gleb', 'loess', '#6f5b45', 4),
     S('Wapienna tosca', 'zbite wapienne skorupy', 'lime', '#c3b18d', 99),
   ],
+  // ---- 0.2.0
+  chinle: [
+    S('Ogniwo Petrified Forest', 'pstre, fioletowo-szare iłowce bentonitowe z pniami skamieniałych drzew', 'mud', '#8e7f8c', 6, { accent: '#b0866a', seam: '#cfc2b0' }),
+    S('Ogniwo Owl Rock', 'różowe wapienie jeziorne i mułowce', 'lime', '#b98c82', 4, { accent: '#d7b8a6' }),
+    S('Ogniwo Sonsela', 'piaskowce i zlepieńce rzeczne', 'sand', '#a79476', 5, { accent: '#7f6a50' }),
+    S('Ogniwo Blue Mesa', 'niebieskoszare iłowce z kośćmi fitozaurów', 'mud', '#7d8794', 99, { accent: '#9b7d74' }),
+  ],
+  djadokhta: [
+    S('Piaski Płonących Klifów', 'pomarańczowe piaskowce dawnych wydm', 'sand', '#c98f5c', 7, { accent: '#e0b07a' }),
+    S('Piaskowce z gniazdami', 'zbite piaski pustynnych burz — tu leżą gniazda owiraptorów', 'sand', '#b97c50', 6, { accent: '#d9a46e', seam: '#9e6440' }),
+    S('Ciemnoczerwone mułowce', 'drobne osady okresowych oaz', 'mud', '#94573c', 99, { accent: '#c08a5a' }),
+  ],
+  green_river: [
+    S('Łupki warwowe', 'cieniutkie roczne warstewki dna jeziora — tu leżą całe ryby', 'shale', '#c7b79a', 6, { seam: '#9a8a6c', accent: '#e0d4bc' }),
+    S('Łupek olejowy Parachute', 'brązowy łupek bogaty w kerogen', 'shale', '#7a6450', 5, { accent: '#a08a6c' }),
+    S('Ewaporaty z troną', 'białe warstwy soli z wysychającego jeziora', 'chalk', '#ddd5c5', 3, { seam: '#bfb39c' }),
+    S('Mułowce Bridger', 'zielonoszare mułowce równin z kośćmi ssaków', 'mud', '#8a8f7a', 99, { accent: '#a99a7a' }),
+  ],
+  oxford_clay: [
+    S('Ił kimerydzki', 'ciemne, bitumiczne iły z kośćmi pliozaurów', 'shale', '#4a4640', 6, { accent: '#6d6458', seam: '#827564' }),
+    S('Wapień koralowy', 'jasne wapienie dawnej rafy', 'lime', '#c9bf9f', 4, { accent: '#a99c78' }),
+    S('Ił oksfordzki', 'szare iły pełne amonitów i belemnitów', 'mud', '#6f6c66', 6, { accent: '#8b8578' }),
+    S('Kornbrasz', 'pokruszone, muszlowe wapienie', 'lime', '#b5a27e', 99, { accent: '#d8c8a0' }),
+  ],
+  chengjiang: [
+    S('Łupek Maotianshan', 'żółtawe, zwietrzałe łupki z miękkimi zwierzętami', 'shale', '#c4ad7c', 6, { accent: '#d8c49a', seam: '#a68f62' }),
+    S('Mułowce Yu’anshan', 'szarozielone mułowce głębszego dna', 'shale', '#7f8774', 6, { accent: '#9aa28a' }),
+    S('Fosforyty Meishucun', 'ciemne warstwy fosforytów najwcześniejszego kambru', 'mud', '#4f4c48', 99, { accent: '#77705f' }),
+  ],
+  tendaguru: [
+    S('Górna warstwa z zauropodami', 'czerwonawe piaskowce i mułowce z kośćmi giraffatytana', 'sand', '#b0826a', 6, { accent: '#d0a882' }),
+    S('Piaskowce z Trigonia', 'morskie piaskowce z małżami', 'sand', '#c2ab84', 4, { accent: '#9a8a68' }),
+    S('Środkowa warstwa z dinozaurami', 'margliste mułowce z kentrozaurami', 'mud', '#9a7a62', 6, { accent: '#b8987a' }),
+    S('Piaskowce z Nerinea', 'wapniste piaski płytkiego morza', 'sand', '#bfb08e', 99),
+  ],
+  white_river: [
+    S('Formacja Brule', 'różowobeżowe mułowce i pyły wulkaniczne Badlands', 'loess', '#c8a88a', 7, { accent: '#e0cbb0', seam: '#a98a70' }),
+    S('Formacja Chadron', 'szarozielone iły bentonitowe z kośćmi brontoterów', 'mud', '#9a9a86', 6, { accent: '#b8a88a' }),
+    S('Żółte Kopce', 'zwietrzałe, żółte gleby kopalne', 'loess', '#c9a560', 99, { accent: '#a0784a' }),
+  ],
+  gogo: [
+    S('Konkrecje Gogo', 'wapienne bryły z rybami zachowanymi w 3D', 'lime', '#9c958a', 6, { accent: '#c0b6a2' }),
+    S('Wapień przedrafowy', 'szare wapienie ze stoku dawnej rafy', 'lime', '#8a867c', 6, { accent: '#a59c88' }),
+    S('Wapień rafowy Pillara', 'jasne, masywne wapienie dewońskiej bariery', 'lime', '#bdb6a0', 99, { accent: '#9a8f78' }),
+  ],
+  fezouata: [
+    S('Górne łupki Fezouata', 'oliwkowozielone łupki z trylobitami', 'shale', '#7d8364', 6, { accent: '#a3a582', seam: '#9a8a62' }),
+    S('Łupki z wielkimi radiodontami', 'drobne łupki burzowe z Aegirocassis', 'shale', '#6b6f58', 6, { accent: '#8f9070' }),
+    S('Piaskowce Zini', 'jasne, kwarcowe piaskowce wybrzeża', 'sand', '#c2b593', 99, { accent: '#9a8c6a' }),
+  ],
 };
 
 export interface StratumAt { s: Stratum; next: Stratum; index: number; into: number; left: number; round: number }
@@ -163,9 +215,15 @@ export interface Mineral {
   desc: string;
   /** sites where it turns up more often */
   sites?: string[];
+  /** site-specific mineral: found only here… */
+  site?: string;
+  /** …and only from this layer down */
+  minDepth?: number;
+  formula?: string;
 }
 
-export const MINERALS: Mineral[] = [
+/** classic minerals found everywhere */
+export const COMMON_MINERALS: Mineral[] = [
   { id: 'kwarc', name: 'Kwarc', color: '#e6ebf0', form: 'crystal', rarity: 0, coins: 20, desc: 'Najpospolitszy minerał skorupy ziemskiej. Drobne kryształy rosną w szczelinach skał.' },
   { id: 'kalcyt', name: 'Kalcyt', color: '#efd7a2', form: 'crystal', rarity: 0, coins: 20, desc: 'Węglan wapnia, ten sam związek co w muszlach. Często wypełnia pustki w skamieniałościach.', sites: ['solnhofen', 'niobrara', 'santana', 'holzmaden', 'krasiejow'] },
   { id: 'gips', name: 'Gips (selenit)', color: '#e2dbc9', form: 'crystal', rarity: 0, coins: 25, desc: 'Przejrzyste tafle, które krystalizują w wysychających jeziorach i lagunach.', sites: ['santana', 'morrison', 'karoo', 'hell_creek'] },
@@ -180,11 +238,21 @@ export const MINERALS: Mineral[] = [
   { id: 'opal', name: 'Opal szlachetny', color: '#c9efe6', form: 'opal', rarity: 3, coins: 500, desc: 'Mieni się wszystkimi kolorami tęczy. W Australii zastępuje nawet kości dinozaurów.' },
   { id: 'zloto', name: 'Złoto rodzime', color: '#ffd23a', form: 'nugget', rarity: 3, coins: 800, desc: 'Prawdziwy samorodek. Na stanowisku paleontologicznym to wielka rzadkość.', sites: ['pampas', 'nemegt'] },
 ];
+/** ~20 real minerals unique to each site (src/data/minerals.json, built from Wikidata) */
+export const SITE_MINERALS: Mineral[] = (siteMineralData as { minerals: Mineral[] }).minerals;
+export const MINERALS: Mineral[] = [...COMMON_MINERALS, ...SITE_MINERALS];
 export const MINERAL_BY_ID = new Map(MINERALS.map((m) => [m.id, m]));
+const BY_SITE = new Map<string, Mineral[]>();
+for (const m of SITE_MINERALS) { if (!BY_SITE.has(m.site!)) BY_SITE.set(m.site!, []); BY_SITE.get(m.site!)!.push(m); }
+/** the site's own minerals, shallowest first */
+export const siteMinerals = (siteId: string): Mineral[] => BY_SITE.get(siteId) ?? [];
 
 const MINERAL_RARITY_WEIGHT = [1, 0.35, 0.1, 0.025];
 
 /** relative odds of each mineral at a site and depth */
 export function mineralWeights(siteId: string, depth: number): [Mineral, number][] {
-  return MINERALS.map((m) => [m, MINERAL_RARITY_WEIGHT[m.rarity] * (m.sites?.includes(siteId) ? 4 : 1) * (1 + depth * 0.03 * m.rarity)]);
+  const out: [Mineral, number][] = COMMON_MINERALS.map((m) => [m, MINERAL_RARITY_WEIGHT[m.rarity] * (m.sites?.includes(siteId) ? 4 : 1) * (1 + depth * 0.03 * m.rarity)]);
+  // the site's own minerals: once unlocked by depth, they are the main thing you find
+  for (const m of siteMinerals(siteId)) if (depth >= (m.minDepth ?? 0)) out.push([m, MINERAL_RARITY_WEIGHT[m.rarity] * 3 * (1 + depth * 0.02 * m.rarity)]);
+  return out;
 }

@@ -3,7 +3,7 @@
 // renderer with soft tile lighting. Everything is drawn in base pixels and scaled up by CSS.
 
 import { B } from '../../game/balance';
-import { type Grain, MINERAL_BY_ID, type Stratum, stratumAt } from '../../game/geology';
+import { type Grain, MINERAL_BY_ID, STRATA, type Stratum, stratumAt } from '../../game/geology';
 import type { ItemKind, LayerItem, SiteState } from '../../game/state';
 
 export const TS = 16;
@@ -293,6 +293,153 @@ function tone(c: RGB, depth: number): RGB {
   return l < 62 ? mul(out, 62 / Math.max(1, l)) : out;
 }
 
+// ---------------------------------------------------------------- rock features (picked per layer)
+// Every layer gets its own mix: lenses of other rock, rusty stains, calcite veins, pebbles, concretions,
+// shell hash, burrows and root traces, cross-bedding, manganese dendrites, ash partings.
+
+type FeatureKind = 'lens' | 'stain' | 'vein' | 'pebbles' | 'nodule' | 'shells' | 'burrows' | 'xbed' | 'dendrite' | 'ash';
+const FEATURE_NAMES: Record<FeatureKind, string> = {
+  lens: 'soczewka', stain: 'rdzawa plama limonitu', vein: 'żyła kalcytu', pebbles: 'otoczaki', nodule: 'konkrecja',
+  shells: 'okruchy muszli', burrows: 'ślady norek', xbed: 'warstwowanie przekątne', dendrite: 'dendryty manganowe', ash: 'wkładka popiołu',
+};
+const LENS_NAME: Record<Grain, string> = { sand: 'piaskowca', mud: 'iłowca', shale: 'łupku', lime: 'wapienia', chalk: 'kredy', coal: 'węgla', tuff: 'tufu', loess: 'lessu' };
+/** which features suit which rock (relative odds) */
+const FEATURE_ODDS: Record<Grain, Partial<Record<FeatureKind, number>>> = {
+  sand: { lens: 1, stain: 1.2, pebbles: 1.4, xbed: 1.6, burrows: 0.6, nodule: 0.4, vein: 0.3 },
+  mud: { lens: 1, stain: 1.3, nodule: 1.1, burrows: 1.2, pebbles: 0.4, vein: 0.6, ash: 0.4 },
+  shale: { lens: 0.6, nodule: 1.5, vein: 0.8, shells: 0.7, stain: 0.5, ash: 0.5 },
+  lime: { vein: 1.5, shells: 1.4, dendrite: 1.1, nodule: 0.6, stain: 0.6, lens: 0.5 },
+  chalk: { shells: 1.4, nodule: 1.2, stain: 1, burrows: 0.8, vein: 0.4 },
+  coal: { vein: 0.8, nodule: 0.6, lens: 0.8 },
+  tuff: { ash: 1.5, lens: 1, vein: 0.8, pebbles: 0.6, stain: 0.6 },
+  loess: { burrows: 1.5, stain: 1, nodule: 1, pebbles: 0.6, lens: 0.5 },
+};
+interface Feature { kind: FeatureKind; x: number; y: number; a: number; b: number; rot: number; c: RGB; grain?: Grain; seed: number; label: string }
+
+function pickFeatures(s: Stratum, others: Stratum[], r: () => number): Feature[] {
+  const odds = FEATURE_ODDS[s.grain];
+  const kinds = Object.entries(odds) as [FeatureKind, number][];
+  const total = kinds.reduce((a, [, w]) => a + w, 0);
+  const n = 2 + Math.floor(r() * 2.6); // 2–4 kinds per layer
+  const out: Feature[] = [];
+  const chosen = new Set<FeatureKind>();
+  for (let k = 0; k < n; k++) {
+    let q = r() * total, kind = kinds[0][0];
+    for (const [id, w] of kinds) { q -= w; if (q <= 0) { kind = id; break; } }
+    if (chosen.has(kind)) continue;
+    chosen.add(kind);
+    const count = kind === 'lens' ? 1 + Math.floor(r() * 2) : kind === 'stain' ? 2 + Math.floor(r() * 3) : kind === 'vein' ? 1 + Math.floor(r() * 3)
+      : kind === 'pebbles' ? 2 + Math.floor(r() * 3) : kind === 'nodule' ? 2 + Math.floor(r() * 4) : kind === 'shells' ? 3 : kind === 'burrows' ? 5 + Math.floor(r() * 6)
+      : kind === 'dendrite' ? 2 + Math.floor(r() * 3) : 1;
+    for (let i = 0; i < count; i++) {
+      const other = others.length ? others[Math.floor(r() * others.length)] : s;
+      const lensRock = other !== s ? other : s;
+      const lensCol: RGB = other !== s ? hex(other.color) : mul(hex(s.color), r() < 0.5 ? 1.2 : 0.78);
+      const c: RGB = kind === 'lens' ? lensCol : kind === 'stain' ? (r() < 0.6 ? [168, 98, 48] : [140, 70, 40]) : kind === 'vein' ? [236, 230, 212]
+        : kind === 'pebbles' ? [150 + r() * 60, 140 + r() * 50, 120 + r() * 40] : kind === 'nodule' ? mul(hex(s.accent ?? s.color), 0.72) : kind === 'shells' ? [232, 222, 196]
+        : kind === 'burrows' ? mul(hex(s.color), 0.82) : kind === 'xbed' ? mul(hex(s.color), 0.86) : kind === 'dendrite' ? [78, 64, 52] : [222, 216, 200];
+      out.push({
+        kind, seed: r(), c,
+        x: r() * GW, y: kind === 'ash' ? 10 + r() * (GH - 20) : r() * GH,
+        a: kind === 'lens' ? 18 + r() * 30 : kind === 'stain' ? 6 + r() * 12 : kind === 'pebbles' ? 10 + r() * 14 : kind === 'nodule' ? 2.5 + r() * 3.5 : kind === 'dendrite' ? 4 + r() * 5 : 0,
+        b: kind === 'lens' ? 4 + r() * 7 : kind === 'stain' ? 4 + r() * 8 : kind === 'pebbles' ? 5 + r() * 8 : 0,
+        rot: (r() - 0.5) * (kind === 'vein' ? 2.4 : 0.5),
+        grain: kind === 'lens' ? lensRock.grain : undefined,
+        label: kind === 'lens' ? `soczewka ${LENS_NAME[lensRock.grain]}` : FEATURE_NAMES[kind],
+      });
+    }
+  }
+  return out;
+}
+
+const LENS_ROW = Array.from({ length: GH }, (_, i) => (i % 3 === 2 ? 1 : 2));
+
+function hash2(x: number, y: number, s: number): number {
+  let h = Math.imul(x * 374761393 + y * 668265263 + Math.floor(s * 1e6), 1274126177);
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
+}
+
+/** colour + shade of a feature at a pixel, or null when the pixel is plain rock */
+function featureAt(fs: Feature[], gx: number, gy: number, base: RGB, sh: number, r: () => number): { c: RGB; sh: number; f: Feature } | null {
+  let hit: { c: RGB; sh: number; f: Feature } | null = null;
+  for (const f of fs) {
+    const dx = gx - f.x, dy = gy - f.y;
+    const cs = Math.cos(f.rot), sn = Math.sin(f.rot);
+    const u = dx * cs + dy * sn, v = -dx * sn + dy * cs;
+    switch (f.kind) {
+      case 'lens': {
+        const wob = Math.sin(u / 5 + f.seed * 9) * 1.2;
+        if ((u / f.a) ** 2 + ((v - wob) / f.b) ** 2 <= 1) hit = { c: f.c, sh: grainShade(f.grain!, gx, gy, LENS_ROW, r), f };
+        break;
+      }
+      case 'stain': {
+        const d = (u / f.a) ** 2 + (v / f.b) ** 2 + (hash2(gx, gy, f.seed) - 0.5) * 0.5;
+        if (d <= 1) hit = { c: mix(base, f.c, Math.min(0.75, (1 - d) * 1.1)), sh, f };
+        break;
+      }
+      case 'vein': {
+        const off = Math.sin(u / 6 + f.seed * 20) * 1.4 + Math.sin(u / 2.3) * 0.5;
+        if (Math.abs(v - off) < 0.7 && Math.abs(u) < 60) hit = { c: f.c, sh: hash2(gx, gy, f.seed) < 0.3 ? 3 : 2, f };
+        break;
+      }
+      case 'pebbles': {
+        if ((u / f.a) ** 2 + (v / f.b) ** 2 > 1) break;
+        // a cluster of 2–4 px rounded clasts
+        const cx = Math.floor(gx / 4), cy = Math.floor(gy / 3);
+        const q = hash2(cx, cy, f.seed);
+        if (q < 0.45) {
+          const px = cx * 4 + 1 + Math.floor(q * 4) % 2, py = cy * 3 + 1;
+          const ddx = gx - px, ddy = gy - py;
+          if (ddx >= -1 && ddx <= 1 && ddy >= -1 && ddy <= 0 && !(Math.abs(ddx) === 1 && ddy === -1)) {
+            const tint = 0.85 + hash2(cx, cy, f.seed + 1) * 0.35;
+            hit = { c: mul(f.c, tint), sh: ddy === -1 || ddx === -1 ? 3 : ddx === 1 ? 1 : 2, f };
+          }
+        }
+        break;
+      }
+      case 'nodule': {
+        const d = Math.sqrt(u * u + (v * 1.3) ** 2);
+        if (d <= f.a) hit = { c: d > f.a - 1 ? mul(f.c, 0.75) : Math.abs(d - f.a * 0.55) < 0.5 ? mul(f.c, 1.25) : f.c, sh: dy < -f.a * 0.3 ? 3 : dy > f.a * 0.4 ? 1 : 2, f };
+        break;
+      }
+      case 'shells': {
+        const q = hash2(gx, gy, f.seed);
+        if (q < 0.012) hit = { c: f.c, sh: 3, f };
+        else if (q < 0.02 && hash2(gx - 1, gy, f.seed) < 0.012) hit = { c: mul(f.c, 0.85), sh: 2, f };
+        break;
+      }
+      case 'burrows': {
+        const wig = Math.sin(dy / 2.2 + f.seed * 30) * 1.1;
+        if (Math.abs(dx - wig) < 0.8 && dy > 0 && dy < 9 + f.seed * 10) hit = { c: f.c, sh: 1, f };
+        break;
+      }
+      case 'xbed': {
+        // inclined laminae inside wavy sets
+        const set = Math.floor((gy + Math.sin(gx / 13 + f.seed * 9) * 2) / 9);
+        const t = (gx * 0.55 + gy * (set % 2 ? 1 : -1) + set * 7) % 5;
+        if (t < 0.9) hit = { c: mix(base, f.c, 0.6), sh: Math.max(0, sh - 1), f };
+        break;
+      }
+      case 'dendrite': {
+        const d = Math.hypot(dx, dy);
+        if (d < f.a && dy >= -1) {
+          const ang = Math.atan2(dy, dx);
+          const branch = Math.abs(Math.sin(ang * 5 + f.seed * 10)) < 0.25 + (1 - d / f.a) * 0.4;
+          if (branch && hash2(gx, gy, f.seed) < 0.75) hit = { c: f.c, sh: 1, f };
+        }
+        break;
+      }
+      case 'ash': {
+        const yy = f.y + Math.sin(gx / 10 + f.seed * 7) * 1.5;
+        if (gy >= yy && gy < yy + 2) hit = { c: f.c, sh: hash2(gx, gy, f.seed) < 0.3 ? 3 : 2, f };
+        break;
+      }
+    }
+  }
+  return hit;
+}
+
 function buildArt(siteId: string, st: SiteState): LayerArt {
   const N = GW * GH;
   const r = mulberry(hashStr(`${siteId}:${st.depth}:${st.layersDone}`));
@@ -301,21 +448,28 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
   const boundary = at.left === 1 && at.next !== at.s;
   const bPhase = r() * 10, bY = GH - 22 - Math.floor(r() * 10);
   const isNext = (gx: number, gy: number) => boundary && gy > bY + Math.round(Math.sin(gx / 11 + bPhase) * 3 + Math.sin(gx / 4.3) * 1);
-  const kinds = new Map<Stratum, { base: RGB; accent: RGB; seam: RGB; row: number[]; blobs: [number, number, number, number][]; seams: [number, number, number][] }>();
+  const kinds = new Map<Stratum, { base: RGB; accent: RGB; seam: RGB; row: number[]; blobs: [number, number, number, number][]; seams: [number, number, number][]; feats: Feature[] }>();
+  const siteRocks = STRATA[siteId] ?? [];
+  // every layer is a little warmer or cooler than the last one
+  const hue: RGB = [1 + (r() - 0.5) * 0.08, 1 + (r() - 0.5) * 0.05, 1 + (r() - 0.5) * 0.08];
   for (const s of boundary ? [at.s, at.next] : [at.s]) {
-    const base = tone(hex(s.color), st.depth + (s === at.next ? 1 : 0));
+    const b0 = tone(hex(s.color), st.depth + (s === at.next ? 1 : 0));
+    const base: RGB = [b0[0] * hue[0], b0[1] * hue[1], b0[2] * hue[2]];
+    const feats = pickFeatures(s, siteRocks.filter((x) => x.name !== s.name.replace(/ [IVX]+$/, '')), r);
     const row = Array.from({ length: GH }, () => (r() < 0.72 ? 2 : 1));
     const blobs: [number, number, number, number][] = [];
     if (s.accent) for (let k = 0, n = 5 + Math.floor(r() * 6); k < n; k++) blobs.push([r() * GW, r() * GH, 1.4 + r() * (s.grain === 'shale' ? 3.5 : 2.4), s.grain === 'shale' ? 0.55 : 0.85]);
     const seams: [number, number, number][] = [];
     if (s.seam) for (let k = 0, n = 1 + Math.floor(r() * 2); k < n; k++) seams.push([8 + r() * (GH - 16), 1 + Math.floor(r() * 2.6), r() * 10]);
-    kinds.set(s, { base, accent: tone(hex(s.accent ?? s.color), st.depth), seam: tone(hex(s.seam ?? s.color), st.depth), row, blobs, seams });
+    feats.forEach((f) => { f.c = tone(f.c, f.kind === 'lens' ? st.depth : st.depth * 0.5); });
+    kinds.set(s, { base, accent: tone(hex(s.accent ?? s.color), st.depth), seam: tone(hex(s.seam ?? s.color), st.depth), row, blobs, seams, feats });
   }
 
   const rock = new Float32Array(N * 3), back = new Float32Array(N * 3);
   const crack = new Uint8Array(N);
   const tileCss: string[] = [];
   const tileRock: string[] = [];
+  const tileFeat: string[] = [];
   const set = (arr: Float32Array, p: number, c: RGB) => { arr[p * 3] = c[0]; arr[p * 3 + 1] = c[1]; arr[p * 3 + 2] = c[2]; };
   const tint = Array.from({ length: B.gridW * B.gridH }, () => 0.96 + r() * 0.08);
 
@@ -334,13 +488,16 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
       for (const [bx, by, br, sq] of K.blobs) {
         if (((gx - bx) / br) ** 2 + ((gy - by) / (br * sq)) ** 2 <= 1) { c = K.accent; sh = r() < 0.25 ? 1 : 2; }
       }
+      const ft = featureAt(K.feats, gx, gy, c, sh, r);
+      if (ft) { c = ft.c; sh = Math.max(0, Math.min(3, ft.sh)); }
+      if (x === 8 && y === 8) tileFeat.push(ft && ft.f.kind !== 'xbed' ? ft.f.label : '');
       const pc = mul(c, SHADE[sh] * tint[ti] * (1 - (gy / GH) * 0.06));
       // tile edges: soft light top/left, shadow bottom/right — tiles read as separate blocks
       const bevel = y === 0 ? 1.1 : x === 0 ? 1.06 : y === TS - 1 ? 0.76 : x === TS - 1 ? 0.82 : 1;
       const p = gy * GW + gx;
       set(rock, p, mul(pc, bevel));
       set(back, p, mul(pc, 0.56 * (y < 3 ? 0.72 : 1) * (x < 2 ? 0.84 : 1)));
-      if (x === 8 && y === 8) { tileCss.push(css(pc)); tileRock.push(s.name); }
+      if (x === 8 && y === 8) { tileCss.push(css(pc)); tileRock.push(tileFeat[tileFeat.length - 1] ? `${s.name} · ${tileFeat[tileFeat.length - 1]}` : s.name); }
     }
   }
 

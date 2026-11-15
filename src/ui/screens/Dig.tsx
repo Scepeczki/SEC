@@ -13,7 +13,7 @@ import {
 } from '../../game/dig';
 import { Workshop } from '../dig/Workshop';
 import { ChestArt, ChestModal, TIER_COLOR } from '../dig/Chest';
-import { MINERALS, MINERAL_BY_ID, strataFrom, stratumAt } from '../../game/geology';
+import { COMMON_MINERALS, MINERALS, MINERAL_BY_ID, type Mineral, siteMinerals, strataFrom, stratumAt } from '../../game/geology';
 import { mods, type Mods } from '../../game/mods';
 import { bankCap, collectBank, incomePerSec } from '../../game/park';
 import type { CrewMode, FindEntry, GameState, ItemKind, LayerItem, PendingChest, SiteState } from '../../game/state';
@@ -922,31 +922,39 @@ function MineralsTab({ s }: { s: GameState }) {
   const [sel, setSel] = useState<string | null>(null);
   const owned = s.minerals ?? {};
   const mn = sel ? MINERAL_BY_ID.get(sel) : null;
-  const have = MINERALS.filter((x) => owned[x.id]).length;
+  const st = siteState(s, s.activeSite);
+  const own = siteMinerals(s.activeSite);
+  const haveSite = own.filter((x) => owned[x.id]).length;
+  const haveCommon = COMMON_MINERALS.filter((x) => owned[x.id]).length;
+  const haveAll = MINERALS.filter((x) => owned[x.id]).length;
+  const card = (x: Mineral) => {
+    const n = owned[x.id] ?? 0;
+    const deep = x.minDepth !== undefined && st.depth < x.minDepth;
+    return (
+      <button key={x.id} className={`mineral-card ${sel === x.id ? 'on' : ''} ${deep ? 'deep' : ''}`} style={n ? { borderColor: RARITY_COLORS[x.rarity] } : undefined} onClick={() => setSel(sel === x.id ? null : x.id)}>
+        <img className="pixel" src={iconUrl('mineral', x.id, 2)} width={32} height={32} alt="" style={n ? undefined : { filter: 'brightness(0.15)' }} />
+        <span>{n ? x.name : deep ? `od −${depthMeters(x.minDepth!)} m` : '???'}</span>
+        {n > 0 && <span className="muted">×{n}</span>}
+        {!n && deep && <Lock className="lock-mini" />}
+        {!x.site && x.sites?.includes(s.activeSite) && <span className="star">★</span>}
+      </button>
+    );
+  };
   return (
     <div className="col" style={{ gap: 10 }}>
-      <div className="row"><span className="muted">Minerały trafiają się w skale obok skamieniałości. Gwiazdka = częściej na tym stanowisku.</span><span className="spacer" /><b style={{ color: 'var(--accent)' }}>{have} / {MINERALS.length}</b></div>
-      <Bar value={have} max={MINERALS.length} kind="purple" title="Ukończenie kolekcji minerałów" />
-      <div className="mineral-grid">
-        {MINERALS.map((x) => {
-          const n = owned[x.id] ?? 0;
-          return (
-            <button key={x.id} className={`mineral-card ${sel === x.id ? 'on' : ''}`} style={n ? { borderColor: RARITY_COLORS[x.rarity] } : undefined} onClick={() => setSel(sel === x.id ? null : x.id)}>
-              <img className="pixel" src={iconUrl('mineral', x.id, 2)} width={32} height={32} alt="" style={n ? undefined : { filter: 'brightness(0.15)' }} />
-              <span>{n ? x.name : '???'}</span>
-              {n > 0 && <span className="muted">×{n}</span>}
-              {x.sites?.includes(s.activeSite) && <span className="star">★</span>}
-            </button>
-          );
-        })}
-      </div>
+      <div className="row"><span className="muted">Każde stanowisko ma {own.length} własnych minerałów — głębsze odsłaniają się dopiero, gdy zejdziesz niżej.</span><span className="spacer" /><b style={{ color: 'var(--accent)' }} title="Cała kolekcja minerałów">{haveAll} / {MINERALS.length}</b></div>
+      <div className="row small" style={{ gap: 8 }}><b>Tego stanowiska</b><span className="muted">{haveSite} / {own.length}</span><span className="spacer" /></div>
+      <Bar value={haveSite} max={own.length || 1} kind="purple" title="Minerały tego stanowiska" />
+      <div className="mineral-grid">{own.map(card)}</div>
+      <div className="row small" style={{ gap: 8, marginTop: 4 }}><b>Wszędzie</b><span className="muted">{haveCommon} / {COMMON_MINERALS.length} · ★ = częściej tutaj</span></div>
+      <div className="mineral-grid">{COMMON_MINERALS.map(card)}</div>
       {mn && (
         <div className="hidden-row" style={{ alignItems: 'flex-start' }}>
           <img className="pixel" src={iconUrl('mineral', mn.id, 3)} width={48} height={48} alt="" style={owned[mn.id] ? undefined : { filter: 'brightness(0.15)' }} />
           <div className="body">
             <div className="top"><span>{owned[mn.id] ? mn.name : '???'}</span><span style={{ color: RARITY_COLORS[mn.rarity] }}>{RARITY_NAMES[mn.rarity]}</span></div>
-            <span className="small">{owned[mn.id] ? mn.desc : 'Jeszcze nieznaleziony minerał.'}</span>
-            <span className="small muted">ok. {fmt(mn.coins)} monet (więcej z głębszych warstw){mn.sites?.length ? ` · częściej: ${mn.sites.map((id) => SITE_BY_ID.get(id)?.name).filter(Boolean).join(', ')}` : ''}</span>
+            <span className="small">{owned[mn.id] ? mn.desc : mn.minDepth !== undefined ? `Jeszcze nieznaleziony. Pojawia się od głębokości −${depthMeters(mn.minDepth)} m.` : 'Jeszcze nieznaleziony minerał.'}</span>
+            <span className="small muted">ok. {fmt(mn.coins)} monet (więcej z głębszych warstw){mn.site ? ` · tylko: ${SITE_BY_ID.get(mn.site)?.name}` : mn.sites?.length ? ` · częściej: ${mn.sites.map((id) => SITE_BY_ID.get(id)?.name).filter(Boolean).join(', ')}` : ''}</span>
           </div>
         </div>
       )}

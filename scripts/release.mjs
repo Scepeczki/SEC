@@ -36,7 +36,7 @@ const GH = token();
 const api = async (url, init = {}) => {
   const r = await fetch(url.startsWith('http') ? url : `https://api.github.com${url}`, {
     ...init,
-    headers: { Authorization: `Bearer ${GH}`, Accept: 'application/vnd.github+json', 'User-Agent': 'park-wymarlych-release', ...(init.headers ?? {}) },
+    headers: { Authorization: `Bearer ${GH}`, Accept: 'application/vnd.github+json', 'User-Agent': 'sec-release', ...(init.headers ?? {}) },
   });
   if (!r.ok && r.status !== 404) throw new Error(`${init.method ?? 'GET'} ${url}: ${r.status} ${await r.text()}`);
   return r.status === 404 ? null : r.json();
@@ -47,14 +47,14 @@ if (await api(`/repos/${owner}/${repo}/releases/tags/${tag}`)) throw new Error(`
 console.log(`Buduję instalator ${version}…`);
 execSync('npm run dist', { stdio: 'inherit' });
 
-const files = [`Park-Wymarlych-Setup-${version}.exe`, `Park-Wymarlych-Setup-${version}.exe.blockmap`, 'latest.yml'].map((f) => path.join('release', f));
+const files = [`SEC-Setup-${version}.exe`, `SEC-Setup-${version}.exe.blockmap`, 'latest.yml'].map((f) => path.join('release', f));
 for (const f of files) if (!fs.existsSync(f)) throw new Error(`Brak pliku ${f}`);
 
 const head = execSync('git rev-parse HEAD', { encoding: 'utf8' }).trim();
 console.log(`Tworzę wydanie ${tag} na ${owner}/${repo}…`);
 const rel = await api(`/repos/${owner}/${repo}/releases`, {
   method: 'POST',
-  body: JSON.stringify({ tag_name: tag, target_commitish: head, name: `Park Wymarłych ${version}`, body, draft: false, prerelease: false }),
+  body: JSON.stringify({ tag_name: tag, target_commitish: head, name: `SEC ${version}`, body, draft: false, prerelease: false }),
 });
 for (const f of files) {
   const name = path.basename(f);

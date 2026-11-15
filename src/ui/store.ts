@@ -29,7 +29,7 @@ interface Store {
 
 function loadInitial(): { s: GameState; offline: OfflineSummary | null } {
   try {
-    // desktop app: the save is a file in Documents\Park Wymarłych (browser storage only as a fallback)
+    // desktop app: the save is a file in Documents\SEC (browser storage only as a fallback)
     const raw = desktop?.readSave() ?? localStorage.getItem(SAVE_KEY);
     if (raw) {
       const s = deserialize(raw);

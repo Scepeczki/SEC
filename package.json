@@ -1,7 +1,7 @@
 {
   "name": "dinozaury",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -45,12 +45,12 @@
   "allowScripts": {
     "electron@33.4.11": true
   },
-  "description": "Park Wymarłych — gra o kolekcjonowaniu prawdziwych wymarłych zwierząt: wykopaliska, DNA, park.",
+  "description": "SEC — Self-Organizing Entropic Complex: gra o kolekcjonowaniu prawdziwych wymarłych zwierząt (wykopaliska, DNA, park).",
   "author": "Scepeczki",
   "main": "electron/main.cjs",
   "build": {
     "appId": "com.scepeczki.parkwymarlych",
-    "productName": "Park Wymarłych",
+    "productName": "SEC",
     "copyright": "Dane: The Paleobiology Database (CC BY 4.0)",
     "directories": {
       "output": "release"
@@ -70,7 +70,7 @@
         }
       ],
       "icon": "electron/icon.png",
-      "artifactName": "Park-Wymarlych-Setup-${version}.${ext}"
+      "artifactName": "SEC-Setup-${version}.${ext}"
     },
     "nsis": {
       "oneClick": false,
@@ -78,7 +78,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "shortcutName": "Park Wymarłych",
+      "shortcutName": "SEC – Self-Organizing Entropic Complex",
       "runAfterFinish": true,
       "deleteAppDataOnUninstall": false,
       "installerLanguages": [

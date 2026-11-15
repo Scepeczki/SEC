@@ -165,7 +165,7 @@ export function SettingsScreen() {
         <div className="panel col">
           <h2>💾 Zapis</h2>
           {desktop ? (
-            <div className="small muted">Gra zapisuje się sama co 15 s do pliku <b>zapis.json</b> w folderze <b>{saveDir || 'Dokumenty\\Park Wymarłych'}</b> (obok dwie kopie zapasowe). Żeby przenieść grę na inny komputer, skopiuj ten plik do tego samego folderu na drugim komputerze albo użyj przycisków poniżej.</div>
+            <div className="small muted">Gra zapisuje się sama co 15 s do pliku <b>zapis.json</b> w folderze <b>{saveDir || 'Dokumenty\\SEC'}</b> (obok dwie kopie zapasowe). Żeby przenieść grę na inny komputer, skopiuj ten plik do tego samego folderu na drugim komputerze albo użyj przycisków poniżej.</div>
           ) : (
             <div className="small muted">Gra zapisuje się automatycznie w tej przeglądarce co 15 s. Możesz też zrobić kopię do pliku.</div>
           )}

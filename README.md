@@ -1,16 +1,18 @@
-# Park Wymarłych
+# SEC — Self-Organizing Entropic Complex
 
-Kolekcjonersko-parkowa gra o ~1800 prawdziwych wymarłych zwierzętach (dane: Paleobiology Database).
+Kolekcjonersko-parkowa gra o ponad 2200 prawdziwych wymarłych zwierzętach (dane: Paleobiology Database).
 Kopiesz na prawdziwych stanowiskach → sekwencjonujesz DNA → hodujesz zwierzęta → karmisz je i ewoluujesz (Młode → Dorosłe → Wzmocnione → Elitarne → Apeks) → rozbudowujesz park i stacje badawcze → wypełniasz drzewo życia.
 
 ## Jak zagrać
 
-1. Wejdź w [najnowsze wydanie](https://github.com/Scepeczki/SEC/releases/latest) i pobierz plik **Park-Wymarlych-Setup-….exe**.
+1. Wejdź w [najnowsze wydanie](https://github.com/Scepeczki/SEC/releases/latest) i pobierz plik **SEC-Setup-….exe**.
 2. Uruchom go. Gra trafi na pulpit i do menu Start, a nowe wersje pobiera sama.
 
 Windows może pokazać ostrzeżenie „System Windows ochronił komputer”, bo instalator nie ma płatnego podpisu cyfrowego. Kliknij wtedy **Więcej informacji → Uruchom mimo to**.
 
-**Zapis** to plik `Dokumenty\Park Wymarłych\zapis.json`. Żeby przenieść grę na inny komputer, skopiuj go do tego samego folderu na drugim komputerze albo użyj w grze **Inne → Eksportuj / Wczytaj z pliku**.
+**Zapis** to plik `Dokumenty\SEC\zapis.json`. Żeby przenieść grę na inny komputer, skopiuj go do tego samego folderu na drugim komputerze albo użyj w grze **Inne → Eksportuj / Wczytaj z pliku**.
+
+Co nowego: [CHANGELOG.md](CHANGELOG.md) · pełna rozpiska wersji 0.2.0: [docs/wersja-0.2.0.md](docs/wersja-0.2.0.md).
 
 ## Dla twórców
 
@@ -27,6 +29,7 @@ npm run release    # wydanie na GitHubie (wersja z package.json, opis z CHANGELO
 | Komenda | Co robi |
 |---|---|
 | `npm run data` | pobiera dane z PBDB (cache w `data-raw/`) i generuje `src/data/taxa.json` + `sites.json` |
+| `npx tsx scripts/data/minerals.ts` | minerały stanowisk z Wikidata → `src/data/minerals.json` |
 | `npm test` | testy (dane, determinizm sprite'ów, offline, zapis, ścieżka samouczka) |
 | `npm run sim -- 21 3 20 2` | bot gra 21 dni (3 sesje × 20 min, 2 kliknięcia/s) i wypisuje kamienie milowe — do balansu |
 | `npx tsx scripts/sprite-sheet.ts archetypes out.png` | arkusz sprite'ów do oceny grafiki (`stages`, `names:A,B,C`) |

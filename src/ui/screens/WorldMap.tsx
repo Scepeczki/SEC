@@ -10,7 +10,7 @@ import { formatMa } from '../../data/geotime';
 import { fmt } from '../../game/balance';
 import { SITE_UNLOCK } from '../../game/content';
 import { depthMeters } from '../../game/dig';
-import { MINERALS, STRATA, stratumAt } from '../../game/geology';
+import { STRATA, siteMinerals, stratumAt } from '../../game/geology';
 import { canUnlockSite, parkLevel, unlockSite } from '../../game/meta';
 import type { GameState } from '../../game/state';
 import { iconUrl } from '../dig/art';
@@ -227,14 +227,14 @@ function timePos(ma: number): number {
   }
   return 1;
 }
-const SHORT: Record<string, string> = { burgess: 'Burgess', holzmaden: 'Holzmaden', krasiejow: 'Krasiejów', pampas: 'Pampasy', dinosaur_park: 'Dinosaur Park', hell_creek: 'Hell Creek', mazon_creek: 'Mazon Creek', kem_kem: 'Kem Kem' };
+const SHORT: Record<string, string> = { burgess: 'Burgess', holzmaden: 'Holzmaden', krasiejow: 'Krasiejów', pampas: 'Pampasy', dinosaur_park: 'Dinosaur Park', hell_creek: 'Hell Creek', mazon_creek: 'Mazon Creek', kem_kem: 'Kem Kem', chinle: 'Chinle', djadokhta: 'Djadochta', green_river: 'Green River', oxford_clay: 'Oxford Clay', white_river: 'White River', fezouata: 'Fezouata' };
 const shortName = (x: Site) => SHORT[x.id] ?? x.name.replace(/^(Formacja|Wapienie|Łupki|Basen|Kopalnia)\s+/, '').replace(/\s*\(.*\)$/, '');
 function regionOf(x: Site): string {
   if (x.lng < -30) return x.lat > 12 ? 'Ameryka Północna' : 'Ameryka Południowa';
   if (x.lng < 60) return x.lat > 36 ? 'Europa' : 'Afryka';
-  return 'Azja';
+  return x.lat < -10 && x.lng > 110 ? 'Australia' : 'Azja';
 }
-const REGIONS = ['Ameryka Północna', 'Europa', 'Afryka', 'Azja', 'Ameryka Południowa'];
+const REGIONS = ['Ameryka Północna', 'Europa', 'Afryka', 'Azja', 'Ameryka Południowa', 'Australia'];
 
 type PinState = 'active' | 'open' | 'ready' | 'locked';
 function pinState(s: GameState, id: string): PinState {
@@ -444,7 +444,7 @@ function SitesList({ s, sel, pick, eraOk }: { s: GameState; sel: string | null; 
       </div>
       <div className="list">
         {REGIONS.map((reg) => {
-          const list = SITES.filter((x) => regionOf(x) === reg && match(x));
+          const list = SITES.filter((x) => regionOf(x) === reg && match(x)).sort((a, b) => (SITE_UNLOCK[a.id]?.level ?? 99) - (SITE_UNLOCK[b.id]?.level ?? 99));
           if (!list.length) return null;
           return (
             <div key={reg}>
@@ -482,7 +482,8 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
   const lay = (n: number) => (n >= 99 ? 10 : n);
   const cycle = strata.reduce((a, r) => a + lay(r.layers), 0);
   const posInCycle = ((depth % cycle) + 0.5) / cycle;
-  const minerals = MINERALS.filter((m) => m.sites?.includes(siteId));
+  const minerals = siteMinerals(siteId);
+  const minFound = minerals.filter((x) => s.minerals?.[x.id]).length;
   return (
     <div className="map-overlay map-drawer">
       <div className="row" style={{ alignItems: 'flex-start', flexWrap: 'nowrap' }}>
@@ -519,9 +520,11 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
         <span className="small">{unlocked ? <>Tu kopiesz: <b>{at.s.name}</b> · −{depthMeters(depth)} m</> : <>Na wierzchu: <b>{strata[0]?.name}</b> · najedź na pasek, by zobaczyć resztę</>}</span>
       </div>
       {minerals.length > 0 && (
-        <div className="row small" style={{ gap: 8 }}>
-          <span className="lbl">Typowe minerały</span>
-          {minerals.map((m) => <img key={m.id} className="pixel" src={iconUrl('mineral', m.id, 2)} width={28} height={28} title={s.minerals?.[m.id] ? m.name : 'Jeszcze nieznaleziony minerał'} style={s.minerals?.[m.id] ? undefined : { filter: 'brightness(0.3)' }} alt="" />)}
+        <div className="col small" style={{ gap: 6 }}>
+          <span className="lbl">Minerały stanowiska · {minFound}/{minerals.length}</span>
+          <div className="row" style={{ gap: 2, flexWrap: 'wrap' }}>
+            {minerals.map((m) => <img key={m.id} className="pixel" src={iconUrl('mineral', m.id, 1)} width={18} height={18} title={s.minerals?.[m.id] ? m.name : `Jeszcze nieznaleziony (od −${depthMeters(m.minDepth ?? 0)} m)`} style={s.minerals?.[m.id] ? undefined : { filter: 'brightness(0.3)' }} alt="" />)}
+          </div>
         </div>
       )}
       {unlocked ? (
@@ -545,7 +548,7 @@ function Timeline({ s, sel, setSel, era, setEra }: { s: GameState; sel: string |
     const lastIn: number[] = [];
     return items.map((it) => {
       let r = 0;
-      while (lastIn[r] !== undefined && it.p - lastIn[r] < 0.085) r++;
+      while (lastIn[r] !== undefined && it.p - lastIn[r] < 0.1) r++;
       lastIn[r] = it.p;
       return { ...it, row: r };
     });

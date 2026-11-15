@@ -3,16 +3,18 @@ import { GENUS_BY_NAME, TAXA, spriteSpec } from '../src/data/db';
 import { renderSprite } from '../src/sprites/generator';
 import { catchUp, deserialize, serialize, startGame, tick } from '../src/game/engine';
 import { blastCharge, generateLayer, hammerRisk, hitTile, openChest, siteState } from '../src/game/dig';
-import { stratumAt } from '../src/game/geology';
+import { STRATA, mineralWeights, siteMinerals, stratumAt } from '../src/game/geology';
+import { SITES } from '../src/data/db';
+import { SITE_UNLOCK } from '../src/game/content';
 import { TOOL_NODES, TOOL_NODE_BY_ID, buyToolNode } from '../src/game/tools';
 import { canSynthesize, queueAll } from '../src/game/lab';
 import { canEvolve, canFeed, feed } from '../src/game/park';
 import { mods } from '../src/game/mods';
 
 describe('data', () => {
-  it('has 1000–2000 genera, each with archetype, habitat and a parent clade', () => {
-    expect(TAXA.genera.length).toBeGreaterThanOrEqual(1000);
-    expect(TAXA.genera.length).toBeLessThanOrEqual(2000);
+  it('has 2000–3000 genera, each with archetype, habitat and a parent clade', () => {
+    expect(TAXA.genera.length).toBeGreaterThanOrEqual(2000);
+    expect(TAXA.genera.length).toBeLessThanOrEqual(3000);
     for (const g of TAXA.genera) {
       expect(g.archetype).toBeTruthy();
       expect(g.habitat).toBeTruthy();
@@ -252,6 +254,21 @@ describe('dig rules', () => {
     expect(s.chests.length).toBe(0);
     expect(openChest(s, c.id)).toEqual([]);
     expect(s.coins).toBeGreaterThan(coins);
+  });
+
+  it('every site has rocks, an unlock and its own ~20 minerals that open up with depth', () => {
+    const seen = new Set<string>();
+    for (const site of SITES) {
+      expect(STRATA[site.id]?.length, site.id).toBeGreaterThan(0);
+      expect(SITE_UNLOCK[site.id], site.id).toBeTruthy();
+      const own = siteMinerals(site.id);
+      expect(own.length, site.id).toBeGreaterThanOrEqual(15);
+      for (const m of own) { expect(seen.has(m.id)).toBe(false); seen.add(m.id); }
+      const shallow = mineralWeights(site.id, 0).filter(([m]) => m.site === site.id).length;
+      const deep = mineralWeights(site.id, 200).filter(([m]) => m.site === site.id).length;
+      expect(shallow).toBeLessThan(deep);
+      expect(deep).toBe(own.length);
+    }
   });
 
   it('the rock column never ends', () => {

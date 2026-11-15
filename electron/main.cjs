@@ -1,11 +1,14 @@
 // Desktop shell: one window with the game (no local server, no console window), saves as plain files in
-// Documents\Park Wymarłych\ (easy to copy to another computer), and automatic updates from GitHub Releases.
+// Documents\SEC\ (easy to copy to another computer), and automatic updates from GitHub Releases.
 
 const { app, BrowserWindow, dialog, ipcMain, shell, Menu } = require('electron');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const APP_NAME = 'Park Wymarłych';
+const APP_NAME = 'SEC';
+const WINDOW_TITLE = 'SEC — Self-Organizing Entropic Complex';
+/** saves of version 0.1.0 (the game was called "Park Wymarłych") */
+const OLD_SAVE_DIR = 'Park Wymarłych';
 app.setName(APP_NAME);
 if (process.platform === 'win32') app.setAppUserModelId('com.scepeczki.parkwymarlych');
 
@@ -18,9 +21,21 @@ let win = null;
 
 // ---------------------------------------------------------------- saves (plain JSON files)
 
-const saveDir = () => path.join(app.getPath('documents'), APP_NAME);
+// SEC_SAVE_DIR: test runs use their own folder and never touch the player's saves
+const saveDir = () => process.env.SEC_SAVE_DIR || path.join(app.getPath('documents'), APP_NAME);
 const savePath = () => path.join(saveDir(), 'zapis.json');
 const backupPath = (n) => path.join(saveDir(), `zapis-kopia-${n}.json`);
+
+/** first start after the rename: bring the old save folder's files over (the old folder stays as it was) */
+function migrateOldSaves() {
+  if (process.env.SEC_SAVE_DIR) return;
+  try {
+    const old = path.join(app.getPath('documents'), OLD_SAVE_DIR);
+    if (fs.existsSync(savePath()) || !fs.existsSync(path.join(old, 'zapis.json'))) return;
+    fs.mkdirSync(saveDir(), { recursive: true });
+    for (const f of fs.readdirSync(old)) if (f.endsWith('.json')) fs.copyFileSync(path.join(old, f), path.join(saveDir(), f));
+  } catch (e) { console.error('save migration failed', e); }
+}
 
 function readSave() {
   for (const p of [savePath(), backupPath(1), backupPath(2)]) {
@@ -106,7 +121,7 @@ function createWindow() {
     minHeight: 700,
     show: false,
     backgroundColor: '#14130e',
-    title: APP_NAME,
+    title: WINDOW_TITLE,
     icon: path.join(__dirname, 'icon.png'),
     autoHideMenuBar: true,
     webPreferences: {
@@ -132,5 +147,5 @@ function createWindow() {
 }
 
 app.on('second-instance', () => { if (win) { if (win.isMinimized()) win.restore(); win.focus(); } });
-app.whenReady().then(() => { createWindow(); setupUpdates(); });
+app.whenReady().then(() => { migrateOldSaves(); createWindow(); setupUpdates(); });
 app.on('window-all-closed', () => app.quit());
