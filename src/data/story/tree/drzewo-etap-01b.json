@@ -1,0 +1,1690 @@
+{
+ "batch": "etap-01b",
+ "stage": {
+  "nr": 1,
+  "id": "etap-01",
+  "partOf": "drzewo-etap-01a.json (tam: intro, route, pozostałe visuals)",
+  "visuals": [
+   {
+    "id": "glowa-stawonoga-etap-01",
+    "kind": "diagram porównawczy",
+    "title": "Jedna głowa, trzy pomysły",
+    "purpose": "Pokazać, czym różnią się trzy linie Deuteropoda: wielkie odnóża (Megacheira), szczękoczułki (Chelicerata) i żuwaczki (Mandibulata).",
+    "howTo": "Trzy głowy stawonogów widziane od spodu, obok siebie, w tym samym kolorze. Te same pary odnóży podświetl tym samym kolorem we wszystkich trzech: pierwsza para (czerwona) – wielkie chwytne ramię / szczękoczułek / czułek; para przy ustach (niebieska) – zwykła noga / noga / żuwaczka. Po najechaniu kursorem: podpis funkcji. Na dole sylwetki dzisiejszych potomków: brak (Megacheira), pająk, krab i mrówka.",
+    "data": {
+     "Megacheira": [
+      "wielkie chwytne ramię",
+      "nogi"
+     ],
+     "Chelicerata": [
+      "szczękoczułki",
+      "nogi kroczne"
+     ],
+     "Mandibulata": [
+      "czułki",
+      "żuwaczki"
+     ]
+    }
+   },
+   {
+    "id": "jajeczka-etap-01",
+    "kind": "porównanie (infografika)",
+    "title": "Dwa sposoby na potomstwo",
+    "purpose": "Pokazać, że już ok. 510–520 mln lat temu stawonogi miały różne strategie opieki nad jajami.",
+    "howTo": "Dwie kolumny: Kunmingella – wiele drobnych jaj przyczepionych do odnóży; Waptia – kilkanaście do 24 dużych jaj pod pancerzem. Pod spodem dwa paski: „liczba jaj” i „wielkość jaja”, odwrotnie proporcjonalne.",
+    "data": {
+     "Waptia_jaja_max": 24,
+     "Waptia_jaja_mm": 2,
+     "Kunmingella": "wiele małych jaj (liczba w źródle nie podana)"
+    }
+   },
+   {
+    "id": "budowa-strunowca-etap-01",
+    "kind": "diagram anatomiczny",
+    "title": "Co ma strunowiec?",
+    "purpose": "Wyjaśnić cztery cechy strunowców na przykładzie Haikouichthysa i porównać je z człowiekiem.",
+    "howTo": "Przekrój podłużny małej rybki z podpisanymi warstwami: struna grzbietowa (żółta), cewka nerwowa nad nią (niebieska), szczeliny skrzelowe (różowe), mięśnie w kształcie zygzaków (czerwone), ogon za odbytem. Przełącznik „człowiek”: te same kolory na sylwetce zarodka człowieka (szczeliny skrzelowe zarodka, kręgosłup w miejscu struny, rdzeń kręgowy, kość ogonowa).",
+    "data": "brak liczb – diagram"
+   },
+   {
+    "id": "rafa-archeocjat-etap-01",
+    "kind": "ilustracja przekrojowa",
+    "title": "Pierwsza rafa zwierząt",
+    "purpose": "Pokazać, jak wyglądała rafa archeocjat i kto na niej mieszkał.",
+    "howTo": "Przekrój płytkiego dna: maty mikrobów, między nimi kielichy archeocjat (podwójne ścianki z porami), trylobity i ramienionogi u podstawy. Pasek czasu pod spodem: archeocjaty od ok. 525 do ok. 510 mln lat temu, potem „przerwa w rafach” aż do ordowiku.",
+    "data": {
+     "archeocjaty_od": 525,
+     "archeocjaty_do": 510
+    }
+   }
+  ],
+  "outro": [
+   {
+    "kind": "skutki",
+    "title": "Co zostawia po sobie etap 1",
+    "text": "W kilka milionów lat w morzu pojawiły się zwierzęta, które dziś uznajemy za podstawowe plany budowy: stawonogi z pancerzem i stawami, robaki ryjące w mule, ramienionogi i mięczaki z muszlami, wtórouste z gardłem przebitym szczelinami. Drapieżniki takie jak radiodonty sprawiły, że opłacało się mieć pancerz, kolce, oczy i kryjówki. Ale większość linii, które tu zobaczyłeś, nie ma dziś potomków. Eksplozja kambryjska nie była prostą drogą do „nowoczesnych” zwierząt, tylko rozkwitem wielu pomysłów, z których przetrwały nieliczne.",
+    "visual": "Krzaczasty diagram linii z etapu 1: wiele gałęzi kończy się szarym krzyżykiem w kambrze, kilka biegnie dalej w kolorze ku krawędzi kadru."
+   },
+   {
+    "kind": "punkt-wyjscia",
+    "title": "Co czeka w etapie 2",
+    "text": "Przeniesiemy się ok. 10 mln lat do przodu, do Kanady, do łupków z Burgess. Trylobity będą tam już królować, a wśród nich pojawią się nowe kształty. Spotkasz Opabinię z pięciorgiem oczu i trąbką, Marrellę – najczęstsze zwierzę Burgess – i Pikaię, długo uważaną za naszego najstarszego przodka. Zobaczysz też, jak kończy się era pierwszych raf: archeocjaty zniknęły ok. 510 mln lat temu.",
+    "visual": "Mapa kambryjskiego świata: strzałka od Chengjiang (Chiny) do Burgess (Kanada) i oś czasu z przesunięciem o ok. 10 mln lat."
+   }
+  ],
+  "site": "chengjiang"
+ },
+ "nodes": [
+  {
+   "id": "Deuteropoda",
+   "inGame": true,
+   "namePl": "Deuteropoda",
+   "parent": "Arthropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "przed ok. 521 mln lat temu",
+    "firstFossils": "ok. 521 mln lat temu (Fuxianhuia, Isoxys)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Głowa z nowym zestawem narzędzi – początek pająków, krabów i owadów",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Problem głowy",
+     "text": "U radiodontów z przodu głowy siedziały wielkie ramiona, a pod spodem okrągły pyszczek. U części stawonogów z tego samego okresu głowa jest zbudowana inaczej: pierwsza para odnóży znika albo zmienia się w wargę nad ustami, a najważniejsza staje się następna para. Ta „druga” para, przyczepiona do drugiego odcinka mózgu, daje nazwę grupie: Deuteropoda, czyli w wolnym tłumaczeniu „drugonogi”. Brzmi to jak drobiazg anatomiczny, ale to właśnie ta linia przetrwała do dziś.",
+     "visual": "Dwie głowy obok siebie od spodu: radiodont z wielkimi ramionami przed pyszczkiem i deuteropod, u którego te ramiona zastąpiła warga, a za nią podświetlona nowa para odnóży."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Mózg w kawałkach",
+     "text": "Mózg stawonoga składa się z kilku połączonych części, z których każda obsługuje inne odnóża i zmysły. U Fuxianhuii z Chengjiang w 2012 r. odkryto skamieniały mózg z płatami wzrokowymi – najbardziej przekonującą budowę układu nerwowego znaną z kambru. Jego kształt przypomina mózg dzisiejszych pancerzowców podobnej wielkości. Fuxianhuia, ok. 520 mln lat temu, wyglądała jak prosta krewetka z dużymi oczami i długim tułowiem.",
+     "visual": "Fuxianhuia w zarysie, z przezroczystą głową; w środku podświetlony mózg z trzema płatami i dwiema bocznymi „kulkami” obsługującymi oczy."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego „przebudowa głowy” się opłaciła",
+     "text": "Głowa z kilkoma wyspecjalizowanymi parami odnóży to jak scyzoryk zamiast jednego noża. Jedne odnóża badają otoczenie, inne chwytają, inne rozdrabniają pokarm. Zwierzę może jednocześnie wąchać, trzymać i gryźć. W kambryjskim morzu, gdzie pożywienie było różnorodne, osobniki, które lepiej radziły sobie z różnym jedzeniem, częściej przeżywały. Analogia ze scyzorykiem ma granice: odnóża nie powstały „do zadań”, tylko zmieniały się powoli, a te zmiany, które pomagały, się utrwalały.",
+     "visual": "Scyzoryk z rozłożonymi narzędziami obok głowy stawonoga z rozłożonymi odnóżami; dopasowane kolorami: nożyczki – szczypce, lupa – czułek, nóż – żuwaczka."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Trzy drogi z jednej głowy",
+     "text": "Deuteropoda rozdzieliły się na kilka linii. Megacheira mieli pierwszą parę zmienioną w wielkie, chwytne ramiona z kolcami. Szczękoczułkowce (Chelicerata) zmieniły ją w krótkie „szczypce” przy ustach – szczękoczułki – i dały pająki, skorpiony i skrzypłocze. Żuwaczkowce (Mandibulata) mają czułki i żuwaczki – szczęki do cięcia i miażdżenia – i dały skorupiaki, wije i owady. Isoxys i Fuxianhuia, które gra wiesza bezpośrednio pod Deuteropoda, stoją blisko korzenia tej grupy.",
+     "visual": "Wizualizacja „glowa-stawonoga-etap-01”: trzy głowy od spodu z podświetlonymi parami odnóży, pod nimi dzisiejsi potomkowie."
+    },
+    {
+     "kind": "skutki",
+     "title": "Wszystkie żyjące stawonogi",
+     "text": "Z całego bogactwa kambryjskich stawonogów tylko Deuteropoda mają żyjących potomków. Radiodonty, artiopody i bradoriidy wymarły. Każdy pająk, kleszcz, krab, krewetka, stonoga, mrówka i motyl to potomek tej jednej gałęzi. Ale w etapie 1 nikt by tego nie przewidział: Deuteropoda były jedną z kilku podobnie licznych linii.",
+     "visual": "Drzewo stawonogów: szare, przycięte gałęzie radiodontów, artiopodów i bradoriidów; jedna kolorowa gałąź Deuteropoda rozkwitająca w sylwetki dzisiejszych zwierząt."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Megacheira",
+     "namePl": "Megacheira (wielkoramienne)",
+     "trait": "Pierwsza para odnóży jako wielkie, chwytne ramiona",
+     "became": "Leanchoilia, Fortiforceps i ich krewni",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Chelicerata",
+     "namePl": "Szczękoczułkowce",
+     "trait": "Szczękoczułki – krótkie szczypce przy ustach",
+     "became": "Pająki, skorpiony, roztocza, skrzypłocze, wielkoraki",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Mandibulata",
+     "namePl": "Żuwaczkowce",
+     "trait": "Czułki i żuwaczki do cięcia pokarmu",
+     "became": "Skorupiaki, wije i owady",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Ktoś tu zaraz przebuduje sobie głowę – i ta przebudowa przetrwa do dziś.",
+    "lit": "Deuteropoda: linia, z której pochodzi każdy żyjący stawonóg."
+   },
+   "concepts": [
+    "stawonogi-odnoza"
+   ],
+   "misconception": "Mózg nie pojawił się dopiero u kręgowców. Ponad 500 mln lat temu stawonogi miały już złożone mózgi.",
+   "sources": [
+    {
+     "title": "Ma i in. 2012, Complex brain and optic lobes in an early Cambrian arthropod, Nature 490",
+     "url": "https://experts.arizona.edu/en/publications/complex-brain-and-optic-lobes-in-an-early-cambrian-arthropod/",
+     "claim": "Mózg i płaty wzrokowe Fuxianhuii sprzed 520 mln lat"
+    },
+    {
+     "title": "Sci.News 2012",
+     "url": "https://www.sci.news/paleontology/article00654.html",
+     "claim": "Kształt mózgu podobny do mózgu współczesnego pancerzowca podobnej wielkości"
+    },
+    {
+     "title": "Liu i in. 2022, Nature Communications",
+     "url": "https://link.springer.com/10.1038/s41467-022-34204-w",
+     "claim": "Przejście od odnóży pierwszego odcinka mózgu (radiodonty) do grup z odnóżami drugiego odcinka"
+    }
+   ]
+  },
+  {
+   "id": "Megacheira",
+   "inGame": true,
+   "namePl": "Megacheira (wielkoramienne)",
+   "parent": "Deuteropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "sporne"
+   },
+   "headline": "Stawonogi z wielkimi, kolczastymi ramionami przy głowie",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ramię jak grabie z pazurami",
+     "text": "Megacheira mieli przy głowie parę dużych odnóży, które kończyły się kilkoma długimi, czasem biczowatymi kolcami. Te „wielkie ramiona” mogły się zginać i chwytać zdobycz albo wyczuwać otoczenie. Reszta ciała była już zwykłym ciałem stawonoga: pancerz z odcinków i rząd nóg. W grze są tu Fortiforceps i Leanchoilia.",
+     "visual": "Leanchoilia z boku, z wielkimi ramionami zakończonymi trzema długimi biczami wyciągniętymi do przodu; obok zbliżenie stawów ramienia."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Łowca czy wąchacz?",
+     "text": "Badacze spierają się, do czego służyły te ramiona. Jedni widzą w nich narzędzie łowieckie: kolce przytrzymywały ofiarę. Inni zauważają, że u Leanchoilii końcówki były cienkie jak bicze i mogły raczej służyć do wyczuwania pokarmu w mule. Możliwe, że u różnych rodzajów było różnie.",
+     "visual": "Dwie wersje tej samej sceny: Leanchoilia chwytająca robaka ramionami i Leanchoilia „macająca” muł biczami w poszukiwaniu pokarmu."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kuzyni pająków?",
+     "text": "Największy spór dotyczy pokrewieństwa. Część badaczy uważa, że wielkie ramiona Megacheira to wczesna wersja szczękoczułków, więc to krewni pająków i skorpionów. Inni sądzą, że to osobna, wymarła linia stojąca obok wszystkich dzisiejszych stawonogów. Gra stawia Megacheira jako osobną gałąź Deuteropoda, co pasuje do obu wersji. Znalezienie prawdziwych szczękoczułków u Mollisonii w 2019 r. trochę osłabiło pierwszą hipotezę.",
+     "visual": "Mini-drzewko z dwiema wersjami: w jednej Megacheira na gałęzi pająków, w drugiej na osobnej gałęzi; obie z małym znakiem zapytania."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Leanchoiliidae",
+     "namePl": "Leanchoiliowate",
+     "trait": "Ramiona zakończone długimi biczami",
+     "became": "Leanchoilia",
+     "fate": "wymarły w kambrze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Dwa wielkie ramiona wysuwają się z mroku.",
+    "lit": "Megacheira – stawonogi z wielkimi ramionami. Kuzyni pająków? Nie wiadomo."
+   },
+   "concepts": [
+    "stawonogi-odnoza"
+   ],
+   "misconception": "Megacheira to nie radiodonty. Ich ramiona wyglądają podobnie, ale wyrastają z innego odcinka głowy.",
+   "sources": [
+    {
+     "title": "Aria i Caron 2019, A middle Cambrian arthropod with chelicerae and proto-book gills, Nature 573 (MorphoBank)",
+     "url": "https://www.morphobank.org/index.php/Projects/ProjectOverview/project_id/4817",
+     "claim": "Megacheira wcześniej interpretowane jako szczękoczułkopodobne; Mollisonia z prawdziwymi szczękoczułkami"
+    }
+   ]
+  },
+  {
+   "id": "Leanchoiliidae",
+   "inGame": true,
+   "namePl": "Leanchoiliowate",
+   "parent": "Megacheira",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Leanchoilia – bicze zamiast palców",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Leanchoilia",
+     "text": "Leanchoilia ma ok. kilku centymetrów długości, smukłe ciało i wielkie ramiona, z których każde kończy się trzema długimi, cienkimi biczami. Występuje i w Chengjiang, i w Burgess. U Leanchoilii z Chengjiang zachowały się ślady układu nerwowego, które pomagają ustalić, z którego odcinka mózgu wyrastają jej ramiona.",
+     "visual": "Leanchoilia od przodu, z rozpostartymi biczami jak antenami, nad jasnym dnem."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na tle sióstr",
+     "text": "Fortiforceps, drugi przedstawiciel Megacheira w grze, miał krótsze i mocniejsze ramiona z kolcami – raczej do chwytania niż wyczuwania. Te różnice w obrębie jednej grupy pokazują, jak szybko w kambrze zmieniały się odnóża pod różne sposoby zdobywania pokarmu.",
+     "visual": "Porównanie ramion: Leanchoilia (cienkie bicze) i Fortiforceps (krótkie, mocne kolce)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Trzy bicze na każdym ramieniu.",
+    "lit": "Leanchoiliowate – wyczuwanie świata na odległość."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Chelicerata",
+   "inGame": true,
+   "namePl": "Szczękoczułkowce",
+   "parent": "Deuteropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "przed ok. 508 mln lat temu, może dużo wcześniej",
+    "firstFossils": "Mollisonia z prawdziwymi szczękoczułkami ok. 508 mln lat temu; w danych gry rodzaj od 521",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Szczypce przy ustach – początek skorpionów i pająków",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Czego szukano przez sto lat",
+     "text": "Pająki, skorpiony, roztocza i skrzypłocze to razem ponad 115 tysięcy gatunków. Ich wspólny znak rozpoznawczy to szczękoczułki – para krótkich odnóży tuż przed ustami, zakończonych szczypcami albo pazurem. U pająka to te części, przez które wstrzykuje jad. Przez długi czas nie znano kambryjskiego zwierzęcia, które miałoby szczękoczułki. Były tylko zwierzęta „trochę podobne”.",
+     "visual": "Zbliżenie głowy pająka od przodu z podświetlonymi szczękoczułkami; obok głowa skorpiona z podświetlonymi małymi szczypcami przy ustach."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Mollisonia – mały, groźny myśliwy",
+     "text": "W 2019 r. opisano nowy gatunek Mollisonii z Burgess, który ma prawdziwe szczękoczułki: krótkie i mocne, osadzone bardzo z przodu, między oczami. Miała ok. 2,5 cm długości, duże owalne oczy, długie nogi do chodzenia i tylne odnóża z kilkoma cienkimi płatkami – zaczątkiem skrzeli „książkowych”, z jakich oddychają dzisiejsze skrzypłocze. Polowała najpewniej tuż przy dnie.",
+     "visual": "Mollisonia od góry i od spodu: tarcza głowowa, duże oczy, mała para szczękoczułków, nogi kroczne i tylne odnóża z trzema płatkami skrzeli."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Po co szczypce przy ustach?",
+     "text": "Szczękoczułki pozwalały trzymać, rozrywać i podawać do pyszczka zdobycz. Zwierzę, które może łapać i ciąć pokarm tuż przy ustach, poradzi sobie z ofiarami, których nie połknie w całości. Badacze sądzą, że szczękoczułki powstały z krótkich czułków, które z czasem zmieniły funkcję – z wyczuwania na chwytanie. U dzisiejszych pająków z tej samej pary rozwinął się aparat jadowy.",
+     "visual": "Szereg trzech głów: krótki czułek, krótkie odnóże z małymi szczypcami (Mollisonia), szczękoczułek pająka z kanałem jadowym."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kambryjskie początki, późniejszy rozkwit",
+     "text": "W etapie 1 szczękoczułkowce reprezentują Mollisoniida: Mollisonia i Urokodia. Prawdziwy rozkwit grupy przyjdzie później. W ordowiku i sylurze (etapy 4–5) przyjdą wielkoraki – największe stawonogi wszech czasów. W sylurze pojawią się pierwsze skorpiony, a w dewonie pierwsze pajęczaki lądowe i przodkowie pająków. Skrzypłocze, czasem nazywane „żywymi skamieniałościami”, też należą do tej linii.",
+     "visual": "Oś czasu od kambru do dziś z sylwetkami: Mollisonia (508), wielkorak (ok. 440), skorpion (ok. 430), pajęczak Rhynie (ok. 410), pająk (dziś)."
+    },
+    {
+     "kind": "skutki",
+     "title": "Drapieżcy lądu",
+     "text": "Szczękoczułkowce będą jednymi z pierwszych zwierząt, które wyjdą na ląd. Do dziś pająki i skorpiony są tam jednymi z najważniejszych drapieżników na owady. Wszystko zaczęło się od małego myśliwego z Burgess, długości kciuka. Jego odkrywcy uważają, że korzenie szczękoczułkowców sięgają jeszcze głębiej w kambr.",
+     "visual": "Pająk w sieci na tle dzisiejszego lasu; w rogu mała ramka z Mollisonią i podpisem „508 mln lat temu”."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Mollisoniida",
+     "namePl": "Molisonidy",
+     "trait": "Szeroka tarcza, krótkie szczękoczułki, duże oczy",
+     "became": "Mollisonia, Urokodia",
+     "fate": "wymarły w ordowiku"
+    },
+    {
+     "id": "Eurypterida",
+     "namePl": "Wielkoraki",
+     "trait": "Wiosłowate tylne odnóża, wydłużone ciało",
+     "became": "Morskie i przybrzeżne drapieżniki do ok. 2,5 m",
+     "fate": "wymarły ok. 252 mln lat temu"
+    },
+    {
+     "id": "Arachnida",
+     "namePl": "Pajęczaki",
+     "trait": "Cztery pary nóg, oddychanie powietrzem",
+     "became": "Skorpiony, pająki, kosarze, roztocza",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Mały myśliwy długości kciuka – a w jego ustach zaczyna się historia pająków.",
+    "lit": "Szczękoczułkowce: szczypce przy ustach, które przetrwały pół miliarda lat."
+   },
+   "concepts": [
+    "stawonogi-odnoza"
+   ],
+   "misconception": "Pająki nie są owadami. Należą do zupełnie innej gałęzi stawonogów – szczękoczułkowców.",
+   "sources": [
+    {
+     "title": "Aria i Caron 2019, Nature 573 (ScienceDaily)",
+     "url": "https://www.sciencedaily.com/releases/2019/09/190911130402.htm",
+     "claim": "Mollisonia plenovenatrix najstarszym szczękoczułkowcem; grupa ponad 115 tys. gatunków"
+    },
+    {
+     "title": "Royal Ontario Museum 2019",
+     "url": "https://www.rom.on.ca/news-releases/half-billion-year-old-tiny-predator-unveils-rise-scorpions-and-spiders",
+     "claim": "Skrzela z trzema płatkami jako zaczątek skrzeli książkowych; drapieżnik przy dnie; korzenie grupy głębiej w kambrze"
+    },
+    {
+     "title": "EurekAlert 2019",
+     "url": "https://www.eurekalert.org/news-releases/892000",
+     "claim": "Mollisonia ok. 2,5 cm; szczękoczułki przed ustami"
+    },
+    {
+     "title": "MorphoBank – Aria i Caron 2019",
+     "url": "https://www.morphobank.org/index.php/Projects/ProjectOverview/project_id/4817",
+     "claim": "Szczękoczułki krótkie, bardzo z przodu, między oczami; być może z krótkich czułków"
+    }
+   ]
+  },
+  {
+   "id": "Mollisoniida",
+   "inGame": true,
+   "namePl": "Molisonidy",
+   "parent": "Chelicerata",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (wg danych gry)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Najstarsi znani krewni pająków",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Mollisonia i Urokodia",
+     "text": "Molisonidy miały szeroką, gładką tarczę na głowie i drugą na tułowiu, przez co z góry wyglądały trochę jak spłaszczony owoc. Mollisonia znana jest z Burgess, Urokodia – z Chengjiang. Ich pancerze znano od dawna, ale dopiero zachowane odnóża Mollisonii pokazały, że to szczękoczułkowce.",
+     "visual": "Mollisonia i Urokodia od góry obok siebie: dwie szerokie tarcze, wystające oczy."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Prawie nowoczesne",
+     "text": "Odkrywcy podkreślają, że Mollisonia nie była „prymitywną wersją” szczękoczułkowca: miała już wiele cech dzisiejszych przedstawicieli grupy. To znaczy, że szczękoczułkowce musiały się różnicować szybko i wcześnie – jeszcze zanim w skałach pojawiły się ich pierwsze pewne ślady.",
+     "visual": "Mollisonia obok dzisiejszego skrzypłocza od spodu, z podświetlonymi podobnymi częściami: szczękoczułkami, nogami i skrzelami."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Gładka tarcza, a pod nią niespodzianka.",
+    "lit": "Molisonidy – pierwsi szczękoczułkowcy, jakich znamy."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "EurekAlert 2019",
+     "url": "https://www.eurekalert.org/news-releases/892000",
+     "claim": "Mollisonia blisko morfologicznie dzisiejszym gatunkom"
+    }
+   ]
+  },
+  {
+   "id": "Mandibulata",
+   "inGame": true,
+   "namePl": "Żuwaczkowce",
+   "parent": "Deuteropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (Waptia, Canadaspis, Branchiocaris)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Żuwaczki – szczęki, które podbiły świat",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Jak pokroić jedzenie bez noża?",
+     "text": "Stawonóg nie ma zębów w ustach. Żeby zjeść coś większego, musi to rozdrobnić odnóżami. U żuwaczkowców jedna para odnóży przy ustach zamieniła się w żuwaczki: mocne, twarde szczęki, które zamykają się z boków jak nożyczki i tną albo miażdżą pokarm. Tę samą parę narzędzi masz dziś u mrówki, krewetki i stonogi.",
+     "visual": "Zbliżenie głowy mrówki od przodu: dwie żuwaczki zamykające się na liściu z boków; strzałki ruchu."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Krewetki w łupinkach",
+     "text": "Najstarsze żuwaczkowce z Chengjiang i Burgess często wyglądały jak krewetki ukryte w dwuczęściowej łupince na grzbiecie. Ta grupa to Hymenocarina: Waptia, Canadaspis, Branchiocaris, Perspicaris. Badania z 2017 r. nad Tokummią z Burgess pokazały, że takie zwierzęta miały już żuwaczki, i umieściły je u podstawy wszystkich żuwaczkowców. Tokummia miała do tego szczypce, które badacze porównali do otwieracza do puszek.",
+     "visual": "Waptia z boku: dwuczęściowa łupinka na przodzie ciała, długie czułki, segmentowany tułów z płetwą ogonową; zbliżenie żuwaczek."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego żuwaczki się opłaciły",
+     "text": "Żuwaczki pozwalały pociąć pokarm na małe, łatwe do strawienia kawałki. Zwierzę z żuwaczkami może jeść rośliny, padlinę, inne zwierzęta, drewno – prawie wszystko. Ta wszechstronność to jeden z powodów, dla których żuwaczkowce stały się najliczniejszą grupą stawonogów. Ale uwaga: w kambrze nie było jeszcze lądu z roślinami ani drewnem. Wtedy żuwaczki służyły do drobnych ofiar i resztek z dna.",
+     "visual": "Koło z ikonami pokarmu: liść, drewno, mięso, padlina, plankton, nektar; w środku para żuwaczek."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Krewetki w łupinkach i wszystko inne",
+     "text": "W etapie 1 żuwaczkowce dzielą się na dwie gałęzie. Hymenocarina – krewetkopodobne zwierzęta w łupinkach, które wymarły. Pancrustacea – linia skorupiaków, z której znacznie później wyrosną owady. Wije, trzecia wielka gałąź żuwaczkowców, w kambrze jeszcze się nie pokazały. Ich pierwsze pewne skamieniałości pochodzą z syluru (etap 5).",
+     "visual": "Rozwidlenie: lewa gałąź z Waptią w łupince, prawa z małym skorupiakiem; trzecia, przerywana linia prowadzi do wija z podpisem „sylur”."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Hymenocarina",
+     "namePl": "Hymenokaryny",
+     "trait": "Dwuczęściowa łupinka na przodzie ciała, żuwaczki",
+     "became": "Waptia, Canadaspis, Branchiocaris, Perspicaris",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Pancrustacea",
+     "namePl": "Skorupiaki i owady",
+     "trait": "Żuwaczki i dwie pary czułków (u skorupiaków)",
+     "became": "Kraby, krewetki, pąkle, a z jednej linii – owady",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Myriapoda",
+     "namePl": "Wije",
+     "trait": "Długie ciało z wieloma parami nóg",
+     "became": "Krocionogi, pareczniki",
+     "fate": "żyją do dziś (w grze od etapu 5)"
+    }
+   ],
+   "narrator": {
+    "teaser": "Para szczęk, która kiedyś zje cały świat liści.",
+    "lit": "Żuwaczkowce: od kambryjskich krewetek do mrówek i krabów."
+   },
+   "concepts": [
+    "stawonogi-odnoza"
+   ],
+   "misconception": "Owady nie są osobną gałęzią obok skorupiaków. Wyrosły ze środka skorupiaków – tak jak ptaki z dinozaurów.",
+   "sources": [
+    {
+     "title": "Aria i Caron 2017, Burgess Shale fossils illustrate the origin of the mandibulate body plan, Nature 545",
+     "url": "https://www.nature.com/doifinder/10.1038/nature22080",
+     "claim": "Canadaspis, Odaraia i protokarydy w Hymenocarina jako część żuwaczkowców"
+    },
+    {
+     "title": "University of Toronto 2017",
+     "url": "https://www.artsci.utoronto.ca/news/paleontologists-identify-new-508-million-year-old-sea-creature-can-opener-pincers",
+     "claim": "Tokummia – żuwaczki do chwytania, miażdżenia i cięcia; szczypce jak otwieracz do puszek"
+    },
+    {
+     "title": "ScienceDaily 2017",
+     "url": "https://www.sciencedaily.com/releases/2017/04/170426131024.htm",
+     "claim": "Branchiocaris, Canadaspis, Odaraia i Tokummia u podstawy żuwaczkowców"
+    },
+    {
+     "title": "CBC 2017",
+     "url": "https://amp.cbc.ca/news/science/researchers-fossil-507-million-years-1.4087009",
+     "claim": "Żuwaczki do cięcia mięsa na małe, łatwe do strawienia kawałki"
+    }
+   ]
+  },
+  {
+   "id": "Hymenocarina",
+   "inGame": true,
+   "namePl": "Hymenokaryny",
+   "parent": "Mandibulata",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Krewetki w łupinkach – i najstarsza opieka nad jajami",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Łupinka jak dwuskrzydłowe drzwi",
+     "text": "Hymenokaryny miały na przodzie ciała dwuczęściową łupinkę, przykrywającą głowę i część tułowia, z tyłem ciała wystającym na zewnątrz. W grze należą tu Waptia, Canadaspis, Branchiocaris i Perspicaris. Łupinka chroniła odnóża i skrzela, a u niektórych – także jaja.",
+     "visual": "Cztery hymenokaryny z boku w jednym rzędzie, każda z inną łupinką: zaokrągloną, wydłużoną, z kolcami."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Matka z jajami pod pancerzem",
+     "text": "W 2015 r. u kilku okazów Waptii z Burgess (ok. 508 mln lat temu) znaleziono pod łupinką skupiska jaj – do 24 sztuk, każde ok. 2 mm, niektóre z zarodkami. To najstarszy bezpośredni dowód opieki nad potomstwem. Ciekawe, że Kunmingella z Chengjiang nosiła wiele drobnych jaj. Dwie różne strategie – mało dużych jaj albo dużo małych – istniały więc już w kambrze.",
+     "visual": "Wizualizacja „jajeczka-etap-01”: Waptia z kilkunastoma dużymi jajami pod łupinką obok Kunmingelli z wieloma drobnymi jajami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na tle sióstr",
+     "text": "Hymenokaryny różnią się od skorupiaków brakiem drugiej pary czułków i budową tułowia. Były bardzo liczne – Canadaspis znana jest z tysięcy okazów – ale nie przetrwały kambru. Ich miejsce w morzach zajmą później prawdziwe skorupiaki.",
+     "visual": "Tłum Canadaspis na dnie, przechodzący w jeden okaz na kamieniu z napisem „tysiące skamieniałości”."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Pod tą łupinką ktoś coś ukrywa.",
+    "lit": "Hymenokaryny – i najstarsze rodzicielstwo, jakie znamy."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Caron i Vannier 2016, Waptia and the diversification of brood care in early arthropods, Current Biology (ROM)",
+     "url": "https://www.rom.on.ca/en/node/14630",
+     "claim": "Do 24 jaj pod pancerzem Waptii; najstarszy dowód opieki nad potomstwem"
+    },
+    {
+     "title": "ScienceDaily 2015",
+     "url": "https://www.sciencedaily.com/releases/2015/12/151217130346.htm",
+     "claim": "Duże, nieliczne jaja Waptii kontra liczne małe jaja Kunmingelli"
+    },
+    {
+     "title": "Earth Magazine 2016",
+     "url": "https://www.earthmagazine.org/article/burgess-shale-fossil-find-offers-glimpse-early-parenting/",
+     "claim": "Jaja ok. 2 mm"
+    },
+    {
+     "title": "Wikipedia, Hymenocarina",
+     "url": "https://www.wikipedia.org/wiki/Waptiidae",
+     "claim": "Dwuczęściowa łupinka; grupa w Mandibulata, monofiletyzm niepewny"
+    }
+   ]
+  },
+  {
+   "id": "Pancrustacea",
+   "inGame": true,
+   "namePl": "Skorupiaki i owady (Pancrustacea)",
+   "parent": "Mandibulata",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (Ercaicunia); pewne skorupiaki od ok. 510 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Z tej gałęzi wyjdą kraby, krewetki – i owady",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Dwie pary czułków",
+     "text": "Typowy skorupiak ma dwie pary czułków, żuwaczki i nogi, które często mają dwie gałęzie: jedną do chodzenia albo pływania, drugą do oddychania. W kambrze skorupiaki były małe i niepozorne. W grze tę gałąź reprezentuje Ercaicunia z Chengjiang, którą gra stawia w grupie Hymenostraca.",
+     "visual": "Mały skorupiak od spodu z podświetlonymi dwiema parami czułków (żółta i pomarańczowa) i żuwaczkami."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Niepozorny początek",
+     "text": "Dlaczego skorupiaki w kambrze były tak mało widoczne? Po pierwsze, były małe, a małe zwierzęta rzadko się zachowują. Po drugie, wiele niszy zajęły już inne stawonogi. Dopiero później, gdy zniknęły hymenokaryny, a potem trylobity, skorupiaki zajęły ich miejsce w morzach. To częsty wzór w ewolucji: wielki sukces często zaczyna się od pozycji w cieniu.",
+     "visual": "Oś czasu z dwoma pasami: maleje pas trylobitów i hymenokaryn, rośnie pas skorupiaków."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Skorupiaki i owady to jedna rodzina",
+     "text": "Badania genetyczne pokazały, że owady nie są „osobną” grupą obok skorupiaków. Wyrosły z jednej z linii skorupiaków, prawdopodobnie bliskiej dzisiejszym skorupiakom słodkowodnym, i wyszły na ląd. Dlatego naukowcy łączą je w jedną grupę – Pancrustacea. W grze owady pojawią się dużo później: pierwszy możliwy owad, Rhyniognatha, ma ok. 410 mln lat (etap 6).",
+     "visual": "Drzewko skorupiaków, z którego wyrasta gałązka owadów; na niej sylwetka ważki i mrówki; obok krab i krewetka."
+    },
+    {
+     "kind": "skutki",
+     "title": "Najliczniejsze zwierzęta świata",
+     "text": "Dziś do Pancrustacea należy ogromna większość gatunków zwierząt: ponad milion opisanych owadów i dziesiątki tysięcy skorupiaków. Widłonogi, maleńkie skorupiaki planktonu, to być może najliczniejsze zwierzęta w oceanach. Ich wspólny przodek był małym kambryjskim skorupiakiem żyjącym w cieniu wielkich drapieżników.",
+     "visual": "Mozaika: chrząszcz, motyl, krab, krewetka, pąkla, widłonóg; w środku mała kambryjska Ercaicunia."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Hymenostraca",
+     "namePl": "Hymenostraca",
+     "trait": "Duży pancerz przykrywający przód ciała",
+     "became": "Ercaicunia, a później pancerzowce (Eumalacostraca)",
+     "fate": "żyją do dziś (w potomkach)"
+    },
+    {
+     "id": "Insecta",
+     "namePl": "Owady",
+     "trait": "Trzy pary nóg, ciało z głowy, tułowia i odwłoka",
+     "became": "Chrząszcze, motyle, mrówki, ważki",
+     "fate": "żyją do dziś (w grze od etapu 6)"
+    }
+   ],
+   "narrator": {
+    "teaser": "Mały skorupiak w cieniu olbrzymów. Jego potomkowie będą liczni jak gwiazdy.",
+    "lit": "Pancrustacea – wspólny dom skorupiaków i owadów."
+   },
+   "concepts": [],
+   "misconception": "Owady nie pochodzą od wijów, mimo że oba żyją na lądzie i mają dużo nóg. Owady są bliżej skorupiaków.",
+   "sources": [
+    {
+     "title": "Aria i Caron 2017, Nature 545",
+     "url": "https://www.nature.com/doifinder/10.1038/nature22080",
+     "claim": "Żuwaczkowce w kambrze; Pancrustacea w ich obrębie"
+    }
+   ]
+  },
+  {
+   "id": "Hymenostraca",
+   "inGame": true,
+   "namePl": "Hymenostraca",
+   "parent": "Pancrustacea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (wg danych gry)",
+    "confidence": "sporne"
+   },
+   "headline": "Ercaicunia – mały pancerzowiec z Chengjiang",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ercaicunia",
+     "text": "Ercaicunia to drobny stawonóg z Chengjiang z dużym, dwuczęściowym pancerzem na przodzie ciała. Gra stawia go w grupie Hymenostraca, z której później wyrosną pancerzowce – kraby, krewetki i homary. W kolejnych etapach ta gałąź będzie rosła: w grze są z niej m.in. homarowce z jury.",
+     "visual": "Ercaicunia z boku obok dzisiejszej krewetki, z podświetlonym podobnym pancerzem na przodzie ciała."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ostrożnie z pokrewieństwem",
+     "text": "Miejsce Ercaicunii na drzewie jest niepewne. To, że gra stawia ją obok przodków krabów, opiera się na podobieństwie pancerza i odnóży. Przy tak starych i małych zwierzętach takie przypisania często się zmieniają wraz z nowymi znaleziskami.",
+     "visual": "Ercaicunia z kilkoma kreskami prowadzącymi do różnych gałęzi drzewa i znakiem zapytania."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Mały, w pancerzu – i może prapra…dziadek kraba.",
+    "lit": "Hymenostraca – możliwy początek pancerzowców."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Bradoriida",
+   "inGame": true,
+   "namePl": "Bradoriidy",
+   "parent": "Arthropoda",
+   "size": "male",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 531–521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Maleńkie stawonogi w skorupkach jak ziarenka",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Stawonóg w muszelce",
+     "text": "Bradoriidy to drobne stawonogi, często o wielkości kilku milimetrów, schowane w dwuczęściowej skorupce, która wyglądała jak muszelka małża. Wystawały z niej tylko odnóża i czułki. W Chengjiang Kunmingella to jedno z najczęstszych zwierząt. W grze są tu też Acanthomeridion, Malongella i Liangshanella.",
+     "visual": "Kunmingella w skali z ziarenkiem ryżu: dwie owalne skorupki, spod których wystają cienkie nóżki i czułki."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dużo małych jaj",
+     "text": "U Kunmingelli zachowały się jaja przyczepione do odnóży – wiele drobnych. To strategia „ilość zamiast jakości”: dużo potomstwa, z którego przeżyje niewielka część. Obok niej Waptia nosiła mniej, ale większych jaj. Obie strategie działają i do dziś występują wśród stawonogów.",
+     "visual": "Kunmingella od spodu z gronem drobnych jaj przy odnóżach."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na tle sióstr",
+     "text": "Bradoriidy przypominają małżoraczki, maleńkie skorupiaki w skorupkach, które żyją do dziś. Dawniej uważano je za ich przodków. Dziś wiadomo, że to podobieństwo powstało niezależnie, a bradoriidy to osobna, wymarła grupa. Przetrwały do ordowiku.",
+     "visual": "Kunmingella obok dzisiejszego małżoraczka; między nimi znak „≠” i podpis „podobni, ale nie spokrewnieni”."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ziarenko na dnie właśnie wystawiło nóżki.",
+    "lit": "Bradoriidy – najmniejsze pancerne stawonogi kambru."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "ScienceDaily 2015 (Caron i Vannier)",
+     "url": "https://www.sciencedaily.com/releases/2015/12/151217130346.htm",
+     "claim": "Kunmingella douvillei z licznymi małymi jajami"
+    }
+   ]
+  },
+  {
+   "id": "Scalidophora",
+   "inGame": true,
+   "namePl": "Niezmogowce i krewni",
+   "parent": "Ecdysozoa",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "ediakar albo wczesny kambr",
+    "firstFossils": "ślady ryjące od ok. 539 mln lat temu; ciała ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Robaki z kolczastą trąbką – mieszkańcy mułu",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Trąbka, która się wywraca",
+     "text": "Niezmogowce to robaki, które mają z przodu trąbkę obsadzoną rzędami drobnych kolców. Trąbkę mogą wywinąć na zewnątrz jak rękawiczkę, wbić w muł albo chwycić nią zdobycz, a potem wciągnąć z powrotem. W etapie 1 gra pokazuje Maotianshanię – cienkiego, nitkowatego robaka – i Selkirkię, która mieszkała w rurce z twardej materii i wystawiała z niej tylko trąbkę.",
+     "visual": "Przekrój mułu: Selkirkia w pionowej rurce wysuwająca kolczastą trąbkę; obok Maotianshania jako cienka nitka wijąca się w mule."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Kopacze kambru",
+     "text": "Robaki ryjące w mule zmieniły dno morskie: przekopywały je, mieszały i wpuszczały tlen w głąb osadu. Takie zachowanie zostawia ślady widoczne w skałach – właśnie po takich śladach geolodzy wyznaczają początek kambru. Wiele z tych śladów zostawiły najpewniej krewni niezmogowców. Dziś niezmogowce są rzadkie, ale w kambrze należały do najważniejszych drapieżników w mule.",
+     "visual": "Przekrój dna z gęstą siecią korytarzy i jednym niezmogowcem w akcji."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Z mułu wysuwa się kolczasta trąbka.",
+    "lit": "Niezmogowce – kopacze i łowcy z głębi mułu."
+   },
+   "concepts": [
+    "linienie"
+   ],
+   "sources": [
+    {
+     "title": "Smith i Caron 2015, Nature 523",
+     "url": "https://doi.org/10.1038/nature14573",
+     "claim": "Robaki cycloneuralia (w tym niezmogowce) jako część liniennych"
+    }
+   ]
+  },
+  {
+   "id": "Spiralia",
+   "inGame": true,
+   "namePl": "Spiralia",
+   "parent": "Protostomia",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "późny ediakar (zegary)",
+    "firstFossils": "drobne muszelki od ok. 535 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Druga połowa pierwoustych: muszle, łuski i szczecinki",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Morze drobnych muszelek",
+     "text": "Na samym początku kambru, jeszcze przed Chengjiang, w skałach na całym świecie pojawiają się maleńkie twarde elementy: rurki, stożki, łuski, muszelki, często mniejsze niż ziarenko piasku. Geolodzy nazywają je „drobną fauną szkieletową”. Wiele z nich to fragmenty pancerzyków wczesnych Spiralia – krewnych mięczaków, ramienionogów i pierścienic.",
+     "visual": "Garść piasku pod lupą: drobne stożki, rurki, łuski i miniaturowe muszelki w różnych kolorach."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Rosnąć bez zmiany zbroi",
+     "text": "Spiralia nie linieją. Jeśli mają twardą osłonę, dobudowują ją stopniowo – jak ślimak dodaje do muszli nowe zwoje przy brzegu. Wiele z nich ma też larwę, która pływa dzięki wieńcowi rzęsek. Nazwa grupy pochodzi od tego, jak dzieli się ich wczesny zarodek: kolejne komórki układają się skośnie, jak stopnie kręconych schodów.",
+     "visual": "Zarodek w czterech krokach: z każdym podziałem nowa warstwa komórek obrócona względem poprzedniej, jak spiralne schody; obok dorosły ślimak."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Muszla jako dom",
+     "text": "Zwierzę, które nie musi zrzucać zbroi, może ją pogrubiać przez całe życie. Muszla i łuski chronią przed drapieżnikami bez okresu bezbronności po linieniu. Ceną jest to, że taka osłona ogranicza ruch: większość Spiralia z muszlami porusza się powoli albo wcale. Dlatego wiele z nich filtruje wodę albo zdrapuje pokarm z dna, zamiast polować.",
+     "visual": "Ramienionóg przyczepiony nóżką do dna, z uchylonymi skorupkami; obok powoli pełznąca Wiwaxia."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kto ze Spiralia jest w etapie 1",
+     "text": "W etapie 1 gra pokazuje dwie gałęzie Spiralia. Ramienionogi (Brachiopoda): Diandongia, Longtancunella, Heliomedusa i Lingulella. Mięczaki i ich krewni (Mollusca): Wiwaxia, Halkieria i zagadkowy Nectocaris. Pierścienice (Annelida) pojawią się w grze w etapie 2, w Burgess. Mszywioły – dopiero w ordowiku.",
+     "visual": "Rozwidlenie: lewa gałąź z ramienionogiem, prawa z Wiwaxią i Halkierią; z boku przerywane linie do pierścienicy (etap 2) i mszywioła (etap 4)."
+    },
+    {
+     "kind": "skutki",
+     "title": "Ogromny świat miękkich zwierząt",
+     "text": "Spiralia to dziś ślimaki, małże, ośmiornice, dżdżownice, pijawki, ramienionogi, mszywioły i wiele innych. Ośmiornica i dżdżownica wyglądają zupełnie inaczej, ale wyrastają z tej samej gałęzi. Pokazuje to, jak bardzo jeden wspólny przodek może się „rozjechać” w kształtach przez pół miliarda lat.",
+     "visual": "Mozaika: ślimak, małż, ośmiornica, dżdżownica, ramienionóg i mszywiół, połączone liniami z jednym punktem w środku."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Brachiopoda",
+     "namePl": "Ramienionogi",
+     "trait": "Dwie skorupki: górna i dolna, wewnątrz wieniec czułków do filtrowania",
+     "became": "Filtratory dna, bardzo liczne w paleozoiku",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Mollusca",
+     "namePl": "Mięczaki",
+     "trait": "Miękkie ciało, noga, tarka do zdrapywania pokarmu",
+     "became": "Ślimaki, małże, głowonogi i inne",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Annelida",
+     "namePl": "Pierścienice",
+     "trait": "Ciało z pierścieni, często ze szczecinkami",
+     "became": "Wieloszczety, dżdżownice, pijawki",
+     "fate": "żyją do dziś (w grze od etapu 2)"
+    }
+   ],
+   "narrator": {
+    "teaser": "Nie każdy w tym morzu zrzuca zbroję. Niektórzy ją po prostu powiększają.",
+    "lit": "Spiralia: muszle, łuski i szczecinki – druga połowa pierwoustych."
+   },
+   "concepts": [
+    "pierwouste-i-wtorouste",
+    "zarodek"
+   ],
+   "misconception": "Ramienionogi nie są małżami, choć mają dwie skorupki. Małż ma skorupki z lewej i prawej, ramienionóg – z góry i z dołu.",
+   "sources": [
+    {
+     "title": "Zhao, Smith i in. – Orthrozanclus elongata…, Durham repository",
+     "url": "https://durham-repository.worktribe.com/OutputFile/1344026",
+     "claim": "Kambryjskie organizmy z łuskami i muszelkami wśród wczesnych trochozoa; różnicowanie ok. 540–530 mln lat temu"
+    },
+    {
+     "title": "Earth.com, Ancient reefs were surprisingly empty",
+     "url": "https://www.earth.com/news/ancient-reefs-were-surprisingly-empty-compared-to-today",
+     "claim": "Drobna fauna szkieletowa w pierwszych 25 mln lat po pojawieniu się szkieletów"
+    }
+   ]
+  },
+  {
+   "id": "Brachiopoda",
+   "inGame": true,
+   "namePl": "Ramienionogi",
+   "parent": "Spiralia",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 530–521 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Dwie skorupki i wieniec czułków – filtratory na setki milionów lat",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Nie małż, choć podobny",
+     "text": "Ramienionóg ma dwie skorupki, ale ułożone inaczej niż u małża: jedna leży na górze, druga na dole. Do podłoża przyczepia się mięsistą nóżką. W środku, zamiast mięsistego ciała, ma wieniec z cienkich czułków pokrytych rzęskami – lofofor. Rzęski pędzą wodę przez wieniec, a czułki wyłapują z niej drobinki pokarmu. Diandongia z Chengjiang zachowała ślady tych miękkich części.",
+     "visual": "Przekrój ramienionoga: górna i dolna skorupka, nóżka wbita w dno, w środku spiralnie zwinięty wieniec czułków ze strzałkami prądu wody."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Filtrowanie bez ruszania się",
+     "text": "Siedzenie w miejscu i filtrowanie wody to sposób życia, który nie wymaga szybkości ani dużego mózgu. Wystarczy dobre miejsce z prądem wody pełnym drobinek pokarmu. Twarde skorupki chronią przed większością drapieżników. W morzach, gdzie dno było wolne, a woda bogata w plankton, ramienionogi rozmnażały się masowo.",
+     "visual": "Łąka ramienionogów na dnie, wszystkie uchylone w stronę prądu; nad nimi przepływająca chmura planktonu."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Cztery rodzaje w etapie 1",
+     "text": "W etapie 1 gra pokazuje cztery ramienionogi: Diandongię, Longtancunellę, Heliomedusę i Lingulellę. Lingulella to krewna dzisiejszej Linguli – ramienionoga, który od setek milionów lat prawie się nie zmienia i wciąż żyje w mule płytkich mórz. Inne kambryjskie ramienionogi dały początek liniom, które w ordowiku i dewonie pokryją dna mórz całymi ławicami.",
+     "visual": "Cztery ramienionogi w rzędzie, od smukłej Lingulelli do okrągłej Heliomedusy; obok dzisiejsza Lingula w norce."
+    },
+    {
+     "kind": "skutki",
+     "title": "Królowie paleozoicznego dna",
+     "text": "Przez cały paleozoik ramienionogi były jednymi z najczęstszych zwierząt na dnie mórz. Wielkie wymieranie pod koniec permu ok. 252 mln lat temu uderzyło w nie mocno i od tego czasu ich miejsce zajęły w dużej mierze małże. Dziś żyje ich kilkaset gatunków, a kopalnych opisano wielokrotnie więcej.",
+     "visual": "Oś czasu z dwoma pasami: szeroki pas ramienionogów w paleozoiku zwężający się po 252 mln lat, i pas małży poszerzający się po tej dacie."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Dwie skorupki – ale to wcale nie jest małż.",
+    "lit": "Ramienionogi: filtratory, które przez 250 mln lat pokrywały dna mórz."
+   },
+   "concepts": [],
+   "misconception": "Lingula nie jest „nieśmiertelnym” gatunkiem. Zmieniała się, tylko jej ogólny kształt pozostał podobny.",
+   "sources": []
+  },
+  {
+   "id": "Mollusca",
+   "inGame": true,
+   "namePl": "Mięczaki i ich kambryjscy krewni",
+   "parent": "Spiralia",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "ediakar albo wczesny kambr",
+    "firstFossils": "drobne muszelki od ok. 535 mln lat temu; Wiwaxia i Halkieria ok. 521–505 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Pancerniki w łuskach i zagadki z mackami",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Tarka i noga",
+     "text": "Dzisiejsze mięczaki – ślimaki, małże, ośmiornice – wyglądają bardzo różnie, ale większość ma dwie wspólne rzeczy. Pierwsza to radula: taśma z rzędami drobnych ząbków, którą mięczak zdrapuje pokarm jak tarką do sera. Druga to mięsista noga, na której pełznie. Kambryjscy krewni mięczaków pomagają zrozumieć, jak te cechy powstały.",
+     "visual": "Zbliżenie raduli ślimaka jako taśmy z ząbkami zdrapującej glony z kamienia; obok ślimak pełznący na nodze."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Wiwaxia i Halkieria – pancerniki dna",
+     "text": "Wiwaxia miała do ok. 5 cm długości, grzbiet pokryty zachodzącymi na siebie łuskami i dwa rzędy długich kolców. Spodem pełzła po dnie jak ślimak i zdrapywała pokarm narządem bardzo podobnym do raduli. Halkieria, znana z Grenlandii, była wydłużona, pokryta łuskami, a z przodu i z tyłu miała po jednej muszelce. Odontogriphus z Burgess (etap 2) to miękki krewny bez łusek, z takim samym aparatem do zdrapywania.",
+     "visual": "Wiwaxia i Halkieria obok siebie z góry: kolczasta Wiwaxia z łuskami i podłużna Halkieria z dwiema muszelkami na końcach."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Mięczak czy robak?",
+     "text": "O Wiwaxię spierano się przez dziesięciolecia. Jej łuski przypominają szczecinki wieloszczetów, więc część badaczy uważała ją za krewną pierścienic. Narząd gębowy i pełzający spód przypominają za to mięczaki. Dziś większość badaczy widzi w niej krewną mięczaków, ale dokładne miejsce na drzewie wciąż jest niepewne. Podobnie z Halkierią: jedni porównują ją z chitonami, inni sądzą, że jest bliżej ramienionogów.",
+     "visual": "Wiwaxia w środku, strzałki do dwóch ramek: pierścienica ze szczecinkami (podpis: „łuski”) i ślimak z radulą (podpis: „tarka, noga”)."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Nectocaris – mątwa z kambru?",
+     "text": "Nectocaris to spłaszczone zwierzę z dwiema długimi mackami, dużymi oczami i płetwą wzdłuż boków ciała. Część badaczy uważa, że to wczesny głowonóg – krewny dzisiejszych kałamarnic, który nie miał jeszcze muszli. Inni nie widzą w nim żadnych cech mięczaków i traktują go jako zagadkę. W grze występuje obok Wiwaxii i Halkierii jako trzeci krewny mięczaków w etapie 1.",
+     "visual": "Nectocaris w toni z dwiema mackami wyciągniętymi do przodu i falującą boczną płetwą; w tle sylwetka kałamarnicy z podpisem „krewna?”."
+    },
+    {
+     "kind": "skutki",
+     "title": "Z pancerników – ślimaki i ośmiornice",
+     "text": "Prawdziwe ślimaki, małże i głowonogi pojawią się w grze w kolejnych etapach. Głowonogi z prostymi muszlami wypłyną w późnym kambrze (etap 3) i staną się wielkimi drapieżnikami ordowiku. Ślimaki i małże zajmą dno. A kolczaste pancerniki kambru zniknęły – zostały po nich łuski w skałach i wieczny spór o ich pokrewieństwo.",
+     "visual": "Oś czasu: Wiwaxia (kambr) → głowonóg z prostą muszlą (ordowik) → amonit (jura) → ośmiornica (dziś)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Po dnie pełznie kolczasty pancernik. Robak? Ślimak? Coś pomiędzy?",
+    "lit": "Mięczaki i ich kambryjscy krewni – łuski, tarki i wieczne spory."
+   },
+   "concepts": [],
+   "misconception": "Wiwaxia nie była jeżem ani ślimakiem. To wymarły krewny mięczaków, którego dokładnego miejsca na drzewie wciąż nie znamy.",
+   "sources": [
+    {
+     "title": "Smith 2013, Ontogeny, morphology and taxonomy of… Wiwaxia (Dryad)",
+     "url": "https://datadryad.org/dataset/doi:10.5061/dryad.868sm",
+     "claim": "Łuski przypominają wieloszczety, aparat gębowy i spód – mięczaki"
+    },
+    {
+     "title": "Smith i in., Sclerites and possible mouthparts of Wiwaxia… (CORE)",
+     "url": "https://core.ac.uk/download/42338778.pdf",
+     "claim": "Wiwaxia uznawana dziś za mięczaka (radula, noga), dokładne miejsce niepewne"
+    },
+    {
+     "title": "Palaeocast",
+     "url": "https://www.palaeocast.com/?p=4219",
+     "claim": "Spór mięczak/pierścienica; Halkieria porównywana z chitonami"
+    },
+    {
+     "title": "Wikipedia, Wiwaxia",
+     "url": "https://EN.wikipedia.com/wiki/Wiwaxia",
+     "claim": "Do ok. 5 cm; łuski w ośmiu rzędach"
+    },
+    {
+     "title": "Wikipedia, Odontogriphus",
+     "url": "https://en.Wikipedia.com/wiki/Odontogriphus",
+     "claim": "Aparat gębowy prawie identyczny z Wiwaxią – wczesna radula"
+    }
+   ]
+  },
+  {
+   "id": "Deuterostomia",
+   "inGame": true,
+   "namePl": "Wtórouste",
+   "parent": "Eubilateria",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "późny ediakar (zegary; istnienie grupy sporne)",
+    "firstFossils": "ok. 521 mln lat temu (Chengjiang)",
+    "confidence": "sporne"
+   },
+   "headline": "Druga wielka linia – ta, która prowadzi do nas",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Mniejszość w morzu stawonogów",
+     "text": "W morzu Chengjiang wtóroustych jest niewiele: w grze osiem rodzajów na 71. Większość z nich to małe, miękkie zwierzęta filtrujące wodę. Nic nie zapowiada, że z tej skromnej gałęzi wyrosną kiedyś ryby, dinozaury, wieloryby i ludzie. W kambrze to stawonogi grają główną rolę.",
+     "visual": "Tłum stawonogów na dnie i w toni; między nimi kilka małych, półprzezroczystych rybek i jedno dziwne zwierzę z dwiema częściami ciała (Vetulicola)."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Gardło z otworami",
+     "text": "Najważniejszą wczesną cechą wtóroustych są szczeliny w gardle. Woda wpływa przez usta i wypływa bokami przez rząd otworów, a drobinki pokarmu zostają w środku. To jak sito w kształcie rury. U ryb te same otwory staną się szczelinami skrzelowymi do oddychania. U człowieka ślady tych szczelin widać tylko w zarodku: z tkanek wokół nich powstają m.in. części ucha, szczęki i krtani.",
+     "visual": "Przekrój gardła prostego wtóroustego: woda wpływa ustami, wypływa bokami przez szczeliny, drobinki zostają na „sicie”."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Filtrowanie przez gardło",
+     "text": "Szczeliny w gardle pozwalały przepuszczać dużo wody bez połykania jej całej. Zwierzę mogło zjadać drobny plankton i cząstki z wody, nie mając specjalnych odnóży jak stawonogi. Badacze uważają, że to był jeden z kluczowych pomysłów, które otworzyły drogę wtóroustym. Później te same otwory posłużyły do oddychania, gdy przy nich rozwinęły się cienkie, ukrwione skrzela.",
+     "visual": "Dwa panele: filtrator kambryjski ze strzałkami wody i pokarmu oraz ryba, u której ta sama droga wody prowadzi przez czerwone skrzela."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kto należy do wtóroustych",
+     "text": "W etapie 1 gra pokazuje dwie gałęzie wtóroustych. Strunowce (Chordata) – Vetulicola, Pomatrum, Haikouella, Yunnanozoon i pierwsze ryby. Oraz Eldonia – pływający krążek, którego pokrewieństwo jest zagadką. Szkarłupnie (jeżowce, liliowce, rozgwiazdy) i półstrunowce pojawią się w grze w etapie 2. Uwaga: w 2021 r. pokazano, że dowody na wtórouste jako jedną naturalną grupę są słabe – to wciąż otwarta sprawa.",
+     "visual": "Rozwidlenie: lewa gałąź z rybką Haikouichthys i Vetulicolą, prawa z płaskim, okrągłym krążkiem Eldonii; przerywana linia do jeżowca (etap 2)."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Chordata",
+     "namePl": "Strunowce",
+     "trait": "Struna grzbietowa, cewka nerwowa nad nią, szczeliny w gardle",
+     "became": "Bezczaszkowce, osłonice i kręgowce",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Cambroernida",
+     "namePl": "Eldoniidy i krewni",
+     "trait": "Ciało w kształcie krążka lub dzwonu, spiralne jelito",
+     "became": "Eldonia i inne zagadkowe pływaki",
+     "fate": "wymarły"
+    },
+    {
+     "id": "Echinodermata",
+     "namePl": "Szkarłupnie",
+     "trait": "Szkielet z płytek kalcytu pod skórą, układ wodny",
+     "became": "Liliowce, jeżowce, rozgwiazdy, strzykwy",
+     "fate": "żyją do dziś (w grze od etapu 2)"
+    }
+   ],
+   "narrator": {
+    "teaser": "Wśród tysięcy pancernych zwierząt pływa kilka drobnych, miękkich istot. Jedna z nich to Twoja daleka krewna.",
+    "lit": "Wtórouste: skromna gałąź, która kiedyś da kręgowce – i Ciebie."
+   },
+   "concepts": [
+    "pierwouste-i-wtorouste",
+    "struna-grzbietowa"
+   ],
+   "misconception": "Ryby w kambrze nie były „przodkami człowieka w gotowej postaci”. To małe zwierzęta, z których linii wyrosło później wiele różnych grup.",
+   "sources": [
+    {
+     "title": "Ou i in. 2012, Evidence for gill slits and a pharynx in Cambrian vetulicolians, BMC Biology",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3517509",
+     "claim": "Szczeliny gardłowe jako wczesna i kluczowa innowacja wtóroustych"
+    },
+    {
+     "title": "Kapli i in. 2021, Science Advances",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7978419",
+     "claim": "Wsparcie dla wtóroustych jako jednej grupy jest słabe"
+    }
+   ]
+  },
+  {
+   "id": "Cambroernida",
+   "inGame": true,
+   "namePl": "Eldoniidy i krewni",
+   "parent": "Deuterostomia",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "sporne"
+   },
+   "headline": "Pływające krążki ze spiralnym jelitem",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Eldonia",
+     "text": "Eldonia wyglądała jak płaski, okrągły dysk wielkości dłoni, trochę jak meduza. W środku miała spiralnie zwinięte jelito, a przy ustach krótkie, rozgałęzione czułki. Dawniej uważano ją za krewną strzykw albo meduz. Dziś wielu badaczy łączy ją z wczesnymi wtóroustymi, ale jej dokładne miejsce na drzewie jest nieznane.",
+     "visual": "Eldonia od góry: przezroczysty krążek ze spiralnie zwiniętym ciemnym jelitem i pęczkiem czułków przy brzegu."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Zagadka bez rozwiązania",
+     "text": "Eldonia to przykład zwierzęcia, które nie pasuje do żadnej dzisiejszej grupy. W grze stoi w osobnej gałęzi wtóroustych. Gdy pojawią się nowe skamieniałości, jej miejsce może się zmienić – to normalna część nauki o tak starych zwierzętach.",
+     "visual": "Eldonia na tle drzewa wtóroustych z kilkoma przerywanymi liniami do różnych gałęzi."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Przez toń przepływa dysk ze spiralą w środku.",
+    "lit": "Eldonia – jedna z wielkich zagadek kambru."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Chordata",
+   "inGame": true,
+   "namePl": "Strunowce",
+   "parent": "Deuterostomia",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "ediakar albo wczesny kambr",
+    "firstFossils": "ok. 521–518 mln lat temu (Chengjiang)",
+    "confidence": "pewne"
+   },
+   "headline": "Sztywny pręt w plecach i nerw nad nim – plan budowy, który mamy do dziś",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Pierwszy plan ciała, który znasz z siebie",
+     "text": "Strunowce mają cztery cechy, przynajmniej w zarodku. Struna grzbietowa (struna-grzbietowa) to elastyczny pręt wzdłuż pleców, który usztywnia ciało. Nad nim biegnie cewka nerwowa – rurka, z której u nas powstaje rdzeń kręgowy i mózg. W gardle są szczeliny. A za odbytem ciało przedłuża się w ogon z mięśniami. Ty też to wszystko masz albo miałeś w zarodku: struna zamieniła się w kręgosłup, a ogon – w kość ogonową.",
+     "visual": "Wizualizacja „budowa-strunowca-etap-01”: przekrój rybki z czterema podświetlonymi cechami i przełącznik „człowiek”."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Pływanie zygzakiem",
+     "text": "Mięśnie strunowców są ułożone w bloki w kształcie litery V albo zygzaka po obu stronach ciała. Gdy kurczą się po kolei, raz z lewej, raz z prawej, ciało wygina się falą, a struna grzbietowa sprawia, że nie skraca się jak harmonijka. Efekt: szybkie, falujące pływanie. Te same zygzakowate mięśnie widać na skamieniałościach Haikouichthysa z Chengjiang.",
+     "visual": "Animacja: rybka wyginająca się falą, z podświetlonymi kolejno kurczącymi się blokami mięśni po obu stronach."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego to się opłaciło",
+     "text": "W morzu pełnym stawonogów strunowce nie miały pancerza ani odnóży. Miały za to inny sposób na życie: szybkie pływanie i filtrowanie wody przez gardło. Elastyczny pręt w plecach i mięśnie w blokach pozwalały uciekać przed drapieżnikami. Później, gdy wokół struny wyrosły kręgi, a w gardle szczęki, ta sama budowa umożliwiła powstanie dużych drapieżników.",
+     "visual": "Rybka umykająca przed ramionami radiodonta szybkim zwrotem ciała."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Wetulikole, krewni i kręgowce",
+     "text": "W etapie 1 strunowce reprezentują trzy grupy. Wetulikole (Vetulicolida) – dziwne zwierzęta z dwiema częściami ciała: Vetulicola i Pomatrum. Haikouella i Yunnanozoon – smukłe filtratory, które gra stawia bezpośrednio pod strunowcami; ich dokładne pokrewieństwo jest sporne. I kręgowce (Vertebrata) – najstarsze ryby: Haikouichthys, Myllokunmingia i Zhongjianichthys.",
+     "visual": "Trzy gałęzie: Vetulicola (dwuczęściowa), Haikouella (smukła, z gardłem z łukami) i Haikouichthys (mała rybka)."
+    },
+    {
+     "kind": "skutki",
+     "title": "Twoja gałąź na drzewie",
+     "text": "Od tego miejsca prowadzi droga do wszystkich ryb, płazów, gadów, ptaków i ssaków. Ale w kambrze strunowce były małe i nieliczne. Przez następne 100 mln lat będą żyły w cieniu stawonogów i głowonogów. Dopiero w dewonie (etap 7) ryby staną się władcami mórz. Pamiętaj: wtedy też nie „dążyły” do tego – ich linia po prostu przetrwała, gdy inne wymierały.",
+     "visual": "Drzewo strunowców z cienkim pniem w kambrze, który dopiero od dewonu rozkwita w sylwetki ryb, płazów, gadów i ssaków."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Vetulicolida",
+     "namePl": "Wetulikole",
+     "trait": "Ciało z dwóch części: przednia z otworami, tylna jak ogon",
+     "became": "Vetulicola, Pomatrum",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Vertebrata",
+     "namePl": "Kręgowce",
+     "trait": "Czaszka z chrząstki, parzyste oczy, mózg",
+     "became": "Ryby, płazy, gady, ptaki, ssaki",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Cephalochordata",
+     "namePl": "Bezczaszkowce (spoza gry)",
+     "trait": "Struna przez całe życie, bez czaszki",
+     "became": "Lancetnik",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Elastyczny pręt w plecach. Zapamiętaj go – zobaczysz go jeszcze wiele razy.",
+    "lit": "Strunowce: plan budowy, który nosisz w sobie."
+   },
+   "concepts": [
+    "struna-grzbietowa",
+    "zarodek"
+   ],
+   "misconception": "Struna grzbietowa to nie kręgosłup. U kręgowców w zarodku kręgosłup wyrasta wokół struny i ją zastępuje.",
+   "sources": [
+    {
+     "title": "Science News 1999 (Shu i in.)",
+     "url": "https://www.math.ucdavis.edu/~saito/data/science-news/original%20CD/software/SNData/11005",
+     "claim": "Zygzakowate segmenty mięśni u Myllokunmingii i Haikouichthysa; złożone skrzela"
+    },
+    {
+     "title": "Shu i in. 1999, Lower Cambrian vertebrates from south China, Nature 402",
+     "url": "https://www.nature.com/articles/46965.pdf",
+     "claim": "Kręgowce we wczesnym kambrze; strunowce wywodzące się z prostszych wtóroustych"
+    }
+   ]
+  },
+  {
+   "id": "Vetulicolida",
+   "inGame": true,
+   "namePl": "Wetulikole",
+   "parent": "Chordata",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "sporne"
+   },
+   "headline": "Dwuczęściowe zagadki – stawonogi, strunowce, czy coś zupełnie innego?",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pudełko z ogonem",
+     "text": "Wetulikole wyglądały jak dwie części sklejone ze sobą. Przednia była szeroka, jak pudełko z twardymi ściankami, z dużym otworem gębowym z przodu i rzędem otworów po bokach. Tylna była smukła, podzielona na odcinki, i działała jak ogon do pływania. W grze są tu Vetulicola i Pomatrum z Chengjiang.",
+     "visual": "Vetulicola z boku: przód jak pudełko z pięcioma okrągłymi otworami po boku, tył jak segmentowany ogon."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Pompa wodna",
+     "text": "W 2012 r. badacze wykazali, że boczne otwory wetulikoli to otwory w gardle, które można było otwierać i zamykać, a ścianki przedniej części mogły się kurczyć. Wetulikola działała więc jak pompa: zasysała wodę ustami, przepuszczała ją przez gardło i wyrzucała bokami, zatrzymując pokarm. To bardzo podobne do szczelin gardłowych wtóroustych.",
+     "visual": "Przekrój przedniej części Vetulicoli: woda wpływa ustami, ścianki się kurczą, woda wypływa bocznymi otworami; drobinki zostają w środku."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kuzyni osłonic?",
+     "text": "Wetulikole uważano kolejno za stawonogi, za wczesne wtórouste i za krewnych osłonic – morskich „żachw”, które w larwie mają strunę i ogon. Analiza z 2014 r. sugeruje, że to najbliżsi krewni osłonic wśród strunowców. Inni badacze wolą bardziej ostrożną wersję: wczesne wtórouste o nieznanym dokładnie miejscu. Gra stawia je wśród strunowców.",
+     "visual": "Vetulicola obok larwy żachwy (kijanki z ogonem) – podświetlone podobieństwa: przednia część z otworami i tylna z ogonem."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Pudełko z ogonem – czy to w ogóle zwierzę?",
+    "lit": "Wetulikole – pompy wodne z zagadkowym rodowodem."
+   },
+   "concepts": [],
+   "misconception": "Wetulikole nie są stawonogami, choć ich ciało jest podzielone na odcinki. Nie mają odnóży, za to mają otwory w gardle.",
+   "sources": [
+    {
+     "title": "Ou i in. 2012, BMC Biology",
+     "url": "https://link.springer.com/doi/10.1186/1741-7007-10-81",
+     "claim": "Boczne otwory z mięśniami, mechanizm pompowania wody"
+    },
+    {
+     "title": "García-Bellido i in. 2014, BMC Evolutionary Biology",
+     "url": "https://link.springer.com/article/10.1186/s12862-014-0214-z",
+     "claim": "Wetulikole uważane za stawonogi, strunowce, kinorynchy; analiza: siostry osłonic"
+    },
+    {
+     "title": "Aldridge i in. 2007, Palaeontology",
+     "url": "https://palass.org/publications/palaeontology-journal/archive/50/1/article_pp131-168",
+     "claim": "Wetulikole szczególnie liczne w Chengjiang; dwie klasy"
+    }
+   ]
+  },
+  {
+   "id": "Vertebrata",
+   "inGame": true,
+   "namePl": "Kręgowce",
+   "parent": "Chordata",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr albo wcześniej",
+    "firstFossils": "ok. 521–518 mln lat temu (Haikouichthys, Myllokunmingia)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Pierwsze ryby – trzy centymetry, z których wyrośnie Twój kręgosłup",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Strunowiec z głową",
+     "text": "Proste strunowce, jak dzisiejszy lancetnik, nie mają wyraźnej głowy, oczu ani mózgu – to właściwie pływające sito z pręcikiem w plecach. Kręgowce dodały do tego głowę: skupisko nerwów przy przodzie ciała, parzyste oczy i chrzęstną osłonę wokół mózgu. Głowa zaczęła się od czegoś prostego – od lepszego zbierania informacji o tym, co jest z przodu.",
+     "visual": "Porównanie: lancetnik bez głowy i Haikouichthys z wyraźną głową, parą oczu i zarysem mózgu."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Haikouichthys",
+     "text": "W 1999 r. opisano z Chengjiang dwa maleńkie zwierzęta: Haikouichthys i Myllokunmingia, długie na ok. 2,5–3 cm. Miały zygzakowate mięśnie jak u ryb, złożone łuki skrzelowe i płetwę wzdłuż grzbietu. U Haikouichthysa widać też parę oczu. Znamy ponad 500 jego okazów. Nie miały szczęk, kości ani łusek – były to ryby bezżuchwowe, dalecy krewni dzisiejszych minogów.",
+     "visual": "Haikouichthys z boku w skali ze spinaczem biurowym: mała, smukła rybka z płetwą grzbietową i rzędem łuków skrzelowych."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego głowa się opłaciła",
+     "text": "Zwierzę, które szybko pływa, musi wiedzieć, co jest przed nim. Oczy i skupisko nerwów z przodu pozwalały szybciej zauważyć drapieżnika albo pokarm. Rybki z lepszymi zmysłami częściej przeżywały i zostawiały więcej potomstwa. To ten sam mechanizm, który u zwierząt dwubocznie symetrycznych stworzył przód ciała – tylko tu poszedł dalej.",
+     "visual": "Rybka zawracająca na widok cienia radiodonta; linie od oczu do mózgu podświetlone."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Najstarsze ryby w grze",
+     "text": "W etapie 1 gra pokazuje rodzinę Myllokunmingiidae: Haikouichthys, Myllokunmingia i Zhongjianichthys. Część badaczy uważa, że Haikouichthys i Myllokunmingia to ten sam gatunek, opisany dwa razy. W etapie 2 dołączy Metaspriggina z Burgess. Przez następne 100 mln lat ryby bezżuchwowe będą jedynymi kręgowcami.",
+     "visual": "Trzy rybki w tej samej skali z podpisami; między Haikouichthysem a Myllokunmingią znak „=?”."
+    },
+    {
+     "kind": "skutki",
+     "title": "Od 3 cm do płetwala",
+     "text": "Z tej gałęzi wyrosną kolejno: ryby pancerne, ryby ze szczękami, rekiny, ryby kostne, czworonogi, gady, dinozaury, ptaki, ssaki. Największe zwierzę, jakie kiedykolwiek żyło – płetwal błękitny – też jest kręgowcem. A wszystko zaczyna się od rybki krótszej niż Twój mały palec.",
+     "visual": "Seria sylwetek w rosnącej skali: Haikouichthys (3 cm) → ryba pancerna → rekin → dinozaur → płetwal błękitny; pierwsza ledwo widoczna kropka."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Myllokunmingiidae",
+     "namePl": "Myllokunmingiidae",
+     "trait": "Małe ryby bez szczęk, z łukami skrzelowymi i płetwą grzbietową",
+     "became": "Haikouichthys, Myllokunmingia, Zhongjianichthys",
+     "fate": "wymarły w kambrze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Mała rybka, ledwie dłuższa niż spinacz. Przyjrzyj się jej dobrze.",
+    "lit": "Kręgowce! Najstarsze ryby – i początek Twojej własnej linii."
+   },
+   "concepts": [
+    "struna-grzbietowa"
+   ],
+   "misconception": "Pierwsze ryby nie miały szczęk ani kości. Były miękkie, małe i bezbronne.",
+   "sources": [
+    {
+     "title": "Science News 1999",
+     "url": "https://www.math.ucdavis.edu/~saito/data/science-news/original%20CD/software/SNData/11005",
+     "claim": "Zygzakowate mięśnie i złożone skrzela; najstarsze znane ryby"
+    },
+    {
+     "title": "Australia: The Land Where Time Began – Cambrian Vertebrates",
+     "url": "https://austhrutime.com/vertebrates_cambrian.htm",
+     "claim": "Myllokunmingia ok. 28 mm; ponad 500 okazów Haikouichthysa; możliwy synonim"
+    },
+    {
+     "title": "Wikipedia, Myllokunmingia",
+     "url": "https://en.wikipedia.org/wiki/Myllokunmingia",
+     "claim": "Haikouichthys jako możliwy młodszy synonim Myllokunmingii"
+    }
+   ]
+  },
+  {
+   "id": "Myllokunmingiidae",
+   "inGame": true,
+   "namePl": "Myllokunmingiidae",
+   "parent": "Vertebrata",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521–518 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Rodzina najstarszych ryb",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Trzy rybki z Junnanu",
+     "text": "Do tej rodziny gra zalicza Haikouichthysa, Myllokunmingię i Zhongjianichthysa. Wszystkie były małe, miały płetwę grzbietową, łuki skrzelowe i mięśnie w kształcie zygzaków. Różnią się drobiazgami: kształtem bloków mięśni i tym, czy widać promienie podpierające skrzela.",
+     "visual": "Trzy rybki w zbliżeniu z zaznaczonymi drobnymi różnicami w kształcie mięśni i skrzeli."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Jeden gatunek czy trzy?",
+     "text": "Przy tak drobnych i spłaszczonych skamieniałościach trudno odróżnić różne gatunki od różnych sposobów zachowania się tego samego zwierzęcia. Dlatego część badaczy łączy te rodzaje w jeden. Gra zostawia je osobno, bo tak są zapisane w bazie danych.",
+     "visual": "Trzy skamieniałości w różnym stanie zachowania i strzałki do jednej rekonstrukcji z pytajnikiem."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Trzy prawie identyczne rybki.",
+    "lit": "Myllokunmingiidae – rodzina, od której zaczynają się kręgowce."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Wikipedia, Myllokunmingia",
+     "url": "https://en.wikipedia.org/wiki/Myllokunmingia",
+     "claim": "Różnice w kształcie miomerów i promieniach skrzelowych; możliwa synonimia"
+    }
+   ]
+  },
+  {
+   "id": "Porifera",
+   "inGame": true,
+   "namePl": "Gąbki",
+   "parent": "Animalia",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "przed ok. 600 mln lat temu (zegary; sporne)",
+    "firstFossils": "pewne skamieniałości ok. 535–525 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Zwierzęta bez nerwów i mięśni – żywe filtry",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ciało jak sito",
+     "text": "Gąbka nie ma mózgu, nerwów, mięśni ani jelita. Jej ciało to ściana z porów, przez które przepływa woda. Wewnątrz komory wyściełają komórki kołnierzykowe: każda macha wicią, pędząc wodę, i łapie kołnierzykiem drobinki pokarmu. Ciało podpierają igiełki z krzemionki albo wapnia – spikule. W etapie 1 gra pokazuje Leptomitusa (gąbkę-rurkę) i Choię (gąbkę z promieniście sterczącymi igłami).",
+     "visual": "Przekrój gąbki: woda wpływa porami w ścianie, przepływa przez komory z komórkami kołnierzykowymi i wypływa otworem na górze."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Prostota, która działa",
+     "text": "Gąbki nie potrzebują nerwów ani mięśni, bo nie muszą się ruszać. Siedzą w miejscu i filtrują wodę – i to wystarcza, by przetrwać ponad pół miliarda lat. Ich budowa jest prosta, ale nie prymitywna w sensie „gorsza”: to wyspecjalizowane filtratory, z których niektóre przepompowują w ciągu dnia tysiące razy więcej wody niż wynosi ich objętość.",
+     "visual": "Gąbka na rafie z wyraźnym strumieniem wody wypływającym górnym otworem jak komin."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Kiedy oddzieliły się gąbki?",
+     "text": "Gąbki to jedna z najstarszych gałęzi zwierząt (opisaliśmy to w pniu, przy węźle Zwierzęta). Ślady chemiczne, które miały je potwierdzać sprzed 635 mln lat, okazały się mogą pochodzić z glonów. Pewne skamieniałości pojawiają się dopiero w kambrze. W etapie 1 oprócz zwykłych gąbek gra pokazuje archeocjaty – wymarłą grupę gąbek z wapiennym szkieletem, które zbudowały pierwsze rafy zwierząt.",
+     "visual": "Rozwidlenie: lewa gałąź z miękką gąbką Leptomitus, prawa z wapiennym kielichem archeocjaty."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Archaeocyatha",
+     "namePl": "Archeocjaty",
+     "trait": "Wapienny kielich z podwójną, dziurkowaną ścianą",
+     "became": "Budowniczy pierwszych raf zwierzęcych",
+     "fate": "wymarły ok. 510 mln lat temu"
+    }
+   ],
+   "narrator": {
+    "teaser": "Ktoś tu od pół miliarda lat tylko filtruje wodę – i świetnie mu idzie.",
+    "lit": "Gąbki – zwierzęta bez nerwów, mistrzowie filtrowania."
+   },
+   "concepts": [],
+   "misconception": "Gąbki nie są roślinami. To zwierzęta, które jedzą – tylko nie ruszają się z miejsca.",
+   "sources": [
+    {
+     "title": "Bobrovskiy i in. 2021, Nature Ecology & Evolution",
+     "url": "https://authors.library.caltech.edu/106779",
+     "claim": "Rzekome biomarkery gąbek mogą pochodzić z glonów"
+    }
+   ]
+  },
+  {
+   "id": "Archaeocyatha",
+   "inGame": true,
+   "namePl": "Archeocjaty",
+   "parent": "Porifera",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 525 mln lat temu (Syberia)",
+    "confidence": "pewne"
+   },
+   "headline": "Pierwsze rafy zbudowane przez zwierzęta",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kielich z podwójną ścianą",
+     "text": "Archeocjaty to wymarłe gąbki z wapiennym szkieletem w kształcie kielicha albo stożka, z dwiema dziurkowanymi ścianami jedna w drugiej. Pojawiły się ok. 525 mln lat temu na terenie dzisiejszej Syberii i szybko rozprzestrzeniły się po ciepłych, płytkich morzach. Razem z matami mikrobów budowały pierwsze rafy zwierzęce, np. ok. 520 mln lat temu na terenie dzisiejszej Nevady.",
+     "visual": "Wizualizacja „rafa-archeocjat-etap-01”: przekrój rafy z kielichami archeocjat wśród mat mikrobów."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Krótka kariera",
+     "text": "Rafy archeocjat były krótkim eksperymentem: ok. 10–15 mln lat. W czasie kryzysu zwanego wydarzeniem Sinsk ok. 513 mln lat temu, gdy w morzach brakowało tlenu, a do wody spływało dużo osadów z gór, większość z nich wymarła, a w środkowym kambrze nie było już żadnej. Potem przez dziesiątki milionów lat rafy budowały głównie mikroby i inne gąbki, aż w ordowiku pojawiły się koralowce.",
+     "visual": "Oś czasu: rozkwit archeocjat (525–515), gwałtowny spadek ok. 513, „przerwa w rafach”, potem koralowce w ordowiku."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Na dnie wyrastają kamienne kielichy.",
+    "lit": "Archeocjaty – pierwsi budowniczy raf."
+   },
+   "concepts": [
+    "wymieranie"
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia, Archaeocyatha",
+     "url": "https://wikipedia.com/wiki/Archeocyatha",
+     "claim": "Pojawienie ok. 525 mln lat temu na Syberii; pierwsze rafy zwierzęce; brak archeocjat po środkowym kambrze"
+    },
+    {
+     "title": "Smithsonian Magazine",
+     "url": "https://www.smithsonianmag.com/science-nature/fossils-from-one-of-the-worlds-first-reefs-can-be-found-on-mountains-in-nevada-180979256/",
+     "claim": "Rafy archeocjat w Nevadzie ok. 520 mln lat temu"
+    },
+    {
+     "title": "UCMP Berkeley, Archaeocyatha",
+     "url": "https://ucmp.berkeley.edu/porifera/archaeocyatha.html",
+     "claim": "Niemal zniknęły w środkowym kambrze, 10–15 mln lat po pojawieniu się"
+    },
+    {
+     "title": "Live Science – Sinsk event",
+     "url": "https://www.livescience.com/archaeology/mass-die-off-half-a-billion-years-ago-caused-by-shifting-tectonic-plates-ancient-rocks-reveal",
+     "claim": "Wymieranie Sinsk ok. 513 mln lat temu; ginące rafy"
+    },
+    {
+     "title": "Lee i Riding 2018",
+     "url": "https://www.robertriding.com/pdf/lee-riding-2018.pdf",
+     "claim": "Archeocjaty wspierały rafy ok. 15 mln lat; potem rafy mikrobowo-gąbkowe aż do ordowiku"
+    }
+   ]
+  },
+  {
+   "id": "Ctenophora",
+   "inGame": true,
+   "namePl": "Żebropławy",
+   "parent": "Animalia",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "być może pierwsza gałąź zwierząt (spór)",
+    "firstFossils": "ok. 521 mln lat temu (Chengjiang)",
+    "confidence": "sporne"
+   },
+   "headline": "Tęczowe wiosła i wielki spór o początek zwierząt",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Maotianoascus",
+     "text": "Żebropławy pływają dzięki ośmiu rzędom zrośniętych rzęsek, które poruszają się jak wiosła i rozszczepiają światło w tęczowe błyski. Maotianoascus z Chengjiang to jeden z najstarszych znanych żebropławów. Niektóre kambryjskie żebropławy miały nawet twarde płytki na ciele – czego dzisiejsze nie mają.",
+     "visual": "Przezroczysty, owalny żebropław w toni z ośmioma tęczowymi rzędami rzęsek."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Pierwsi wśród zwierząt?",
+     "text": "Jak pisaliśmy w pniu (węzeł Zwierzęta), żebropławy mogą być pierwszą gałęzią, która oddzieliła się od reszty zwierząt – przed gąbkami. Badanie ułożenia genów na chromosomach z 2023 r. mocno to wspiera, ale spór trwa. Jeśli tak było, to albo nerwy powstały u zwierząt dwa razy, albo gąbki je utraciły.",
+     "visual": "Mini-drzewko zwierząt z żebropławem na najniższej gałęzi i znakiem zapytania przy gąbce."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Przez wodę przesuwa się tęcza.",
+    "lit": "Żebropławy – i najstarsza zagadka drzewa zwierząt."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Schultz i in. 2023, Nature 618",
+     "url": "https://www.nature.com/articles/s41586-023-05936-6",
+     "claim": "Syntenia wspiera żebropławy jako siostrę reszty zwierząt"
+    }
+   ]
+  },
+  {
+   "id": "Cnidaria",
+   "inGame": true,
+   "namePl": "Parzydełkowce",
+   "parent": "Animalia",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "środkowy ediakar (zegary)",
+    "firstFossils": "Auroralumina ok. 560 mln lat temu; w grze od ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Polipy z harpunami – zalążek przyszłych raf koralowych",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Polip i meduza",
+     "text": "Parzydełkowce mają dwa podstawowe kształty ciała: polip – siedzący na dnie „kubek” z wieńcem czułków skierowanym w górę – i meduzę – ten sam kubek odwrócony, pływający w toni. Na czułkach mają parzydełka, komórki z zwiniętą nicią, które wystrzeliwują jak harpuny i wstrzykują jad. Opowiedzieliśmy o nich w pniu; tu spotykamy je w kambryjskim morzu.",
+     "visual": "Polip i meduza obok siebie z zaznaczeniem, że to ten sam plan ciała odwrócony do góry nogami; zbliżenie wystrzelonego parzydełka."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Koralowce i meduzy",
+     "text": "Parzydełkowce dzielą się na koralowce (Anthozoa) – które przez całe życie są polipami, jak ukwiały i korale – i meduzy z krewnymi (Medusozoa). W etapie 1 gra pokazuje jednego przedstawiciela koralowców: Xianguangię, ukwiałopodobny polip z Chengjiang. Prawdziwe korale z wapiennym szkieletem i rafy koralowe pojawią się dopiero w ordowiku (etap 4).",
+     "visual": "Rozwidlenie: lewa gałąź z ukwiałem i koralem, prawa z meduzą; przy koralu podpis „rafy od ordowiku”."
+    },
+    {
+     "kind": "skutki",
+     "title": "Budowniczy przyszłości",
+     "text": "Gdy archeocjaty wymrą, a mikroby przez długi czas będą jedynymi budowniczymi raf, to właśnie parzydełkowce – koralowce – przejmą ich rolę. Koralowce zbudują rafy paleozoiku, a po wielkim wymieraniu permskim nowa grupa, koralowce sześciopromienne, zbuduje rafy, które znamy do dziś, takie jak Wielka Rafa Koralowa.",
+     "visual": "Oś czasu raf: archeocjaty (kambr) → koralowce denkowe i czteropromienne (ordowik–perm) → koralowce sześciopromienne (od triasu)."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Anthozoa",
+     "namePl": "Koralowce",
+     "trait": "Całe życie jako polip",
+     "became": "Ukwiały, korale, rafy",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Medusozoa",
+     "namePl": "Meduzy i krewni",
+     "trait": "Stadium meduzy w cyklu życia",
+     "became": "Meduzy, stułbie, kostkowce",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Na dnie rozkwita coś jak kwiat – ale lepiej go nie dotykać.",
+    "lit": "Parzydełkowce – harpuny na czułkach i przyszli budowniczy raf."
+   },
+   "concepts": [],
+   "misconception": "Korale nie są kamieniami ani roślinami. To kolonie maleńkich zwierząt – polipów.",
+   "sources": [
+    {
+     "title": "Natural History Museum 2022 (Auroralumina)",
+     "url": "https://www.nhm.ac.uk/discover/news/2022/july/oldest-known-animal-predator-uncovered-leicestershire.html",
+     "claim": "Parzydełkowiec Auroralumina sprzed ok. 560 mln lat"
+    },
+    {
+     "title": "Geology Bites – Sara Pruss",
+     "url": "https://www.geologybites.com/sara-pruss",
+     "claim": "Pierwsze rafy nie były koralowe; współczesne korale od środkowego triasu"
+    }
+   ]
+  },
+  {
+   "id": "Anthozoa",
+   "inGame": true,
+   "namePl": "Koralowce",
+   "parent": "Cnidaria",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "ediakar albo wczesny kambr",
+    "firstFossils": "Xianguangia ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Xianguangia – ukwiał z kambryjskiego dna",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Xianguangia",
+     "text": "Xianguangia to miękki polip przyczepiony do dna, z wieńcem pierzastych czułków na górze. Wyglądała jak dzisiejszy ukwiał. Nie miała wapiennego szkieletu, więc zachowała się tylko dzięki wyjątkowym warunkom Chengjiang. Łapała czułkami drobne zwierzęta przepływające obok.",
+     "visual": "Xianguangia na dnie z rozpostartymi pierzastymi czułkami; mały stawonóg przepływa tuż obok."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Bez szkieletu – jeszcze",
+     "text": "Koralowce w kambrze były miękkie. Dopiero w ordowiku niektóre zaczęły budować wapienne szkielety i łączyć się w kolonie. Wtedy narodziły się koralowce denkowe i czteropromienne, a z nimi pierwsze rafy koralowe. W grze zobaczysz je w etapie 4.",
+     "visual": "Xianguangia obok ordowickiego korala Favosites (plaster miodu) z podpisem „za ok. 60 mln lat”."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Pierzasty kwiat na dnie poluje.",
+    "lit": "Koralowce – w kambrze jeszcze miękkie."
+   },
+   "concepts": [],
+   "sources": []
+  }
+ ],
+ "newConcepts": [
+  {
+   "id": "szczeliny-gardlowe",
+   "name": "Szczeliny gardłowe",
+   "short": "Otwory w gardle, przez które wypływa woda",
+   "text": [
+    "Szczeliny gardłowe to otwory w ścianie gardła, przez które woda wpływająca ustami wypływa na zewnątrz. Mają je wtórouste: półstrunowce, wczesne szkarłupnie i strunowce.",
+    "U pierwszych wtóroustych służyły do filtrowania pokarmu. U ryb przy szczelinach rozwinęły się skrzela do oddychania. U ssaków, w tym u człowieka, szczeliny pojawiają się tylko na chwilę w zarodku, a z tkanek wokół nich powstają m.in. części ucha i krtani."
+   ]
+  },
+  {
+   "id": "zuwaczki-i-szczekoczulki",
+   "name": "Żuwaczki i szczękoczułki",
+   "short": "Dwa sposoby na „szczęki” u stawonogów",
+   "text": [
+    "Stawonogi nie mają zębów w ustach. Pokarm rozdrabniają przekształconymi odnóżami. Żuwaczki to para twardych szczęk po bokach ust, które zamykają się jak nożyczki – mają je skorupiaki, wije i owady.",
+    "Szczękoczułki to para krótkich odnóży przed ustami, zakończonych szczypcami albo pazurem – mają je pająki, skorpiony i skrzypłocze. U pająków przez szczękoczułki płynie jad."
+   ]
+  },
+  {
+   "id": "filtrator",
+   "name": "Filtrator",
+   "short": "Zwierzę, które wyłapuje pokarm z wody",
+   "text": [
+    "Filtrator to zwierzę, które przepuszcza przez siebie dużo wody i zatrzymuje drobinki pokarmu: plankton, bakterie, resztki organiczne. Może to robić sitem z komórek (gąbki), wieńcem czułków (ramienionogi), szczelinami w gardle (wczesne strunowce) albo szczecinkami na odnóżach (niektóre radiodonty, wieloryby fiszbinowe).",
+    "Filtrowanie wynaleziono w historii życia wiele razy niezależnie. Często prowadzi do dużych rozmiarów ciała, bo duży filtrator przepompowuje więcej wody."
+   ]
+  }
+ ],
+ "notes": {
+  "uncertain": [
+   "Liczba jaj Kunmingelli nie jest podana w źródłach z tej sesji – opisana jako „wiele drobnych”.",
+   "Szczegóły budowy Xianguangii, Eldonii, Maotianoascusa i Ercaicunii – z pamięci.",
+   "Wielkość Leanchoilii (kilka cm) – z pamięci."
+  ],
+  "contested": [
+   "Megacheira jako krewni szczękoczułkowców albo osobna linia – opisane obie wersje.",
+   "Wiwaxia: mięczak czy krewna pierścienic; Halkieria: chitony czy ramienionogi – opisane jako spór.",
+   "Nectocaris jako wczesny głowonóg – opisane jako spór.",
+   "Wetulikole: siostry osłonic (García-Bellido i in. 2014) albo wczesne wtórouste – opisane obie wersje.",
+   "Haikouichthys i Myllokunmingia jako jeden gatunek – opisane.",
+   "Eldonia jako wtórousty – opisana jako zagadka.",
+   "Monofiletyzm wtóroustych (Kapli i in. 2021) – wspomniany.",
+   "Żebropławy jako pierwsza gałąź zwierząt – odesłanie do pnia."
+  ],
+  "fromMemory": [
+   "Lancetnik bez wyraźnej głowy i oczu; ryby bezżuchwowe jako krewni minogów.",
+   "Mięśnie strunowców w blokach w kształcie V; struna zapobiega skracaniu ciała.",
+   "Szczeliny gardłowe w zarodku człowieka i ich pochodne (ucho, krtań).",
+   "Owady wyrosły z linii skorupiaków (Pancrustacea); widłonogi jako najliczniejsze zwierzęta oceanów.",
+   "Wije pierwsze pewne w sylurze; Rhyniognatha ok. 410 mln lat.",
+   "Lingula jako długowieczna „żywa skamieniałość”; ramienionogi zastąpione przez małże po permie.",
+   "Lofofor ramienionogów; skorupki górna i dolna.",
+   "Niezmogowce z wywracaną trąbką; ślady ryjące wyznaczające początek kambru.",
+   "Żebropławy z ośmioma rzędami rzęsek; kambryjskie żebropławy z płytkami.",
+   "Gąbki przepompowujące wielokrotność swojej objętości.",
+   "Bradoriidy a małżoraczki – podobieństwo niezależne."
+  ],
+  "dataIssues": [
+   "Nowe rodzaje etapu 1 (17) pochodzą z zmiany-danych-01.json. Po imporcie z PBDB trzeba sprawdzić ich daty: jeśli któryś wypadnie poza okno etapu 1, przechodzi do etapu 2.",
+   "Pomatrum i Vetulicola mają w danych gry różne zakresy (521–515 i 521–512) – bez znaczenia dla etapu, ale warto ujednolicić źródło dat."
+  ],
+  "corrections": [
+   "Ta paczka zakłada poprawki z zmiany-danych-01.json: Onychophora pod Panarthropoda, Mollusca pod Spiralia, nowe klady Porifera, Archaeocyatha, Ctenophora, Cnidaria, Anthozoa, Brachiopoda, Scalidophora, Spiralia, Cambroernida."
+  ]
+ }
+}

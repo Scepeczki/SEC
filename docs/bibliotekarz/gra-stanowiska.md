@@ -1,0 +1,2995 @@
+# Stanowiska (rozdziały) i ich fauna
+
+Wygenerowano: 2026-11-19. Kolejność = kolejność rozdziałów w grze (od najstarszych skał); etap N Bibliotekarza = rozdział N. Przy rodzaju: zakres w mln lat temu (pierwsze–ostatnie wystąpienie w PBDB), środowisko, dieta, rodzina. „opis” = ma już szczegółowy opis w grze (GENUS_LORE), „BRAK opisu” = trzeba napisać.
+
+Każde stanowisko ma dwie listy: **fauna miejscowa** (skamieniałości naprawdę z tych skał; rozdział zamyka się po znalezieniu ich wszystkich) i **goście epoki** (żyli w tym czasie i środowisku, ale ich skamieniałości pochodzą z innych miejsc; dodatkowa kolekcja).
+
+## Rozdział 1: Chengjiang (id: chengjiang)
+
+- Chiny · Kambr · 521–515 mln lat temu · formacje: Yu'anshan, Maotianshan Shale
+- Odblokowanie: poziom parku 1, 100 monet
+- Tytuł etapu w grze: „Eksplozja kambryjska” · ma już przerywnik fabularny
+- Opis: Wczesny kambr Junnanu — starsi kuzyni fauny z Burgess: pierwsze ryby, wetulikole i dziwaczne stawonogi.
+- Fauna miejscowa (54):
+  - Isoxys · 539–497 · morze · plankton · Isoxyidae · opis
+  - Naraoia · 521–420 · morze · mięso · Naraoiidae · opis
+  - Kunmingella · 521–515 · morze · plankton · Kunmingellidae · opis
+  - Waptia · 521–497 · morze · plankton · Waptiidae · opis
+  - Leanchoilia · 521–497 · morze · mięso · Leanchoiliidae · opis
+  - Eoredlichia · 531–512 · morze · mięso · Redlichiidae · opis
+  - Branchiocaris · 521–497 · morze · plankton · Protocarididae · opis
+  - Misszhouia · 521–497 · morze · plankton · Naraoiidae · opis
+  - Amplectobelua · 521–497 · morze · mięso · Amplectobeluidae · opis
+  - Yunnanocephalus · 521–512 · morze · plankton · Yunnanocephalidae · opis
+  - Primicaris · 521–497 · morze · plankton · opis
+  - Houcaris · 521–505 · morze · mięso · Tamisiocarididae · opis
+  - Vetulicola · 521–512 · morze · plankton · Vetulicolidae · opis
+  - Fuxianhuia · 521–515 · morze · mięso · Fuxianhuiidae · opis
+  - Retifacies · 521–515 · morze · mięso · opis
+  - Xandarella · 521–512 · morze · plankton · opis
+  - Cindarella · 521–515 · morze · plankton · opis
+  - Combinivalvula · 521–515 · morze · plankton · Sunellidae · opis
+  - Microdictyon · 539–497 · morze · plankton · opis
+  - Canadaspis · 521–497 · morze · plankton · Canadaspididae · opis
+  - Kuamaia · 521–515 · morze · mięso · Helmetiidae · opis
+  - Ercaicunia · 521–515 · morze · plankton · opis
+  - Cardiodictyon · 521–515 · morze · plankton · Hallucigeniidae · opis
+  - Pseudoiulia · 521–515 · morze · plankton · opis
+  - Fortiforceps · 521–515 · morze · mięso · Fortiforcipidae · opis
+  - Urokodia · 521–507 · morze · mięso · opis
+  - Pomatrum · 521–515 · morze · plankton · Didazoonidae · opis
+  - Acanthomeridion · 521–515 · morze · plankton · opis
+  - Hallucigenia · 521–505 · morze · plankton · Hallucigeniidae · opis
+  - Saperion · 521–515 · morze · plankton · opis
+  - Malongella · 521–515 · morze · plankton · opis
+  - Pectocaris · 521–505 · morze · mięso · Pectocariidae · opis
+  - Jianfengia · 521–515 · morze · mięso · opis
+  - Parapeytoia · 521–515 · morze · mięso · Anomalocarididae · opis
+  - Shankouia · 521–515 · morze · plankton · opis
+  - Parapaleomerus · 521–515 · morze · plankton · Strabopidae · opis
+  - Anomalocaris · 521–497 · morze · mięso · Anomalocarididae · opis
+  - Lyrarapax · 521–515 · morze · mięso · Amplectobeluidae · opis
+  - Haikouichthys · 521–516 · morze · plankton · Myllokunmingiidae · opis
+  - Myllokunmingia · 521–516 · morze · plankton · Myllokunmingiidae · opis
+  - Haikouella · 521–515 · morze · plankton · opis
+  - Yunnanozoon · 521–516 · morze · plankton · opis
+  - Zhongjianichthys · 521–515 · morze · plankton · Myllokunmingiidae · opis
+  - Eldonia · 521–497 · morze · plankton · Eldoniidae · opis
+  - Leptomitus · 521–497 · morze · plankton · Leptomitidae · opis
+  - Choia · 521–505 · morze · plankton · Choiidae · opis
+  - Diandongia · 521–512 · morze · plankton · Botsfordiidae · opis
+  - Longtancunella · 521–515 · morze · plankton · opis
+  - Heliomedusa · 521–507 · morze · plankton · Mickwitziidae · opis
+  - Maotianshania · 539–516 · morze · plankton · opis
+  - Selkirkia · 521–477 · morze · mięso · Selkirkiidae · opis
+  - Xianguangia · 521–515 · morze · mięso · Dinomischidae · opis
+  - Maotianoascus · 521–515 · morze · mięso · opis
+  - Nectocaris · 521–505 · morze · mięso · Nectocarididae · opis
+- Goście epoki (9):
+  - Olenellus · 521–487 · morze · plankton · Olenellidae · BRAK opisu
+  - Redlichia · 521–497 · morze · plankton · Redlichiidae · BRAK opisu
+  - Kerygmachela · 521–515 · morze · mięso · BRAK opisu
+  - Paranomalocaris · 521–512 · morze · mięso · Anomalocarididae · BRAK opisu
+  - Guanshancaris · 521–507 · morze · mięso · Amplectobeluidae · BRAK opisu
+  - Tamisiocaris · 521–515 · morze · plankton · Tamisiocarididae · BRAK opisu
+  - Archaeocyathus · 521–505 · morze · plankton · Archaeocyathidae · BRAK opisu
+  - Halkieria · 539–507 · morze · plankton · Halkieriidae · BRAK opisu
+  - Helicoplacus · 515–510 · morze · plankton · Helicoplacidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Heliomedusa, Paraleptomitella, Mafangscolex, Cricocosmia, Selkirkia, Diandongia, Hazelia, Archotuba, Saetaspongia, Leptomitus, Burithes, Ambrolinevitus, Eoglossa, Wangyuia, Eldonia, Choiaella, Leptomitella, Lingulellotreta, Paucipodia, Onychodictyon, Luolishania, Sicyophorus, Halichondrites, Longtancunella, Choia, Nectocaris, Corynetis, Conicula, Dinomischus, Xiaoheiqingella …
+
+## Rozdział 2: Łupki z Burgess (id: burgess)
+
+- Kanada · Kambr · 510–505 mln lat temu · formacje: Burgess Shale
+- Odblokowanie: poziom parku 3, 3000 monet
+- Tytuł etapu w grze: „Dziwy kambryjskiego morza” · brak przerywnika fabularnego
+- Opis: Środkowy kambr: dziwaczny świat pierwszych zwierząt — Anomalocaris, Opabinia, Hallucigenia i tysiące stawonogów.
+- Fauna miejscowa (58):
+  - Liangshanella · 531–477 · morze · plankton · Svealutidae · opis
+  - Naraoia · 521–420 · morze · mięso · Naraoiidae · opis
+  - Ehmaniella · 515–487 · morze · plankton · Alokistocaridae · opis
+  - Wiwaxia · 521–497 · morze · rośliny · opis
+  - Marrella · 515–497 · morze · plankton · opis
+  - Pentagnostus · 515–487 · morze · plankton · Peronopsidae · opis
+  - Canadaspis · 521–497 · morze · plankton · Canadaspididae · opis
+  - Yohoia · 510–505 · morze · mięso · Yohoiidae · opis
+  - Waptia · 521–497 · morze · plankton · Waptiidae · opis
+  - Laggania · 510–497 · morze · mięso · opis
+  - Sidneyia · 515–497 · morze · mięso · opis
+  - Hurdia · 521–497 · morze · mięso · Hurdiidae · opis
+  - Burgessia · 521–505 · morze · plankton · opis
+  - Elrathina · 515–487 · morze · plankton · opis
+  - Perspicaris · 521–497 · morze · plankton · Perspicarididae · opis
+  - Molaria · 510–497 · morze · mięso · opis
+  - Pectocaris · 521–505 · morze · mięso · Pectocariidae · opis
+  - Leanchoilia · 521–497 · morze · mięso · Leanchoiliidae · opis
+  - Plenocaris · 510–497 · morze · plankton · opis
+  - Hallucigenia · 521–505 · morze · plankton · Hallucigeniidae · opis
+  - Habelia · 510–497 · morze · mięso · opis
+  - Alalcomenaeus · 515–497 · morze · mięso · Leanchoiliidae · opis
+  - Emeraldella · 510–497 · morze · mięso · opis
+  - Isoxys · 539–497 · morze · plankton · Isoxyidae · opis
+  - Pagetia · 515–487 · morze · plankton · Eodiscidae · opis
+  - Kootenia · 521–487 · morze · mięso · Dorypygidae · opis
+  - Olenoides · 516–487 · morze · mięso · Dorypygidae · opis
+  - Tuzoia · 516–457 · morze · plankton · Tuzoiidae · opis
+  - Pikaia · 510–505 · morze · plankton · opis
+  - Elrathia · 510–487 · morze · plankton · Alokistocaridae · opis
+  - Anomalocaris · 521–497 · morze · mięso · Anomalocarididae · opis
+  - Oryctocephalites · 516–487 · morze · mięso · Oryctocephalidae · opis
+  - Mollisonia · 521–471 · morze · plankton · Mollisoniidae · opis
+  - Branchiocaris · 521–497 · morze · plankton · Protocarididae · opis
+  - Oryctocephalus · 515–487 · morze · mięso · Oryctocephalidae · opis
+  - Caryosyntrips · 515–497 · morze · mięso · opis
+  - Opabinia · 510–458 · morze · mięso · Opabiniidae · opis
+  - Chanciaopsis · 510–497 · morze · mięso · Alokistocaridae · opis
+  - Peytoia · 515–497 · morze · mięso · Hurdiidae · opis
+  - Ogygopsis · 515–487 · morze · mięso · Dorypygidae · opis
+  - Zacanthoides · 515–487 · morze · mięso · Zacanthoididae · opis
+  - Metaspriggina · 510–497 · morze · plankton · opis
+  - Eldonia · 521–497 · morze · plankton · Eldoniidae · opis
+  - Leptomitus · 521–497 · morze · plankton · Leptomitidae · opis
+  - Choia · 521–505 · morze · plankton · Choiidae · opis
+  - Vauxia · 521–497 · morze · plankton · Vauxiidae · opis
+  - Ottoia · 510–505 · morze · mięso · Ottoidae · opis
+  - Selkirkia · 521–477 · morze · mięso · Selkirkiidae · opis
+  - Odontogriphus · 510–505 · morze · plankton · opis
+  - Nectocaris · 521–505 · morze · mięso · Nectocarididae · opis
+  - Burgessochaeta · 510–497 · morze · plankton · opis
+  - Canadia · 510–505 · morze · plankton · opis
+  - Gogia · 515–487 · morze · plankton · Eocrinidae · opis
+  - Spartobranchus · 510–497 · morze · plankton · opis
+  - Sanctacaris · 507–497 · morze · mięso · opis
+  - Amplectobelua · 521–497 · morze · mięso · Amplectobeluidae · opis
+  - Ptychoparella · 515–497 · morze · mięso · Ptychopariidae · opis
+  - Misszhouia · 521–497 · morze · plankton · Naraoiidae · opis
+- Goście epoki (15):
+  - Paradoxides · 516–497 · morze · mięso · Paradoxididae · BRAK opisu
+  - Kingaspidoides · 516–497 · morze · plankton · Ellipsocephalidae · BRAK opisu
+  - Fuchouia · 507–497 · morze · mięso · Dolichometopidae · BRAK opisu
+  - Cheilocephalus · 507–487 · morze · mięso · Cheilocephalidae · BRAK opisu
+  - Corynexochus · 516–487 · morze · mięso · Corynexochidae · BRAK opisu
+  - Pagodia · 505–487 · morze · mięso · Kaolishaniidae · BRAK opisu
+  - Tricrepicephalus · 507–487 · morze · mięso · Tricrepicephalidae · BRAK opisu
+  - Coosella · 507–487 · morze · mięso · Marjumiidae · BRAK opisu
+  - Crepicephalus · 505–487 · morze · mięso · Crepicephalidae · BRAK opisu
+  - Amecephalus · 515–487 · morze · mięso · Alokistocaridae · BRAK opisu
+  - Mexicella · 510–487 · morze · plankton · BRAK opisu
+  - Aphelaspis · 507–487 · morze · mięso · Aphelaspidae · BRAK opisu
+  - Blackwelderia · 505–494 · morze · mięso · Damesellidae · BRAK opisu
+  - Buccaspinea · 505–497 · morze · mięso · Hurdiidae · BRAK opisu
+  - Pahvantia · 505–497 · morze · plankton · Hurdiidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Hazelia, Selkirkia, Diraphora, Micromitra, Lingulella, Scenella, Ottoia, Haplophrentis, Pollingeria, Takakkawia, Nisusia, Vauxia, Oesia, Acrothyra, Cambrorhytium, Chancelloria, Burgessochaeta, Leptomitus, Pirania, Choia, Hamptonia, Odontogriphus, Yuknessia, Eiffelia, Wapkia, Louisella, Eldonia, Paterina, Protospongia, Falospongia …
+
+## Rozdział 3: Łupki Fezouata (id: fezouata)
+
+- Maroko · Kambr – Ordowik · 487–471 mln lat temu · formacje: Fezouata
+- Odblokowanie: poziom parku 5, 5900 monet
+- Tytuł etapu w grze: „Wielkie różnicowanie ordowickie” · brak przerywnika fabularnego
+- Opis: Wczesny ordowik Maroka — ostatnie olbrzymie radiodonty jak Aegirocassis i niezliczone trylobity.
+- Fauna miejscowa (28):
+  - Asaphellus · 497–449 · morze · mięso · Asaphidae · opis
+  - Ampyx · 487–420 · morze · plankton · Raphiophoridae · opis
+  - Bathycheilus · 487–458 · morze · mięso · Bathycheilidae · opis
+  - Colpocoryphe · 487–443 · morze · mięso · Homalonotidae · opis
+  - Toletanaspis · 487–461 · morze · mięso · Dalmanitidae · opis
+  - Apatokephalus · 497–457 · morze · mięso · Remopleurididae · opis
+  - Euloma · 497–468 · morze · mięso · Eulomidae · opis
+  - Prionocheilus · 487–443 · morze · mięso · Pharostomatidae · opis
+  - Neseuretus · 487–443 · morze · plankton · Calymenidae · opis
+  - Pradoella · 477–458 · morze · mięso · Calymenidae · opis
+  - Destombesiceras · 477–471 · morze · mięso · Apocrinoceratidae · opis
+  - Bavarilla · 487–468 · morze · mięso · Bavarillidae · opis
+  - Symphysurus · 487–445 · morze · mięso · Nileidae · opis
+  - Polymeres · 487–471 · morze · mięso · Polymeridae · opis
+  - Ceraurinella · 487–443 · morze · mięso · Cheiruridae · opis
+  - Agerina · 487–445 · morze · mięso · Leiostegiidae · opis
+  - Foulonia · 477–469 · morze · mięso · Cheiruridae · opis
+  - Geragnostus · 497–443 · morze · plankton · Metagnostidae · opis
+  - Basilicus · 487–445 · morze · mięso · Asaphidae · opis
+  - Leptoplastides · 497–474 · morze · mięso · Olenidae · opis
+  - Bathmoceras · 479–458 · morze · mięso · Bathmoceratidae · opis
+  - Rioceras · 487–457 · morze · mięso · Rioceratidae · opis
+  - Anacheirurus · 487–477 · morze · mięso · Cheiruridae · opis
+  - Kierarges · 487–471 · morze · mięso · Asaphidae · opis
+  - Pterygometopus · 472–443 · morze · mięso · Pterygometopidae · opis
+  - Ormathops · 477–450 · morze · mięso · Dalmanitidae · opis
+  - Plaesiacomia · 477–445 · morze · mięso · Homalonotidae · opis
+  - Aegirocassis · 486–477 · morze · plankton · Hurdiidae · opis
+- Goście epoki (36):
+  - Hibbertia · 471–443 · morze · plankton · Harpetidae · BRAK opisu
+  - Illaenus · 489–423 · morze · mięso · Illaenidae · BRAK opisu
+  - Bumastus · 486–420 · morze · mięso · Styginidae · BRAK opisu
+  - Panderia · 472–443 · morze · mięso · Panderiidae · BRAK opisu
+  - Pseudocalymene · 487–458 · morze · mięso · Leiostegiidae · BRAK opisu
+  - Kingstonia · 507–481 · morze · mięso · Kingstoniidae · BRAK opisu
+  - Shumardia · 497–445 · morze · mięso · Shumardiidae · BRAK opisu
+  - Irvingella · 497–487 · morze · mięso · Elviniidae · BRAK opisu
+  - Stenopilus · 497–483 · morze · mięso · Plethopeltidae · BRAK opisu
+  - Cliffia · 497–487 · morze · mięso · Phylacteridae · BRAK opisu
+  - Proceratopyge · 505–477 · morze · mięso · Ceratopygidae · BRAK opisu
+  - Ptychaspis · 497–487 · morze · mięso · Ptychaspididae · BRAK opisu
+  - Prosaukia · 497–487 · morze · mięso · Dikelocephalidae · BRAK opisu
+  - Symphysurina · 490–471 · morze · mięso · Symphysurinidae · BRAK opisu
+  - Cyclopyge · 486–443 · morze · plankton · Cyclopygidae · BRAK opisu
+  - Taihungshania · 486–458 · morze · mięso · Taihungshaniidae · BRAK opisu
+  - Dellea · 497–487 · morze · mięso · Dokimokephalidae · BRAK opisu
+  - Saratogia · 497–487 · morze · mięso · Idahoiidae · BRAK opisu
+  - Pterocephalia · 497–487 · morze · mięso · Pterocephaliidae · BRAK opisu
+  - Taenicephalus · 497–487 · morze · mięso · Parabolinoididae · BRAK opisu
+  - Parabolinella · 497–468 · morze · mięso · Olenidae · BRAK opisu
+  - Ketyna · 495–485 · morze · mięso · Eulomidae · BRAK opisu
+  - Hystricurus · 492–457 · morze · plankton · Hystricuridae · BRAK opisu
+  - Bathyurus · 489–446 · morze · plankton · Bathyuridae · BRAK opisu
+  - Ischyrotoma · 487–457 · morze · plankton · Dimeropygidae · BRAK opisu
+  - Telephina · 471–443 · morze · plankton · Telephinidae · BRAK opisu
+  - Aulacopleura · 477–382 · morze · plankton · Aulacopleuridae · BRAK opisu
+  - Ovalocephalus · 479–443 · morze · mięso · Pliomeridae · BRAK opisu
+  - Encrinurus · 477–413 · morze · mięso · Encrinuridae · BRAK opisu
+  - Sphaerexochus · 477–423 · morze · mięso · Cheiruridae · BRAK opisu
+  - Panderodus · 487–382 · morze · mięso · Panderodontidae · BRAK opisu
+  - Pseudooneotodus · 487–393 · morze · mięso · BRAK opisu
+  - Lingulella · 521–443 · morze · plankton · Obolidae · BRAK opisu
+  - Rhabdinopora · 497–457 · morze · plankton · Anisograptidae · BRAK opisu
+  - Didymograptus · 489–443 · morze · plankton · Dichograptidae · BRAK opisu
+  - Maclurites · 489–443 · morze · plankton · Macluritidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Rhopalocystis, Macrocystella, Carcassonnella, Thoralispira, Redonia, Balantiocystis, Tetragraptus, Lesueurilla, Plasiacystis, Paurorthis, Ranorthis, Baltograptus, Calvapilosa, Argodiscus, Didymograptus, Plumulites, Praenucula, Cavernolites, Babinka, Pirania, Hamptonia, Anatifopsis, Azygograptus, Chauvelicystis, Clonograptus, Ctenodonta, Dictyonema, Schizograptus, Paratetragraptus, Tarfaya …
+
+## Rozdział 4: Wapienie Cincinnati (id: cincinnati)
+
+- USA · Ordowik · 451–446 mln lat temu · formacje: Kope, Fairview, Waynesville, Liberty, Whitewater, Arnheim, Grant Lake, Bellevue, Corryville, Mount Auburn, Miamitown
+- Odblokowanie: poziom parku 6, 6900 monet
+- Tytuł etapu w grze: „Morza późnego ordowiku” · brak przerywnika fabularnego
+- Opis: Późnoordowickie płytkie morze środka Ameryki Północnej. Ławice ramienionogów, mszywiołów i liliowców, a wśród nich trylobity i łodziki – szczyt ordowickiego różnicowania tuż przed wielkim wymieraniem.
+- Fauna miejscowa (30):
+  - Rafinesquina · 486–423 · morze · plankton · Rafinesquinidae · BRAK opisu
+  - Isotelus · 489–433 · morze · mięso · Asaphidae · BRAK opisu
+  - Platystrophia · 477–420 · morze · plankton · Platystrophiidae · BRAK opisu
+  - Flexicalymene · 471–423 · morze · mięso · Calymenidae · BRAK opisu
+  - Pterinea · 460–380 · morze · plankton · Pterineidae · BRAK opisu
+  - Glyptocrinus · 471–438 · morze · plankton · Glyptocrinidae · BRAK opisu
+  - Streptelasma · 460–420 · morze · mięso · Streptelasmatidae · BRAK opisu
+  - Fenestella · 454–252 · morze · plankton · Fenestellidae · BRAK opisu
+  - Climacograptus · 486–420 · morze · plankton · Climacograptidae · BRAK opisu
+  - Endoceras · 487–420 · morze · mięso · Endoceratidae · BRAK opisu
+  - Isorophus · 461–443 · morze · plankton · Isorophidae · BRAK opisu
+  - Megalograptus · 458–443 · morze · mięso · Megalograptidae · BRAK opisu
+  - Ampyx · 487–420 · morze · plankton · Raphiophoridae · opis
+  - Dionide · 487–443 · morze · mięso · Dionididae · BRAK opisu
+  - Proetus · 458–340 · morze · plankton · Proetidae · BRAK opisu
+  - Amphilichas · 471–433 · morze · mięso · Lichidae · BRAK opisu
+  - Leperditia · 460–380 · morze · plankton · Leperditiidae · BRAK opisu
+  - Cameroceras · 487–443 · morze · mięso · Endoceratidae · BRAK opisu
+  - Remopleurides · 489–443 · morze · mięso · Remopleurididae · BRAK opisu
+  - Echinosphaerites · 486–443 · morze · plankton · Echinosphaeritidae · BRAK opisu
+  - Calyptaulax · 489–443 · morze · mięso · Pterygometopidae · BRAK opisu
+  - Nileus · 489–443 · morze · mięso · Nileidae · BRAK opisu
+  - Orthoceras · 483–206 · morze · mięso · Orthoceratidae · BRAK opisu
+  - Decoroproetus · 471–411 · morze · plankton · Tropidocoryphidae · BRAK opisu
+  - Drepanoistodus · 490–420 · morze · mięso · Drepanoistodontidae · BRAK opisu
+  - Neseuretus · 487–443 · morze · plankton · Calymenidae · opis
+  - Lonchodomas · 477–433 · morze · plankton · Raphiophoridae · BRAK opisu
+  - Tretaspis · 458–433 · morze · plankton · Trinucleidae · BRAK opisu
+  - Ceraurinella · 487–443 · morze · mięso · Cheiruridae · opis
+  - Orthis · 480–465 · morze · plankton · Orthidae · BRAK opisu
+- Goście epoki (13):
+  - Onychopterella · 445–420 · morze · mięso · Onychopterellidae · BRAK opisu
+  - Stoermeropterus · 443–433 · morze · mięso · Moselopteridae · BRAK opisu
+  - Waeringopterus · 443–420 · morze · mięso · Waeringopteridae · BRAK opisu
+  - Slimonia · 443–413 · morze · mięso · Slimoniidae · BRAK opisu
+  - Parahughmilleria · 443–393 · morze · mięso · Parahughmilleriidae · BRAK opisu
+  - Nanahughmilleria · 443–393 · morze · mięso · Nanahughmilleriidae · BRAK opisu
+  - Parastylonurus · 443–420 · morze · mięso · Parastylonuridae · BRAK opisu
+  - Hardieopterus · 443–420 · morze · mięso · Hardieopteridae · BRAK opisu
+  - Scharyia · 458–388 · morze · plankton · Scharyiidae · BRAK opisu
+  - Astraspis · 458–446 · morze · plankton · Astraspididae · BRAK opisu
+  - Wurmiella · 450–393 · morze · mięso · Spathognathodontodae · BRAK opisu
+  - Cothurnocystis · 477–445 · morze · plankton · Cothurnocystidae · BRAK opisu
+  - Halysites · 471–413 · morze · mięso · Halysitidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Hebertella, Zygospira, Strophomena, Dalmanella, Cincinnetina, Ambonychia, Cincinnaticrinus, Hiscobeccus, Ectenocrinus, Merocrinus, Cryptolithus, Parvohallopora, Petrocrania, Lophospira, Plectorthis, Plaesiomys, Vinlandostrophia, Leptaena, Cyclonema, Sowerbyella, Treptoceras, Holtedahlina, Sinuites, Cornulites, Protaraea, Paupospira, Grewingkia, Costatulites, Eochonetes, Iocrinus …
+
+## Rozdział 5: Formacja Bertie (id: bertie)
+
+- USA i Kanada · Sylur · 423–420 mln lat temu · formacje: Bertie, Williamsville, Fiddlers Green
+- Odblokowanie: poziom parku 6, 8100 monet
+- Tytuł etapu w grze: „Królestwo wielkoraków” · brak przerywnika fabularnego
+- Opis: Sylurskie słone laguny nad dzisiejszym jeziorem Erie. Królestwo wielkoraków, takich jak Eurypterus, a obok nich pierwsze skorpiony i stawonogi, które zaglądały na ląd.
+- Fauna miejscowa (16):
+  - Dolichopterus · 433–411 · morze · mięso · Dolichopteridae · BRAK opisu
+  - Proscorpius · 423–420 · morze · mięso · Proscorpiidae · BRAK opisu
+  - Acutiramus · 425–411 · morze · mięso · Pterygotidae · BRAK opisu
+  - Eurypterus · 443–307 · morze · mięso · Eurypteridae · BRAK opisu
+  - Leperditia · 460–380 · morze · plankton · Leperditiidae · BRAK opisu
+  - Pterygotus · 443–369 · morze · mięso · Pterygotidae · BRAK opisu
+  - Ceratiocaris · 440–400 · morze · plankton · Ceratiocarididae · BRAK opisu
+  - Erettopterus · 443–411 · morze · mięso · Pterygotidae · BRAK opisu
+  - Climacograptus · 486–420 · morze · plankton · Climacograptidae · BRAK opisu
+  - Eusarcana · 443–413 · morze · mięso · Carcinosomatidae · BRAK opisu
+  - Carcinosoma · 443–393 · morze · mięso · Carcinosomatidae · BRAK opisu
+  - Orthoceras · 483–206 · morze · mięso · Orthoceratidae · BRAK opisu
+  - Hughmilleria · 443–382 · morze · mięso · Hughmilleriidae · BRAK opisu
+  - Brachyopterus · 458–420 · morze · mięso · Brachyopteridae · BRAK opisu
+  - Erieopterus · 433–393 · morze · mięso · Erieopteridae · BRAK opisu
+  - Naraoia · 521–420 · morze · mięso · Naraoiidae · opis
+- Goście epoki (32):
+  - Terropterus · 439–433 · morze · mięso · Lanarkopteridae · BRAK opisu
+  - Mixopterus · 433–420 · morze · mięso · Mixopteridae · BRAK opisu
+  - Jaekelopterus · 433–388 · morze · mięso · Pterygotidae · BRAK opisu
+  - Bassipterus · 427–420 · morze · mięso · Pittsfordipteridae · BRAK opisu
+  - Strobilopterus · 431–393 · morze · mięso · Strobilopteridae · BRAK opisu
+  - Tarsopterella · 423–413 · morze · mięso · Hardieopteridae · BRAK opisu
+  - Traquairaspis · 433–400 · morze · plankton · Traquairaspidae · BRAK opisu
+  - Poraspis · 427–393 · morze · plankton · Cyathaspididae · BRAK opisu
+  - Corvaspis · 427–400 · morze · plankton · Corvaspididae · BRAK opisu
+  - Protopteraspis · 420–413 · morze · plankton · Protopteraspididae · BRAK opisu
+  - Podolaspis · 420–411 · morze · plankton · Pteraspididae · BRAK opisu
+  - Larnovaspis · 420–411 · morze · plankton · BRAK opisu
+  - Thelodus · 443–420 · morze · plankton · Coelolepidae · BRAK opisu
+  - Lanarkia · 443–423 · morze · plankton · Lanarkiidae · BRAK opisu
+  - Nikolivia · 433–393 · morze · plankton · Nikoliviidae · BRAK opisu
+  - Apalolepis · 420–411 · morze · plankton · Apalolepidae · BRAK opisu
+  - Paralogania · 443–413 · morze · plankton · Loganelliidae · BRAK opisu
+  - Loganellia · 443–411 · morze · plankton · Loganelliidae · BRAK opisu
+  - Romundina · 420–393 · morze · mięso · Palaeacanthaspidae · BRAK opisu
+  - Zhanjilepis · 420–413 · morze · mięso · BRAK opisu
+  - Yunnanolepis · 420–411 · morze · mięso · Yunnanolepididae · BRAK opisu
+  - Chuchinolepis · 420–411 · morze · mięso · Chuchinolepidae · BRAK opisu
+  - Erikaspis · 420–411 · morze · mięso · BRAK opisu
+  - Kujdanowiaspis · 420–411 · morze · mięso · Kujdanowiaspididae · BRAK opisu
+  - Tremataspis · 431–423 · morze · plankton · Tremataspididae · BRAK opisu
+  - Cephalaspis · 423–393 · morze · plankton · Cephalaspididae · BRAK opisu
+  - Monograptus · 461–393 · morze · plankton · Monograptidae · BRAK opisu
+  - Pentamerus · 443–400 · morze · plankton · Pentameridae · BRAK opisu
+  - Lapworthura · 421–400 · morze · plankton · Lapworthuridae · BRAK opisu
+  - Offacolus · 433–427 · morze · mięso · Offacolidae · BRAK opisu
+  - Eramoscorpius · 433–427 · morze · mięso · BRAK opisu
+  - Pneumodesmus · 433–427 · ląd · plankton · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Orbiculoidea, Pseudoniscus, Lingula, Camarotoechia, Buffalopterus, Limuloides, Ascograptus, Howellella, Eukloedenella, Bertratis, Clarkeipterus, Serpulites, Ceratopora, Metaconularia, Stromatopora, Hernodia, Reptaria, Delthyris, Hercynella, Mesocoelia, Loxonema, Dawsonoceras, Mitroceras, Pristeroceras, Goniophora, Rhytimya, Bunaia, Platyostoma, Nuculites, Modiolopsis …
+
+## Rozdział 6: Czert z Rhynie (id: rhynie)
+
+- Szkocja · Dewon · 413–411 mln lat temu · formacje: Dryden Flags, Rhynie Chert, Windyfield Chert
+- Odblokowanie: poziom parku 6, 9400 monet
+- Tytuł etapu w grze: „Pierwsze ekosystemy lądowe” · brak przerywnika fabularnego
+- Opis: Wczesnodewońskie gorące źródła Szkocji zamieniły w krzemień cały mały ekosystem lądowy: pierwsze rośliny naczyniowe, grzyby, roztocza, pajęczaki i najstarsze owady.
+- Fauna miejscowa (6):
+  - Palaeocharinus · 413–411 · ląd · mięso · Palaeocharinidae · BRAK opisu
+  - Protacarus · 413–411 · ląd · plankton · Protacaridae · BRAK opisu
+  - Crussolum · 423–382 · ląd · mięso · Crussolidae · BRAK opisu
+  - Lepidocaris · 413–411 · słodka woda · plankton · BRAK opisu
+  - Eophalangium · 413–411 · ląd · mięso · BRAK opisu
+  - Rhyniognatha · 413–411 · powietrze · plankton · BRAK opisu
+- Goście epoki (4):
+  - Rhenopterus · 413–400 · morze · mięso · Rhenopteridae · BRAK opisu
+  - Walliserops · 411–388 · morze · mięso · Acastidae · BRAK opisu
+  - Eoarthropleura · 411–372 · ląd · rośliny · Arthropleuridae · BRAK opisu
+  - Wijdeaspis · 411–388 · morze · mięso · Macropetalichthyidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Rhyniella, Palaeonema, Palaeocteniza, Heterocrania, Leverhulmia, Rhynimonstrum, Saccogulus
+
+## Rozdział 7: Formacja Gogo (id: gogo)
+
+- Australia · Dewon · 382–372 mln lat temu · formacje: Gogo
+- Odblokowanie: poziom parku 7, 11000 monet
+- Tytuł etapu w grze: „Wiek ryb” · brak przerywnika fabularnego
+- Opis: Dewońska rafa w zachodniej Australii — pancerne ryby zachowane w trzech wymiarach, a nawet z zarodkami.
+- Fauna miejscowa (36):
+  - Manticoceras · 382–369 · morze · mięso · Gephuroceratidae · opis
+  - Ponticeras · 388–372 · morze · mięso · Acanthoclymeniidae · BRAK opisu
+  - Acanthoclymenia · 382–372 · morze · mięso · Acanthoclymeniidae · BRAK opisu
+  - Mimipiscis · 382–372 · morze · plankton · Moythomasiidae · BRAK opisu
+  - Hoeninghausia · 382–372 · morze · mięso · Koenenitidae · BRAK opisu
+  - Lobobactrites · 413–359 · morze · ryby · Bactritidae · BRAK opisu
+  - Timanites · 382–379 · morze · mięso · Koenenitidae · BRAK opisu
+  - Gogosardina · 382–372 · morze · plankton · BRAK opisu
+  - Tornoceras · 388–359 · morze · mięso · Tornoceratidae · BRAK opisu
+  - Probeloceras · 382–372 · morze · mięso · Acanthoclymeniidae · BRAK opisu
+  - Aulatornoceras · 382–372 · morze · mięso · Tornoceratidae · BRAK opisu
+  - Camuropiscis · 382–372 · morze · mięso · Camuropiscidae · BRAK opisu
+  - Gogoceras · 382–379 · morze · mięso · Acanthoclymeniidae · BRAK opisu
+  - Prochorites · 382–375 · morze · mięso · Acanthoclymeniidae · BRAK opisu
+  - Moythomasia · 393–359 · morze · plankton · BRAK opisu
+  - Latocamurus · 382–379 · morze · mięso · Camuropiscidae · BRAK opisu
+  - Torosteus · 382–379 · morze · mięso · Torosteidae · BRAK opisu
+  - Griphognathus · 388–372 · morze · ryby · Holodipteridae · BRAK opisu
+  - Compagopiscis · 382–372 · morze · mięso · Panxiosteidae · BRAK opisu
+  - Kendrickichthys · 382–372 · morze · mięso · Mylostomatidae · BRAK opisu
+  - Koenenites · 388–379 · morze · mięso · Koenenitidae · BRAK opisu
+  - Incisoscutum · 382–372 · morze · mięso · Camuropiscidae · BRAK opisu
+  - Eastmanosteus · 388–375 · morze · mięso · Dinichthyidae · BRAK opisu
+  - Austroptyctodus · 382–379 · morze · mięso · BRAK opisu
+  - Chirodipterus · 393–359 · morze · ryby · Chirodipteridae · BRAK opisu
+  - Holodipterus · 382–365 · morze · ryby · Holodipteridae · BRAK opisu
+  - Bruntonichthys · 382–372 · morze · mięso · BRAK opisu
+  - Bullerichthys · 382–379 · morze · mięso · BRAK opisu
+  - Gogopiscis · 382–372 · morze · mięso · Panxiosteidae · BRAK opisu
+  - Gogonasus · 382–379 · morze · mięso · BRAK opisu
+  - Materpiscis · 382–379 · morze · mięso · Ptyctodontidae · BRAK opisu
+  - Adelophthalmus · 411–283 · morze · mięso · Adelophthalmidae · BRAK opisu
+  - Coccosteus · 411–359 · morze · mięso · Coccosteidae · BRAK opisu
+  - Onychodus · 420–307 · morze · ryby · Onychodontidae · BRAK opisu
+  - Bothriolepis · 411–359 · morze · mięso · Bothriolepididae · BRAK opisu
+  - Holonema · 400–359 · morze · mięso · Holonematidae · BRAK opisu
+- Goście epoki (29):
+  - Leonaspis · 468–382 · morze · mięso · Odontopleuridae · BRAK opisu
+  - Dalmanites · 461–372 · morze · mięso · Dalmanitidae · BRAK opisu
+  - Greenops · 411–372 · morze · mięso · Acastidae · BRAK opisu
+  - Schizosteus · 411–382 · morze · plankton · BRAK opisu
+  - Tartuosteus · 393–379 · morze · plankton · Pycnosteidae · BRAK opisu
+  - Nostolepis · 433–359 · morze · mięso · Climatiidae · BRAK opisu
+  - Machaeracanthus · 420–379 · morze · mięso · Machaeracanthidae · BRAK opisu
+  - Diplacanthus · 411–359 · morze · mięso · Diplacanthidae · BRAK opisu
+  - Cheiracanthus · 411–359 · morze · mięso · Cheiracanthidae · BRAK opisu
+  - Osteolepis · 393–359 · morze · ryby · Osteolepididae · BRAK opisu
+  - Thursius · 393–372 · morze · ryby · Thursiidae · BRAK opisu
+  - Gyroptychius · 393–379 · morze · ryby · Gyroptychiidae · BRAK opisu
+  - Livoniana · 383–379 · morze · ryby · BRAK opisu
+  - Cheirolepis · 411–372 · morze · plankton · BRAK opisu
+  - Byssacanthus · 393–382 · morze · mięso · Pterichthyodidae · BRAK opisu
+  - Microbrachius · 400–382 · morze · mięso · Microbrachiidae · BRAK opisu
+  - Pholidosteus · 382–372 · morze · mięso · Pholidosteidae · BRAK opisu
+  - Actinolepis · 420–382 · morze · mięso · Actinolepididae · BRAK opisu
+  - Homostius · 400–382 · morze · mięso · Homostiidae · BRAK opisu
+  - Millerosteus · 393–382 · morze · mięso · Coccosteidae · BRAK opisu
+  - Heterostius · 393–382 · morze · mięso · Dunkleosteidae · BRAK opisu
+  - Plourdosteus · 388–372 · morze · mięso · Panxiosteidae · BRAK opisu
+  - Brachydeirus · 382–372 · morze · mięso · Brachydeiridae · BRAK opisu
+  - Erromenosteus · 382–372 · morze · mięso · Leiosteidae · BRAK opisu
+  - Enseosteus · 382–372 · morze · mięso · Selenosteidae · BRAK opisu
+  - Favosites · 450–380 · morze · mięso · Favositidae · BRAK opisu
+  - Heliophyllum · 400–380 · morze · mięso · Zaphrentidae · BRAK opisu
+  - Eusthenopteron · 385–372 · słodka woda · mięso · BRAK opisu
+  - Elpistostege · 382–372 · słodka woda · mięso · Panderichthyidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Syringaxon, Kimberia, Maternoceras, Mixomanticoceras, Xeradipterus, Adololopas, Rhinodipterus, Halimacanthodes, Pickeringius, Montecaris, Concavicaris, Schugurocaris, Rolfosteus, Fallacosteus, Pinguosteus, Mcnamaraspis, Harrytoombsia, Mesotaxis, Ancyrodella, Ngamugawi, Asthenorhynchus, Campbellodus, Gogodipterus, Gogonasus, Gogoselachus, Robinsondipterus, Materpiscis, Pillararhynchus, Tubonasus, Simosteus
+
+## Rozdział 8: Łupki Cleveland (id: cleveland)
+
+- USA · Dewon – Karbon · 372–359 mln lat temu · formacje: Cleveland
+- Odblokowanie: poziom parku 9, 22000 monet
+- Tytuł etapu w grze: „Pancerni giganci dewonu” · brak przerywnika fabularnego
+- Opis: Późnodewońskie morze — tu polował pancerny Dunkleosteus i pierwsze rekiny.
+- Fauna miejscowa (17):
+  - Stethacanthus · 382–260 · morze · mięso · Symmoriidae · BRAK opisu
+  - Stenosteus · 372–359 · morze · mięso · Selenosteidae · BRAK opisu
+  - Tegeolepis · 372–359 · morze · mięso · Palaeoniscidae · BRAK opisu
+  - Ctenacanthus · 411–252 · morze · mięso · Ctenacanthidae · BRAK opisu
+  - Heintzichthys · 372–359 · morze · mięso · BRAK opisu
+  - Titanichthys · 393–359 · morze · mięso · Titanichthyidae · BRAK opisu
+  - Tamiobatis · 388–352 · morze · mięso · Ctenacanthidae · BRAK opisu
+  - Cladoselache · 372–359 · morze · mięso · Cladoselachidae · BRAK opisu
+  - Kentuckia · 372–347 · morze · mięso · BRAK opisu
+  - Gymnotrachelus · 365–359 · morze · mięso · Selenosteidae · BRAK opisu
+  - Bungartius · 365–359 · morze · mięso · Bungartiidae · BRAK opisu
+  - Selenosteus · 365–359 · morze · mięso · Selenosteidae · BRAK opisu
+  - Holdenius · 365–359 · morze · mięso · Dinichthyidae · BRAK opisu
+  - Hussakofia · 365–359 · morze · mięso · Dunkleosteidae · BRAK opisu
+  - Paramylostoma · 365–359 · morze · mięso · Selenosteidae · BRAK opisu
+  - Gorgonichthys · 372–359 · morze · mięso · BRAK opisu
+  - Angustidontus · 372–347 · morze · plankton · Angustidontidae · BRAK opisu
+- Goście epoki (31):
+  - Drepanopterus · 443–359 · morze · mięso · Drepanopteridae · BRAK opisu
+  - Cyrtoctenus · 393–330 · morze · mięso · Hibbertopteridae · BRAK opisu
+  - Stylonurus · 429–359 · morze · mięso · Stylonuridae · BRAK opisu
+  - Stylonurella · 429–359 · morze · mięso · Stylonurellidae · BRAK opisu
+  - Otarion · 477–359 · morze · plankton · Otarionidae · BRAK opisu
+  - Brachymetopus · 372–252 · morze · plankton · Brachymetopidae · BRAK opisu
+  - Phacops · 469–354 · morze · mięso · Phacopidae · BRAK opisu
+  - Holoptychius · 393–359 · morze · ryby · Holoptychiidae · BRAK opisu
+  - Dipterus · 393–359 · morze · ryby · Dipteridae · BRAK opisu
+  - Conchodus · 388–359 · morze · ryby · Chirodipteridae · BRAK opisu
+  - Tiktaalik · 382–372 · morze · ryby · Panderichthyidae · BRAK opisu
+  - Hyneria · 372–359 · morze · ryby · Tristichopteridae · BRAK opisu
+  - Ichthyostega · 372–359 · słodka woda · ryby · Ichthyostegidae · BRAK opisu
+  - Acanthostega · 372–359 · słodka woda · ryby · Acanthostegidae · BRAK opisu
+  - Ptyctodus · 393–359 · morze · mięso · Ptyctodontidae · BRAK opisu
+  - Grenfellaspis · 372–359 · morze · mięso · Sinolepidae · BRAK opisu
+  - Remigolepis · 388–359 · morze · mięso · Remigolepididae · BRAK opisu
+  - Phyllolepis · 388–359 · morze · mięso · Phyllolepidae · BRAK opisu
+  - Gronlandaspis · 411–347 · morze · mięso · Gronlandaspididae · BRAK opisu
+  - Dunkleosteus · 388–359 · morze · mięso · Dunkleosteidae · BRAK opisu
+  - Belodella · 471–359 · morze · mięso · Belodellidae · BRAK opisu
+  - Oulodus · 487–221 · morze · mięso · BRAK opisu
+  - Icriodus · 427–359 · morze · mięso · Icriodontidae · BRAK opisu
+  - Polygnathus · 420–237 · morze · mięso · Polygnathidae · BRAK opisu
+  - Palmatolepis · 393–359 · morze · mięso · Palmatolepidae · BRAK opisu
+  - Atrypa · 440–360 · morze · plankton · Atrypidae · BRAK opisu
+  - Platyceras · 440–260 · morze · plankton · Platyceratidae · BRAK opisu
+  - Hydnoceras · 388–382 · morze · plankton · Dictyospongiidae · BRAK opisu
+  - Ventastega · 372–359 · słodka woda · mięso · BRAK opisu
+  - Tulerpeton · 365–359 · słodka woda · mięso · Tulerpetidae · BRAK opisu
+  - Spirifer · 359–323 · morze · plankton · Spiriferidae · BRAK opisu
+
+## Rozdział 9: Wapień East Kirkton (id: east_kirkton)
+
+- Szkocja · Karbon · 347–330 mln lat temu · formacje: East Kirkton, East Kirkton Limestone, Bathgate Hills Volcanic
+- Odblokowanie: poziom parku 10, 28000 monet
+- Tytuł etapu w grze: „Czworonogi schodzą z wody” · brak przerywnika fabularnego
+- Opis: Wczesnokarbońskie jezioro wśród wulkanów Szkocji. Zachowały się w nim jedne z pierwszych w pełni lądowych czworonogów, skorpiony i wije z lasów, które dopiero powstawały.
+- Fauna miejscowa (6):
+  - Pulmonoscorpius · 336–330 · ląd · mięso · Centromachidae · BRAK opisu
+  - Westlothiana · 336–330 · ląd · mięso · BRAK opisu
+  - Balanerpeton · 336–330 · ląd · mięso · BRAK opisu
+  - Ophiderpeton · 336–307 · słodka woda · ryby · Ophiderpetontidae · BRAK opisu
+  - Elonichthys · 372–241 · morze · plankton · Elonichthyidae · BRAK opisu
+  - Hibbertopterus · 365–304 · morze · mięso · Hibbertopteridae · BRAK opisu
+- Goście epoki (11):
+  - Doragnathus · 347–323 · słodka woda · ryby · BRAK opisu
+  - Crassigyrinus · 336–323 · słodka woda · ryby · Crassigyrinidae · BRAK opisu
+  - Greererpeton · 330–323 · słodka woda · ryby · Colosteidae · BRAK opisu
+  - Spathicephalus · 347–315 · słodka woda · ryby · Spathicephalidae · BRAK opisu
+  - Acherontiscus · 330–327 · słodka woda · ryby · Acherontiscidae · BRAK opisu
+  - Nematoptychius · 340–324 · morze · plankton · Nematoptychiidae · BRAK opisu
+  - Falcatus · 330–323 · morze · mięso · Falcatidae · BRAK opisu
+  - Pederpes · 354–347 · ląd · mięso · Whatcheeriidae · BRAK opisu
+  - Whatcheeria · 340–336 · słodka woda · mięso · Whatcheeriidae · BRAK opisu
+  - Lithostrotion · 359–294 · morze · mięso · Lithostrotionidae · BRAK opisu
+  - Gigantoproductus · 352–319 · morze · plankton · Monticuliferidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Silvanerpeton, Rhadinichthys, Brigantibunum, Tristychius, Eurynotus, Cosmoptychius, Mesopoma, Watsonichthys, Kirktonecta, Eldeceeon, Eucritta
+
+## Rozdział 10: Klify Joggins (id: joggins)
+
+- Kanada · Karbon · 319–317 mln lat temu · formacje: Joggins
+- Odblokowanie: poziom parku 10, 34000 monet
+- Tytuł etapu w grze: „Pierwsze gady wśród widłaków” · brak przerywnika fabularnego
+- Opis: Karbońskie lasy węglowe Nowej Szkocji. W pniach skamieniałych widłaków znaleziono Hylonomusa, jednego z najstarszych gadów. Klify są na liście światowego dziedzictwa UNESCO.
+- Fauna miejscowa (8):
+  - Hylonomus · 319–307 · ląd · mięso · Protorothyrididae · BRAK opisu
+  - Dendrerpeton · 319–317 · ląd · mięso · Dendrerpetidae · BRAK opisu
+  - Xyloiulus · 319–274 · ląd · rośliny · Xyloiulidae · BRAK opisu
+  - Archiulus · 319–290 · ląd · rośliny · BRAK opisu
+  - Amynilyspes · 319–301 · ląd · rośliny · Amynilyspedidae · BRAK opisu
+  - Ricnodon · 319–307 · słodka woda · ryby · Hapsidopareiidae · BRAK opisu
+  - Baphetes · 323–307 · słodka woda · ryby · Baphetidae · BRAK opisu
+  - Palaeoniscum · 260–254 · morze · mięso · Palaeoniscidae · BRAK opisu
+- Goście epoki (16):
+  - Meganeura · 304–299 · powietrze · mięso · Meganeuridae · BRAK opisu
+  - Stenodictya · 304–299 · powietrze · mięso · Dictyoneuridae · BRAK opisu
+  - Arizonerpeton · 319–315 · słodka woda · ryby · BRAK opisu
+  - Sclerocephalus · 304–283 · słodka woda · ryby · BRAK opisu
+  - Chenoprosopus · 304–286 · słodka woda · ryby · Cochleosauridae · BRAK opisu
+  - Edops · 304–274 · słodka woda · ryby · Edopidae · BRAK opisu
+  - Xyrospondylus · 306–304 · ląd · mięso · BRAK opisu
+  - Vaughnictis · 299–286 · ląd · rośliny · Eothyrididae · BRAK opisu
+  - Belebey · 304–264 · ląd · mięso · Bolosauridae · BRAK opisu
+  - Limnoscelis · 306–286 · ląd · rośliny · Limnoscelidae · BRAK opisu
+  - Tseajaia · 299–274 · ląd · rośliny · Tseajaiidae · BRAK opisu
+  - Archaeothyris · 315–307 · ląd · mięso · Ophiacodontidae · BRAK opisu
+  - Petrolacosaurus · 306–304 · ląd · mięso · Petrolacosauridae · BRAK opisu
+  - Palaeothele · 310–301 · ląd · mięso · Palaeothelidae · BRAK opisu
+  - Archoblattina · 300–295 · powietrze · plankton · BRAK opisu
+  - Eocasea · 304–299 · ląd · mięso · Caseidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Leiocephalikon, Dendrysekos, Mazonia, Dendropupa, Platystegos, Calligenethlon, Protoclepsydrops, Archerpeton, Hylerpeton, Brodioptera, Anthracomartus, Archicambala, Trachystegos, Asaphestera, Novascoticus, Haplolepis (Haplolepis), Parahaplolepis
+
+## Rozdział 11: Mazon Creek (id: mazon_creek)
+
+- USA · Karbon · 310–307 mln lat temu · formacje: Francis Creek
+- Odblokowanie: poziom parku 11, 43000 monet
+- Tytuł etapu w grze: „Lasy węglowe i podbój lądu” · brak przerywnika fabularnego
+- Opis: Karbońskie delty i bagna w konkrecjach — wije, ryby i dziwne stworzenia, jak potwór Tully.
+- Fauna miejscowa (35):
+  - Euphoberia · 336–307 · ląd · rośliny · Euphoberiidae · BRAK opisu
+  - Eubleptus · 310–307 · powietrze · mięso · Eubleptidae · BRAK opisu
+  - Elonichthys · 372–241 · morze · plankton · Elonichthyidae · BRAK opisu
+  - Acantherpestes · 319–307 · ląd · rośliny · Euphoberiidae · BRAK opisu
+  - Euproops · 327–300 · morze · mięso · Belinuridae · BRAK opisu
+  - Amphibamus · 310–307 · słodka woda · ryby · Amphibamidae · BRAK opisu
+  - Mischoptera · 310–299 · powietrze · mięso · Mischopteridae · BRAK opisu
+  - Pleurojulus · 315–307 · ląd · rośliny · Pleurojulidae · BRAK opisu
+  - Xyloiulus · 319–274 · ląd · rośliny · Xyloiulidae · BRAK opisu
+  - Paleocadmus · 310–307 · morze · mięso · BRAK opisu
+  - Tullimonstrum · 313–306 · morze · plankton · BRAK opisu
+  - Homaloneura · 321–274 · powietrze · mięso · Spilapteridae · BRAK opisu
+  - Eubrodia · 310–307 · powietrze · mięso · Brodiidae · BRAK opisu
+  - Mazonopterum · 310–307 · powietrze · mięso · Homoiopteridae · BRAK opisu
+  - Eileticus · 319–307 · ląd · rośliny · BRAK opisu
+  - Helenodora · 310–307 · morze · plankton · BRAK opisu
+  - Palaeocaris · 388–300 · morze · plankton · Palaeocarididae · BRAK opisu
+  - Squirmarius · 310–307 · morze · plankton · BRAK opisu
+  - Lycodemas · 310–307 · powietrze · mięso · Lycocercidae · BRAK opisu
+  - Testajapyx · 310–307 · powietrze · mięso · Testajapygidae · BRAK opisu
+  - Bandringa · 315–307 · morze · mięso · Bandringidae · BRAK opisu
+  - Polysentor · 315–307 · morze · mięso · Polysentoridae · BRAK opisu
+  - Amynilyspes · 319–301 · ląd · rośliny · Amynilyspedidae · BRAK opisu
+  - Archiulus · 319–290 · ląd · rośliny · BRAK opisu
+  - Hexecontasoma · 310–307 · ląd · rośliny · Hexecontasomatidae · BRAK opisu
+  - Acanthotelson · 310–307 · morze · plankton · Acanthotelsonidae · BRAK opisu
+  - Liomesaspis · 319–283 · morze · mięso · Belinuridae · BRAK opisu
+  - Tardisia · 310–307 · morze · plankton · BRAK opisu
+  - Graeophonus · 310–307 · ląd · mięso · BRAK opisu
+  - Phlegethontia · 319–274 · słodka woda · ryby · Phlegethontiidae · BRAK opisu
+  - Sagenodus · 330–241 · morze · ryby · Sagenodontidae · BRAK opisu
+  - Coelacanthus · 323–249 · morze · ryby · Coelacanthidae · BRAK opisu
+  - Platysomus · 359–241 · morze · plankton · Platysomidae · BRAK opisu
+  - Isodectes · 313–274 · słodka woda · ryby · Eobrachyopidae · BRAK opisu
+  - Adelophthalmus · 411–283 · morze · mięso · Adelophthalmidae · BRAK opisu
+- Goście epoki (42):
+  - Mycterops · 330–304 · morze · mięso · Mycteropidae · BRAK opisu
+  - Tupus · 323–274 · powietrze · mięso · Meganeuridae · BRAK opisu
+  - Breyeria · 319–299 · powietrze · mięso · Breyeriidae · BRAK opisu
+  - Lithomantis · 321–299 · powietrze · mięso · Lithomanteidae · BRAK opisu
+  - Homoioptera · 321–299 · powietrze · mięso · Homoiopteridae · BRAK opisu
+  - Ditomopyge · 347–260 · morze · plankton · Phillipsiidae · BRAK opisu
+  - Arthropleura · 347–290 · ląd · rośliny · Arthropleuridae · BRAK opisu
+  - Branchipusites · 315–310 · ląd · rośliny · Arthropleuridae · BRAK opisu
+  - Glaphyrites · 340–265 · morze · mięso · Glaphyritidae · BRAK opisu
+  - Psammosteus · 411–299 · morze · plankton · Psammosteidae · BRAK opisu
+  - Onchus · 425–260 · morze · mięso · Onchidae · BRAK opisu
+  - Acanthodes · 411–274 · morze · mięso · Acanthodidae · BRAK opisu
+  - Rhizodopsis · 330–299 · morze · ryby · Rhizodopsidae · BRAK opisu
+  - Megalocephalus · 323–306 · słodka woda · ryby · Baphetidae · BRAK opisu
+  - Oestocephalus · 317–301 · słodka woda · ryby · Oestocephalidae · BRAK opisu
+  - Pholiderpeton · 330–307 · słodka woda · ryby · Eogyrinidae · BRAK opisu
+  - Anthracosaurus · 319–307 · słodka woda · ryby · Anthracosauridae · BRAK opisu
+  - Seelya · 310–307 · słodka woda · ryby · BRAK opisu
+  - Scincosaurus · 310–300 · słodka woda · ryby · Scincosauridae · BRAK opisu
+  - Sauropleura · 310–286 · słodka woda · ryby · Urocordylidae · BRAK opisu
+  - Diploceraspis · 307–290 · słodka woda · ryby · Diplocaulidae · BRAK opisu
+  - Lepterpeton · 319–307 · słodka woda · ryby · Ptyoniidae · BRAK opisu
+  - Hyloplesion · 315–307 · słodka woda · ryby · Hyloplesiontidae · BRAK opisu
+  - Microbrachis · 310–307 · słodka woda · ryby · Microbrachidae · BRAK opisu
+  - Trihecaton · 315–304 · słodka woda · ryby · Trihecatontidae · BRAK opisu
+  - Branchierpeton · 307–283 · słodka woda · ryby · Micromelerpetidae · BRAK opisu
+  - Clepsydrops · 315–274 · ląd · mięso · Ophiacodontidae · BRAK opisu
+  - Rhizodus · 359–299 · morze · ryby · Rhizodontidae · BRAK opisu
+  - Strepsodus · 347–299 · morze · ryby · Rhizodontidae · BRAK opisu
+  - Stemmatias · 315–264 · morze · mięso · BRAK opisu
+  - Stethacanthulus · 315–260 · morze · mięso · Symmoriidae · BRAK opisu
+  - Petalodus · 347–265 · morze · mięso · Petalodontidae · BRAK opisu
+  - Peripristis · 335–299 · morze · mięso · Pristodontidae · BRAK opisu
+  - Ctenoptychius · 330–274 · morze · mięso · Belantseidae · BRAK opisu
+  - Edestus · 323–299 · morze · mięso · Edestidae · BRAK opisu
+  - Pentremites · 359–319 · morze · plankton · Pentremitidae · BRAK opisu
+  - Archimedes · 352–267 · morze · plankton · Fenestellidae · BRAK opisu
+  - Archaeocidaris · 350–270 · morze · plankton · Archaeocidaridae · BRAK opisu
+  - Paleothyris · 315–307 · ląd · mięso · Protorothyrididae · BRAK opisu
+  - Arthrolycosa · 310–300 · ląd · mięso · Arthrolycosidae · BRAK opisu
+  - Eophrynus · 327–310 · ląd · mięso · Eophrynidae · BRAK opisu
+  - Dithyrocaris · 330–300 · morze · plankton · Rhinocarididae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Gerarus, Eucaenus, Miamia, Architarbus, Mylacris, Prochoroptera, Eoscorpius, Adiphlebia, Lithoneura, Poliochera, NO_GENUS_SPECIFIED, Geralinura, Curculioides, Priapulites, Palaeocampa, Orthomylacris, Asemoblatta, Gerapompus, Syntonoptera, Phyloblatta, Blattoidea, Amarixys, Kustarachne, Palaeobuthus, Eoctonus, Aphantomartus, Essexella, Genentomum, Dieconeura, Cheliphlebia …
+
+## Rozdział 12: Czerwone warstwy Teksasu (id: red_beds)
+
+- USA · Perm · 290–274 mln lat temu · formacje: Arroyo, Vale, Choza, Clyde, Belle Plains, Admiral, Petrolia, Nocona, Waggoner Ranch, Putnam
+- Odblokowanie: poziom parku 12, 60000 monet
+- Tytuł etapu w grze: „Świat Dimetrodona” · brak przerywnika fabularnego
+- Opis: Wczesnopermskie równiny rzeczne Teksasu, czerwone od utlenionego żelaza. Tu żył Dimetrodon z żaglem na grzbiecie, płazy Eryops i Diplocaulus o głowie jak bumerang.
+- Fauna miejscowa (29):
+  - Dimetrodon · 299–267 · ląd · mięso · Sphenacodontidae · BRAK opisu
+  - Diplocaulus · 307–254 · słodka woda · ryby · Diplocaulidae · BRAK opisu
+  - Eryops · 323–267 · słodka woda · ryby · Eryopidae · BRAK opisu
+  - Ophiacodon · 304–274 · ląd · mięso · Ophiacodontidae · BRAK opisu
+  - Diadectes · 304–267 · ląd · rośliny · Diadectidae · BRAK opisu
+  - Barbclabornia · 304–274 · morze · mięso · BRAK opisu
+  - Trimerorhachis · 304–274 · słodka woda · ryby · Trimerorhachidae · BRAK opisu
+  - Edaphosaurus · 304–274 · ląd · mięso · Edaphosauridae · BRAK opisu
+  - Xenacanthus · 313–206 · morze · mięso · Xenacanthidae · BRAK opisu
+  - Seymouria · 299–274 · ląd · rośliny · Seymouriidae · BRAK opisu
+  - Zatrachys · 304–274 · słodka woda · ryby · Zatracheidae · BRAK opisu
+  - Cricotus · 306–274 · słodka woda · ryby · Archeriidae · BRAK opisu
+  - Gnathorhiza · 319–247 · morze · ryby · Gnathorhizidae · BRAK opisu
+  - Archeria · 304–274 · ląd · rośliny · BRAK opisu
+  - Varanosaurus · 290–274 · ląd · mięso · Ophiacodontidae · BRAK opisu
+  - Bolosaurus · 299–274 · ląd · mięso · Bolosauridae · BRAK opisu
+  - Isodectes · 313–274 · słodka woda · ryby · Eobrachyopidae · BRAK opisu
+  - Agathiceras · 315–260 · morze · mięso · Agathiceratidae · BRAK opisu
+  - Polyacrodus · 290–72 · morze · mięso · Polyacrodontidae · BRAK opisu
+  - Waggoneria · 283–274 · ląd · rośliny · Waggoneriidae · BRAK opisu
+  - Bellerophon · 430–250 · morze · plankton · Bellerophontidae · BRAK opisu
+  - Acheloma · 299–274 · słodka woda · ryby · Trematopidae · BRAK opisu
+  - Gerobatrachus · 283–274 · słodka woda · mięso · BRAK opisu
+  - Sphenacodon · 304–274 · ląd · mięso · Sphenacodontidae · BRAK opisu
+  - Platyhystrix · 304–283 · słodka woda · ryby · Dissorophidae · BRAK opisu
+  - Orthacanthus · 411–149 · morze · mięso · Orthacanthidae · BRAK opisu
+  - Sagenodus · 330–241 · morze · ryby · Sagenodontidae · BRAK opisu
+  - Mycterosaurus · 290–274 · ląd · mięso · Varanopidae · BRAK opisu
+  - Fenestella · 454–252 · morze · plankton · Fenestellidae · BRAK opisu
+- Goście epoki (19):
+  - Meganeuropsis · 290–283 · powietrze · mięso · Meganeuridae · BRAK opisu
+  - Eukuloja · 283–267 · powietrze · mięso · Eukulojidae · BRAK opisu
+  - Crossotelos · 290–274 · słodka woda · ryby · Urocordylidae · BRAK opisu
+  - Prionosuchus · 283–274 · słodka woda · ryby · Archegosauridae · BRAK opisu
+  - Tappenosaurus · 283–267 · ląd · mięso · Tappenosauridae · BRAK opisu
+  - Mesenosaurus · 290–264 · ląd · mięso · Varanopidae · BRAK opisu
+  - Cotylorhynchus · 283–264 · ląd · rośliny · Caseidae · BRAK opisu
+  - Angelosaurus · 283–264 · ląd · rośliny · Caseidae · BRAK opisu
+  - Dimacrodon · 283–267 · ląd · rośliny · Dimacrodontidae · BRAK opisu
+  - Reiszia · 274–264 · ląd · mięso · Nikkasauridae · BRAK opisu
+  - Kamagorgon · 277–267 · ląd · mięso · Phthinosuchidae · BRAK opisu
+  - Estemmenosuchus · 274–264 · ląd · mięso · Estemmenosuchidae · BRAK opisu
+  - Rhopalodon · 267–264 · ląd · mięso · Rhopalodontidae · BRAK opisu
+  - Alrausuchus · 274–264 · ląd · rośliny · Alrausuchidae · BRAK opisu
+  - Niaftasuchus · 274–264 · ląd · rośliny · Niaftasuchidae · BRAK opisu
+  - Delorhynchus · 290–283 · ląd · mięso · Acleistorhinidae · BRAK opisu
+  - Lanthaniscus · 274–264 · ląd · mięso · Lanthaniscidae · BRAK opisu
+  - Bashkyroleter · 274–264 · ląd · mięso · Nycteroleteridae · BRAK opisu
+  - Macroleter · 274–264 · ląd · mięso · Nycteroleteridae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Captorhinus, Brachydectes, Labidosaurus, Euomphalus, Labidosaurikos, Omphalotrochus, Euphemitopsis, Captorhinikos, Knightites, Pantylus, Waagenella, Aspidosaurus, Cardiocephalus, Secodontosaurus, Amphiscapha (Amphiscapha), Bellerophon (Bellerophon), Properrinites, Dissorophus, Casea, Akmilleria, Almites, Metaperrinites, Medlicottia, Permoconcha, Worthenia, Stearoceras, Liroceras, Parioxys, Protocaptorhinus, Broiliellus …
+
+## Rozdział 13: Basen Karoo (id: karoo)
+
+- RPA · Perm – Trias · 260–247 mln lat temu · formacje: Beaufort
+- Odblokowanie: poziom parku 13, 85000 monet
+- Tytuł etapu w grze: „Gady ssakokształtne” · brak przerywnika fabularnego
+- Opis: Permskie i triasowe równiny Gondwany — gorgonopsy, dicynodonty i ślady największego wymierania w dziejach.
+- Fauna miejscowa (100):
+  - Lystrosaurus · 264–247 · ląd · rośliny · Lystrosauridae · BRAK opisu
+  - Oudenodon · 264–252 · ląd · rośliny · Oudenodontidae · BRAK opisu
+  - Diictodon · 274–252 · ląd · rośliny · Pylaecephalidae · BRAK opisu
+  - Theriognathus · 260–241 · ląd · mięso · Whaitsiidae · BRAK opisu
+  - Cistecephalus · 260–254 · ląd · rośliny · Cistecephalidae · BRAK opisu
+  - Pristerodon · 264–252 · ląd · rośliny · BRAK opisu
+  - Daptocephalus · 264–252 · ląd · rośliny · BRAK opisu
+  - Ictidosuchops · 260–252 · ląd · mięso · Ictidosuchidae · BRAK opisu
+  - Aelurognathus · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Bradysaurus · 264–254 · ląd · rośliny · BRAK opisu
+  - Emydops · 274–252 · ląd · rośliny · BRAK opisu
+  - Procynosuchus · 264–247 · ląd · mięso · Procynosuchidae · BRAK opisu
+  - Aulacephalodon · 260–252 · ląd · rośliny · Geikiidae · BRAK opisu
+  - Cyonosaurus · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Moschorhinus · 260–247 · ląd · mięso · Akidnognathidae · BRAK opisu
+  - Procolophon · 252–247 · ląd · mięso · Procolophonidae · BRAK opisu
+  - Proterosuchus · 252–247 · ląd · mięso · Proterosuchidae · BRAK opisu
+  - Pareiasaurus · 264–252 · ląd · rośliny · BRAK opisu
+  - Dicynodon · 267–237 · ląd · rośliny · BRAK opisu
+  - Gorgonops · 264–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Tropidostoma · 264–254 · ląd · rośliny · Oudenodontidae · BRAK opisu
+  - Lycaenops · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Jonkeria · 264–254 · ląd · rośliny · Titanosuchidae · BRAK opisu
+  - Thrinaxodon · 252–247 · ląd · mięso · BRAK opisu
+  - Youngina · 260–252 · ląd · mięso · Younginidae · BRAK opisu
+  - Diademodon · 247–234 · ląd · mięso · BRAK opisu
+  - Cynognathus · 247–234 · ląd · mięso · BRAK opisu
+  - Pelanomodon · 260–252 · ląd · rośliny · BRAK opisu
+  - Micropholis · 252–247 · słodka woda · ryby · Amphibamidae · BRAK opisu
+  - Aelurosaurus · 274–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Bauria · 249–241 · ląd · rośliny · Bauriidae · BRAK opisu
+  - Rhachiocephalus · 260–252 · ląd · rośliny · Rhachiocephalidae · BRAK opisu
+  - Eriphostoma · 264–252 · ląd · mięso · BRAK opisu
+  - Anteosaurus · 267–260 · ląd · rośliny · Anteosauridae · BRAK opisu
+  - Kannemeyeria · 252–234 · ląd · rośliny · Kannemeyeriidae · BRAK opisu
+  - Langbergia · 251–247 · ląd · mięso · Trirachodontidae · BRAK opisu
+  - Titanosuchus · 274–260 · ląd · rośliny · Titanosuchidae · BRAK opisu
+  - Lydekkerina · 260–247 · słodka woda · ryby · Lydekkerinidae · BRAK opisu
+  - Tetracynodon · 260–247 · ląd · mięso · Lycideopidae · BRAK opisu
+  - Owenetta · 260–247 · ląd · mięso · Owenettidae · BRAK opisu
+  - Robertia · 264–254 · ląd · rośliny · Pylaecephalidae · BRAK opisu
+  - Pristerognathoides · 264–254 · ląd · mięso · Pristerognathidae · BRAK opisu
+  - Struthiocephalus · 264–260 · ląd · rośliny · Tapinocephalidae · BRAK opisu
+  - Eodicynodon · 274–260 · ląd · rośliny · BRAK opisu
+  - Galesaurus · 252–247 · ląd · mięso · BRAK opisu
+  - Microgomphodon · 251–237 · ląd · mięso · Nothogomphodontidae · BRAK opisu
+  - Garjainia · 251–247 · ląd · mięso · Erythrosuchidae · BRAK opisu
+  - Dinanomodon · 260–247 · ląd · rośliny · BRAK opisu
+  - Prolacerta · 252–247 · ląd · mięso · Prolacertidae · BRAK opisu
+  - Pristerognathus · 264–260 · ląd · mięso · Pristerognathidae · BRAK opisu
+  - Kestrosaurus · 251–247 · słodka woda · ryby · Mastodonsauridae · BRAK opisu
+  - Dicynodontoides · 260–247 · ląd · rośliny · Kingoriidae · BRAK opisu
+  - Dinogorgon · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Endothiodon · 267–252 · ląd · rośliny · BRAK opisu
+  - Brachyprosopus · 267–260 · ląd · rośliny · BRAK opisu
+  - Scymnosaurus · 264–260 · ląd · mięso · Pristerognathidae · BRAK opisu
+  - Erythrosuchus · 247–241 · ląd · mięso · Erythrosuchidae · BRAK opisu
+  - Xenotosuchus · 247–241 · słodka woda · ryby · Mastodonsauridae · BRAK opisu
+  - Trirachodon · 252–237 · ląd · mięso · Trirachodontidae · BRAK opisu
+  - Arctognathus · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Clelandina · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Digalodon · 260–252 · ląd · rośliny · BRAK opisu
+  - Basilodon · 260–252 · ląd · rośliny · BRAK opisu
+  - Arctops · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Leontosaurus · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Moschops · 264–254 · ląd · rośliny · Tapinocephalidae · BRAK opisu
+  - Bulbasaurus · 260–254 · ląd · rośliny · Geikiidae · BRAK opisu
+  - Rhinesuchus · 264–247 · słodka woda · ryby · Rhinesuchidae · BRAK opisu
+  - Atherstonia · 267–251 · morze · mięso · Atherstoniidae · BRAK opisu
+  - Colobodectes · 264–252 · ląd · rośliny · BRAK opisu
+  - Dicellopyge · 237–227 · morze · mięso · Palaeoniscidae · BRAK opisu
+  - Olivierosuchus · 252–247 · ląd · mięso · Akidnognathidae · BRAK opisu
+  - Cynosaurus · 260–252 · ląd · mięso · Galesauridae · BRAK opisu
+  - Aloposaurus · 260–252 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Smilesaurus · 260–254 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Scylacops · 260–254 · ląd · mięso · Gorgonopidae · BRAK opisu
+  - Pareiasuchus · 264–254 · ląd · rośliny · BRAK opisu
+  - Glanosuchus · 267–260 · ląd · mięso · Scylacosauridae · BRAK opisu
+  - Cricodon · 247–227 · ląd · mięso · Trirachodontidae · BRAK opisu
+  - Scaloposaurus · 260–247 · ląd · mięso · Scaloposauridae · BRAK opisu
+  - Lissodus · 359–72 · morze · mięso · BRAK opisu
+  - Palemydops · 260–254 · ląd · rośliny · Emydopidae · BRAK opisu
+  - Homodontosaurus · 260–252 · ląd · mięso · Homodontosauridae · BRAK opisu
+  - Kitchinganomodon · 260–252 · ląd · rośliny · Rhachiocephalidae · BRAK opisu
+  - Hofmeyria · 260–254 · ląd · mięso · BRAK opisu
+  - Emyduranus · 260–254 · ląd · rośliny · Pristerodontidae · BRAK opisu
+  - Odontocyclops · 260–254 · ląd · rośliny · Geikiidae · BRAK opisu
+  - Akidnognathus · 260–252 · ląd · mięso · Moschorhinidae · BRAK opisu
+  - Alopecodon · 264–260 · ląd · mięso · Alopecodontidae · BRAK opisu
+  - Choerosaurus · 274–254 · ląd · mięso · Lycideopidae · BRAK opisu
+  - Pholidophorus · 249–94 · morze · plankton · Pholidophoridae · BRAK opisu
+  - Eunotosaurus · 264–260 · ląd · mięso · Millerettidae · BRAK opisu
+  - Ericiolacerta · 252–247 · ląd · mięso · Ericiolacertidae · BRAK opisu
+  - Kombuisia · 252–241 · ląd · rośliny · Kingoriidae · BRAK opisu
+  - Saurichthys · 264–165 · morze · mięso · Saurichthyidae · BRAK opisu
+  - Ptychoceratodus · 251–66 · morze · ryby · Ptychoceratodontidae · BRAK opisu
+  - Elonichthys · 372–241 · morze · plankton · Elonichthyidae · BRAK opisu
+  - Shansiodon · 247–241 · ląd · rośliny · Shansiodontidae · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Coelacanthus · 323–249 · morze · ryby · Coelacanthidae · BRAK opisu
+- Goście epoki (76):
+  - Ophiceras · 260–241 · morze · mięso · Ophiceratidae · BRAK opisu
+  - Paratirolites · 260–247 · morze · mięso · Dzhulfitidae · BRAK opisu
+  - Pseudosageceras · 252–241 · morze · mięso · Hedenstroemiidae · BRAK opisu
+  - Gymnotoceras · 251–237 · morze · mięso · Ceratitidae · BRAK opisu
+  - Chalcosaurus · 267–260 · słodka woda · ryby · BRAK opisu
+  - Enosuchus · 267–260 · słodka woda · ryby · Enosuchidae · BRAK opisu
+  - Deltasaurus · 252–247 · słodka woda · ryby · Rhytidosteidae · BRAK opisu
+  - Benthosuchus · 252–247 · słodka woda · ryby · BRAK opisu
+  - Syrtosuchus · 252–247 · słodka woda · ryby · Benthosuchidae · BRAK opisu
+  - Aphaneramma · 252–247 · słodka woda · ryby · Trematosauridae · BRAK opisu
+  - Dvinosaurus · 267–254 · słodka woda · ryby · Dvinosauridae · BRAK opisu
+  - Tupilakosaurus · 252–251 · słodka woda · ryby · Tupilakosauridae · BRAK opisu
+  - Melanerpeton · 304–260 · słodka woda · ryby · Branchiosauridae · BRAK opisu
+  - Platyoposaurus · 277–257 · słodka woda · ryby · Archegosauridae · BRAK opisu
+  - Suminia · 264–260 · ląd · rośliny · BRAK opisu
+  - Elph · 264–257 · ląd · rośliny · Dicynodontidae · BRAK opisu
+  - Kembawacela · 260–252 · ląd · rośliny · Cistecephalidae · BRAK opisu
+  - Inostrancevia · 264–254 · ląd · mięso · Inostranceviidae · BRAK opisu
+  - Microurania · 267–257 · ląd · rośliny · Microuraniidae · BRAK opisu
+  - Syodon · 277–260 · ląd · rośliny · Anteosauridae · BRAK opisu
+  - Titanophoneus · 267–260 · ląd · rośliny · Anteosauridae · BRAK opisu
+  - Ulemosaurus · 267–260 · ląd · rośliny · Ulemosauridae · BRAK opisu
+  - Porosteognathus · 267–260 · ląd · mięso · Lycosuchidae · BRAK opisu
+  - Perplexisaurus · 267–260 · ląd · mięso · Perplexisauridae · BRAK opisu
+  - Chthonosaurus · 264–257 · ląd · mięso · Chthonosauridae · BRAK opisu
+  - Karenites · 264–260 · ląd · mięso · Karenitidae · BRAK opisu
+  - Ordosiodon · 247–241 · ląd · mięso · Ordosidae · BRAK opisu
+  - Antecosuchus · 247–241 · ląd · rośliny · Bauriidae · BRAK opisu
+  - Purlovia · 260–257 · ląd · mięso · Nanictidopidae · BRAK opisu
+  - Annatherapsidus · 264–257 · ląd · mięso · Annatherapsididae · BRAK opisu
+  - Moschowhaitsia · 260–257 · ląd · mięso · Whaitsiidae · BRAK opisu
+  - Dvinia · 264–257 · ląd · mięso · Dviniidae · BRAK opisu
+  - Nyctiphruretus · 274–257 · ląd · mięso · Nyctiphruretidae · BRAK opisu
+  - Elginia · 260–252 · ląd · rośliny · Elginiidae · BRAK opisu
+  - Scutosaurus · 264–254 · ląd · rośliny · Pareiasauridae · BRAK opisu
+  - Shihtienfenia · 254–252 · ląd · rośliny · Pareiasauridae · BRAK opisu
+  - Kapes · 251–241 · ląd · mięso · Procolophonidae · BRAK opisu
+  - Santaisaurus · 252–251 · ląd · mięso · Paliguanidae · BRAK opisu
+  - Baisesaurus · 249–247 · morze · ryby · BRAK opisu
+  - Gulosaurus · 251–249 · morze · ryby · BRAK opisu
+  - Utatsusaurus · 252–247 · morze · ryby · Utatsusauridae · BRAK opisu
+  - Grippia · 251–247 · morze · ryby · Grippiidae · BRAK opisu
+  - Parvinatator · 249–237 · morze · ryby · Parvinatatoridae · BRAK opisu
+  - Quasianosteosaurus · 249–247 · morze · ryby · Quasianosteosauridae · BRAK opisu
+  - Thaisaurus · 249–247 · morze · ryby · Thaisauridae · BRAK opisu
+  - Cymbospondylus · 251–237 · morze · ryby · Cymbospondylidae · BRAK opisu
+  - Phalarodon · 251–237 · morze · ryby · Mixosauridae · BRAK opisu
+  - Barracudasauroides · 247–241 · morze · ryby · Mixosauridae · BRAK opisu
+  - Pessopteryx · 249–241 · morze · ryby · Merriamosauridae · BRAK opisu
+  - Omphalosaurus · 249–237 · morze · ryby · Omphalosauridae · BRAK opisu
+  - Stagonosuchus · 247–241 · ląd · mięso · BRAK opisu
+  - Mandasuchus · 247–241 · ląd · mięso · BRAK opisu
+  - Arizonasaurus · 247–244 · ląd · mięso · Ctenosauriscidae · BRAK opisu
+  - Bromsgroveia · 247–241 · ląd · mięso · Ctenosauriscidae · BRAK opisu
+  - Asilisaurus · 247–241 · ląd · rośliny · Silesauridae · BRAK opisu
+  - Shringasaurus · 247–241 · ląd · mięso · Azendohsauridae · BRAK opisu
+  - Palatodonta · 247–241 · morze · ryby · BRAK opisu
+  - Tanaisosaurus · 251–247 · morze · ryby · Cymatosauridae · BRAK opisu
+  - Corosaurus · 249–247 · morze · ryby · BRAK opisu
+  - Lariosaurus · 251–237 · morze · ryby · Nothosauridae · BRAK opisu
+  - Keichousaurus · 251–237 · morze · ryby · Keichousauridae · BRAK opisu
+  - Ariekanerpeton · 283–260 · ląd · rośliny · Discosauriscidae · BRAK opisu
+  - Discosauriscus · 299–260 · ląd · rośliny · Karpinskiosauridae · BRAK opisu
+  - Karpinskiosaurus · 267–257 · ląd · rośliny · Karpinskiosauridae · BRAK opisu
+  - Leptoropha · 277–260 · ląd · rośliny · Kotlassidae · BRAK opisu
+  - Microphon · 264–254 · ląd · rośliny · Kotlassidae · BRAK opisu
+  - Dromotectum · 260–247 · słodka woda · ryby · Bystrowianidae · BRAK opisu
+  - Chroniosuchus · 267–257 · słodka woda · ryby · Chroniosuchidae · BRAK opisu
+  - Chroniosaurus · 264–254 · słodka woda · ryby · Chroniosuchidae · BRAK opisu
+  - Toyemia · 267–254 · morze · plankton · Evenkiidae · BRAK opisu
+  - Glikmanius · 315–254 · morze · mięso · Ctenacanthidae · BRAK opisu
+  - Janassa · 347–254 · morze · mięso · Janassidae · BRAK opisu
+  - Petalorhynchus · 347–252 · morze · mięso · Petalorhynchidae · BRAK opisu
+  - Fadenia · 315–249 · morze · mięso · Caseodontidae · BRAK opisu
+  - Helicoprion · 299–254 · morze · mięso · Helicoprionidae · BRAK opisu
+  - Triadobatrachus · 252–249 · słodka woda · mięso · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Rubidgea, Euxenoperla, Prochoristella, Permocicada, Megoniella, Aleuronympha, Broomistega, Rhinesuchoides, Microposaurus, Ufudocyclops, Anthodon, Nanictosaurus, Promoschorhynchus, Hipposaurus, Keratocephalus, Trochosaurus, Styracocephalus, Phocosaurus, Nochelesaurus, Bethesdaichthys, Blourugia, Patranomodon, Saurodektes, Euparkeria, Sauropareion, Batrachosuchus, Teratophon, Ictidosaurus, Platycraniellus, Regisaurus …
+
+## Rozdział 14: Ischigualasto (id: ischigualasto)
+
+- Argentyna · Trias · 237–227 mln lat temu · formacje: Ischigualasto
+- Odblokowanie: poziom parku 15, 160000 monet
+- Tytuł etapu w grze: „Narodziny dinozaurów” · brak przerywnika fabularnego
+- Opis: Dolina Księżyca — jedne z najstarszych dinozaurów świata obok rynchozaurów i cynodontów.
+- Fauna miejscowa (26):
+  - Herrerasaurus · 237–227 · ląd · mięso · Herrerasauridae · BRAK opisu
+  - Aetosauroides · 237–227 · ląd · rośliny · BRAK opisu
+  - Exaeretodon · 247–227 · ląd · rośliny · Traversodontidae · BRAK opisu
+  - Hyperodapedon · 237–206 · ląd · rośliny · Rhynchosauridae · BRAK opisu
+  - Chiniquodon · 247–227 · ląd · mięso · Chiniquodontidae · BRAK opisu
+  - Proterochampsa · 237–227 · ląd · mięso · Proterochampsidae · BRAK opisu
+  - Saurosuchus · 234–227 · ląd · mięso · BRAK opisu
+  - Ischigualastia · 234–227 · ląd · rośliny · Stahleckeriidae · BRAK opisu
+  - Trialestes · 237–227 · ląd · mięso · BRAK opisu
+  - Eoraptor · 234–227 · ląd · rośliny · BRAK opisu
+  - Pisanosaurus · 234–227 · ląd · rośliny · BRAK opisu
+  - Panphagia · 237–227 · ląd · rośliny · Saturnaliidae · BRAK opisu
+  - Sillosuchus · 237–227 · ląd · mięso · Shuvosauridae · BRAK opisu
+  - Ecteninion · 237–227 · ląd · mięso · BRAK opisu
+  - Sanjuansaurus · 237–227 · ląd · mięso · Herrerasauridae · BRAK opisu
+  - Eodromaeus · 237–227 · ląd · mięso · BRAK opisu
+  - Chromogisaurus · 237–227 · ląd · rośliny · Saturnaliidae · BRAK opisu
+  - Venaticosuchus · 234–227 · ląd · mięso · Ornithosuchidae · BRAK opisu
+  - Ignotosaurus · 237–227 · ląd · mięso · BRAK opisu
+  - Pseudochampsa · 237–227 · ląd · mięso · Proterochampsidae · BRAK opisu
+  - Promastodonsaurus · 237–206 · słodka woda · ryby · BRAK opisu
+  - Pseudotherium · 237–227 · ląd · mięso · BRAK opisu
+  - Diegocanis · 234–227 · ląd · mięso · Ecteniniidae · BRAK opisu
+  - Incertovenator · 237–227 · ląd · mięso · BRAK opisu
+  - Taytalura · 237–227 · ląd · mięso · BRAK opisu
+  - Anteavis · 237–227 · ląd · mięso · BRAK opisu
+- Goście epoki (20):
+  - Dinodontosaurus · 241–227 · ląd · rośliny · BRAK opisu
+  - Parakannemeyeria · 247–237 · ląd · rośliny · Kannemeyeriidae · BRAK opisu
+  - Sinokannemeyeria · 247–237 · ląd · rośliny · Kannemeyeriidae · BRAK opisu
+  - Stahleckeria · 247–237 · ląd · rośliny · Stahleckeriidae · BRAK opisu
+  - Moghreberia · 237–227 · ląd · rośliny · Stahleckeriidae · BRAK opisu
+  - Scalenodon · 247–237 · ląd · mięso · Traversodontidae · BRAK opisu
+  - Massetognathus · 241–227 · ląd · rośliny · Traversodontidae · BRAK opisu
+  - Anisodontosaurus · 247–237 · ląd · mięso · BRAK opisu
+  - Sigmala · 237–227 · ląd · mięso · Sphenodontidae · BRAK opisu
+  - Marasuchus · 241–237 · ląd · mięso · BRAK opisu
+  - Lagosuchus · 241–237 · ląd · mięso · BRAK opisu
+  - Mbiresaurus · 237–227 · ląd · rośliny · BRAK opisu
+  - Pampadromaeus · 237–227 · ląd · rośliny · Saturnaliidae · BRAK opisu
+  - Saturnalia · 237–227 · ląd · rośliny · Saturnaliidae · BRAK opisu
+  - Lewisuchus · 241–234 · ląd · rośliny · Silesauridae · BRAK opisu
+  - Thalattosaurus · 247–227 · morze · ryby · BRAK opisu
+  - Xinpusaurus · 241–227 · morze · ryby · BRAK opisu
+  - Nectosaurus · 237–227 · morze · ryby · BRAK opisu
+  - Askeptosaurus · 247–237 · morze · ryby · Askeptosauridae · BRAK opisu
+  - Anshunsaurus · 239–227 · morze · ryby · Askeptosauridae · BRAK opisu
+
+## Rozdział 15: Krasiejów i Lisowice (id: krasiejow)
+
+- Polska · Trias · 237–206 mln lat temu · formacje: Drawno Beds, Grabowa
+- Odblokowanie: poziom parku 17, 320000 monet
+- Tytuł etapu w grze: „Polski trias” · brak przerywnika fabularnego
+- Opis: Polski późny trias: jeziora pełne metopozaurów, fitozaury, aetozaury, drapieżny Smok i olbrzymi dicynodont Lisowicia ze Śląska.
+- Fauna miejscowa (11):
+  - Stagonolepis · 237–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Silesaurus · 234–227 · ląd · rośliny · Silesauridae · BRAK opisu
+  - Cyclotosaurus · 247–201 · słodka woda · ryby · Cyclotosauridae · BRAK opisu
+  - Polonosuchus · 234–227 · ląd · mięso · Rauisuchidae · BRAK opisu
+  - Parasuchus · 251–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Metoposaurus · 237–201 · słodka woda · ryby · Metoposauridae · BRAK opisu
+  - Smok · 227–201 · ląd · mięso · BRAK opisu
+  - Lisowicia · 227–201 · ląd · rośliny · Stahleckeriidae · BRAK opisu
+  - Ozimek · 237–227 · ląd · mięso · Sharovipterygidae · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Ptychoceratodus · 251–66 · morze · ryby · Ptychoceratodontidae · BRAK opisu
+- Goście epoki (66):
+  - Badouxia · 206–190 · morze · mięso · Psiloceratidae · BRAK opisu
+  - Proarcestes · 247–201 · morze · mięso · Arcestidae · BRAK opisu
+  - Flexoptychites · 247–227 · morze · mięso · Ptychitidae · BRAK opisu
+  - Acrochordiceras · 251–227 · morze · mięso · Acrochordiceratidae · BRAK opisu
+  - Balatonites · 251–227 · morze · mięso · Balatonitidae · BRAK opisu
+  - Phylloceras · 237–66 · morze · mięso · Phylloceratidae · BRAK opisu
+  - Cenoceras · 237–149 · morze · mięso · Cenoceratidae · BRAK opisu
+  - Pariostegus · 227–206 · słodka woda · ryby · BRAK opisu
+  - Mastodonsaurus · 247–201 · słodka woda · ryby · BRAK opisu
+  - Gerrothorax · 247–201 · słodka woda · ryby · Plagiosauridae · BRAK opisu
+  - Lepagia · 206–201 · ląd · mięso · Chiniquodontidae · BRAK opisu
+  - Brasilitherium · 227–206 · ląd · mięso · Brasilodontidae · BRAK opisu
+  - Clevosaurus · 237–184 · ląd · mięso · Clevosauridae · BRAK opisu
+  - Deltadectes · 227–201 · ląd · mięso · Gephyrosauridae · BRAK opisu
+  - Gephyrosaurus · 206–193 · ląd · mięso · BRAK opisu
+  - Wimanius · 247–237 · morze · ryby · Wimaniidae · BRAK opisu
+  - Qianichthyosaurus · 239–227 · morze · ryby · Toretocnemidae · BRAK opisu
+  - Toretocnemus · 237–227 · morze · ryby · Toretocnemidae · BRAK opisu
+  - Mixosaurus · 247–237 · morze · ryby · Mixosauridae · BRAK opisu
+  - Mikadocephalus · 247–237 · morze · ryby · Guanlingsauridae · BRAK opisu
+  - Besanosaurus · 247–237 · morze · ryby · Besanosauridae · BRAK opisu
+  - Callawayia · 227–206 · morze · ryby · Californosauridae · BRAK opisu
+  - Himalayasaurus · 215–211 · morze · ryby · Shonisauridae · BRAK opisu
+  - Guizhouichthyosaurus · 241–227 · morze · ryby · Shastasauridae · BRAK opisu
+  - Shastasaurus · 237–206 · morze · ryby · Shastasauridae · BRAK opisu
+  - Shonisaurus · 234–201 · morze · ryby · Shastasauridae · BRAK opisu
+  - Tholodus · 247–237 · morze · ryby · Omphalosauridae · BRAK opisu
+  - Procerosuchus · 241–237 · ląd · mięso · BRAK opisu
+  - Erpetosuchus · 227–206 · ląd · mięso · Erpetosuchidae · BRAK opisu
+  - Termatosaurus · 206–201 · słodka woda · ryby · BRAK opisu
+  - Decuriasuchus · 247–227 · ląd · mięso · BRAK opisu
+  - Gracilisuchus · 241–237 · ląd · mięso · Gracilisuchidae · BRAK opisu
+  - Shakajlura · 241–227 · ląd · mięso · BRAK opisu
+  - Heptasuchus · 237–227 · ląd · mięso · Poposauridae · BRAK opisu
+  - Prestosuchus · 241–227 · ląd · mięso · BRAK opisu
+  - Batrachotomus · 239–237 · ląd · mięso · BRAK opisu
+  - Terrestrisuchus · 237–227 · ląd · mięso · BRAK opisu
+  - Ornithosuchus · 237–206 · ląd · mięso · Ornithosuchidae · BRAK opisu
+  - Efraasia · 227–206 · ląd · rośliny · BRAK opisu
+  - Bagualosaurus · 237–206 · ląd · rośliny · BRAK opisu
+  - Macrocollum · 227–206 · ląd · rośliny · Unaysauridae · BRAK opisu
+  - Tanystropheus · 247–201 · słodka woda · ryby · Tanystropheidae · BRAK opisu
+  - Pistosaurus · 247–237 · morze · ryby · BRAK opisu
+  - Ceresiosaurus · 241–237 · morze · ryby · Nothosauridae · BRAK opisu
+  - Serpianosaurus · 247–237 · morze · ryby · Pachypleurosauridae · BRAK opisu
+  - Neusticosaurus · 247–237 · morze · ryby · Pachypleurosauridae · BRAK opisu
+  - Pachypleurosaurus · 247–237 · morze · ryby · Pachypleurosauridae · BRAK opisu
+  - Cymatosaurus · 247–237 · morze · ryby · BRAK opisu
+  - Yunguisaurus · 241–237 · morze · ryby · BRAK opisu
+  - Placodus · 251–227 · morze · plankton · Placodontidae · BRAK opisu
+  - Cyamodus · 247–227 · morze · plankton · Cyamodontidae · BRAK opisu
+  - Paraplacodus · 247–237 · morze · plankton · Paraplacodontidae · BRAK opisu
+  - Psephosauriscus · 247–237 · morze · plankton · BRAK opisu
+  - Psephosaurus · 247–237 · morze · plankton · Placochelyidae · BRAK opisu
+  - Psephoderma · 243–201 · morze · plankton · BRAK opisu
+  - Parahenodus · 237–206 · morze · plankton · Henodontidae · BRAK opisu
+  - Henodus · 237–227 · morze · plankton · Henodontidae · BRAK opisu
+  - Partanosaurus · 241–237 · morze · ryby · BRAK opisu
+  - Whiteia · 252–206 · morze · ryby · Whiteiidae · BRAK opisu
+  - Acrolepis · 369–201 · morze · plankton · Acrolepididae · BRAK opisu
+  - Peltopleurus · 249–211 · morze · plankton · Peltopleuridae · BRAK opisu
+  - Ticinolepis · 243–237 · morze · plankton · BRAK opisu
+  - Asterolepis · 387–359 · morze · mięso · Asterolepididae · BRAK opisu
+  - Encrinus · 247–237 · morze · plankton · Encrinidae · BRAK opisu
+  - Proganochelys · 227–201 · ląd · plankton · BRAK opisu
+  - Halicyne · 247–239 · morze · plankton · Halicynidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Triamyxa, Darwinula, Suchonella, Silesunio
+
+## Rozdział 16: Formacja Chinle (Ghost Ranch) (id: chinle)
+
+- USA · Trias · 227–206 mln lat temu · formacje: Chinle, Petrified Forest
+- Odblokowanie: poziom parku 19, 630000 monet
+- Tytuł etapu w grze: „Dinozaury wchodzą na scenę” · brak przerywnika fabularnego
+- Opis: Późnotriasowe rzeki Nowego Meksyku i Arizony — stada drobnych celofyzów, fitozaury, aetozaury i skamieniałe lasy.
+- Fauna miejscowa (58):
+  - Typothorax · 227–201 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Anaschisma · 237–201 · słodka woda · ryby · Metoposauridae · BRAK opisu
+  - Leptosuchus · 227–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Arganodus · 251–94 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Machaeroprosopus · 227–201 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Calyptosuchus · 237–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Apachesaurus · 237–201 · słodka woda · ryby · Metoposauridae · BRAK opisu
+  - Coelophysis · 227–193 · ląd · mięso · Coelophysidae · BRAK opisu
+  - Postosuchus · 237–201 · ląd · mięso · Rauisuchidae · BRAK opisu
+  - Vancleavea · 237–201 · ląd · mięso · Doswelliidae · BRAK opisu
+  - Smilosuchus · 237–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Paratypothorax · 227–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Shuvosaurus · 227–201 · ląd · mięso · Shuvosauridae · BRAK opisu
+  - Revueltosaurus · 237–206 · ląd · rośliny · BRAK opisu
+  - Turseodus · 237–201 · morze · mięso · Palaeoniscidae · BRAK opisu
+  - Placerias · 237–206 · ląd · rośliny · Stahleckeriidae · BRAK opisu
+  - Poposaurus · 237–201 · ląd · mięso · BRAK opisu
+  - Lasalichthys · 237–201 · morze · mięso · Redfieldiidae · BRAK opisu
+  - Triodus · 323–206 · morze · mięso · Xenacanthidae · BRAK opisu
+  - Trilophosaurus · 237–206 · ląd · rośliny · BRAK opisu
+  - Desmatosuchus · 237–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Acaenasuchus · 227–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Semionotus · 251–133 · morze · mięso · Semionotidae · BRAK opisu
+  - Hesperosuchus · 227–201 · ląd · mięso · BRAK opisu
+  - Lonchidion · 237–66 · morze · mięso · Lonchidiidae · BRAK opisu
+  - Chinlea · 227–201 · morze · ryby · Mawsoniidae · BRAK opisu
+  - Rutiodon · 237–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Cionichthys · 237–201 · morze · mięso · Redfieldiidae · BRAK opisu
+  - Crosbysaurus · 227–206 · ląd · mięso · BRAK opisu
+  - Dromomeron · 227–201 · ląd · mięso · Lagerpetidae · BRAK opisu
+  - Tecovasuchus · 227–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Acrodus · 299–56 · morze · mięso · Acrodontidae · BRAK opisu
+  - Stagonolepis · 237–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Vivaron · 227–206 · ląd · mięso · Rauisuchidae · BRAK opisu
+  - Tawa · 227–206 · ląd · mięso · BRAK opisu
+  - Kwanasaurus · 227–201 · ląd · rośliny · Silesauridae · BRAK opisu
+  - Rioarribasuchus · 227–120 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Hemicalypterus · 237–201 · morze · mięso · Semionotidae · BRAK opisu
+  - Australosomus · 260–206 · morze · plankton · Pholidopleuridae · BRAK opisu
+  - Chindesaurus · 227–206 · ląd · mięso · BRAK opisu
+  - Krzyzanowskisaurus · 237–206 · ląd · rośliny · BRAK opisu
+  - Scutarx · 227–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Lophionotus · 227–201 · morze · mięso · BRAK opisu
+  - Redondasuchus · 227–206 · ląd · rośliny · Stagonolepididae · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Tanytrachelos · 227–206 · słodka woda · ryby · Tanystropheidae · BRAK opisu
+  - Reticulodus · 227–201 · morze · mięso · Acrodontidae · BRAK opisu
+  - Eucoelophysis · 227–201 · ląd · rośliny · Silesauridae · BRAK opisu
+  - Kraterokheirodon · 227–206 · ląd · rośliny · BRAK opisu
+  - Angistorhinus · 237–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Tanaocrossus · 227–201 · morze · mięso · BRAK opisu
+  - Parasuchus · 251–206 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Xenacanthus · 313–206 · morze · mięso · Xenacanthidae · BRAK opisu
+  - Lissodus · 359–72 · morze · mięso · BRAK opisu
+  - Diphydontosaurus · 237–201 · ląd · mięso · BRAK opisu
+  - Planocephalosaurus · 237–201 · ląd · mięso · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Saurichthys · 264–165 · morze · mięso · Saurichthyidae · BRAK opisu
+- Goście epoki (23):
+  - Pseudotriconodon · 227–201 · ląd · mięso · Dromatheriidae · BRAK opisu
+  - Riograndia · 227–206 · ląd · mięso · Tritheledontidae · BRAK opisu
+  - Kuehneosaurus · 237–201 · ląd · mięso · Kuehneosauridae · BRAK opisu
+  - Brachyrhinodon · 237–206 · ląd · mięso · Clevosauridae · BRAK opisu
+  - Nicrosaurus · 227–201 · słodka woda · ryby · Parasuchidae · BRAK opisu
+  - Rauisuchus · 237–206 · ląd · mięso · Rauisuchidae · BRAK opisu
+  - Guaibasaurus · 227–206 · ląd · rośliny · Guaibasauridae · BRAK opisu
+  - Riojasaurus · 227–206 · ląd · rośliny · Riojasauridae · BRAK opisu
+  - Jaklapallisaurus · 227–201 · ląd · rośliny · Unaysauridae · BRAK opisu
+  - Liliensternus · 227–201 · ląd · mięso · BRAK opisu
+  - Pachagnathus · 227–206 · powietrze · ryby · Raeticodactylidae · BRAK opisu
+  - Eudimorphodon · 227–201 · powietrze · ryby · Campylognathoididae · BRAK opisu
+  - Peteinosaurus · 215–211 · powietrze · ryby · Dimorphodontidae · BRAK opisu
+  - Nothosaurus · 251–201 · morze · ryby · Nothosauridae · BRAK opisu
+  - Placochelys · 237–72 · morze · plankton · BRAK opisu
+  - Simosaurus · 247–201 · morze · ryby · Simosauridae · BRAK opisu
+  - Ptycholepis · 245–137 · morze · plankton · Ptycholepididae · BRAK opisu
+  - Colobodus · 251–200 · morze · plankton · Colobodontidae · BRAK opisu
+  - Paralepidotus · 247–201 · morze · mięso · Callipurbeckiidae · BRAK opisu
+  - Ozarkodina · 477–201 · morze · mięso · BRAK opisu
+  - Odontochelys · 234–227 · ląd · mięso · BRAK opisu
+  - Triops · 230–0 · słodka woda · plankton · Triopsidae · BRAK opisu
+  - Trigonia · 230–66 · morze · plankton · Trigoniidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Unio, Darwinula, Antediplodon, Drepanosaurus, Gerdalia, Tecovasaurus, Colognathus, Rioarribia, Stenomyti, Doswellia, Dolabrosaurus, Caseosaurus, Chinlestegophis, Palacrodon, Enoploclytia, Adelobasileus, Camposaurus, Phoebodus, Gyrolepis, Shipingia, Whitakersaurus, Effigia, Diplolonchidion, Fraserosphenodon, Protecovasaurus, Brachychirotherium, Spirorbis, Redondagnathus, Triasamnicola, Redondavenator …
+
+## Rozdział 17: Formacja Elliot (id: elliot)
+
+- RPA i Lesotho · Trias – Jura · 201–193 mln lat temu · formacje: Elliot
+- Odblokowanie: poziom parku 20, 870000 monet
+- Tytuł etapu w grze: „Świt dinozaurów w Gondwanie” · brak przerywnika fabularnego
+- Opis: Przełom triasu i jury w południowej Afryce. Wczesne dinozaury, jak Massospondylus z gniazdami pełnymi jaj, pierwsze krokodylokształtne i drobne ssakokształtne.
+- Fauna miejscowa (20):
+  - Massospondylus · 237–175 · ląd · rośliny · Massospondylidae · BRAK opisu
+  - Tritylodon · 227–193 · ląd · mięso · Tritylodontidae · BRAK opisu
+  - Lesothosaurus · 201–193 · ląd · rośliny · BRAK opisu
+  - Melanorosaurus · 227–193 · ląd · rośliny · BRAK opisu
+  - Pachygenelus · 201–193 · ląd · mięso · Tritheledontidae · BRAK opisu
+  - Protosuchus · 206–193 · słodka woda · mięso · Protosuchidae · BRAK opisu
+  - Basutodon · 227–201 · ląd · mięso · BRAK opisu
+  - Eucnemesaurus · 227–201 · ląd · rośliny · Riojasauridae · BRAK opisu
+  - Syntarsus · 206–184 · ląd · mięso · BRAK opisu
+  - Lycorhinus · 201–184 · ląd · rośliny · Heterodontosauridae · BRAK opisu
+  - Heterodontosaurus · 201–184 · ląd · rośliny · Heterodontosauridae · BRAK opisu
+  - Megazostrodon · 201–193 · ląd · mięso · Megazostrodontidae · BRAK opisu
+  - Plateosauravus · 227–201 · ląd · rośliny · Plateosauridae · BRAK opisu
+  - Antetonitrus · 201–193 · ląd · rośliny · Lessemsauridae · BRAK opisu
+  - Dracovenator · 201–193 · ląd · mięso · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Megapnosaurus · 201–193 · ląd · mięso · Coelophysidae · BRAK opisu
+  - Eocursor · 201–193 · ląd · rośliny · BRAK opisu
+  - Plateosaurus · 227–200 · ląd · rośliny · Plateosauridae · BRAK opisu
+  - Thecodontosaurus · 247–193 · ląd · rośliny · BRAK opisu
+- Goście epoki (13):
+  - Proteosaurus · 201–193 · morze · ryby · Proteosauridae · BRAK opisu
+  - Wahlisaurus · 201–200 · morze · ryby · Leptonectidae · BRAK opisu
+  - Anchisaurus · 201–193 · ląd · rośliny · BRAK opisu
+  - Mussaurus · 200–193 · ląd · rośliny · BRAK opisu
+  - Lamplughsaura · 201–193 · ląd · rośliny · BRAK opisu
+  - Yimenosaurus · 201–200 · ląd · rośliny · BRAK opisu
+  - Ammosaurus · 201–200 · ląd · rośliny · Anchisauridae · BRAK opisu
+  - Sinosaurus · 201–193 · ląd · mięso · BRAK opisu
+  - Sarcosaurus · 201–193 · ląd · mięso · BRAK opisu
+  - Morganucodon · 206–165 · ląd · mięso · Morganucodontidae · BRAK opisu
+  - Prosalirus · 200–184 · słodka woda · mięso · BRAK opisu
+  - Archaeolepis · 200–193 · powietrze · plankton · Archaeolepiidae · BRAK opisu
+  - Hadrocodium · 200–193 · ląd · mięso · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Orthosuchus, Scalenodontoides, Blikanasaurus, Batrachopus, Ignavusaurus, Erythrotherium, Sphenosuchus, Ngwevu, Stormbergia, Kholumolumo, Meroktenos, Abrictosaurus, Siderops, Aardonyx, Pulanesaura, Arcusaurus, Ameghinichnus, Trisauropodiscus, Litargosuchus, Diarthrognathus, Australochelys, Tritheledon, Elliotherium, Pattsia, Pegomastax, Sefapanosaurus, Pentasaurus, Ledumahadi, Notochampsa, Baroqueosuchus …
+
+## Rozdział 18: Łupki posidoniowe (Holzmaden) (id: holzmaden)
+
+- Niemcy · Jura · 184–183 mln lat temu · formacje: Posidonia Shale
+- Odblokowanie: poziom parku 21, 1200000 monet
+- Tytuł etapu w grze: „Gady wracają do morza” · brak przerywnika fabularnego
+- Opis: Wczesnojurajskie morze z ichtiozaurami zachowanymi wraz z zarysem ciała, plezjozaurami i amonitami.
+- Fauna miejscowa (31):
+  - Dorygnathus · 184–183 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Stenopterygius · 184–171 · morze · ryby · BRAK opisu
+  - Mystriosaurus · 201–175 · morze · ryby · BRAK opisu
+  - Campylognathoides · 184–183 · powietrze · ryby · Campylognathoididae · BRAK opisu
+  - Dapedium · 215–94 · morze · plankton · Dapediidae · BRAK opisu
+  - Suevoleviathan · 184–175 · morze · ryby · BRAK opisu
+  - Palaeopleurosaurus · 184–175 · ląd · mięso · Pleurosauridae · BRAK opisu
+  - Microcleidus · 184–175 · morze · ryby · Microcleididae · BRAK opisu
+  - Pelagosaurus · 184–175 · morze · ryby · BRAK opisu
+  - Platysuchus · 184–183 · morze · mięso · Teleosauridae · BRAK opisu
+  - Seeleyosaurus · 184–183 · morze · ryby · Microcleididae · BRAK opisu
+  - Saurorhynchus · 200–171 · morze · mięso · Saurichthyidae · BRAK opisu
+  - Leptolepis · 239–94 · morze · mięso · Leptolepididae · BRAK opisu
+  - Seirocrinus · 201–183 · morze · plankton · Pentacrinitidae · BRAK opisu
+  - Pentacrinites · 199–145 · morze · plankton · Pentacrinitidae · BRAK opisu
+  - Dactylioceras · 201–168 · morze · mięso · Dactylioceratidae · BRAK opisu
+  - Ohmdenosaurus · 183–180 · ląd · rośliny · BRAK opisu
+  - Longileptolepis · 184–126 · morze · mięso · Leptolepididae · BRAK opisu
+  - Ohmdenia · 184–183 · morze · mięso · Pachycormidae · BRAK opisu
+  - Meyerasaurus · 184–183 · morze · ryby · Rhomaleosauridae · BRAK opisu
+  - Hauffiosaurus · 184–175 · morze · mięso · Pliosauridae · BRAK opisu
+  - Lioteuthis · 184–183 · morze · ryby · Lioteuthididae · BRAK opisu
+  - Hybodus · 304–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Bathytheristes · 184–183 · morze · mięso · Callorhinchidae · BRAK opisu
+  - Leptonectes · 206–183 · morze · ryby · BRAK opisu
+  - Temnodontosaurus · 201–175 · morze · ryby · BRAK opisu
+  - Clarkeiteuthis · 201–183 · morze · ryby · Chondroteuthidae · BRAK opisu
+  - Pachycormus · 184–155 · morze · mięso · Pachycormidae · BRAK opisu
+  - Eleganticeras · 184–175 · morze · mięso · Hildoceratidae · BRAK opisu
+  - Tetragonolepis · 243–110 · morze · mięso · Semionotidae · BRAK opisu
+  - Ohmdenfuro · 184–175 · morze · plankton · BRAK opisu
+- Goście epoki (29):
+  - Passaloteuthis · 193–171 · morze · ryby · Passaloteuthididae · BRAK opisu
+  - Arnioceras · 201–175 · morze · mięso · Arietitidae · BRAK opisu
+  - Paltechioceras · 201–175 · morze · mięso · Echioceratidae · BRAK opisu
+  - Tropidoceras · 201–175 · morze · mięso · Polymorphitidae · BRAK opisu
+  - Metaderoceras · 201–175 · morze · mięso · Eoderoceratidae · BRAK opisu
+  - Amaltheus · 201–175 · morze · mięso · Liparoceratidae · BRAK opisu
+  - Hildoceras · 193–175 · morze · mięso · Hildoceratidae · BRAK opisu
+  - Juraphyllites · 201–175 · morze · mięso · Juraphyllitidae · BRAK opisu
+  - Ophionautilus · 183–165 · morze · mięso · Cenoceratidae · BRAK opisu
+  - Oligokyphus · 206–184 · ląd · mięso · Tritylodontidae · BRAK opisu
+  - Lufengosaurus · 201–168 · ląd · rośliny · Massospondylidae · BRAK opisu
+  - Sarahsaurus · 200–184 · ląd · rośliny · Massospondylidae · BRAK opisu
+  - Yunnanosaurus · 201–184 · ląd · rośliny · BRAK opisu
+  - Sanpasaurus · 184–175 · ląd · rośliny · BRAK opisu
+  - Barapasaurus · 200–184 · ląd · rośliny · BRAK opisu
+  - Tazoudasaurus · 193–175 · ląd · rośliny · BRAK opisu
+  - Patagosaurus · 183–169 · ląd · rośliny · Cetiosauridae · BRAK opisu
+  - Gyposaurus · 201–175 · ląd · rośliny · Anchisauridae · BRAK opisu
+  - Scutellosaurus · 201–184 · ląd · rośliny · BRAK opisu
+  - Yuxisaurus · 193–184 · ląd · rośliny · BRAK opisu
+  - Scelidosaurus · 206–175 · ląd · rośliny · Scelidosauridae · BRAK opisu
+  - Emausaurus · 184–183 · ląd · rośliny · Scelidosauridae · BRAK opisu
+  - Dilophosaurus · 201–184 · ląd · mięso · BRAK opisu
+  - Segisaurus · 193–175 · ląd · mięso · Coelophysidae · BRAK opisu
+  - Dimorphodon · 201–184 · powietrze · ryby · Dimorphodontidae · BRAK opisu
+  - Rhomaleosaurus · 201–175 · morze · ryby · Rhomaleosauridae · BRAK opisu
+  - Eurycleidus · 201–184 · morze · ryby · Rhomaleosauridae · BRAK opisu
+  - Eocarcinus · 193–184 · morze · plankton · Eocarcinidae · BRAK opisu
+  - Eocaecilia · 200–184 · ląd · mięso · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Panorpidium, Fulgoridium, Prosynactus, Architipula, Heterophlebia, Protogryllus, Actinophlebia, Dorniella, Orthophlebia, Necrotaulius, Geinitzia, Liadoblattina, Caloblattina, Amphoxyne, Compactofulgoridium, Rasnitsyneura, Heterothemis, Myopophlebia, Schesslitziella, Margaroptilon, Prohemerobius, Mesobittacus, Procercopis, Eoptychoptera, Elasmoscelidium, Locustopsis, Aposphinctus, Procerofulgoridium, Liassopsychops, Liassonympha …
+
+## Rozdział 19: Iły oksfordzkie i kimerydzkie (id: oxford_clay)
+
+- Wielka Brytania · Jura · 165–149 mln lat temu · formacje: Oxford Clay, Kimmeridge Clay
+- Odblokowanie: poziom parku 23, 2400000 monet
+- Tytuł etapu w grze: „Morskie potwory jury” · brak przerywnika fabularnego
+- Opis: Jurajskie morza Anglii — pliozaury, ichtiozaury, morskie krokodyle i olbrzymia ryba Leedsichthys.
+- Fauna miejscowa (69):
+  - Pliosaurus · 165–66 · morze · mięso · Pliosauridae · BRAK opisu
+  - Cryptoclidus · 165–143 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Eryma · 260–66 · morze · mięso · Erymidae · BRAK opisu
+  - Peloneustes · 165–162 · morze · mięso · Pliosauridae · BRAK opisu
+  - Muraenosaurus · 165–155 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Metriorhynchus · 168–143 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Steneosaurus · 184–141 · morze · mięso · Teleosauridae · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Dakosaurus · 165–113 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Colymbosaurus · 168–113 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Plesiosaurus · 206–66 · morze · ryby · BRAK opisu
+  - Ophthalmosaurus · 201–133 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Pictonia · 158–149 · morze · mięso · Aulacostephanidae · BRAK opisu
+  - Ichthyosaurus · 227–101 · morze · ryby · Ichthyosauridae · BRAK opisu
+  - Liopleurodon · 165–137 · morze · mięso · Pliosauridae · BRAK opisu
+  - Goniochirus · 175–155 · morze · plankton · Paguridae · BRAK opisu
+  - Torvoneustes · 159–133 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Thalattosuchus · 165–149 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Megalosaurus · 206–66 · ląd · mięso · Megalosauridae · BRAK opisu
+  - Kosmoceras · 165–133 · morze · mięso · Kosmoceratidae · BRAK opisu
+  - Hybodus · 304–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Ischyodus · 168–3.6 · morze · mięso · Callorhinchidae · BRAK opisu
+  - Leedsichthys · 168–158 · morze · mięso · Pachycormidae · BRAK opisu
+  - Tyrannoneustes · 165–159 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Trachysoma · 201–101 · morze · mięso · Glypheidae · BRAK opisu
+  - Eumorphia · 200–101 · morze · mięso · Mecochiridae · BRAK opisu
+  - Tropidemys · 155–120 · ląd · rośliny · BRAK opisu
+  - Prorasenia · 158–149 · morze · mięso · Aulacostephanidae · BRAK opisu
+  - Sarcolestes · 165–162 · ląd · rośliny · BRAK opisu
+  - Tricleidus · 184–155 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Belemnopsis · 221–113 · morze · ryby · Belemnopseidae · BRAK opisu
+  - Cylindroteuthis · 200–121 · morze · ryby · Belemnitidae · BRAK opisu
+  - Simolestes · 169–143 · morze · mięso · Pliosauridae · BRAK opisu
+  - Gracilineustes · 165–152 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Machimosaurus · 165–113 · morze · ryby · Machimosauridae · BRAK opisu
+  - Lemmysuchus · 165–126 · morze · ryby · Machimosauridae · BRAK opisu
+  - Asteracanthus · 260–3.6 · morze · mięso · Acrodontidae · BRAK opisu
+  - Neosteneosaurus · 165–143 · morze · ryby · BRAK opisu
+  - Palaeopagurus · 184–66 · morze · plankton · Paguridae · BRAK opisu
+  - Duriatitan · 155–137 · ląd · rośliny · BRAK opisu
+  - Trachyteuthis · 162–94 · morze · ryby · Trachyteuthididae · BRAK opisu
+  - Brachypterygius · 155–143 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Kimmerosaurus · 155–145 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Plesiosuchus · 152–141 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Bathyspondylus · 155–149 · morze · ryby · BRAK opisu
+  - Thalassemys · 155–94 · ląd · rośliny · BRAK opisu
+  - Teleosaurus · 184–120 · morze · mięso · Teleosauridae · BRAK opisu
+  - Gryphaea · 201–100 · morze · plankton · Gryphaeidae · BRAK opisu
+  - Belemnotheutis · 165–155 · morze · mięso · BRAK opisu
+  - Cetiosauriscus · 165–162 · ląd · rośliny · BRAK opisu
+  - Cetiosaurus · 175–120 · ląd · rośliny · BRAK opisu
+  - Cardioceras · 165–149 · morze · mięso · Cardioceratidae · BRAK opisu
+  - Pachyteuthis · 180–133 · morze · ryby · BRAK opisu
+  - Gyrodus · 206–90 · morze · plankton · Gyrodontidae · BRAK opisu
+  - Rhamphocephalus · 168–155 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Caturus · 254–66 · morze · ryby · Caturidae · BRAK opisu
+  - Pachycormus · 184–155 · morze · mięso · Pachycormidae · BRAK opisu
+  - Euaspidoceras · 165–141 · morze · mięso · Aspidoceratidae · BRAK opisu
+  - Callovosaurus · 165–162 · ląd · rośliny · BRAK opisu
+  - Aspidorhynchus · 168–94 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Pholidophorus · 249–94 · morze · plankton · Pholidophoridae · BRAK opisu
+  - Leptolepis · 239–94 · morze · mięso · Leptolepididae · BRAK opisu
+  - Dacentrurus · 155–121 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Subplanites · 162–137 · morze · mięso · Perisphinctidae · BRAK opisu
+  - Cimoliasaurus · 155–66 · morze · ryby · Elasmosauridae · BRAK opisu
+  - Synechodus · 294–41 · morze · mięso · Palaeospinacidae · BRAK opisu
+  - Protospinax · 184–66 · morze · mięso · Protospinacidae · BRAK opisu
+  - Rhamphorhynchus · 159–143 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Plesiochelys · 175–126 · ląd · rośliny · Plesiochelyidae · BRAK opisu
+- Goście epoki (37):
+  - Angulaticeras · 206–162 · morze · mięso · Schlotheimiidae · BRAK opisu
+  - Phymatoceras · 193–162 · morze · mięso · Phymatoceratidae · BRAK opisu
+  - Cymatonautilus · 165–162 · morze · mięso · Cymatoceratidae · BRAK opisu
+  - Antaganides · 180–165 · morze · mięso · Pseudonautilidae · BRAK opisu
+  - Micronautilus · 168–165 · morze · mięso · Paracenoceratidae · BRAK opisu
+  - Marmoretta · 168–149 · ląd · mięso · BRAK opisu
+  - Seldsienean · 168–165 · morze · ryby · BRAK opisu
+  - Shunosaurus · 175–155 · ląd · rośliny · BRAK opisu
+  - Tienshanosaurus · 162–155 · ląd · rośliny · Mamenchisauridae · BRAK opisu
+  - Bicharracosaurus · 162–149 · ląd · rośliny · BRAK opisu
+  - Ferganocephale · 165–162 · ląd · rośliny · BRAK opisu
+  - Baiyinosaurus · 168–165 · ląd · rośliny · Huayangosauridae · BRAK opisu
+  - Chungkingosaurus · 168–162 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Kulindapteryx · 168–165 · ląd · rośliny · Jeholosauridae · BRAK opisu
+  - Kulindadromeus · 168–165 · ląd · rośliny · BRAK opisu
+  - Hualianceratops · 162–155 · ląd · rośliny · Chaoyangsauridae · BRAK opisu
+  - Xiaosaurus · 171–155 · ląd · rośliny · Fabrosauridae · BRAK opisu
+  - Gongbusaurus · 168–155 · ląd · rośliny · Fabrosauridae · BRAK opisu
+  - Gasosaurus · 171–155 · ląd · mięso · BRAK opisu
+  - Streptospondylus · 165–159 · ląd · mięso · BRAK opisu
+  - Piveteausaurus · 165–155 · ląd · mięso · Megalosauridae · BRAK opisu
+  - Crateropteryx · 168–165 · powietrze · mięso · BRAK opisu
+  - Kileskus · 168–165 · ląd · mięso · Proceratosauridae · BRAK opisu
+  - Shishugounykus · 162–155 · ląd · mięso · BRAK opisu
+  - Lepidocheirosaurus · 168–165 · ląd · rośliny · Nqwebasauridae · BRAK opisu
+  - Kunpengopterus · 168–152 · powietrze · ryby · Wukongopteridae · BRAK opisu
+  - Jianchangnathus · 168–152 · powietrze · ryby · Scaphognathidae · BRAK opisu
+  - Fenghuangopterus · 168–152 · powietrze · ryby · Scaphognathidae · BRAK opisu
+  - Thaumatosaurus · 168–165 · morze · ryby · Plesiosauridae · BRAK opisu
+  - Pantosaurus · 162–155 · morze · ryby · Cryptoclididae · BRAK opisu
+  - Bishanopliosaurus · 184–155 · morze · ryby · Rhomaleosauridae · BRAK opisu
+  - Megateuthis · 201–169 · morze · mięso · Megateuthididae · BRAK opisu
+  - Karaurus · 162–155 · słodka woda · mięso · Karauridae · BRAK opisu
+  - Castorocauda · 165–162 · słodka woda · mięso · BRAK opisu
+  - Volaticotherium · 165–162 · ląd · mięso · Triconodontidae · BRAK opisu
+  - Juramaia · 168–152 · ląd · mięso · BRAK opisu
+  - Mongolarachne · 165–155 · ląd · mięso · Mongolarachnidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Palaeonucula, Meleagrinella, Corbulomima, Thracia, Mesosaccella, Grammatodon, Bositra, Dicroloma, Gryphaea, Plesiodiadema, Magila, Deltoideum (Deltoideum), Torquirhynchia, Venericyprina, Oxytoma, Pinna, Entolium, Trochotiara, Protocardia, Polycidaris, Nicaniella, Lingula, Isocyprina, Astarte, Disaster, Trigonia, Nanogyra (Nanogyra), Pleurotomaria, Nanogyra (Palaeogyra), Rhabdocidaris …
+
+## Rozdział 20: Formacja Morrison (id: morrison)
+
+- USA · Jura – Kreda · 155–143 mln lat temu · formacje: Morrison
+- Odblokowanie: poziom parku 25, 4700000 monet
+- Tytuł etapu w grze: „Era olbrzymów” · brak przerywnika fabularnego
+- Opis: Późnojurajskie równiny zalewowe zachodu Ameryki Północnej — królestwo olbrzymich zauropodów, allozaurów i stegozaurów.
+- Fauna miejscowa (64):
+  - Allosaurus · 162–137 · ląd · mięso · BRAK opisu
+  - Camarasaurus · 162–143 · ląd · rośliny · Camarasauridae · BRAK opisu
+  - Stegosaurus · 162–94 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Apatosaurus · 158–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Diplodocus · 158–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Glyptops · 155–72 · ląd · rośliny · Pleurosternidae · BRAK opisu
+  - Camptosaurus · 158–143 · ląd · rośliny · BRAK opisu
+  - Goniopholis · 168–84 · morze · mięso · Goniopholididae · BRAK opisu
+  - Nanosaurus · 158–143 · ląd · rośliny · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Brontosaurus · 155–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Dryosaurus · 155–143 · ląd · rośliny · Dryosauridae · BRAK opisu
+  - Opisthias · 193–133 · ląd · mięso · BRAK opisu
+  - Ceratosaurus · 158–143 · ląd · mięso · BRAK opisu
+  - Barosaurus · 158–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Brachiosaurus · 158–143 · ląd · rośliny · Brachiosauridae · BRAK opisu
+  - Docodon · 155–143 · ląd · mięso · Docodontidae · BRAK opisu
+  - Dryolestes · 155–143 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Coelurus · 158–113 · ląd · mięso · BRAK opisu
+  - Amblotherium · 155–139 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Cteniogenys · 168–72 · słodka woda · mięso · Cteniogenyidae · BRAK opisu
+  - Dinochelys · 155–143 · ląd · rośliny · Pleurosternidae · BRAK opisu
+  - Haplocanthosaurus · 155–143 · ląd · rośliny · BRAK opisu
+  - Paramacellodus · 168–94 · ląd · mięso · Paramacellodidae · BRAK opisu
+  - Ctenacodon · 155–139 · ląd · rośliny · Allodontidae · BRAK opisu
+  - Torvosaurus · 165–143 · ląd · mięso · Megalosauridae · BRAK opisu
+  - Laolestes · 155–133 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Hesperosaurus · 158–143 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Dorsetisaurus · 155–110 · ląd · mięso · Dorsetisauridae · BRAK opisu
+  - Eutretauranosuchus · 155–143 · morze · mięso · Goniopholididae · BRAK opisu
+  - Eilenodon · 155–143 · ląd · mięso · Sphenodontidae · BRAK opisu
+  - Galeamopus · 155–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Stokesosaurus · 155–143 · ląd · mięso · BRAK opisu
+  - Priacodon · 155–143 · ląd · mięso · Triconodontidae · BRAK opisu
+  - Psalodon · 155–143 · ląd · rośliny · Allodontidae · BRAK opisu
+  - Supersaurus · 155–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Ophiopsis · 243–94 · morze · plankton · Ophiopsidae · BRAK opisu
+  - Ornitholestes · 158–143 · ląd · mięso · Compsognathidae · BRAK opisu
+  - Tanycolagreus · 155–143 · ląd · mięso · BRAK opisu
+  - Fruitadens · 149–143 · ląd · rośliny · Heterodontosauridae · BRAK opisu
+  - Glirodon · 155–143 · ląd · rośliny · BRAK opisu
+  - Fruitachampsa · 152–143 · słodka woda · mięso · Shartegosuchidae · BRAK opisu
+  - Macelognathus · 155–143 · ląd · mięso · BRAK opisu
+  - Mymoorapelta · 155–143 · ląd · rośliny · BRAK opisu
+  - Comotherium · 155–143 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Euthlastus · 155–143 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Amphicotylus · 152–143 · morze · mięso · Goniopholididae · BRAK opisu
+  - Marshosaurus · 155–143 · ląd · mięso · Piatnitzkysauridae · BRAK opisu
+  - Saurillodon · 168–113 · ląd · mięso · Paramacellodidae · BRAK opisu
+  - Tinodon · 155–139 · ląd · mięso · Tinodontidae · BRAK opisu
+  - Suuwassea · 155–143 · ląd · rośliny · Dicraeosauridae · BRAK opisu
+  - Herpetairus · 155–143 · ląd · mięso · Dryolestidae · BRAK opisu
+  - Ennacodon · 155–143 · ląd · mięso · Dicrocynodontidae · BRAK opisu
+  - Amphicoelias · 158–143 · ląd · rośliny · BRAK opisu
+  - Dacentrurus · 155–121 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Saurophaganax · 152–143 · ląd · mięso · Allosauridae · BRAK opisu
+  - Fruitafossor · 155–145 · ląd · mięso · BRAK opisu
+  - Osmakasaurus · 155–121 · ląd · rośliny · BRAK opisu
+  - Leptolepis · 239–94 · morze · mięso · Leptolepididae · BRAK opisu
+  - Elaphrosaurus · 155–94 · ląd · mięso · Noasauridae · BRAK opisu
+  - Fosterovenator · 155–143 · ląd · mięso · Ceratosauridae · BRAK opisu
+  - Echinodon · 152–137 · ląd · rośliny · Heterodontosauridae · BRAK opisu
+  - Theriosuchus · 169–66 · morze · mięso · Atoposauridae · BRAK opisu
+  - Richardoestesia · 155–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+- Goście epoki (21):
+  - Acrocoelites · 184–143 · morze · ryby · Megateuthididae · BRAK opisu
+  - Hibolithes · 175–121 · morze · ryby · Mesohibolitidae · BRAK opisu
+  - Lytoceras · 201–101 · morze · mięso · Lytoceratidae · BRAK opisu
+  - Cadoceras · 168–143 · morze · mięso · Cardioceratidae · BRAK opisu
+  - Perisphinctes · 165–141 · morze · mięso · Perisphinctidae · BRAK opisu
+  - Taramelliceras · 165–137 · morze · mięso · Oppeliidae · BRAK opisu
+  - Pseudaganides · 200–143 · morze · mięso · Pseudonautilidae · BRAK opisu
+  - Stereognathus · 168–113 · ląd · mięso · Tritylodontidae · BRAK opisu
+  - Sunosuchus · 171–143 · morze · mięso · Goniopholididae · BRAK opisu
+  - Hsisosuchus · 171–143 · słodka woda · mięso · Shartegosuchidae · BRAK opisu
+  - Omeisaurus · 175–143 · ląd · rośliny · Mamenchisauridae · BRAK opisu
+  - Mamenchisaurus · 168–113 · ląd · rośliny · Mamenchisauridae · BRAK opisu
+  - Iguanodon · 155–66 · ląd · rośliny · BRAK opisu
+  - Yangchuanosaurus · 171–113 · ląd · mięso · Metriacanthosauridae · BRAK opisu
+  - Aviatyrannis · 155–149 · ląd · rośliny · BRAK opisu
+  - Pycnodus · 168–34 · morze · mięso · Pycnodontidae · BRAK opisu
+  - Pleurotomaria · 201–100 · morze · plankton · Pleurotomariidae · BRAK opisu
+  - Kalligramma · 165–145 · powietrze · plankton · Kalligrammatidae · BRAK opisu
+  - Cyclosphaeroma · 168–143 · morze · plankton · Sphaeromidae · BRAK opisu
+  - Cidaris · 180–0 · morze · plankton · Cidaridae · BRAK opisu
+  - Thecosmilia · 201–100 · morze · mięso · Thecosmiliidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Lioestheria, Viviparus, Amplovalvata, Unio, Enneabatrachus, Theretairus, Uluops, Hulettia, Archaeotrigon, Triconolestes, Diablophis, Amphidon, Dorsetochelys, Valvata, Lymnaea, Dystrophaeus, Smitanosaurus, Foxraptor, Zofiabaatar, Herpetarius, Planorbis, Paurodon, Tathiodon, Melanodon, Miccylotyrans, Pelicopsis, Kepolestes, Mesadactylus, Kaatedocus, Maraapunisaurus …
+
+## Rozdział 21: Tendaguru (id: tendaguru)
+
+- Tanzania · Jura – Kreda · 152–143 mln lat temu · formacje: Tendaguru
+- Odblokowanie: poziom parku 27, 9100000 monet
+- Tytuł etapu w grze: „Olbrzymy Gondwany” · brak przerywnika fabularnego
+- Opis: Afrykańska siostra Morrison: olbrzymi Giraffatitan, kolczasty Kentrosaurus i Elaphrosaurus.
+- Fauna miejscowa (29):
+  - Giraffatitan · 162–143 · ląd · rośliny · Brachiosauridae · BRAK opisu
+  - Kentrosaurus · 162–143 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Dicraeosaurus · 162–143 · ląd · rośliny · Dicraeosauridae · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Tornieria · 152–143 · ląd · rośliny · Diplodocidae · BRAK opisu
+  - Ceratosaurus · 158–143 · ląd · mięso · BRAK opisu
+  - Torvosaurus · 165–143 · ląd · mięso · Megalosauridae · BRAK opisu
+  - Janenschia · 149–143 · ląd · rośliny · BRAK opisu
+  - Elaphrosaurus · 155–94 · ląd · mięso · Noasauridae · BRAK opisu
+  - Veterupristisaurus · 152–149 · ląd · mięso · Carcharodontosauridae · BRAK opisu
+  - Wamweracaudia · 149–143 · ląd · rośliny · Mamenchisauridae · BRAK opisu
+  - Tendaguria · 149–143 · ląd · rośliny · BRAK opisu
+  - Brachiosaurus · 158–143 · ląd · rośliny · Brachiosauridae · BRAK opisu
+  - Pterodactylus · 201–133 · powietrze · ryby · BRAK opisu
+  - Callipurbeckia · 152–141 · morze · mięso · Callipurbeckiidae · BRAK opisu
+  - Dysalotosaurus · 152–149 · ląd · rośliny · Dryosauridae · BRAK opisu
+  - Megalosaurus · 206–66 · ląd · mięso · Megalosauridae · BRAK opisu
+  - Australodocus · 149–143 · ląd · rośliny · BRAK opisu
+  - Tendaguripterus · 152–149 · powietrze · ryby · Tendaguripteridae · BRAK opisu
+  - Rhamphorhynchus · 159–143 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Bernissartia · 152–94 · morze · mięso · BRAK opisu
+  - Tendagurodon · 152–149 · ląd · mięso · Amphilestidae · BRAK opisu
+  - Tendagurutherium · 152–149 · ląd · mięso · Peramuridae · BRAK opisu
+  - Staffia · 152–149 · ląd · rośliny · Haramyidae · BRAK opisu
+  - Brancatherulum · 149–143 · ląd · mięso · BRAK opisu
+  - Hybodus · 304–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Lonchidion · 237–66 · morze · mięso · Lonchidiidae · BRAK opisu
+  - Engaibatis · 149–143 · morze · mięso · BRAK opisu
+  - Paracenoceras · 168–143 · morze · mięso · Paracenoceratidae · BRAK opisu
+- Goście epoki (26):
+  - Acroteuthis · 149–113 · morze · ryby · Belemnitidae · BRAK opisu
+  - Duvalia · 159–113 · morze · ryby · Duvaliidae · BRAK opisu
+  - Olcostephanus · 162–121 · morze · mięso · Olcostephanidae · BRAK opisu
+  - Bochianites · 149–126 · morze · mięso · Bochianitidae · BRAK opisu
+  - Polyptychites · 143–126 · morze · mięso · Polyptychitidae · BRAK opisu
+  - Neocomites · 162–113 · morze · mięso · Neocomitidae · BRAK opisu
+  - Neolissoceras · 149–121 · morze · mięso · Haploceratidae · BRAK opisu
+  - Euposaurus · 152–149 · ląd · mięso · BRAK opisu
+  - Kallimodon · 152–149 · ląd · mięso · Saphaeosauridae · BRAK opisu
+  - Arthropterygius · 162–143 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Platypterygius · 162–94 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Pholidosaurus · 149–113 · morze · mięso · Pholidosauridae · BRAK opisu
+  - Cricosaurus · 159–133 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Jobaria · 162–143 · ląd · rośliny · BRAK opisu
+  - Tehuelchesaurus · 158–143 · ląd · rośliny · BRAK opisu
+  - Lourinhasaurus · 152–145 · ląd · rośliny · Camarasauridae · BRAK opisu
+  - Turiasaurus · 155–143 · ląd · rośliny · BRAK opisu
+  - Losillasaurus · 155–143 · ląd · rośliny · BRAK opisu
+  - Valdosaurus · 155–120 · ląd · rośliny · Dryosauridae · BRAK opisu
+  - Hypsilophodon · 155–120 · ląd · rośliny · Hypsilophodontidae · BRAK opisu
+  - Sciurumimus · 152–149 · ląd · mięso · BRAK opisu
+  - Lusovenator · 152–143 · ląd · mięso · BRAK opisu
+  - Ambopteryx · 162–143 · powietrze · mięso · Scansoriopterygidae · BRAK opisu
+  - Compsognathus · 155–145 · ląd · mięso · Compsognathidae · BRAK opisu
+  - Spinostropheus · 162–94 · ląd · mięso · BRAK opisu
+  - Tacuadactylus · 155–143 · powietrze · ryby · Ctenochasmatidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Eomiodon, Meandrophyllia, Pseudomelania, Falcimytilus, Ovalastrea, Isastrea, Allocoeniopsis, Promathildia, Nerita, Meleagrinella, Praeexogyra, Nanogyra (Nanogyra), Entolium, Pseudolimea, Bakevellia, Herzogina, Protocardia, Cycloserpula
+
+## Rozdział 22: Wapienie Solnhofen (id: solnhofen)
+
+- Niemcy · Jura · 149–145 mln lat temu · formacje: Solnhofen
+- Odblokowanie: poziom parku 29, 18000000 monet
+- Tytuł etapu w grze: „Pierwszy ptak” · brak przerywnika fabularnego
+- Opis: Późnojurajska laguna o niezwykłej konserwacji — Archaeopteryx, pterozaury, kraby i ryby zachowane w najdrobniejszych szczegółach.
+- Fauna miejscowa (50):
+  - Rhamphorhynchus · 159–143 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Mesolimulus · 239–94 · morze · mięso · Limulidae · BRAK opisu
+  - Pterodactylus · 201–133 · powietrze · ryby · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Pholidophorus · 249–94 · morze · plankton · Pholidophoridae · BRAK opisu
+  - Lithacoceras · 162–143 · morze · mięso · Ataxioceratidae · BRAK opisu
+  - Ctenochasma · 149–137 · powietrze · ryby · BRAK opisu
+  - Ophiopsiella · 239–120 · morze · plankton · Ophiopsiellidae · BRAK opisu
+  - Ophiopsis · 243–94 · morze · plankton · Ophiopsidae · BRAK opisu
+  - Aspidorhynchus · 168–94 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Pleurosaurus · 155–145 · ląd · mięso · Pleurosauridae · BRAK opisu
+  - Aeger · 249–84 · morze · mięso · Aegeridae · BRAK opisu
+  - Caturus · 254–66 · morze · ryby · Caturidae · BRAK opisu
+  - Amiopsis · 152–84 · morze · ryby · Amiidae · BRAK opisu
+  - Protospinax · 184–66 · morze · mięso · Protospinacidae · BRAK opisu
+  - Solnhofia · 152–145 · ląd · rośliny · BRAK opisu
+  - Eurysternum · 155–143 · ląd · rośliny · BRAK opisu
+  - Cycleryon · 165–145 · morze · mięso · Eryonidae · BRAK opisu
+  - Eryma · 260–66 · morze · mięso · Erymidae · BRAK opisu
+  - Hybonoticeras · 162–137 · morze · mięso · Aspidoceratidae · BRAK opisu
+  - Neochetoceras · 162–137 · morze · mięso · Oppeliidae · BRAK opisu
+  - Subplanites · 162–137 · morze · mięso · Perisphinctidae · BRAK opisu
+  - Callipurbeckia · 152–141 · morze · mięso · Callipurbeckiidae · BRAK opisu
+  - Ardeosaurus · 149–145 · ląd · mięso · BRAK opisu
+  - Orthogonikleithrus · 152–145 · morze · plankton · Orthogonikleithridae · BRAK opisu
+  - Homoeosaurus · 152–139 · ląd · mięso · Homoeosauridae · BRAK opisu
+  - Proscinetes · 159–94 · morze · mięso · Pycnodontidae · BRAK opisu
+  - Propterus · 152–94 · morze · plankton · Macrosemiidae · BRAK opisu
+  - Thrissops · 152–94 · morze · mięso · Allothrissopidae · BRAK opisu
+  - Allothrissops · 152–94 · morze · mięso · Allothrissopidae · BRAK opisu
+  - Zandtfuro · 149–145 · morze · plankton · BRAK opisu
+  - Aegirosaurus · 149–133 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Bavarichthys · 149–145 · morze · mięso · BRAK opisu
+  - Macrosemius · 168–143 · morze · plankton · Macrosemiidae · BRAK opisu
+  - Dakosaurus · 165–113 · morze · ryby · Metriorhynchidae · BRAK opisu
+  - Belonostomus · 152–62 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Gyrodus · 206–90 · morze · plankton · Gyrodontidae · BRAK opisu
+  - Eryon · 165–145 · morze · plankton · Eryonidae · BRAK opisu
+  - Mecochirus · 165–145 · morze · plankton · Mecochiridae · BRAK opisu
+  - Antrimpos · 165–145 · morze · plankton · Penaeidae · BRAK opisu
+  - Sculda · 155–145 · morze · mięso · Sculdidae · BRAK opisu
+  - Saccocoma · 155–145 · morze · plankton · Saccocomidae · BRAK opisu
+  - Aeschnogomphus · 149–145 · powietrze · mięso · Aktassiidae · BRAK opisu
+  - Cymatophlebia · 165–121 · powietrze · mięso · Cymatophlebiidae · BRAK opisu
+  - Tharsis · 152–145 · morze · plankton · Ascalaboidae · BRAK opisu
+  - Trachyteuthis · 162–94 · morze · ryby · Trachyteuthididae · BRAK opisu
+  - Scaphognathus · 168–143 · powietrze · ryby · Rhamphorhynchidae · BRAK opisu
+  - Archaeopteryx · 149–121 · powietrze · ryby · BRAK opisu
+  - Aurorazhdarcho · 149–145 · powietrze · ryby · Protazhdarchidae · BRAK opisu
+  - Leptosaurus · 152–145 · ląd · mięso · Sphenodontidae · BRAK opisu
+- Goście epoki (2):
+  - Owenodon · 149–137 · ląd · rośliny · BRAK opisu
+  - Draconyx · 149–145 · ląd · rośliny · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Cymatophlebia, Myrmicium, Stenophlebia, Mesuropetala, Aeschnogomphus, Tarsophlebia, Urogomphus, Panorpidium, Pycnophlebia, Protolindenia, Mesephemera, Ditomoptera, Isophlebia, Chresmoda, Prolystra, Eumorbaeschna, Hexagenites, Lithoblatta, Scarabaeides, Nannogomphus, Mesonepa, Pseudohydrophilus, Malmelater, Omma, Eocicada, Archipsyche, Actea, Parastenophlebia, Procalosoma, Nymphites …
+
+## Rozdział 23: Formacja Yixian (id: yixian)
+
+- Chiny · Kreda · 126–121 mln lat temu · formacje: Yixian
+- Odblokowanie: poziom parku 31, 34000000 monet
+- Tytuł etapu w grze: „Pierzaste dinozaury” · brak przerywnika fabularnego
+- Opis: Wczesnokredowe jeziora Liaoningu: upierzone dinozaury, pierwsze ptaki i ssaki zasypane popiołem wulkanicznym.
+- Fauna miejscowa (49):
+  - Confuciusornis · 126–113 · powietrze · mięso · Confuciusornithidae · BRAK opisu
+  - Psittacosaurus · 137–101 · ląd · rośliny · BRAK opisu
+  - Lycoptera · 143–113 · morze · plankton · Lycopteridae · BRAK opisu
+  - Manchurochelys · 126–113 · ląd · rośliny · Sinemydidae · BRAK opisu
+  - Monjurosuchus · 143–113 · słodka woda · mięso · BRAK opisu
+  - Yabeinosaurus · 126–113 · ląd · mięso · BRAK opisu
+  - Peipiaosteus · 126–113 · morze · mięso · Peipiaosteidae · BRAK opisu
+  - Sinosauropteryx · 126–120 · ląd · mięso · Sinosauropterygidae · BRAK opisu
+  - Sinovenator · 126–120 · ląd · mięso · Troodontidae · BRAK opisu
+  - Hyphalosaurus · 126–113 · słodka woda · mięso · BRAK opisu
+  - Dalinghosaurus · 126–120 · ląd · mięso · BRAK opisu
+  - Liaoningogriphus · 126–120 · morze · plankton · Spelaeogriphidae · BRAK opisu
+  - Sinornithosaurus · 126–120 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Protopsephurus · 126–120 · morze · mięso · Polyodontidae · BRAK opisu
+  - Caudipteryx · 126–120 · ląd · mięso · BRAK opisu
+  - Zhangheotherium · 126–120 · ląd · mięso · Zhangheotheriidae · BRAK opisu
+  - Sinamia · 143–66 · słodka woda · ryby · Sinamiidae · BRAK opisu
+  - Repenomamus · 126–120 · ląd · mięso · Gobiconodontidae · BRAK opisu
+  - Mei · 126–120 · ląd · mięso · Troodontidae · BRAK opisu
+  - Jeholosaurus · 126–120 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Liaoceratops · 126–120 · ląd · rośliny · BRAK opisu
+  - Dilong · 126–120 · ląd · mięso · BRAK opisu
+  - Asiatolepis · 126–113 · słodka woda · mięso · BRAK opisu
+  - Sinocalliopteryx · 126–120 · ląd · mięso · Compsognathidae · BRAK opisu
+  - Hongshanornis · 126–120 · powietrze · mięso · Hongshanornithidae · BRAK opisu
+  - Beipiaosaurus · 126–120 · ląd · rośliny · BRAK opisu
+  - Sapeornis · 126–113 · powietrze · mięso · BRAK opisu
+  - Maotherium · 126–120 · ląd · mięso · Zhangheotheriidae · BRAK opisu
+  - Boreopterus · 126–120 · powietrze · ryby · Boreopteridae · BRAK opisu
+  - Eopteranodon · 126–120 · powietrze · ryby · BRAK opisu
+  - Elanodactylus · 126–120 · powietrze · ryby · BRAK opisu
+  - Bolong · 126–120 · ląd · rośliny · Iguanodontidae · BRAK opisu
+  - Gobiconodon · 143–2.6 · ląd · mięso · Gobiconodontidae · BRAK opisu
+  - Ordosemys · 143–101 · ląd · rośliny · Sinemydidae · BRAK opisu
+  - Eomaia · 126–120 · ląd · mięso · BRAK opisu
+  - Sinodelphys · 126–120 · ląd · mięso · BRAK opisu
+  - Mesoraphidia · 130–120 · powietrze · mięso · Mesoraphidiidae · BRAK opisu
+  - Dendrorhynchoides · 168–120 · powietrze · mięso · Anurognathidae · BRAK opisu
+  - Incisivosaurus · 126–101 · ląd · mięso · BRAK opisu
+  - Euhelopus · 143–101 · ląd · rośliny · Euhelopodidae · BRAK opisu
+  - Yixianopterus · 126–120 · powietrze · ryby · Lonchodectidae · BRAK opisu
+  - Cathayopterus · 126–120 · powietrze · ryby · Ctenochasmatidae · BRAK opisu
+  - Yixianosaurus · 126–120 · ląd · mięso · BRAK opisu
+  - Gladocephaloideus · 126–120 · powietrze · ryby · Gallodactylidae · BRAK opisu
+  - Archaeorhynchus · 126–113 · powietrze · mięso · BRAK opisu
+  - Yutyrannus · 126–120 · ląd · mięso · Proceratosauridae · BRAK opisu
+  - Yanornis · 126–113 · powietrze · mięso · Yanornithidae · BRAK opisu
+  - Xinghaiornis · 126–120 · powietrze · mięso · BRAK opisu
+  - Parapengornis · 126–113 · powietrze · mięso · Pengornithidae · BRAK opisu
+- Goście epoki (29):
+  - Deshayesites · 126–101 · morze · mięso · Deshayesitidae · BRAK opisu
+  - Amargasaurus · 126–121 · ląd · rośliny · Dicraeosauridae · BRAK opisu
+  - Ornithopsis · 145–120 · ląd · rośliny · BRAK opisu
+  - Pelorosaurus · 145–110 · ląd · rośliny · BRAK opisu
+  - Aegyptosaurus · 143–94 · ląd · rośliny · BRAK opisu
+  - Phuwiangosaurus · 126–113 · ląd · rośliny · Euhelopodidae · BRAK opisu
+  - Wuerhosaurus · 137–101 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Polacanthus · 139–101 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Hylaeosaurus · 139–110 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Mantellisaurus · 143–120 · ląd · rośliny · BRAK opisu
+  - Delapparentia · 126–121 · ląd · rośliny · BRAK opisu
+  - Comptonatus · 126–121 · ląd · rośliny · BRAK opisu
+  - Barilium · 137–121 · ląd · rośliny · Iguanodontidae · BRAK opisu
+  - Atlascopcosaurus · 126–110 · ląd · rośliny · BRAK opisu
+  - Foskeia · 126–120 · ląd · rośliny · BRAK opisu
+  - Vectidromeus · 143–101 · ląd · rośliny · Hypsilophodontidae · BRAK opisu
+  - Baryonyx · 139–110 · słodka woda · ryby · Spinosauridae · BRAK opisu
+  - Erectopus · 126–94 · ląd · mięso · Metriacanthosauridae · BRAK opisu
+  - Fukuiraptor · 133–113 · ląd · mięso · Neovenatoridae · BRAK opisu
+  - Phuwiangvenator · 126–121 · ląd · mięso · BRAK opisu
+  - Australovenator · 126–90 · ląd · mięso · Megaraptoridae · BRAK opisu
+  - Lonchodraco · 137–90 · powietrze · ryby · Lonchodraconidae · BRAK opisu
+  - Iberodactylus · 126–121 · powietrze · ryby · Hamipteridae · BRAK opisu
+  - Noripterus · 137–121 · powietrze · ryby · Dsungaripteridae · BRAK opisu
+  - Dsungaripterus · 137–121 · powietrze · ryby · Dsungaripteridae · BRAK opisu
+  - Caulkicephalus · 126–121 · powietrze · ryby · Ornithocheiridae · BRAK opisu
+  - Leptocleidus · 143–101 · morze · ryby · Leptocleididae · BRAK opisu
+  - Brachauchenius · 126–90 · morze · mięso · Pliosauridae · BRAK opisu
+  - Coptoclava · 137–101 · powietrze · mięso · Coptoclavidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Ilerdocossus, Stellularis, Parahagla, Baissoptera, Abrocar, Rudisiricius, Mesoraphidia, Halonatusivena, Liaobatrachus, Mesolygaeus, Amplicella, Cretevania, Lithohypna, Epicharmeropsis, Cretonanophyes, Cionocoleus, Ephemeropsis, Sophogramma, Sinopelecinus, Brachyoxyela, Angaridyela, Necromera, Eopelecinus, Jeholopsyche, Mesypochrysa, Thayeralinus, Paleowinus, Notocupes, Conexicoxa, Araneus …
+
+## Rozdział 24: Formacja Santana (id: santana)
+
+- Brazylia · Kreda · 120–113 mln lat temu · formacje: Santana, Romualdo, Crato
+- Odblokowanie: poziom parku 33, 67000000 monet
+- Tytuł etapu w grze: „Złoty wiek pterozaurów” · brak przerywnika fabularnego
+- Opis: Wczesnokredowa laguna z barwnymi pterozaurami i trójwymiarowo zachowanymi rybami.
+- Fauna miejscowa (43):
+  - Anhanguera · 137–94 · powietrze · ryby · BRAK opisu
+  - Vinctifer · 162–101 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Rhacolepis · 120–101 · morze · mięso · Elopidae · BRAK opisu
+  - Tharrhias · 120–110 · słodka woda · mięso · Chanidae · BRAK opisu
+  - Cladocyclus · 120–94 · morze · mięso · Cladocyclidae · BRAK opisu
+  - Araripemys · 120–94 · ląd · rośliny · Araripemydidae · BRAK opisu
+  - Tupuxuara · 120–113 · powietrze · ryby · Thalassodromidae · BRAK opisu
+  - Susisuchus · 143–113 · morze · mięso · BRAK opisu
+  - Calamopleurus · 137–94 · morze · ryby · Amiidae · BRAK opisu
+  - Mawsonia · 162–94 · morze · ryby · Mawsoniidae · BRAK opisu
+  - Notelops · 120–101 · morze · mięso · Elopidae · BRAK opisu
+  - Brannerion · 120–113 · morze · plankton · Albulidae · BRAK opisu
+  - Beurlenia · 120–113 · morze · mięso · Palaemonidae · BRAK opisu
+  - Paraelops · 120–110 · morze · mięso · Elopidae · BRAK opisu
+  - Tupandactylus · 120–113 · powietrze · rośliny · Tapejaridae · BRAK opisu
+  - Maaradactylus · 120–113 · powietrze · ryby · Anhangueridae · BRAK opisu
+  - Araripesuchus · 121–66 · ląd · mięso · Uruguaysuchidae · BRAK opisu
+  - Oshunia · 120–110 · morze · ryby · Ionoscopidae · BRAK opisu
+  - Barbosania · 120–113 · powietrze · ryby · Ornithocheiridae · BRAK opisu
+  - Santanadactylus · 120–113 · powietrze · ryby · Pteranodontidae · BRAK opisu
+  - Brasileodactylus · 120–113 · powietrze · ryby · BRAK opisu
+  - Tropeognathus · 120–113 · powietrze · ryby · Anhangueridae · BRAK opisu
+  - Dastilbe · 121–48 · słodka woda · mięso · Chanidae · BRAK opisu
+  - Beurlenichthys · 120–113 · morze · plankton · BRAK opisu
+  - Obaichthys · 120–94 · słodka woda · mięso · Obaichthyidae · BRAK opisu
+  - Axelrodichthys · 120–66 · morze · ryby · Mawsoniidae · BRAK opisu
+  - Neoproscinetes · 121–110 · morze · mięso · Pycnodontidae · BRAK opisu
+  - Cearachelys · 120–113 · ląd · rośliny · Bothremydidae · BRAK opisu
+  - Mirischia · 120–113 · ląd · mięso · BRAK opisu
+  - Thalassodromeus · 120–113 · powietrze · ryby · Thalassodromidae · BRAK opisu
+  - Arariphrynus · 120–113 · słodka woda · ryby · BRAK opisu
+  - Eurycephalella · 120–113 · słodka woda · ryby · BRAK opisu
+  - Cratia · 120–113 · słodka woda · ryby · BRAK opisu
+  - Arthurdactylus · 120–113 · powietrze · ryby · Ornithocheiridae · BRAK opisu
+  - Ludodactylus · 120–113 · powietrze · ryby · BRAK opisu
+  - Lacusovagus · 120–113 · powietrze · ryby · Chaoyangopteridae · BRAK opisu
+  - Tapejara · 120–113 · powietrze · rośliny · Tapejaridae · BRAK opisu
+  - Cearadactylus · 120–113 · powietrze · ryby · BRAK opisu
+  - Banguela · 120–113 · powietrze · ryby · Dsungaripteridae · BRAK opisu
+  - Unwindia · 120–113 · powietrze · ryby · BRAK opisu
+  - Ferrojapyx · 120–113 · powietrze · mięso · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Tetrapodophis · 120–113 · ląd · mięso · Dolichosauridae · BRAK opisu
+- Goście epoki (42):
+  - Heminautilus · 126–113 · morze · mięso · Cenoceratidae · BRAK opisu
+  - Koolasuchus · 121–110 · słodka woda · ryby · Chigutisauridae · BRAK opisu
+  - Prosiren · 120–101 · słodka woda · ryby · Prosirenidae · BRAK opisu
+  - Kaikaifilusaurus · 120–106 · ląd · mięso · Sphenodontidae · BRAK opisu
+  - Tagarosuchus · 126–113 · słodka woda · mięso · BRAK opisu
+  - Malawisuchus · 121–113 · ląd · mięso · Candidodontidae · BRAK opisu
+  - Nigersaurus · 121–101 · ląd · rośliny · Rebbachisauridae · BRAK opisu
+  - Sibirotitan · 126–113 · ląd · rośliny · BRAK opisu
+  - Malawisaurus · 121–113 · ląd · rośliny · BRAK opisu
+  - Patagotitan · 113–101 · ląd · rośliny · BRAK opisu
+  - Tangvayosaurus · 121–101 · ląd · rośliny · Euhelopodidae · BRAK opisu
+  - Jakapil · 113–110 · ląd · rośliny · BRAK opisu
+  - Proa · 113–110 · ląd · rośliny · BRAK opisu
+  - Galleonosaurus · 126–110 · ląd · rośliny · BRAK opisu
+  - Leaellynasaura · 113–110 · ląd · rośliny · BRAK opisu
+  - Convolosaurus · 120–113 · ląd · rośliny · Tenontosauridae · BRAK opisu
+  - Lurdusaurus · 113–101 · ląd · rośliny · BRAK opisu
+  - Archaeoceratops · 121–110 · ląd · rośliny · BRAK opisu
+  - Auroraceratops · 113–110 · ląd · rośliny · BRAK opisu
+  - Zavacephale · 120–101 · ląd · rośliny · BRAK opisu
+  - Zephyrosaurus · 121–101 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Suchomimus · 121–101 · słodka woda · ryby · Spinosauridae · BRAK opisu
+  - Giganotosaurus · 113–106 · ląd · mięso · Carcharodontosauridae · BRAK opisu
+  - Neimengornis · 121–113 · powietrze · mięso · BRAK opisu
+  - Kunpengornis · 121–113 · powietrze · mięso · BRAK opisu
+  - Mengciusornis · 121–113 · powietrze · mięso · Schizoouridae · BRAK opisu
+  - Cathayornis · 121–113 · powietrze · mięso · BRAK opisu
+  - Longipteryx · 121–113 · powietrze · mięso · Longipterygidae · BRAK opisu
+  - Dapingfangornis · 121–113 · powietrze · mięso · Eoenantiornithidae · BRAK opisu
+  - Bohaiornis · 121–113 · powietrze · mięso · Bohaiornithidae · BRAK opisu
+  - Zhouornis · 121–113 · powietrze · mięso · Bohaiornithidae · BRAK opisu
+  - Largirostrornis · 121–113 · powietrze · mięso · Cuspirostrisornithidae · BRAK opisu
+  - Gracilornis · 121–113 · powietrze · mięso · Cathayornithidae · BRAK opisu
+  - Alethoalaornis · 121–113 · powietrze · mięso · Alethoalaornithidae · BRAK opisu
+  - Microraptor · 121–113 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Similicaudipteryx · 121–113 · ląd · mięso · Caudipterygidae · BRAK opisu
+  - Suzhousaurus · 121–110 · ląd · rośliny · Therizinosauridae · BRAK opisu
+  - Huaxiapterus · 121–113 · powietrze · rośliny · Tapejaridae · BRAK opisu
+  - Sinopterus · 121–113 · powietrze · ryby · Tapejaridae · BRAK opisu
+  - Liaoxipterus · 121–113 · powietrze · ryby · Istiodactylidae · BRAK opisu
+  - Umoonasaurus · 121–101 · morze · ryby · Leptocleididae · BRAK opisu
+  - Kronosaurus · 121–101 · morze · mięso · Pliosauridae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Araripegryllus, Leptotarsus, Caririgryllus, Araripeneura, Gomphaeschnaoides, Elisama, Protoligoneuria, Meiatermes, Cearagrylloides, Cratoelcana, Euarchistigma, Araripegomphus, Cratoneura, Pseudonymphes, Cordulagomphus, Cordulagomphus (Procordulagomphus), Panorpidium, Protoischnurus, Blittersdorffia, Hallex, Cretereisma, Caririchrysa, Baisopardus, Mesolocustopsis, Locustopsis, Colocrus, Cretarchistigma, Prosyntexis, Karenina, Ponopterix …
+
+## Rozdział 25: Formacja Cedar Mountain (id: cedar_mountain)
+
+- USA · Kreda · 121–94 mln lat temu · formacje: Cedar Mountain
+- Odblokowanie: poziom parku 34, 93000000 monet
+- Tytuł etapu w grze: „Wczesna kreda Ameryki” · brak przerywnika fabularnego
+- Opis: Wczesnokredowe równiny Utah. Utahraptor, wczesne ankylozaury i iguanodonty, a z czasem pierwsze rośliny kwiatowe.
+- Fauna miejscowa (29):
+  - Paracimexomys · 121–66 · ląd · rośliny · BRAK opisu
+  - Eolambia · 121–94 · ląd · rośliny · BRAK opisu
+  - Bicuspidon · 101–66 · ląd · mięso · Polyglyphanodontidae · BRAK opisu
+  - Bernissartia · 152–94 · morze · mięso · BRAK opisu
+  - Utahraptor · 137–133 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Tenontosaurus · 121–94 · ląd · rośliny · Tenontosauridae · BRAK opisu
+  - Richardoestesia · 155–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Albanerpeton · 126–1.8 · słodka woda · ryby · Albanerpetontidae · BRAK opisu
+  - Paronychodon · 155–66 · ląd · mięso · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Fona · 101–94 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Cedarosaurus · 137–110 · ląd · rośliny · Brachiosauridae · BRAK opisu
+  - Sauropelta · 121–94 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Falcarius · 143–133 · ląd · mięso · BRAK opisu
+  - Iguanacolossus · 139–133 · ląd · rośliny · BRAK opisu
+  - Deinonychus · 143–94 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Mesodma · 101–58 · ląd · mięso · Neoplagiaulacidae · BRAK opisu
+  - Hybodus · 304–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Pseudohypolophus · 126–66 · morze · mięso · BRAK opisu
+  - Cretorectolobus · 133–66 · morze · mięso · Orectolobidae · BRAK opisu
+  - Enchodus · 165–16 · morze · mięso · Enchodontidae · BRAK opisu
+  - Naomichelys · 121–72 · ląd · rośliny · Helochelydridae · BRAK opisu
+  - Stegosaurus · 162–94 · ląd · rośliny · Stegosauridae · BRAK opisu
+  - Polyacrodus · 290–72 · morze · mięso · Polyacrodontidae · BRAK opisu
+  - Semionotus · 251–133 · morze · mięso · Semionotidae · BRAK opisu
+  - Amia · 100–0 · słodka woda · mięso · Amiidae · BRAK opisu
+  - Glyptops · 155–72 · ląd · rośliny · Pleurosternidae · BRAK opisu
+  - Acrocanthosaurus · 121–94 · ląd · mięso · Carcharodontosauridae · BRAK opisu
+- Goście epoki (7):
+  - Normanniasaurus · 110–106 · ląd · rośliny · BRAK opisu
+  - Argentinosaurus · 110–106 · ląd · rośliny · BRAK opisu
+  - Iyuku · 137–133 · ląd · rośliny · BRAK opisu
+  - Hypselospinus · 139–133 · ląd · rośliny · BRAK opisu
+  - Stenopelix · 139–137 · ląd · rośliny · Chaoyangsauridae · BRAK opisu
+  - Skorpiovenator · 110–106 · ląd · mięso · Abelisauridae · BRAK opisu
+  - Hastanectes · 139–133 · morze · ryby · Leptocleididae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Cedaromys, Spalacotheridium, Bryceomys, Spalacolestes, Sinbadelphys, Corviconodon, Dakotadens, Janumys, Culicolestes, Astroconodon, Ameribaatar, Jugulator, Primaderma, Dimekodontosaurus, Adelodelphys, Harmodontosaurus, Gastonia, Cedarpelta, Bothriagenys, Moabosaurus, Nedcolbertia, Lepisosteus, Yurgovuchia, Dakotasuchus, Kokopellia, Hypostylos, Animantarx, Venenosaurus, Planicoxa, Peloroplites …
+
+## Rozdział 26: Kem Kem (id: kem_kem)
+
+- Maroko · Kreda · 101–94 mln lat temu · formacje: Kem Kem, Ifezouane, Aoufous
+- Odblokowanie: poziom parku 35, 130000000 monet
+- Tytuł etapu w grze: „Rzeka drapieżników” · brak przerywnika fabularnego
+- Opis: Kredowe rzeki Sahary pełne wielkich drapieżników — Spinosaurus, Carcharodontosaurus i olbrzymie ryby.
+- Fauna miejscowa (46):
+  - Spinosaurus · 126–72 · słodka woda · ryby · Spinosauridae · BRAK opisu
+  - Carcharodontosaurus · 143–72 · ląd · mięso · Carcharodontosauridae · BRAK opisu
+  - Onchopristis · 126–66 · morze · mięso · Sclerorhynchidae · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Galianemys · 106–94 · ląd · rośliny · Bothremydidae · BRAK opisu
+  - Rebbachisaurus · 106–94 · ląd · rośliny · Rebbachisauridae · BRAK opisu
+  - Alanqa · 101–94 · powietrze · ryby · Azhdarchidae · BRAK opisu
+  - Apatorhamphus · 106–94 · powietrze · ryby · Chaoyangopteridae · BRAK opisu
+  - Coloborhynchus · 139–94 · powietrze · ryby · Anhangueridae · BRAK opisu
+  - Elosuchus · 106–94 · morze · mięso · BRAK opisu
+  - Oumtkoutia · 101–94 · słodka woda · ryby · Pipidae · BRAK opisu
+  - Kababisha · 101–66 · słodka woda · ryby · Sirenidae · BRAK opisu
+  - Hamadasuchus · 106–94 · morze · mięso · Peirosauridae · BRAK opisu
+  - Sarcosuchus · 137–94 · morze · mięso · Pholidosauridae · BRAK opisu
+  - Ceratodus · 252–48 · morze · ryby · Ceratodontidae · BRAK opisu
+  - Stromerichthys · 101–84 · morze · plankton · Gigantodontidae · BRAK opisu
+  - Norisophis · 101–94 · słodka woda · mięso · BRAK opisu
+  - Axelrodichthys · 120–66 · morze · ryby · Mawsoniidae · BRAK opisu
+  - Dirqadim · 106–94 · ląd · rośliny · Euraxemydidae · BRAK opisu
+  - Hamadachelys · 106–94 · ląd · rośliny · Podocnemididae · BRAK opisu
+  - Afrotapejara · 106–94 · powietrze · rośliny · Tapejaridae · BRAK opisu
+  - Araripesuchus · 121–66 · ląd · mięso · Uruguaysuchidae · BRAK opisu
+  - Laganosuchus · 101–94 · morze · mięso · Stomatosuchidae · BRAK opisu
+  - Simoliophis · 101–94 · słodka woda · mięso · Simoliophiidae · BRAK opisu
+  - Bicuspidon · 101–66 · ląd · mięso · Polyglyphanodontidae · BRAK opisu
+  - Lapparentophis · 101–94 · słodka woda · mięso · Lapparentopheidae · BRAK opisu
+  - Nicorhynchus · 106–94 · powietrze · ryby · Anhangueridae · BRAK opisu
+  - Anhanguera · 137–94 · powietrze · ryby · BRAK opisu
+  - Ornithocheirus · 133–90 · powietrze · ryby · BRAK opisu
+  - Leptostomia · 101–94 · powietrze · ryby · BRAK opisu
+  - Deltadromeus · 101–94 · ląd · mięso · Noasauridae · BRAK opisu
+  - Lissodus · 359–72 · morze · mięso · BRAK opisu
+  - Mawsonia · 162–94 · morze · ryby · Mawsoniidae · BRAK opisu
+  - Aegisuchus · 101–94 · morze · mięso · Aegyptosuchidae · BRAK opisu
+  - Spinocaudichthys · 101–94 · morze · plankton · BRAK opisu
+  - Lusitanichthys · 101–94 · morze · plankton · Clupavidae · BRAK opisu
+  - Serenoichthys · 101–94 · słodka woda · plankton · Polypteridae · BRAK opisu
+  - Elaphrosaurus · 155–94 · ląd · mięso · Noasauridae · BRAK opisu
+  - Lavocatchampsa · 106–94 · ląd · mięso · Candidodontidae · BRAK opisu
+  - Xericeps · 101–94 · powietrze · ryby · BRAK opisu
+  - Araripemys · 120–94 · ląd · rośliny · Araripemydidae · BRAK opisu
+  - Eotrigonodon · 101–34 · morze · plankton · Eotrigonodontidae · BRAK opisu
+  - Hybodus · 304–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Antaeusuchus · 101–94 · ląd · mięso · Itasuchidae · BRAK opisu
+  - Obaichthys · 120–94 · słodka woda · mięso · Obaichthyidae · BRAK opisu
+  - Calamopleurus · 137–94 · morze · ryby · Amiidae · BRAK opisu
+- Goście epoki (30):
+  - Crioceratites · 149–94 · morze · mięso · Crioceratitidae · BRAK opisu
+  - Mortoniceras · 113–94 · morze · mięso · Brancoceratidae · BRAK opisu
+  - Oxytropidoceras · 113–86 · morze · mięso · Mojsisovicsiidae · BRAK opisu
+  - Calycoceras · 106–90 · morze · mięso · Acanthoceratidae · BRAK opisu
+  - Vascoceras · 101–90 · morze · mięso · Vascoceratidae · BRAK opisu
+  - Pervushovisaurus · 113–94 · morze · ryby · Ophthalmosauridae · BRAK opisu
+  - Isisfordia · 106–94 · morze · mięso · BRAK opisu
+  - Limaysaurus · 113–94 · ląd · rośliny · Rebbachisauridae · BRAK opisu
+  - Sauroposeidon · 121–94 · ląd · rośliny · BRAK opisu
+  - Wintonotitan · 101–90 · ląd · rośliny · BRAK opisu
+  - Diamantinasaurus · 101–90 · ląd · rośliny · BRAK opisu
+  - Savannasaurus · 101–90 · ląd · rośliny · BRAK opisu
+  - Kunbarrasaurus · 106–101 · ląd · rośliny · BRAK opisu
+  - Burianosaurus · 101–94 · ląd · rośliny · BRAK opisu
+  - Choyrodon · 110–101 · ląd · rośliny · BRAK opisu
+  - Protohadros · 101–94 · ląd · rośliny · BRAK opisu
+  - Muttaburrasaurus · 106–94 · ląd · rośliny · BRAK opisu
+  - Asiaceratops · 101–94 · ląd · rośliny · BRAK opisu
+  - Oryctodromeus · 106–94 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Enaliornis · 106–101 · morze · ryby · BRAK opisu
+  - Pasquiaornis · 101–94 · morze · ryby · BRAK opisu
+  - Zhyraornis · 101–90 · powietrze · mięso · Alexornithidae · BRAK opisu
+  - Segnosaurus · 101–84 · ląd · rośliny · Therizinosauridae · BRAK opisu
+  - Lonchodectes · 113–90 · powietrze · ryby · BRAK opisu
+  - Mimodactylus · 101–94 · powietrze · ryby · Mimodactylidae · BRAK opisu
+  - Russellosaurus · 94–90 · morze · mięso · Mosasauridae · BRAK opisu
+  - Najash · 113–110 · ląd · mięso · BRAK opisu
+  - Eupodophis · 101–94 · morze · mięso · Pachyophidae · BRAK opisu
+  - Melittosphex · 101–94 · powietrze · plankton · Melittosphecidae · BRAK opisu
+  - Callichimaera · 101–90 · morze · mięso · Callichimaeridae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Neoceratodus, Protopterus, Distobatus, Marckgrafia, Peyeria, Haimirichia, Pycnodonte, Atractosteus, Cretapenaeus, Diplospondichthys
+
+## Rozdział 27: Formacja Niobrara (id: niobrara)
+
+- USA · Kreda · 90–84 mln lat temu · formacje: Niobrara
+- Odblokowanie: poziom parku 37, 260000000 monet
+- Tytuł etapu w grze: „Morze środkowej Ameryki” · brak przerywnika fabularnego
+- Opis: Kredowe Zachodnie Morze Wewnętrzne — mozazaury, plezjozaury, rekiny i nad wodą szybujące pteranodony.
+- Fauna miejscowa (61):
+  - Baculites · 137–56 · morze · mięso · Baculitidae · BRAK opisu
+  - Pteranodon · 90–72 · powietrze · ryby · BRAK opisu
+  - Tylosaurus · 94–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Clioscaphites · 94–84 · morze · mięso · Scaphitidae · BRAK opisu
+  - Squalicorax · 165–62 · morze · mięso · Anacoracidae · BRAK opisu
+  - Platecarpus · 101–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Cretoxyrhina · 121–66 · morze · mięso · Cretoxyrhinidae · BRAK opisu
+  - Ichthyornis · 101–72 · powietrze · ryby · BRAK opisu
+  - Nyctosaurus · 110–66 · powietrze · ryby · BRAK opisu
+  - Ptychodus · 165–66 · morze · mięso · Ptychodontidae · BRAK opisu
+  - Enchodus · 165–16 · morze · mięso · Enchodontidae · BRAK opisu
+  - Cretalamna · 165–12 · morze · mięso · Otodontidae · BRAK opisu
+  - Pachyrhizodus · 113–62 · morze · mięso · Pachyrhizodontidae · BRAK opisu
+  - Protexanites · 94–84 · morze · mięso · Collignoniceratidae · BRAK opisu
+  - Enchoteuthis · 90–72 · morze · ryby · Enchoteuthidae · BRAK opisu
+  - Placenticeras · 106–66 · morze · mięso · Placenticeratidae · BRAK opisu
+  - Xiphactinus · 121–66 · morze · mięso · Ichthyodectidae · BRAK opisu
+  - Polycotylus · 152–72 · morze · mięso · Polycotylidae · BRAK opisu
+  - Toxochelys · 90–9.4 · ląd · rośliny · BRAK opisu
+  - Eutrephoceras · 180–12 · morze · mięso · Nautilidae · BRAK opisu
+  - Prionocyclus · 94–86 · morze · mięso · Collignoniceratidae · BRAK opisu
+  - Scaphites · 113–62 · morze · mięso · Scaphitidae · BRAK opisu
+  - Desmoscaphites · 94–72 · morze · mięso · Scaphitidae · BRAK opisu
+  - Phlycticrioceras · 90–84 · morze · mięso · Anisoceratidae · BRAK opisu
+  - Protosphyraena · 121–66 · morze · mięso · Pachycormidae · BRAK opisu
+  - Cimolichthys · 101–66 · morze · mięso · Cimolichthyidae · BRAK opisu
+  - Ichthyodectes · 101–72 · morze · mięso · Ichthyodectidae · BRAK opisu
+  - Pseudocorax · 120–38 · morze · mięso · Pseudocoracidae · BRAK opisu
+  - Dolichorhynchops · 94–66 · morze · mięso · Polycotylidae · BRAK opisu
+  - Neocrioceras · 101–72 · morze · mięso · Diplomoceratidae · BRAK opisu
+  - Niobrarateuthis · 90–84 · morze · ryby · Enchoteuthidae · BRAK opisu
+  - Parahesperornis · 90–84 · morze · ryby · Hesperornithidae · BRAK opisu
+  - Apateodus · 106–66 · morze · mięso · Ichthyotringidae · BRAK opisu
+  - Gillicus · 94–72 · morze · mięso · Saurodontidae · BRAK opisu
+  - Clidastes · 94–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Styxosaurus · 90–72 · morze · ryby · Elasmosauridae · BRAK opisu
+  - Ectenosaurus · 90–72 · morze · mięso · Mosasauridae · BRAK opisu
+  - Protostega · 101–66 · morze · plankton · Protostegidae · BRAK opisu
+  - Scapanorhynchus · 126–12 · morze · mięso · Mitsukurinidae · BRAK opisu
+  - Omosoma · 86–72 · morze · mięso · BRAK opisu
+  - Kansius · 86–84 · morze · mięso · BRAK opisu
+  - Hesperornis · 90–66 · morze · ryby · Hesperornithidae · BRAK opisu
+  - Niobrarasaurus · 90–84 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Lophochelys · 90–62 · morze · plankton · Toxochelyidae · BRAK opisu
+  - Texanites · 94–72 · morze · mięso · Collignoniceratidae · BRAK opisu
+  - Reginaites · 94–84 · morze · mięso · Collignoniceratidae · BRAK opisu
+  - Glyptoxoceras · 106–66 · morze · mięso · Diplomoceratidae · BRAK opisu
+  - Baptornis · 90–72 · morze · ryby · Baptornithidae · BRAK opisu
+  - Bananogmius · 101–62 · morze · mięso · Plethodidae · BRAK opisu
+  - Nanocorax · 110–72 · morze · mięso · Anacoracidae · BRAK opisu
+  - Pseudanogmius · 90–84 · morze · mięso · BRAK opisu
+  - Platyceramus · 94–66 · morze · plankton · Inoceramidae · BRAK opisu
+  - Inoceramus · 175–66 · morze · plankton · Inoceramidae · BRAK opisu
+  - Uintacrinus · 90–84 · morze · plankton · Uintacrinidae · BRAK opisu
+  - Claosaurus · 90–72 · ląd · rośliny · BRAK opisu
+  - Prionochelys · 94–66 · ląd · rośliny · Pancheloniidae · BRAK opisu
+  - Selmasaurus · 86–72 · morze · mięso · Mosasauridae · BRAK opisu
+  - Coniasaurus · 106–84 · ląd · mięso · Dolichosauridae · BRAK opisu
+  - Eonatator · 86–72 · morze · mięso · Mosasauridae · BRAK opisu
+  - Paranomotodon · 113–66 · morze · mięso · Alopiidae · BRAK opisu
+  - Meristodonoides · 121–66 · morze · mięso · Hybodontidae · BRAK opisu
+- Goście epoki (20):
+  - Notosuchus · 86–84 · ląd · mięso · BRAK opisu
+  - Notocolossus · 90–84 · ląd · rośliny · BRAK opisu
+  - Quetecsaurus · 94–90 · ląd · rośliny · BRAK opisu
+  - Gobihadros · 101–84 · ląd · rośliny · BRAK opisu
+  - Craspedodon · 90–84 · ląd · rośliny · BRAK opisu
+  - Turanoceratops · 94–90 · ląd · rośliny · BRAK opisu
+  - Zuniceratops · 94–90 · ląd · rośliny · BRAK opisu
+  - Ulughbegsaurus · 94–90 · ląd · mięso · BRAK opisu
+  - Chilantaisaurus · 94–84 · ląd · mięso · Neovenatoridae · BRAK opisu
+  - Kuszholia · 94–90 · powietrze · mięso · BRAK opisu
+  - Catenoleimus · 94–90 · powietrze · mięso · BRAK opisu
+  - Explorornis · 94–90 · powietrze · mięso · Alexornithidae · BRAK opisu
+  - Neuquenornis · 86–84 · powietrze · mięso · Avisauridae · BRAK opisu
+  - Pamparaptor · 94–86 · ląd · mięso · BRAK opisu
+  - Megaraptor · 94–86 · ląd · mięso · Megaraptoridae · BRAK opisu
+  - Muzquizopteryx · 94–86 · powietrze · ryby · Nyctosauridae · BRAK opisu
+  - Yaguarasaurus · 94–86 · morze · mięso · Mosasauridae · BRAK opisu
+  - Romeosaurus · 94–84 · morze · mięso · Mosasauridae · BRAK opisu
+  - Dinilysia · 86–72 · ląd · mięso · BRAK opisu
+  - Sphecomyrma · 94–72 · powietrze · plankton · Formicidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Inoceramus, Platyceramus, Inoceramus (Cordiceramus), Pseudoperna, Magadiceramus, Volviceramus, Stramentum, Cladoceramus, Mytiloides, Cremnoceramus, Inoceramus (Volviceramus), Scaphites (Scaphites), Sphenoceramus, Ostrea, Cataceramus, Pycnodonte, Haresiceras (Mancosiceras), Phelopteria, Durania, Anomia, Lucina, Texanites (Texanites), Ctenochelys, Margostrea, Inoceramus (Platyceramus), Uintacrinus, Apatornis, Forresteria (Forresteria), Haresiceras (Haresiceras), Pseudobaculites …
+
+## Rozdział 28: Formacja Dinosaur Park (id: dinosaur_park)
+
+- Kanada · Kreda · 84–72 mln lat temu · formacje: Dinosaur Park
+- Odblokowanie: poziom parku 39, 500000000 monet
+- Tytuł etapu w grze: „Rozkwit kaczodziobych i rogatych” · brak przerywnika fabularnego
+- Opis: Jedno z najbogatszych dinozaurowych stanowisk świata — ceratopsy, hadrozaury i tyranozaurydy.
+- Fauna miejscowa (102):
+  - Centrosaurus · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Saurornitholestes · 84–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Myledaphus · 94–62 · morze · mięso · Rhinobatidae · BRAK opisu
+  - Champsosaurus · 101–56 · słodka woda · ryby · BRAK opisu
+  - Paralbula · 101–27 · morze · mięso · Phyllodontidae · BRAK opisu
+  - Scapherpeton · 90–58 · słodka woda · ryby · Scapherpetontidae · BRAK opisu
+  - Leidyosuchus · 86–63 · morze · mięso · BRAK opisu
+  - Belonostomus · 152–62 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Opisthotriton · 86–56 · słodka woda · ryby · Batrachosauroididae · BRAK opisu
+  - Richardoestesia · 155–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Coriops · 101–63 · morze · plankton · Albulidae · BRAK opisu
+  - Troodon · 84–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Corythosaurus · 84–72 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Meristodonoides · 121–66 · morze · mięso · Hybodontidae · BRAK opisu
+  - Chasmosaurus · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Cyclurus · 101–17 · słodka woda · ryby · Amiidae · BRAK opisu
+  - Estesesox · 86–63 · słodka woda · plankton · Esocidae · BRAK opisu
+  - Dromaeosaurus · 110–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Lambeosaurus · 84–72 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Paronychodon · 155–66 · ląd · mięso · BRAK opisu
+  - Gorgosaurus · 84–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Gryposaurus · 84–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Citipes · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Styracosaurus · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Albanerpeton · 126–1.8 · słodka woda · ryby · Albanerpetontidae · BRAK opisu
+  - Lophochelys · 90–62 · morze · plankton · Toxochelyidae · BRAK opisu
+  - Chirostenotes · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Euoplocephalus · 84–66 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Prosaurolophus · 84–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Caenagnathus · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Stegoceras · 84–66 · ląd · rośliny · BRAK opisu
+  - Stenonychosaurus · 84–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Platypelta · 84–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Fluvionectes · 84–72 · morze · ryby · Elasmosauridae · BRAK opisu
+  - Tyrrellbatrachus · 84–72 · słodka woda · ryby · BRAK opisu
+  - Enchodus · 165–16 · morze · mięso · Enchodontidae · BRAK opisu
+  - Vagaceratops · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Adocus · 126–23 · ląd · rośliny · Adocidae · BRAK opisu
+  - Baptornis · 90–72 · morze · ryby · Baptornithidae · BRAK opisu
+  - Basilemys · 101–66 · ląd · rośliny · Nanhsiungchelyidae · BRAK opisu
+  - Panoplosaurus · 84–66 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Neurankylus · 90–61 · ląd · rośliny · Baenidae · BRAK opisu
+  - Daspletosaurus · 84–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Leptorhynchos · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Cretorectolobus · 133–66 · morze · mięso · Orectolobidae · BRAK opisu
+  - Archaeolamna · 113–66 · morze · mięso · Archaeolamnidae · BRAK opisu
+  - Ischyrhiza · 113–56 · morze · mięso · Sclerorhynchidae · BRAK opisu
+  - Latenivenatrix · 84–72 · ląd · mięso · Troodontidae · BRAK opisu
+  - Thescelosaurus · 94–66 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Parasaurolophus · 84–72 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Scolosaurus · 84–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Hensonbatrachus · 84–72 · słodka woda · ryby · BRAK opisu
+  - Protoplatyrhina · 94–66 · morze · mięso · BRAK opisu
+  - Elasmodus · 113–27 · morze · mięso · Callorhinchidae · BRAK opisu
+  - Paratarpon · 84–66 · morze · mięso · Elopidae · BRAK opisu
+  - Restesia · 84–66 · morze · mięso · Orectolobidae · BRAK opisu
+  - Ornithomimus · 84–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Struthiomimus · 84–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Hesperonychus · 84–72 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Kimurachelys · 84–72 · morze · plankton · BRAK opisu
+  - Arotus · 101–58 · morze · plankton · BRAK opisu
+  - Protolambda · 84–66 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Ptychotrygon · 101–66 · morze · mięso · Ptychotrygonidae · BRAK opisu
+  - Plesiobaena · 84–63 · ląd · rośliny · Baenidae · BRAK opisu
+  - Foraminacephale · 84–72 · ląd · rośliny · Pachycephalosauridae · BRAK opisu
+  - Cryodrakon · 84–72 · powietrze · ryby · Azhdarchidae · BRAK opisu
+  - Parasaniwa · 84–66 · ląd · mięso · BRAK opisu
+  - Leptochamops · 90–66 · ląd · mięso · Chamopsiidae · BRAK opisu
+  - Aspideretoides · 84–56 · ląd · rośliny · Plastomenidae · BRAK opisu
+  - Palaeosaniwa · 84–58 · ląd · mięso · BRAK opisu
+  - Lisserpeton · 84–58 · słodka woda · ryby · Scapherpetontidae · BRAK opisu
+  - Horseshoeichthys · 86–66 · morze · mięso · BRAK opisu
+  - Nunikuluk · 84–72 · słodka woda · plankton · Esocidae · BRAK opisu
+  - Turgidodon · 84–66 · ląd · mięso · Alphadontidae · BRAK opisu
+  - Pediomys · 84–66 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Leptalestes · 86–63 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Gypsonictops · 84–66 · ląd · mięso · Gypsonictopidae · BRAK opisu
+  - Paranyctoides · 94–66 · ląd · mięso · BRAK opisu
+  - Tyrannosaurus · 84–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Velociraptor · 90–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Eodelphis · 86–66 · ląd · mięso · Stagodontidae · BRAK opisu
+  - Edmontonia · 84–66 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Pachycephalosaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Albertochampsa · 84–72 · morze · mięso · Alligatoridae · BRAK opisu
+  - Cteniogenys · 168–72 · słodka woda · mięso · Cteniogenyidae · BRAK opisu
+  - Odaxosaurus · 94–37 · ląd · mięso · Anguidae · BRAK opisu
+  - Habrosaurus · 86–61 · słodka woda · ryby · Sirenidae · BRAK opisu
+  - Lepidotes · 244–66 · morze · mięso · Semionotidae · BRAK opisu
+  - Anodontosaurus · 84–66 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Avimimus · 84–66 · ląd · mięso · BRAK opisu
+  - Triceratops · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Cimolopteryx · 84–66 · powietrze · mięso · Cimolopterygidae · BRAK opisu
+  - Palintropus · 84–72 · powietrze · rośliny · Quercymegapodiidae · BRAK opisu
+  - Squalicorax · 165–62 · morze · mięso · Anacoracidae · BRAK opisu
+  - Ostariostoma · 86–63 · morze · mięso · BRAK opisu
+  - Diplomystus · 143–34 · morze · mięso · Armigatidae · BRAK opisu
+  - Cretophareodus · 84–72 · słodka woda · mięso · Osteoglossidae · BRAK opisu
+  - Meniscoessus · 86–66 · ląd · rośliny · Cimolomyidae · BRAK opisu
+  - Sphaerotholus · 84–66 · ląd · rośliny · Pachycephalosauridae · BRAK opisu
+  - Dercetis · 101–66 · morze · mięso · Dercetidae · BRAK opisu
+  - Archaeotriakis · 84–66 · morze · mięso · Triakidae · BRAK opisu
+  - Hypacrosaurus · 84–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+- Goście epoki (30):
+  - Gargantuavis · 84–66 · powietrze · mięso · Gargantuaviidae · BRAK opisu
+  - Enantiornis · 94–66 · powietrze · mięso · BRAK opisu
+  - Urbacodon · 126–72 · ląd · mięso · Troodontidae · BRAK opisu
+  - Dryptosaurus · 113–66 · ląd · mięso · BRAK opisu
+  - Appalachiosaurus · 86–66 · ląd · mięso · BRAK opisu
+  - Arcovenator · 84–66 · ląd · mięso · Abelisauridae · BRAK opisu
+  - Volgadraco · 84–72 · powietrze · ryby · Pteranodontidae · BRAK opisu
+  - Kallokibotion · 86–66 · ląd · rośliny · BRAK opisu
+  - Shachemys · 121–72 · ląd · rośliny · Adocidae · BRAK opisu
+  - Archelon · 84–66 · morze · plankton · Protostegidae · BRAK opisu
+  - Yaminuechelys · 84–62 · ląd · ryby · Chelidae · BRAK opisu
+  - Aristonectes · 84–66 · morze · ryby · Elasmosauridae · BRAK opisu
+  - Sulcusuchus · 84–66 · morze · mięso · Polycotylidae · BRAK opisu
+  - Mosasaurus · 101–62 · morze · mięso · Mosasauridae · BRAK opisu
+  - Kourisodon · 86–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Moanasaurus · 84–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Globidens · 90–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Angolasaurus · 90–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Latoplatecarpus · 84–72 · morze · mięso · Mosasauridae · BRAK opisu
+  - Hainosaurus · 84–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Halisaurus · 86–62 · morze · mięso · Mosasauridae · BRAK opisu
+  - Leptostyrax · 126–38 · morze · mięso · Eoptolamnidae · BRAK opisu
+  - Serratolamna · 94–41 · morze · mięso · Serratolamnidae · BRAK opisu
+  - Palaeogaleus · 86–48 · morze · mięso · Triakidae · BRAK opisu
+  - Coupatezia · 84–34 · morze · mięso · BRAK opisu
+  - Pararhincodon · 106–34 · morze · mięso · Parascylliidae · BRAK opisu
+  - Gladioserratus · 137–62 · morze · mięso · Hexanchidae · BRAK opisu
+  - Edaphodon · 120–3.6 · morze · mięso · Edaphodontidae · BRAK opisu
+  - Hippurites · 101–66 · morze · plankton · Hippuritidae · BRAK opisu
+  - Turritella · 130–0 · morze · plankton · Turritellidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Lepisosteus, Acipenser, Carcharias, Odontaspis, Eucrossorhinus, Oldmanesox, Nodosaurus, Brachyuranochampsa, Dyoplosaurus, Sphaerium, Unescoceratops, Unio, Boremys, Judithemys, Glyptogenys, Sphenosiagon, Gerontoseps, Socognathus, Orthrioscincus, Axestemys, Aspideretes, Cordualadensa, Squatina
+
+## Rozdział 29: Formacja Djadochta (id: djadokhta)
+
+- Mongolia · Kreda · 84–72 mln lat temu · formacje: Djadokhta
+- Odblokowanie: poziom parku 41, 970000000 monet
+- Tytuł etapu w grze: „Dinozaury pustyni Gobi” · brak przerywnika fabularnego
+- Opis: Płonące Klify Gobi: Velociraptor, Protoceratops i owiraptory na gniazdach, zasypane przez piaskowe burze.
+- Fauna miejscowa (38):
+  - Protoceratops · 121–72 · ląd · rośliny · Protoceratopsidae · BRAK opisu
+  - Velociraptor · 90–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Pinacosaurus · 90–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Zalambdalestes · 84–72 · ląd · mięso · Zalambdalestidae · BRAK opisu
+  - Adamisaurus · 84–72 · ląd · rośliny · Polyglyphanodontidae · BRAK opisu
+  - Isodontosaurus · 84–72 · ląd · mięso · BRAK opisu
+  - Kryptobaatar · 84–72 · ląd · mięso · Djadochtatheriidae · BRAK opisu
+  - Bagaceratops · 84–66 · ląd · rośliny · Protoceratopsidae · BRAK opisu
+  - Mimeosaurus · 84–72 · ląd · mięso · Priscagamidae · BRAK opisu
+  - Djadochtatherium · 84–72 · ląd · mięso · Djadochtatheriidae · BRAK opisu
+  - Shuvuuia · 84–72 · ląd · mięso · Alvarezsauridae · BRAK opisu
+  - Byronosaurus · 84–72 · ląd · mięso · Troodontidae · BRAK opisu
+  - Parmeosaurus · 84–72 · ląd · mięso · BRAK opisu
+  - Zangerlia · 84–72 · ląd · rośliny · Nanhsiungchelyidae · BRAK opisu
+  - Gobiosuchus · 84–72 · słodka woda · mięso · Gobiosuchidae · BRAK opisu
+  - Bulganbaatar · 84–72 · ląd · mięso · BRAK opisu
+  - Deltatheridium · 84–72 · ląd · mięso · Deltatheridiidae · BRAK opisu
+  - Gobipteryx · 84–66 · powietrze · mięso · BRAK opisu
+  - Priscagama · 84–72 · ląd · mięso · Priscagamidae · BRAK opisu
+  - Carusia · 84–72 · ląd · mięso · BRAK opisu
+  - Estesia · 84–72 · ląd · mięso · BRAK opisu
+  - Basilemys · 101–66 · ląd · rośliny · Nanhsiungchelyidae · BRAK opisu
+  - Nemegtbaatar · 84–72 · ląd · rośliny · BRAK opisu
+  - Sloanbaatar · 84–72 · ląd · mięso · Sloanbaataridae · BRAK opisu
+  - Kamptobaatar · 84–72 · ląd · mięso · Sloanbaataridae · BRAK opisu
+  - Kennalestes · 94–72 · ląd · mięso · BRAK opisu
+  - Citipati · 84–72 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Khaan · 84–72 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Saurornithoides · 101–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Temujinia · 84–72 · ląd · mięso · Temujiniidae · BRAK opisu
+  - Phrynosomimus · 84–72 · ląd · mięso · Priscagamidae · BRAK opisu
+  - Gilmoreteius · 84–72 · ląd · rośliny · Polyglyphanodontidae · BRAK opisu
+  - Globaura · 84–72 · ląd · mięso · BRAK opisu
+  - Shamosuchus · 101–66 · morze · mięso · Paralligatoridae · BRAK opisu
+  - Oviraptor · 90–72 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Gobiates · 120–66 · słodka woda · ryby · Gobiatidae · BRAK opisu
+  - Mononykus · 84–66 · ląd · mięso · Alvarezsauridae · BRAK opisu
+  - Avimimus · 84–66 · ląd · mięso · BRAK opisu
+- Goście epoki (92):
+  - Dimitobelus · 121–66 · morze · ryby · Dimitobelidae · BRAK opisu
+  - Belemnitella · 86–66 · morze · ryby · Belemnitellidae · BRAK opisu
+  - Gaudryceras · 120–66 · morze · mięso · Tetragonitidae · BRAK opisu
+  - Pachydiscus · 94–62 · morze · mięso · Pachydiscidae · BRAK opisu
+  - Desmoceras · 133–72 · morze · mięso · Desmoceratidae · BRAK opisu
+  - Parapuzosia · 101–72 · morze · mięso · Desmoceratidae · BRAK opisu
+  - Sphenodiscus · 94–62 · morze · mięso · Sphenodiscidae · BRAK opisu
+  - Cymatoceras · 155–27 · morze · mięso · Nautilidae · BRAK opisu
+  - Pseudocenoceras · 133–62 · morze · mięso · Nautilidae · BRAK opisu
+  - Anglonautilus · 133–66 · morze · mięso · Nautilidae · BRAK opisu
+  - Angulithes · 101–41 · morze · mięso · Nautilidae · BRAK opisu
+  - Hercoglossa · 106–38 · morze · mięso · Hercoglossidae · BRAK opisu
+  - Cimomia · 103–23 · morze · mięso · Hercoglossidae · BRAK opisu
+  - Deltoidonautilus · 101–34 · morze · mięso · Hercoglossidae · BRAK opisu
+  - Eoscapherpeton · 101–72 · słodka woda · ryby · Cryptobranchidae · BRAK opisu
+  - Zatomus · 84–72 · ląd · mięso · Teratosauridae · BRAK opisu
+  - Dyrosaurus · 113–34 · morze · mięso · Dyrosauridae · BRAK opisu
+  - Allodaposuchus · 86–66 · morze · mięso · Allodaposuchidae · BRAK opisu
+  - Acynodon · 84–62 · morze · mięso · Hylaeochampsidae · BRAK opisu
+  - Deinosuchus · 84–72 · morze · mięso · BRAK opisu
+  - Baurusuchus · 84–66 · ląd · mięso · Baurusuchidae · BRAK opisu
+  - Caipirasuchus · 94–66 · ląd · mięso · Sphagesauridae · BRAK opisu
+  - Doratodon · 86–56 · ląd · mięso · BRAK opisu
+  - Barrosasaurus · 94–72 · ląd · rośliny · BRAK opisu
+  - Antarctosaurus · 90–66 · ląd · rośliny · BRAK opisu
+  - Neuquensaurus · 86–66 · ląd · rośliny · Saltasauridae · BRAK opisu
+  - Alamosaurus · 84–66 · ląd · rośliny · Saltasauridae · BRAK opisu
+  - Aeolosaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Dreadnoughtus · 84–72 · ląd · rośliny · BRAK opisu
+  - Lirainosaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Ampelosaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Maxakalisaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Struthiosaurus · 84–66 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Glyptodontopelta · 84–66 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Saichania · 101–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Nodocephalosaurus · 84–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Oohkotokia · 84–72 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Antarctopelta · 84–72 · ląd · rośliny · BRAK opisu
+  - Bactrosaurus · 94–72 · ląd · rośliny · BRAK opisu
+  - Tanius · 90–72 · ląd · rośliny · BRAK opisu
+  - Shantungosaurus · 101–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Kritosaurus · 86–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Hadrosaurus · 86–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Maiasaura · 84–72 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Telmatosaurus · 84–66 · ląd · rośliny · Telmatosauridae · BRAK opisu
+  - Ouranosaurus · 121–66 · ląd · rośliny · BRAK opisu
+  - Lophorhothon · 86–72 · ląd · rośliny · BRAK opisu
+  - Gasparinisaura · 84–72 · ląd · rośliny · BRAK opisu
+  - Obelignathus · 84–66 · ląd · rośliny · BRAK opisu
+  - Mochlodon · 86–66 · ląd · rośliny · BRAK opisu
+  - Zalmoxes · 84–66 · ląd · rośliny · BRAK opisu
+  - Rhabdodon · 84–66 · ląd · rośliny · Rhabdodontidae · BRAK opisu
+  - Breviceratops · 84–72 · ląd · rośliny · Protoceratopsidae · BRAK opisu
+  - Cerasinops · 84–72 · ląd · rośliny · Leptoceratopsidae · BRAK opisu
+  - Montanoceratops · 84–66 · ląd · rośliny · Leptoceratopsidae · BRAK opisu
+  - Gremlin · 84–72 · ląd · rośliny · Leptoceratopsidae · BRAK opisu
+  - Agujaceratops · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Pentaceratops · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Utahceratops · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Monoclonius · 84–72 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Pachyrhinosaurus · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Colepiocephale · 84–72 · ląd · rośliny · Pachycephalosauridae · BRAK opisu
+  - Brontotholus · 84–72 · ląd · rośliny · Pachycephalosauridae · BRAK opisu
+  - Bahariasaurus · 113–66 · ląd · mięso · BRAK opisu
+  - Asiahesperornis · 84–66 · morze · ryby · Hesperornithidae · BRAK opisu
+  - Martinavis · 84–66 · powietrze · mięso · BRAK opisu
+  - Caenagnathasia · 94–72 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Alectrosaurus · 101–72 · ląd · mięso · BRAK opisu
+  - Albertosaurus · 86–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Azhdarcho · 94–72 · powietrze · ryby · Azhdarchidae · BRAK opisu
+  - Denazinemys · 84–66 · ląd · rośliny · Baenidae · BRAK opisu
+  - Euclastes · 84–5.3 · morze · plankton · Euclastidae · BRAK opisu
+  - Peritresius · 84–56 · ląd · rośliny · Pancheloniidae · BRAK opisu
+  - Taphrosphys · 84–56 · ląd · rośliny · Bothremydidae · BRAK opisu
+  - Elasmosaurus · 94–72 · morze · ryby · Elasmosauridae · BRAK opisu
+  - Trinacromerum · 106–66 · morze · mięso · Polycotylidae · BRAK opisu
+  - Leiodon · 101–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Igdamanosaurus · 84–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Prognathodon · 101–62 · morze · mięso · Mosasauridae · BRAK opisu
+  - Plotosaurus · 84–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Plioplatecarpus · 101–62 · morze · mięso · Mosasauridae · BRAK opisu
+  - Taniwhasaurus · 86–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Pluridens · 84–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Cylindracanthus · 101–23 · morze · plankton · BRAK opisu
+  - Cretodus · 121–72 · morze · mięso · Pseudoscapanorhynchidae · BRAK opisu
+  - Otodus · 94–0.3 · morze · mięso · Otodontidae · BRAK opisu
+  - Rhombodus · 86–56 · morze · mięso · Rhombodontidae · BRAK opisu
+  - Plicatoscyllium · 86–38 · morze · mięso · Ginglymostomatidae · BRAK opisu
+  - Protosqualus · 126–72 · morze · mięso · Squalidae · BRAK opisu
+  - Hoploparia · 143–27 · morze · plankton · Nephropidae · BRAK opisu
+  - Micraster · 101–56 · morze · plankton · Micrasteridae · BRAK opisu
+  - Macropoma · 100–66 · morze · mięso · Latimeriidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Gobiderma, Asioryctes, Shinisauroides, Chulsanbaatar, Catopsbaatar, Hyotheridium, Ukhaatherium, Apsaravis, Fenestrosaurus, Ovoraptor, Ornithoides, Archaeornithoides, Tsaagan, Mangasbaatar, Zosuchus, Ctenomastax, Zapsosaurus, Myrmecodaptria, Gobinatus, Tchingisaurus, Hymenosaurus, Slavoia, Eoxanta, Cherminotus, Aiolosaurus, Mahakala, Maelestes, Kol, Asiatherium, Udanoceratops …
+
+## Rozdział 30: Formacja Hell Creek (id: hell_creek)
+
+- USA · Kreda · 72–66 mln lat temu · formacje: Hell Creek
+- Odblokowanie: poziom parku 43, 1900000000 monet
+- Tytuł etapu w grze: „Ostatnie dni dinozaurów” · brak przerywnika fabularnego
+- Opis: Ostatnie chwile ery dinozaurów: Tyrannosaurus, Triceratops i Edmontosaurus tuż przed wielkim wymieraniem.
+- Fauna miejscowa (102):
+  - Mesodma · 101–58 · ląd · mięso · Neoplagiaulacidae · BRAK opisu
+  - Champsosaurus · 101–56 · słodka woda · ryby · BRAK opisu
+  - Meniscoessus · 86–66 · ląd · rośliny · Cimolomyidae · BRAK opisu
+  - Brachychampsa · 94–63 · słodka woda · mięso · Alligatoridae · BRAK opisu
+  - Triceratops · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Compsemys · 86–56 · ląd · rośliny · BRAK opisu
+  - Myledaphus · 94–62 · morze · mięso · Rhinobatidae · BRAK opisu
+  - Adocus · 126–23 · ląd · rośliny · Adocidae · BRAK opisu
+  - Borealosuchus · 84–34 · morze · mięso · BRAK opisu
+  - Scapherpeton · 90–58 · słodka woda · ryby · Scapherpetontidae · BRAK opisu
+  - Didelphodon · 84–66 · ląd · mięso · Stagodontidae · BRAK opisu
+  - Richardoestesia · 155–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Stygimys · 84–61 · ląd · mięso · Eucosmodontidae · BRAK opisu
+  - Tyrannosaurus · 84–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Protolambda · 84–66 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Cyclurus · 101–17 · słodka woda · ryby · Amiidae · BRAK opisu
+  - Protungulatum · 72–63 · ląd · mięso · Arctocyonidae · BRAK opisu
+  - Mimatuta · 72–63 · ląd · mięso · Arctocyonidae · BRAK opisu
+  - Melvius · 120–66 · morze · ryby · Amiidae · BRAK opisu
+  - Helopanoplia · 84–66 · ląd · rośliny · Plastomenidae · BRAK opisu
+  - Gypsonictops · 84–66 · ląd · mięso · Gypsonictopidae · BRAK opisu
+  - Paronychodon · 155–66 · ląd · mięso · BRAK opisu
+  - Edmontosaurus · 90–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Lonchidion · 237–66 · morze · mięso · Lonchidiidae · BRAK opisu
+  - Cimolodon · 106–61 · ląd · mięso · Cimolodontidae · BRAK opisu
+  - Baioconodon · 72–61 · ląd · mięso · Arctocyonidae · BRAK opisu
+  - Opisthotriton · 86–56 · słodka woda · ryby · Batrachosauroididae · BRAK opisu
+  - Thescelosaurus · 94–66 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Habrosaurus · 86–61 · słodka woda · ryby · Sirenidae · BRAK opisu
+  - Alphadon · 101–48 · ląd · mięso · Alphadontidae · BRAK opisu
+  - Leptalestes · 86–63 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Procerberus · 72–61 · ląd · mięso · Cimolestidae · BRAK opisu
+  - Basilemys · 101–66 · ląd · rośliny · Nanhsiungchelyidae · BRAK opisu
+  - Glasbius · 84–66 · ląd · rośliny · Glasbiidae · BRAK opisu
+  - Oxyprimus · 72–58 · ląd · mięso · Arctocyonidae · BRAK opisu
+  - Pediomys · 84–66 · ląd · mięso · Pediomyidae · BRAK opisu
+  - Pachycephalosaurus · 84–66 · ląd · rośliny · BRAK opisu
+  - Plesiobaena · 84–63 · ląd · rośliny · Baenidae · BRAK opisu
+  - Belonostomus · 152–62 · morze · mięso · Aspidorhynchidae · BRAK opisu
+  - Essonodon · 84–66 · ląd · rośliny · Cimolomyidae · BRAK opisu
+  - Coriops · 101–63 · morze · plankton · Albulidae · BRAK opisu
+  - Cimexomys · 86–63 · ląd · rośliny · BRAK opisu
+  - Thoracosaurus · 86–48 · morze · mięso · Gavialidae · BRAK opisu
+  - Chirostenotes · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Restesia · 84–66 · morze · mięso · Orectolobidae · BRAK opisu
+  - Estesesox · 86–63 · słodka woda · plankton · Esocidae · BRAK opisu
+  - Neurankylus · 90–61 · ląd · rośliny · Baenidae · BRAK opisu
+  - Saurornitholestes · 84–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Turgidodon · 84–66 · ląd · mięso · Alphadontidae · BRAK opisu
+  - Troodon · 84–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Hutchemys · 84–56 · ląd · rośliny · Plastomenidae · BRAK opisu
+  - Lisserpeton · 84–58 · słodka woda · ryby · Scapherpetontidae · BRAK opisu
+  - Cimolomys · 86–66 · ląd · rośliny · Cimolomyidae · BRAK opisu
+  - Palatobaena · 72–51 · ląd · rośliny · Baenidae · BRAK opisu
+  - Ischyodus · 168–3.6 · morze · mięso · Callorhinchidae · BRAK opisu
+  - Platacodon · 84–63 · słodka woda · plankton · Sciaenidae · BRAK opisu
+  - Prodesmodon · 84–63 · słodka woda · ryby · Batrachosauroididae · BRAK opisu
+  - Catopsalis · 66–58 · ląd · rośliny · Taeniolabididae · BRAK opisu
+  - Paranecturus · 72–66 · słodka woda · ryby · Proteidae · BRAK opisu
+  - Leptochamops · 90–66 · ląd · mięso · Chamopsiidae · BRAK opisu
+  - Exostinus · 84–32 · ląd · mięso · Xenosauridae · BRAK opisu
+  - Odaxosaurus · 94–37 · ląd · mięso · Anguidae · BRAK opisu
+  - Parasaniwa · 84–66 · ląd · mięso · BRAK opisu
+  - Batodon · 84–66 · ląd · mięso · Cimolestidae · BRAK opisu
+  - Albanerpeton · 126–1.8 · słodka woda · ryby · Albanerpetontidae · BRAK opisu
+  - Trierarchuncus · 72–66 · ląd · mięso · Alvarezsauridae · BRAK opisu
+  - Ankylosaurus · 84–66 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Scotiophryne · 121–66 · słodka woda · ryby · BRAK opisu
+  - Osteopygis · 84–34 · ląd · rośliny · Macrobaenidae · BRAK opisu
+  - Pectinodon · 101–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Nanotyrannus · 72–66 · ląd · mięso · Nanotyrannidae · BRAK opisu
+  - Torosaurus · 84–66 · ląd · rośliny · Ceratopsidae · BRAK opisu
+  - Palaeosaniwa · 84–58 · ląd · mięso · BRAK opisu
+  - Leptoceratops · 72–66 · ląd · rośliny · Leptoceratopsidae · BRAK opisu
+  - Dromaeosaurus · 110–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Paracimexomys · 121–66 · ląd · rośliny · BRAK opisu
+  - Avisaurus · 72–66 · powietrze · mięso · Avisauridae · BRAK opisu
+  - Edmontonia · 84–66 · ląd · rośliny · Nodosauridae · BRAK opisu
+  - Stegoceras · 84–66 · ląd · rośliny · BRAK opisu
+  - Sphaerotholus · 84–66 · ląd · rośliny · Pachycephalosauridae · BRAK opisu
+  - Gorgosaurus · 84–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Ornithomimus · 84–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Saurornithoides · 101–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Aspideretoides · 84–56 · ląd · rośliny · Plastomenidae · BRAK opisu
+  - Amia · 100–0 · słodka woda · mięso · Amiidae · BRAK opisu
+  - Purgatorius · 66–58 · ląd · plankton · Purgatoriidae · BRAK opisu
+  - Paralbula · 101–27 · morze · mięso · Phyllodontidae · BRAK opisu
+  - Eopelobates · 86–3.6 · słodka woda · ryby · Pelobatidae · BRAK opisu
+  - Orodromeus · 84–66 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Scapanorhynchus · 126–12 · morze · mięso · Mitsukurinidae · BRAK opisu
+  - Elasmodus · 113–27 · morze · mięso · Callorhinchidae · BRAK opisu
+  - Enchodus · 165–16 · morze · mięso · Enchodontidae · BRAK opisu
+  - Scaphites · 113–62 · morze · mięso · Scaphitidae · BRAK opisu
+  - Citipes · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Cimolopteryx · 84–66 · powietrze · mięso · Cimolopterygidae · BRAK opisu
+  - Hesperornis · 90–66 · morze · ryby · Hesperornithidae · BRAK opisu
+  - Hoplochelys · 84–61 · ląd · rośliny · Kinosternoidea · BRAK opisu
+  - Brodavis · 84–66 · morze · ryby · Brodavidae · BRAK opisu
+  - Caenagnathus · 84–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Palaeobatrachus · 72–0.8 · słodka woda · ryby · Palaeobatrachidae · BRAK opisu
+  - Ischyrhiza · 113–56 · morze · mięso · Sclerorhynchidae · BRAK opisu
+  - Eodelphis · 86–66 · ląd · mięso · Stagodontidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Lepisosteus, Amia, Acipenser, Wilsonichthys, Axestemys, Boremys, Chamops, Nortedelphys, Valenopsalis, Thylacodon, Emarginachelys, Gilmoremys, Protochelydra, Anzu, Eubaena, Cimolestes, Sphaerium, Campeloma, Cantioscyllium, Piceoerpeton, Palaeolabrus, Peneteius, Contogenys, Texatrygon, Tullochelys, Notogoneus, Posidonioceramus, Haptosphenus, Altacreodus, Protalphadon …
+
+## Rozdział 31: Formacja Nemegt (id: nemegt)
+
+- Mongolia · Kreda · 72–66 mln lat temu · formacje: Nemegt
+- Odblokowanie: poziom parku 45, 3700000000 monet
+- Tytuł etapu w grze: „Polska w Gobi” · brak przerywnika fabularnego
+- Opis: Gobi pod koniec kredy — Tarbosaurus, Deinocheirus i Therizinosaurus. Klasyczne stanowisko polskich wypraw Zofii Kielan-Jaworowskiej.
+- Fauna miejscowa (42):
+  - Tarbosaurus · 90–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Gallimimus · 94–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Saurolophus · 84–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Mongolemys · 120–56 · ląd · rośliny · Lindholmemydidae · BRAK opisu
+  - Mongolochelys · 72–66 · ląd · rośliny · Sichuanchelyidae · BRAK opisu
+  - Mononykus · 84–66 · ląd · mięso · Alvarezsauridae · BRAK opisu
+  - Kuhnemys · 121–56 · ląd · ryby · Trionychidae · BRAK opisu
+  - Avimimus · 84–66 · ląd · mięso · BRAK opisu
+  - Deinocheirus · 101–66 · ląd · rośliny · Deinocheiridae · BRAK opisu
+  - Elmisaurus · 72–66 · ląd · mięso · Caenagnathidae · BRAK opisu
+  - Prenocephale · 84–66 · ląd · rośliny · BRAK opisu
+  - Gravemys · 84–66 · ląd · rośliny · Lindholmemydidae · BRAK opisu
+  - Oksoko · 72–66 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Tarchia · 84–66 · ląd · rośliny · Ankylosauridae · BRAK opisu
+  - Barsboldia · 72–66 · ląd · rośliny · Hadrosauridae · BRAK opisu
+  - Anserimimus · 72–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Homalocephale · 72–66 · ląd · rośliny · BRAK opisu
+  - Therizinosaurus · 72–66 · ląd · rośliny · Therizinosauridae · BRAK opisu
+  - Shamosuchus · 101–66 · morze · mięso · Paralligatoridae · BRAK opisu
+  - Nemegtemys · 72–66 · ląd · ryby · Trionychidae · BRAK opisu
+  - Opisthocoelicaudia · 72–66 · ląd · rośliny · Saltasauridae · BRAK opisu
+  - Bagaraatan · 72–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Borogovia · 72–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Tochisaurus · 72–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Zanabazar · 72–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Nemegtomaia · 84–66 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Teviornis · 72–66 · powietrze · rośliny · Presbyornithidae · BRAK opisu
+  - Alioramus · 72–66 · ląd · mięso · Tyrannosauridae · BRAK opisu
+  - Brodavis · 84–66 · morze · ryby · Brodavidae · BRAK opisu
+  - Tsaotanemys · 84–66 · ląd · rośliny · Lindholmemydidae · BRAK opisu
+  - Gurilynia · 72–66 · powietrze · mięso · Enantiornithidae · BRAK opisu
+  - Gobipteryx · 84–66 · powietrze · mięso · BRAK opisu
+  - Bagaceratops · 84–66 · ląd · rośliny · Protoceratopsidae · BRAK opisu
+  - Saurornithoides · 101–66 · ląd · mięso · Troodontidae · BRAK opisu
+  - Ingenia · 72–66 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Buginbaatar · 72–66 · ląd · rośliny · Cimolomyidae · BRAK opisu
+  - Nemegtosaurus · 90–66 · ląd · rośliny · Nemegtosauridae · BRAK opisu
+  - Adasaurus · 72–66 · ląd · mięso · Dromaeosauridae · BRAK opisu
+  - Gobiraptor · 72–66 · ląd · mięso · Oviraptoridae · BRAK opisu
+  - Nemegtonykus · 72–66 · ląd · mięso · BRAK opisu
+  - Altanulia · 72–66 · słodka woda · ryby · Discoglossidae · BRAK opisu
+  - Rinchenia · 72–66 · ląd · mięso · Oviraptoridae · BRAK opisu
+- Goście epoki (55):
+  - Paralatonia · 72–66 · słodka woda · ryby · Alytidae · BRAK opisu
+  - Beelzebufo · 72–66 · słodka woda · ryby · BRAK opisu
+  - Titanoides · 66–56 · ląd · rośliny · Titanoideidae · BRAK opisu
+  - Microcosmodon · 66–56 · ląd · rośliny · Microcosmodontidae · BRAK opisu
+  - Ptilodus · 66–56 · ląd · rośliny · Ptilodontidae · BRAK opisu
+  - Hyposaurus · 72–56 · morze · mięso · Dyrosauridae · BRAK opisu
+  - Simosuchus · 72–66 · ląd · rośliny · BRAK opisu
+  - Mahajangasuchus · 72–66 · ląd · mięso · Mahajangasuchidae · BRAK opisu
+  - Nullotitan · 72–66 · ląd · rośliny · BRAK opisu
+  - Isisaurus · 72–66 · ląd · rośliny · BRAK opisu
+  - Rapetosaurus · 72–66 · ląd · rośliny · BRAK opisu
+  - Rocasaurus · 72–66 · ląd · rośliny · Saltasauridae · BRAK opisu
+  - Baurutitan · 72–66 · ląd · rośliny · BRAK opisu
+  - Magyarosaurus · 72–66 · ląd · rośliny · BRAK opisu
+  - Petrustitan · 72–66 · ląd · rośliny · BRAK opisu
+  - Phosphatotitan · 72–66 · ląd · rośliny · Argentinosauridae · BRAK opisu
+  - Pakisaurus · 72–66 · ląd · rośliny · Pakisauridae · BRAK opisu
+  - Sulaimanisaurus · 72–66 · ląd · rośliny · Pakisauridae · BRAK opisu
+  - Khetranisaurus · 72–66 · ląd · rośliny · Pakisauridae · BRAK opisu
+  - Saraikimasoom · 72–66 · ląd · rośliny · Gspsauridae · BRAK opisu
+  - Gspsaurus · 72–66 · ląd · rośliny · Gspsauridae · BRAK opisu
+  - Ikqaumishan · 72–66 · ląd · rośliny · Gspsauridae · BRAK opisu
+  - Marisaurus · 72–66 · ląd · rośliny · Balochisauridae · BRAK opisu
+  - Balochisaurus · 72–66 · ląd · rośliny · Balochisauridae · BRAK opisu
+  - Qaikshaheen · 72–66 · ląd · rośliny · Balochisauridae · BRAK opisu
+  - Kryptohadros · 72–66 · ląd · rośliny · Telmatosauridae · BRAK opisu
+  - Transylvanosaurus · 72–66 · ląd · rośliny · BRAK opisu
+  - Ferenceratops · 72–66 · ląd · rośliny · BRAK opisu
+  - Wannanosaurus · 72–66 · ląd · rośliny · BRAK opisu
+  - Parksosaurus · 72–66 · ląd · rośliny · Thescelosauridae · BRAK opisu
+  - Kank · 72–66 · ląd · mięso · Unenlagiidae · BRAK opisu
+  - Vorona · 72–66 · powietrze · mięso · BRAK opisu
+  - Telmatornis · 72–62 · powietrze · mięso · BRAK opisu
+  - Bonapartenykus · 72–66 · ląd · mięso · BRAK opisu
+  - Elopteryx · 72–66 · ląd · mięso · Alvarezsauridae · BRAK opisu
+  - Chenanisaurus · 72–66 · ląd · mięso · BRAK opisu
+  - Masiakasaurus · 72–66 · ląd · mięso · Noasauridae · BRAK opisu
+  - Carnotaurus · 72–66 · ląd · mięso · Abelisauridae · BRAK opisu
+  - Majungasaurus · 72–66 · ląd · mięso · Abelisauridae · BRAK opisu
+  - Vitakrisaurus · 72–66 · ląd · mięso · Vitakrisauridae · BRAK opisu
+  - Vitakridrinda · 72–66 · ląd · mięso · Vitakrisauridae · BRAK opisu
+  - Dromiceiomimus · 72–66 · ląd · rośliny · Ornithomimidae · BRAK opisu
+  - Saraikisaurus · 72–66 · powietrze · ryby · Saraikisauridae · BRAK opisu
+  - Hatzegopteryx · 72–66 · powietrze · ryby · Azhdarchidae · BRAK opisu
+  - Quetzalcoatlus · 72–66 · powietrze · mięso · Azhdarchidae · BRAK opisu
+  - Tethydraco · 72–66 · powietrze · ryby · Pteranodontidae · BRAK opisu
+  - Barbaridactylus · 72–66 · powietrze · ryby · Nyctosauridae · BRAK opisu
+  - Plesiotylosaurus · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Thalassotitan · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Carinodens · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Eremiasaurus · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Goronyosaurus · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Phosphorosaurus · 72–66 · morze · mięso · Mosasauridae · BRAK opisu
+  - Dakoticancer · 94–66 · morze · plankton · Dakoticancridae · BRAK opisu
+  - Vegavis · 72–66 · powietrze · plankton · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Trionyx, Amia
+
+## Rozdział 32: Formacja Green River (id: green_river)
+
+- USA · Paleogen · 51–46 mln lat temu · formacje: Green River, Bridger
+- Odblokowanie: poziom parku 47, 7200000000 monet
+- Tytuł etapu w grze: „Świat po dinozaurach” · brak przerywnika fabularnego
+- Opis: Eoceńskie jeziora Wyomingu: ryby zachowane w całości, pierwsze nietoperze, krokodyle i dziwne ssaki kopytne.
+- Fauna miejscowa (71):
+  - Hyopsodus · 58–37 · ląd · mięso · Hyopsodontidae · BRAK opisu
+  - Hyrachyus · 56–34 · ląd · rośliny · Hyrachyidae · BRAK opisu
+  - Sciuravus · 56–27 · ląd · rośliny · Sciuravidae · BRAK opisu
+  - Notharctus · 56–40 · ląd · rośliny · Notharctidae · BRAK opisu
+  - Smilodectes · 51–46 · ląd · rośliny · Notharctidae · BRAK opisu
+  - Omomys · 56–37 · ląd · mięso · Omomyidae · BRAK opisu
+  - Microsyops · 56–40 · ląd · rośliny · Microsyopidae · BRAK opisu
+  - Centetodon · 56–19 · ląd · mięso · Geolabididae · BRAK opisu
+  - Palaeosyops · 56–46 · ląd · rośliny · Brontotheriidae · BRAK opisu
+  - Bridgeremys · 51–40 · ląd · rośliny · Geoemydidae · BRAK opisu
+  - Nyctitherium · 61–37 · ląd · mięso · Nyctitheriidae · BRAK opisu
+  - Orohippus · 56–38 · ląd · rośliny · Equidae · BRAK opisu
+  - Washakius · 56–37 · ląd · mięso · Omomyidae · BRAK opisu
+  - Paramys · 58–38 · ląd · rośliny · Ischyromyidae · BRAK opisu
+  - Herpetotherium · 56–16 · ląd · mięso · Herpetotheriidae · BRAK opisu
+  - Helohyus · 51–38 · ląd · rośliny · Helohyidae · BRAK opisu
+  - Apatemys · 56–32 · ląd · rośliny · Apatemyidae · BRAK opisu
+  - Sinopa · 59–27 · ląd · mięso · Hyaenodontidae · BRAK opisu
+  - Viverravus · 61–38 · ląd · mięso · Viverravidae · BRAK opisu
+  - Antiacodon · 56–34 · ląd · rośliny · Homacodontidae · BRAK opisu
+  - Uintaparamys · 56–34 · ląd · rośliny · Ischyromyidae · BRAK opisu
+  - Echmatemys · 56–34 · ląd · rośliny · Geoemydidae · BRAK opisu
+  - Thisbemys · 56–40 · ląd · rośliny · Paramyidae · BRAK opisu
+  - Anaptomorphus · 51–46 · ląd · mięso · Omomyidae · BRAK opisu
+  - Microsus · 51–46 · ląd · rośliny · Homacodontidae · BRAK opisu
+  - Glyptosaurus · 56–23 · ląd · mięso · Anguidae · BRAK opisu
+  - Saniwa · 63–16 · ląd · mięso · BRAK opisu
+  - Uintatherium · 56–38 · ląd · rośliny · Uintatheriidae · BRAK opisu
+  - Metacheiromys · 51–46 · ląd · mięso · Metacheiromyidae · BRAK opisu
+  - Peradectes · 66–34 · ląd · mięso · Peradectidae · BRAK opisu
+  - Xestops · 58–16 · ląd · mięso · Anguidae · BRAK opisu
+  - Microparamys · 59–37 · ląd · rośliny · Ischyromyidae · BRAK opisu
+  - Trogolemur · 61–37 · ląd · rośliny · Plesiadapidae · BRAK opisu
+  - Thinocyon · 51–38 · ląd · mięso · BRAK opisu
+  - Homacodon · 51–40 · ląd · rośliny · Homacodontidae · BRAK opisu
+  - Tetrapassalus · 51–40 · ląd · mięso · Epoicotheriidae · BRAK opisu
+  - Trogosus · 56–38 · ląd · rośliny · Esthonychidae · BRAK opisu
+  - Helaletes · 56–38 · ląd · rośliny · BRAK opisu
+  - Diplomystus · 143–34 · morze · mięso · Armigatidae · BRAK opisu
+  - Limnofregata · 56–48 · powietrze · mięso · Fregatidae · BRAK opisu
+  - Borealosuchus · 84–34 · morze · mięso · BRAK opisu
+  - Anosteira · 94–34 · ląd · rośliny · Carettochelyidae · BRAK opisu
+  - Lambdotherium · 56–46 · ląd · rośliny · Brontotheriidae · BRAK opisu
+  - Boverisuchus · 62–38 · morze · mięso · Planocraniidae · BRAK opisu
+  - Hadrianus · 56–27 · ląd · rośliny · Pantestudinidae · BRAK opisu
+  - Allognathosuchus · 84–34 · słodka woda · mięso · Alligatoridae · BRAK opisu
+  - Harpagolestes · 51–23 · ląd · mięso · Mesonychidae · BRAK opisu
+  - Triplopus · 56–34 · ląd · rośliny · Hyracodontidae · BRAK opisu
+  - Primobucco · 56–41 · powietrze · mięso · BRAK opisu
+  - Presbyornis · 61–34 · powietrze · rośliny · Presbyornithidae · BRAK opisu
+  - Gallinuloides · 56–48 · powietrze · rośliny · Gallinuloididae · BRAK opisu
+  - Diacodexis · 56–38 · ląd · rośliny · Diacodexeidae · BRAK opisu
+  - Knightia · 52–48 · słodka woda · plankton · BRAK opisu
+  - Mioplosus · 56–51 · słodka woda · mięso · Percidae · BRAK opisu
+  - Priscacara · 72–38 · słodka woda · mięso · Priscacaridae · BRAK opisu
+  - Phareodus · 72–34 · słodka woda · mięso · Osteoglossidae · BRAK opisu
+  - Atractosteus · 106–0 · słodka woda · mięso · Lepisosteidae · BRAK opisu
+  - Heliobatis · 52–48 · słodka woda · mięso · BRAK opisu
+  - Icaronycteris · 56–38 · ląd · mięso · Icaronycteridae · BRAK opisu
+  - Onychonycteris · 56–51 · ląd · mięso · Onychonycteridae · BRAK opisu
+  - Titanomyrma · 56–41 · powietrze · plankton · Formicidae · BRAK opisu
+  - Cantius · 59–40 · ląd · rośliny · Notharctidae · BRAK opisu
+  - Hyracotherium · 56–46 · ląd · rośliny · Palaeotheriidae · BRAK opisu
+  - Coryphodon · 58–38 · ląd · rośliny · Coryphodontidae · BRAK opisu
+  - Heptodon · 56–46 · ląd · rośliny · BRAK opisu
+  - Cyclurus · 101–17 · słodka woda · ryby · Amiidae · BRAK opisu
+  - Eopelobates · 86–3.6 · słodka woda · ryby · Pelobatidae · BRAK opisu
+  - Phenacodus · 66–46 · ląd · rośliny · Phenacodontidae · BRAK opisu
+  - Diplocynodon · 84–0.1 · morze · mięso · BRAK opisu
+  - Peltosaurus · 63–16 · ląd · mięso · BRAK opisu
+  - Exostinus · 84–32 · ląd · mięso · Xenosauridae · BRAK opisu
+- Goście epoki (25):
+  - Seminobatrachus · 59–48 · słodka woda · ryby · BRAK opisu
+  - Ectoganus · 61–48 · ląd · rośliny · Stylinodontidae · BRAK opisu
+  - Azygonyx · 58–48 · ląd · rośliny · BRAK opisu
+  - Esthonyx · 61–46 · ląd · rośliny · Esthonychidae · BRAK opisu
+  - Sifrhippus · 56–48 · ląd · rośliny · Equidae · BRAK opisu
+  - Cardiolophus · 56–48 · ląd · rośliny · BRAK opisu
+  - Wyolestes · 56–51 · ląd · mięso · BRAK opisu
+  - Dissacus · 66–48 · ląd · mięso · Mesonychidae · BRAK opisu
+  - Dipsalidictis · 61–48 · ląd · mięso · Oxyaenidae · BRAK opisu
+  - Prolimnocyon · 59–46 · ląd · mięso · BRAK opisu
+  - Arfia · 59–46 · ląd · mięso · Hyaenodontidae · BRAK opisu
+  - Carpolestes · 61–48 · ląd · rośliny · Carpolestidae · BRAK opisu
+  - Plesiadapis · 66–48 · ląd · rośliny · Plesiadapidae · BRAK opisu
+  - Tetonius · 56–51 · ląd · mięso · Omomyidae · BRAK opisu
+  - Probathyopsis · 61–48 · ląd · rośliny · Prodinoceratidae · BRAK opisu
+  - Argillipes · 56–48 · powietrze · rośliny · BRAK opisu
+  - Waltonortyx · 56–48 · powietrze · rośliny · Waltonortygidae · BRAK opisu
+  - Precursor · 56–48 · powietrze · mięso · Glareolidae · BRAK opisu
+  - Gastornis · 62–48 · ląd · rośliny · Gastornithidae · BRAK opisu
+  - Lithornis · 61–48 · ląd · mięso · Lithornithidae · BRAK opisu
+  - Cardichelyon · 61–51 · ląd · rośliny · Dermatemydidae · BRAK opisu
+  - Isurolamna · 66–16 · morze · mięso · Lamnidae · BRAK opisu
+  - Campanile · 56–34 · morze · plankton · Campanilidae · BRAK opisu
+  - Venericardia · 60–30 · morze · plankton · Carditidae · BRAK opisu
+  - Acropora · 66–0 · morze · mięso · Acroporidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Epicaerus, Pteromogoplistes, Crocodylus, Eoformica, Pronemobius, Eogryllus, Baena, Ectobius, Eotetrix, Vulpavus, Eoerianthus, Trionyx, Uintanius, Plecia, Sciomyza, Eozacla, Boavus, Limnocyon, Quadratomus, Patriofelis, Hemiacodon, Chisternon, Miacis, Lithopsis, Dicranomyia, Archimyrmex, Amia, Bathyopsis, Telmatherium, Stylinodon …
+
+## Rozdział 33: Kopalnia Messel (id: messel)
+
+- Niemcy · Paleogen · 48–41 mln lat temu · formacje: Messel
+- Odblokowanie: poziom parku 49, 14000000000 monet
+- Tytuł etapu w grze: „Okno w eoceński las” · brak przerywnika fabularnego
+- Opis: Eoceńskie jezioro wulkaniczne — wczesne koniowate, prymaty i ptaki z zachowaną zawartością żołądków.
+- Fauna miejscowa (36):
+  - Euroemys · 56–41 · ląd · rośliny · BRAK opisu
+  - Primozygodactylus · 48–41 · powietrze · mięso · Zygodactylidae · BRAK opisu
+  - Diplocynodon · 84–0.1 · morze · mięso · BRAK opisu
+  - Leptictidium · 56–34 · ląd · mięso · Pseudorhyncocyonidae · BRAK opisu
+  - Neochelys · 56–34 · ląd · rośliny · Podocnemididae · BRAK opisu
+  - Francellia · 56–34 · ląd · rośliny · BRAK opisu
+  - Paraprefica · 48–41 · powietrze · mięso · BRAK opisu
+  - Eocoracias · 48–41 · powietrze · mięso · BRAK opisu
+  - Juvemys · 56–41 · ląd · rośliny · Testudinidae · BRAK opisu
+  - Borkenia · 56–27 · ląd · rośliny · BRAK opisu
+  - Dynamopterus · 48–23 · powietrze · mięso · Idiornithidae · BRAK opisu
+  - Strigogyps · 48–34 · powietrze · mięso · Strigidae · BRAK opisu
+  - Pseudastur · 48–41 · powietrze · mięso · Zygodactylidae · BRAK opisu
+  - Selmes · 48–41 · powietrze · rośliny · Coliidae · BRAK opisu
+  - Perplexicervix · 48–41 · powietrze · mięso · BRAK opisu
+  - Primobucco · 56–41 · powietrze · mięso · BRAK opisu
+  - Messelirrisor · 48–41 · powietrze · mięso · Messelirrisoridae · BRAK opisu
+  - Titanomyrma · 56–41 · powietrze · plankton · Formicidae · BRAK opisu
+  - Mastotermes · 50–0 · powietrze · plankton · Mastotermitidae · BRAK opisu
+  - Ailuravus · 56–38 · ląd · plankton · Ischyromyidae · BRAK opisu
+  - Eurotamandua · 48–46 · ląd · mięso · BRAK opisu
+  - Messelornis · 56–48 · powietrze · mięso · Messelornithidae · BRAK opisu
+  - Palaeopython · 48–16 · ląd · mięso · Boidae · BRAK opisu
+  - Eoconstrictor · 48–34 · ląd · mięso · BRAK opisu
+  - Thaumaturus · 66–41 · słodka woda · mięso · Thaumaturidae · BRAK opisu
+  - Propalaeotherium · 56–34 · ląd · rośliny · Palaeotheriidae · BRAK opisu
+  - Archaeonycteris · 56–38 · ląd · mięso · Archaeonycteridae · BRAK opisu
+  - Palaeochiropteryx · 56–38 · ląd · mięso · Palaeochiropterygidae · BRAK opisu
+  - Pholidocercus · 48–41 · ląd · mięso · Amphilemuridae · BRAK opisu
+  - Rafetoides · 66–27 · ląd · ryby · Trionychidae · BRAK opisu
+  - Cyclurus · 101–17 · słodka woda · ryby · Amiidae · BRAK opisu
+  - Rhynchaeites · 56–41 · powietrze · mięso · Threskiornithidae · BRAK opisu
+  - Europolemur · 56–41 · ląd · rośliny · Notharctidae · BRAK opisu
+  - Masillastega · 48–41 · powietrze · mięso · Sulidae · BRAK opisu
+  - Tachypteron · 48–41 · ląd · mięso · Emballonuridae · BRAK opisu
+  - Darwinius · 48–41 · ląd · rośliny · BRAK opisu
+- Goście epoki (57):
+  - Aturia · 66–5.3 · morze · mięso · Aturiidae · BRAK opisu
+  - Aturoidea · 66–38 · morze · mięso · Hercoglossidae · BRAK opisu
+  - Polydolops · 57–21 · ląd · mięso · Polydolopidae · BRAK opisu
+  - Anthracobune · 48–38 · ląd · rośliny · Anthracobunidae · BRAK opisu
+  - Palaeotherium · 56–27 · ląd · rośliny · Palaeotheriidae · BRAK opisu
+  - Homogalax · 56–38 · ląd · rośliny · BRAK opisu
+  - Lophialetes · 56–23 · ląd · rośliny · Lophialetidae · BRAK opisu
+  - Cadurcodon · 56–23 · ląd · rośliny · Amynodontidae · BRAK opisu
+  - Amynodon · 48–23 · ląd · rośliny · Amynodontidae · BRAK opisu
+  - Urtinotherium · 56–34 · ląd · rośliny · Paraceratheriidae · BRAK opisu
+  - Bahinolophus · 56–34 · ląd · rośliny · Deperetellidae · BRAK opisu
+  - Teleolophus · 56–27 · ląd · rośliny · Tapiridae · BRAK opisu
+  - Lophiodon · 56–34 · ląd · rośliny · Lophiodontidae · BRAK opisu
+  - Cainotherium · 56–5.3 · ląd · rośliny · Cainotheriidae · BRAK opisu
+  - Leptoreodon · 46–37 · ląd · rośliny · Protoceratidae · BRAK opisu
+  - Pakicetus · 56–41 · słodka woda · ryby · Pakicetidae · BRAK opisu
+  - Andrewsiphius · 48–38 · morze · ryby · Remingtonocetidae · BRAK opisu
+  - Ambulocetus · 48–41 · morze · ryby · Ambulocetidae · BRAK opisu
+  - Basilosaurus · 56–34 · morze · ryby · Basilosauridae · BRAK opisu
+  - Dichobune · 56–27 · ląd · rośliny · Dichobunidae · BRAK opisu
+  - Dichodon · 48–34 · ląd · rośliny · Xiphodontidae · BRAK opisu
+  - Protylopus · 46–37 · ląd · rośliny · Oromerycidae · BRAK opisu
+  - Andrewsarchus · 48–38 · ląd · mięso · BRAK opisu
+  - Hapalodectes · 62–38 · ląd · mięso · Hapalodectidae · BRAK opisu
+  - Pachyaena · 62–38 · ląd · mięso · Mesonychidae · BRAK opisu
+  - Oxyaena · 59–34 · ląd · mięso · Oxyaenidae · BRAK opisu
+  - Prototomus · 56–34 · ląd · mięso · Hyaenodontidae · BRAK opisu
+  - Thyrohyrax · 56–20 · ląd · rośliny · Pliohyracidae · BRAK opisu
+  - Notostylops · 57–38 · ląd · rośliny · Notostylopidae · BRAK opisu
+  - Henricosbornia · 57–38 · ląd · rośliny · Henricosborniidae · BRAK opisu
+  - Notopithecus · 56–38 · ląd · rośliny · Notopithecidae · BRAK opisu
+  - Pleurostylodon · 57–29 · ląd · rośliny · Isotemnidae · BRAK opisu
+  - Trigonostylops · 57–27 · ląd · rośliny · Trigonostylopidae · BRAK opisu
+  - Numidotherium · 56–34 · ląd · rośliny · Numidotheriidae · BRAK opisu
+  - Moeritherium · 48–27 · ląd · rośliny · Moeritheriidae · BRAK opisu
+  - Protosiren · 48–34 · morze · rośliny · Protosirenidae · BRAK opisu
+  - Charactosuchus · 48–7.2 · morze · mięso · Crocodylidae · BRAK opisu
+  - Sebecus · 66–3.6 · ląd · mięso · Sebecidae · BRAK opisu
+  - Iberosuchus · 56–34 · ląd · mięso · BRAK opisu
+  - Telecrex · 56–38 · powietrze · rośliny · Numididae · BRAK opisu
+  - Xorazmortyx · 41–38 · powietrze · rośliny · Paraortygidae · BRAK opisu
+  - Diatryma · 56–41 · ląd · mięso · Diatrymidae · BRAK opisu
+  - Palaeeudyptes · 48–16 · morze · ryby · Spheniscidae · BRAK opisu
+  - Dasornis · 62–34 · powietrze · mięso · Pelagornithidae · BRAK opisu
+  - Chelydropsis · 48–1.8 · ląd · ryby · Chelydridae · BRAK opisu
+  - Psephophorus · 41–2.6 · morze · ryby · Dermochelyidae · BRAK opisu
+  - Paraulopus · 48–3 · morze · mięso · Paraulopidae · BRAK opisu
+  - Sphyraenodus · 72–5.3 · morze · plankton · BRAK opisu
+  - Preophidion · 62–27 · morze · mięso · Ophididae · BRAK opisu
+  - Waitakia · 56–16 · morze · plankton · Hemerocoetidae · BRAK opisu
+  - Pomadasyidarum · 52–5.3 · morze · mięso · Pomadasyidae · BRAK opisu
+  - Brachycarcharias · 62–23 · morze · mięso · Odontaspididae · BRAK opisu
+  - Keasius · 41–12 · morze · plankton · Cetorhinidae · BRAK opisu
+  - Premontreia · 66–7.2 · morze · mięso · Scyliorhinidae · BRAK opisu
+  - Physogaleus · 59–1.8 · morze · mięso · Carcharhinidae · BRAK opisu
+  - Burnhamia · 62–16 · morze · mięso · Mobulidae · BRAK opisu
+  - Conus · 50–0 · morze · mięso · Conidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Macropunctum, Psiloptera, Ceropria, Lanelater, Pachycondyla, Protopone, Titanomyrma, Palaeocrassirhinus, Mezira, Cyrtopone, Lampetis, Dicerca, Hydrobiomorpha, Eospinosus, Gesomyrmex, Palaeoalatorostrum, Cupes, Alligator, Hirmoneura, Buprestis (Ancylochira), Sphenoptera, Cydnopsis, Periplaneta, Pseudectatomma, Cephalopone, Cylindrobates, Neuroctenus, Hydrophilus, Scambus, Allaeochelys …
+
+## Rozdział 34: Badlands White River (id: white_river)
+
+- USA · Paleogen · 37–30 mln lat temu · formacje: Brule, Chadron
+- Odblokowanie: poziom parku 51, 27000000000 monet
+- Tytuł etapu w grze: „Ochłodzenie i trawy” · brak przerywnika fabularnego
+- Opis: Oligoceńskie prerie Dakoty — entelodonty, brontotery, wczesne konie i koty z fałszywymi szablami.
+- Fauna miejscowa (55):
+  - Merycoidodon · 41–19 · ląd · rośliny · Merycoidodontidae · BRAK opisu
+  - Palaeolagus · 40–16 · ląd · rośliny · Leporidae · BRAK opisu
+  - Miniochoerus · 37–30 · ląd · rośliny · Merycoidodontidae · BRAK opisu
+  - Hesperocyon · 46–19 · ląd · mięso · Canidae · BRAK opisu
+  - Leptauchenia · 34–19 · ląd · rośliny · Merycoidodontidae · BRAK opisu
+  - Ischyromys · 46–30 · ląd · rośliny · Ischyromyidae · BRAK opisu
+  - Leptomeryx · 40–19 · ląd · rośliny · Leptomerycidae · BRAK opisu
+  - Hyracodon · 46–19 · ląd · rośliny · Hyracodontidae · BRAK opisu
+  - Megalagus · 40–16 · ląd · rośliny · Leporidae · BRAK opisu
+  - Hyaenodon · 56–12 · ląd · mięso · Hyaenodontidae · BRAK opisu
+  - Daphoenus · 40–19 · ląd · mięso · Amphicyonidae · BRAK opisu
+  - Adjidaumo · 40–30 · ląd · rośliny · Eomyidae · BRAK opisu
+  - Archaeotherium · 37–16 · ląd · mięso · Entelodontidae · BRAK opisu
+  - Peltosaurus · 63–16 · ląd · mięso · BRAK opisu
+  - Poebrotherium · 41–23 · ląd · rośliny · Camelidae · BRAK opisu
+  - Mesohippus · 40–30 · ląd · rośliny · Equidae · BRAK opisu
+  - Eumys · 40–19 · ląd · rośliny · Cricetidae · BRAK opisu
+  - Altasciurus · 37–30 · ląd · rośliny · Aplodontiidae · BRAK opisu
+  - Paradjidaumo · 46–30 · ląd · rośliny · Eomyidae · BRAK opisu
+  - Helodermoides · 46–32 · ląd · mięso · Anguidae · BRAK opisu
+  - Centetodon · 56–19 · ląd · mięso · Geolabididae · BRAK opisu
+  - Stibarus · 37–32 · ląd · rośliny · Leptochoeridae · BRAK opisu
+  - Subhyracodon · 41–19 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Hypertragulus · 40–16 · ląd · rośliny · Hypertragulidae · BRAK opisu
+  - Domnina · 46–5.3 · ląd · mięso · Soricidae · BRAK opisu
+  - Hypisodus · 37–25 · ląd · rośliny · Hypisodontidae · BRAK opisu
+  - Hoplophoneus · 38–19 · ląd · mięso · Nimravidae · BRAK opisu
+  - Herpetotherium · 56–16 · ląd · mięso · Herpetotheriidae · BRAK opisu
+  - Leptochoerus · 41–19 · ląd · rośliny · Leptochoeridae · BRAK opisu
+  - Stylemys · 41–5.3 · ląd · rośliny · Testudinidae · BRAK opisu
+  - Megacerops · 46–34 · ląd · rośliny · Brontotheriidae · BRAK opisu
+  - Heliscomys · 40–13 · ląd · rośliny · Heliscomyidae · BRAK opisu
+  - Miohippus · 41–16 · ląd · rośliny · Equidae · BRAK opisu
+  - Trigonias · 41–27 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Leptictis · 40–30 · ląd · mięso · Leptictidae · BRAK opisu
+  - Colodon · 48–16 · ląd · rośliny · Tapiridae · BRAK opisu
+  - Scottimus · 37–19 · ląd · rośliny · Cricetidae · BRAK opisu
+  - Dinictis · 37–25 · ląd · mięso · Nimravidae · BRAK opisu
+  - Cedromus · 37–19 · ląd · rośliny · Sciuridae · BRAK opisu
+  - Palaeogale · 37–7.2 · ląd · mięso · Palaeogalidae · BRAK opisu
+  - Bathornis · 46–19 · powietrze · mięso · Bathornithidae · BRAK opisu
+  - Subparictis · 37–32 · ląd · mięso · Subparictidae · BRAK opisu
+  - Glyptosaurus · 56–23 · ląd · mięso · Anguidae · BRAK opisu
+  - Echmatemys · 56–34 · ląd · rośliny · Geoemydidae · BRAK opisu
+  - Apatemys · 56–32 · ląd · rośliny · Apatemyidae · BRAK opisu
+  - Nimravus · 38–19 · ląd · mięso · Nimravidae · BRAK opisu
+  - Saniwa · 63–16 · ląd · mięso · BRAK opisu
+  - Eopelobates · 86–3.6 · słodka woda · ryby · Pelobatidae · BRAK opisu
+  - Uintaparamys · 56–34 · ląd · rośliny · Ischyromyidae · BRAK opisu
+  - Ectypodus · 66–34 · ląd · mięso · Neoplagiaulacidae · BRAK opisu
+  - Exostinus · 84–32 · ląd · mięso · Xenosauridae · BRAK opisu
+  - Hesperotestudo · 46–0 · ląd · rośliny · Testudinidae · BRAK opisu
+  - Protoreodon · 46–34 · ląd · rośliny · Agriochoeridae · BRAK opisu
+  - Peradectes · 66–34 · ląd · mięso · Peradectidae · BRAK opisu
+  - Ignacius · 66–34 · ląd · rośliny · Paromomyidae · BRAK opisu
+- Goście epoki (30):
+  - Mioproteus · 34–2.6 · słodka woda · ryby · Proteidae · BRAK opisu
+  - Eggysodon · 34–23 · ląd · rośliny · Eggysodontidae · BRAK opisu
+  - Paraceratherium · 38–16 · ląd · rośliny · Paraceratheriidae · BRAK opisu
+  - Moropus · 30–5.3 · ląd · rośliny · Chalicotheriidae · BRAK opisu
+  - Desmostylus · 34–2.6 · ląd · rośliny · Desmostylidae · BRAK opisu
+  - Cornwallius · 30–19 · ląd · rośliny · Desmostylidae · BRAK opisu
+  - Dorudon · 41–34 · morze · ryby · Basilosauridae · BRAK opisu
+  - Nanotragulus · 41–16 · ląd · rośliny · Hypertragulidae · BRAK opisu
+  - Blastomeryx · 30–5.3 · ląd · rośliny · Moschidae · BRAK opisu
+  - Daeodon · 30–16 · ląd · mięso · Entelodontidae · BRAK opisu
+  - Stenoplesictis · 34–23 · ląd · mięso · BRAK opisu
+  - Apterodon · 41–23 · ląd · mięso · Hyainailouridae · BRAK opisu
+  - Heosminthus · 38–16 · ląd · rośliny · Dipodidae · BRAK opisu
+  - Microdyromys · 34–5.3 · ląd · rośliny · Gliridae · BRAK opisu
+  - Yindirtemys · 34–12 · ląd · rośliny · Ctenodactylidae · BRAK opisu
+  - Arsinoitherium · 41–23 · ląd · mięso · Arsinoitheriidae · BRAK opisu
+  - Phiomia · 41–23 · ląd · rośliny · BRAK opisu
+  - Barytherium · 41–27 · ląd · rośliny · Barytheriidae · BRAK opisu
+  - Palaeomastodon · 38–23 · ląd · rośliny · Palaeomastodontidae · BRAK opisu
+  - Metaxytherium · 34–2.6 · morze · rośliny · Dugongidae · BRAK opisu
+  - Nanortyx · 37–34 · powietrze · rośliny · Odontophoridae · BRAK opisu
+  - Paraortyx · 34–27 · powietrze · rośliny · BRAK opisu
+  - Palaeortyx · 34–2.6 · powietrze · rośliny · Phasianidae · BRAK opisu
+  - Palaelodus · 34–5 · powietrze · mięso · Palaelodidae · BRAK opisu
+  - Geranopterus · 38–34 · powietrze · mięso · Geranopteridae · BRAK opisu
+  - Klallamornis · 34–23 · morze · ryby · Plotopteridae · BRAK opisu
+  - Pelagornis · 41–2.6 · powietrze · mięso · Pelagornithidae · BRAK opisu
+  - Ptychogaster · 41–2.6 · ląd · rośliny · Geoemydidae · BRAK opisu
+  - Clypeaster · 41–0 · morze · plankton · Clypeasteridae · BRAK opisu
+  - Balanus · 40–0 · morze · plankton · Balanidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Rhineura, Paratylopus, Prosciurus, Sinclairella, Proscalops, Archaeocyon, Pseudoprotoceras, Micropternodus, Apternodus, Oligoryctes, Agnotocastor, Heptacodon, Perchoerus, Mesocyon, Parophisaurus, Eutypomys, Agriochoerus, Brachyrhynchocyon, Cynodesmus, Alligator, Oligospermophilus, Proterix, Cylindrodon, Aepinacodon, Palaeocastor, Kirkomys, Gopherus, Nanodelphys, Oligoscalops, Diplolophus …
+
+## Rozdział 35: Formacja Santa Cruz (id: santa_cruz)
+
+- Argentyna · Neogen · 18–16 mln lat temu · formacje: Santa Cruz
+- Odblokowanie: poziom parku 52, 34000000000 monet
+- Tytuł etapu w grze: „Wyspa Ameryki Południowej” · brak przerywnika fabularnego
+- Opis: Wczesnomioceńska Patagonia, gdy Ameryka Południowa była wyspą-kontynentem. Własne kopytne, torbacze drapieżne, leniwce, gliptodonty i ptaki terroru.
+- Fauna miejscowa (14):
+  - Protypotherium · 29–5 · ląd · rośliny · Interatheriidae · BRAK opisu
+  - Palaeothentes · 34–12 · ląd · mięso · Palaeothentidae · BRAK opisu
+  - Cladosictis · 21–14 · ląd · mięso · BRAK opisu
+  - Proterotherium · 29–2.6 · ląd · rośliny · Proterotheriidae · BRAK opisu
+  - Microbiotherium · 36–16 · ląd · mięso · Microbiotheriidae · BRAK opisu
+  - Astrapotherium · 29–14 · ląd · rośliny · Astrapotheriidae · BRAK opisu
+  - Psilopterus · 23–0 · ląd · mięso · Phorusrhacidae · BRAK opisu
+  - Prozaedyus · 34–3.6 · ląd · rośliny · Chlamyphoridae · BRAK opisu
+  - Peltephilus · 34–12 · ląd · rośliny · Peltephilidae · BRAK opisu
+  - Phorusrhacos · 29–14 · ląd · mięso · Phorusrhacidae · BRAK opisu
+  - Brontornis · 23–12 · powietrze · rośliny · BRAK opisu
+  - Stegotherium · 23–16 · ląd · rośliny · BRAK opisu
+  - Opisthodactylus · 21–3 · ląd · mięso · Rheidae · BRAK opisu
+  - Macranhinga · 23–5 · powietrze · mięso · Anhingidae · BRAK opisu
+- Goście epoki (40):
+  - Chelotriton · 27–2.6 · słodka woda · ryby · Salamandridae · BRAK opisu
+  - Latonia · 23–1.8 · słodka woda · ryby · Discoglossidae · BRAK opisu
+  - Aphelops · 23–3.6 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Behemotops · 27–23 · ląd · rośliny · BRAK opisu
+  - Paleoparadoxia · 23–5.3 · ląd · rośliny · Paleoparadoxiidae · BRAK opisu
+  - Squalodon · 27–3.6 · morze · ryby · Squalodontidae · BRAK opisu
+  - Schizodelphis · 27–5.3 · morze · ryby · Eurhinodelphinidae · BRAK opisu
+  - Kentriodon · 25–5.3 · morze · ryby · Kentriodontidae · BRAK opisu
+  - Livyatan · 23–3.6 · morze · ryby · BRAK opisu
+  - Pomatodelphis · 20–3.6 · morze · ryby · Platanistidae · BRAK opisu
+  - Cosoryx · 23–3.6 · ląd · rośliny · Antilocapridae · BRAK opisu
+  - Palaeomeryx · 23–2.6 · ląd · rośliny · Palaeomerycidae · BRAK opisu
+  - Lagomeryx · 23–5.3 · ląd · rośliny · Lagomerycidae · BRAK opisu
+  - Cranioceras · 23–4.7 · ląd · rośliny · Dromomerycidae · BRAK opisu
+  - Percrocuta · 16–2.6 · ląd · mięso · Percrocutidae · BRAK opisu
+  - Aelurodon · 23–3.6 · ląd · mięso · Canidae · BRAK opisu
+  - Epicyon · 23–4.7 · ląd · mięso · Canidae · BRAK opisu
+  - Amphictis · 27–7.2 · ląd · mięso · Ailuridae · BRAK opisu
+  - Leptarctus · 23–4.7 · ląd · mięso · Mustelidae · BRAK opisu
+  - Allodesmus · 27–5.3 · ląd · mięso · Desmatophocidae · BRAK opisu
+  - Leptophoca · 20–2.6 · ląd · ryby · Phocidae · BRAK opisu
+  - Pithanotaria · 16–5.3 · ląd · ryby · Otariidae · BRAK opisu
+  - Semigenetta · 23–5.3 · ląd · mięso · Viverridae · BRAK opisu
+  - Ictitherium · 23–2.6 · ląd · mięso · Hyaenidae · BRAK opisu
+  - Spermophilinus · 23–2.6 · ląd · rośliny · Sciuridae · BRAK opisu
+  - Zygolophodon · 27–2.6 · ląd · rośliny · Mammutidae · BRAK opisu
+  - Paratetralophodon · 16–5.3 · ląd · rośliny · Tetralophodontidae · BRAK opisu
+  - Primelephas · 23–2.6 · ląd · rośliny · Elephantidae · BRAK opisu
+  - Platybelodon · 20–4.7 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Potamosiren · 20–11 · słodka woda · rośliny · Trichechinae · BRAK opisu
+  - Doellotatus · 29–2.6 · ląd · mięso · Dasypodidae · BRAK opisu
+  - Purussaurus · 27–0 · morze · mięso · Alligatoridae · BRAK opisu
+  - Palaealectoris · 23–19 · powietrze · rośliny · Tetraonidae · BRAK opisu
+  - Boreortalis · 19–9.4 · powietrze · rośliny · Cracidae · BRAK opisu
+  - Miophasianus · 23–7 · powietrze · rośliny · Phasianidae · BRAK opisu
+  - Nelepsittacus · 19–16 · powietrze · mięso · Strigopidae · BRAK opisu
+  - Kelenken · 16–14 · ląd · mięso · Phorusrhacidae · BRAK opisu
+  - Nambashag · 27–23 · powietrze · mięso · Phalacrocoracidae · BRAK opisu
+  - Palaeospheniscus · 23–3.6 · morze · ryby · BRAK opisu
+  - Proconsul · 27–12 · ląd · plankton · Proconsulidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Hapalops, Acarechimys, Adinotherium, Neoreomys, Sipalocyon, Nesodon, Interatherium, Perimys, Proeutatus, Homunculus, Eucholoeops, Spaniomys, Stenotatus, Eocardia, Borhyaena, Hegetotherium, Acdestis, Steiromys, Stichomys, Thoatherium, Acaremys, Tetramerorhinus, Theosodon, Sciamys, Prolagostomus, Prothylacynus, Homalodotherium, Cochlops, Pachyrukhos, Phanomys …
+
+## Rozdział 36: Wzgórza Siwalik (id: siwaliki)
+
+- Pakistan i Indie · Neogen – Czwartorzęd · 16–0.8 mln lat temu · formacje: Chinji, Nagri, Dhok Pathan, Tatrot, Pinjor, Siwalik
+- Odblokowanie: poziom parku 52, 42000000000 monet
+- Tytuł etapu w grze: „U stóp Himalajów” · brak przerywnika fabularnego
+- Opis: Osady rzek spływających z wypiętrzających się Himalajów, od miocenu po pliocen. Małpy człekokształtne, przodkowie słoni, żyrafy i hipopotamy.
+- Fauna miejscowa (14):
+  - Dorcatherium · 23–2.6 · ląd · rośliny · Tragulidae · BRAK opisu
+  - Hipparion · 23–0 · ląd · rośliny · Equidae · BRAK opisu
+  - Stegodon · 23–0 · ląd · rośliny · Elephantidae · BRAK opisu
+  - Amphicyon · 27–2.6 · ląd · mięso · Amphicyonidae · BRAK opisu
+  - Hexaprotodon · 23–0 · ląd · rośliny · Hippopotamidae · BRAK opisu
+  - Chalicotherium · 23–0.1 · ląd · rośliny · Chalicotheriidae · BRAK opisu
+  - Prodeinotherium · 27–2.6 · ląd · rośliny · Deinotheriidae · BRAK opisu
+  - Varanus · 17–0 · ląd · mięso · Varanidae · BRAK opisu
+  - Gomphotherium · 34–0 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Choerolophodon · 20–2.6 · ląd · rośliny · Choerolophodontidae · BRAK opisu
+  - Anthracotherium · 48–12 · ląd · rośliny · Anthracotheriidae · BRAK opisu
+  - Gigantopithecus · 12–0.1 · ląd · rośliny · Hominidae · BRAK opisu
+  - Coelodonta · 7.2–0 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Deinotherium · 23–0 · ląd · rośliny · Deinotheriidae · BRAK opisu
+- Goście epoki (11):
+  - Thylacosmilus · 8–2.6 · ląd · mięso · Thylacosmilidae · BRAK opisu
+  - Brachydelphis · 14–5.3 · morze · ryby · Pontoporiidae · BRAK opisu
+  - Cyonasua · 12–2.6 · ląd · rośliny · Procyonidae · BRAK opisu
+  - Promephitis · 12–3.6 · ląd · mięso · Mephitidae · BRAK opisu
+  - Pseudotypotherium · 12–2.6 · ląd · rośliny · Mesotheriidae · BRAK opisu
+  - Eosclerocalyptus · 14–3 · ląd · rośliny · BRAK opisu
+  - Mesembriornis · 8–3.6 · powietrze · mięso · Hermosiornithidae · BRAK opisu
+  - Argentavis · 8–5 · powietrze · mięso · Teratornithidae · BRAK opisu
+  - Sahelanthropus · 7.2–5.3 · ląd · plankton · Hominidae · BRAK opisu
+  - Orrorin · 6.1–5.7 · ląd · plankton · BRAK opisu
+  - Ardipithecus · 12–2.6 · ląd · plankton · Hominidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Gavialis, Listriodon, Rhinoceros, Crocuta, Dorcabune, Giraffokeryx, Elephas, Equus, Cervus, Geoclemys, Chilotherium, Brachypotherium, Gazella, Sivapithecus, Batagur, Melanochelys, Omegachelys, Strepsiportax, Miotragocerus, Hippopotamodon, Sus, Pachyportax, Tragocerus, Enhydriodon, Mus, Conohyus, Hardella, Palaeochoerus, Propotamochoerus, Hemimeryx …
+
+## Rozdział 37: Pampasy plejstoceńskie (id: pampas)
+
+- Argentyna · Czwartorzęd · 1.8–0 mln lat temu · formacje: Luján, Ensenada
+- Odblokowanie: poziom parku 53, 53000000000 monet
+- Tytuł etapu w grze: „Megafauna epoki lodowcowej” · brak przerywnika fabularnego
+- Opis: Plejstoceńska megafauna Ameryki Południowej — Megatherium, gliptodonty, Toxodon i koty szablozębne.
+- Fauna miejscowa (13):
+  - Mesotherium · 3.6–0 · ląd · rośliny · Mesotheriidae · BRAK opisu
+  - Pampagyps · 0.1–0 · powietrze · mięso · Cathartidae · BRAK opisu
+  - Homo · 5.3–0 · ląd · plankton · Hominidae · BRAK opisu
+  - Megatherium · 27–0 · ląd · rośliny · Megatheriidae · BRAK opisu
+  - Neosclerocalyptus · 8–0 · ląd · rośliny · Panochthidae · BRAK opisu
+  - Doedicurus · 5–0 · ląd · rośliny · Glyptodontidae · BRAK opisu
+  - Glyptodon · 27–0 · ląd · rośliny · Glyptodontidae · BRAK opisu
+  - Notiomastodon · 23–0 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Panochthus · 3.8–0 · ląd · rośliny · Glyptodontidae · BRAK opisu
+  - Pionus · 1.8–0.4 · powietrze · rośliny · Psittacidae · BRAK opisu
+  - Archaeomylodon · 1.8–0 · ląd · rośliny · Mylodontidae · BRAK opisu
+  - Scelidotherium · 5–0 · ląd · rośliny · Mylodontidae · BRAK opisu
+  - Scelidodon · 29–0 · ląd · rośliny · Mylodontidae · BRAK opisu
+- Goście epoki (89):
+  - Branchiopus · 0–0 · ląd · rośliny · Arthropleuridae · BRAK opisu
+  - Hyperdidelphys · 8–0 · ląd · mięso · Didelphidae · BRAK opisu
+  - Thylacinus · 27–0 · ląd · mięso · Thylacinidae · BRAK opisu
+  - Protemnodon · 23–0 · ląd · rośliny · Macropodidae · BRAK opisu
+  - Procoptodon · 27–0 · ląd · rośliny · BRAK opisu
+  - Simosthenurus · 5.3–0 · ląd · rośliny · BRAK opisu
+  - Diprotodon · 23–0 · ląd · rośliny · Diprotodontidae · BRAK opisu
+  - Thylacoleo · 5.3–0 · ląd · mięso · Thylacoleonidae · BRAK opisu
+  - Calippus · 23–1.4 · ląd · rośliny · Equidae · BRAK opisu
+  - Nannippus · 23–0 · ląd · rośliny · Equidae · BRAK opisu
+  - Elasmotherium · 5.3–0 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Teleoceras · 23–1.4 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Stephanorhinus · 9.7–0 · ląd · rośliny · Rhinocerotidae · BRAK opisu
+  - Ancylotherium · 12–0.8 · ląd · rośliny · Chalicotheriidae · BRAK opisu
+  - Macrauchenia · 23–0 · ląd · rośliny · Macraucheniidae · BRAK opisu
+  - Hemisyntrachelus · 23–0 · morze · ryby · Delphinidae · BRAK opisu
+  - Scaldicetus · 23–0 · morze · ryby · BRAK opisu
+  - Orycterocetus · 23–0 · morze · ryby · Physeteridae · BRAK opisu
+  - Choneziphius · 23–1.8 · morze · ryby · Ziphiidae · BRAK opisu
+  - Herpetocetus · 23–0 · morze · plankton · Cetotheriidae · BRAK opisu
+  - Mesocetus · 23–0.8 · morze · plankton · Tranatocetidae · BRAK opisu
+  - Balaenula · 20–0.8 · morze · plankton · Balaenidae · BRAK opisu
+  - Hemiauchenia · 23–0 · ląd · rośliny · Camelidae · BRAK opisu
+  - Libytherium · 23–0 · ląd · rośliny · BRAK opisu
+  - Pelorovis · 5.3–0 · ląd · rośliny · Bovidae · BRAK opisu
+  - Palaeotragus · 23–0 · ląd · rośliny · Giraffidae · BRAK opisu
+  - Megaloceros · 7.2–0 · ląd · rośliny · Cervidae · BRAK opisu
+  - Kolpochoerus · 12–0 · ląd · rośliny · Suidae · BRAK opisu
+  - Mylohyus · 9.4–0 · ląd · rośliny · Tayassuidae · BRAK opisu
+  - Aenocyon · 2.6–0 · ląd · mięso · Canidae · BRAK opisu
+  - Agriotherium · 23–1.4 · ląd · mięso · Ursidae · BRAK opisu
+  - Arctodus · 4.7–0 · ląd · rośliny · Ursidae · BRAK opisu
+  - Trigonictis · 9.4–0.2 · ląd · mięso · Mustelidae · BRAK opisu
+  - Ontocetus · 23–0 · ląd · mięso · Odobenidae · BRAK opisu
+  - Chasmaporthetes · 8.7–0 · ląd · mięso · Hyaenidae · BRAK opisu
+  - Smilodon · 4.7–0 · ląd · mięso · Felidae · BRAK opisu
+  - Machairodus · 23–0.1 · ląd · mięso · Felidae · BRAK opisu
+  - Homotherium · 23–0 · ląd · mięso · Felidae · BRAK opisu
+  - Rhinocolobus · 5.3–1.8 · ląd · rośliny · Cercopithecidae · BRAK opisu
+  - Australopithecus · 12–0 · ląd · rośliny · Hominidae · BRAK opisu
+  - Cupidinimus · 23–1.4 · ląd · rośliny · Heteromyidae · BRAK opisu
+  - Castoroides · 9.4–0 · ląd · rośliny · Castoridae · BRAK opisu
+  - Occitanomys · 23–1.8 · ląd · rośliny · Muridae · BRAK opisu
+  - Mimomys · 23–0 · ląd · rośliny · Cricetidae · BRAK opisu
+  - Josephoartigasia · 5–0.4 · ląd · rośliny · Dinomyidae · BRAK opisu
+  - Toxodon · 23–0 · ląd · rośliny · Toxodontidae · BRAK opisu
+  - Paedotherium · 14–0 · ląd · rośliny · Hegetotheriidae · BRAK opisu
+  - Mammut · 27–0 · ląd · rośliny · Mammutidae · BRAK opisu
+  - Stegolophodon · 23–1.8 · ląd · rośliny · Stegodontidae · BRAK opisu
+  - Palaeoloxodon · 5.3–0 · ląd · rośliny · Elephantidae · BRAK opisu
+  - Mammuthus · 23–0 · ląd · rośliny · Elephantidae · BRAK opisu
+  - Anancus · 23–0 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Cuvieronius · 9.4–0 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Stegomastodon · 9.4–0 · ląd · rośliny · Gomphotheriidae · BRAK opisu
+  - Hydrodamalis · 12–0 · morze · rośliny · Dugongidae · BRAK opisu
+  - Pachyarmatherium · 4.7–0 · ląd · rośliny · Pachyarmatheriidae · BRAK opisu
+  - Holmesina · 4.7–0 · ląd · rośliny · Pampatheriidae · BRAK opisu
+  - Glyptotherium · 5.3–0 · ląd · rośliny · Glyptodontidae · BRAK opisu
+  - Paramylodon · 4.7–0 · ląd · rośliny · Mylodontidae · BRAK opisu
+  - Megalonyx · 9.4–0 · ląd · rośliny · Megalonychidae · BRAK opisu
+  - Nothrotherium · 4.7–0 · ląd · rośliny · Nothrotheriidae · BRAK opisu
+  - Eremotherium · 8–0 · ląd · rośliny · Megatheriidae · BRAK opisu
+  - Parapavo · 0.1–0 · powietrze · rośliny · Meleagridae · BRAK opisu
+  - Palaeocryptonyx · 5.3–0 · powietrze · rośliny · Phasianidae · BRAK opisu
+  - Latagallina · 5.3–0 · powietrze · rośliny · Megapodiidae · BRAK opisu
+  - Progura · 5.3–0 · powietrze · rośliny · Megapodiidae · BRAK opisu
+  - Neophrontops · 19–0 · powietrze · mięso · Accipitridae · BRAK opisu
+  - Mancalla · 7.2–0 · powietrze · mięso · Alcidae · BRAK opisu
+  - Pinguinus · 5.3–0 · powietrze · mięso · Alcidae · BRAK opisu
+  - Sylviornis · 0–0 · powietrze · rośliny · Sylviornithidae · BRAK opisu
+  - Chendytes · 2.6–0 · powietrze · rośliny · Anatidae · BRAK opisu
+  - Lophopsittacus · 0–0 · powietrze · mięso · Psittaculidae · BRAK opisu
+  - Ectopistes · 5.3–0 · powietrze · rośliny · Columbidae · BRAK opisu
+  - Raphus · 0–0 · powietrze · rośliny · Columbidae · BRAK opisu
+  - Oraristrix · 0.2–0 · powietrze · mięso · Strigidae · BRAK opisu
+  - Aptornis · 19–0 · powietrze · mięso · BRAK opisu
+  - Nesotrochis · 0.1–0 · powietrze · mięso · Nesotrochidae · BRAK opisu
+  - Aphanocrex · 0.1–0 · powietrze · mięso · Rallidae · BRAK opisu
+  - Titanis · 5.3–1.8 · ląd · mięso · Phorusrhacidae · BRAK opisu
+  - Apteribis · 0.1–0 · powietrze · mięso · Plataleidae · BRAK opisu
+  - Turnagra · 0.1–0 · powietrze · mięso · Oriolidae · BRAK opisu
+  - Meridiocichla · 0.1–0 · powietrze · rośliny · Turdidae · BRAK opisu
+  - Necropsar · 0–0 · powietrze · mięso · Sturnidae · BRAK opisu
+  - Aepyornis · 0.1–0 · ląd · rośliny · Aepyornithidae · BRAK opisu
+  - Pachyornis · 2.6–0 · ląd · mięso · Emeidae · BRAK opisu
+  - Dinornis · 0.1–0 · ląd · rośliny · Dinornithidae · BRAK opisu
+  - Teratornis · 1.8–0 · powietrze · mięso · Teratornithidae · BRAK opisu
+  - Titanochelon · 23–0.8 · ląd · rośliny · Testudinidae · BRAK opisu
+  - Paranthropus · 5.3–0 · ląd · plankton · Hominidae · BRAK opisu
+- Drobne skamieniałości (nie do wskrzeszenia): Chelonoidis, Tayassu, Lagostomus, Dolichotis, Dusicyon, Chaetophractus, Zaedyus, Pediolagus, Lama, Scotobius, Epipedonota, Nyctelia, Cyclocephala, Diloboderus, Megadytes (Paramegadytes), Ozotoceros, Hippocamelus, Lagostomus (Lagostomopsis), Rhamdia, Corydoras, Hypostomus, Phrynops, Blastocerus, Leiosaurus, Lycalopex

@@ -1,12 +1,16 @@
 // Builds src/data/minerals.json: ~20 real minerals unique to every dig site, unlocked deeper and deeper.
 // Source: Wikidata (mineral species with a Polish name and a chemical formula, CC0), cached in data-raw/.
 // Colour, crystal form and rarity are game approximations derived from the formula.
-// Run: npx tsx scripts/data/minerals.ts   (after npm run data, so all sites exist)
+// Run: npx tsx scripts/data/minerals.ts   (after npm run data, so all sites exist). Append-only: sites that already
+// have minerals keep them; delete src/data/minerals.json to regenerate everything (breaks mineral ids in saves).
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
-import { SITES } from './config';
+// all sites of the game, including the ones the Librarian patch adds after the PBDB build
+const SITES = (JSON.parse(fs.readFileSync('src/data/sites.json', 'utf8')) as { sites: { id: string }[] }).sites;
+/** minerals already in the game keep their sites and ids (saves hold them); only sites without minerals get new ones */
+const KEEP = fs.existsSync('src/data/minerals.json') ? (JSON.parse(fs.readFileSync('src/data/minerals.json', 'utf8')).minerals as { id: string; name: string; site: string }[]) : [];
 
 const RAW = 'data-raw';
 /** each site gets its own number of minerals, 20–30 */
@@ -112,6 +116,16 @@ function formOf(name: string, el: Set<string>, cls: Cls, formula: string): strin
 
 /** element and class preferences of each site's geology */
 const PROFILE: Record<string, { el: string[]; cls: Cls[] }> = {
+  cincinnati: { el: ['Ca', 'Mg', 'Sr', 'Fe'], cls: ['carbonate', 'sulfate'] },
+  bertie: { el: ['Ca', 'Mg', 'Na', 'S'], cls: ['sulfate', 'halide', 'carbonate'] },
+  rhynie: { el: ['Si', 'As', 'Sb', 'Hg'], cls: ['silicate', 'sulfide', 'oxide'] },
+  east_kirkton: { el: ['Ca', 'Si', 'Fe', 'Mg'], cls: ['carbonate', 'silicate'] },
+  joggins: { el: ['C', 'Fe', 'S', 'Ca'], cls: ['sulfide', 'carbonate', 'native'] },
+  red_beds: { el: ['Fe', 'Ca', 'Cu', 'S'], cls: ['oxide', 'sulfate', 'carbonate'] },
+  elliot: { el: ['Fe', 'Ca', 'Si', 'Al'], cls: ['silicate', 'oxide'] },
+  cedar_mountain: { el: ['U', 'V', 'Ca', 'Si'], cls: ['silicate', 'oxide', 'carbonate'] },
+  santa_cruz: { el: ['Si', 'Na', 'K', 'Al'], cls: ['silicate', 'oxide'] },
+  siwaliki: { el: ['Si', 'Ca', 'Fe', 'K'], cls: ['silicate', 'carbonate', 'oxide'] },
   morrison: { el: ['U', 'V', 'Cu', 'Fe', 'Ca'], cls: ['silicate', 'oxide', 'phosphate'] },
   hell_creek: { el: ['Fe', 'Ca', 'Na', 'S'], cls: ['sulfate', 'carbonate', 'silicate'] },
   krasiejow: { el: ['Cu', 'Fe', 'Pb', 'Ca'], cls: ['carbonate', 'sulfide', 'sulfate'] },
@@ -161,9 +175,12 @@ async function main() {
   const pool = [...byName.values()];
   console.log('kandydaci', pool.length);
 
-  const siteIds = SITES.map((s) => s.id);
+  const keptSites = new Set(KEEP.map((m) => m.site));
+  const siteIds = SITES.map((s) => s.id).filter((id) => !keptSites.has(id));
   const picked = new Map<string, typeof pool>(siteIds.map((id) => [id, []]));
   const used = new Set<string>();
+  const keptNames = new Set(KEEP.map((m) => m.name.toLowerCase()));
+  for (const c of pool) if (keptNames.has(c.pl.toLowerCase())) used.add(c.pl);
   const score = (siteId: string, c: (typeof pool)[number]) => {
     const p = PROFILE[siteId] ?? { el: [], cls: [] };
     let sc = 0;
@@ -190,7 +207,7 @@ async function main() {
     }
   }
 
-  const out: unknown[] = [];
+  const out: unknown[] = [...KEEP];
   for (const id of siteIds) {
     const list = picked.get(id)!.sort((a, b) => b.common - a.common || a.pl.localeCompare(b.pl));
     let k = 0;
@@ -219,7 +236,7 @@ async function main() {
   }
   fs.writeFileSync('src/data/minerals.json', JSON.stringify({ source: 'Wikidata (CC0): mineral species with Polish names and formulas', minerals: out }));
   console.log('minerały', out.length, 'na', siteIds.length, 'stanowisk');
-  for (const id of siteIds.slice(0, 27)) console.log(' ', id.padEnd(14), picked.get(id)!.slice(0, 6).map((c) => c.pl).join(', '));
+  for (const id of siteIds) console.log(' ', id.padEnd(14), picked.get(id)!.slice(0, 6).map((c) => c.pl).join(', '));
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

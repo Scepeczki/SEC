@@ -1,0 +1,809 @@
+{
+ "prologue": [
+  {
+   "title": "Planeta z pyłu",
+   "text": [
+    "Około 4,6 mld lat temu z obłoku gazu i pyłu powstało Słońce. Wokół niego wirował dysk okruchów. Zderzały się, sklejały i rosły – od ziarenek, przez głazy, po zarodki planet.",
+    "Jednym z nich była młoda Ziemia. Jej wiek szacuje się na około 4,54 mld lat. Nie znamy go z ziemskich skał – te najstarsze zostały dawno przetopione – lecz z meteorytów, czyli okruchów z tego samego dysku, które przetrwały w kosmosie niemal nietknięte.",
+    "Na początku Ziemia była kulą rozżarzonej skały. Cięższe żelazo opadało do środka, tworząc jądro. Lżejsze skały zostawały na wierzchu. Tak powstał układ warstw, który mamy do dziś."
+   ],
+   "scene": "planet-forming",
+   "facts": [
+    "Wiek Ziemi: ok. 4,54 mld lat (± ok. 50 mln lat).",
+    "Wiek wyznacza się m.in. z rozpadu uranu w ołów w meteorytach."
+   ]
+  },
+  {
+   "title": "Zderzenie, które dało nam Księżyc",
+   "text": [
+    "Najpopularniejsza hipoteza mówi, że wkrótce po narodzinach Ziemia zderzyła się z ciałem wielkości Marsa. Nazwano je Theią – od tytanidy, matki bogini Księżyca.",
+    "Uderzenie wyrzuciło na orbitę ogromną chmurę stopionej skały. Z tego pierścienia szczątków w krótkim czasie zlepił się Księżyc. Działo się to około 4,5 mld lat temu, kilkadziesiąt milionów lat po powstaniu Układu Słonecznego – dokładna data wciąż jest przedmiotem sporu.",
+    "Dowód? Skały przywiezione przez misje Apollo mają niemal identyczny skład izotopów tlenu jak skały ziemskie. Szczegóły zderzenia – czy było muśnięciem, czy uderzeniem czołowym – wciąż są dyskutowane."
+   ],
+   "scene": "impact",
+   "facts": [
+    "Księżyc oddala się od Ziemi o ok. 3,8 cm rocznie.",
+    "Hipoteza wielkiego zderzenia jest dziś wiodąca, ale nie jedyna."
+   ]
+  },
+  {
+   "title": "Hadeik – piekło i pierwsza woda",
+   "text": [
+    "Pierwszy eon dziejów Ziemi nazywamy hadeikiem – od Hadesu, greckiego świata podziemi. Trwał mniej więcej od 4,6 do 4,0 mld lat temu. Powierzchnia była gorąca, a z kosmosu wciąż spadały skalne odłamki.",
+    "A jednak bardzo wcześnie pojawiła się woda. Maleńkie kryształy cyrkonu z Jack Hills w Australii mają około 4,4 mld lat. Ich skład sugeruje, że powstały w obecności ciekłej wody – a więc już wtedy mogły istnieć oceany.",
+    "Woda wydobywała się z wnętrza planety razem z gazami wulkanicznymi. Część mogła też przylecieć z planetoidami. Gdy skorupa ostygła, para wodna skropliła się w deszcz, który padał bardzo długo."
+   ],
+   "scene": "hadean",
+   "facts": [
+    "Najstarszy znany minerał ziemski: cyrkon z Jack Hills, ok. 4,4 mld lat."
+   ]
+  },
+  {
+   "title": "Pierwszy ocean",
+   "text": [
+    "Wczesny ocean wcale nie przypominał dzisiejszego. Nie było w nim wolnego tlenu. Było za to dużo rozpuszczonego żelaza i gazów z wulkanów. Niebo zapewne miało pomarańczowawy odcień, a Słońce świeciło słabiej niż dziś.",
+    "Na dnie oceanu, w kominach hydrotermalnych, gorąca woda bogata w minerały mieszała się z zimną wodą morską. Takie miejsca dostarczają energii chemicznej – i są jednym z głównych kandydatów na kolebkę życia.",
+    "Inni badacze, idąc tropem Darwina, stawiają na płytkie, okresowo wysychające „ciepłe sadzawki” na lądzie. Tam cząsteczki mogły się zagęszczać i łączyć w dłuższe łańcuchy."
+   ],
+   "scene": "ocean",
+   "facts": []
+  },
+  {
+   "title": "Jak mogło zacząć się życie?",
+   "text": [
+    "Nikt nie wie na pewno, jak z martwej chemii powstało życie. Wiemy, czego potrzeba: cząsteczki, która przechowuje przepis i potrafi się kopiować, oraz błony, która oddziela „środek” od „zewnątrz”.",
+    "Popularna hipoteza „świata RNA” zakłada, że na początku jedna cząsteczka – RNA – robiła obie rzeczy: przechowywała informację i przyspieszała reakcje. Dopiero później zadania podzieliły się między DNA i białka.",
+    "Pierwsze komórki były prokariotami: bez jądra, bez wewnętrznych przedziałów. To przodkowie dzisiejszych bakterii i archeonów. Przez ponad 2 mld lat byli jedynymi mieszkańcami planety."
+   ],
+   "scene": "first-cells",
+   "facts": [
+    "Wszystkie żyjące dziś organizmy używają tego samego kodu genetycznego – to silny ślad wspólnego pochodzenia."
+   ]
+  },
+  {
+   "title": "Kamienne poduszki z mikrobów",
+   "text": [
+    "Najstarsze w miarę pewne ślady życia to stromatolity: warstwowane, kopulaste struktury budowane przez maty mikrobów. Mikroby wyłapują osad, przykrywają go nową warstwą, i tak przez tysiące lat rośnie kamienna „poduszka”.",
+    "Stromatolity z formacji Dresser w zachodniej Australii mają około 3,48 mld lat. Długo się o nie spierano, ale badania z 2022 r. wsparły ich biologiczne pochodzenie.",
+    "Starsze kandydatury – np. struktury z Isua na Grenlandii (ok. 3,7 mld lat) czy rzekome mikroskamieniałości z Kanady – są mocno kwestionowane. Skały te były tak przeobrażone ciepłem i ciśnieniem, że trudno odróżnić ślad życia od zwykłej chemii."
+   ],
+   "scene": "stromatolites",
+   "facts": [
+    "Żywe stromatolity wciąż rosną m.in. w Zatoce Rekina w Australii."
+   ]
+  },
+  {
+   "title": "Wielkie Natlenienie",
+   "text": [
+    "Sinice (cyjanobakterie) nauczyły się fotosyntezy tlenowej: z wody, dwutlenku węgla i światła robiły cukry, a jako odpad wydzielały tlen. Kiedy to wynalazły – wiadomo tylko w przybliżeniu, ale na pewno przed 2,4 mld lat temu.",
+    "Tlen najpierw wiązał się z żelazem w oceanie, tworząc rdzawe warstwy skał. Dopiero gdy „gąbki” chemiczne się wysyciły, zaczął gromadzić się w powietrzu. Ten przełom, około 2,4–2,3 mld lat temu, nazywamy Wielkim Zdarzeniem Oksydacyjnym.",
+    "Dla wielu mikrobów tlen był trucizną. Dla innych – źródłem energii. Nowsze badania sugerują, że poziom tlenu przez ok. 200 mln lat skakał w górę i w dół, a trwale ustalił się dopiero około 2,2 mld lat temu."
+   ],
+   "scene": "oxygen",
+   "facts": [
+    "Wstęgowe rudy żelaza – złoża, z których dziś wytapia się stal – w dużej mierze zawdzięczamy dawnemu tlenowi."
+   ]
+  },
+  {
+   "title": "Komórka z lokatorem",
+   "text": [
+    "Około 2 mld lat temu (najstarsze pewne skamieniałości mają ok. 1,65 mld lat) pojawiły się eukarionty – komórki z jądrem i wewnętrznymi „pokojami”. Do nich należą wszystkie zwierzęta, rośliny i grzyby.",
+    "Kluczowy krok to endosymbioza: większa komórka (prawdopodobnie archeon) wchłonęła bakterię, ale jej nie strawiła. Bakteria zamieszkała w środku i stała się mitochondrium – elektrownią, która wydajnie spala pokarm z użyciem tlenu.",
+    "Później podobnie wchłonięta sinica stała się chloroplastem i dała początek glonom i roślinom. Dowód? Mitochondria i chloroplasty mają własne, bakteryjne DNA i dzielą się samodzielnie."
+   ],
+   "scene": "eukaryote",
+   "facts": [
+    "Teorię endosymbiozy spopularyzowała Lynn Margulis pod koniec lat 60. XX w."
+   ]
+  },
+  {
+   "title": "Płeć i wielokomórkowość",
+   "text": [
+    "Eukarionty wymyśliły rozmnażanie płciowe: dwie komórki łączą swoje geny, tworząc nowe kombinacje. Potomstwo jest różnorodne, więc łatwiej znaleźć wśród niego takie, które poradzi sobie ze zmianą warunków albo z pasożytem.",
+    "Bangiomorpha – krasnorost z Kanady sprzed ok. 1,05 mld lat – to najstarszy znany organizm, który był wielokomórkowy, miał wyspecjalizowane komórki i prawdopodobnie rozmnażał się płciowo. Ma też żyjących krewnych.",
+    "Wielokomórkowość wynaleziono wiele razy niezależnie: u glonów, grzybów i zwierząt. Najstarsi kandydaci mają ok. 1,6 mld lat, ale ich przynależność wciąż jest dyskutowana. Okres od ok. 1,8 do 0,8 mld lat temu bywa nazywany „nudnym miliardem” – zmiany szły bardzo powoli."
+   ],
+   "scene": "multicell",
+   "facts": [
+    "Wiek Bangiomorpha (1,047 mld lat) ustalono w 2017 r. metodą renowo-osmową."
+   ]
+  },
+  {
+   "title": "Ziemia-śnieżka",
+   "text": [
+    "W kriogenie (ok. 720–635 mln lat temu) Ziemia przeszła co najmniej dwa ogromne zlodowacenia: sturtyjskie (ok. 717–660 mln lat temu) i marinoańskie (zakończone ok. 635 mln lat temu).",
+    "Lodowce sięgały wtedy aż do równika. Według hipotezy „Ziemi-śnieżki” lód pokrył prawie cały ocean. Inni badacze wolą wersję „błotnej śnieżki”, z pasmem otwartej wody przy równiku – spór trwa.",
+    "Jak planeta się odmroziła? Wulkany przez miliony lat wypuszczały CO₂, którego nie wchłaniał zamarznięty ocean. Gdy efekt cieplarniany przeważył, lód stopniał gwałtownie. Po zlodowaceniach ilość tlenu i składników odżywczych w morzach wzrosła – być może otwierając drogę dużym organizmom."
+   ],
+   "scene": "snowball",
+   "facts": [
+    "Zlodowacenie sturtyjskie trwało ok. 56 mln lat."
+   ]
+  },
+  {
+   "title": "Ogród Ediakary",
+   "text": [
+    "Po zlodowaceniach przyszedł ediakar (ok. 635–539 mln lat temu). Od około 575 mln lat temu w morzach pojawiły się pierwsze duże, miękkie organizmy – biota ediakarska, nazwana od wzgórz Ediacara w Australii.",
+    "Charnia przypominała pióro lub liść paproci przyczepiony do dna głębokiego morza. Dickinsonia była płaską, owalną „poduszką” w paski, do ponad metra długości. W 2018 r. w jej szczątkach znaleziono ślady cholesterolu – mocny, choć nie przez wszystkich przyjęty argument, że była zwierzęciem.",
+    "Kimberella (ok. 555 mln lat) zostawiała obok siebie ślady drapania dna – możliwe, że zeskrobywała maty mikrobów jak ślimak. Część badaczy widzi w niej krewniaka mięczaków, ale to wciąż kwestia sporna."
+   ],
+   "scene": "ediacara",
+   "facts": [
+    "Wiele organizmów ediakarskich nie ma dziś oczywistych potomków.",
+    "Nie miały oczu, odnóży ani pancerzy – świat bez drapieżników?"
+   ]
+  },
+  {
+   "title": "Pierwsze nory i próg kambru",
+   "text": [
+    "Około 560–555 mln lat temu na dnie pojawiły się poziome ślady pełzania. Ikaria – robakowaty stworek wielkości ziarna ryżu – to prawdopodobnie jedno z najstarszych zwierząt dwubocznie symetrycznych, z przodem, tyłem i przewodem pokarmowym.",
+    "Pod koniec ediakaru pojawiły się też pierwsze szkielety – np. rurkowata Cloudina. W tym samym czasie biota ediakarska zaczęła zanikać.",
+    "Około 538,8 mln lat temu zaczyna się kambr. Jego granicę wyznacza pojawienie się śladów Treptichnus pedum: zwierzę zaczęło ryć w głąb osadu, rozgałęzionymi korytarzami. Dno morskie przestało być spokojnym kobiercem mikrobów. Zaczyna się eksplozja."
+   ],
+   "scene": "burrows",
+   "facts": [
+    "Rycie w osadzie mieszało dno i zmieniało chemię oceanu – to tzw. rewolucja agronomiczna kambru."
+   ]
+  }
+ ],
+ "chapters": {
+  "chengjiang": {
+   "title": "Rozdział 1. Chengjiang – morze pełne oczu (ok. 518 mln lat temu)",
+   "intro": [
+    {
+     "title": "Czym była eksplozja kambryjska?",
+     "text": [
+      "Przez ponad 3 mld lat życie było głównie mikroskopijne. Potem, w ciągu kilkudziesięciu milionów lat wczesnego kambru, w skałach pojawia się większość głównych planów budowy zwierząt: stawonogi, mięczaki, szkarłupnie, strunowce i wiele innych.",
+      "To właśnie eksplozja kambryjska. „Eksplozja” w skali geologicznej – trwała ok. 20–25 mln lat, czyli kilka razy dłużej, niż istnieje rodzaj ludzki (Homo – ok. 2,8 mln lat).",
+      "Ważne: korzenie wielu grup sięgają ediakaru, a zegary molekularne sugerują jeszcze starsze rozejścia linii. Kambr to moment, gdy zwierzęta stały się duże, twarde i liczne – dlatego nagle widać je w skałach."
+     ],
+     "scene": "explosion",
+     "facts": [
+      "Chengjiang (ok. 518 mln lat) pokazuje eksplozję w pełnym rozkwicie."
+     ]
+    },
+    {
+     "title": "Dlaczego właśnie wtedy?",
+     "text": [
+      "Tlen: więcej tlenu w morzu pozwala na większe ciała i aktywny tryb życia, np. polowanie. Dane sugerują wzrost tlenu w późnym ediakarze, ale był on prawdopodobnie skokowy i nierówny.",
+      "Geny: zestaw „narzędzi” rozwojowych, np. geny Hox, które mówią zarodkowi, gdzie jest głowa, a gdzie ogon. Drobna zmiana takich genów może dać duży skutek. Ten zestaw istniał jednak już przed kambrem – był warunkiem, nie iskrą.",
+      "Ekologia: gdy pojawili się drapieżnicy, ofiary zaczęły budować pancerze, kolce i nory, a drapieżnicy lepsze szczęki i oczy – wyścig zbrojeń. Rycie w dnie zmieniało środowisko i otwierało nowe nisze. Najpewniej zadziałało kilka czynników naraz."
+     ],
+     "scene": "eyes",
+     "facts": [
+      "Hipoteza „włączenia światła” (A. Parker): pojawienie się oczu zaostrzyło wyścig drapieżnik–ofiara."
+     ]
+    },
+    {
+     "title": "Mapa świata sprzed 520 mln lat",
+     "text": [
+      "Kontynenty wyglądały zupełnie inaczej. Największy był Gondwana – superkontynent złożony z dzisiejszej Afryki, Ameryki Południowej, Antarktydy, Australii, Indii i Arabii. Rozciągał się od okolic bieguna południowego po równik.",
+      "Laurencja (przyszła Ameryka Północna) leżała na równiku. Bałtyka (przyszła Skandynawia i wschodnia Europa) była na średnich szerokościach półkuli południowej, odwrócona „do góry nogami”. Syberia leżała w strefie tropikalnej.",
+      "Blok Chin Południowych, gdzie dziś leży Chengjiang, znajdował się w niskich szerokościach, przy północnym skraju Gondwany, w pobliżu dzisiejszej Australii i Indii. Jego dokładne położenie jest wciąż przedmiotem sporów."
+     ],
+     "scene": "worldmap",
+     "facts": [
+      "Klimat kambru był ciepły, z wysokim CO₂ i najpewniej bez dużych czap lodowych.",
+      "Poziom morza rósł – woda zalewała brzegi kontynentów, tworząc rozległe płytkie morza."
+     ]
+    },
+    {
+     "title": "Muliste dno płytkiego morza",
+     "text": [
+      "Zwierzęta z Chengjiang żyły w płytkim, ciepłym morzu na skraju Bloku Chin Południowych. Dno było miękkie i muliste, ożywione przez gąbki, robaki i całe tłumy stawonogów.",
+      "Raz po raz burze i podwodne prądy niosły chmury drobnego mułu w dół zbocza. Taka „lawina” zasypywała wszystko na swojej drodze w ciągu chwili – zarówno żywe zwierzęta, jak i świeże szczątki.",
+      "Skały, które to zapisały, to łupki Maotianshan w formacji Yu’anshan. Datowanie cyrkonów (2018) daje ich maksymalny wiek ok. 518 mln lat."
+     ],
+     "scene": "seafloor",
+     "facts": [
+      "Pierwszą skamieniałość (Naraoia) znalazł tu Hou Xianguang w 1984 r."
+     ]
+    },
+    {
+     "title": "Jak przetrwały miękkie ciała",
+     "text": [
+      "Zwykle skamieniałości to tylko twarde części: muszle, kości, zęby. Miękkie ciało gnije w kilka dni. W Chengjiang zachowały się jednak oczy, skrzela, jelita, a nawet ślady mózgu.",
+      "Klucz to szybkie pogrzebanie w bardzo drobnym ile. Muł odcinał dostęp tlenu i padlinożerców, a cząstki gliny przylegały do tkanek i spowalniały rozkład. Wokół resztek wytrącały się później minerały, m.in. piryt.",
+      "Takie wyjątkowe stanowiska nazywamy Lagerstätten. Chengjiang, wpisane w 2012 r. na listę UNESCO, to jedno z najważniejszych na świecie. Opisano stąd ponad 250 gatunków."
+     ],
+     "scene": "fossil",
+     "facts": [
+      "Fuxianhuia z Chengjiang była jednym z pierwszych stawonogów, u których opisano zachowany mózg (2012)."
+     ]
+    },
+    {
+     "title": "Kto zjadał kogo",
+     "text": [
+      "Chengjiang to jedna z najstarszych znanych złożonych sieci pokarmowych. Na jej szczycie stały radiodonty, takie jak Anomalocaris i Amplectobelua – pływający drapieżnicy z chwytnymi „ramionami” przy głowie.",
+      "Niżej byli mniejsi łowcy i padlinożercy, np. Leanchoilia z wielkimi, chwytnymi odnóżami. Dno przeczesywały trylobity i ich miękkopancerni krewni, zjadając muł, szczątki i drobne zwierzęta.",
+      "W toni wodnej pływały małe stawonogi w dwuczęściowych karapaksach, odcedzające plankton. Na samym dole sieci były mikroby, glony i organiczny osad – „paliwo” całego ekosystemu."
+     ],
+     "scene": "foodweb",
+     "facts": [
+      "W żołądkach i odchodach niektórych zwierząt z Chengjiang znaleziono szczątki ich ofiar."
+     ]
+    },
+    {
+     "title": "Nowe gałęzie – i my",
+     "text": [
+      "Na drzewie życia Chengjiang odsłania ogromną różnorodność stawonogów i ich krewnych: lobopodów z miękkimi nóżkami, radiodontów, wczesne trylobity i przodków dzisiejszych owadów, skorupiaków i pająków.",
+      "Ale najważniejsza dla nas jest maleńka, kilkucentymetrowa rybka bez szczęk: Haikouichthys, a obok niej Myllokunmingia, opisane w 1999 r. Miały strunę grzbietową, mięśnie ułożone w zygzakowate segmenty i szereg szczelin skrzelowych.",
+      "To jedni z najstarszych znanych kręgowców – choć ich status jest dyskutowany, a niektórzy uważają, że to jeden gatunek w różnym stanie rozkładu. Tak czy inaczej: to nasza linia. Każda ryba, żaba, dinozaur i człowiek wywodzi się od podobnych stworzeń."
+     ],
+     "scene": "tree",
+     "facts": [
+      "Haikouichthys miał ok. 2,5 cm długości."
+     ]
+    }
+   ],
+   "paleomap": {
+    "continents": [
+     {
+      "name": "Gondwana",
+      "lat": -30,
+      "lon": 40,
+      "size": "XL",
+      "note": "Superkontynent: dzisiejsza Afryka, Ameryka Płd., Antarktyda, Australia, Indie, Arabia. Od okolic bieguna płd. po równik."
+     },
+     {
+      "name": "Laurencja",
+      "lat": 0,
+      "lon": -80,
+      "size": "L",
+      "note": "Przyszła Ameryka Północna i Grenlandia; na równiku, obrócona względem dzisiejszego położenia."
+     },
+     {
+      "name": "Bałtyka",
+      "lat": -45,
+      "lon": -25,
+      "size": "M",
+      "note": "Przyszła Skandynawia i wschodnia Europa; średnie szerokości półkuli płd., odwrócona."
+     },
+     {
+      "name": "Syberia",
+      "lat": 5,
+      "lon": 75,
+      "size": "M",
+      "note": "Strefa tropikalna, odwrócona względem dziś; ważne stanowiska wczesnych trylobitów."
+     },
+     {
+      "name": "Chiny Południowe",
+      "lat": 10,
+      "lon": 115,
+      "size": "S",
+      "note": "Blok z Chengjiang; niskie szerokości przy północnym skraju Gondwany, blisko Australii i Indii (pozycja sporna)."
+     },
+     {
+      "name": "Chiny Północne",
+      "lat": 5,
+      "lon": 135,
+      "size": "S",
+      "note": "Mały blok w pobliżu Gondwany, w niskich szerokościach."
+     },
+     {
+      "name": "Awalonia",
+      "lat": -55,
+      "lon": 5,
+      "size": "S",
+      "note": "Mikrokontynent przy skraju Gondwany; dziś fragmenty Anglii, Nowej Fundlandii i Nowej Szkocji."
+     }
+    ],
+    "site": {
+     "lat": 10,
+     "lon": 112
+    },
+    "caption": "Schematyczna mapa świata ok. 520 mln lat temu. Położenia są przybliżone i uśrednione z różnych rekonstrukcji – w kambrze nawet szerokość geograficzna kontynentów bywa sporna, a długość jest umowna. Między lądami rozciągały się oceany: ogromna Panthalassa, Iapetus (między Laurencją, Bałtyką a Gondwaną) i Proto-Tetyda."
+   },
+   "biocenosis": [
+    {
+     "role": "Szczytowi drapieżnicy",
+     "text": "Radiodonty – największe zwierzęta Chengjiang, do kilkudziesięciu centymetrów. Pływały, falując płatami po bokach ciała, i chwytały ofiary kolczastymi przednimi przydatkami. Miały duże oczy złożone. Lyrarapax zachował nawet ślady mózgu.",
+     "genera": [
+      "Anomalocaris",
+      "Amplectobelua",
+      "Lyrarapax",
+      "Houcaris"
+     ]
+    },
+    {
+     "role": "Mniejsi łowcy i padlinożercy",
+     "text": "Stawonogi z „wielkimi odnóżami” (megacheiry) używały pary chwytnych przydatków z kolcami przy głowie do łapania drobnych zwierząt. Isoxys, w dwuczęściowym pancerzyku i z wielkimi oczami, polował w toni wodnej.",
+     "genera": [
+      "Leanchoilia",
+      "Fortiforceps",
+      "Jianfengia",
+      "Parapeytoia",
+      "Isoxys"
+     ]
+    },
+    {
+     "role": "Zbieracze z dna",
+     "text": "Trylobity i ich miękkopancerni krewni (artiopody) pełzały po mule, zjadając osad, szczątki organiczne i drobne organizmy. Prawdopodobnie część z nich była też padlinożercami lub drobnymi drapieżnikami. To najliczniejsza grupa stawonogów w Chengjiang.",
+     "genera": [
+      "Eoredlichia",
+      "Yunnanocephalus",
+      "Naraoia",
+      "Misszhouia",
+      "Retifacies",
+      "Xandarella",
+      "Cindarella",
+      "Kuamaia",
+      "Saperion",
+      "Acanthomeridion",
+      "Pseudoiulia",
+      "Urokodia",
+      "Malongella",
+      "Primicaris",
+      "Parapaleomerus",
+      "Fuxianhuia",
+      "Shankouia",
+      "Kunmingella"
+     ]
+    },
+    {
+     "role": "Pływacy i filtratorzy",
+     "text": "Małe stawonogi z dwuklapowymi karapaksami pływały tuż nad dnem lub w toni. Wiele z nich odcedzało plankton gęstymi szczecinkami na odnóżach – Pectocaris miała do tego dosłownie „grzebienie”. Wetulikolie prawdopodobnie przepuszczały wodę przez otwory przypominające skrzela.",
+     "genera": [
+      "Waptia",
+      "Branchiocaris",
+      "Canadaspis",
+      "Pectocaris",
+      "Combinivalvula",
+      "Ercaicunia",
+      "Vetulicola",
+      "Pomatrum"
+     ]
+    },
+    {
+     "role": "Lobopody – „robaki na nóżkach”",
+     "text": "Miękkie, segmentowane zwierzęta z parami krótkich, nierozczłonkowanych nóżek, często z kolcami lub płytkami na grzbiecie. Prawdopodobnie wspinały się po gąbkach i innych organizmach przyrośniętych do dna, żywiąc się nimi lub odfiltrowując pokarm z wody.",
+     "genera": [
+      "Hallucigenia",
+      "Microdictyon",
+      "Cardiodictyon"
+     ]
+    }
+   ],
+   "outro": [
+    {
+     "title": "Co dalej?",
+     "text": [
+      "Eksplozja kambryjska nie kończy się w Chengjiang. Kilka milionów lat później ekosystemy jeszcze bardziej się komplikują, a zwierzęta zaczynają zasiedlać głębsze wody.",
+      "Około 508 mln lat temu, po drugiej stronie świata – na równikowym skraju Laurencji – podwodna lawina błota zasypie kolejną społeczność zwierząt. Jej skamieniałości odkryje w 1909 r. Charles Walcott w Górach Skalistych Kanady."
+     ],
+     "scene": "next",
+     "facts": [
+      "Między Chengjiang a łupkami z Burgess mija ok. 10 mln lat."
+     ]
+    },
+    {
+     "title": "Następny przystanek: łupki z Burgess",
+     "text": [
+      "Czekają tam starzy znajomi – Hallucigenia, Waptia, Canadaspis, Leanchoilia – i zupełnie nowe dziwy, jak pięciooka Opabinia czy pokryta łuskami Wiwaxia.",
+      "Pojawi się też Pikaia – mały, robakowaty strunowiec, który przez dziesięciolecia uchodził za „przodka kręgowców”. Przygotuj młotek: wyruszamy do Kanady."
+     ],
+     "scene": "timeline",
+     "facts": []
+    }
+   ]
+  }
+ },
+ "concepts": [
+  {
+   "id": "ewolucja",
+   "name": "Ewolucja",
+   "short": "Zmiana cech organizmów z pokolenia na pokolenie.",
+   "text": [
+    "Ewolucja to proces, w którym populacje organizmów zmieniają się w kolejnych pokoleniach. Nie zmienia się pojedyncze zwierzę – zmienia się to, jakie cechy i geny dominują w grupie.",
+    "Źródłem zmian są mutacje, czyli drobne błędy przy kopiowaniu DNA, oraz mieszanie genów przy rozmnażaniu płciowym. O tym, które zmiany się utrzymają, decydują dobór naturalny i przypadek.",
+    "Przez miliony lat drobne zmiany sumują się. Z jednego gatunku mogą powstać dwa, a z nich kolejne. Dlatego wszystkie żywe istoty są ze sobą spokrewnione – jak gałęzie jednego drzewa."
+   ]
+  },
+  {
+   "id": "dobor-naturalny",
+   "name": "Dobór naturalny",
+   "short": "Lepiej dopasowani zostawiają więcej potomstwa.",
+   "text": [
+    "Osobniki tego samego gatunku różnią się od siebie. Część różnic jest dziedziczna. Rodzi się więcej młodych, niż może przeżyć.",
+    "Te, których cechy lepiej pasują do otoczenia – szybszy bieg, lepszy wzrok, twardszy pancerz – częściej przeżywają i mają więcej potomstwa. Ich cechy stają się więc coraz częstsze.",
+    "Dobór nie ma celu ani planu. Działa tu i teraz. Cecha korzystna w jednym środowisku może być bezużyteczna w innym. Mechanizm ten opisali niezależnie Karol Darwin i Alfred Russel Wallace (1858)."
+   ]
+  },
+  {
+   "id": "skamienialosc",
+   "name": "Skamieniałość",
+   "short": "Ślad lub szczątek dawnego organizmu zachowany w skale.",
+   "text": [
+    "Skamieniałość powstaje, gdy szczątki organizmu zostaną szybko przykryte osadem: mułem, piaskiem, popiołem. Z czasem osad twardnieje w skałę, a minerały z wody wypełniają lub zastępują pory w kościach i muszlach.",
+    "Większość organizmów nie zostawia żadnego śladu. Zjadają je padlinożercy, rozkładają bakterie. Najłatwiej przetrwać twardym częściom – dlatego znamy tysiące muszli, a bardzo mało meduz.",
+    "Skamieniałością jest też ślad: odcisk, nora, trop. Mówi on, jak zwierzę się poruszało – nawet gdy samego zwierzęcia nie znaleziono.",
+    "Wyjątkowe stanowiska, w których zachowały się miękkie ciała, nazywamy Lagerstätten (z niem. „złoża”). Potrzeba tu szybkiego pogrzebania w bardzo drobnym osadzie i braku tlenu. Chengjiang i Burgess to najsłynniejsze przykłady."
+   ]
+  },
+  {
+   "id": "czas-geologiczny",
+   "name": "Czas geologiczny",
+   "short": "Kalendarz dziejów Ziemi: eony, ery, okresy.",
+   "text": [
+    "Dzieje Ziemi dzielimy jak kalendarz. Największe jednostki to eony (np. archaik, proterozoik, fanerozoik). Dzielą się na ery (np. paleozoik), a te na okresy (np. kambr). Granice wyznaczają zwykle duże zmiany w świecie życia.",
+    "Kolejność skał poznajemy z warstw: niższa warstwa jest zwykle starsza. Wiek w latach mierzymy dzięki pierwiastkom promieniotwórczym, np. uranowi, który w stałym tempie rozpada się w ołów. Wystarczy zmierzyć, ile jednego i drugiego jest w krysztale, np. cyrkonu.",
+    "Skale są ogromne. Gdyby całe dzieje Ziemi ścisnąć w jeden dzień, kambr zaczynałby się ok. 21:10, a człowiek pojawiłby się w ostatnich kilku sekundach przed północą."
+   ]
+  },
+  {
+   "id": "drzewo-filogenetyczne",
+   "name": "Drzewo filogenetyczne",
+   "short": "Schemat pokrewieństwa organizmów.",
+   "text": [
+    "Drzewo filogenetyczne pokazuje, kto jest z kim spokrewniony. Końce gałęzi to gatunki lub grupy. Miejsca, w których gałęzie się rozchodzą (węzły), to ich wspólni przodkowie.",
+    "Klad to przodek wraz ze wszystkimi jego potomkami – jedna cała gałąź. Np. stawonogi to klad: należą do niego owady, pająki, skorupiaki i trylobity.",
+    "Uwaga na pułapki: nie czytaj drzewa od lewej do prawej jak drabiny postępu. Gatunki na końcach gałęzi są „równie nowoczesne”. Liczy się tylko to, jak blisko w drzewie leży ich wspólny przodek.",
+    "Drzewa budujemy, porównując budowę ciała i DNA. Dla wymarłych zwierząt mamy tylko budowę, więc ich pozycja bywa sporna."
+   ]
+  },
+  {
+   "id": "komorka-eukariotyczna",
+   "name": "Komórka eukariotyczna",
+   "short": "Komórka z jądrem i wewnętrznymi przedziałami.",
+   "text": [
+    "Komórki dzielimy na dwa typy. Prokariotyczne (bakterie, archeony) są małe i proste: DNA swobodnie pływa w środku. Eukariotyczne są zwykle znacznie większe i mają jądro – osobny „sejf” na DNA.",
+    "Eukarionty mają też organelle, czyli wyspecjalizowane przedziały. Najważniejsze to mitochondria, które wytwarzają energię z pokarmu i tlenu. Mitochondria to potomkowie bakterii wchłoniętych ok. 2 mld lat temu (endosymbioza).",
+    "Dzięki dużej ilości energii eukarionty mogły mieć więcej genów i bardziej złożone ciała. Wszystkie zwierzęta, rośliny i grzyby są eukariontami."
+   ]
+  },
+  {
+   "id": "wielokomorkowosc",
+   "name": "Wielokomórkowość",
+   "short": "Ciało zbudowane z wielu współpracujących komórek.",
+   "text": [
+    "Organizm wielokomórkowy to zespół komórek, które pozostają razem i dzielą się pracą: jedne trawią, inne bronią, inne rozmnażają się.",
+    "Korzyści: większe ciało trudniej zjeść, łatwiej się poruszać i zdobywać pokarm. Koszty: komórki muszą się porozumiewać, a „egoistyczne” komórki (jak rak) stają się zagrożeniem.",
+    "Wielokomórkowość powstała niezależnie co najmniej kilka razy – u zwierząt, roślin lądowych, grzybów, brunatnic i krasnorostów. Najstarsze pewne przykłady mają ok. 1 mld lat, starsi kandydaci są dyskutowani."
+   ]
+  },
+  {
+   "id": "symetria-dwuboczna",
+   "name": "Symetria dwuboczna",
+   "short": "Ciało z lewą i prawą połową, przodem i tyłem.",
+   "text": [
+    "Zwierzę dwubocznie symetryczne można przeciąć na dwie lustrzane połowy: lewą i prawą. Ma też przód i tył, grzbiet i brzuch. Tak zbudowani są człowiek, ryba, mrówka i dżdżownica.",
+    "Wcześniej istniały zwierzęta bez symetrii (gąbki) i z symetrią promienistą, jak koło (parzydełkowce: meduzy, koralowce). One czekają na pokarm z każdej strony.",
+    "Symetria dwuboczna sprzyja ruchowi w jednym kierunku. Przód ciała pierwszy spotyka pokarm i niebezpieczeństwo – więc tam gromadzą się oczy, czułki i mózg. Tak narodziła się głowa."
+   ]
+  },
+  {
+   "id": "listki-zarodkowe",
+   "name": "Listki zarodkowe",
+   "short": "Pierwsze warstwy komórek w zarodku.",
+   "text": [
+    "Bardzo wczesny zarodek zwierzęcia układa swoje komórki w warstwy, zwane listkami zarodkowymi. Z każdej powstają inne części ciała.",
+    "Ektoderma (zewnętrzna) daje skórę i układ nerwowy. Endoderma (wewnętrzna) – wyściółkę jelita. Parzydełkowce, jak meduzy, mają tylko te dwie warstwy.",
+    "Zwierzęta dwubocznie symetryczne mają trzecią warstwę pośrodku: mezodermę. Z niej powstają mięśnie, krew, kości i wiele narządów. To dzięki mezodermie możliwe były silne ciała zdolne do rycia, pływania i biegania."
+   ]
+  },
+  {
+   "id": "pierwouste-i-wtorouste",
+   "name": "Pierwouste i wtórouste",
+   "short": "Dwie wielkie gałęzie zwierząt dwubocznych.",
+   "text": [
+    "U zarodka zwierzęcia tworzy się wgłębienie – pierwszy otwór, zwany pragębą. Klasycznie u pierwoustych (np. owadów, ślimaków, robaków) staje się ono otworem gębowym, a u wtóroustych (szkarłupni i strunowców, w tym nas) – odbytem, a usta powstają „wtórnie”, później.",
+    "W rzeczywistości ta reguła ma wiele wyjątków. Obie grupy potwierdzono jednak badaniami DNA, więc nazwy zostały.",
+    "Pierwouste dzielą się na dwie duże gałęzie: linieniowce (m.in. stawonogi, nicienie) i lofotrochorowce (m.in. mięczaki, pierścienice)."
+   ]
+  },
+  {
+   "id": "linienie",
+   "name": "Linienie",
+   "short": "Zrzucanie starego pancerza, by urosnąć.",
+   "text": [
+    "Wiele zwierząt ma zewnętrzną powłokę – oskórek lub pancerz. Chroni on ciało, ale nie rośnie razem z nim.",
+    "Rozwiązanie: co jakiś czas zwierzę wytwarza pod spodem nowy, miękki pancerz, zrzuca stary i szybko się „napompowuje”, zanim nowy stwardnieje. To linienie, sterowane hormonami.",
+    "Linieniowce (Ecdysozoa) to ogromna grupa zwierząt, które tak rosną: stawonogi, nicienie, niesporczaki i inne. W kambrze znaleziono nawet skamieniałe zrzucone pancerze trylobitów. Okres tuż po linieniu jest groźny – zwierzę jest miękkie i bezbronne."
+   ]
+  },
+  {
+   "id": "stawonogi-odnoza",
+   "name": "Odnóża stawonogów",
+   "short": "Członowane nogi – uniwersalne narzędzie.",
+   "text": [
+    "„Stawonóg” znaczy dosłownie „ze stawami w nogach”. Odnóża stawonogów są zbudowane z twardych członów połączonych giętkimi stawami, jak rurki z zawiasami. Mięśnie są w środku.",
+    "Takie odnóża można przerobić na niemal wszystko: nogi do chodzenia, wiosła, skrzela, czułki, szczypce, a nawet szczęki. Wiele dawnych stawonogów miało odnóża dwugałęziste – jedną gałąź do chodzenia, drugą do oddychania lub pływania.",
+    "Wcześniej istniały miękkie, nierozczłonkowane nóżki lobopodów, podobne do tych, które mają dziś pazurnice. Twarde, członowane odnoża dały większą siłę i precyzję – jeden z powodów sukcesu stawonogów."
+   ]
+  },
+  {
+   "id": "oko-zlozone",
+   "name": "Oko złożone",
+   "short": "Oko z setek małych oczek.",
+   "text": [
+    "Oko złożone składa się z wielu jednostek zwanych omatidiami. Każda patrzy w nieco inną stronę i widzi jeden „piksel” obrazu. Razem tworzą mozaikę.",
+    "Takie oko świetnie wykrywa ruch i daje szerokie pole widzenia. Mają je owady, skorupiaki – i miały trylobity oraz radiodonty. Oczy Anomalocaris z łupków Emu Bay w Australii (ok. 513 mln lat) miały ponad 16 tys. soczewek.",
+    "Inny typ to oko kamerowe, z jedną soczewką, jak u nas. Oba typy powstały niezależnie. Wiele genów sterujących budową oka (np. Pax6) jest jednak wspólnych dla bardzo różnych zwierząt."
+   ]
+  },
+  {
+   "id": "struna-grzbietowa",
+   "name": "Struna grzbietowa",
+   "short": "Elastyczny pręt wzdłuż grzbietu – znak strunowców.",
+   "text": [
+    "Struna grzbietowa to sprężysty pręt z komórek wypełnionych płynem, biegnący wzdłuż ciała. Działa jak elastyczny kręgosłup: mięśnie mogą się o niego zapierać, wyginając ciało na boki do pływania.",
+    "Ma ją każdy strunowiec przynajmniej w zarodku. U kręgowców, w tym ludzi, zastępują ją kręgi – resztki struny przetrwały w krążkach międzykręgowych.",
+    "Strunowce mają też inne wspólne cechy: rurkowaty rdzeń nerwowy na grzbiecie, szczeliny skrzelowe w gardle i ogon za odbytem. Haikouichthys z Chengjiang miał je wszystkie."
+   ]
+  },
+  {
+   "id": "biocenoza",
+   "name": "Biocenoza",
+   "short": "Wszystkie organizmy żyjące razem w jednym miejscu.",
+   "text": [
+    "Biocenoza to społeczność wszystkich organizmów zamieszkujących dane miejsce: zwierząt, roślin, grzybów i mikrobów. Biocenoza wraz z jej nieożywionym otoczeniem (woda, dno, światło) tworzy ekosystem.",
+    "W biocenozie każdy ma swoją rolę, czyli niszę: jedni filtrują wodę, inni pełzają po dnie, jeszcze inni polują.",
+    "Skamieniałości z Chengjiang pokazują nie tylko pojedyncze gatunki, ale całą biocenozę naraz – zwierzęta zasypane razem, w swoim środowisku. To rzadki „zrzut ekranu” dawnego świata."
+   ]
+  },
+  {
+   "id": "lancuch-pokarmowy",
+   "name": "Łańcuch i sieć pokarmowa",
+   "short": "Kto kogo zjada.",
+   "text": [
+    "Łańcuch pokarmowy pokazuje przepływ energii: glony wytwarzają materię z energii słońca (producenci), mały stawonóg zjada glony, a drapieżnik zjada stawonoga (konsumenci). Martwe szczątki rozkładają bakterie (destruenci).",
+    "W przyrodzie łańcuchy przeplatają się w sieć: jedno zwierzę zjada wiele rodzajów pokarmu i samo ma wielu wrogów.",
+    "Na każdym szczeblu ginie większość energii, dlatego drapieżników szczytowych jest zawsze mało. Kambr przyniósł pierwsze rozbudowane sieci z wieloma piętrami drapieżników."
+   ]
+  },
+  {
+   "id": "dryf-kontynentow",
+   "name": "Dryf kontynentów",
+   "short": "Kontynenty powoli wędrują po powierzchni Ziemi.",
+   "text": [
+    "Zewnętrzna warstwa Ziemi jest podzielona na płyty tektoniczne. Unoszą się one na gorącym, plastycznym płaszczu i przesuwają o kilka centymetrów rocznie – mniej więcej tyle, ile rosną paznokcie.",
+    "W ciągu setek milionów lat to wystarczy, by kontynenty łączyły się w superkontynenty i znów rozpadały. 520 mln lat temu Ameryka Północna leżała na równiku, a Afryka w pobliżu bieguna południowego.",
+    "Dawne położenie kontynentów odtwarzamy m.in. z magnetyzmu skał: zastygające minerały „zapamiętują” kierunek pola magnetycznego Ziemi, a więc i szerokość geograficzną. Dla kambru pomiary są jednak niepewne."
+   ]
+  },
+  {
+   "id": "wymieranie",
+   "name": "Wymieranie",
+   "short": "Znikanie gatunków – czasem pojedynczych, czasem masowe.",
+   "text": [
+    "Każdy gatunek kiedyś wymiera. Szacuje się, że ponad 99% gatunków, które kiedykolwiek żyły, już nie istnieje.",
+    "Zwykle wymieranie przebiega powoli, w tle. Czasem jednak w krótkim czasie geologicznym znika ogromna część życia – to wymieranie masowe. Przyczynami bywały m.in. ogromne erupcje wulkaniczne, zmiany klimatu, brak tlenu w morzach i uderzenie planetoidy.",
+    "Wymieranie zwalnia miejsce. Po każdym kryzysie ocalałe grupy szybko się różnicują i zajmują opuszczone nisze. Prawdopodobnie tak było też na przełomie ediakaru i kambru."
+   ]
+  }
+ ],
+ "forks": {
+  "Animalia": [
+   "Zwierzęta to wielokomórkowe eukarionty, które zdobywają pokarm, zjadając inne organizmy. Ich najbliższymi żyjącymi krewnymi są kołnierzykowce – jednokomórkowe istoty, które łapią bakterie wiciowatym „kołnierzykiem”.",
+   "Wcześniej istniały tylko mikroby i glony. Zwierzęta mogły aktywnie szukać pokarmu, rosnąć do dużych rozmiarów i budować ciała z wyspecjalizowanych tkanek.",
+   "Zegary molekularne umieszczają początek zwierząt ok. 800–650 mln lat temu, ale najstarsze pewne skamieniałości (biota ediakarska) mają ok. 570–560 mln lat. Pierwszymi zwierzętami były prawdopodobnie proste organizmy podobne do gąbek, choć to też jest dyskutowane."
+  ],
+  "Bilateria": [
+   "Zwierzęta dwubocznie symetryczne mają przód i tył, lewą i prawą stronę oraz trzy listki zarodkowe. Wcześniej istniały gąbki (bez tkanek i symetrii) i parzydełkowce (symetria promienista).",
+   "Problem, który rozwiązała ta budowa: ruch w jednym kierunku. Zwierzę, które pełznie przodem, potrzebuje tam zmysłów i mózgu – stąd głowa. Mezoderma dała silne mięśnie.",
+   "Najstarsze ślady pełzania mają ok. 560–555 mln lat, a Ikaria z Australii to możliwy wczesny przedstawiciel. Dziś do Bilateria należy ok. 99% gatunków zwierząt."
+  ],
+  "Eubilateria": [
+   "Eubilateria („prawdziwe dwuboczne”, nazywane też Nephrozoa) to wszystkie dwuboczne z wyjątkiem drobnych, prostych zwierząt zwanych Xenacoelomorpha. Te ostatnie mają jelito z jednym otworem i nie mają narządów wydalniczych.",
+   "Nowości Eubilateria to przewód pokarmowy z dwoma otworami (pokarm wchodzi jednym, resztki wychodzą drugim – jak taśma produkcyjna) oraz narządy wydalnicze, z których wywodzą się m.in. nerki.",
+   "Uwaga: pozycja Xenacoelomorpha jest sporna. Część badań DNA sugeruje, że są one krewnymi wtóroustych, a nie najstarszą gałęzią dwubocznych."
+  ],
+  "Protostomia": [
+   "Pierwouste to jedna z dwóch wielkich gałęzi zwierząt dwubocznych. Należą do nich stawonogi, mięczaki, pierścienice, nicienie i wiele innych – zdecydowana większość gatunków zwierząt.",
+   "Typowo mają brzuszny łańcuszek nerwowy (pod jelitem), a pierwszy otwór zarodka często staje się gębą. W kambrze pierwouste stworzyły najwięcej nowych form: od trylobitów po robaki ryjące w mule.",
+   "Ich rozejście się z wtóroustymi nastąpiło prawdopodobnie jeszcze w ediakarze, choć dokładny czas jest niepewny."
+  ],
+  "Deuterostomia": [
+   "Wtórouste to druga wielka gałąź dwubocznych. Należą do nich szkarłupnie (rozgwiazdy, jeżowce), półstrunowce i strunowce – w tym my.",
+   "Wiele z nich ma w gardle szczeliny skrzelowe, które pierwotnie służyły do odcedzania pokarmu z wody. U ryb stały się narządem oddechowym, a ich części przekształciły się z czasem nawet w szczęki i kosteczki słuchowe.",
+   "Najstarsze pewne wtórouste pojawiają się we wczesnym kambrze. Chengjiang dostarcza jednych z najwcześniejszych przykładów – ich interpretacja bywa jednak sporna."
+  ],
+  "Ecdysozoa": [
+   "Linieniowce to zwierzęta okryte oskórkiem, które rosną przez linienie. Grupę wyróżniono dopiero w 1997 r. na podstawie DNA – wcześniej sądzono, że stawonogi są bliskimi krewnymi pierścienic.",
+   "Twarda powłoka chroni przed drapieżnikami, wysychaniem i urazami, a przy okazji stanowi szkielet, o który zapierają się mięśnie. Ceną jest konieczność linienia.",
+   "Linieniowce zdominowały kambryjskie dna: oprócz stawonogów ryły w mule niezmogowce, a lobopody wspinały się po gąbkach. Dziś to najliczniejsza w gatunki grupa zwierząt."
+  ],
+  "Panarthropoda": [
+   "Panarthropoda łączy stawonogi, pazurnice i niesporczaki. Wspólne cechy: ciało podzielone na segmenty i para odnóży na wielu segmentach.",
+   "Przedtem linieniowce były zwykle robakami bez nóg. Odnóża pozwoliły chodzić po dnie, wspinać się i chwytać – zamiast tylko się wić.",
+   "Najwcześniejsze panarthropody z kambru to lobopody, jak Hallucigenia czy Microdictyon: miękkie ciała z parami pękatych nóżek zakończonych pazurkami. Wiele z nich leży u podstawy drzewa stawonogów."
+  ],
+  "Onychophora": [
+   "Pazurnice (Onychophora) to dziś niewielkie, lądowe zwierzęta z wilgotnych lasów tropików, wyglądające jak gąsienice z wieloma krótkimi nóżkami. Polują, strzelając lepkim śluzem.",
+   "Ich linia sięga kambru i morza. Badania pazurków Hallucigenii (2014) wskazały, że to krewny pazurnic. Zachowały one stary plan budowy: miękkie, nierozczłonkowane nóżki zamiast twardych odnóży.",
+   "Ta strategia przetrwała ponad 500 mln lat – dowód, że „prostsze” nie znaczy „gorsze”. Pazurnice wyszły na ląd, ale ich morscy kuzyni wymarli."
+  ],
+  "Arthropoda": [
+   "Stawonogi to zwierzęta z członowanymi odnóżami i zewnętrznym szkieletem. Należą do nich owady, pająki, skorupiaki, wije i wymarłe trylobity.",
+   "Problem: miękkie ciało było łatwą ofiarą i słabym narzędziem. Rozwiązanie: twardy pancerz z płytek połączonych giętkimi błonami oraz odnóża, które można przerobić na nogi, szczypce, szczęki czy skrzela.",
+   "We wczesnym kambrze stawonogi szybko stały się najliczniejszą i najbardziej zróżnicowaną grupą zwierząt – w Chengjiang to większość gatunków. Ten sukces trwa do dziś: stawonogi to ok. 80% znanych gatunków zwierząt."
+  ],
+  "Radiodonta": [
+   "Radiodonty („promienne zęby”) to wymarła grupa wczesnych krewnych stawonogów. Miały parę wielkich, kolczastych przydatków przed głową, okrągły aparat gębowy z płytek i duże oczy złożone.",
+   "Były pierwszymi dużymi drapieżnikami pływającymi w toni. Pływały, falując rzędem płatów po bokach ciała. Ich ciało nie było jeszcze w pełni opancerzone, a pod płatami nie miały chodzących nóg.",
+   "Niektóre, jak Anomalocaris, polowały; inne w późniejszym czasie przeszły na odcedzanie planktonu. Przetrwały co najmniej do wczesnego dewonu (ok. 400 mln lat temu)."
+  ],
+  "Deuteropoda": [
+   "Deuteropoda (nazwa z 2016 r.) to stawonogi „właściwe” wraz z ich najbliższymi wymarłymi krewnymi. Mają twardy, płytkowy pancerz na całym ciele i odnóża w pełni członowane, a pierwszą parę przydatków na innym segmencie głowy niż radiodonty.",
+   "Przed nimi – u radiodontów i lobopodów – ciało było miękkie lub tylko częściowo usztywnione, a nogi nierozczłonkowane.",
+   "Ta budowa okazała się niezwykle uniwersalna i dała początek wszystkim żyjącym stawonogom. W Chengjiang należą tu m.in. Fuxianhuia, megacheiry i artiopody."
+  ],
+  "Artiopoda": [
+   "Artiopoda to trylobity i ich krewni o miękkich pancerzach, np. Naraoia. Mają płaską, szeroką tarczę grzbietową, parę czułków i szereg podobnych do siebie, dwugałęzistych odnóży.",
+   "Płaskie ciało dobrze sprawdza się na dnie: chroni od góry, a nogi pod spodem przeczesują muł w poszukiwaniu pokarmu.",
+   "W kambrze to jedna z najliczniejszych grup stawonogów. Ich linia nie przetrwała – ostatnie artiopody wymarły z trylobitami ok. 252 mln lat temu."
+  ],
+  "Trilobita": [
+   "Trylobity to artiopody, które zaczęły odkładać w pancerzu węglan wapnia – stał się on twardy jak muszla. Nazwa oznacza „trzy płaty”: pancerz dzielił się wzdłuż na część środkową i dwie boczne.",
+   "Zmineralizowany pancerz dawał lepszą ochronę przed drapieżnikami i świetnie się zachowuje w skałach. Dlatego trylobity to jedne z najlepiej poznanych skamieniałości.",
+   "Pojawiły się ok. 521 mln lat temu. Przetrwały prawie 300 mln lat, aż do wymierania permskiego. Dzięki szybkim zmianom gatunków służą geologom do datowania warstw."
+  ],
+  "Mandibulata": [
+   "Żuwaczkowce to stawonogi z żuwaczkami – parą mocnych przydatków przy ustach, służących do gryzienia i rozcierania pokarmu. Należą tu skorupiaki, owady i wije.",
+   "Wcześniej pokarm do ust podawały zwykłe odnóża. Wyspecjalizowane szczęki pozwoliły przetwarzać twardszy i bardziej różnorodny pokarm.",
+   "Najstarsze możliwe żuwaczkowce to kambryjskie stawonogi z dwuczęściowymi karapaksami, jak Waptia czy Canadaspis (tzw. hymenokaryny). Ich przynależność opiera się na budowie aparatu gębowego i nie wszyscy ją akceptują."
+  ],
+  "Chelicerata": [
+   "Szczękoczułkowce to stawonogi, których pierwsza para przydatków stała się szczękoczułkami – szczypcami lub kłami przy ustach. Należą tu pająki, skorpiony, roztocza i skrzypłocze.",
+   "Nie mają czułków; zamiast żuwaczek używają chwytnych przydatków do rozdrabniania pokarmu. To rozwiązanie świetne dla drapieżników.",
+   "Pierwsze pewne szczękoczułkowce pojawiają się nieco po Chengjiang, ok. 508 mln lat temu. Ich pochodzenie jest dyskutowane – jedną z hipotez są „wielkie odnóża” megacheirów."
+  ],
+  "Megacheira": [
+   "Megacheiry („wielkie ręce”) to kambryjskie stawonogi z jedną parą wielkich, chwytnych przydatków z długimi kolcami przy głowie. Należą do nich Leanchoilia i Fortiforceps.",
+   "Takie przydatki służyły zapewne do chwytania drobnej zdobyczy lub przeszukiwania dna. Podobny pomysł – chwytne narzędzie z przodu – pojawiał się w ewolucji wielokrotnie.",
+   "Ich miejsce na drzewie jest sporne: część badaczy widzi w nich krewnych szczękoczułkowców, inni – osobną, wcześniejszą gałąź stawonogów."
+  ],
+  "Mollusca": [
+   "Mięczaki to ślimaki, małże, głowonogi i ich krewni. Typowo mają muszlę wydzielaną przez płaszcz, umięśnioną nogę i tarkę – język z rzędami ząbków do zeskrobywania pokarmu.",
+   "Wcześniej zwierzęta na dnie nie miały skutecznego sposobu na zbieranie twardej warstwy mikrobów. Tarka to rozwiązała, a muszla dała ochronę przed drapieżnikami.",
+   "Możliwym wczesnym krewnym jest ediakarska Kimberella (ok. 555 mln lat). W najwcześniejszym kambrze pojawiają się drobne muszelki, a później duża różnorodność mięczaków. Pochodzenie grupy jest wciąż dyskutowane."
+  ],
+  "Chordata": [
+   "Strunowce mają strunę grzbietową, rurkowaty rdzeń nerwowy na grzbiecie, szczeliny skrzelowe i ogon za odbytem. Należą tu lancetniki, osłonice i kręgowce – w tym my.",
+   "Struna z mięśniami ułożonymi w segmenty pozwala pływać, wyginając ciało na boki. To inny sposób ruchu niż u stawonogów z pancerzem i nogami.",
+   "W Chengjiang żyją jedni z najstarszych znanych strunowców i kręgowców: Haikouichthys i Myllokunmingia (ok. 518 mln lat). Były małe i niepozorne, ale ich linia doprowadziła do ryb, płazów, gadów, ptaków i ssaków."
+  ],
+  "Vetulicolida": [
+   "Wetulikolie to zagadkowe kambryjskie zwierzęta. Ciało miały z dwóch części: przednią, workowatą, z otworami po bokach (być może skrzelowymi), i tylną – segmentowany „ogon”.",
+   "Prawdopodobnie odcedzały pokarm z wody, przepuszczając ją przez otwory w przedniej części ciała.",
+   "Ich miejsce na drzewie jest bardzo sporne. Często łączy się je z wtóroustymi, a część badaczy uważa je za krewnych osłonic, czyli strunowców. Wcześniej uważano je nawet za stawonogi. Wymarły w kambrze."
+  ]
+ },
+ "sources": [
+  {
+   "title": "Yang et al. 2018, Geochronological constraint on the Cambrian Chengjiang biota, South China (J. Geol. Soc.)",
+   "url": "https://nora.nerc.ac.uk/id/eprint/521412/",
+   "used_for": "Wiek Chengjiang ok. 518 mln lat (maksymalny wiek z cyrkonów), formacja Yu’anshan, łupki Maotianshan"
+  },
+  {
+   "title": "Bangiomorpha – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Bangiomorpha",
+   "used_for": "Krasnorost Bangiomorpha, wiek 1,047 mld lat, rozmnażanie płciowe"
+  },
+  {
+   "title": "McGill University: Origins of photosynthesis in plants dated to 1.25 billion years ago",
+   "url": "https://mcgill.ca/newsroom/channels/news/origins-photosynthesis-plants-dated-125-billion-years-ago-283492",
+   "used_for": "Datowanie Bangiomorpha metodą Re-Os, wiek chloroplastów z zegara molekularnego"
+  },
+  {
+   "title": "University of Leeds: Extra 100 million years before Earth saw permanent oxygen rise (Poulton et al. 2021, Nature)",
+   "url": "https://www.leeds.ac.uk/news/article/4797/extra-100-million-years-before-earth-saw-permanent-oxygen-rise",
+   "used_for": "Wielkie Zdarzenie Oksydacyjne ok. 2,43–2,32 mld lat, trwałe natlenienie ok. 2,22 mld lat"
+  },
+  {
+   "title": "Shu et al. 1999, Lower Cambrian vertebrates from south China (Nature 402)",
+   "url": "https://www.nature.com/articles/46965.pdf",
+   "used_for": "Haikouichthys i Myllokunmingia jako wczesne kręgowce"
+  },
+  {
+   "title": "Haikouichthys – Wikipedia (kopia)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Haikouichthys",
+   "used_for": "Spór o synonimię Haikouichthys/Myllokunmingia (Hou et al. 2017)"
+  },
+  {
+   "title": "Bobrovskiy et al. 2018 – National Geographic: Ancient fossil Dickinsonia confirmed as animal",
+   "url": "https://www.nationalgeographic.com/science/article/news-ediacaran-ancient-life-fossil-dickinsonia",
+   "used_for": "Cholesterol u Dickinsonii, wiek ok. 558 mln lat, Kimberella ok. 555 mln lat"
+  },
+  {
+   "title": "Bobrovskiy et al. 2018, Science – PubMed",
+   "url": "https://www.pubmed.gov/30237355/",
+   "used_for": "Biomarkery steroidowe Dickinsonii"
+  },
+  {
+   "title": "Hoffman et al. 2017, Snowball Earth climate dynamics and Cryogenian geology-geobiology (Science Advances, PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5677351",
+   "used_for": "Daty zlodowaceń sturtyjskiego (717–659 mln) i marinoańskiego (do 635 mln), Ziemia-śnieżka"
+  },
+  {
+   "title": "Natural History Museum: The oldest evidence of life on Earth could help us discover ancient life on Mars",
+   "url": "https://www.nhm.ac.uk/discover/news/2022/november/oldest-evidence-life-earth-could-help-discover-ancient-life-mars.html",
+   "used_for": "Stromatolity z formacji Dresser (3,48 mld lat), ich biologiczne pochodzenie"
+  },
+  {
+   "title": "GSA: Earth’s Oldest Stromatolites and the Search for Life on Mars (2022)",
+   "url": "https://geosociety.org/GSA/News/pr/2022/22-66.aspx",
+   "used_for": "Badanie stromatolitów Dresser"
+  },
+  {
+   "title": "Nutman et al. 2016, Rapid emergence of life shown by discovery of 3,700-million-year-old microbial structures (Nature)",
+   "url": "https://www.unife.it/medicina/biotecnologie-mediche/insegnamenti/Biologia-Generale/materiale-didattico/biomed-papers-2k20/Nutman_et_al_2k16a.pdf",
+   "used_for": "Rzekome stromatolity z Isua (ok. 3,7 mld lat) – twierdzenie sporne"
+  },
+  {
+   "title": "Live Science: 3.5 billion-year-old rock structures are one of the oldest signs of life on Earth",
+   "url": "https://livescience.com/oldest-stromatolites-australia",
+   "used_for": "Kontekst sporów o najstarsze ślady życia"
+  },
+  {
+   "title": "NIGPAS: Fossils from North China indicate eukaryotes first acquired multicellularity by 1.63 billion years ago",
+   "url": "https://english.nigpas.cas.cn/new/hs/rp/202401/t20240124_656672.html",
+   "used_for": "Najstarsze eukarionty ok. 1,65 mld lat, kandydat na wielokomórkowca Qingshania ok. 1,63 mld lat"
+  },
+  {
+   "title": "Evans et al. 2020, Discovery of the oldest bilaterian from the Ediacaran of South Australia (PNAS, PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7149385",
+   "used_for": "Ikaria wariootia ok. 555 mln lat, wczesne ślady ryjące"
+  },
+  {
+   "title": "Fortunian – Wikipedia (kopia)",
+   "url": "https://wiki.krisyotam.com/content/wikipedia_en_all_nopic_2026-03/Fortunian",
+   "used_for": "Granica ediakar/kambr wyznaczona przez Treptichnus pedum (Fortune Head); wartość 538,8 mln lat wg aktualnej tabeli ICS"
+  },
+  {
+   "title": "Gaines et al. 2012, Mechanism for Burgess Shale-type preservation (PNAS, PMC)",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3325652",
+   "used_for": "Mechanizm zachowania miękkich tkanek: szybkie pogrzebanie w glinie, warstwy zdarzeniowe"
+  },
+  {
+   "title": "Taphonomic traits of clay-hosted early Cambrian Burgess Shale-type fossil Lagerstätten in South China (Forchielli et al. 2014)",
+   "url": "https://agris.fao.org/search/zh/records/65deda046eef00c2cea1469f",
+   "used_for": "Rola gliny i późnodiagenetycznego pirytu w zachowaniu skamieniałości Chengjiang"
+  },
+  {
+   "title": "AAPG Wiki – Cambrian paleogeography (podsumowanie Torsvik & Cocks)",
+   "url": "https://wiki.aapg.org/Special:MobileDiff/23495",
+   "used_for": "Laurencja na równiku, Syberia w niskich szerokościach, Chiny Płd. blisko równika, Bałtyka na półkuli płd. i odwrócona"
+  },
+  {
+   "title": "Provenance investigation for the Cambrian–Ordovician strata… locating the South China Block in Gondwana (Geological Magazine)",
+   "url": "https://resolve.cambridge.org/core/journals/geological-magazine/article/provenance-investigation-for-the-cambrianordovician-strata-from-the-northern-margin-of-the-western-yangtze-block-implications-for-locating-the-south-china-block-in-gondwana/2BC3FB8688A527825F0408DF2CA759D3",
+   "used_for": "Położenie Bloku Chin Płd. przy północnej Gondwanie (Indie/Australia) i spory wokół niego"
+  },
+  {
+   "title": "Scientific American: What Sparked the Cambrian Explosion?",
+   "url": "https://www.scientificamerican.com/article/what-sparked-the-cambrian-explosion1/",
+   "used_for": "Hipotezy przyczyn eksplozji kambryjskiej: tlen, drapieżnictwo"
+  },
+  {
+   "title": "Zhang et al., Triggers for the Cambrian Explosion: Hypotheses and Problems",
+   "url": "https://bohrium.dp.tech/paper/arxiv/812033177848643585",
+   "used_for": "Przegląd hipotez: tlen, skład wody, zestaw genów rozwojowych istniał przed kambrem"
+  },
+  {
+   "title": "Space.com: Did a giant object collide with Earth to form the moon?",
+   "url": "https://www.space.com/astronomy/moon/did-a-giant-object-collide-with-earth-to-form-the-moon",
+   "used_for": "Hipoteza wielkiego zderzenia (Theia), ok. 4,5 mld lat temu"
+  },
+  {
+   "title": "Pomatrum – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Pomatrum",
+   "used_for": "Pomatrum jako wetulikolia; sporna pozycja wetulikolii"
+  },
+  {
+   "title": "Ma et al. 2025, Deep water vetulicolians from the lower Cambrian of China (PeerJ)",
+   "url": "https://peerj.com/articles/18864",
+   "used_for": "Wetulikolie jako zagadkowa grupa; nierozstrzygnięta pozycja"
+  },
+  {
+   "title": "Shankouia – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Shankouia",
+   "used_for": "Shankouia jako fuxianhuiid"
+  },
+  {
+   "title": "Parapeytoia – Wikipedia",
+   "url": "https://en.wikipedia.org/wiki/Parapeytoia",
+   "used_for": "Parapeytoia przeniesiona z radiodontów do megacheirów"
+  }
+ ]
+}

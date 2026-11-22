@@ -1,4 +1,5 @@
-import { CLADES, GENERA, SITE_BY_ID, ancestorIds } from '../../data/db';
+import { CLADES, GENERA, SITE_BY_ID, SUBTREE_GENERA, ancestorIds } from '../../data/db';
+import { CLADE_INFO } from '../../data/cladeInfo';
 import { ARCHETYPE_BY_ID } from '../../data/archetypes';
 import { formatMa, periodLabel } from '../../data/geotime';
 import { FOOD_ICONS, FOOD_NAMES, HABITAT_ICONS, HABITAT_NAMES, SIZE_NAMES, fmt } from '../../game/balance';
@@ -77,5 +78,23 @@ export function GenusModal({ id }: { id: number }) {
 
 export function CladeModal({ id }: { id: number }) {
   const c = CLADES.get(id)!;
-  return <div><h2>{c.namePl ?? c.name}</h2><p className="muted">{c.leafCount} rodzajów</p></div>;
+  const s = useGame();
+  const setTreeFocus = useStore((x) => x.setTreeFocus);
+  const close = useStore((x) => x.closeModal);
+  const inf = CLADE_INFO[c.name];
+  const all = SUBTREE_GENERA.get(id) ?? [];
+  const hatched = all.filter((g) => s.hatched[g]).length, disc = all.filter((g) => s.discovered[g]).length;
+  const from = Math.max(0, ...all.map((g) => GENERA.get(g)!.fromMa)), to = Math.min(...all.map((g) => GENERA.get(g)!.toMa));
+  return (
+    <div className="col" style={{ gap: 10 }}>
+      <div className="col" style={{ gap: 2 }}>
+        <span className="lbl">{periodLabel(from, to)} · od {Math.round(from)} mln lat temu</span>
+        <h2 style={{ margin: 0 }}>{c.namePl ?? c.name}</h2>
+        {c.namePl && <span className="muted"><i>{c.name}</i></span>}
+      </div>
+      {inf && <p style={{ margin: 0 }}><b>Nowość ewolucyjna:</b> {inf.trait}. {inf.desc}</p>}
+      <span className="small">{all.length} rodzajów w grze · odkryte {disc} · w kolekcji {hatched}</span>
+      <div className="row"><button className="btn primary" onClick={() => { close(); setTreeFocus(id); }}>Otwórz w drzewie życia</button></div>
+    </div>
+  );
 }

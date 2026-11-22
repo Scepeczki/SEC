@@ -19,19 +19,21 @@ export const B = {
   // ---------------- dig sites
   gridW: 10,
   gridH: 7,
-  tileHp: 3,
-  tileHpPerDepth: 0.15,
-  tileHpExp: 1.02,
+  /** rock strength: 2 strokes at the surface, it grows with depth (brush and Pracownia upgrades keep pace) */
+  tileHp: 2,
+  tileHpPerDepth: 0.08,
+  tileHpExp: 1.01,
   fossilsPerLayer: 3,
   minorPerLayer: 4,
   amberChance: 0.35,
   /** drop weight multipliers by rarity, and how much depth helps */
   rarityWeight: [1, 0.45, 0.16, 0.05],
   rarityDepthBonus: [0, 0.05, 0.1, 0.16],
+  /** a genus with a complete genome turns up this much less often (room for new and unfinished species) */
+  fullGenomeWeight: 0.15,
   qualityOdds: [0.62, 0.3, 0.08],
   qualityDepthShift: 0.006,
   crewInterval: 6, // seconds per hit per crew
-  hammerDamageChance: 0.25,
   minorPB: 1,
   minorCoins: 5,
   metersPerLayer: 3,
@@ -47,10 +49,6 @@ export const B = {
   chestCoins: 100, // × depth
   chestPB: 5,
   chestMutagenChance: 0.3,
-  /** player hits only: crit = tile broken outright */
-  critChance: 0.1,
-  hammerCenterMult: 1,
-  hammerArmMult: 0.6,
   /** golden flash rewards */
   goldenCoins: 50, // × (depth + 1)
   goldenPB: 6,

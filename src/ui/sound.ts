@@ -96,7 +96,7 @@ function tone(c: Ctx, at: number, freq: number, dur: number, gain: number, type:
 
 export const sfx = {
   /** brush stroke (soft "shhk") or hammer knock; pitch rises a little with the streak */
-  hit(tool: 'brush' | 'hammer', streak = 0, crit = false) {
+  hit(tool: 'brush' | 'hammer' = 'brush', streak = 0, crit = false) {
     const c = ac(); if (!c) return;
     const t = c.currentTime, up = 1 + Math.min(12, streak) * 0.025;
     if (tool === 'hammer') {
@@ -109,6 +109,39 @@ export const sfx = {
       tone(c, t, rnd(180, 220) * up, 0.05, 0.08, 'triangle', 0.7);
     }
     if (crit) { noise(c, t + 0.01, 0.18, 4200, 3, 0.18); tone(c, t + 0.01, 660 * up, 0.12, 0.06, 'triangle', 1.5); }
+  },
+  /** one wave of a chain reaction: a rock "tock" whose pitch climbs with every wave */
+  chain(gen: number, tiles = 1) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime, up = 2 ** (Math.min(14, gen) / 12);
+    tone(c, t, 196 * up, 0.12, 0.16, 'triangle', 0.6);
+    noise(c, t, 0.08, 1400 * up, 1.4, Math.min(0.32, 0.12 + tiles * 0.03), 'bandpass', 0.003);
+    for (let i = 0; i < Math.min(5, tiles); i++) noise(c, t + 0.02 + i * rnd(0.01, 0.03), rnd(0.02, 0.04), rnd(1800, 4200), 2.5, 0.06);
+  },
+  /** a combo lands: a rising arpeggio, longer and brighter for bigger chains */
+  combo(n: number) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    const steps = Math.min(7, 2 + Math.floor(n / 5));
+    const scale = [523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66, 1318.5];
+    for (let i = 0; i < steps; i++) tone(c, t + i * 0.06, scale[i], 0.6, 0.06, i % 2 ? 'sine' : 'triangle');
+    if (n >= 20) for (let i = 0; i < 10; i++) tone(c, t + 0.3 + i * 0.04, rnd(2000, 4000), 0.15, 0.025);
+  },
+  /** placing one of your own modifiers */
+  tool() {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    tone(c, t, 880, 0.12, 0.05, 'triangle', 1.2);
+    tone(c, t + 0.05, 1318.5, 0.18, 0.04);
+    noise(c, t, 0.05, 3000, 2, 0.05);
+  },
+  /** a mineral comes out: crystal shimmer on top of the find chord */
+  crystal(rarity = 0) {
+    const c = ac(); if (!c) return;
+    const t = c.currentTime;
+    const base = [1174.66, 1318.5, 1567.98, 1760][rarity] ?? 1174.66;
+    for (let i = 0; i < 6 + rarity * 3; i++) tone(c, t + 0.08 + i * 0.045, base * (1 + (i % 3) * 0.25), 0.35, 0.035, 'sine');
+    tone(c, t, base / 2, 1.2, 0.05, 'sine');
   },
   /** a tile gives way: a little trickle of gravel */
   crumble(big = false) {

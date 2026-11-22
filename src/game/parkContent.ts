@@ -2,7 +2,7 @@
 // the islands themselves and all park-map numbers. See docs/park-2.0-projekt.md.
 
 import type { Food, Habitat } from '../data/types';
-import { BUILDING_BY_ID, buildingCost, type BuildingId } from './content';
+import { BUILDING_BY_ID, HABITAT_UNLOCK, buildingCost, type BuildingId } from './content';
 
 // ---------------------------------------------------------------- islands
 
@@ -105,8 +105,9 @@ export const LEGACY_ENC_SIZE: [number, number][] = [[6, 6], [8, 6], [8, 8], [10,
 export const ENC_BASE_MAX = 5;
 export const encLevel = (level: number) => ENCLOSURE_LEVELS[Math.max(0, Math.min(ENCLOSURE_LEVELS.length, level) - 1)];
 
-export const HABITAT_BASE_COST: Record<Habitat, number> = { land: 300, freshwater: 900, marine: 1500, air: 2500 };
-export const HABITAT_UNLOCK_LEVEL: Record<Habitat, number> = { land: 1, freshwater: 3, marine: 6, air: 9 };
+/** sea first, then fresh water, land and air — the order life conquered them (and the order the sites open) */
+export const HABITAT_BASE_COST: Record<Habitat, number> = { marine: 300, freshwater: 900, land: 1500, air: 2500 };
+export const HABITAT_UNLOCK_LEVEL: Record<Habitat, number> = { ...HABITAT_UNLOCK };
 export const ENCLOSURE_NAMES: Record<Habitat, string> = { land: 'Wybieg', freshwater: 'Bagno', marine: 'Laguna', air: 'Woliera' };
 const ENCLOSURE_DESC: Record<Habitat, string> = {
   land: 'Dla zwierząt lądowych. Trawa, drzewa i solidny płot.',
@@ -145,7 +146,7 @@ const stations: PlaceDef[] = STATION_IDS.map((b) => {
 const farms: PlaceDef[] = [
   { id: 'farm_meat', cat: 'farm', name: 'Hodowla', desc: 'Produkuje mięso dla drapieżników.', size: fixed(4, 3), unlockLevel: 1, maxLevel: 40, food: ['meat'] },
   { id: 'farm_plants', cat: 'farm', name: 'Szklarnia paleobotaniczna', desc: 'Paprocie, sagowce i skrzypy dla roślinożerców.', size: fixed(3, 3), unlockLevel: 1, maxLevel: 40, food: ['plants'] },
-  { id: 'farm_aqua', cat: 'farm', name: 'Akwakultura', desc: 'Ryby i plankton dla zwierząt wodnych. Musi stać nad wodą.', size: fixed(4, 4), unlockLevel: 3, maxLevel: 40, food: ['fish', 'plankton'], needsWater: true },
+  { id: 'farm_aqua', cat: 'farm', name: 'Akwakultura', desc: 'Ryby i plankton dla zwierząt wodnych. Musi stać nad wodą.', size: fixed(4, 4), unlockLevel: 1, maxLevel: 40, food: ['fish', 'plankton'], needsWater: true },
 ];
 export const FARM_BASE_COST: Record<string, number> = { farm_meat: 200, farm_plants: 200, farm_aqua: 600 };
 

@@ -1,0 +1,2661 @@
+{
+ "opis": "Uzupełnienia i poprawki drzewa gry, partia 1. Daty rodzajów są przybliżone – skrypt importu powinien pobrać dokładne zakresy i taksonomię z PBDB po nazwie rodzaju i podpiąć rodzaj pod podanego rodzica.",
+ "newClades": [
+  {
+   "id": "Porifera",
+   "namePl": "Gąbki",
+   "rank": "phylum",
+   "parent": "Animalia"
+  },
+  {
+   "id": "Archaeocyatha",
+   "namePl": "Archeocjaty",
+   "rank": "class",
+   "parent": "Porifera"
+  },
+  {
+   "id": "Cnidaria",
+   "namePl": "Parzydełkowce",
+   "rank": "phylum",
+   "parent": "Animalia"
+  },
+  {
+   "id": "Anthozoa",
+   "namePl": "Koralowce",
+   "rank": "class",
+   "parent": "Cnidaria"
+  },
+  {
+   "id": "Rugosa",
+   "namePl": "Koralowce czteropromienne",
+   "rank": "order",
+   "parent": "Anthozoa"
+  },
+  {
+   "id": "Tabulata",
+   "namePl": "Koralowce denkowe",
+   "rank": "order",
+   "parent": "Anthozoa"
+  },
+  {
+   "id": "Scleractinia",
+   "namePl": "Koralowce sześciopromienne",
+   "rank": "order",
+   "parent": "Anthozoa"
+  },
+  {
+   "id": "Medusozoa",
+   "namePl": "Meduzy i krewni",
+   "rank": "subphylum",
+   "parent": "Cnidaria"
+  },
+  {
+   "id": "Ctenophora",
+   "namePl": "Żebropławy",
+   "rank": "phylum",
+   "parent": "Animalia"
+  },
+  {
+   "id": "Spiralia",
+   "namePl": "Spiralia",
+   "rank": "unranked clade",
+   "parent": "Protostomia"
+  },
+  {
+   "id": "Brachiopoda",
+   "namePl": "Ramienionogi",
+   "rank": "phylum",
+   "parent": "Spiralia"
+  },
+  {
+   "id": "Bryozoa",
+   "namePl": "Mszywioły",
+   "rank": "phylum",
+   "parent": "Spiralia"
+  },
+  {
+   "id": "Annelida",
+   "namePl": "Pierścienice",
+   "rank": "phylum",
+   "parent": "Spiralia"
+  },
+  {
+   "id": "Gastropoda",
+   "namePl": "Ślimaki",
+   "rank": "class",
+   "parent": "Mollusca"
+  },
+  {
+   "id": "Bivalvia",
+   "namePl": "Małże",
+   "rank": "class",
+   "parent": "Mollusca"
+  },
+  {
+   "id": "Scaphopoda",
+   "namePl": "Łódkonogi",
+   "rank": "class",
+   "parent": "Mollusca"
+  },
+  {
+   "id": "Scalidophora",
+   "namePl": "Niezmogowce i krewni",
+   "rank": "unranked clade",
+   "parent": "Ecdysozoa"
+  },
+  {
+   "id": "Arachnida",
+   "namePl": "Pajęczaki",
+   "rank": "class",
+   "parent": "Chelicerata"
+  },
+  {
+   "id": "Scorpiones",
+   "namePl": "Skorpiony",
+   "rank": "order",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Araneae",
+   "namePl": "Pająki",
+   "rank": "order",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Opiliones",
+   "namePl": "Kosarze",
+   "rank": "order",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Trigonotarbida",
+   "namePl": "Trigonotarby",
+   "rank": "order",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Acari",
+   "namePl": "Roztocze",
+   "rank": "subclass",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Uropygi",
+   "namePl": "Biczykowce",
+   "rank": "order",
+   "parent": "Arachnida"
+  },
+  {
+   "id": "Chilopoda",
+   "namePl": "Pareczniki",
+   "rank": "class",
+   "parent": "Myriapoda"
+  },
+  {
+   "id": "Brachyura",
+   "namePl": "Kraby",
+   "rank": "infraorder",
+   "parent": "Reptantia"
+  },
+  {
+   "id": "Stomatopoda",
+   "namePl": "Ustonogi (rozwielitki modliszkowe)",
+   "rank": "order",
+   "parent": "Eumalacostraca"
+  },
+  {
+   "id": "Isopoda",
+   "namePl": "Równonogi",
+   "rank": "order",
+   "parent": "Eumalacostraca"
+  },
+  {
+   "id": "Thecostraca",
+   "namePl": "Wąsonogi",
+   "rank": "subclass",
+   "parent": "Pancrustacea"
+  },
+  {
+   "id": "Ostracoda",
+   "namePl": "Małżoraczki",
+   "rank": "class",
+   "parent": "Pancrustacea"
+  },
+  {
+   "id": "Branchiopoda",
+   "namePl": "Skrzelonogi",
+   "rank": "class",
+   "parent": "Pancrustacea"
+  },
+  {
+   "id": "Thylacocephala",
+   "namePl": "Thylacocephala",
+   "rank": "class",
+   "parent": "Pancrustacea"
+  },
+  {
+   "id": "Odonatoptera",
+   "namePl": "Ważki i krewni",
+   "rank": "superorder",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Coleoptera",
+   "namePl": "Chrząszcze",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Hymenoptera",
+   "namePl": "Błonkówki",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Lepidoptera",
+   "namePl": "Motyle",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Neuroptera",
+   "namePl": "Sieciarki",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Blattodea",
+   "namePl": "Karaczany i termity",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Diptera",
+   "namePl": "Muchówki",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Hemiptera",
+   "namePl": "Pluskwiaki",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Orthoptera",
+   "namePl": "Prostoskrzydłe",
+   "rank": "order",
+   "parent": "Pterygota"
+  },
+  {
+   "id": "Echinodermata",
+   "namePl": "Szkarłupnie",
+   "rank": "phylum",
+   "parent": "Deuterostomia"
+  },
+  {
+   "id": "Crinoidea",
+   "namePl": "Liliowce",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Blastoidea",
+   "namePl": "Blastoidy",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Echinoidea",
+   "namePl": "Jeżowce",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Asteroidea",
+   "namePl": "Rozgwiazdy",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Ophiuroidea",
+   "namePl": "Wężowidła",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Stylophora",
+   "namePl": "Stylofory",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Eocrinoidea",
+   "namePl": "Eokrynoidy",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Cystoidea",
+   "namePl": "Cystoidy (Rhombifera)",
+   "rank": "class",
+   "parent": "Echinodermata"
+  },
+  {
+   "id": "Hemichordata",
+   "namePl": "Półstrunowce",
+   "rank": "phylum",
+   "parent": "Deuterostomia"
+  },
+  {
+   "id": "Graptolithina",
+   "namePl": "Graptolity",
+   "rank": "class",
+   "parent": "Hemichordata"
+  },
+  {
+   "id": "Cambroernida",
+   "namePl": "Eldoniidy i krewni",
+   "rank": "unranked clade",
+   "parent": "Deuterostomia"
+  },
+  {
+   "id": "Cephalochordata",
+   "namePl": "Bezczaszkowce",
+   "rank": "subphylum",
+   "parent": "Chordata"
+  }
+ ],
+ "newGenera": [
+  {
+   "genus": "Haikouella",
+   "parent": "Chordata",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "krewny strunowców/kręgowców; tysiące okazów"
+  },
+  {
+   "genus": "Yunnanozoon",
+   "parent": "Chordata",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "B",
+   "note": "sporny strunowiec lub półstrunowiec"
+  },
+  {
+   "genus": "Zhongjianichthys",
+   "parent": "Myllokunmingiidae",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "B",
+   "note": "jedna z najstarszych „ryb”"
+  },
+  {
+   "genus": "Metaspriggina",
+   "parent": "Vertebrata",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "kręgowiec z Burgess z parą łuków skrzelowych"
+  },
+  {
+   "genus": "Eldonia",
+   "parent": "Cambroernida",
+   "fad": 521,
+   "lad": 505,
+   "sites": [
+    "chengjiang",
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "pływający krążek, sporny wtórousty"
+  },
+  {
+   "genus": "Leptomitus",
+   "parent": "Porifera",
+   "fad": 521,
+   "lad": 505,
+   "sites": [
+    "chengjiang",
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "gąbka rurkowata"
+  },
+  {
+   "genus": "Choia",
+   "parent": "Porifera",
+   "fad": 521,
+   "lad": 505,
+   "sites": [
+    "chengjiang",
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "gąbka z promienistymi igłami"
+  },
+  {
+   "genus": "Vauxia",
+   "parent": "Porifera",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "rozgałęziona gąbka"
+  },
+  {
+   "genus": "Archaeocyathus",
+   "parent": "Archaeocyatha",
+   "fad": 525,
+   "lad": 510,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "budowniczy pierwszych raf zwierzęcych"
+  },
+  {
+   "genus": "Diandongia",
+   "parent": "Brachiopoda",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "ramienionóg z zachowanymi miękkimi częściami"
+  },
+  {
+   "genus": "Longtancunella",
+   "parent": "Brachiopoda",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Heliomedusa",
+   "parent": "Brachiopoda",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Lingulella",
+   "parent": "Brachiopoda",
+   "fad": 521,
+   "lad": 443,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "krewny dzisiejszej Linguli"
+  },
+  {
+   "genus": "Maotianshania",
+   "parent": "Scalidophora",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "robak nitnikowiec"
+  },
+  {
+   "genus": "Ottoia",
+   "parent": "Scalidophora",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "drapieżny niezmogowiec z wywracaną trąbką"
+  },
+  {
+   "genus": "Selkirkia",
+   "parent": "Scalidophora",
+   "fad": 521,
+   "lad": 505,
+   "sites": [
+    "chengjiang",
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "niezmogowiec w rurce"
+  },
+  {
+   "genus": "Xianguangia",
+   "parent": "Anthozoa",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "ukwiałopodobny polip"
+  },
+  {
+   "genus": "Maotianoascus",
+   "parent": "Ctenophora",
+   "fad": 521,
+   "lad": 515,
+   "sites": [
+    "chengjiang"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "kambryjski żebropław"
+  },
+  {
+   "genus": "Halkieria",
+   "parent": "Mollusca",
+   "fad": 521,
+   "lad": 512,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "„pancernik” z płytkami i muszelkami; Sirius Passet"
+  },
+  {
+   "genus": "Odontogriphus",
+   "parent": "Mollusca",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "miękki mięczakopodobny zjadacz mat z tarką"
+  },
+  {
+   "genus": "Nectocaris",
+   "parent": "Mollusca",
+   "fad": 521,
+   "lad": 505,
+   "sites": [
+    "chengjiang",
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "sporny – możliwy wczesny głowonóg"
+  },
+  {
+   "genus": "Burgessochaeta",
+   "parent": "Annelida",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "A",
+   "note": "szczecinkowiec z Burgess"
+  },
+  {
+   "genus": "Canadia",
+   "parent": "Annelida",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "pierścienica z opalizującymi szczecinkami"
+  },
+  {
+   "genus": "Gogia",
+   "parent": "Eocrinoidea",
+   "fad": 515,
+   "lad": 497,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "eokrynoid – wczesny szkarłupień na łodyżce"
+  },
+  {
+   "genus": "Helicoplacus",
+   "parent": "Echinodermata",
+   "fad": 515,
+   "lad": 510,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "szkarłupień o spiralnych płytkach"
+  },
+  {
+   "genus": "Spartobranchus",
+   "parent": "Hemichordata",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "jelitodyszny w rurce, krewny graptolitów"
+  },
+  {
+   "genus": "Sanctacaris",
+   "parent": "Chelicerata",
+   "fad": 510,
+   "lad": 505,
+   "sites": [
+    "burgess"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "wczesny krewny szczękoczułkowców"
+  },
+  {
+   "genus": "Rhabdinopora",
+   "parent": "Graptolithina",
+   "fad": 487,
+   "lad": 478,
+   "sites": [],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "pierwsze graptolity planktonowe"
+  },
+  {
+   "genus": "Didymograptus",
+   "parent": "Graptolithina",
+   "fad": 478,
+   "lad": 465,
+   "sites": [],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "graptolit „widełki”"
+  },
+  {
+   "genus": "Climacograptus",
+   "parent": "Graptolithina",
+   "fad": 460,
+   "lad": 443,
+   "sites": [],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Monograptus",
+   "parent": "Graptolithina",
+   "fad": 440,
+   "lad": 410,
+   "sites": [],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "sylurski graptolit – skamieniałość przewodnia"
+  },
+  {
+   "genus": "Orthis",
+   "parent": "Brachiopoda",
+   "fad": 480,
+   "lad": 465,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Platystrophia",
+   "parent": "Brachiopoda",
+   "fad": 465,
+   "lad": 410,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "pospolity ordowicki ramienionóg"
+  },
+  {
+   "genus": "Rafinesquina",
+   "parent": "Brachiopoda",
+   "fad": 460,
+   "lad": 443,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Atrypa",
+   "parent": "Brachiopoda",
+   "fad": 440,
+   "lad": 360,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": ""
+  },
+  {
+   "genus": "Pentamerus",
+   "parent": "Brachiopoda",
+   "fad": 440,
+   "lad": 425,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "ławice sylurskie"
+  },
+  {
+   "genus": "Echinosphaerites",
+   "parent": "Cystoidea",
+   "fad": 470,
+   "lad": 450,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "kulisty cystoid"
+  },
+  {
+   "genus": "Cothurnocystis",
+   "parent": "Stylophora",
+   "fad": 460,
+   "lad": 450,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "A",
+   "note": "dziwaczny „but” – stylofor"
+  },
+  {
+   "genus": "Isorophus",
+   "parent": "Echinodermata",
+   "fad": 460,
+   "lad": 443,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "edrioasteroid – szkarłupień-placek"
+  },
+  {
+   "genus": "Glyptocrinus",
+   "parent": "Crinoidea",
+   "fad": 460,
+   "lad": 443,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Lapworthura",
+   "parent": "Ophiuroidea",
+   "fad": 430,
+   "lad": 420,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "sylurskie wężowidło"
+  },
+  {
+   "genus": "Streptelasma",
+   "parent": "Rugosa",
+   "fad": 460,
+   "lad": 420,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "koralowiec rożkowy"
+  },
+  {
+   "genus": "Favosites",
+   "parent": "Tabulata",
+   "fad": 450,
+   "lad": 380,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "koralowiec „plaster miodu”"
+  },
+  {
+   "genus": "Halysites",
+   "parent": "Tabulata",
+   "fad": 455,
+   "lad": 420,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "koralowiec łańcuszkowy"
+  },
+  {
+   "genus": "Maclurites",
+   "parent": "Gastropoda",
+   "fad": 480,
+   "lad": 450,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "duży ordowicki ślimak"
+  },
+  {
+   "genus": "Platyceras",
+   "parent": "Gastropoda",
+   "fad": 440,
+   "lad": 260,
+   "sites": [],
+   "env": "morze",
+   "diet": "pasożyt/kał",
+   "priority": "B",
+   "note": "ślimak żyjący na liliowcach"
+  },
+  {
+   "genus": "Bellerophon",
+   "parent": "Gastropoda",
+   "fad": 430,
+   "lad": 250,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Pterinea",
+   "parent": "Bivalvia",
+   "fad": 460,
+   "lad": 380,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Fenestella",
+   "parent": "Bryozoa",
+   "fad": 450,
+   "lad": 260,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "mszywiół-koronka"
+  },
+  {
+   "genus": "Leperditia",
+   "parent": "Ostracoda",
+   "fad": 460,
+   "lad": 380,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "duży małżoraczek"
+  },
+  {
+   "genus": "Ceratiocaris",
+   "parent": "Hymenostraca",
+   "fad": 440,
+   "lad": 400,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "sylurski pancerzowiec"
+  },
+  {
+   "genus": "Offacolus",
+   "parent": "Chelicerata",
+   "fad": 430,
+   "lad": 425,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "Herefordshire – wczesny szczękoczułkowiec"
+  },
+  {
+   "genus": "Eramoscorpius",
+   "parent": "Scorpiones",
+   "fad": 433,
+   "lad": 425,
+   "sites": [],
+   "env": "przybrzeże",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "jeden z najstarszych skorpionów"
+  },
+  {
+   "genus": "Proscorpius",
+   "parent": "Scorpiones",
+   "fad": 423,
+   "lad": 418,
+   "sites": [],
+   "env": "przybrzeże",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Pneumodesmus",
+   "parent": "Diplopoda",
+   "fad": 425,
+   "lad": 420,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "najstarsze znane zwierzę lądowe oddychające powietrzem"
+  },
+  {
+   "genus": "Palaeocharinus",
+   "parent": "Trigonotarbida",
+   "fad": 410,
+   "lad": 405,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "Rhynie – najstarsze pajęczaki lądowe"
+  },
+  {
+   "genus": "Eophalangium",
+   "parent": "Opiliones",
+   "fad": 410,
+   "lad": 405,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "najstarszy kosarz"
+  },
+  {
+   "genus": "Protacarus",
+   "parent": "Acari",
+   "fad": 410,
+   "lad": 405,
+   "sites": [],
+   "env": "ląd",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "najstarsze roztocze"
+  },
+  {
+   "genus": "Attercopus",
+   "parent": "Araneae",
+   "fad": 386,
+   "lad": 380,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "przodek pająków z gruczołami przędnymi"
+  },
+  {
+   "genus": "Crussolum",
+   "parent": "Chilopoda",
+   "fad": 410,
+   "lad": 380,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "najstarszy parecznik"
+  },
+  {
+   "genus": "Lepidocaris",
+   "parent": "Branchiopoda",
+   "fad": 410,
+   "lad": 405,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "Rhynie – skrzelonóg"
+  },
+  {
+   "genus": "Rhyniognatha",
+   "parent": "Insecta",
+   "fad": 410,
+   "lad": 405,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "najstarszy możliwy owad (sporny)"
+  },
+  {
+   "genus": "Heliophyllum",
+   "parent": "Rugosa",
+   "fad": 400,
+   "lad": 380,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Mucrospirifer",
+   "parent": "Brachiopoda",
+   "fad": 393,
+   "lad": 383,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "skrzydlaty ramienionóg"
+  },
+  {
+   "genus": "Hydnoceras",
+   "parent": "Porifera",
+   "fad": 385,
+   "lad": 360,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "szklista gąbka"
+  },
+  {
+   "genus": "Gogonasus",
+   "parent": "Tetrapodomorpha",
+   "fad": 382,
+   "lad": 377,
+   "sites": [
+    "gogo"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "ryba mięśniopłetwa z Gogo"
+  },
+  {
+   "genus": "Materpiscis",
+   "parent": "Placodermi",
+   "fad": 382,
+   "lad": 377,
+   "sites": [
+    "gogo"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "„ryba-matka” – najstarsze żywe urodzenie"
+  },
+  {
+   "genus": "Eusthenopteron",
+   "parent": "Tetrapodomorpha",
+   "fad": 385,
+   "lad": 372,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "klasyczna ryba na drodze do czworonogów"
+  },
+  {
+   "genus": "Panderichthys",
+   "parent": "Tetrapodomorpha",
+   "fad": 385,
+   "lad": 383,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": ""
+  },
+  {
+   "genus": "Elpistostege",
+   "parent": "Tetrapodomorpha",
+   "fad": 380,
+   "lad": 375,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "z palcami w płetwie"
+  },
+  {
+   "genus": "Ventastega",
+   "parent": "Tetrapoda",
+   "fad": 372,
+   "lad": 365,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Tulerpeton",
+   "parent": "Tetrapoda",
+   "fad": 365,
+   "lad": 359,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "sześciopalczasty czworonóg"
+  },
+  {
+   "genus": "Pederpes",
+   "parent": "Tetrapoda",
+   "fad": 359,
+   "lad": 347,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "pierwsze stopy do chodzenia – luka Romera"
+  },
+  {
+   "genus": "Whatcheeria",
+   "parent": "Tetrapoda",
+   "fad": 340,
+   "lad": 335,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Westlothiana",
+   "parent": "Reptiliomorpha",
+   "fad": 338,
+   "lad": 335,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Balanerpeton",
+   "parent": "Temnospondyli",
+   "fad": 338,
+   "lad": 335,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Pulmonoscorpius",
+   "parent": "Scorpiones",
+   "fad": 340,
+   "lad": 330,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "olbrzymi skorpion ok. 70 cm"
+  },
+  {
+   "genus": "Pentremites",
+   "parent": "Blastoidea",
+   "fad": 345,
+   "lad": 300,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "blastoid – „orzeszek” na łodyżce"
+  },
+  {
+   "genus": "Archimedes",
+   "parent": "Bryozoa",
+   "fad": 340,
+   "lad": 260,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "mszywiół-śruba"
+  },
+  {
+   "genus": "Lithostrotion",
+   "parent": "Rugosa",
+   "fad": 350,
+   "lad": 320,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Spirifer",
+   "parent": "Brachiopoda",
+   "fad": 359,
+   "lad": 323,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Gigantoproductus",
+   "parent": "Brachiopoda",
+   "fad": 340,
+   "lad": 320,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "największy ramienionóg"
+  },
+  {
+   "genus": "Archaeocidaris",
+   "parent": "Echinoidea",
+   "fad": 350,
+   "lad": 270,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": "paleozoiczny jeżowiec"
+  },
+  {
+   "genus": "Hylonomus",
+   "parent": "Reptilia",
+   "fad": 318,
+   "lad": 312,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarszy pewny gad"
+  },
+  {
+   "genus": "Paleothyris",
+   "parent": "Reptilia",
+   "fad": 312,
+   "lad": 306,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Archaeothyris",
+   "parent": "Synapsida",
+   "fad": 306,
+   "lad": 303,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarszy synapsyd"
+  },
+  {
+   "genus": "Petrolacosaurus",
+   "parent": "Reptilia",
+   "fad": 303,
+   "lad": 300,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarszy diapsyd"
+  },
+  {
+   "genus": "Dendrerpeton",
+   "parent": "Temnospondyli",
+   "fad": 315,
+   "lad": 310,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "z pni skamieniałych drzew Joggins"
+  },
+  {
+   "genus": "Arthrolycosa",
+   "parent": "Araneae",
+   "fad": 310,
+   "lad": 300,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "karboński pająk"
+  },
+  {
+   "genus": "Palaeothele",
+   "parent": "Araneae",
+   "fad": 305,
+   "lad": 300,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "pająk z grupy Mesothelae"
+  },
+  {
+   "genus": "Graeophonus",
+   "parent": "Uropygi",
+   "fad": 310,
+   "lad": 307,
+   "sites": [
+    "mazon_creek"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "biczykowiec z Mazon Creek"
+  },
+  {
+   "genus": "Eophrynus",
+   "parent": "Trigonotarbida",
+   "fad": 310,
+   "lad": 305,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "trigonotarb z kolcami"
+  },
+  {
+   "genus": "Dithyrocaris",
+   "parent": "Hymenostraca",
+   "fad": 330,
+   "lad": 300,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Archoblattina",
+   "parent": "Blattodea",
+   "fad": 300,
+   "lad": 295,
+   "sites": [],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "wielki karaczan"
+  },
+  {
+   "genus": "Gerobatrachus",
+   "parent": "Temnospondyli",
+   "fad": 290,
+   "lad": 288,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "„żabolazł” – przodek żab i salamander?"
+  },
+  {
+   "genus": "Eocasea",
+   "parent": "Synapsida",
+   "fad": 300,
+   "lad": 298,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "mała kazeida"
+  },
+  {
+   "genus": "Eunotosaurus",
+   "parent": "Reptilia",
+   "fad": 265,
+   "lad": 259,
+   "sites": [
+    "karoo"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "przodek żółwi z poszerzonymi żebrami"
+  },
+  {
+   "genus": "Palaeoniscum",
+   "parent": "Actinopterygii",
+   "fad": 260,
+   "lad": 254,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Triadobatrachus",
+   "parent": "Lissamphibia",
+   "fad": 250,
+   "lad": 248,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "proto-żaba z Madagaskaru"
+  },
+  {
+   "genus": "Encrinus",
+   "parent": "Crinoidea",
+   "fad": 247,
+   "lad": 237,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "liliowiec z wapienia muszlowego – także Śląsk; nie pasuje do lądowego Krasiejowa"
+  },
+  {
+   "genus": "Pappochelys",
+   "parent": "Testudinata",
+   "fad": 240,
+   "lad": 238,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "przodek żółwi"
+  },
+  {
+   "genus": "Odontochelys",
+   "parent": "Testudinata",
+   "fad": 220,
+   "lad": 218,
+   "sites": [],
+   "env": "przybrzeże",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "żółw z połową pancerza"
+  },
+  {
+   "genus": "Proganochelys",
+   "parent": "Testudinata",
+   "fad": 210,
+   "lad": 205,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "pierwszy w pełni opancerzony żółw"
+  },
+  {
+   "genus": "Megazostrodon",
+   "parent": "Mammaliaformes",
+   "fad": 201,
+   "lad": 190,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "wczesny ssakokształtny"
+  },
+  {
+   "genus": "Morganucodon",
+   "parent": "Mammaliaformes",
+   "fad": 205,
+   "lad": 190,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "klasyczny wczesny ssakokształtny"
+  },
+  {
+   "genus": "Triops",
+   "parent": "Branchiopoda",
+   "fad": 230,
+   "lad": 0,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "„żywa skamieniałość” – przekopnica"
+  },
+  {
+   "genus": "Halicyne",
+   "parent": "Pancrustacea",
+   "fad": 240,
+   "lad": 225,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "cyklid"
+  },
+  {
+   "genus": "Prosalirus",
+   "parent": "Anura",
+   "fad": 190,
+   "lad": 185,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarsza prawdziwa żaba"
+  },
+  {
+   "genus": "Eocarcinus",
+   "parent": "Brachyura",
+   "fad": 190,
+   "lad": 183,
+   "sites": [],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "najstarszy krab"
+  },
+  {
+   "genus": "Archaeolepis",
+   "parent": "Lepidoptera",
+   "fad": 200,
+   "lad": 190,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "najstarszy motyl (ćma)"
+  },
+  {
+   "genus": "Seirocrinus",
+   "parent": "Crinoidea",
+   "fad": 184,
+   "lad": 182,
+   "sites": [
+    "holzmaden"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "liliowiec przyczepiony do dryfujących pni"
+  },
+  {
+   "genus": "Pentacrinites",
+   "parent": "Crinoidea",
+   "fad": 199,
+   "lad": 145,
+   "sites": [
+    "holzmaden"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Gryphaea",
+   "parent": "Bivalvia",
+   "fad": 201,
+   "lad": 100,
+   "sites": [
+    "oxford_clay"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "„pazur diabła”"
+  },
+  {
+   "genus": "Pleurotomaria",
+   "parent": "Gastropoda",
+   "fad": 201,
+   "lad": 100,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Trigonia",
+   "parent": "Bivalvia",
+   "fad": 230,
+   "lad": 66,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Megateuthis",
+   "parent": "Coleoidea",
+   "fad": 180,
+   "lad": 165,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "olbrzymi belemnit"
+  },
+  {
+   "genus": "Belemnotheutis",
+   "parent": "Coleoidea",
+   "fad": 165,
+   "lad": 155,
+   "sites": [
+    "oxford_clay"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "belemnit z zachowanym atramentem"
+  },
+  {
+   "genus": "Karaurus",
+   "parent": "Caudata",
+   "fad": 165,
+   "lad": 160,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarsza znana salamandra"
+  },
+  {
+   "genus": "Eocaecilia",
+   "parent": "Lissamphibia",
+   "fad": 190,
+   "lad": 183,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "przodek płazów beznogich"
+  },
+  {
+   "genus": "Hadrocodium",
+   "parent": "Mammaliaformes",
+   "fad": 195,
+   "lad": 190,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "maleńki, z dużym mózgiem"
+  },
+  {
+   "genus": "Castorocauda",
+   "parent": "Mammaliaformes",
+   "fad": 165,
+   "lad": 160,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "jurajski „bóbr” z płaskim ogonem"
+  },
+  {
+   "genus": "Volaticotherium",
+   "parent": "Mammaliaformes",
+   "fad": 165,
+   "lad": 160,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "szybujący ssakokształtny"
+  },
+  {
+   "genus": "Juramaia",
+   "parent": "Eutheria",
+   "fad": 160,
+   "lad": 158,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najstarszy łożyskowiec (sporny)"
+  },
+  {
+   "genus": "Mongolarachne",
+   "parent": "Araneae",
+   "fad": 165,
+   "lad": 160,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "duży jurajski pająk"
+  },
+  {
+   "genus": "Kalligramma",
+   "parent": "Neuroptera",
+   "fad": 165,
+   "lad": 145,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": "„jurajski motyl” z oczkami na skrzydłach"
+  },
+  {
+   "genus": "Eryon",
+   "parent": "Reptantia",
+   "fad": 165,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "płaski homarowiec z Solnhofen"
+  },
+  {
+   "genus": "Mecochirus",
+   "parent": "Reptantia",
+   "fad": 165,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "długoszczypcy rak"
+  },
+  {
+   "genus": "Antrimpos",
+   "parent": "Pleocyemata",
+   "fad": 165,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "krewetka z Solnhofen"
+  },
+  {
+   "genus": "Sculda",
+   "parent": "Stomatopoda",
+   "fad": 155,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "wczesny ustonóg"
+  },
+  {
+   "genus": "Cyclosphaeroma",
+   "parent": "Isopoda",
+   "fad": 165,
+   "lad": 145,
+   "sites": [],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "jurajski równonóg"
+  },
+  {
+   "genus": "Saccocoma",
+   "parent": "Crinoidea",
+   "fad": 155,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "B",
+   "note": "pływający liliowiec"
+  },
+  {
+   "genus": "Aeschnogomphus",
+   "parent": "Odonatoptera",
+   "fad": 155,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "ważka z Solnhofen"
+  },
+  {
+   "genus": "Cymatophlebia",
+   "parent": "Odonatoptera",
+   "fad": 155,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Tharsis",
+   "parent": "Actinopterygii",
+   "fad": 155,
+   "lad": 145,
+   "sites": [
+    "solnhofen"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Cidaris",
+   "parent": "Echinoidea",
+   "fad": 180,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "jeżowiec o grubych kolcach, żyje do dziś"
+  },
+  {
+   "genus": "Thecosmilia",
+   "parent": "Scleractinia",
+   "fad": 201,
+   "lad": 100,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "jurajski koral rafowy"
+  },
+  {
+   "genus": "Eomaia",
+   "parent": "Eutheria",
+   "fad": 126,
+   "lad": 124,
+   "sites": [
+    "yixian"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "„matka świtu” – wczesny ssak łożyskowy"
+  },
+  {
+   "genus": "Sinodelphys",
+   "parent": "Metatheria",
+   "fad": 126,
+   "lad": 124,
+   "sites": [
+    "yixian"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "wczesny krewny torbaczy"
+  },
+  {
+   "genus": "Mesoraphidia",
+   "parent": "Neuroptera",
+   "fad": 130,
+   "lad": 120,
+   "sites": [
+    "yixian"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "wielbłądka"
+  },
+  {
+   "genus": "Coptoclava",
+   "parent": "Coleoptera",
+   "fad": 130,
+   "lad": 110,
+   "sites": [],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "chrząszcz wodny"
+  },
+  {
+   "genus": "Tetrapodophis",
+   "parent": "Squamata",
+   "fad": 120,
+   "lad": 113,
+   "sites": [
+    "santana"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "czteronogi wąż? (bardzo sporny)"
+  },
+  {
+   "genus": "Najash",
+   "parent": "Serpentes",
+   "fad": 95,
+   "lad": 92,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "wąż z tylnymi nogami"
+  },
+  {
+   "genus": "Eupodophis",
+   "parent": "Serpentes",
+   "fad": 95,
+   "lad": 92,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Dinilysia",
+   "parent": "Serpentes",
+   "fad": 86,
+   "lad": 84,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Melittosphex",
+   "parent": "Hymenoptera",
+   "fad": 100,
+   "lad": 99,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "najstarsza pszczoła (bursztyn birmański)"
+  },
+  {
+   "genus": "Sphecomyrma",
+   "parent": "Hymenoptera",
+   "fad": 95,
+   "lad": 79,
+   "sites": [],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "pierwotna mrówka w bursztynie"
+  },
+  {
+   "genus": "Callichimaera",
+   "parent": "Brachyura",
+   "fad": 95,
+   "lad": 90,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "„krab-chimera” z dużymi oczami"
+  },
+  {
+   "genus": "Dakoticancer",
+   "parent": "Brachyura",
+   "fad": 72,
+   "lad": 66,
+   "sites": [],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Hoploparia",
+   "parent": "Reptantia",
+   "fad": 130,
+   "lad": 40,
+   "sites": [],
+   "env": "morze",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": "kredowy homar"
+  },
+  {
+   "genus": "Platyceramus",
+   "parent": "Bivalvia",
+   "fad": 89,
+   "lad": 84,
+   "sites": [
+    "niobrara"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "olbrzymi małż do ok. 3 m"
+  },
+  {
+   "genus": "Inoceramus",
+   "parent": "Bivalvia",
+   "fad": 175,
+   "lad": 66,
+   "sites": [
+    "niobrara"
+   ],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Hippurites",
+   "parent": "Bivalvia",
+   "fad": 90,
+   "lad": 66,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "A",
+   "note": "rudysta – małż budujący rafy"
+  },
+  {
+   "genus": "Uintacrinus",
+   "parent": "Crinoidea",
+   "fad": 87,
+   "lad": 84,
+   "sites": [
+    "niobrara"
+   ],
+   "env": "morze",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "pływający liliowiec w koloniach"
+  },
+  {
+   "genus": "Micraster",
+   "parent": "Echinoidea",
+   "fad": 95,
+   "lad": 60,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "jeżowiec sercowy – skamieniałość przewodnia"
+  },
+  {
+   "genus": "Turritella",
+   "parent": "Gastropoda",
+   "fad": 130,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "ślimak-wieżyczka, żyje do dziś"
+  },
+  {
+   "genus": "Macropoma",
+   "parent": "Actinistia",
+   "fad": 100,
+   "lad": 66,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Vegavis",
+   "parent": "Anseriformes",
+   "fad": 69,
+   "lad": 66,
+   "sites": [],
+   "env": "przybrzeże",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "kaczkopodobny ptak z ery dinozaurów"
+  },
+  {
+   "genus": "Amia",
+   "parent": "Holostei",
+   "fad": 100,
+   "lad": 0,
+   "sites": [
+    "hell_creek"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "amia – żywa skamieniałość"
+  },
+  {
+   "genus": "Purgatorius",
+   "parent": "Primates",
+   "fad": 66,
+   "lad": 63,
+   "sites": [
+    "hell_creek"
+   ],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "najstarszy możliwy naczelny"
+  },
+  {
+   "genus": "Knightia",
+   "parent": "Teleostei",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "plankton",
+   "priority": "A",
+   "note": "najczęstsza ryba Green River"
+  },
+  {
+   "genus": "Mioplosus",
+   "parent": "Teleostei",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Priscacara",
+   "parent": "Teleostei",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Phareodus",
+   "parent": "Teleostei",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Atractosteus",
+   "parent": "Holostei",
+   "fad": 100,
+   "lad": 0,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "niszczuka"
+  },
+  {
+   "genus": "Heliobatis",
+   "parent": "Elasmobranchii",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "płaszczka słodkowodna"
+  },
+  {
+   "genus": "Icaronycteris",
+   "parent": "Chiroptera",
+   "fad": 52,
+   "lad": 48,
+   "sites": [
+    "green_river"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "jeden z najstarszych nietoperzy"
+  },
+  {
+   "genus": "Onychonycteris",
+   "parent": "Chiroptera",
+   "fad": 52,
+   "lad": 50,
+   "sites": [
+    "green_river"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "nietoperz bez echolokacji?"
+  },
+  {
+   "genus": "Titanomyrma",
+   "parent": "Hymenoptera",
+   "fad": 49,
+   "lad": 46,
+   "sites": [
+    "messel",
+    "green_river"
+   ],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "olbrzymia mrówka"
+  },
+  {
+   "genus": "Mastotermes",
+   "parent": "Blattodea",
+   "fad": 50,
+   "lad": 0,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": "termit – żywa skamieniałość"
+  },
+  {
+   "genus": "Ailuravus",
+   "parent": "Rodentia",
+   "fad": 48,
+   "lad": 41,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "wielki gryzoń z Messel"
+  },
+  {
+   "genus": "Eurotamandua",
+   "parent": "Mammalia",
+   "fad": 48,
+   "lad": 46,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "mrówkojadopodobny ssak (sporny)"
+  },
+  {
+   "genus": "Messelornis",
+   "parent": "Aves",
+   "fad": 48,
+   "lad": 46,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "najczęstszy ptak Messel"
+  },
+  {
+   "genus": "Palaeopython",
+   "parent": "Serpentes",
+   "fad": 48,
+   "lad": 41,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Eoconstrictor",
+   "parent": "Serpentes",
+   "fad": 48,
+   "lad": 46,
+   "sites": [
+    "messel"
+   ],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "boa z Messel"
+  },
+  {
+   "genus": "Thaumaturus",
+   "parent": "Teleostei",
+   "fad": 48,
+   "lad": 41,
+   "sites": [
+    "messel"
+   ],
+   "env": "słodka woda",
+   "diet": "mięso",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Campanile",
+   "parent": "Gastropoda",
+   "fad": 56,
+   "lad": 34,
+   "sites": [],
+   "env": "morze",
+   "diet": "rośliny",
+   "priority": "B",
+   "note": "olbrzymi ślimak"
+  },
+  {
+   "genus": "Venericardia",
+   "parent": "Bivalvia",
+   "fad": 60,
+   "lad": 30,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Conus",
+   "parent": "Gastropoda",
+   "fad": 50,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "stożek – jadowity ślimak"
+  },
+  {
+   "genus": "Clypeaster",
+   "parent": "Echinoidea",
+   "fad": 40,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "drobny pokarm",
+   "priority": "B",
+   "note": "dolar piaskowy"
+  },
+  {
+   "genus": "Acropora",
+   "parent": "Scleractinia",
+   "fad": 56,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "B",
+   "note": "koral rafowy"
+  },
+  {
+   "genus": "Balanus",
+   "parent": "Thecostraca",
+   "fad": 40,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "filtrator",
+   "priority": "B",
+   "note": "pąkla"
+  },
+  {
+   "genus": "Varanus",
+   "parent": "Squamata",
+   "fad": 17,
+   "lad": 0,
+   "sites": [],
+   "env": "ląd",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "waran – w tym Megalania"
+  },
+  {
+   "genus": "Proconsul",
+   "parent": "Primates",
+   "fad": 23,
+   "lad": 17,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "małpa człekokształtna bez ogona"
+  },
+  {
+   "genus": "Sahelanthropus",
+   "parent": "Hominidae",
+   "fad": 7.2,
+   "lad": 6.8,
+   "sites": [],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "najstarszy możliwy homininy"
+  },
+  {
+   "genus": "Orrorin",
+   "parent": "Hominidae",
+   "fad": 6.1,
+   "lad": 5.7,
+   "sites": [],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "B",
+   "note": ""
+  },
+  {
+   "genus": "Ardipithecus",
+   "parent": "Hominidae",
+   "fad": 5.8,
+   "lad": 4.4,
+   "sites": [],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": ""
+  },
+  {
+   "genus": "Paranthropus",
+   "parent": "Hominidae",
+   "fad": 2.7,
+   "lad": 1.2,
+   "sites": [],
+   "env": "ląd",
+   "diet": "rośliny",
+   "priority": "A",
+   "note": "„orzechołusk” – masywne szczęki"
+  },
+  {
+   "genus": "Homo",
+   "parent": "Hominidae",
+   "fad": 2.8,
+   "lad": 0,
+   "sites": [
+    "pampas"
+   ],
+   "env": "ląd",
+   "diet": "wszystkożerca",
+   "priority": "A",
+   "note": "człowiek – w Pampasach obecny pod koniec plejstocenu"
+  },
+  {
+   "genus": "Latimeria",
+   "parent": "Actinistia",
+   "fad": 0,
+   "lad": 0,
+   "sites": [],
+   "env": "morze",
+   "diet": "mięso",
+   "priority": "A",
+   "note": "żywa latimeria – wyjątek: bez kopalnych szczątków"
+  }
+ ],
+ "fixes": [
+  {
+   "what": "przenieś klad",
+   "id": "Onychophora",
+   "from": "Ecdysozoa",
+   "to": "Panarthropoda",
+   "why": "Pazurnice należą do Panarthropoda."
+  },
+  {
+   "what": "przenieś rodzaj",
+   "id": "Kerygmachela",
+   "from": "Radiodonta",
+   "to": "Arthropoda",
+   "why": "Lobopodium z płatami, stojące przed radiodontami (Liu i in. 2022). Docelowo osobny klad „lobopodia z płatami”."
+  },
+  {
+   "what": "przenieś klad",
+   "id": "Mollusca",
+   "from": "Protostomia",
+   "to": "Spiralia",
+   "why": "Nowy klad Spiralia grupuje mięczaki, ramienionogi, mszywioły i pierścienice."
+  },
+  {
+   "what": "przenieś rodzaj",
+   "id": "Dickinsonia",
+   "from": "Bilateria",
+   "to": "Animalia",
+   "why": "Pewne zwierzę, ale jego miejsce wśród zwierząt jest sporne; nie ma dowodu na Bilateria."
+  },
+  {
+   "what": "zmień zakres",
+   "id": "Dickinsonia",
+   "from": "635–539",
+   "to": "558–550",
+   "why": "Skamieniałości Dickinsonii mają ok. 558–550 mln lat; 635 to początek ediakaru, a nie jej pojawienie się."
+  },
+  {
+   "what": "zmień zakres",
+   "id": "Asterolepis",
+   "from": "411–201",
+   "to": "387–359",
+   "why": "Ryby pancerne wymarły pod koniec dewonu. Przez ten błąd cały klad Placodermi kończy się w danych na 201 mln lat."
+  },
+  {
+   "what": "scal klady",
+   "id": "Actinopterygii",
+   "from": "dwa klady (subclass i superclass)",
+   "to": "jeden klad Actinopterygii",
+   "why": "Ta sama grupa występuje w drzewie dwa razy."
+  },
+  {
+   "what": "dopisz stanowisko",
+   "id": "Haikouichthys",
+   "from": "—",
+   "to": "chengjiang",
+   "why": "Rodzaj z Chengjiang, wspomniany w tekście rozdziału 1."
+  },
+  {
+   "what": "dopisz stanowisko",
+   "id": "Myllokunmingia",
+   "from": "—",
+   "to": "chengjiang",
+   "why": "Jw."
+  },
+  {
+   "what": "usuń stanowisko",
+   "id": "Scalopoides",
+   "from": "holzmaden",
+   "to": "—",
+   "why": "Kret sprzed 30–4,7 mln lat nie może pochodzić z jurajskiego Holzmaden."
+  },
+  {
+   "what": "usuń stanowisko albo zmień zakres",
+   "id": "Dicellopyge",
+   "from": "karoo",
+   "to": "—",
+   "why": "Zakres rodzaju (237–227) nie pokrywa się z Karoo (260–247). Sprawdzić w PBDB, który z nich jest błędny."
+  },
+  {
+   "what": "usuń rodzaj albo popraw",
+   "id": "Branchiopus",
+   "from": "Arthropleuridae, 0–0 mln lat",
+   "to": "do sprawdzenia",
+   "why": "Rodzaj z zakresem 0–0 w rodzinie karbońskich wijów – prawie na pewno błąd importu."
+  },
+  {
+   "what": "popraw rodzinę",
+   "id": "Primicaris",
+   "from": "Parvancorinidae",
+   "to": "bez rodziny (Arthropoda)",
+   "why": "Parvancorinidae to rodzina ediakarskiej Parvancoriny."
+  },
+  {
+   "what": "zmień dietę",
+   "id": "Hallucigenia, Cardiodictyon, Microdictyon",
+   "from": "rośliny",
+   "to": "drobny pokarm / filtrator",
+   "why": "W kambrze nie było roślin; żywiły się najpewniej tkanką gąbek lub cząstkami z wody."
+  },
+  {
+   "what": "dopisz stanowisko",
+   "id": "Gyrodus",
+   "from": "oxford_clay",
+   "to": "oxford_clay/solnhofen",
+   "why": "Rodzaj znany z tego stanowiska."
+  },
+  {
+   "what": "dopisz stanowisko",
+   "id": "Leptolepis",
+   "from": "morrison/oxford_clay",
+   "to": "morrison/oxford_clay/holzmaden",
+   "why": "Rodzaj znany z tego stanowiska."
+  }
+ ],
+ "removals": "Brak. Żadna rodzina nie jest przesadnie liczna (największa: 12 rodzajów). Usunięcie dotyczy tylko błędnego rekordu Branchiopus."
+}

@@ -105,36 +105,52 @@ export const INSTITUTIONS = [
   'Fundacja Bursztynowa', 'Towarzystwo Paleontologiczne', 'Akademia Ewolucji', 'Oceanarium Głębin',
 ];
 
-/** Park-level requirements for sites (order = unlock order). */
+/**
+ * Park-level requirements for sites (order = unlock order). Sites open in geological order, oldest first,
+ * so the collection grows the way life itself did: Cambrian seas → first fish → onto land → dinosaurs → mammals.
+ */
 export const SITE_UNLOCK: Record<string, { level: number; cost: number }> = {
-  morrison: { level: 1, cost: 0 },
-  hell_creek: { level: 3, cost: 3000 },
-  krasiejow: { level: 5, cost: 5900 },
-  chinle: { level: 7, cost: 11000 },
-  solnhofen: { level: 9, cost: 22000 },
-  burgess: { level: 11, cost: 43000 },
-  djadokhta: { level: 13, cost: 85000 },
-  niobrara: { level: 15, cost: 160000 },
-  green_river: { level: 17, cost: 320000 },
-  yixian: { level: 19, cost: 630000 },
-  oxford_clay: { level: 21, cost: 1200000 },
-  karoo: { level: 23, cost: 2400000 },
-  chengjiang: { level: 25, cost: 4700000 },
-  dinosaur_park: { level: 27, cost: 9100000 },
-  tendaguru: { level: 29, cost: 18000000 },
-  ischigualasto: { level: 31, cost: 34000000 },
-  white_river: { level: 33, cost: 67000000 },
-  holzmaden: { level: 35, cost: 130000000 },
-  gogo: { level: 37, cost: 260000000 },
-  nemegt: { level: 39, cost: 500000000 },
-  kem_kem: { level: 41, cost: 970000000 },
-  fezouata: { level: 43, cost: 1900000000 },
-  cleveland: { level: 45, cost: 3700000000 },
-  santana: { level: 47, cost: 7200000000 },
-  mazon_creek: { level: 49, cost: 14000000000 },
-  messel: { level: 51, cost: 27000000000 },
+  chengjiang: { level: 1, cost: 100 },
+  burgess: { level: 3, cost: 3000 },
+  fezouata: { level: 5, cost: 5900 },
+  cincinnati: { level: 6, cost: 6900 },
+  bertie: { level: 6, cost: 8100 },
+  rhynie: { level: 6, cost: 9400 },
+  gogo: { level: 7, cost: 11000 },
+  cleveland: { level: 9, cost: 22000 },
+  east_kirkton: { level: 10, cost: 28000 },
+  joggins: { level: 10, cost: 34000 },
+  mazon_creek: { level: 11, cost: 43000 },
+  red_beds: { level: 12, cost: 60000 },
+  karoo: { level: 13, cost: 85000 },
+  ischigualasto: { level: 15, cost: 160000 },
+  krasiejow: { level: 17, cost: 320000 },
+  chinle: { level: 19, cost: 630000 },
+  elliot: { level: 20, cost: 870000 },
+  holzmaden: { level: 21, cost: 1200000 },
+  oxford_clay: { level: 23, cost: 2400000 },
+  morrison: { level: 25, cost: 4700000 },
+  tendaguru: { level: 27, cost: 9100000 },
+  solnhofen: { level: 29, cost: 18000000 },
+  yixian: { level: 31, cost: 34000000 },
+  santana: { level: 33, cost: 67000000 },
+  cedar_mountain: { level: 34, cost: 93000000 },
+  kem_kem: { level: 35, cost: 130000000 },
+  niobrara: { level: 37, cost: 260000000 },
+  dinosaur_park: { level: 39, cost: 500000000 },
+  djadokhta: { level: 41, cost: 970000000 },
+  hell_creek: { level: 43, cost: 1900000000 },
+  nemegt: { level: 45, cost: 3700000000 },
+  green_river: { level: 47, cost: 7200000000 },
+  messel: { level: 49, cost: 14000000000 },
+  white_river: { level: 51, cost: 27000000000 },
+  santa_cruz: { level: 52, cost: 34000000000 },
+  siwaliki: { level: 52, cost: 42000000000 },
   pampas: { level: 53, cost: 53000000000 },
 };
+/** where a new game starts digging: the oldest site */
+export const START_SITE = 'chengjiang';
 
-/** Habitat type unlocks by park level. */
-export const HABITAT_UNLOCK = { land: 1, freshwater: 3, marine: 6, air: 9 } as const;
+/** Habitat type unlocks by park level, in the order life conquered them: sea, fresh water, land, air. */
+// Water and land open together at level 6, with the Rhynie chert: the first site with animals living on land.
+export const HABITAT_UNLOCK = { marine: 1, freshwater: 6, land: 6, air: 12 } as const;

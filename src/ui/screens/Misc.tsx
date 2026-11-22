@@ -204,6 +204,7 @@ export function SettingsScreen() {
         </div>
         <div className="panel col">
           <h2>🛠️ Narzędzia szkicu</h2>
+          <label className="row small"><input type="checkbox" checked={s.story.on} onChange={(e) => act((g) => { g.story.on = e.target.checked; })} /> Tryb fabularny: narrator w dymkach i przerywniki rozdziałów (bez niego zostaje sama gra i Encyklopedia)</label>
           <label className="row small"><input type="checkbox" checked={s.settings.revealAll} onChange={(e) => act((g) => { g.settings.revealAll = e.target.checked; })} /> Odsłoń całą kolekcję w drzewie i encyklopedii (podgląd)</label>
           <div className="row">
             <Btn onClick={() => setTab('gallery')}>🎨 Galeria sprite'ów</Btn>

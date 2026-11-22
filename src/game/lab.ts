@@ -75,6 +75,35 @@ export function labTick(s: GameState, dt: number, m: Mods): void {
   }
 }
 
+/** genome % one fossil of this quality adds (min–max, before the 100% cap) */
+export function genomeGain(genusId: number, q: Quality, m: Mods): [number, number] {
+  const g = GENERA.get(genusId)!;
+  const [a, b] = B.genomeYield[q];
+  const k = m.genomeMult / B.genomeRarityDiv[g.rarity];
+  return [a * k, b * k];
+}
+
+/** where a newborn of this genus would go right now: the enclosure, pen and room left (null = Transporter) */
+export function destinationFor(s: GameState, genusId: number): { enc: number; pen: number; free: number; slots: number; label: string } | null {
+  const g = GENERA.get(genusId)!;
+  const need = SIZE_SLOTS[g.size];
+  const encs = enclosures(s).filter((o) => defOf(o).habitat === g.habitat);
+  let best: { enc: number; pen: number; free: number; slots: number; label: string; score: number } | null = null;
+  encs.forEach((o, k) => {
+    for (let p = 0; p < (o.pens ?? 0); p++) {
+      const here = animalsIn(s, o.id, p);
+      const others = here.filter((a) => a.genusId !== genusId);
+      if (others.length && (g.food === 'meat' || others.some((a) => GENERA.get(a.genusId)!.food === 'meat'))) continue;
+      const slots = penSlots(s, o), free = slots - penUsed(s, o.id, p);
+      if (free < need) continue;
+      const score = (here.some((a) => a.genusId === genusId) ? 100 : 0) + (here.length ? 0 : 10) - k;
+      if (!best || score > best.score) best = { enc: o.id, pen: p, free, slots, label: `${defOf(o).name} #${k + 1}, zagroda ${p + 1}`, score };
+    }
+  });
+  const b = best as { enc: number; pen: number; free: number; slots: number; label: string } | null;
+  return b ? { enc: b.enc, pen: b.pen, free: b.free, slots: b.slots, label: b.label } : null;
+}
+
 // ---------------------------------------------------------------- room in the park (information only: synthesis is never blocked)
 
 /** is there a pen ready for this genus right now? (otherwise the newborn waits in the Transporter) */

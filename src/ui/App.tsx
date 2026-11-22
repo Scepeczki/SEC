@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { TAXA } from '../data/db';
 import { FOOD_NAMES, fmt, fmtTime, parkLevelFromFame } from '../game/balance';
-import { Beef, BookOpen, Building2, Coins, Droplets, Fish, FlaskConical, House, Leaf, type LucideIcon, Microscope, Pickaxe, ScrollText, Settings, Syringe, Ticket, TreeDeciduous } from 'lucide-react';
+import { Beef, BookOpen, Building2, Coins, Droplets, Fish, FlaskConical, House, Leaf, type LucideIcon, Microscope, Pickaxe, ScrollText, Settings, Syringe, Ticket } from 'lucide-react';
 import { mods } from '../game/mods';
 import { incomePerSec } from '../game/park';
 import { produces, storeFill } from '../game/parkmap';
@@ -14,19 +14,22 @@ import { desktop, type UpdateEvent } from './desktop';
 import { ParkScreen } from './park/ParkScreen';
 import { DigScreen } from './screens/Dig';
 import { LabScreen } from './screens/Lab';
-import { TreeScreen } from './screens/Tree';
+import { CodexScreen } from './screens/Codex';
+import { NarratorHost } from './story/Narrator';
+import { CutsceneHost } from './story/Cutscene';
 import { ResearchScreen } from './screens/Research';
 import { BuildingsScreen } from './screens/Buildings';
 import { ContractsScreen } from './screens/Contracts';
 import { SettingsScreen } from './screens/Settings';
 import { GalleryScreen } from './screens/Gallery';
 import { GenusModal, CladeModal } from './screens/Encyclopedia';
+import { LessonModal } from './Lesson';
 
 const TABS: [string, string, LucideIcon][] = [
   ['park', 'Park', House],
   ['dig', 'Wykopaliska', Pickaxe],
   ['lab', 'Laboratorium', FlaskConical],
-  ['tree', 'Drzewo życia', TreeDeciduous],
+  ['tree', 'Encyklopedia', BookOpen],
   ['research', 'Badania', Microscope],
   ['buildings', 'Stacje', Building2],
   ['contracts', 'Kontrakty', ScrollText],
@@ -185,7 +188,7 @@ export function App() {
         {tab === 'park' && <ParkScreen />}
         {tab === 'dig' && <DigScreen />}
         {tab === 'lab' && <LabScreen />}
-        {tab === 'tree' && <TreeScreen />}
+        {tab === 'tree' && <CodexScreen />}
         {tab === 'research' && <ResearchScreen />}
         {tab === 'buildings' && <BuildingsScreen />}
         {tab === 'contracts' && <ContractsScreen />}
@@ -195,6 +198,9 @@ export function App() {
       <UpdateBanner />
       <Toasts />
       <Modals />
+      <NarratorHost />
+      <CutsceneHost />
+      <LessonModal />
       <OfflineModal />
     </div>
   );

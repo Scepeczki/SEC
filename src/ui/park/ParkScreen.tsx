@@ -119,10 +119,12 @@ function BuildBar({ s }: { s: GameState }) {
 }
 
 const GUIDE: [string, (s: GameState) => boolean][] = [
-  ['Kop skały w Wykopaliskach (Morrison)', (s) => s.stats.fossils > 0],
+  ['Kup pierwsze stanowisko na mapie świata (Wykopaliska → Mapa świata)', (s) => Object.keys(s.unlockedSites).length > 0],
+  ['Kop skały w kambryjskim Chengjiang i znajdź pierwszą skamieniałość', (s) => s.stats.fossils > 0],
+  ['Kup „Iskrę” w Warsztacie (U) i odpal pierwszą reakcję łańcuchową', (s) => (s.tools?.g_arrow ?? 0) > 0],
   ['Wyekstrahuj DNA w Laboratorium', (s) => s.stats.extractions > 0],
   ['Przy 50% genomu rozpocznij syntezę', (s) => Object.keys(s.hatched).length > 0],
-  ['Zwierzę zamieszkało na wybiegu — zbieraj monety, klikając dymek', (s) => s.animals.some((a) => a.enc > 0)],
+  ['Zwierzę zamieszkało w lagunie — zbieraj monety, klikając dymek', (s) => s.animals.some((a) => a.enc > 0)],
   ['Postaw kiosk przy ścieżce (Buduj → Dla zwiedzających)', (s) => countOf(s, 'v_kiosk') > 0],
 ];
 

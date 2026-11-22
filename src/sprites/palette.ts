@@ -67,6 +67,8 @@ export function makePalette(seed: string, o: PaletteOpts): Palette {
   const marine = o.habitat === 'marine' || o.habitat === 'freshwater';
   if (o.rig === 'arthropod_top' || o.rig === 'arthropod') {
     h = r.pick([20, 28, 35, 12, 200, 40]) + r.r(-8, 8); s = r.r(0.25, 0.5); l = r.r(0.36, 0.5);
+  } else if (o.rig === 'sessile') {
+    h = r.pick([18, 30, 42, 340, 290, 175, 80]) + r.r(-10, 10); s = r.r(0.25, 0.5); l = r.r(0.45, 0.62);
   } else if (o.rig === 'shell') {
     h = r.r(25, 45); s = r.r(0.3, 0.5); l = r.r(0.55, 0.68);
   } else if (o.furry) {

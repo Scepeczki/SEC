@@ -21,6 +21,15 @@ export function SpriteImg(props: { genusId: number; stage?: number; scale?: numb
   );
 }
 
+/** a sprite scaled (in whole pixels) to fit a box: tiny Cambrian critters and big sauropods both fill their frame */
+export function FitSprite(props: { genusId: number; w: number; h: number; stage?: number; silhouette?: boolean; animate?: boolean; max?: number; title?: string }) {
+  const { genusId, w, h, stage = 1, silhouette = false, animate = false, max = 6 } = props;
+  const frame = useAnimFrame(animate);
+  const u = spriteUrl(genusSpec(genusId), stage, frame, silhouette);
+  const k = Math.max(1, Math.min(max, Math.floor(w / u.w), Math.floor(h / u.h)));
+  return <img className="pixel" src={u.url} width={u.w * k} height={u.h * k} alt={props.title ?? GENERA.get(genusId)?.name} title={props.title ?? GENERA.get(genusId)?.name} draggable={false} />;
+}
+
 export function Bar({ value, max, kind, title }: { value: number; max: number; kind?: 'gold' | 'blue' | 'purple'; title?: string }) {
   const pct = max > 0 ? Math.max(0, Math.min(100, (value / max) * 100)) : 0;
   return (

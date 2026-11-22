@@ -9,6 +9,7 @@ import type { Site } from '../../data/types';
 import { formatMa } from '../../data/geotime';
 import { fmt } from '../../game/balance';
 import { SITE_UNLOCK } from '../../game/content';
+import { EPOCHS, SITE_ORDER, newCladesAt } from '../../data/epochs';
 import { depthMeters } from '../../game/dig';
 import { STRATA, siteMinerals, stratumAt } from '../../game/geology';
 import { canUnlockSite, parkLevel, unlockSite } from '../../game/meta';
@@ -16,6 +17,10 @@ import type { GameState } from '../../game/state';
 import { iconUrl } from '../dig/art';
 import { Btn, SpriteImg } from '../components';
 import { useStore } from '../store';
+import { LessonBtn } from '../Lesson';
+import { chapterNo, chapterProgress } from '../../game/story';
+import { chapterTitle } from '../../data/story';
+import { useBeat } from '../story/Narrator';
 
 const W = world.w, H = world.h;
 const DEG = 360 / W;
@@ -227,23 +232,13 @@ function timePos(ma: number): number {
   }
   return 1;
 }
-const SHORT: Record<string, string> = { burgess: 'Burgess', holzmaden: 'Holzmaden', krasiejow: 'Krasiejów', pampas: 'Pampasy', dinosaur_park: 'Dinosaur Park', hell_creek: 'Hell Creek', mazon_creek: 'Mazon Creek', kem_kem: 'Kem Kem', chinle: 'Chinle', djadokhta: 'Djadochta', green_river: 'Green River', oxford_clay: 'Oxford Clay', white_river: 'White River', fezouata: 'Fezouata' };
+const SHORT: Record<string, string> = { east_kirkton: 'East Kirkton', red_beds: 'Teksas', cedar_mountain: 'Cedar Mountain', santa_cruz: 'Santa Cruz', burgess: 'Burgess', holzmaden: 'Holzmaden', krasiejow: 'Krasiejów', pampas: 'Pampasy', dinosaur_park: 'Dinosaur Park', hell_creek: 'Hell Creek', mazon_creek: 'Mazon Creek', kem_kem: 'Kem Kem', chinle: 'Chinle', djadokhta: 'Djadochta', green_river: 'Green River', oxford_clay: 'Oxford Clay', white_river: 'White River', fezouata: 'Fezouata' };
 const shortName = (x: Site) => SHORT[x.id] ?? x.name.replace(/^(Formacja|Wapienie|Łupki|Basen|Kopalnia)\s+/, '').replace(/\s*\(.*\)$/, '');
-function regionOf(x: Site): string {
-  if (x.lng < -30) return x.lat > 12 ? 'Ameryka Północna' : 'Ameryka Południowa';
-  if (x.lng < 60) return x.lat > 36 ? 'Europa' : 'Afryka';
-  return x.lat < -10 && x.lng > 110 ? 'Australia' : 'Azja';
-}
-const REGIONS = ['Ameryka Północna', 'Europa', 'Afryka', 'Azja', 'Ameryka Południowa', 'Australia'];
 
 type PinState = 'active' | 'open' | 'ready' | 'locked';
 function pinState(s: GameState, id: string): PinState {
-  if (id === s.activeSite) return 'active';
-  if (s.unlockedSites[id]) return 'open';
+  if (s.unlockedSites[id]) return id === s.activeSite ? 'active' : 'open';
   return canUnlockSite(s, id).ok ? 'ready' : 'locked';
-}
-function PinIcon({ st }: { st: PinState }) {
-  return st === 'locked' ? <Lock className="ic" /> : st === 'ready' ? <LockOpen className="ic" /> : <Pickaxe className="ic" />;
 }
 
 const ZOOMS = [1, 1.6, 2.5, 4, 6.5];
@@ -281,6 +276,7 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
   const [era, setEra] = useState<number | null>(null);
   const drag = useRef<{ x: number; y: number; px: number; py: number; moved: boolean } | null>(null);
   const url = useMemo(mapUrl, []);
+  useBeat('map');
 
   useEffect(() => {
     const el = frameRef.current;
@@ -396,13 +392,13 @@ export function WorldMap({ s, onDig }: { s: GameState; onDig: () => void }) {
               const id = m2.ids[0];
               const site = SITE_BY_ID.get(id)!;
               const ps = pinState(s, id);
-              const disc = site.fauna.filter((f) => s.discovered[f.genusId]).length;
-              const sub = ps === 'active' ? `Tu kopiesz · fauna ${disc}/${site.fauna.length}` : ps === 'open' ? `Odblokowane · fauna ${disc}/${site.fauna.length}` : ps === 'ready' ? 'Można odblokować!' : `Wymaga poziomu ${SITE_UNLOCK[id]?.level}`;
+              const pr = chapterProgress(s, id);
+              const sub = ps === 'active' ? `Tu kopiesz · fauna ${pr.nativeFound}/${pr.native}` : ps === 'open' ? `Odblokowane · fauna ${pr.nativeFound}/${pr.native}` : ps === 'ready' ? 'Można odblokować!' : `Wymaga poziomu ${SITE_UNLOCK[id]?.level}`;
               return (
                 <button key={id} className={`pin ${ps} ${id === sel ? 'sel' : ''} ${eraOk(id) ? '' : 'dim'}`} style={{ left: m2.x || 0, top: m2.y || 0 }}
                   onClick={() => { if (!drag.current?.moved) setSel(id); }} onMouseEnter={() => setHover(id)} onMouseLeave={() => setHover(null)} aria-label={site.name}>
-                  <PinIcon st={ps} />
-                  {id === hover && <span className="pin-label">{site.name}<small>{sub}</small></span>}
+                  <span className="pin-no">{chapterNo(id)}</span>
+                  {id === hover && <span className="pin-label">Rozdział {chapterNo(id)} · {site.name}<small>{sub}</small></span>}
                 </button>
               );
             })}
@@ -464,19 +460,19 @@ function SitesList({ s, sel, pick, eraOk }: { s: GameState; sel: string | null; 
         ))}
       </div>
       <div className="list">
-        {REGIONS.map((reg) => {
-          const list = SITES.filter((x) => regionOf(x) === reg && match(x)).sort((a, b) => (SITE_UNLOCK[a.id]?.level ?? 99) - (SITE_UNLOCK[b.id]?.level ?? 99));
+        {[0].map((reg) => {
+          const list = SITE_ORDER.map((id) => SITE_BY_ID.get(id)!).filter((x) => x && match(x));
           if (!list.length) return null;
           return (
             <div key={reg}>
-              <div className="region lbl">{reg} <span className="spacer" />{list.length}</div>
+              <div className="region lbl">Rozdziały od najstarszego <span className="spacer" />{list.length}</div>
               {list.map((x) => {
                 const ps = pinState(s, x.id);
                 const st = s.sites[x.id];
                 return (
                   <button key={x.id} className={`site-row ${sel === x.id ? 'sel' : ''}`} onClick={() => pick(x.id)}>
-                    <span className={`pin ${ps}`}><PinIcon st={ps} /></span>
-                    <span className="t"><b>{x.name}</b><span>{x.period}{st ? ` · −${depthMeters(st.depth)} m` : ''}{ps === 'locked' ? ` · poziom ${SITE_UNLOCK[x.id]?.level}` : ps === 'ready' ? ' · gotowe do odblokowania' : ''}</span></span>
+                    <span className={`pin ${ps}`}><span className="pin-no">{chapterNo(x.id)}</span></span>
+                    <span className="t"><b>{x.name}</b><span className="ch-title">{chapterTitle(x.id)}</span><span>{x.period}{st ? ` · −${depthMeters(st.depth)} m` : ''}{ps === 'locked' ? ` · poziom ${SITE_UNLOCK[x.id]?.level}` : ps === 'ready' ? ' · gotowe do odblokowania' : ''}</span></span>
                   </button>
                 );
               })}
@@ -496,7 +492,6 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
   const can = canUnlockSite(s, siteId);
   const st = s.sites[siteId];
   const depth = st?.depth ?? 0;
-  const discovered = site.fauna.filter((f) => s.discovered[f.genusId]).length;
   const hatched = site.fauna.filter((f) => s.hatched[f.genusId]).length;
   const strata = STRATA[siteId] ?? [];
   const at = stratumAt(siteId, depth);
@@ -521,6 +516,15 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
         </div>
         <div className="era-labels"><span>Paleozoik</span><span>Mezozoik</span><span>Kenozoik</span></div>
       </div>
+      {EPOCHS[siteId] && (
+        <div className="map-epoch">
+          <span className="lbl">Etap {SITE_ORDER.indexOf(siteId) + 1} ewolucji z {SITE_ORDER.length}</span>
+          <b>{EPOCHS[siteId].title}</b>
+          <span className="small">{EPOCHS[siteId].story}</span>
+          <LessonBtn to={{ kind: 'site', id: siteId }} small>Pokaz stanowiska</LessonBtn>
+          {newCladesAt(siteId).length > 0 && <span className="small muted">Po raz pierwszy: {newCladesAt(siteId).filter((x) => x.clade.leafCount < 1500).slice(0, 5).map((x) => x.clade.namePl).join(', ')}</span>}
+        </div>
+      )}
       <p className="small" style={{ margin: 0, lineHeight: 1.45 }}>{site.description}</p>
       <div className="fauna-strip">
         {site.fauna.slice(0, 20).map((f) => {
@@ -531,7 +535,7 @@ function SiteDrawer({ s, siteId, onClose, onDig }: { s: GameState; siteId: strin
         })}
         {site.fauna.length > 20 && <span className="more">+{site.fauna.length - 20}</span>}
       </div>
-      <div className="row small" style={{ justifyContent: 'space-between' }}><b>Fauna {discovered} / {site.fauna.length}</b><span className="muted">{hatched} w kolekcji</span></div>
+      <div className="row small" style={{ justifyContent: 'space-between' }}><b>Fauna {chapterProgress(s, site.id).nativeFound} / {chapterProgress(s, site.id).native}{chapterProgress(s, site.id).guests ? ` · goście ${chapterProgress(s, site.id).guestsFound}/${chapterProgress(s, site.id).guests}` : ''}</b><span className="muted">{hatched} w kolekcji</span></div>
       <div className="col" style={{ gap: 6 }}>
         <span className="lbl">Skały stanowiska</span>
         <div className="strata-bar">

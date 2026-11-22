@@ -53,6 +53,10 @@ export interface ShellP {
 
 export interface SnakeP { len: number; thick: number; waves: number; headL: number }
 
+export type SessileKind = 'sponge' | 'branching' | 'cup' | 'brachiopod' | 'polyp' | 'jelly' | 'disc' | 'crinoid' | 'globe' | 'graptolite' | 'snail' | 'tube' | 'worm' | 'bivalve' | 'urchin' | 'star';
+/** animals drawn without a walking/swimming rig (see buildSessile.ts); n = ribs / tentacles / arms / branches / bristles */
+export interface SessileP { kind: SessileKind; h: number; w: number; n: number }
+
 export interface Feat {
   crest?: { type: 'double' | 'tube' | 'helmet' | 'fan' | 'back' | 'tall' | 'knob' | 'comb'; s: number };
   browHorns?: number;
@@ -95,4 +99,5 @@ export type Look =
   | { rig: 'fly'; P: FlyP; F: Feat }
   | { rig: 'arthro'; P: ArthroP; F: Feat }
   | { rig: 'shell'; P: ShellP; F: Feat }
-  | { rig: 'snake'; P: SnakeP; F: Feat };
+  | { rig: 'snake'; P: SnakeP; F: Feat }
+  | { rig: 'sessile'; P: SessileP; F: Feat };

@@ -5,6 +5,9 @@ import { SAVE_KEY, catchUp, deserialize, serialize, startGame, tick, type Offlin
 import { desktop } from './desktop';
 import { setVolume } from './sound';
 import type { GameState } from '../game/state';
+import type { Beat } from '../data/narration';
+
+export type LessonRef = { kind: 'site'; id: string } | { kind: 'clade'; id: number } | { kind: 'genus'; id: number };
 
 export interface Toast { id: number; text: string; kind: 'good' | 'info' | 'bad' }
 
@@ -17,6 +20,19 @@ interface Store {
   tab: string;
   /** focus clade in the tree of life */
   treeFocus: number | null;
+  /** open lesson (slide show), if any */
+  lesson: LessonRef | null;
+  openLesson: (r: LessonRef) => void;
+  closeLesson: () => void;
+  /** narrator speech bubble on screen */
+  beat: (Beat & { marks?: string[] }) | null;
+  showBeat: (b: (Beat & { marks?: string[] }) | null) => void;
+  /** story cut-scene playing: 'prologue' or a site id (chapter intro) or '<site>:outro' */
+  cutscene: string | null;
+  openCutscene: (id: string | null) => void;
+  /** sub-tab of the encyclopedia */
+  codexTab: string;
+  setCodexTab: (t: string) => void;
   act: <T>(fn: (s: GameState) => T) => T;
   toast: (text: string, kind?: Toast['kind']) => void;
   setTab: (tab: string) => void;
@@ -56,6 +72,15 @@ export const useStore = create<Store>((set, get) => ({
   modal: null,
   tab: 'park',
   treeFocus: null,
+  lesson: null,
+  openLesson: (r) => set({ lesson: r }),
+  closeLesson: () => set({ lesson: null }),
+  beat: null,
+  showBeat: (b) => set({ beat: b }),
+  cutscene: null,
+  openCutscene: (id) => set({ cutscene: id }),
+  codexTab: 'chapters',
+  setCodexTab: (codexTab) => set({ codexTab, tab: 'tree' }),
   act: (fn) => {
     const r = fn(get().s);
     set({ rev: get().rev + 1 });

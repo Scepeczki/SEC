@@ -3,13 +3,14 @@
 
 import { GENERA, SITES } from '../src/data/db';
 import { BUILDINGS, SITE_UNLOCK, TECH } from '../src/game/content';
-import { hitTile, siteState } from '../src/game/dig';
+import { hitTile, openChest, siteState } from '../src/game/dig';
 import { catchUp, startGame, tick } from '../src/game/engine';
 import { canSynthesize, queueAll, synthesize } from '../src/game/lab';
 import { canResearchClade, claimContract, cladeCost, gateOf, parkLevel, researchClade, unlockSite, canUnlockSite, uniqueHatched } from '../src/game/meta';
 import { mods } from '../src/game/mods';
 import { buyTech, canEvolve, canUpgradeBuilding, evolve, feed, incomePerSec, stationBuilt, upgradeBuilding } from '../src/game/park';
 import type { GameState } from '../src/game/state';
+import { TOOL_NODES, buyToolNode, canBuyToolNode } from '../src/game/tools';
 import type { Habitat } from '../src/data/types';
 import { fmt } from '../src/game/balance';
 import {
@@ -43,6 +44,10 @@ const cps = Number(process.argv[5] ?? 2);
 const t0 = Date.UTC(2026, 0, 1, 0, 0, 0);
 const s = startGame(t0, 12345);
 let activeSec = 0;
+/** purchases per 5-minute window of active play: [workshop, stations, research] */
+const buys: [number, number, number][] = [];
+const WINSEC = Number(process.env.WINSEC ?? 300);
+const buy = (k: 0 | 1 | 2) => { const w = Math.floor(activeSec / WINSEC); while (buys.length <= w) buys.push([0, 0, 0]); buys[w][k]++; };
 const milestones: [string, number, number][] = [];
 const seen = new Set<string>();
 const mark = (key: string, label = key) => {
@@ -52,7 +57,7 @@ const mark = (key: string, label = key) => {
 };
 const fmtT = (sec: number) => sec < 3600 ? `${(sec / 60).toFixed(1)} min` : sec < 86400 * 2 ? `${(sec / 3600).toFixed(1)} h` : `${(sec / 86400).toFixed(1)} d`;
 
-const sliceSites = ['morrison', 'hell_creek', 'krasiejow', 'solnhofen', 'burgess', 'niobrara'];
+const sliceSites = Object.keys(SITE_UNLOCK).slice(0, 6);
 const sliceGenera = new Set(SITES.filter((x) => sliceSites.includes(x.id)).flatMap((x) => x.fauna.map((f) => f.genusId)));
 
 function click(st: GameState) {
@@ -61,14 +66,17 @@ function click(st: GameState) {
   const open: number[] = [];
   const pref: number[] = [];
   site.tiles.forEach((t, i) => { if (t.hp > 0) { open.push(i); if (t.item >= 0 && !site.items[t.item].found) pref.push(i); } });
-  const pool = m.scanner && pref.length ? pref : open;
+  // a player goes for the modifiers first (they set off chains), then for the finds
+  const mods2 = open.filter((i) => site.tiles[i].mod);
+  const pool = mods2.length && Math.random() < 0.6 ? mods2 : m.scanner && pref.length ? pref : open;
   if (!pool.length) return;
-  hitTile(st, st.activeSite, pool[Math.floor(Math.random() * pool.length)], 'brush', m);
+  hitTile(st, st.activeSite, pool[Math.floor(Math.random() * pool.length)], m);
 }
 
 function policy(st: GameState) {
   for (const o of st.park.objects) collect(st, o.id);
   for (const c of [...st.contracts]) claimContract(st, c.id);
+  for (const c of [...(st.chests ?? [])]) openChest(st, c.id);
   // research gates of discovered genera, cheapest first
   const gates = [...new Set(Object.keys(st.discovered).map((id) => gateOf(Number(id))))].filter((g) => !st.researchedClades[g]).sort((a, b) => cladeCost(a) - cladeCost(b));
   for (const g of gates) if (canResearchClade(st, g).ok) researchClade(st, g);
@@ -83,7 +91,7 @@ function policy(st: GameState) {
     if (c.ok) synthesize(st, id, m);
   }
   // animals waiting in the Transporter: make room for them
-  for (const a of transporter(st)) {
+  for (const a of transporter(st).slice(0, 20)) {
     if (autoPlace(st, a.uid)) continue;
     const hab: Habitat = GENERA.get(a.genusId)!.habitat;
     const own = enclosures(st).filter((o) => defOf(o).habitat === hab).sort((x, y) => x.level - y.level);
@@ -110,8 +118,14 @@ function policy(st: GameState) {
     feed(st, a.uid, 5, m);
     if (canEvolve(st, a, m).ok) evolve(st, a.uid, m);
   }
+  // workshop: chain reactions first, then the cheapest node
+  for (let k = 0; k < 4; k++) {
+    const opts = TOOL_NODES.map((n) => ({ n, c: canBuyToolNode(st, n.id) })).filter((x) => x.c.ok).sort((a, b) => (a.n.tool === 'rock' || a.n.tool === 'combo' ? 0 : 1) - (b.n.tool === 'rock' || b.n.tool === 'combo' ? 0 : 1) || a.c.shards - b.c.shards);
+    if (!opts.length) break;
+    if (buyToolNode(st, opts[0].n.id)) buy(0);
+  }
   // tech
-  for (const t of [...TECH].sort((a, b) => a.cost - b.cost)) buyTech(st, t.id);
+  for (const t of [...TECH].sort((a, b) => a.cost - b.cost)) if (buyTech(st, t.id)) buy(2);
   // sites
   for (const id of Object.keys(SITE_UNLOCK)) if (canUnlockSite(st, id).ok) unlockSite(st, id);
   let best = st.activeSite, bestN = -1;
@@ -121,10 +135,13 @@ function policy(st: GameState) {
   for (let k = 0; k < 5; k++) {
     const opts = BUILDINGS.map((b) => ({ b, c: canUpgradeBuilding(st, b.id) })).filter((x) => x.c.ok && st.coins > x.c.cost * 1.6).sort((a, b) => a.c.cost - b.c.cost);
     if (!opts.length) break;
-    upgradeBuilding(st, opts[0].b.id);
+    if (upgradeBuilding(st, opts[0].b.id)) buy(1);
   }
   // milestones
   if (st.stats.fossils > 0) mark('pierwsza skamieniałość');
+  if ((st.tools?.g_arrow ?? 0) > 0) mark('Iskra (reakcje)');
+  if ((st.digRecords?.combo ?? 0) >= 10) mark('combo 10+');
+  if ((st.digRecords?.combo ?? 0) >= 25) mark('combo 25+');
   if (st.animals.length > 0) mark('pierwsze zwierzę');
   if (st.animals.some((a) => a.stage >= 1)) mark('pierwsze Dorosłe');
   if (st.animals.some((a) => a.stage >= 2)) mark('pierwsze Wzmocnione');
@@ -142,7 +159,9 @@ const sessionStarts = Array.from({ length: sessions }, (_, i) => i * Math.floor(
 for (let d = 0; d < days; d++) {
   for (const st of sessionStarts) {
     const target = t0 + (d * daySec + st) * 1000;
+    const tA = Date.now();
     if (target > s.now) catchUp(s, target);
+    if (process.env.SIM_DEBUG) console.log('catchUp ms', Date.now() - tA, 'day', d, 'layers', s.stats.layers);
     for (let sec = 0; sec < sessionMin * 60; sec++) {
       for (let c = 0; c < cps; c++) click(s);
       tick(s, 1);
@@ -151,9 +170,12 @@ for (let d = 0; d < days; d++) {
     }
   }
   const hatchedSlice = [...sliceGenera].filter((id) => s.hatched[id]).length;
-  console.log(`dzień ${String(d + 1).padStart(2)}: wyspy ${boughtIslands(s).length}, wybiegi ${enclosures(s).length}, transporter ${transporter(s).length}, poziom ${parkLevel(s)}, kolekcja ${uniqueHatched(s)} (wycinek ${hatchedSlice}/${sliceGenera.size}), odkryte ${Object.keys(s.discovered).length}, skam. ${s.stats.fossils}, zwierząt ${s.animals.length}, monety ${fmt(s.coins)}, dochód ${fmt(incomePerSec(s))}/s, PB ${fmt(s.pb)}, mutagen ${s.mutagen}, stanowiska ${Object.keys(s.unlockedSites).length}, max stadium ${Math.max(0, ...s.animals.map((a) => a.stage))}`);
+  console.log(`dzień ${String(d + 1).padStart(2)}: wyspy ${boughtIslands(s).length}, wybiegi ${enclosures(s).length}, transporter ${transporter(s).length}, poziom ${parkLevel(s)}, kolekcja ${uniqueHatched(s)} (wycinek ${hatchedSlice}/${sliceGenera.size}), odkryte ${Object.keys(s.discovered).length}, skam. ${s.stats.fossils}, zwierząt ${s.animals.length}, monety ${fmt(s.coins)}, dochód ${fmt(incomePerSec(s))}/s, PB ${fmt(s.pb)}, mutagen ${s.mutagen}, stanowiska ${Object.keys(s.unlockedSites).length}, max stadium ${Math.max(0, ...s.animals.map((a) => a.stage))}, rekord combo ${s.digRecords?.combo ?? 0}, odłamki ${fmt(s.shards)}`);
 }
 console.log('\nKAMIENIE MILOWE (czas rzeczywisty / czas aktywnej gry):');
+const bar = (n: number) => '#'.repeat(Math.min(40, n));
+console.log('ZAKUPY NA OKNO AKTYWNEJ GRY (W = Warsztat, S = stacje, B = badania):');
+buys.slice(0, Number(process.env.WIN ?? 48)).forEach(([w, st2, b], i) => console.log(`${String(Math.round((i * WINSEC) / 60)).padStart(4)} min  W${String(w).padStart(2)} S${String(st2).padStart(2)} B${String(b).padStart(2)}  ${bar(w + st2 + b)}`));
 for (const [l, t, a] of milestones) console.log(`  ${l.padEnd(28)} ${fmtT(t).padStart(9)}   aktywnie ${fmtT(a)}`);
 console.log('\nbudynki:', JSON.stringify(s.buildings));
 console.log('statystyki:', JSON.stringify(s.stats));

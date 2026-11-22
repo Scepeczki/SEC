@@ -66,6 +66,8 @@ export interface SiteFauna {
   genusId: number;
   /** number of PBDB occurrences in this formation (drop weight basis) */
   occ: number;
+  /** "gość epoki": the genus lived at this time and in this environment, but its fossils come from elsewhere */
+  guest?: boolean;
 }
 
 export interface Site {

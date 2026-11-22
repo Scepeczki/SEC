@@ -1,10 +1,12 @@
 // Main loop: tick, offline progress, game start, save/load.
 
 import { GENERA } from '../data/db';
-import { burnTick, chargeTick, crewTick, siteState, tutorialGenus } from './dig';
+import { crewTick, siteState, tutorialGenus } from './dig';
+import { refundRemovedNodes } from './tools';
 import { hatchTick, labTick } from './lab';
 import { gateOf, updateContracts } from './meta';
 import { mods } from './mods';
+import { START_SITE } from './content';
 import { parkTick } from './park';
 import { type Animal, type GameState, SAVE_VERSION, log, newGame } from './state';
 import { B } from './balance';
@@ -15,11 +17,11 @@ import type { Habitat } from '../data/types';
 export function startGame(now = Date.now(), seed?: number): GameState {
   const s = newGame(now, seed);
   initPark(s);
-  const tg = tutorialGenus('morrison');
+  const tg = tutorialGenus(START_SITE);
   if (tg !== undefined) s.researchedClades[gateOf(tg)] = now;
-  siteState(s, 'morrison');
+  siteState(s, START_SITE);
   updateContracts(s, mods(s));
-  log(s, 'Witaj w parku! Zacznij od kopania na stanowisku Morrison — klikaj skały.', 'info');
+  log(s, 'Witaj w parku! Na mapie świata kup pozwolenie na pierwsze wykopalisko: kambryjskie morze Chengjiang.', 'info');
   return s;
 }
 
@@ -30,8 +32,6 @@ export function tick(s: GameState, dt: number): void {
   s.now += dt * 1000;
   s.playSeconds += dt;
   crewTick(s, dt, m);
-  burnTick(s, dt, m);
-  chargeTick(s, dt, m);
   labTick(s, dt, m);
   hatchTick(s, dt, m);
   parkTick(s, dt, m);
@@ -159,14 +159,32 @@ function migrate(s: GameState): GameState | null {
     if (s[k] === undefined) (s as unknown as Record<string, unknown>)[k] = fresh[k];
   }
   for (const b of Object.keys(fresh.buildings) as (keyof GameState['buildings'])[]) if (s.buildings[b] === undefined) s.buildings[b] = fresh.buildings[b];
-  // hammer + georadar moved from research into the tool trees
+  // hammer + georadar moved from research into the tool trees (0.2)
   s.tools ??= {};
-  if (s.tech.dig2 && !s.tools.h_unlock) s.tools.h_unlock = 1;
   const radar = s.tech.dig3d ? 4 : s.tech.dig3c ? 3 : s.tech.dig3b ? 2 : s.tech.dig3 ? 1 : 0;
   if (radar > (s.tools.r_res ?? 0)) s.tools.r_res = radar;
   if (s.settings.sound === undefined) s.settings.sound = 0.6;
+  // 0.4: sites open oldest first — older saves get the new first site for free (what they unlocked stays unlocked)
+  if (s.v < 5 && !s.unlockedSites[START_SITE]) s.unlockedSites[START_SITE] = s.now;
+  // 0.5: story mode (on by default; older saves have already bought their first site)
+  if (s.v < 5) s.story = { on: true, seen: { bought_first: s.now } };
   s.shards ??= 0;
-  s.charges ??= { n: 1, acc: 0 };
+  // rock got softer in 0.4: layers dug under the old numbers are scaled down to the new strength
+  for (const st of Object.values(s.sites)) {
+    const cap = B.tileHp * (1 + st.depth * B.tileHpPerDepth) * Math.pow(B.tileHpExp, st.depth) * 1.25;
+    for (const t of st.tiles) {
+      const c = cap * (t.flint ? 1.5 : 1); // flint is meant to be 1.5× harder
+      if (t.max > c * 1.01) { const k = c / t.max; t.max = c; if (t.hp > 0) t.hp = Math.max(0.01, t.hp * k); }
+    }
+  }
+  if (s.v < 4) {
+    // 0.4 (dig 2.0): one brush and chain reactions — everything spent on the old brush / hammer / charge trees comes back
+    const back = refundRemovedNodes(s);
+    s.settings.tool = 'brush';
+    delete (s as unknown as { charges?: unknown }).charges;
+    for (const st of Object.values(s.sites)) { delete (st as unknown as { burns?: unknown }).burns; st.uses ??= {}; }
+    if (back.shards || back.pb) log(s, `Nowy Warsztat! Zwrot za stare ulepszenia narzędzi: ${Math.round(back.shards)} odłamków i ${Math.round(back.pb)} punktów badań.`, 'good');
+  }
   s.chests ??= [];
   // animals whose enclosure is gone wait in the Transporter
   const ids = new Set(s.park.objects.map((o) => o.id));

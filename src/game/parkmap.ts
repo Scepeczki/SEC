@@ -763,9 +763,10 @@ export function initPark(s: GameState): void {
   buyIsland(s, 1, true);
   layStreets(s, 1);
   for (const b of STATION_IDS) if (s.buildings[b] > 0) autoBuild(s, 1, stationDefId(b), 1, { grow: true });
-  autoBuild(s, 1, enclosureDefId('land'), 1, { grow: true });
+  // the first site is a Cambrian sea: a lagoon, plus meat and plankton for its predators and filter feeders
+  autoBuild(s, 1, enclosureDefId('marine'), 1, { grow: true });
   autoBuild(s, 1, 'farm_meat', 1, { grow: true });
-  autoBuild(s, 1, 'farm_plants', 1, { grow: true });
+  autoBuild(s, 1, 'farm_aqua', 1, { grow: true });
 }
 
 /** cost of the station placed for the first time (shown in the build bar) */

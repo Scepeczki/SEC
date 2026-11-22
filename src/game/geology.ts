@@ -23,6 +23,56 @@ export interface Stratum {
 const S = (name: string, desc: string, grain: Grain, color: string, layers: number, extra: { accent?: string; seam?: string } = {}): Stratum => ({ name, desc, grain, color, layers, ...extra });
 
 export const STRATA: Record<string, Stratum[]> = {
+  cincinnati: [
+    S('Wapienie Whitewater', 'szare wapienie pełne ramienionogów i mszywiołów', 'lime', '#9a968a', 6, { accent: '#c2b9a0' }),
+    S('Łupki Kope', 'niebieskoszare łupki i cienkie wapienie burzowe', 'shale', '#7e8288', 6, { accent: '#a8a49a' }),
+    S('Wapień Lexington', 'starsze, jasne wapienie płytkiego morza', 'lime', '#b8b2a0', 99, { accent: '#958c78' }),
+  ],
+  bertie: [
+    S('Dolomit Fiddlers Green', 'szarobrązowe dolomity laguny z wielkorakami', 'lime', '#8f8676', 6, { accent: '#b0a58e' }),
+    S('Wapień Williamsville', 'cienkie, falujące warstwy osadów słonej laguny', 'lime', '#a29a88', 6, { accent: '#857b68' }),
+    S('Ewaporaty Salina', 'szare iły z solą kamienną i gipsem', 'mud', '#9a9890', 99, { accent: '#d0ccc0' }),
+  ],
+  rhynie: [
+    S('Czert z Rhynie', 'szklisty krzemień z roślinami i stawonogami', 'chalk', '#6e6a62', 6, { accent: '#a8a294', seam: '#4f4a42' }),
+    S('Piaskowce Dryden', 'czerwonawe piaskowce i łupki rzek', 'sand', '#9a6a55', 6, { accent: '#c09078' }),
+    S('Lawy andezytowe', 'ciemne skały wulkaniczne pod źródłami', 'tuff', '#5f5a58', 99, { accent: '#7d7470' }),
+  ],
+  east_kirkton: [
+    S('Wapień East Kirkton', 'warstwowane wapienie gorących źródeł', 'lime', '#8c877a', 6, { accent: '#b2aa94' }),
+    S('Tufy wulkaniczne', 'zielonoszare popioły okolicznych wulkanów', 'tuff', '#7a8072', 6, { accent: '#9aa08e' }),
+    S('Bazalty Bathgate', 'ciemne lawy podłoża', 'tuff', '#4f4c4a', 99, { accent: '#6c6762' }),
+  ],
+  joggins: [
+    S('Klify Joggins', 'szare piaskowce z pniami stojących widłaków', 'sand', '#8f877a', 6, { accent: '#b5aa92' }),
+    S('Pokłady węgla', 'czarne warstwy dawnych bagien', 'coal', '#2f2c28', 5, { accent: '#4a453e' }),
+    S('Czerwone mułowce', 'utlenione osady równin zalewowych', 'mud', '#8c5a48', 99, { accent: '#b07a62' }),
+  ],
+  red_beds: [
+    S('Formacja Arroyo', 'czerwone iły z gipsem pory suchej', 'mud', '#a0584a', 6, { accent: '#d0b8a0' }),
+    S('Formacja Clyde', 'ceglaste mułowce z kośćmi Dimetrodona', 'mud', '#9a5040', 6, { accent: '#c47c62' }),
+    S('Piaskowce Admiral', 'piaskowce dawnych koryt rzecznych', 'sand', '#b47a5a', 99, { accent: '#8a5a42' }),
+  ],
+  elliot: [
+    S('Górna formacja Elliot', 'czerwone mułowce z gniazdami dinozaurów', 'mud', '#a2604c', 6, { accent: '#c88a70' }),
+    S('Dolna formacja Elliot', 'zielonkawe i czerwone osady rzeczne', 'mud', '#8a7660', 6, { accent: '#a89478' }),
+    S('Piaskowce Molteno', 'jasne piaskowce triasowych rzek', 'sand', '#c0aa86', 99, { accent: '#9a845e' }),
+  ],
+  cedar_mountain: [
+    S('Ogniwo Mussentuchit', 'szare iły z popiołami wulkanicznymi', 'mud', '#8c8a80', 6, { accent: '#a8a496' }),
+    S('Ogniwo Yellow Cat', 'pstre mułowce z kośćmi raptorów', 'mud', '#9a7a6a', 6, { accent: '#b89a86' }),
+    S('Zlepieniec Buckhorn', 'otoczaki dawnych rzek górskich', 'sand', '#a49478', 99, { accent: '#7c6c52' }),
+  ],
+  santa_cruz: [
+    S('Tufy Santa Cruz', 'jasne popioły wulkaniczne z kośćmi ssaków', 'tuff', '#c2b498', 6, { accent: '#ddd0b4' }),
+    S('Piaskowce rzeczne', 'szarożółte piaski patagońskich rzek', 'sand', '#b0a080', 6, { accent: '#8c7c5c' }),
+    S('Iły Monte León', 'starsze morskie iły wybrzeża', 'mud', '#8a8a7c', 99, { accent: '#a6a496' }),
+  ],
+  siwaliki: [
+    S('Górne Siwaliki', 'zlepieńce i piaski z gór', 'sand', '#a89a7c', 6, { accent: '#857658' }),
+    S('Formacja Dhok Pathan', 'pomarańczowe mułowce i piaskowce', 'mud', '#b07c5a', 6, { accent: '#d09e7c' }),
+    S('Formacja Chinji', 'czerwone iły równin zalewowych', 'mud', '#9a5a48', 99, { accent: '#bc7a64' }),
+  ],
   morrison: [
     S('Ogniwo Brushy Basin', 'pstre mułowce z popiołami wulkanicznymi — zielonoszare, fioletowe i czerwone pasy', 'mud', '#8b8f84', 6, { accent: '#8c6c8a', seam: '#a4987e' }),
     S('Ogniwo Salt Wash', 'jasne piaskowce dawnych koryt rzecznych — tu leży najwięcej kości', 'sand', '#b9a986', 6, { accent: '#8f7a56' }),

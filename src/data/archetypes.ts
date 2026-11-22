@@ -13,7 +13,8 @@ export type Rig =
   | 'arthropod_top' // trilobite seen from above
   | 'arthropod' // eurypterid / shrimp-like side view
   | 'shell' // ammonite / orthocone
-  | 'snake';
+  | 'snake'
+  | 'sessile'; // sponges, brachiopods, polyps, stalked echinoderms, graptolites, snails, worms
 
 export interface ArchetypeMeta {
   id: string;
@@ -142,6 +143,23 @@ export const ARCHETYPES: ArchetypeMeta[] = [
   A('ammonite', 'amonit', 'shell', 'S', 'marine', 'plankton'),
   A('orthocone', 'łodzik prostoskorupowy', 'shell', 'M', 'marine', 'meat'),
   A('belemnite', 'belemnit', 'swim', 'S', 'marine', 'fish'),
+  A('sponge', 'gąbka', 'sessile', 'S', 'marine', 'plankton'),
+  A('bryozoan', 'mszywioł', 'sessile', 'XS', 'marine', 'plankton'),
+  A('bivalve', 'małż', 'sessile', 'XS', 'marine', 'plankton'),
+  A('sea_urchin', 'jeżowiec', 'sessile', 'XS', 'marine', 'plankton'),
+  A('starfish', 'rozgwiazda', 'sessile', 'XS', 'marine', 'meat'),
+  A('brittle_star', 'wężowidło', 'sessile', 'XS', 'marine', 'plankton'),
+  A('archaeocyath', 'archeocjat', 'sessile', 'XS', 'marine', 'plankton'),
+  A('brachiopod', 'ramienionóg', 'sessile', 'XS', 'marine', 'plankton'),
+  A('polyp', 'polip', 'sessile', 'XS', 'marine', 'plankton'),
+  A('comb_jelly', 'żebropław', 'sessile', 'XS', 'marine', 'plankton'),
+  A('disc_animal', 'pływający krążek', 'sessile', 'XS', 'marine', 'plankton'),
+  A('crinoid', 'szkarłupień na łodyżce', 'sessile', 'S', 'marine', 'plankton'),
+  A('cystoid', 'cystoid', 'sessile', 'XS', 'marine', 'plankton'),
+  A('graptolite', 'graptolit', 'sessile', 'XS', 'marine', 'plankton'),
+  A('snail', 'ślimak', 'sessile', 'XS', 'marine', 'plankton'),
+  A('tube_worm', 'robak w rurce', 'sessile', 'XS', 'marine', 'plankton'),
+  A('worm', 'robak', 'sessile', 'XS', 'marine', 'plankton'),
   A('soft_bodied', 'miękkie ciało', 'swim', 'XS', 'marine', 'plankton'),
 ];
 

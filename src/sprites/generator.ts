@@ -8,6 +8,7 @@ import { Draw, rasterize, shapeBBox, type SpriteImage } from './raster';
 import { makePalette } from './palette';
 import { buildTetra } from './buildTetra';
 import { buildArthro, buildFlipper, buildFly, buildShell, buildSnake, buildSwim } from './buildOthers';
+import { buildSessile } from './buildSessile';
 import type { Feat, Look } from './look';
 
 export interface SpriteSpec {
@@ -92,6 +93,7 @@ export function buildShapes(L: Look, frame: number): Draw {
     case 'arthro': buildArthro(d, L.P, frame); break;
     case 'shell': buildShell(d, L.P, frame); break;
     case 'snake': buildSnake(d, L.P, frame); break;
+    case 'sessile': buildSessile(d, L.P, frame); break;
   }
   return d;
 }
@@ -132,7 +134,7 @@ export function renderSprite(spec: SpriteSpec, stage: number, frame = 0): Sprite
     feathered: !!L.F.feathers || (L.rig === 'fly' && L.P.kind === 'bird'),
   });
   if (L.F.fur && pal.pattern === 'none') pal.pattern = 'speckle';
-  const topView = (L.rig === 'arthro' && L.P.kind !== 'lobopod') || L.rig === 'shell' || (L.rig === 'swim' && L.P.disc);
+  const topView = (L.rig === 'arthro' && L.P.kind !== 'lobopod') || L.rig === 'shell' || L.rig === 'sessile' || (L.rig === 'swim' && L.P.disc);
   return rasterize(d.shapes, pal, {
     scale: unitFor(spec) * STAGE_SCALE[stage],
     pad: 5,

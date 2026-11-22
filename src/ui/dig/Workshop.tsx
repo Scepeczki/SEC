@@ -1,39 +1,39 @@
-// Workshop: one classic upgrade tree — round nodes joined by branches, five branches from a common root.
+// Workshop: one classic upgrade tree — round nodes joined by branches, six branches from a common root.
 // Click a node to see it on the right, buy it there. Bought with rock shards (+ research points deeper in).
 
 import { useMemo, useState } from 'react';
 import {
-  Backpack, Bomb, Brush, Check, Crosshair, Crown, Droplets, Dumbbell, Expand, Feather, Filter, Flame, FlameKindling, Gem, Grid3x3,
-  Hammer, HandHeart, HardHat, Hexagon, Link, Lock, Map as MapIcon, Microscope, Mountain, Music, Paintbrush, Pickaxe, Radar, Radio,
-  Repeat, ScanSearch, Shield, Sparkles, Tent, Timer, UserPlus, Users, Waves, Wrench, X, Zap, MousePointer2, Drill,
+  ArrowRight, Bomb, Brush, Check, Copy, Crosshair, Crown, Expand, Filter, Gem, Grid2x2, HandHeart, HardHat, Hexagon, KeyRound, Link2, Lock,
+  Map as MapIcon, Microscope, Mountain, MousePointer2, Move, Paintbrush, Pickaxe, PiggyBank, Radar, Radio, Repeat, RotateCw, ScanSearch, Sparkles,
+  Star, Tent, TrendingUp, UserPlus, Users, Waves, Wrench, X, Zap, Atom, Hand, Workflow, MoveRight, ArrowDownToLine,
 } from 'lucide-react';
 import { fmt } from '../../game/balance';
 import { mods } from '../../game/mods';
 import type { GameState } from '../../game/state';
-import { TOOL_NAMES, TOOL_NODES, TOOL_NODE_BY_ID, TOOL_ORDER, type ToolId, type ToolNode, buyToolNode, canBuyToolNode, missingReq, toolLevel } from '../../game/tools';
+import { TOOL_BLURB, TOOL_COLS, TOOL_NAMES, TOOL_NODES, TOOL_NODE_BY_ID, TOOL_ORDER, type ToolId, type ToolNode, buyToolNode, canBuyToolNode, missingReq, toolLevel } from '../../game/tools';
 import { Btn } from '../components';
 import { sfx } from '../sound';
 import { useStore } from '../store';
 
 type Icon = typeof Paintbrush;
-export const BRANCH_ICON: Record<ToolId, Icon> = { brush: Paintbrush, hammer: Hammer, charge: Bomb, radar: Radar, crew: Users };
-const BRANCH_COLOR: Record<ToolId, string> = { brush: '#e0a84a', hammer: '#d07a52', charge: '#e0603f', radar: '#5fa8d8', crew: '#8bb04f' };
+export const BRANCH_ICON: Record<ToolId, Icon> = { hand: Paintbrush, rock: Mountain, craft: Hand, combo: Workflow, radar: Radar, crew: Users };
+const BRANCH_COLOR: Record<ToolId, string> = { hand: '#e0a84a', rock: '#e0703f', craft: '#7fd39a', combo: '#c58cff', radar: '#5fa8d8', crew: '#8bb04f' };
 const NODE_ICON: Record<string, Icon> = {
-  b_power: Brush, b_crit: Crosshair, b_care: HandHeart, b_splash: Droplets, b_combo: Music, b_sweep: Waves, b_ember: FlameKindling, b_fever: Flame, b_wild: Flame, b_master: Crown,
-  h_unlock: Hammer, h_power: Dumbbell, h_safe: Shield, h_crit: Zap, h_area: Grid3x3, h_feather: Feather, h_after: Repeat, h_quake: Mountain, h_titan: Crown,
-  b_auto: MousePointer2, h_auto: Drill,
-  x_unlock: Bomb, x_fuse: Timer, x_power: Expand, x_bag: Backpack, x_crush: Pickaxe, x_chain: Link, x_mega: Crown,
+  m_power: Brush, m_crit: Crosshair, m_area: Grid2x2, m_care: HandHeart, m_size: Expand, m_auto: MousePointer2, m_master: Crown,
+  g_arrow: MoveRight, g_reach: ArrowRight, g_bomb: Bomb, g_key: KeyRound, g_vein: Zap, g_gem: Gem, g_echo: Atom, g_cap: Crown,
+  p_bomb: Bomb, p_link: Link2, p_rotate: RotateCw, p_move: Move, p_copy: Copy, p_thrift: PiggyBank, p_cap: Crown,
+  c_mult: TrendingUp, c_min: ArrowDownToLine, c_carry: Repeat, c_loot: Sparkles, c_stars: Star, c_quake: Waves, c_cap: Crown,
   r_res: Radar, r_glint: Gem, r_sonar: Radio, r_lucky: Sparkles, r_rare: ScanSearch, r_tomo: Crown,
-  k_speed: Pickaxe, k_power: Hammer, k_hire: UserPlus, r_crew: MapIcon, k_sift: Filter, k_boss: HardHat, k_expo: Tent,
+  k_speed: Pickaxe, k_power: Hexagon, k_hire: UserPlus, r_crew: MapIcon, k_sift: Filter, k_boss: HardHat, k_expo: Tent,
 };
 
 const CW = 76; // column width
 const RH = 128; // row height
 const TOP = 150; // first node row (below the root)
-const COLS = 15;
+const COLS = TOOL_COLS;
 
 const pos = (n: ToolNode) => ({ x: n.x * CW + CW / 2 + 8, y: TOP + n.y * RH });
-const ROOT = { x: 7 * CW + CW / 2 + 8, y: 46 };
+const ROOT = { x: (COLS / 2) * CW + 8, y: 46 };
 
 type NodeState = 'maxed' | 'owned' | 'ready' | 'open' | 'locked';
 function nodeState(s: GameState, n: ToolNode): NodeState {
@@ -107,6 +107,7 @@ function Detail({ s, n }: { s: GameState; n: ToolNode }) {
         </div>
       </div>
       <p className="muted" style={{ margin: '12px 0' }}>{n.desc}</p>
+      <p className="small muted" style={{ margin: '-4px 0 12px' }}><i>{TOOL_NAMES[n.tool]}: {TOOL_BLURB[n.tool]}</i></p>
       {lvl > 0 && <div className="tline now"><span className="lbl">Teraz</span>{n.effect(lvl)}</div>}
       {!maxed && <div className="tline next"><span className="lbl">{lvl ? 'Następny poziom' : 'Po odblokowaniu'}</span>{n.effect(lvl + 1)}</div>}
       {!!n.req?.length && (
@@ -138,7 +139,7 @@ function Detail({ s, n }: { s: GameState; n: ToolNode }) {
 }
 
 export function Workshop({ s, onClose }: { s: GameState; onClose: () => void }) {
-  const firstReady = useMemo(() => TOOL_NODES.find((n) => nodeState(s, n) === 'ready')?.id ?? 'b_power', []);
+  const firstReady = useMemo(() => TOOL_NODES.find((n) => nodeState(s, n) === 'ready')?.id ?? 'g_arrow', []);
   const [sel, setSel] = useState(firstReady);
   const m = mods(s);
   const n = TOOL_NODE_BY_ID.get(sel)!;
@@ -173,9 +174,10 @@ export function Workshop({ s, onClose }: { s: GameState; onClose: () => void }) 
             <Detail s={s} n={n} />
             <div className="ws-stats">
               <span className="lbl">Twoje narzędzia</span>
-              <span>Pędzel: siła {m.brushPower.toFixed(2)}{m.critBrush ? ` · krytyk ${Math.round(m.critBrush * 100)}%` : ''}</span>
-              <span>Młot: {m.hammer ? `siła ${m.hammerPower.toFixed(2)} · ryzyko ${Math.round(m.hammerRisk * 100)}%` : 'zablokowany'}</span>
-              <span>Ładunki: {m.charge ? `${s.charges?.n ?? 0}/${m.chargeMax} · co ${Math.round(m.chargeCd)} s` : 'zablokowane'}</span>
+              <span>Pędzel: siła {m.brushPower.toFixed(2)}{m.critBrush ? ` · krytyk ${Math.round(m.critBrush * 100)}%` : ''}{m.brushArea ? ` · ${m.brushArea === 1 ? '2 pola' : '2×2'}` : ''} · warstwa {m.gridW}×{m.gridH}</span>
+              <span>Modyfikatory w skale: {Object.values(m.modRate).some((x) => x > 0) ? `ok. ${Math.round(Object.values(m.modRate).reduce((a, x) => a + x, 0) * 100)}% kamieni` : 'brak'}</span>
+              <span>Własne na warstwę: {(['bomb', 'link', 'rotate', 'move', 'copy'] as const).filter((k) => m.uses[k]).map((k) => `${({ bomb: 'ładunek', link: 'połączenie', rotate: 'obrót', move: 'przesunięcie', copy: 'kopia' })[k]} ×${m.uses[k]}`).join(', ') || 'brak'}</span>
+              <span>Combo: od {m.comboMin} pól, +{Math.round(m.comboStep * 100)}% za pole{m.comboCarry ? `, przez ${m.comboCarry + 1} rozbicia` : ''} · 3★ do {m.starsAt} ruchów</span>
               <span>Georadar: {m.scanner ? `poziom ${m.scanner}` : 'brak'}</span>
               <span>Ekipy: {m.crews} · tempo ×{m.crewSpeed.toFixed(2)} · siła {m.crewPower.toFixed(2)}</span>
               <span>Odłamki: ×{m.shardMult.toFixed(1)} za pole</span>

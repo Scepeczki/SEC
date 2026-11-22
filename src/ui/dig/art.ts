@@ -2,14 +2,14 @@
 // of each site, cracks, bones / shells / amber / minerals hidden in the rock, and the per-frame
 // renderer with soft tile lighting. Everything is drawn in base pixels and scaled up by CSS.
 
-import { B } from '../../game/balance';
+import { dims } from '../../game/dig';
 import { GENERA } from '../../data/db';
 import { type Grain, MINERAL_BY_ID, STRATA, type Stratum, stratumAt } from '../../game/geology';
-import type { ItemKind, LayerItem, SiteState } from '../../game/state';
+import type { ItemKind, LayerItem, ModKind, SiteState } from '../../game/state';
 
 export const TS = 16;
-export const GW = B.gridW * TS;
-export const GH = B.gridH * TS;
+/** layer size in base pixels */
+export const pixelSize = (st: SiteState) => { const { w, h } = dims(st); return { GW: w * TS, GH: h * TS }; };
 
 type RGB = [number, number, number];
 const hex = (h: string): RGB => [parseInt(h.slice(1, 3), 16), parseInt(h.slice(3, 5), 16), parseInt(h.slice(5, 7), 16)];
@@ -270,6 +270,11 @@ export interface LayerArt {
   tileRock: string[]; // name of the rock of each tile
   glint: [number, number][]; // per item: a pixel that glints through the rock (amber / minerals)
   urls: Map<number, string>;
+  /** size in tiles and base pixels */
+  w: number;
+  h: number;
+  GW: number;
+  GH: number;
 }
 
 const cache = new WeakMap<LayerItem[], LayerArt>();
@@ -317,7 +322,7 @@ const FEATURE_ODDS: Record<Grain, Partial<Record<FeatureKind, number>>> = {
 };
 interface Feature { kind: FeatureKind; x: number; y: number; a: number; b: number; rot: number; c: RGB; grain?: Grain; seed: number; label: string }
 
-function pickFeatures(s: Stratum, others: Stratum[], r: () => number): Feature[] {
+function pickFeatures(s: Stratum, others: Stratum[], r: () => number, GW: number, GH: number): Feature[] {
   const odds = FEATURE_ODDS[s.grain];
   const kinds = Object.entries(odds) as [FeatureKind, number][];
   const total = kinds.reduce((a, [, w]) => a + w, 0);
@@ -353,7 +358,7 @@ function pickFeatures(s: Stratum, others: Stratum[], r: () => number): Feature[]
   return out;
 }
 
-const LENS_ROW = Array.from({ length: GH }, (_, i) => (i % 3 === 2 ? 1 : 2));
+const LENS_ROW = Array.from({ length: 512 }, (_, i) => (i % 3 === 2 ? 1 : 2));
 
 function hash2(x: number, y: number, s: number): number {
   let h = Math.imul(x * 374761393 + y * 668265263 + Math.floor(s * 1e6), 1274126177);
@@ -442,6 +447,8 @@ function featureAt(fs: Feature[], gx: number, gy: number, base: RGB, sh: number,
 }
 
 function buildArt(siteId: string, st: SiteState): LayerArt {
+  const { w: TW, h: TH } = dims(st);
+  const GW = TW * TS, GH = TH * TS;
   const N = GW * GH;
   const r = mulberry(hashStr(`${siteId}:${st.depth}:${st.layersDone}`));
   const at = stratumAt(siteId, st.depth);
@@ -456,7 +463,7 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
   for (const s of boundary ? [at.s, at.next] : [at.s]) {
     const b0 = tone(hex(s.color), st.depth + (s === at.next ? 1 : 0));
     const base: RGB = [b0[0] * hue[0], b0[1] * hue[1], b0[2] * hue[2]];
-    const feats = pickFeatures(s, siteRocks.filter((x) => x.name !== s.name.replace(/ [IVX]+$/, '')), r);
+    const feats = pickFeatures(s, siteRocks.filter((x) => x.name !== s.name.replace(/ [IVX]+$/, '')), r, GW, GH);
     const row = Array.from({ length: GH }, () => (r() < 0.72 ? 2 : 1));
     const blobs: [number, number, number, number][] = [];
     if (s.accent) for (let k = 0, n = 5 + Math.floor(r() * 6); k < n; k++) blobs.push([r() * GW, r() * GH, 1.4 + r() * (s.grain === 'shale' ? 3.5 : 2.4), s.grain === 'shale' ? 0.55 : 0.85]);
@@ -472,14 +479,14 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
   const tileRock: string[] = [];
   const tileFeat: string[] = [];
   const set = (arr: Float32Array, p: number, c: RGB) => { arr[p * 3] = c[0]; arr[p * 3 + 1] = c[1]; arr[p * 3 + 2] = c[2]; };
-  const tint = Array.from({ length: B.gridW * B.gridH }, () => 0.96 + r() * 0.08);
+  const tint = Array.from({ length: TW * TH }, () => 0.96 + r() * 0.08);
 
   for (let gy = 0; gy < GH; gy++) {
     for (let gx = 0; gx < GW; gx++) {
       const s = isNext(gx, gy) ? at.next : at.s;
       const K = kinds.get(s)!;
       const x = gx % TS, y = gy % TS;
-      const ti = ((gy / TS) | 0) * B.gridW + ((gx / TS) | 0);
+      const ti = ((gy / TS) | 0) * TW + ((gx / TS) | 0);
       let c = K.base;
       let sh = Math.max(0, Math.min(3, grainShade(s.grain, gx, gy, K.row, r)));
       for (const [y0, th, ph] of K.seams) {
@@ -497,14 +504,16 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
       const bevel = y === 0 ? 1.1 : x === 0 ? 1.06 : y === TS - 1 ? 0.76 : x === TS - 1 ? 0.82 : 1;
       const p = gy * GW + gx;
       set(rock, p, mul(pc, bevel));
-      set(back, p, mul(pc, 0.56 * (y < 3 ? 0.72 : 1) * (x < 2 ? 0.84 : 1)));
+      // the dug-out back wall: dark, flat and a little colder, so an empty tile reads as a hole, not as rock
+      const g0 = (pc[0] + pc[1] + pc[2]) / 3;
+      set(back, p, mul(mix(pc, [g0 * 0.9, g0 * 0.92, g0 * 1.02], 0.55), 0.3 + (hash2(gx, gy, 7) - 0.5) * 0.04));
       if (x === 8 && y === 8) { tileCss.push(css(pc)); tileRock.push(tileFeat[tileFeat.length - 1] ? `${s.name} · ${tileFeat[tileFeat.length - 1]}` : s.name); }
     }
   }
 
   // cracks: 1 / 3 / 5 jagged lines from near the centre, plus a chipped corner at stage 3
-  for (let ti = 0; ti < B.gridW * B.gridH; ti++) {
-    const tx = ti % B.gridW, ty = (ti / B.gridW) | 0;
+  for (let ti = 0; ti < TW * TH; ti++) {
+    const tx = ti % TW, ty = (ti / TW) | 0;
     for (let stage = 1; stage <= 3; stage++) {
       for (let l = 0; l < (stage === 1 ? 1 : 2); l++) {
         let x = 6 + r() * 4, y = 6 + r() * 4;
@@ -535,16 +544,16 @@ function buildArt(siteId: string, st: SiteState): LayerArt {
   const col = new Float32Array(N * 3);
   const glint: [number, number][] = [];
   st.items.forEach((it, idx) => {
-    const cells: Pt[] = it.cells.map((i) => [i % B.gridW, Math.floor(i / B.gridW)]);
+    const cells: Pt[] = it.cells.map((i) => [i % TW, Math.floor(i / TW)]);
     const { shape, P } = shapeOf(it, cells, r);
-    const mine = rasterise(shape, cells, (p) => { owner[p] = idx; }, (p) => { hole[p] = 1; });
-    shade(mine, shape, P, r, (p) => owner[p] === idx && !hole[p], (p, c, e) => { set(col, p, c); if (e) edge[p] = 1; }, hole);
+    const mine = rasterise(shape, cells, (p) => { owner[p] = idx; }, (p) => { hole[p] = 1; }, GW);
+    shade(mine, shape, P, r, (p) => owner[p] === idx && !hole[p], (p, c, e) => { set(col, p, c); if (e) edge[p] = 1; }, hole, GW);
     glint.push([cells[0][0] * TS + 4 + Math.floor(r() * 8), cells[0][1] * TS + 4 + Math.floor(r() * 7)]);
   });
-  return { rock, back, crack, owner, hole, edge, col, tileCss, tileRock, glint, urls: new Map() };
+  return { rock, back, crack, owner, hole, edge, col, tileCss, tileRock, glint, urls: new Map(), w: TW, h: TH, GW, GH };
 }
 
-function rasterise(shape: Shape, cells: Pt[], own: (p: number) => void, isHole: (p: number) => void, W = GW): number[] {
+function rasterise(shape: Shape, cells: Pt[], own: (p: number) => void, isHole: (p: number) => void, W: number): number[] {
   const mine: number[] = [];
   for (const [cx, cy] of cells) {
     for (let y = 0; y < TS; y++) for (let x = 0; x < TS; x++) {
@@ -559,7 +568,7 @@ function rasterise(shape: Shape, cells: Pt[], own: (p: number) => void, isHole: 
   return mine;
 }
 
-function shade(mine: number[], shape: Shape, P: Pal, r: () => number, solid: (p: number) => boolean, out: (p: number, c: RGB, edge: boolean) => void, hole: Uint8Array, W = GW) {
+function shade(mine: number[], shape: Shape, P: Pal, r: () => number, solid: (p: number) => boolean, out: (p: number, c: RGB, edge: boolean) => void, hole: Uint8Array, W: number) {
   const ok = (p: number, dx: number) => {
     const x = (p % W) + dx;
     return x >= 0 && x < W && p + dx >= 0 && solid(p + dx);
@@ -587,6 +596,7 @@ export function itemUrl(art: LayerArt, idx: number, scale = 3): string {
   const key = idx * 10 + scale;
   const hit = art.urls.get(key);
   if (hit) return hit;
+  const { GW, GH } = art;
   let x0 = GW, y0 = GH, x1 = -1, y1 = -1;
   for (let p = 0; p < art.owner.length; p++) {
     if (art.owner[p] !== idx) continue;
@@ -641,13 +651,12 @@ export interface FrameState {
   t: number; // ms
   hover: number;
   hoverPx: Pt | null;
-  hammer: boolean;
-  /** tiles the hammer would hit / that risk damaging a bone */
+  /** tiles the brush covers at the hover */
   area: number[];
-  risk: Set<number>;
+  /** predicted chain from the hover: tile → wave (0 = the tiles the brush breaks) */
+  preview: Map<number, number> | null;
   /** georadar level 0–4 */
   scanner: number;
-  fever: boolean;
   golden: number; // tile index or -1
   press: Map<number, number>; // tile → end of the "pressed in" look after a hit
   glow: (item: number) => number; // shown rarity of a partially uncovered fossil, -1 = none
@@ -655,20 +664,113 @@ export interface FrameState {
   /** georadar upgrades: sonar = bone zones show rarity colours */
   sonar?: boolean;
   glintAll?: boolean;
+  /** chain animation: tile → time (ms) it visibly breaks; until then it is still drawn as rock */
+  pending: Map<number, number>;
+  /** own-modifier tool: tiles it can act on (null = no tool) and the tile picked first */
+  targets: Set<number> | null;
+  picked: number;
+  /** 0..1 warm glow over the whole field after a big chain */
+  heat: number;
 }
 
 const LB = 2; // light block size
-const LW = GW / LB, LH = GH / LB;
-const lightBuf = new Float32Array(LW * LH * 3);
+let lightBuf = new Float32Array(0);
 const ITEM_GLINT: Record<string, RGB> = { amber: [255, 190, 90] };
+
+// ---- modifier icons (9 × 9 px, '#' = icon pixel, 'o' = second colour)
+type Bitmap = string[];
+const ICONS: Record<ModKind, Bitmap> = {
+  arrow: [
+    '.........',
+    '....#....',
+    '....##...',
+    '#######..',
+    '########.',
+    '#######..',
+    '....##...',
+    '....#....',
+    '.........',
+  ],
+  bomb: [
+    '......o..',
+    '.....o.o.',
+    '....#....',
+    '..#####..',
+    '.##o####.',
+    '.#o#####.',
+    '.#######.',
+    '..#####..',
+    '...###...',
+  ],
+  vein: [
+    '.....##..',
+    '....##...',
+    '...##....',
+    '..######.',
+    '.....##..',
+    '....##...',
+    '...##....',
+    '..##.....',
+    '.##......',
+  ],
+  key: [
+    '.#######.',
+    '#ooooooo#',
+    '.#######.',
+    '..#ooo#..',
+    '..#ooo#..',
+    '..#ooo#..',
+    '.#######.',
+    '#ooooooo#',
+    '.#######.',
+  ],
+  echo: [
+    '..#####..',
+    '.#.....#.',
+    '#..###..#',
+    '#.#...#.#',
+    '#.#.o.#.#',
+    '#.#...#.#',
+    '#..###..#',
+    '.#.....#.',
+    '..#####..',
+  ],
+  gem: [
+    '.........',
+    '..#####..',
+    '.#ooooo#.',
+    '#ooooooo#',
+    '.#ooooo#.',
+    '..#ooo#..',
+    '...#o#...',
+    '....#....',
+    '.........',
+  ],
+};
+export const MOD_COLOR: Record<ModKind, RGB> = {
+  arrow: [255, 186, 84], bomb: [238, 92, 72], vein: [104, 214, 255], key: [255, 214, 92], echo: [206, 140, 255], gem: [116, 238, 160],
+};
+export const MOD_CSS: Record<ModKind, string> = Object.fromEntries(Object.entries(MOD_COLOR).map(([k, c]) => [k, css(c)])) as Record<ModKind, string>;
+const MOD_ALT: Record<ModKind, RGB> = {
+  arrow: [255, 240, 200], bomb: [255, 238, 150], vein: [220, 248, 255], key: [190, 140, 40], echo: [255, 255, 255], gem: [200, 255, 220],
+};
+
+/** icon pixel at (x, y) of a 9×9 bitmap turned by dir (0 = as drawn, pointing right) */
+function iconPx(b: Bitmap, x: number, y: number, dir: number): string {
+  let sx = x, sy = y;
+  for (let k = 0; k < dir; k++) { const nx = sy, ny = 8 - sx; sx = nx; sy = ny; } // undo the rotation
+  return b[sy]?.[sx] ?? '.';
+}
 
 export function drawFrame(img: ImageData, f: FrameState): void {
   const { st, art } = f;
+  const { GW, GH, w: W } = art;
+  const LW = GW / LB, LH = GH / LB;
+  if (lightBuf.length !== LW * LH * 3) lightBuf = new Float32Array(LW * LH * 3);
   const d = img.data;
-  const W = B.gridW;
   const tileOf = (x: number, y: number) => ((y / TS) | 0) * W + ((x / TS) | 0);
-  const cleared = st.tiles.map((t) => t.hp <= 0);
-  const stage = st.tiles.map((t) => (t.hp <= 0 ? 0 : t.hp / t.max < 0.3 ? 3 : t.hp / t.max < 0.55 ? 2 : t.hp / t.max < 0.8 ? 1 : 0));
+  const cleared = st.tiles.map((t, i) => t.hp <= 0 && !((f.pending.get(i) ?? 0) > f.t));
+  const stage = st.tiles.map((t, i) => (cleared[i] ? 0 : t.hp <= 0 ? 3 : t.hp / t.max < 0.3 ? 3 : t.hp / t.max < 0.55 ? 2 : t.hp / t.max < 0.8 ? 1 : 0));
 
   // ---- lights
   const amb = 0.88 - Math.min(0.12, st.depth * 0.004);
@@ -687,8 +789,13 @@ export function drawFrame(img: ImageData, f: FrameState): void {
     const pulse = 0.75 + 0.25 * Math.sin(f.t / 140);
     lights.push({ x: ((f.golden % W) + 0.5) * TS, y: (((f.golden / W) | 0) + 0.5) * TS, r: 26, i: 0.5 * pulse, c: [1, 0.8, 0.3] });
   }
-  for (const b of st.burns ?? []) lights.push({ x: ((b.tile % W) + 0.5) * TS, y: (((b.tile / W) | 0) + 0.5) * TS, r: 26, i: 0.28 + 0.06 * Math.sin(f.t / 70 + b.tile), c: [1, 0.55, 0.2] });
-  if (f.fever) lights.push({ x: GW / 2, y: GH / 2, r: 140, i: 0.2 + 0.04 * Math.sin(f.t / 90), c: [1, 0.55, 0.2] });
+  // tiles breaking right now flash
+  for (const [ti, at] of f.pending) {
+    const dt = f.t - at;
+    if (dt < 0 || dt > 260) continue;
+    lights.push({ x: ((ti % W) + 0.5) * TS, y: (((ti / W) | 0) + 0.5) * TS, r: 24, i: 0.55 * (1 - dt / 260), c: [1, 0.75, 0.4] });
+  }
+  if (f.heat > 0) lights.push({ x: GW / 2, y: GH / 2, r: Math.max(GW, GH), i: 0.16 * f.heat, c: [1, 0.6, 0.25] });
   for (let by = 0; by < LH; by++) {
     for (let bx = 0; bx < LW; bx++) {
       const px = bx * LB + 1, py = by * LB + 1;
@@ -727,6 +834,10 @@ export function drawFrame(img: ImageData, f: FrameState): void {
         r = art.back[p * 3] * k + 8; g = art.back[p * 3 + 1] * k + 6; b = art.back[p * 3 + 2] * k + 5;
       } else {
         r = art.back[p * 3]; g = art.back[p * 3 + 1]; b = art.back[p * 3 + 2];
+        // rock still standing above / to the left casts a shadow into the hole
+        const lx = x % TS, ly = y % TS, tx = ti % W;
+        if (ly < 5 && ti >= W && !cleared[ti - W]) { const k = 0.45 + ly * 0.11; r *= k; g *= k; b *= k; }
+        if (lx < 3 && tx > 0 && !cleared[ti - 1]) { const k = 0.6 + lx * 0.13; r *= k; g *= k; b *= k; }
       }
       const l = (((y / LB) | 0) * LW + ((x / LB) | 0)) * 3;
       const i = p * 4;
@@ -748,6 +859,9 @@ export function drawFrame(img: ImageData, f: FrameState): void {
       put(x0 + k, y0, c, a); put(x0 + k, y0 + s, c, a); put(x0, y0 + k, c, a); put(x0 + s, y0 + k, c, a);
     }
   };
+  const fill = (ti: number, c: RGB, a: number) => {
+    for (let y = ty0(ti) + 1; y < ty0(ti) + TS - 1; y++) for (let x = tx0(ti) + 1; x < tx0(ti) + TS - 1; x++) put(x, y, c, a);
+  };
   const corners = (ti: number, c: RGB, a: number) => {
     const x0 = tx0(ti) + 1, y0 = ty0(ti) + 1, s = TS - 3;
     for (let k = 0; k < 4; k++) {
@@ -762,29 +876,15 @@ export function drawFrame(img: ImageData, f: FrameState): void {
     for (let k = 1; k <= rr; k++) { put(x + k, y, c, a * 0.8); put(x - k, y, c, a * 0.8); put(x, y + k, c, a * 0.8); put(x, y - k, c, a * 0.8); }
   };
 
-  // glowing cracks during the fever
-  if (f.fever) {
-    const hot: RGB = [255, 154, 60];
-    for (let p = 0; p < art.crack.length; p++) {
-      const cs = art.crack[p];
-      if (!cs) continue;
-      const ti = tileOf(p % GW, (p / GW) | 0);
-      if (!cleared[ti] && cs <= stage[ti]) put(p % GW, (p / GW) | 0, hot, 0.85);
-    }
-  }
-
-  // smouldering tiles: flickering embers on the tile and its edges
-  for (const b of st.burns ?? []) {
-    for (const ti of [b.tile, b.tile - W, b.tile + W, b.tile % W ? b.tile - 1 : -1, b.tile % W < W - 1 ? b.tile + 1 : -1]) {
-      if (ti < 0 || ti >= st.tiles.length || cleared[ti]) continue;
-      const x0 = tx0(ti), y0 = ty0(ti), main = ti === b.tile;
-      for (let k = 0; k < (main ? 14 : 5); k++) {
-        const h = (k * 73 + ti * 31 + ((f.t / 90) | 0) * 17) % 256;
-        const px = x0 + 1 + (h % 14), py = y0 + 1 + ((h * 7) % 14);
-        put(px, py, k % 3 ? [255, 140, 40] : [255, 220, 120], main ? 0.85 : 0.55);
-      }
-    }
-  }
+  // flint: dark blue-grey, glassy, with a curved sheen — chains stop at it
+  st.tiles.forEach((t, ti) => {
+    if (!t.flint || cleared[ti]) return;
+    const x0 = tx0(ti), y0 = ty0(ti);
+    for (let y = 1; y < TS - 1; y++) for (let x = 1; x < TS - 1; x++) put(x0 + x, y0 + y, [52, 60, 76], 0.5);
+    for (let k = 0; k < 7; k++) { put(x0 + 4 + k, y0 + 4 + Math.round(Math.abs(k - 3) * 0.6), [200, 214, 236], 0.55); }
+    for (let k = 0; k < 4; k++) put(x0 + 9 + k, y0 + 10 - Math.round(k * 0.5), [160, 176, 204], 0.45);
+    rect(ti, [120, 136, 168], 0.6, 0);
+  });
 
   // amber / minerals glint through cracked rock: "something shiny in there"
   st.items.forEach((it, k) => {
@@ -835,7 +935,6 @@ export function drawFrame(img: ImageData, f: FrameState): void {
 
   // georadar: low levels show rough zones (with empty rock around), higher levels sharpen them
   if (f.scanner) {
-    const W2 = B.gridW;
     for (const z0 of radarZones(st, f.scanner)) {
       // Sonar upgrade: a bone's zone glows in the colour of its rarity
       const zi = st.items[z0.item];
@@ -846,43 +945,93 @@ export function drawFrame(img: ImageData, f: FrameState): void {
       for (const ti of z.tiles) {
         if (cleared[ti]) continue;
         const x0 = tx0(ti), y0 = ty0(ti), e = TS - 1;
-        const tx = ti % W2;
+        const tx = ti % W;
         const dash = (k: number) => ((k + ((f.t / 160) | 0)) % 4) < 2;
-        // faint tint inside the zone
         for (let y = y0 + 2; y < y0 + e - 1; y += 3) for (let x = x0 + 2 + (y % 2); x < x0 + e - 1; x += 3) put(x, y, z.color, 0.18);
-        // outline only where the zone ends
         for (let k = 0; k <= e; k++) {
           if (!dash(k)) continue;
-          if (!inZone(ti - W2)) put(x0 + k, y0 + 1, z.color, 0.7);
-          if (!inZone(ti + W2)) put(x0 + k, y0 + e - 1, z.color, 0.7);
+          if (!inZone(ti - W)) put(x0 + k, y0 + 1, z.color, 0.7);
+          if (!inZone(ti + W)) put(x0 + k, y0 + e - 1, z.color, 0.7);
           if (tx === 0 || !inZone(ti - 1)) put(x0 + 1, y0 + k, z.color, 0.7);
-          if (tx === W2 - 1 || !inZone(ti + 1)) put(x0 + e - 1, y0 + k, z.color, 0.7);
+          if (tx === W - 1 || !inZone(ti + 1)) put(x0 + e - 1, y0 + k, z.color, 0.7);
         }
       }
     }
   }
 
+  // links: a dotted thread between the two tiles
+  const drawn = new Set<number>();
+  st.tiles.forEach((t, a) => {
+    if (t.link === undefined || drawn.has(a)) return;
+    const b = t.link;
+    drawn.add(a); drawn.add(b);
+    if (cleared[a] && cleared[b]) return;
+    const ax = tx0(a) + 8, ay = ty0(a) + 8, bx = tx0(b) + 8, by = ty0(b) + 8;
+    const n = Math.max(Math.abs(bx - ax), Math.abs(by - ay));
+    const off = (f.t / 90) | 0;
+    for (let k = 0; k <= n; k++) {
+      if ((k + off) % 4 >= 2) continue;
+      put(Math.round(ax + ((bx - ax) * k) / n), Math.round(ay + ((by - ay) * k) / n), [255, 236, 190], 0.85);
+    }
+    for (const ti of [a, b]) if (!cleared[ti]) { plus(tx0(ti) + 3, ty0(ti) + 3, 1, [255, 236, 190], 0.95); }
+  });
+
+  // modifier icons on the rock that carries them
+  const pulse = 0.85 + 0.15 * Math.sin(f.t / 300);
+  st.tiles.forEach((t, ti) => {
+    if (!t.mod || cleared[ti]) return;
+    const c = MOD_COLOR[t.mod], alt = MOD_ALT[t.mod], bmp = ICONS[t.mod];
+    const dir = t.mod === 'arrow' ? t.dir ?? 0 : 0;
+    const x0 = tx0(ti) + 3, y0 = ty0(ti) + 3;
+    rect(ti, c, 0.38, 0);
+    // dark halo first, so the icon reads on any rock
+    for (let y = -1; y <= 9; y++) for (let x = -1; x <= 9; x++) {
+      if (iconPx(bmp, x, y, dir) !== '.') continue;
+      const near = [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => iconPx(bmp, x + dx, y + dy, dir) !== '.');
+      if (near) put(x0 + x, y0 + y, [18, 14, 12], 0.7);
+    }
+    for (let y = 0; y < 9; y++) for (let x = 0; x < 9; x++) {
+      const px = iconPx(bmp, x, y, dir);
+      if (px === '#') put(x0 + x, y0 + y, mul(c, pulse), 1);
+      else if (px === 'o') put(x0 + x, y0 + y, alt, 1);
+    }
+  });
+
+  // chain preview: what this break would set off (warm → hot with each wave)
+  if (f.preview && f.preview.size > 1) {
+    for (const [ti, gen] of f.preview) {
+      if (cleared[ti]) continue;
+      const c: RGB = gen === 0 ? [255, 230, 170] : gen === 1 ? [255, 186, 90] : gen === 2 ? [255, 140, 70] : [255, 96, 80];
+      fill(ti, c, 0.13 + 0.05 * Math.sin(f.t / 120 + gen));
+      rect(ti, c, 0.75, 1, gen > 0);
+    }
+  }
+
+  // own-modifier tool: where it can be used, and the tile picked first
+  if (f.targets) {
+    for (const ti of f.targets) if (!cleared[ti]) rect(ti, [140, 230, 160], 0.55, 1, true);
+    if (f.picked >= 0) { rect(f.picked, [140, 255, 170], 1, 0); rect(f.picked, [140, 255, 170], 0.6, 1); }
+  }
+
   // golden flash
   if (f.golden >= 0) {
     const g: RGB = [255, 205, 80];
-    const pulse = 0.55 + 0.45 * Math.sin(f.t / 110);
-    rect(f.golden, g, pulse, 0);
-    rect(f.golden, g, pulse * 0.5, 1);
+    const pg = 0.55 + 0.45 * Math.sin(f.t / 110);
+    rect(f.golden, g, pg, 0);
+    rect(f.golden, g, pg * 0.5, 1);
     const cx = tx0(f.golden) + 8, cy = ty0(f.golden) + 7;
     plus(cx, cy, 2 + (((f.t / 220) | 0) % 2), [255, 222, 120], 1);
-    plus(cx + 4, cy + 4, 1, g, pulse);
+    plus(cx + 4, cy + 4, 1, g, pg);
   }
 
-  // hover: tile outline, hammer area (red = could crack a bone), remaining strength
+  // hover: brush area outline, remaining strength
   if (f.hover >= 0 && !cleared[f.hover]) {
     const warm: RGB = [255, 196, 110];
-    if (f.hammer) {
-      for (const c of f.area) rect(c, f.risk.has(c) ? [255, 110, 96] : warm, f.risk.has(c) ? 0.9 : 0.35);
-    } else rect(f.hover, warm, 0.4);
+    for (const c of f.area.length ? f.area : [f.hover]) rect(c, warm, c === f.hover ? 0.5 : 0.35);
     const t = st.tiles[f.hover];
     const x0 = tx0(f.hover) + 2, y0 = ty0(f.hover) + 13;
-    const w = TS - 4, fill = Math.max(1, Math.round((t.hp / t.max) * w));
-    for (let k = 0; k < w; k++) { put(x0 + k, y0, k < fill ? [226, 196, 140] : [30, 24, 20], k < fill ? 0.9 : 0.7); put(x0 + k, y0 + 1, [20, 16, 12], 0.6); }
+    const w = TS - 4, fl = Math.max(1, Math.round((t.hp / t.max) * w));
+    for (let k = 0; k < w; k++) { put(x0 + k, y0, k < fl ? [226, 196, 140] : [30, 24, 20], k < fl ? 0.9 : 0.7); put(x0 + k, y0 + 1, [20, 16, 12], 0.6); }
   }
 }
 
@@ -904,7 +1053,7 @@ export function radarZones(st: SiteState, level: number): RadarZone[] {
   if (!byLevel) { byLevel = new Map(); zoneCache.set(st.items, byLevel); }
   const hit = byLevel.get(level);
   if (hit) return hit;
-  const W = B.gridW, H = B.gridH;
+  const { w: W, h: H } = dims(st);
   const r = mulberry(hashStr(`radar:${st.depth}:${st.layersDone}:${level}`));
   const zones: RadarZone[] = [];
   const near = (c: number, ox: number, oy: number, rad: number) => {

@@ -112,12 +112,18 @@ export function canUnlockSite(s: GameState, siteId: string): { ok: boolean; why?
   return { ok: true, ...req };
 }
 
+/** shards granted with a newly opened site */
+export const siteGrant = (siteId: string) => Math.round(400 * Math.pow(SITE_UNLOCK[siteId]?.level ?? 1, 1.35) / 10) * 10;
+
 export function unlockSite(s: GameState, siteId: string): boolean {
   const c = canUnlockSite(s, siteId);
   if (!c.ok) return false;
   s.coins -= c.cost;
   s.unlockedSites[siteId] = s.now;
-  log(s, `Nowe stanowisko: ${SITE_BY_ID.get(siteId)?.name}`, 'good');
+  // a new site comes with an expedition grant: a burst of workshop upgrades every few park levels
+  const grant = siteGrant(siteId);
+  s.shards = (s.shards ?? 0) + grant;
+  log(s, `Nowe stanowisko: ${SITE_BY_ID.get(siteId)?.name} · dotacja na wyprawę: ${grant} odłamków`, 'good');
   return true;
 }
 

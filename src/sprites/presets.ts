@@ -1,6 +1,6 @@
 // Archetype -> base look. Units ≈ pixels for a medium animal; generator normalizes by size class.
 
-import type { ArthroP, Feat, FlipP, FlyP, Look, ShellP, SnakeP, SwimP, TetraP } from './look';
+import type { ArthroP, Feat, FlipP, FlyP, Look, SessileKind, ShellP, SnakeP, SwimP, TetraP } from './look';
 
 const TD: TetraP = {
   stance: 'biped', bodyL: 16, bodyH: 10, tilt: 10, legH: 13, legT: 2.6, foreL: 0, foreT: 1.2, armL: 6,
@@ -24,6 +24,7 @@ const fly = (o: Partial<FlyP>, F: Feat = {}): Look => ({ rig: 'fly', P: { ...YD,
 const arthro = (o: Partial<ArthroP>, F: Feat = {}): Look => ({ rig: 'arthro', P: { ...AD, ...o }, F });
 const shell = (o: Partial<ShellP>): Look => ({ rig: 'shell', P: { kind: 'coil', size: 20, ribs: 18, tentacles: 1, keel: 0, len: 30, ...o }, F: {} });
 const snake = (o: Partial<SnakeP>): Look => ({ rig: 'snake', P: { len: 40, thick: 3, waves: 1.5, headL: 4, ...o }, F: {} });
+const sess = (kind: SessileKind, h: number, w: number, n: number): Look => ({ rig: 'sessile', P: { kind, h, w, n }, F: {} });
 
 export const PRESETS: Record<string, () => Look> = {
   // ---------------- theropods & birds
@@ -131,6 +132,23 @@ export const PRESETS: Record<string, () => Look> = {
   ammonite: () => shell({ kind: 'coil', size: 20, ribs: 18, tentacles: 1 }),
   orthocone: () => shell({ kind: 'straight', size: 8, len: 34, ribs: 9, tentacles: 1 }),
   belemnite: () => swim({ len: 22, h: 6, snout: 0.2, headFrac: 0.2, tail: 'squid', dorsal: 0, pectoral: 0, pelvic: 0, tentacles: 1, mouth: false }),
+  sponge: () => sess('sponge', 22, 14, 7),
+  bryozoan: () => sess('branching', 18, 14, 4),
+  bivalve: () => sess('bivalve', 14, 20, 12),
+  sea_urchin: () => sess('urchin', 16, 18, 11),
+  starfish: () => sess('star', 16, 22, 0),
+  brittle_star: () => sess('star', 16, 24, 1),
+  archaeocyath: () => sess('cup', 20, 14, 0),
+  brachiopod: () => sess('brachiopod', 16, 18, 9),
+  polyp: () => sess('polyp', 22, 14, 9),
+  comb_jelly: () => sess('jelly', 18, 14, 4),
+  disc_animal: () => sess('disc', 14, 22, 0),
+  crinoid: () => sess('crinoid', 30, 16, 6),
+  cystoid: () => sess('globe', 20, 16, 0),
+  graptolite: () => sess('graptolite', 22, 14, 2),
+  snail: () => sess('snail', 18, 22, 10),
+  tube_worm: () => sess('tube', 22, 10, 0),
+  worm: () => sess('worm', 8, 26, 0),
   soft_bodied: () => swim({ len: 18, h: 4, snout: 0.5, headFrac: 0.15, tail: 'eel', dorsal: 0, pectoral: 0, pelvic: 0, eel: 1, mouth: false }),
 };
 

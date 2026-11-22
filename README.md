@@ -1,7 +1,7 @@
 # SEC — Self-Organizing Entropic Complex
 
 Kolekcjonersko-parkowa gra o ponad 2200 prawdziwych wymarłych zwierzętach (dane: Paleobiology Database).
-Kopiesz na prawdziwych stanowiskach → sekwencjonujesz DNA → hodujesz zwierzęta → karmisz je i ewoluujesz (Młode → Dorosłe → Wzmocnione → Elitarne → Apeks) → rozbudowujesz park i stacje badawcze → wypełniasz drzewo życia.
+Kopiesz na prawdziwych stanowiskach, od kambru po epokę lodowcową, w kolejności, w jakiej rozwijało się życie. Każda warstwa to łamigłówka z reakcjami łańcuchowymi. Potem sekwencjonujesz DNA → hodujesz zwierzęta → karmisz je i ewoluujesz (Młode → Dorosłe → Wzmocnione → Elitarne → Apeks) → rozbudowujesz park i stacje badawcze → wypełniasz drzewo życia.
 
 ## Jak zagrać
 
@@ -12,7 +12,7 @@ Windows może pokazać ostrzeżenie „System Windows ochronił komputer”, bo 
 
 **Zapis** to plik `Dokumenty\SEC\zapis.json`. Żeby przenieść grę na inny komputer, skopiuj go do tego samego folderu na drugim komputerze albo użyj w grze **Inne → Eksportuj / Wczytaj z pliku**.
 
-Co nowego: [CHANGELOG.md](CHANGELOG.md) · pełna rozpiska wersji 0.2.0: [docs/wersja-0.2.0.md](docs/wersja-0.2.0.md).
+Co nowego: [CHANGELOG.md](CHANGELOG.md) · tryb fabularny i Bibliotekarz: [docs/bibliotekarz/](docs/bibliotekarz/) · wykopaliska 2.0 (reakcje łańcuchowe): [docs/wykopaliska-2.0.md](docs/wykopaliska-2.0.md) · park 2.0: [docs/park-2.0-projekt.md](docs/park-2.0-projekt.md).
 
 ## Dla twórców
 
@@ -40,6 +40,7 @@ npm run release    # wydanie na GitHubie (wersja z package.json, opis z CHANGELO
 - `scripts/data/` — pipeline danych: grupy i limity (`config.ts`), stanowiska (prawdziwe formacje).
 - `src/data/cladeRules.ts` — klad → szablon budowy ciała, gałęzie, polskie nazwy, ikony.
 - `src/sprites/` — proceduralny pixel art: rigi (`buildTetra`, `buildOthers`), presety szablonów, cechy kladów (`traits.ts`), stadia ewolucji.
+- Wykopaliska (od 0.4.0): `dig.ts` (warstwy, reakcje łańcuchowe `runChain`, własne modyfikatory, ekipy, skrzynie), `tools.ts` (drzewko Warsztatu), `src/data/epochs.ts` (etapy ewolucji stanowisk), `src/data/cladeInfo.ts` (opisy gałęzi drzewa życia).
 - `src/game/` — logika (czyste funkcje): `balance.ts` (wszystkie liczby), `content.ts` (budynki, badania, odblokowania), `dig`, `lab`, `park`, `meta` (badanie gałęzi, kolekcje, kontrakty), `engine` (tick, offline, zapis i migracja starych zapisów).
 - Park (od 0.3.0): `parkContent.ts` (wyspy, wszystko co da się postawić, liczby parku), `islands.ts` (teren wysp), `parkmap.ts` (stawianie, ścieżki, zagrody, zadowolenie, magazyny, układ automatyczny). Projekt: [docs/park-2.0-projekt.md](docs/park-2.0-projekt.md).
 - `src/ui/` — React: Park (`src/ui/park/`: mapa, panele, tryb budowy, wnętrze wybiegu), Wykopaliska, Laboratorium, Drzewo życia (+ oś czasu), Badania, Stacje, Kontrakty, Inne (zapis, galeria, źródła). Dźwięk jest syntezowany w Web Audio, bez plików: `src/ui/sound.ts` (efekty) i `src/ui/voices.ts` (głosy wszystkich rodzajów, z budowy ciała, rozmiaru i stałego odcisku z id).

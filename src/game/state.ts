@@ -2,15 +2,37 @@
 
 import type { Food, Habitat } from '../data/types';
 import { B } from './balance';
-import { BUILDINGS, type BuildingId } from './content';
+import { BUILDINGS, START_SITE, type BuildingId } from './content';
 
-/** 2 = park 2.0 (islands, map objects, pens) */
-export const SAVE_VERSION = 3;
+/** 2 = park 2.0 (islands, map objects, pens) · 3 = fixed enclosure size · 4 = dig 2.0 (chain reactions, new workshop) */
+export const SAVE_VERSION = 5;
 
-export type Tool = 'brush' | 'hammer' | 'charge';
+/** the only digging tool; the player's own modifiers are chosen in the UI (see PlayerTool) */
+export type Tool = 'brush';
 export type Quality = 0 | 1 | 2;
 
-export interface Tile { hp: number; max: number; item: number }
+/**
+ * Rock modifiers (dig 2.0): when a tile with a modifier breaks, it sets off more tiles — a chain reaction.
+ * arrow — breaks the next tiles in the direction of the arrow; bomb — a 3×3 blast;
+ * vein — every rock touching the empty space this tile opens onto; key — when it is the last rock in its row: the whole column;
+ * echo — sets off other modifier tiles; gem — doubles the reward multiplier of the chain it is part of.
+ */
+export type ModKind = 'arrow' | 'bomb' | 'vein' | 'key' | 'echo' | 'gem';
+/** 0 → right, 1 → down, 2 → left, 3 → up */
+export type Dir = 0 | 1 | 2 | 3;
+/** the player's own modifiers, placed by hand a few times per layer */
+export type PlayerTool = 'bomb' | 'link' | 'rotate' | 'move' | 'copy';
+export interface Tile {
+  hp: number;
+  max: number;
+  item: number;
+  mod?: ModKind;
+  dir?: Dir;
+  /** linked tile (player's „Połączenie”): when one breaks, so does the other */
+  link?: number;
+  /** flint: a chain cannot break it (only a blast can) — your brush and the crews can */
+  flint?: boolean;
+}
 export type ItemKind = 'fossil' | 'minor' | 'amber' | 'mineral';
 export interface LayerItem {
   kind: ItemKind;
@@ -24,6 +46,10 @@ export interface LayerItem {
 export interface LayerOutcome {
   /** layersDone value after this layer was finished */
   n: number;
+  /** 1–3 stars: how few manual breaks the layer took */
+  stars?: number;
+  manual?: number;
+  best?: number;
   /** every find in the layer was dug out (not just the fossils) */
   full: boolean;
   bonus?: { coins: number; pb: number };
@@ -35,9 +61,28 @@ export type ChestTier = 0 | 1 | 2;
 export interface PendingChest { id: number; siteId: string; depth: number; tier: ChestTier; t: number }
 export type LootKind = 'coins' | 'shards' | 'pb' | 'mutagen' | 'food' | 'fossil' | 'mineral';
 export interface Loot { kind: LootKind; amount: number; food?: Food; genusId?: number; quality?: Quality; mineralId?: string; /** 0–3: how exciting (drives the reveal effect) */ rare: number; isNew?: boolean }
-/** a smouldering tile (brush upgrade „Żarzące włosie”): it and its 4 neighbours lose strength over time */
-export interface Burn { tile: number; until: number; dps: number }
-export interface SiteState { depth: number; tiles: Tile[]; items: LayerItem[]; layersDone: number; fossilsFound: number; lastDone?: LayerOutcome; burns?: Burn[] }
+/** a combo that is still open: it can go on with the next manual break (upgrade „Dwutakt”) */
+export interface OpenCombo { n: number; left: number; gems: number }
+export interface SiteState {
+  depth: number;
+  tiles: Tile[];
+  items: LayerItem[];
+  layersDone: number;
+  fossilsFound: number;
+  lastDone?: LayerOutcome;
+  /** layer size in tiles (older saves: 10 × 7) */
+  w?: number;
+  h?: number;
+  /** manual breaks in this layer (the fewer, the better the layer's rating) */
+  manual?: number;
+  /** biggest chain in this layer */
+  best?: number;
+  combo?: OpenCombo;
+  /** uses of the player's own modifiers left in this layer */
+  uses?: Partial<Record<PlayerTool, number>>;
+}
+/** digging records over the whole game */
+export interface DigRecords { combo: number; fewest: number; oneHit: number; stars3: number }
 
 export interface Job { genusId: number; quality: Quality; t: number; dur: number }
 export interface Incubation { genusId: number; t: number; dur: number; chance: number; cost: number }
@@ -170,11 +215,13 @@ export interface GameState {
   minerals: Record<string, number>;
   /** rock shards: earned by digging, spent in the workshop */
   shards: number;
-  /** charges (workshop): ready count + seconds towards the next one */
-  charges: { n: number; acc: number };
+  /** digging records (dig 2.0) */
+  digRecords: DigRecords;
   /** epoch chests waiting to be opened */
   chests: PendingChest[];
   nextChestId: number;
+  /** story mode: narration on/off and which story beats / scenes were already shown */
+  story: { on: boolean; seen: Record<string, number> };
 }
 
 export function newGame(now = Date.now(), seed = (now ^ 0x5bd1e995) >>> 0): GameState {
@@ -202,8 +249,8 @@ export function newGame(now = Date.now(), seed = (now ^ 0x5bd1e995) >>> 0): Game
     park: { islands: {}, objects: [], nextId: 1, paths: {}, rev: 0 },
     animals: [],
     nextUid: 1,
-    unlockedSites: { morrison: now },
-    activeSite: 'morrison',
+    unlockedSites: {}, // the first site is bought on the map
+    activeSite: START_SITE,
     sites: {},
     crewAcc: 0,
     labQueue: [],
@@ -220,9 +267,10 @@ export function newGame(now = Date.now(), seed = (now ^ 0x5bd1e995) >>> 0): Game
     finds: [],
     minerals: {},
     shards: 0,
-    charges: { n: 1, acc: 0 },
+    digRecords: { combo: 0, fewest: 0, oneHit: 0, stars3: 0 },
     chests: [],
     nextChestId: 1,
+    story: { on: true, seen: {} },
   };
 }
 

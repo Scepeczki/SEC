@@ -1,0 +1,1666 @@
+{
+ "batch": "etap-03",
+ "stage": {
+  "nr": 3,
+  "id": "etap-03",
+  "title": "Późny kambr i świt ordowiku",
+  "window": "pierwsze pojawienia ok. 497–483 mln lat temu; główne stanowisko: łupki Fezouata w Maroku (ok. 485–477 mln lat temu)",
+  "genera": 55,
+  "mainBranch": "Trilobita",
+  "route": [
+   "spot:Pterocephalia",
+   "Olenidae",
+   "Eulomidae",
+   "spot:Irvingella",
+   "spot:Geragnostus",
+   "Dikelocephaloidea",
+   "Asaphidae",
+   "Isotelinae",
+   "Remopleurididae",
+   "Cyclopygoidea",
+   "Nileidae",
+   "Trinucleida",
+   "Raphiophoridae",
+   "Leiostegiidae",
+   "spot:Illaenus",
+   "Proetida",
+   "Phacopida",
+   "Calymenina",
+   "Calymenidae",
+   "Colpocoryphinae",
+   "Cheirurina",
+   "Cheiruridae",
+   "Phacopina",
+   "Phacopoidea",
+   "Pterygometopidae",
+   "Dalmanitidae",
+   "spot:Aegirocassis",
+   "Cephalopoda",
+   "Endoceratidae",
+   "Orthoceratoidea",
+   "Graptolithina",
+   "Cyclostomi",
+   "Cyclostomata",
+   "Conodonta",
+   "Prioniodontida"
+  ],
+  "routeNote": "Najpierw główna gałąź – trylobity, które w tym etapie wymieniają się na nowe rzędy. Potem ostatni wielki radiodont, nowi drapieżnicy (głowonogi), plankton (graptolity) i nasza linia (konodonty).",
+  "intro": [
+   {
+    "kind": "swiat",
+    "title": "Między dwiema eksplozjami",
+    "text": "Jesteśmy ok. 497–483 mln lat temu, na przełomie kambru i ordowiku. Klimat jest ciepły, poziom mórz wysoki, a płytkie morza zalewają duże części kontynentów. Kontynent Gondwana, do którego należy dzisiejsza Afryka, sięga daleko na południe, ku chłodnym szerokościom. Właśnie tam, na terenie dzisiejszego Maroka, osadzają się łupki Fezouata. Kończy się epoka eksplozji kambryjskiej, a zaczyna kolejna wielka fala różnicowania życia.",
+    "visual": "Mapa świata ok. 485 mln lat temu: wielka Gondwana sięgająca bieguna południowego, płytkie morza na kontynentach; punkt „Fezouata” na wysokich szerokościach."
+   },
+   {
+    "kind": "nowosc",
+    "title": "Wielkie Ordowickie Różnicowanie",
+    "text": "Eksplozja kambryjska dała wielkie plany budowy, ale każda grupa miała jeszcze stosunkowo mało rodzin. W ordowiku, w ciągu ok. 25 mln lat, liczba rodzin zwierząt morskich potroiła się. To tzw. Wielkie Ordowickie Różnicowanie (GOBE). Morza wypełniły się liliowcami, ramienionogami, mszywiołami, głowonogami, a trylobity wymieniły stare rodziny na nowe. Ta fauna, zwana paleozoiczną, rządziła morzami aż do wielkiego wymierania pod koniec permu.",
+    "visual": "Wykres liczby rodzin morskich w czasie: niski płaskowyż w kambrze i gwałtowny wzrost w ordowiku, z podpisem „×3”."
+   },
+   {
+    "kind": "punkt-wyjscia",
+    "title": "Burgess, które przetrwało",
+    "text": "Długo sądzono, że dziwne zwierzęta w typie Burgess wymarły w środkowym kambrze. Łupki Fezouata pokazały, że to nieprawda. W skałach sprzed ok. 485–477 mln lat znaleziono radiodonty, marelomorfy podobne do Marrelli i inne „kambryjskie” stworzenia obok nowoczesnych głowonogów, liliowców i małży. Wcześniej po prostu brakowało miejsc, gdzie miękkie ciała mogły się zachować. Zwierzęta nie zniknęły – zniknęły tylko dobre warunki do ich fosylizacji.",
+    "visual": "Płyta łupku z Fezouaty: obok siebie radiodont, marelomorf z długimi kolcami i głowonóg z prostą muszlą; podpisy „kambr” i „ordowik”."
+   },
+   {
+    "kind": "rozwidlenie",
+    "title": "Kto rządzi w etapie 3",
+    "text": "Etap 3 ma 55 rodzajów. Aż 43 to trylobity, więc to one są główną gałęzią. Ale to już inne trylobity niż w etapach 1–2: pojawiają się nowe rzędy, które przetrwają setki milionów lat. Obok nich spotkasz ostatniego wielkiego radiodonta, pierwsze duże głowonogi z prostymi muszlami, pierwsze graptolity unoszące się w toni i konodonty – drobne zwierzęta, które jako pierwsze z naszej linii miały twarde ząbki.",
+    "visual": "Wykres słupkowy (opis w visuals: sklad-etapu-03)."
+   }
+  ],
+  "visuals": [
+   {
+    "id": "sklad-etapu-03",
+    "kind": "wykres słupkowy",
+    "title": "Kto pojawia się w etapie 3",
+    "purpose": "Pokazać przewagę trylobitów i nowe grupy etapu.",
+    "howTo": "Poziome słupki; słupek trylobitów podzielony na „stare” rzędy (Olenida, Ptychopariida, Corynexochida, Asaphida) i „nowe” (Phacopida, Proetida, Trinucleida).",
+    "data": {
+     "Trylobity (razem)": 43,
+     "w tym fakopidy": 12,
+     "w tym asafidy i krewni": 13,
+     "w tym olenidy": 7,
+     "w tym inne": 11,
+     "Głowonogi": 5,
+     "Konodonty": 4,
+     "Radiodonty": 1,
+     "Graptolity": 1,
+     "Agnostidy (w trylobitach)": 1
+    }
+   },
+   {
+    "id": "zmiana-trylobitow-etap-03",
+    "kind": "wykres warstwowy (strumieniowy)",
+    "title": "Wymiana trylobitów",
+    "purpose": "Pokazać, że w późnym kambrze stare rzędy trylobitów słabną, a w ordowiku rozkwitają nowe.",
+    "howTo": "Oś X: 520–440 mln lat. Warstwy kolorowe dla rzędów: Redlichiida, Corynexochida, Ptychopariida, Olenida, Asaphida, Phacopida, Proetida, Trinucleida. Grubość warstwy = liczba rodzajów w grze w danym oknie (z etapy.json + stillAlive). Pionowe linie: koniec kambru (485).",
+    "data": "liczyć z etapy.json (genusList + stillAlive) i ścieżek w gra-drzewo.md"
+   },
+   {
+    "id": "muszla-glowonoga-etap-03",
+    "kind": "diagram przekrojowy",
+    "title": "Jak działa muszla głowonoga",
+    "purpose": "Wyjaśnić komory, przegrody i syfon jako system pływaka.",
+    "howTo": "Przekrój podłużny prostej muszli: zwierzę w ostatniej komorze, za nim komory oddzielone przegrodami, przez wszystkie przechodzi rurka (syfon). Animacja: komory wypełniają się gazem – zwierzę unosi się; wpompowanie wody – opada. Obok porównanie z łodzią podwodną i zbiornikami balastowymi.",
+    "data": "brak liczb – animacja"
+   },
+   {
+    "id": "skala-etap-03",
+    "kind": "porównanie wielkości",
+    "title": "Olbrzymy wczesnego ordowiku",
+    "purpose": "Pokazać rozmiary Aegirocassisa i wielkich głowonogów na tle człowieka.",
+    "howTo": "Sylwetki na wspólnej podziałce: człowiek 1,8 m, Aegirocassis ok. 2 m, Endoceras (rekonstrukcja do ok. 5,7 m – zaznaczyć jako „szacunek”), typowy trylobit (kilka cm).",
+    "data": {
+     "czlowiek_m": 1.8,
+     "Aegirocassis_m": 2,
+     "Endoceras_m_szacunek": 5.7,
+     "trylobit_cm": 5
+    }
+   }
+  ],
+  "spotlights": [
+   {
+    "genus": "Pterocephalia",
+    "underNode": "Olenida",
+    "sites": [],
+    "cards": [
+     {
+      "kind": "nowosc",
+      "title": "Biomery – kambr w rytmie kryzysów",
+      "text": "Pterocephalia, Dellea, Saratogia i Taenicephalus to olenidy z płytkich mórz dzisiejszej Ameryki Północnej, sprzed ok. 497–486 mln lat. Geolodzy dzielą tamtejsze skały późnego kambru na tzw. biomery: każdy zaczyna się nową grupą rodzin trylobitów, które rozkwitają, a potem niemal wszystkie naraz znikają. Jeden z biomerów nazwano od Pterocephalii. Kryzysy wiązano z napływem zimnej, ubogiej w tlen wody na płytkie szelfy, choć przyczyny wciąż się bada.",
+      "visual": "Słup skalny podzielony na trzy biomery; w każdym inny zestaw sylwetek trylobitów, a na granicach czerwone kreski „kryzys”."
+     },
+     {
+      "kind": "skutki",
+      "title": "Kto wchodzi po kryzysie",
+      "text": "Po każdym kryzysie puste miejsca na płytkim dnie zajmowały trylobity, które przybyły z głębszych, chłodniejszych wód – często właśnie olenidy. Dlatego ta sama rodzina może dominować przez krótki czas, a potem ustąpić. Nikt tu nie „wygrywa” na zawsze: decyduje przypadek, kto przeżył kryzys.",
+      "visual": "Przekrój szelfu: strzałka od głębokiej, zimnej wody na płytkie dno z nowymi trylobitami po kryzysie."
+     }
+    ],
+    "sources": []
+   },
+   {
+    "genus": "Irvingella",
+    "underNode": "Ptychopariida",
+    "sites": [],
+    "cards": [
+     {
+      "kind": "nowosc",
+      "title": "Irvingella, Shumardia i inni",
+      "text": "Irvingella to późnokambryjski trylobit tak szeroko rozprzestrzeniony – od Ameryki Północnej po Azję i Australię – że jego pojawienie się w skałach służy do porównywania wieku warstw na różnych kontynentach. Obok niego gra pokazuje innych ptychopariidów: Stenopilusa o gładkim pancerzu, Cliffię oraz drobną Shumardię, która przetrwała daleko w ordowik. To ostatnie podrygi rzędu, który w kambrze był jednym z najliczniejszych.",
+      "visual": "Mapa świata późnego kambru z ikonami Irvingelli na kilku kontynentach połączonymi linią „ta sama chwila”."
+     }
+    ],
+    "sources": []
+   },
+   {
+    "genus": "Geragnostus",
+    "underNode": "Agnostina",
+    "sites": [
+     "fezouata"
+    ],
+    "cards": [
+     {
+      "kind": "nowosc",
+      "title": "Agnostidy wciąż w grze",
+      "text": "Geragnostus to agnostid – maleńki trylobit z dwiema tarczami, jakie poznałeś w etapie 2. Żył w morzu Fezouaty na początku ordowiku. Agnostidy przetrwały kryzysy późnego kambru, ale w ordowiku ich różnorodność już malała; wymarły pod jego koniec. Wiele z nich mogło żyć w toni, co pomagało im rozprzestrzeniać się po świecie.",
+      "visual": "Geragnostus zwinięty jak małe pudełeczko obok monety dla skali."
+     }
+    ],
+    "sources": []
+   },
+   {
+    "genus": "Illaenus",
+    "underNode": "Corynexochida",
+    "sites": [],
+    "cards": [
+     {
+      "kind": "nowosc",
+      "title": "Gładkie „kopacze”: Illaenus i Bumastus",
+      "text": "Illaenus i Bumastus to trylobity o niemal zupełnie gładkim, wypukłym pancerzu, bez kolców i z zatartymi rowkami. Wyglądają jak wypolerowane kamyki. Badacze sądzą, że wiele z nich żyło częściowo zakopanych w osadzie, z wystającą głową i oczami. Gładki pancerz łatwiej wsuwał się w muł. Gra wiesza je bezpośrednio pod korynekschidami, choć dziś często umieszcza się je w osobnej grupie illenidów.",
+      "visual": "Bumastus wkopany w osad, widoczna tylko gładka, wypukła głowa z oczami nad powierzchnią mułu."
+     }
+    ],
+    "sources": []
+   },
+   {
+    "genus": "Aegirocassis",
+    "underNode": "Hurdiidae",
+    "sites": [
+     "fezouata"
+    ],
+    "cards": [
+     {
+      "kind": "nowosc",
+      "title": "Dwumetrowy filtrator",
+      "text": "Aegirocassis z Fezouaty, sprzed ok. 480 mln lat, miał ponad 2 m długości – był jednym z największych zwierząt swoich czasów i jednym z największych stawonogów, jakie kiedykolwiek żyły. Jego przednie ramiona miały gęste, delikatne szczecinki, którymi przesiewał plankton z wody, jak dzisiejszy wieloryb fiszbinowy. To najstarszy znany przykład olbrzymiego, swobodnie pływającego filtratora.",
+      "visual": "Wizualizacja „skala-etap-03”: Aegirocassis obok sylwetki człowieka, przepływający przez chmurę planktonu z rozpostartymi ramionami-sitami."
+     },
+     {
+      "kind": "dlaczego",
+      "title": "Dwie pary płatów",
+      "text": "Podczas czyszczenia skamieniałości badacz zauważył coś, czego wcześniej nie widziano: Aegirocassis miał na każdym odcinku ciała dwie pary płatów – górną i dolną. Potem okazało się, że starsze radiodonty też je miały, tylko spłaszczone skamieniałości to ukrywały. To ważne, bo dwie pary płatów odpowiadają dwóm gałęziom nóg dzisiejszych stawonogów, np. krewetek. Aegirocassis pokazuje też, że olbrzymie filtratory pojawiają się, gdy w morzu przybywa planktonu.",
+      "visual": "Przekrój odcinka ciała Aegirocassisa z dwiema parami płatów (górną i dolną) obok przekroju nogi krewetki z dwiema gałęziami; te same kolory."
+     }
+    ],
+    "sources": [
+     {
+      "title": "Phys.org 2015",
+      "url": "https://phys.org/news/2015-03-frankensquid-creature-roamed-seas-480m.pdf",
+      "claim": "Ponad 2 m; filtrator; ok. 480 mln lat; najwcześniejszy olbrzymi filtrator"
+     },
+     {
+      "title": "Yale News 2015",
+      "url": "https://news.yale.edu/2015/03/11/giant-sea-creature-hints-early-arthropod-evolution",
+      "claim": "Dwie pary płatów na segment; olbrzymie filtratory pojawiają się przy radiacji planktonu"
+     },
+     {
+      "title": "World Economic Forum (Briggs)",
+      "url": "https://www.weforum.org/stories/2015/03/what-newly-discovered-fossils-tell-us-about-early-evolution/",
+      "claim": "Dwie pary płatów jako etap ewolucji dwugałęzistej nogi"
+     },
+     {
+      "title": "NBC News 2015",
+      "url": "https://www.nbcnews.com/id/wbna57098818",
+      "claim": "Starsze radiodonty też miały górne i dolne płaty, przeoczone w spłaszczonych skamieniałościach"
+     }
+    ]
+   }
+  ],
+  "outro": [
+   {
+    "kind": "skutki",
+    "title": "Co zostawia po sobie etap 3",
+    "text": "Na przełomie kambru i ordowiku świat zwierząt wymienił swoich głównych aktorów. Wiele kambryjskich rodzin trylobitów zniknęło, a na ich miejsce weszły nowe rzędy – fakopidy, proetidy, asafidy – które będą rządzić dnem przez kolejne setki milionów lat. W toni pojawiły się graptolity i pływające głowonogi, a nasi krewni – konodonty – dostali pierwsze twarde ząbki. Ostatni radiodonci, tacy jak Aegirocassis, pożegnali się olbrzymim rozmiarem.",
+    "visual": "Dwa panele morza: po lewej kambryjskie (radiodonty, stare trylobity), po prawej ordowickie (głowonogi, graptolity, nowe trylobity, liliowce)."
+   },
+   {
+    "kind": "punkt-wyjscia",
+    "title": "Co czeka w etapie 4",
+    "text": "W etapie 4 (ok. 479–445 mln lat temu) Wielkie Ordowickie Różnicowanie osiąga szczyt. Pojawią się pierwsze rafy koralowe, łąki liliowców, ramienionogi tysiącami na dnie, wielkie trylobity takie jak Isotelus i pierwsze wielkoraki. Na koniec przyjdzie pierwsze z pięciu wielkich wymierań – zlodowacenie pod koniec ordowiku.",
+    "visual": "Ordowicka rafa z koralowcami denkowymi, liliowcami i wielkim głowonogiem w tle."
+   }
+  ],
+  "site": "fezouata"
+ },
+ "nodes": [
+  {
+   "id": "Olenidae",
+   "inGame": true,
+   "namePl": "Olenidowate",
+   "parent": "Olenida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 497 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity chłodnej, ubogiej w tlen wody",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Leptoplastides i Parabolinella",
+     "text": "Olenidowate to rodzina olenidów, które poznałeś w etapie 2. Miały cienki pancerz i wiele odcinków tułowia. W etapie 3 gra pokazuje Leptoplastidesa z Fezouaty i Parabolinellę. Olenidowate były szczególnie liczne w chłodnych, głębszych morzach, gdzie przy dnie brakowało tlenu – w takich miejscach często nie miały konkurencji.",
+     "visual": "Leptoplastides na ciemnym, mulistym dnie; obok przekrój wody z ubywającym tlenem ku dołowi."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Rodzina na granicy",
+     "text": "Olenidowate przetrwały przełom kambru i ordowiku, gdy wiele innych rodzin trylobitów zniknęło. Ich odporność na trudne warunki mogła pomóc w czasie kryzysów, gdy w morzach brakowało tlenu.",
+     "visual": "Oś czasu z kilkoma znikającymi rodzinami trylobitów i jedną (olenidowatą) przechodzącą przez granicę kambru i ordowiku."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ciemne dno, mało tlenu – a jednak ktoś tu żyje.",
+    "lit": "Olenidowate – specjaliści od trudnych warunków."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Eulomidae",
+   "inGame": true,
+   "namePl": "Eulomidy",
+   "parent": "Olenida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 497 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Euloma i Ketyna",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Euloma z Fezouaty",
+     "text": "Euloma to niewielki trylobit z wyraźnymi rowkami na głowie i kolcami na rogach głowy. Żył w morzu Fezouaty na początku ordowiku. Ketyna to jego krewny z późnego kambru. Obie należą do rodziny Eulomidae w obrębie olenidów.",
+     "visual": "Euloma od góry z zaznaczonymi rowkami na głowie i kolcami na jej rogach."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na tle olenidowatych",
+     "text": "Eulomidy miały mocniej rzeźbioną głowę i krótszy tułów niż typowe olenidowate. Te różnice pozwalają paleontologom odróżniać rodziny, choć sposób życia mógł być podobny.",
+     "visual": "Dwa trylobity obok siebie: Euloma (krótki tułów, rzeźbiona głowa) i Leptoplastides (długi tułów)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Mały trylobit z rzeźbioną głową.",
+    "lit": "Eulomidy – kuzyni olenidowatych."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Dikelocephaloidea",
+   "inGame": true,
+   "namePl": "Dikelocephaloidea",
+   "parent": "Asaphida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 497 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Szerokie trylobity późnego kambru",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Prosaukia i Ptychaspis",
+     "text": "Prosaukia i Ptychaspis to trylobity późnego kambru z szeroką głową i dużym ogonem, należące do asafidów. Żyły w ciepłych, płytkich morzach dzisiejszej Ameryki Północnej. To przykład linii, które rozkwitły na krótko w późnym kambrze i zniknęły na jego końcu.",
+     "visual": "Prosaukia od góry: szeroka głowa i duży, półkolisty ogon."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ofiary kryzysów kambru",
+     "text": "Późny kambr to czas powtarzających się kryzysów, w których wiele rodzin trylobitów nagle znikało, a na ich miejsce wchodziły nowe. Dikelocephaloidea nie przetrwały takiego kryzysu na przełomie kambru i ordowiku.",
+     "visual": "Oś czasu z kilkoma pionowymi kreskami „kryzys” w późnym kambrze i znikającą gałęzią Dikelocephaloidea."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Rozkwit, a potem nagły koniec.",
+    "lit": "Dikelocephaloidea – krótka kariera w późnym kambrze."
+   },
+   "concepts": [
+    "wymieranie"
+   ],
+   "sources": []
+  },
+  {
+   "id": "Asaphidae",
+   "inGame": true,
+   "namePl": "Asafowate",
+   "parent": "Asaphoidea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 497 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Gładcy giganci ordowiku",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Duże, gładkie tarcze",
+     "text": "Asafowate to trylobity o szerokim, gładkim pancerzu, dużym ogonie podobnym wielkością do głowy i zwykle dobrze rozwiniętych oczach. W etapie 3 gra pokazuje Asaphellusa, Basilicusa, Kierargesa i Isotelusa. W ordowiku asafowate stały się jedną z najliczniejszych rodzin trylobitów, a niektóre urosły do ogromnych rozmiarów.",
+     "visual": "Basilicus od góry: gładka, szeroka tarcza, duży ogon, wyraźne oczy."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Isotelinae – droga do olbrzymów",
+     "text": "Wśród asafowatych gra wyróżnia podrodzinę Isotelinae (Isotelus, Kierarges). To z niej wyrośnie największy znany trylobit świata – Isotelus rex.",
+     "visual": "Mini-drzewko asafowatych z podświetloną gałęzią Isotelinae i sylwetką wielkiego Isotelusa."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Isotelinae",
+     "namePl": "Isotelinae",
+     "trait": "Bardzo gładki, duży pancerz",
+     "became": "Isotelus, Kierarges",
+     "fate": "wymarły w ordowiku–sylurze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Szeroka, gładka tarcza sunie po dnie.",
+    "lit": "Asafowate – przyszli giganci trylobitów."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Isotelinae",
+   "inGame": true,
+   "namePl": "Isotelinae",
+   "parent": "Asaphidae",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 489 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Isotelus – największy trylobit świata",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Isotelus rex",
+     "text": "Rodzaj Isotelus pojawia się na początku ordowiku. Jego najsłynniejszy gatunek, Isotelus rex, żył ok. 445 mln lat temu i miał ponad 70 cm długości – to największy znany kompletny trylobit, o ok. 70% dłuższy od poprzedniego rekordzisty. Odkryto go nad Zatoką Hudsona w Kanadzie, gdzie wtedy było ciepłe morze przy równiku. Badacze sądzą, że był drapieżnikiem i padlinożercą, który częściowo zakopywał się w osadzie.",
+     "visual": "Isotelus rex obok ludzkiego przedramienia i dłoni dla skali, na tle płytkiego, tropikalnego dna."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Olbrzym przy równiku",
+     "text": "Wiele zwierząt morskich osiąga dziś największe rozmiary w zimnych wodach polarnych. Isotelus rex był wyjątkiem: olbrzymem z ciepłego morza przy równiku. Obok niego w etapie 3 gra pokazuje mniejszego krewnego, Kierargesa z Fezouaty.",
+     "visual": "Mapa ordowiku z zaznaczonym równikiem i Isotelusem w ciepłym morzu; obok mały Kierarges z chłodnej Gondwany."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Trylobit długości przedramienia? Proszę bardzo.",
+    "lit": "Isotelinae – rekordziści wśród trylobitów."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Rudkin i in. 2003, The world’s biggest trilobite, J. Paleontology",
+     "url": "https://www.cambridge.org/core/journals/journal-of-paleontology/article/abs/worlds-biggest-trilobiteisotelus-rex-new-species-from-the-upper-ordovician-of-northern-manitoba-canada/055501529DC4DFBB308024AD413A3B4E",
+     "claim": "Ponad 700 mm, ok. 70% dłuższy od poprzedniego rekordu"
+    },
+    {
+     "title": "J. Paleontology (abstrakt, Cambridge)",
+     "url": "https://cambridge.org/core/services/aop-cambridge-core/content/view/S0022336000043456",
+     "claim": "Morze równikowe; gigantyzm w niskich szerokościach; drapieżnik i padlinożerca częściowo zakopany"
+    },
+    {
+     "title": "FossilEra – What is the largest trilobite",
+     "url": "https://www.fossilera.com/pages/what-is-the-largest-trilobite",
+     "claim": "Ok. 445 mln lat temu; ok. 72 cm; okaz z Manitoby"
+    }
+   ]
+  },
+  {
+   "id": "Remopleurididae",
+   "inGame": true,
+   "namePl": "Remopleurydy",
+   "parent": "Asaphoidea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 497 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity z wielkimi oczami pływające nad dnem",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Apatokephalus i Remopleurides",
+     "text": "Remopleurydy miały duże, wygięte oczy obejmujące boki głowy i często wąski, lekki pancerz. Badacze sądzą, że część z nich pływała tuż nad dnem, a nie tylko po nim chodziła. W etapie 3 gra pokazuje Apatokephalusa z Fezouaty i Remopleuridesa.",
+     "visual": "Remopleurides płynący tuż nad dnem, z dużymi oczami jak przyłbica wokół głowy."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Oczy na cały świat",
+     "text": "Duże oczy obejmujące głowę dawały szerokie pole widzenia – przydatne zwierzęciu, które pływa i musi zauważyć drapieżnika z każdej strony. To jeden z wielu przykładów, jak w ordowiku trylobity zaczęły zajmować nowe miejsca w morzu, także w toni.",
+     "visual": "Głowa Remopleuridesa od góry z zaznaczonym szerokim polem widzenia oczu (dwa wachlarze)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ktoś tu widzi niemal dookoła.",
+    "lit": "Remopleurydy – trylobity, które podniosły się z dna."
+   },
+   "concepts": [
+    "oko-zlozone"
+   ],
+   "sources": []
+  },
+  {
+   "id": "Cyclopygoidea",
+   "inGame": true,
+   "namePl": "Cyclopygoidea",
+   "parent": "Asaphida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "w danych gry od ok. 490 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity otwartej wody",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pływaki z ogromnymi oczami",
+     "text": "Cyclopygoidea to grupa asafidów, wśród których są trylobity uważane za prawdziwe pływaki toni wodnej. Cyclopyge miała ogromne oczy, które niemal zlewały się z przodu głowy – przydatne w ciemniejszej, głębszej wodzie. W etapie 3 gra pokazuje Cyclopyge, Symphysurinę, Taihungshanię oraz rodzinę Nileidae (Nileus, Symphysurus).",
+     "visual": "Cyclopyge w ciemnej toni, z dwoma ogromnymi oczami łączącymi się z przodu głowy."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Nileidae",
+     "text": "Nileidae to gładkie, owalne trylobity z dużymi oczami, często zwijające się w kulkę. Gra pokazuje je jako osobną rodzinę w obrębie Cyclopygoidea.",
+     "visual": "Nileus zwinięty w kulkę obok rozprostowanego."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Nileidae",
+     "namePl": "Nileidy",
+     "trait": "Gładkie, owalne, duże oczy",
+     "became": "Nileus, Symphysurus",
+     "fate": "wymarły w ordowiku"
+    }
+   ],
+   "narrator": {
+    "teaser": "Wysoko nad dnem coś patrzy wielkimi oczami.",
+    "lit": "Cyclopygoidea – trylobity, które wypłynęły w toń."
+   },
+   "concepts": [
+    "oko-zlozone"
+   ],
+   "sources": []
+  },
+  {
+   "id": "Nileidae",
+   "inGame": true,
+   "namePl": "Nileidy",
+   "parent": "Cyclopygoidea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 489 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Nileus i Symphysurus – mistrzowie zwijania",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Gładka kulka",
+     "text": "Nileus i Symphysurus miały gładki pancerz, głowę i ogon podobnej wielkości oraz duże oczy. Często znajduje się je zwinięte – głowa i ogon idealnie do siebie pasowały, chowając nogi i czułki. Symphysurus żył w morzu Fezouaty.",
+     "visual": "Symphysurus w trzech klatkach: rozprostowany, w połowie zwinięty, zwinięty w gładką kulkę."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Zwijanie jako obrona",
+     "text": "Zwijanie się w kulkę to jedna z najskuteczniejszych obron trylobitów przed drapieżnikami. W ordowiku, gdy pojawiły się głowonogi, umiejętność ta stała się szczególnie cenna – i u wielu rodzin pancerz zmienił się tak, by zamykał się szczelniej.",
+     "visual": "Głowonóg z mackami próbujący chwycić zwiniętego Symphysurusa."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Zagrożenie? Zwijamy się.",
+    "lit": "Nileidy – kulki nie do ugryzienia."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Trinucleida",
+   "inGame": true,
+   "namePl": "Trinukleidy",
+   "parent": "Libristoma",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity z dziurkowaną „rondem” głowy",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Sito na głowie",
+     "text": "Trinukleidy miały szeroką głowę otoczoną brzegiem pełnym małych dołków albo otworów, jak rondo kapelusza z dziurkami. Wiele z nich nie miało oczu, a z rogów głowy wyrastały długie kolce. Badacze sądzą, że ten dziurkowany brzeg mógł pomagać w filtrowaniu drobnego pokarmu z wody albo wyczuwać prądy. W etapie 3 gra pokazuje Dionide i rodzinę Raphiophoridae (Ampyx).",
+     "visual": "Głowa trinukleida od góry z dziurkowanym brzegiem i długimi kolcami na rogach; zbliżenie dołków."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Nowa linia ordowiku",
+     "text": "Trinukleidy to jedna z grup, które pojawiły się z początkiem ordowiku i rozkwitły w czasie Wielkiego Ordowickiego Różnicowania. Wymarły pod koniec ordowiku.",
+     "visual": "Oś czasu z gałęzią trinukleidów pojawiającą się ok. 487 i kończącą ok. 445 mln lat temu."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Raphiophoridae",
+     "namePl": "Rafioforydy",
+     "trait": "Długi kolec z przodu głowy, często bez oczu",
+     "became": "Ampyx",
+     "fate": "wymarły w sylurze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Na głowie – kapelusz z dziurkami.",
+    "lit": "Trinukleidy – nowa, ordowicka moda trylobitów."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Raphiophoridae",
+   "inGame": true,
+   "namePl": "Rafioforydy",
+   "parent": "Trinucleida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Ampyx – trylobit, który chodził w szeregu",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ampyx",
+     "text": "Ampyx to niewielki, ślepy trylobit z długim kolcem wystającym z przodu głowy i dwoma długimi kolcami z jej rogów. W Fezouacie znaleziono całe szeregi Ampyksów ułożonych jeden za drugim, stykających się kolcami – jak gąsienica złożona z trylobitów.",
+     "visual": "Szereg kilkunastu Ampyksów idących jeden za drugim, każdy dotyka kolcami poprzedniego."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Najstarsze zachowanie grupowe?",
+     "text": "Badacze uważają, że takie szeregi to zapis zbiorowej wędrówki – być może podczas sezonowej migracji albo ucieczki przed sztormem. Ślepe Ampyksy mogły orientować się, dotykając kolcami poprzednika. Jeśli to prawda, to jeden z najstarszych znanych przykładów zachowania grupowego zwierząt. Inni badacze sugerują, że szeregi powstały przy wspólnym chowaniu się w norach.",
+     "visual": "Dwie wersje: szereg Ampyksów idący po dnie i ten sam szereg ukryty w korytarzu w mule; znak zapytania."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ślepi wędrowcy idą gęsiego.",
+    "lit": "Rafioforydy – i najstarsze zachowanie grupowe, jakie znamy?"
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Leiostegiidae",
+   "inGame": true,
+   "namePl": "Leiostegiidae",
+   "parent": "Leiostegioidea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Agerina i Pseudocalymene",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ostatni z korynekschidów",
+     "text": "Leiostegiidae to rodzina z nadrodziny Leiostegioidea, którą poznałeś w etapie 2. W etapie 3 gra pokazuje Agerinę z Fezouaty i Pseudocalymene. Mają gładką, zaokrągloną głowę i niewielki ogon.",
+     "visual": "Agerina od góry obok Pagodii z etapu 2 dla porównania."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Przetrwać granicę",
+     "text": "Większość korynekschidów zniknęła pod koniec kambru, ale niektóre linie, jak Leiostegiidae, przetrwały w ordowiku. Pokazuje to, że wymieranie rzadko zabiera całą grupę naraz.",
+     "visual": "Gałąź korynekschidów zwężająca się na granicy kambru i ordowiku, z cienką nitką Leiostegiidae biegnącą dalej."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Stara rodzina w nowym świecie.",
+    "lit": "Leiostegiidae – korynekschidy, które przetrwały."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Proetida",
+   "inGame": true,
+   "namePl": "Proetidy",
+   "parent": "Trilobita",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "późny kambr lub wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 492 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Ostatni z trylobitów",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Bathyurus, Hystricurus, Ischyrotoma",
+     "text": "Proetidy to niewielkie trylobity o wypukłej głowie, dużych oczach i krótkim ogonie. W etapie 3 gra pokazuje Hystricurusa, Bathyurusa i Ischyrotomę, które żyły w płytkich, ciepłych morzach dzisiejszej Ameryki Północnej. Na pierwszy rzut oka – nic szczególnego.",
+     "visual": "Trzy małe proetidy od góry z wypukłymi głowami i dużymi oczami."
+    },
+    {
+     "kind": "skutki",
+     "title": "Najwytrwalsi",
+     "text": "Proetidy okażą się najwytrwalszą grupą trylobitów. Podczas wymierania pod koniec dewonu, ok. 372–359 mln lat temu, zniknęły wszystkie inne rzędy trylobitów. Przetrwały tylko proetidy – i to one były ostatnimi trylobitami na Ziemi, aż do wielkiego wymierania pod koniec permu ok. 252 mln lat temu.",
+     "visual": "Oś czasu wszystkich rzędów trylobitów: po 359 mln lat zostaje jedna, cienka linia proetidów do 252."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Niepozorny maluch z wielkimi oczami. Zapamiętaj go.",
+    "lit": "Proetidy – trylobity, które zgasną jako ostatnie."
+   },
+   "concepts": [
+    "wymieranie"
+   ],
+   "sources": [
+    {
+     "title": "Fossil Wiki – Trilobites",
+     "url": "https://fossil.fandom.com/wiki/Trilobites",
+     "claim": "Podczas wymierania późnodewońskiego wymarły wszystkie rzędy poza Proetida"
+    }
+   ]
+  },
+  {
+   "id": "Phacopida",
+   "inGame": true,
+   "namePl": "Fakopidy",
+   "parent": "Trilobita",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "późny kambr lub wczesny ordowik",
+    "firstFossils": "wczesny ordowik; w danych gry od ok. 489 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Nowa wielka rodzina trylobitów – od kolczastych po „krowie oczy”",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Nowi gospodarze dna",
+     "text": "Na początku ordowiku pojawia się nowy rząd trylobitów – fakopidy. W etapie 3 to już 12 rodzajów, w tym wiele z Fezouaty. Fakopidy staną się jednymi z najbardziej charakterystycznych trylobitów ordowiku, syluru i dewonu. Są wśród nich kolczaste cheirurydy, krępe kalymenidy i dalmanitidy z wydłużonym kolcem ogonowym.",
+     "visual": "Panorama ordowickiego dna z różnymi fakopidami: kolczastym cheirurydem, krępym kalymenidem i dalmanitidem z kolcem na ogonie."
+    },
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Skąd się wzięły?",
+     "text": "Pochodzenie fakopidów nie jest jasne. To prawdopodobnie jedyny rząd trylobitów, który pojawił się dopiero po kambrze – wszystkie inne istniały już wcześniej. Wyrosły z któregoś z kambryjskich rzędów, ale z którego – badacze wciąż się spierają.",
+     "visual": "Drzewo rzędów trylobitów z fakopidami jako gałęzią wyrastającą z pnia w nieustalonym miejscu, oznaczonym znakiem zapytania."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Mocne zawiasy i zwijanie",
+     "text": "Fakopidy miały pancerz dobrze przystosowany do zwijania się w kulkę: odcinki tułowia zachodziły na siebie, a głowa i ogon pasowały do siebie krawędziami. Niektóre, np. Phacops w dewonie, miały wyjątkowe oczy z dużymi, oddzielnymi soczewkami – tzw. oczy schizochroalne, przypominające oczy owada z wielkimi „kulkami”.",
+     "visual": "Zbliżenie oka schizochroalnego: kilkadziesiąt dużych, okrągłych soczewek oddzielonych pancerzem, jak plaster miodu z kulkami."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego się opłaciło",
+     "text": "W ordowiku w morzu pojawiło się więcej drapieżników, m.in. duże głowonogi. Trylobity, które zwijały się szczelniej i dobrze widziały, częściej przeżywały. Fakopidy łączyły obie te cechy, co mogło pomóc im rozprzestrzenić się w wielu środowiskach.",
+     "visual": "Głowonóg zbliżający się do grupy trylobitów; fakopid zwija się w kulkę, inny trylobit ucieka."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Trzy linie w etapie 3",
+     "text": "Fakopidy dzielą się w grze na trzy podrzędy. Kalymeniny (Calymenina) – krępe, z wypukłą głową, np. Neseuretus, Colpocoryphe, Bavarilla. Cheiruriny (Cheirurina) – często kolczaste, np. Ceraurinella i Anacheirurus. Fakopiny (Phacopina) – z dalmanitidami i pterygometopidami, np. Toletanaspis i Calyptaulax.",
+     "visual": "Rozwidlenie na trzy gałęzie z sylwetkami Neseuretusa, Ceraurinelli i Toletanaspis."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Calymenina",
+     "namePl": "Kalymeniny",
+     "trait": "Krępe, wypukła głowa, dobre zwijanie",
+     "became": "Calymene, Neseuretus i krewni",
+     "fate": "wymarły w dewonie"
+    },
+    {
+     "id": "Cheirurina",
+     "namePl": "Cheiruriny",
+     "trait": "Często kolczaste, z guzkowatym pancerzem",
+     "became": "Ceraurinella, Anacheirurus i krewni",
+     "fate": "wymarły w dewonie"
+    },
+    {
+     "id": "Phacopina",
+     "namePl": "Fakopiny",
+     "trait": "Często oczy z dużymi soczewkami",
+     "became": "Dalmanitidy, Phacops i krewni",
+     "fate": "wymarły w dewonie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Nowy rząd trylobitów – jedyny, który urodził się po kambrze.",
+    "lit": "Fakopidy: zwijanie, kolce i oczy z wielkimi soczewkami."
+   },
+   "concepts": [
+    "oko-zlozone"
+   ],
+   "misconception": "Trylobity nie były „przestarzałe” w ordowiku. To wtedy pojawiły się ich nowe, bardzo udane grupy.",
+   "sources": [
+    {
+     "title": "Fossil Wiki – Trilobites",
+     "url": "https://fossil.fandom.com/wiki/Trilobites",
+     "claim": "Wszystkie rzędy poza być może Phacopida pojawiły się przed końcem kambru; pochodzenie Phacopida niejasne"
+    }
+   ]
+  },
+  {
+   "id": "Calymenina",
+   "inGame": true,
+   "namePl": "Kalymeniny",
+   "parent": "Phacopida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Krępe trylobity z Fezouaty",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Bathycheilus, Bavarilla, Prionocheilus",
+     "text": "Kalymeniny to krępe trylobity z wypukłą, zaokrągloną głową i mocnym pancerzem. W etapie 3 gra pokazuje kilka rodzajów z Fezouaty, które wisi bezpośrednio pod podrzędem: Bathycheilus, Bavarilla i Prionocheilus, a także dwie rodziny – Calymenidae i Colpocoryphinae.",
+     "visual": "Trzy kalymeniny od góry z wypukłymi głowami, różniące się kształtem ogona."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Klasyka kolekcji",
+     "text": "Do kalymenin należy Calymene – w późniejszych etapach jeden z najpopularniejszych trylobitów w kolekcjach. W Anglii nazywano go „szarańczą z Dudley”, od miasta, gdzie znajdowano go masowo.",
+     "visual": "Zwinięty Calymene na kawałku wapienia, jak w gablocie muzealnej."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Calymenidae",
+     "namePl": "Kalymenidy",
+     "trait": "Wypukła głowa z guzami",
+     "became": "Neseuretus, później Calymene",
+     "fate": "wymarły w dewonie"
+    },
+    {
+     "id": "Colpocoryphinae",
+     "namePl": "Colpocoryphinae",
+     "trait": "Szeroka, płaska głowa",
+     "became": "Colpocoryphe",
+     "fate": "wymarły w ordowiku"
+    }
+   ],
+   "narrator": {
+    "teaser": "Krępy, wytrzymały, niepozorny.",
+    "lit": "Kalymeniny – solidni mieszkańcy dna."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Calymenidae",
+   "inGame": true,
+   "namePl": "Kalymenidy",
+   "parent": "Calymenina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Neseuretus – trylobit chłodnych mórz Gondwany",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Neseuretus",
+     "text": "Neseuretus to krępy kalymenid typowy dla chłodnych, płytkich mórz na skraju Gondwany – od Maroka po Europę. W Fezouacie jest jednym z częstszych trylobitów. W piaskowcach z tych czasów znajduje się też jego ślady: wydrążone w dnie podwójne rowki po kopaniu nogami.",
+     "visual": "Neseuretus kopiący nogami płytki rowek w piasku; obok skamieniały ślad w kształcie podwójnej rynny."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Znacznik geografii",
+     "text": "Neseuretus występuje głównie w osadach dawnej Gondwany. Dzięki takim trylobitom geolodzy rekonstruują, które dzisiejsze kawałki lądów leżały kiedyś obok siebie.",
+     "visual": "Mapa ordowiku z rozsianymi ikonami Neseuretusa wzdłuż brzegu Gondwany."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ślady kopania w piasku – i ich autor.",
+    "lit": "Kalymenidy – trylobity Gondwany."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Colpocoryphinae",
+   "inGame": true,
+   "namePl": "Colpocoryphinae",
+   "parent": "Calymenina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Colpocoryphe",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Płaska głowa, zgrabne zwijanie",
+     "text": "Colpocoryphe to trylobit z szeroką, stosunkowo płaską głową, który doskonale zwijał się w kulkę. W Fezouacie często znajduje się zwinięte okazy. Gra umieszcza go w podrodzinie Colpocoryphinae (w danych stanowiska widnieje też rodzina Homalonotidae).",
+     "visual": "Colpocoryphe zwinięty w kulkę z idealnie dopasowaną głową i ogonem."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na tle Neseuretusa",
+     "text": "W porównaniu z Neseuretusem Colpocoryphe miał bardziej płaską głowę i mniej wyraźne guzy. Obie formy żyły obok siebie w tych samych chłodnych morzach Gondwany.",
+     "visual": "Colpocoryphe i Neseuretus obok siebie z boku – różnica wypukłości głowy."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Zwinięty w idealną kulkę.",
+    "lit": "Colpocoryphinae – płaskogłowi kuzyni kalymenidów."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Cheirurina",
+   "inGame": true,
+   "namePl": "Cheiruriny",
+   "parent": "Phacopida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Kolczaste fakopidy",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pancerz w guzach i kolcach",
+     "text": "Cheiruriny to fakopidy z guzkowatym pancerzem i często długimi kolcami na odcinkach tułowia i ogonie. W etapie 3 gra pokazuje rodzinę Cheiruridae: Ceraurinellę i Anacheirurusa z Fezouaty.",
+     "visual": "Cheirurid od góry: guzkowata głowa, tułów z kolcami po bokach jak wiosła."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Rodzina Cheiruridae",
+     "text": "Cheiruridae to główna rodzina cheirurin. W ordowiku i sylurze dadzą wiele kolczastych form, a niektóre przetrwają do dewonu.",
+     "visual": "Mini-drzewko z rodziną Cheiruridae i dwoma rodzajami."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Cheiruridae",
+     "namePl": "Cheirurydy",
+     "trait": "Kolce na tułowiu, guzkowata głowa",
+     "became": "Ceraurinella, Anacheirurus",
+     "fate": "wymarły w dewonie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Pancerz najeżony guzami i kolcami.",
+    "lit": "Cheiruriny – kolczaści wojownicy fakopidów."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Cheiruridae",
+   "inGame": true,
+   "namePl": "Cheirurydy",
+   "parent": "Cheirurina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Ceraurinella i Anacheirurus",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kolce jak wiosła",
+     "text": "Ceraurinella i Anacheirurus miały odcinki tułowia zakończone kolcami skierowanymi do tyłu, a na ogonie – parę dłuższych kolców. Kolce chroniły je przed drapieżnikami, a na miękkim dnie mogły zapobiegać zapadaniu się w muł.",
+     "visual": "Ceraurinella na mulistym dnie, kolce rozłożone płasko jak rakiety śnieżne."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Dwa rodzaje z Fezouaty",
+     "text": "Anacheirurus znany jest głównie z najstarszych warstw Fezouaty, a Ceraurinella występuje dłużej, aż do końca ordowiku. To przykład, jak w obrębie jednej rodziny jedne linie szybko znikały, a inne trwały.",
+     "visual": "Pasek czasu: krótki Anacheirurus i długa Ceraurinella."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Kolce na każdym odcinku.",
+    "lit": "Cheirurydy – ordowicka zbroja z kolcami."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Phacopina",
+   "inGame": true,
+   "namePl": "Fakopiny",
+   "parent": "Phacopida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 489 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Linia trylobitów z wielkimi soczewkami w oczach",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Zapowiedź Phacopsa",
+     "text": "Fakopiny to podrząd, z którego wyrośnie słynny Phacops z dewonu, z oczami z wielkich, oddzielnych soczewek. W etapie 3 gra pokazuje dwie gałęzie: nadrodzinę Phacopoidea (z rodziną Pterygometopidae – Calyptaulax) i rodzinę Dalmanitidae (Toletanaspis z Fezouaty).",
+     "visual": "Oko fakopida w zbliżeniu z kilkunastoma dużymi soczewkami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Dwie gałęzie",
+     "text": "Dalmanitidy miały zwykle długi kolec na końcu ogona i szeroką głowę. Pterygometopidy – zaokrąglony ogon i duże oczy. Obie gałęzie rozkwitną w ordowiku i sylurze.",
+     "visual": "Toletanaspis (z kolcem ogonowym) i Calyptaulax (z okrągłym ogonem) obok siebie."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Phacopoidea",
+     "namePl": "Phacopoidea",
+     "trait": "Zaokrąglony ogon, duże oczy",
+     "became": "Pterygometopidy, później Phacops",
+     "fate": "wymarły w dewonie"
+    },
+    {
+     "id": "Dalmanitidae",
+     "namePl": "Dalmanitidy",
+     "trait": "Długi kolec ogonowy",
+     "became": "Toletanaspis i krewni",
+     "fate": "wymarły w dewonie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Te oczy będą jeszcze sławne.",
+    "lit": "Fakopiny – linia wielkich soczewek."
+   },
+   "concepts": [
+    "oko-zlozone"
+   ],
+   "sources": []
+  },
+  {
+   "id": "Phacopoidea",
+   "inGame": true,
+   "namePl": "Phacopoidea",
+   "parent": "Phacopina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 489 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Nadrodzina Phacopsa",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pterygometopidy",
+     "text": "Phacopoidea to nadrodzina, do której w dewonie należeć będzie Phacops. W etapie 3 reprezentuje ją rodzina Pterygometopidae z Calyptaulaxem – trylobitem o dużych oczach i zaokrąglonym ogonie z dzisiejszej Ameryki Północnej.",
+     "visual": "Calyptaulax od góry z dużymi oczami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Długa linia",
+     "text": "Phacopoidea przetrwają aż do późnego dewonu. To jedna z najtrwalszych linii fakopidów.",
+     "visual": "Oś czasu z gałęzią Phacopoidea od ordowiku do dewonu."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Pterygometopidae",
+     "namePl": "Pterygometopidy",
+     "trait": "Duże oczy, zaokrąglony ogon",
+     "became": "Calyptaulax",
+     "fate": "wymarły w ordowiku–sylurze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Wielkie oczy patrzą z dna.",
+    "lit": "Phacopoidea – nadrodzina, która przetrwa do dewonu."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Pterygometopidae",
+   "inGame": true,
+   "namePl": "Pterygometopidy",
+   "parent": "Phacopoidea",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 489 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Calyptaulax",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Calyptaulax",
+     "text": "Calyptaulax to średniej wielkości trylobit z dużymi oczami w kształcie nerki i zaokrąglonym ogonem. Żył w ciepłych, płytkich morzach dzisiejszej Ameryki Północnej i Szkocji przez większość ordowiku.",
+     "visual": "Calyptaulax na wapiennym dnie z dobrze widocznymi nerkowatymi oczami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Rodzina z oczami",
+     "text": "Pterygometopidy wyróżniają się dużymi oczami złożonymi z wielu soczewek. Duże oczy sugerują, że wzrok był dla nich bardzo ważny – w świecie, gdzie z góry mógł nadpłynąć głowonóg.",
+     "visual": "Zbliżenie oka Calyptaulaxa z rzędami soczewek."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Nerkowate oczy na krawędzi głowy.",
+    "lit": "Pterygometopidy – trylobity, które dobrze widziały."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Dalmanitidae",
+   "inGame": true,
+   "namePl": "Dalmanitidy",
+   "parent": "Phacopina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Toletanaspis – trylobit z kolcem ogonowym",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Toletanaspis",
+     "text": "Toletanaspis z Fezouaty to dalmanitid: szeroka głowa z kolcami na rogach, duże oczy i ogon zakończony długim kolcem. Kolec ogonowy mógł pomagać się odwrócić, gdy trylobit przewrócił się na grzbiet, albo zakotwiczyć w mule.",
+     "visual": "Toletanaspis z długim kolcem ogonowym wbitym w muł jak kotwica."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Rodzina na długo",
+     "text": "Dalmanitidy rozkwitną w sylurze i dewonie, gdy pojawią się formy z bardzo długimi kolcami i trójzębem na głowie. Toletanaspis to jeden z ich wczesnych przedstawicieli.",
+     "visual": "Oś czasu dalmanitidów od Toletanaspis do późniejszych form z długimi kolcami."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ogon zakończony kolcem.",
+    "lit": "Dalmanitidy – trylobity z kotwicą."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Cephalopoda",
+   "inGame": true,
+   "namePl": "Głowonogi",
+   "parent": "Mollusca",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr (zegary; możliwe skamieniałości ok. 520 mln lat)",
+    "firstFossils": "pewne od późnego kambru (Plectronoceras); w grze od ok. 487 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Mięczaki, które wypłynęły w toń – pierwsi wielcy drapieżnicy ordowiku",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Ślimak z balonem",
+     "text": "Wyobraź sobie mięczaka w stożkowatej muszli, który zamiast pełzać po dnie, unosi się w wodzie. Tak wyglądały pierwsze głowonogi. Ich przodkowie byli małymi mięczakami w muszelkach, ale głowonogi dostały dwie nowości: komory z gazem w muszli i macki wokół głowy. Dziś należą do nich ośmiornice, kałamarnice, mątwy i łodziki.",
+     "visual": "Mały głowonóg z prostą, stożkowatą muszlą unoszący się nad dnem, z mackami wyciągniętymi do przodu."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Muszla jak łódź podwodna",
+     "text": "Muszla głowonoga jest podzielona przegrodami na komory. Zwierzę mieszka w ostatniej, największej komorze, a pozostałe są wypełnione gazem i płynem. Przez wszystkie komory przechodzi cienka rurka – syfon – która pozwala wpompowywać i wypompowywać płyn. Więcej gazu – zwierzę się unosi; więcej płynu – opada. To jak zbiorniki balastowe łodzi podwodnej. Do pływania służy dysza: zwierzę wyrzuca wodę i porusza się odrzutem.",
+     "visual": "Wizualizacja „muszla-glowonoga-etap-03”: przekrój muszli z komorami, syfonem i animacją unoszenia i opadania."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego to się opłaciło",
+     "text": "Zwierzę, które może zawisnąć w wodzie bez wysiłku, oszczędza energię i może polować w toni, gdzie wcześniej rządziły głównie radiodonty. Syfon razem z odrzutem dał głowonogom możliwość aktywnego, drapieżnego życia w toni. W ordowiku głowonogi stały się jednymi z głównych drapieżników mórz – polowały na trylobity i inne zwierzęta.",
+     "visual": "Głowonóg z prostą muszlą ścigający trylobita nad dnem; strumień wody wyrzucany z dyszy."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Proste muszle ordowiku",
+     "text": "Najstarszy powszechnie uznany głowonóg, Plectronoceras, pochodzi z późnego kambru. W 2026 r. opisano Eoceras z Chin, sprzed ok. 520 mln lat, z syfonem – jeśli to głowonóg, grupa jest o ok. 30 mln lat starsza. W etapie 3 gra pokazuje dwie gałęzie: endoceraty (Endoceratidae) – z bardzo długimi, prostymi muszlami, np. Endoceras i Cameroceras – oraz ortoceraty (Orthoceratoidea), np. Orthoceras, Polymeres i Rioceras.",
+     "visual": "Rozwidlenie: lewa gałąź z bardzo długą muszlą endoceraty, prawa ze smukłą muszlą ortoceraty; z tyłu mały Plectronoceras jako „początek”."
+    },
+    {
+     "kind": "skutki",
+     "title": "Od prostych muszli do ośmiornic",
+     "text": "Z ordowickich głowonogów wyrosną kolejno: łodziki z muszlą zwiniętą w spiralę, amonity – jedne z najliczniejszych zwierząt mórz mezozoiku – oraz dwuskrzelne, które ukryły muszlę wewnątrz ciała albo ją utraciły: kałamarnice, mątwy i ośmiornice. Dziś głowonogi uchodzą za najinteligentniejsze bezkręgowce.",
+     "visual": "Oś czasu: prosta muszla (ordowik) → amonit spiralny (jura) → ośmiornica (dziś), z rosnącą sylwetką mózgu przy każdym."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Endoceratidae",
+     "namePl": "Endoceraty",
+     "trait": "Bardzo długa, prosta muszla z grubym syfonem",
+     "became": "Endoceras, Cameroceras – olbrzymy ordowiku",
+     "fate": "wymarły w sylurze"
+    },
+    {
+     "id": "Orthoceratoidea",
+     "namePl": "Ortoceraty",
+     "trait": "Smukła, prosta muszla z cienkim syfonem",
+     "became": "Orthoceras i krewni; z ich linii wywodzą się amonity i dwuskrzelne",
+     "fate": "wymarły w triasie (sama linia ortoceratów)"
+    },
+    {
+     "id": "Ammonoidea",
+     "namePl": "Amonity",
+     "trait": "Muszla zwinięta w spiralę, złożone przegrody",
+     "became": "Jedne z najliczniejszych zwierząt mórz mezozoiku",
+     "fate": "wymarły ok. 66 mln lat temu (w grze od etapu 7)"
+    }
+   ],
+   "narrator": {
+    "teaser": "Mięczak, który zamiast pełzać – unosi się w toni.",
+    "lit": "Głowonogi: muszla jak łódź podwodna i nowi władcy ordowickich mórz."
+   },
+   "concepts": [
+    "plywalnosc"
+   ],
+   "misconception": "Ośmiornica nie jest „mięczakiem bez skorupy, który nigdy jej nie miał”. Jej przodkowie mieli muszle – utraciła je w ewolucji.",
+   "sources": [
+    {
+     "title": "EurekAlert 2026 (Eoceras)",
+     "url": "https://www.eurekalert.org/news-releases/1138007",
+     "claim": "Syfon, komory i przegrody regulowały pływalność; Plectronoceras najstarszym uznanym głowonogiem, ok. 30 mln lat młodszym niż szacunki zegarów"
+    },
+    {
+     "title": "Sci.News 2026",
+     "url": "https://www.sci.news/paleontology/eoceras-shaanxiense-14958.html",
+     "claim": "Eoceras ok. 520 mln lat temu z syfonem; syfon z odrzutem umożliwia aktywne, drapieżne życie"
+    },
+    {
+     "title": "Dryad – Earliest siphuncle-bearing cephalopod",
+     "url": "https://datadryad.org/dataset/doi:10.5061/dryad.qbzkh18zk",
+     "claim": "Głowonogi – najinteligentniejsze bezkręgowce; syfon jako kluczowa innowacja"
+    }
+   ]
+  },
+  {
+   "id": "Endoceratidae",
+   "inGame": true,
+   "namePl": "Endoceraty",
+   "parent": "Cephalopoda",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Endoceras i Cameroceras – najdłuższe muszle w historii",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Olbrzymie stożki",
+     "text": "Endoceraty miały bardzo długie, proste muszle w kształcie stożka. To największe znane skamieniałe głowonogi. Rekonstrukcja jednego okazu Endoceras daje długość muszli ok. 5,7 m. O Cameroceras pisano kiedyś, że osiągał 9 m, ale te szacunki zostały mocno obniżone i są uważane za niepewne. Mimo to były to jedne z największych zwierząt ordowiku.",
+     "visual": "Wizualizacja „skala-etap-03”: Endoceras obok człowieka i Aegirocassisa; przy Cameroceras przekreślone „9 m” i dopisek „szacunek niepewny”."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Ciężki syfon jako balast",
+     "text": "Endoceraty miały bardzo gruby syfon, w którym odkładały się złogi wapnia. Działały one jak balast i utrzymywały długą muszlę w poziomie – bez tego zwierzę unosiłoby się pionowo, tylną częścią muszli do góry.",
+     "visual": "Dwie muszle: bez balastu (ustawiona pionowo) i z balastem w syfonie (pozioma); strzałki siły wyporu."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Muszla dłuższa niż samochód osobowy.",
+    "lit": "Endoceraty – olbrzymy wśród głowonogów."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Pohle i in. 2025 (PMC) – największe głowonogi",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12371081/",
+     "claim": "Największe znane skamieniałe głowonogi to ordowickie endoceraty; rekonstrukcja okazu z Harvardu: 5,73 m"
+    },
+    {
+     "title": "The Fossil Forum (cytaty z literatury)",
+     "url": "https://thefossilforum.com/topic/34979-huge-cone",
+     "claim": "Oszacowanie 9 m dla Cameroceras obniżone, np. do 6 m; problematyczne"
+    }
+   ]
+  },
+  {
+   "id": "Orthoceratoidea",
+   "inGame": true,
+   "namePl": "Ortoceraty",
+   "parent": "Cephalopoda",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Smukłe „kamienne strzały” – i przodkowie amonitów",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Orthoceras",
+     "text": "Ortoceraty miały smukłe, proste muszle z cienkim syfonem przechodzącym przez środek. Orthoceras to jeden z najczęściej spotykanych głowonogów w kolekcjach: wypolerowane płyty wapienia z ortoceratami sprzedaje się jako ozdoby. W etapie 3 gra pokazuje też Polymeresa i Riocerasa z Fezouaty.",
+     "visual": "Wypolerowana płyta czarnego wapienia z przekrojami kilku prostych muszli ortoceratów, widoczne przegrody."
+    },
+    {
+     "kind": "skutki",
+     "title": "Mała gałąź, wielka przyszłość",
+     "text": "Z linii pokrewnej ortoceratom wywodzą się później amonity i dwuskrzelne, czyli przodkowie kałamarnic i ośmiornic. Ortoceraty są więc dalekimi krewnymi ośmiornicy, a nie tylko „staroświeckimi stożkami”.",
+     "visual": "Drzewko: ortoceraty → bocznie amonity i dwuskrzelne (kałamarnica, ośmiornica)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Prosta muszla jak kamienna strzała.",
+    "lit": "Ortoceraty – smukli krewni przyszłych amonitów."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Graptolithina",
+   "inGame": true,
+   "namePl": "Graptolity",
+   "parent": "Hemichordata",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "środkowy kambr",
+    "firstFossils": "osiadłe od środkowego kambru; planktonowe od ok. 487 mln lat temu (Rhabdinopora)",
+    "confidence": "pewne"
+   },
+   "headline": "Kolonie, które unosiły się w toni – i zegary geologów",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Robaki w rurkach",
+     "text": "W etapie 2 poznałeś Spartobranchusa – półstrunowca w rurce. Graptolity to jego krewni, którzy żyli w koloniach: setki maleńkich zwierząt, każde w swojej rurce, połączone w gałązki. Przez większość kambru takie kolonie były przyczepione do dna jak krzaczki.",
+     "visual": "Osiadła kolonia graptolitów na dnie jak mały, rozgałęziony krzaczek z setkami rurek."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Kolonia, która odpłynęła",
+     "text": "Na przełomie kambru i ordowiku jedna linia graptolitów – Rhabdinopora – oderwała się od dna i zaczęła unosić w toni jako plankton. Kolonia wyglądała jak mały koszyk albo siateczka zwisająca z pływaka. To otworzyło graptolitom całe oceany: w ordowiku i sylurze były jednym z najliczniejszych składników planktonu.",
+     "visual": "Rhabdinopora unosząca się w toni jak odwrócony koszyczek z siatki, z setkami maleńkich rurek."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego to się opłaciło",
+     "text": "W ordowiku przybyło planktonu – drobnych glonów i zwierząt w toni. Kolonia unosząca się w wodzie mogła filtrować pokarm, nie walcząc o miejsce na zatłoczonym dnie, a prądy roznosiły ją po całym oceanie. Planktonowe graptolity szybko rozprzestrzeniły się po świecie i zaczęły się szybko różnicować.",
+     "visual": "Mapa oceanów ordowiku z prądami roznoszącymi graptolity od jednego miejsca na cały świat."
+    },
+    {
+     "kind": "skutki",
+     "title": "Najlepszy zegar w skałach",
+     "text": "Gatunki graptolitów zmieniały się szybko, a ich kolonie rozprzestrzeniały się po całym świecie. Dlatego w ordowiku i sylurze to jedne z najlepszych skamieniałości przewodnich: po graptolicie można określić wiek skały z dokładnością do milionów lat. Ich zwęglone szczątki wyglądają na łupkach jak kreski ołówkiem – stąd nazwa: „pismo na kamieniu”.",
+     "visual": "Łupek z kilkoma graptolitami jak kreski i piłki zrobione ołówkiem, obok skala czasu z kolejnymi strefami graptolitowymi."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Kolonia oderwała się od dna i odpłynęła.",
+    "lit": "Graptolity – plankton ordowiku i zegar geologów."
+   },
+   "concepts": [
+    "skamienialosc",
+    "czas-geologiczny"
+   ],
+   "misconception": "Graptolity nie są roślinami ani koralowcami. To kolonie półstrunowców – dalekich krewnych strunowców.",
+   "sources": [
+    {
+     "title": "Wikipedia, Spartobranchus tenuis",
+     "url": "https://kiwix.lema.org/wikipedia_en_all_mini_2024-02/A/Spartobranchus_tenuis",
+     "claim": "Rurki zachowane w linii graptolitów"
+    }
+   ]
+  },
+  {
+   "id": "Cyclostomi",
+   "inGame": true,
+   "namePl": "Bezżuchwowce (krąg minogów i śluzic)",
+   "parent": "Vertebrata",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "kambr",
+    "firstFossils": "konodonty od późnego kambru; w grze od ok. 490 mln lat temu",
+    "confidence": "sporne"
+   },
+   "headline": "Kręgowce bez szczęk – dzisiejsze minogi i ich dawni krewni",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Kręgowce bez szczęk",
+     "text": "Pierwsze ryby, które poznałeś w etapach 1–2, nie miały szczęk. Dziś żyją tylko dwie grupy takich kręgowców: minogi i śluzice. Minogi przyssawają się do ryb okrągłym pyskiem pełnym ząbków. Śluzice żywią się padliną na dnie i wydzielają ogromne ilości śluzu. Razem tworzą grupę zwaną krągłoustymi.",
+     "visual": "Minóg przyssany do ryby okrągłym pyskiem z rzędami ząbków; obok śluzica w chmurze śluzu."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Gdzie są konodonty?",
+     "text": "W grze konodonty wiszą w gałęzi krągłoustych. To jedna z możliwych interpretacji, ale nie jedyna. Wiele badań stawia konodonty bliżej linii prowadzącej do ryb ze szczękami albo jako osobną, wczesną gałąź kręgowców. Pewne jest jedno: konodonty to kręgowce bez szczęk, które jako pierwsze z naszej linii miały twarde, zmineralizowane ząbki.",
+     "visual": "Drzewko kręgowców z trzema możliwymi miejscami konodontów zaznaczonymi przerywanymi liniami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Co pokazuje gra",
+     "text": "W etapie 3 gra pokazuje cztery rodzaje konodontów: Drepanoistodusa, Panderodusa, Pseudooneotodusa i Oulodusa. Znamy je głównie z ząbków, bo reszta ciała była miękka. Minogi i śluzice w grze pojawią się dopiero jako kopalni przedstawiciele w późniejszych etapach.",
+     "visual": "Cztery różne ząbki konodontów pod mikroskopem, każdy z nazwą rodzaju."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Cyclostomata",
+     "namePl": "Krągłouste",
+     "trait": "Okrągły pysk bez szczęk",
+     "became": "Minogi, śluzice (i w grze konodonty)",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Kręgowce bez szczęk – niektóre przetrwały do dziś.",
+    "lit": "Bezżuchwowce: minogi, śluzice i zagadkowe konodonty."
+   },
+   "concepts": [
+    "struna-grzbietowa"
+   ],
+   "misconception": "Minogi i śluzice nie są „rybami, które zgubiły szczęki”. Ich linia nigdy szczęk nie miała.",
+   "sources": []
+  },
+  {
+   "id": "Cyclostomata",
+   "inGame": true,
+   "namePl": "Krągłouste",
+   "parent": "Cyclostomi",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "kambr lub ordowik",
+    "firstFossils": "w grze od ok. 490 mln lat temu (konodonty)",
+    "confidence": "sporne"
+   },
+   "headline": "Okrągłe pyski bez szczęk",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pysk jak przyssawka",
+     "text": "Krągłouste mają okrągły otwór gębowy bez szczęk, często z ząbkami z rogowej substancji. Dzisiejsze minogi i śluzice to ich jedyni żyjący przedstawiciele. W grze do tej grupy przypisane są konodonty.",
+     "visual": "Pysk minoga od przodu: okrąg z promieniście ułożonymi ząbkami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ostrożnie z przypisaniem",
+     "text": "Ząbki konodontów są zbudowane z fosforanu wapnia, podobnie jak nasze zęby, a nie z rogowej substancji jak u minogów. To jeden z argumentów, że konodonty mogą być bliżej ryb ze szczękami niż krągłoustych.",
+     "visual": "Porównanie przekroju: rogowy ząbek minoga i mineralny ząbek konodonta."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Conodonta",
+     "namePl": "Konodonty",
+     "trait": "Zestawy mineralnych ząbków w pysku",
+     "became": "Liczne drobne kręgowce paleozoiku i triasu",
+     "fate": "wymarły ok. 200 mln lat temu"
+    }
+   ],
+   "narrator": {
+    "teaser": "Pysk bez szczęk – i z zagadką w środku.",
+    "lit": "Krągłouste – minogi, śluzice i (w grze) konodonty."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Conodonta",
+   "inGame": true,
+   "namePl": "Konodonty",
+   "parent": "Cyclostomata",
+   "size": "duze",
+   "revision": false,
+   "when": {
+    "split": "późny kambr",
+    "firstFossils": "późny kambr; w danych gry od ok. 490 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Ząbki bez właściciela – zagadka rozwiązana po 130 latach",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Tajemnicze ząbki",
+     "text": "W 1856 r. opisano maleńkie, zębopodobne skamieniałości, zwykle o wielkości od ułamka milimetra do 2 mm. Nazwano je konodontami. Przez ponad sto lat nikt nie wiedział, do jakiego zwierzęcia należały: przypisywano je robakom, mięczakom, rybom, a nawet roślinom.",
+     "visual": "Garść mikroskopijnych ząbków konodontów pod mikroskopem, obok szpilka dla skali."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Rozwiązanie z 1983 roku",
+     "text": "W 1983 r. w karbońskich skałach pod Edynburgiem znaleziono odcisk całego zwierzęcia z zestawem takich ząbków w pysku. Konodont okazał się wydłużonym, węgorzowatym zwierzęciem z dużymi oczami i płetwą, długim zwykle na kilka centymetrów. Później znaleziono też większe okazy, nawet do 40 cm. Ząbki tworzyły w pysku aparat do chwytania i rozdrabniania pokarmu.",
+     "visual": "Rekonstrukcja konodonta: węgorzowate ciało, duże oczy, a w przezroczystym pysku zestaw ząbków różnego kształtu."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Pierwsze twarde zęby",
+     "text": "Ząbki konodontów są zbudowane z fosforanu wapnia, jak nasze zęby, i noszą ślady zużycia od gryzienia. Wielu badaczy uważa, że to najstarsze zmineralizowane „zęby” w linii kręgowców. Twarde ząbki pozwalały chwytać i ciąć pokarm, którego miękki pysk by nie przetworzył.",
+     "visual": "Przekrój ząbka konodonta obok przekroju ludzkiego zęba z zaznaczonymi podobnymi warstwami."
+    },
+    {
+     "kind": "skutki",
+     "title": "Zegar o długości 300 mln lat",
+     "text": "Konodonty przetrwały blisko 300 mln lat, aż do końca triasu ok. 200 mln lat temu. Każdy gatunek miał ząbki o charakterystycznym kształcie, a ząbki są w skałach bardzo pospolite. Dlatego konodonty to jedne z najważniejszych skamieniałości do określania wieku skał – używa się ich m.in. przy poszukiwaniach ropy naftowej.",
+     "visual": "Słup skalny z warstwami i obok każdej warstwy inny kształt ząbka konodonta oraz wiek."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Prioniodontida",
+     "namePl": "Prioniodontidy",
+     "trait": "Ząbki z rzędem drobnych ostrzy",
+     "became": "Oulodus, Pseudooneotodus i krewni",
+     "fate": "wymarły w triasie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Przez 130 lat znano tylko ich zęby.",
+    "lit": "Konodonty – pierwsze twarde zęby w naszej linii."
+   },
+   "concepts": [
+    "skamienialosc",
+    "czas-geologiczny"
+   ],
+   "misconception": "Konodonty to nie robaki ani rośliny. To kręgowce – nasi dalecy krewni.",
+   "sources": [
+    {
+     "title": "Corradini i in. 2024, Conodonts in Biostratigraphy",
+     "url": "https://arts.units.it/retrieve/5c6d43fa-b815-4cb7-8f2d-b68845e478bf/308.Corradini%20et%20al%202024%20-%20Conodonts_in_Biostratigraphy%20-%20NewslStrat.pdf",
+     "claim": "Elementy 0,5–1 mm, prawie 300 mln lat do końca triasu; homologiczne z zębami kręgowców, ślady zużycia"
+    },
+    {
+     "title": "ProQuest – przegląd",
+     "url": "https://www.proquest.com/docview/213547404",
+     "claim": "Pierwsze opisy 1856; ciało nieznane do 1983; przypisywane różnym grupom, nawet roślinom"
+    },
+    {
+     "title": "Australia: The Land Where Time Began – Conodonts",
+     "url": "https://austhrutime.com/conodonts.htm",
+     "claim": "Okazy od ok. 1 cm do 40 cm (Promissum)"
+    },
+    {
+     "title": "Susquehanna – Diversity of Life",
+     "url": "https://wordpress.susqu.edu/course-diversityoflife/?p=4016",
+     "claim": "Duże oczy, węgorzowate; ząbki do chwytania i cięcia"
+    }
+   ]
+  },
+  {
+   "id": "Prioniodontida",
+   "inGame": true,
+   "namePl": "Prioniodontidy",
+   "parent": "Conodonta",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny ordowik",
+    "firstFossils": "w danych gry od ok. 487 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Oulodus i Pseudooneotodus",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Ząbki z grzebieniem",
+     "text": "Prioniodontidy to grupa konodontów, których ząbki często mają rząd drobnych ostrzy, jak grzebień albo piła. W etapie 3 gra pokazuje Oulodusa i Pseudooneotodusa. Pozostałe rodzaje – Drepanoistodus i Panderodus – mają prostsze, stożkowate ząbki i gra wiesza je bezpośrednio pod konodontami.",
+     "visual": "Porównanie: grzebieniasty ząbek prioniodontida i prosty, stożkowaty ząbek Panderodusa."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Długa linia",
+     "text": "Według danych gry Oulodus przetrwał od ordowiku aż do triasu – to jeden z najdłużej żyjących rodzajów w całej grze. To jednak bardziej świadczy o trudności rozróżniania ząbków niż o tym, że jeden rodzaj nie zmieniał się przez 260 mln lat.",
+     "visual": "Pasek czasu Oulodusa od 487 do 221 mln lat z dopiskiem „ostrożnie – podobne ząbki”."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ząbki jak grzebień.",
+    "lit": "Prioniodontidy – konodonty z piłkami w pysku."
+   },
+   "concepts": [],
+   "sources": []
+  }
+ ],
+ "newConcepts": [
+  {
+   "id": "skamienialosc-przewodnia",
+   "name": "Skamieniałość przewodnia",
+   "short": "Skamieniałość, po której można określić wiek skały",
+   "text": [
+    "Skamieniałość przewodnia to szczątki gatunku, który żył krótko (w skali geologicznej), był liczny i szeroko rozprzestrzeniony. Jeśli znajdziesz go w skale, wiesz, z jakiego wąskiego przedziału czasu ona pochodzi.",
+    "Najlepszymi skamieniałościami przewodnimi paleozoiku są trylobity, graptolity i konodonty, a mezozoiku – amonity. Dzięki nim geolodzy porównują wiek skał z różnych kontynentów."
+   ]
+  },
+  {
+   "id": "plywalnosc",
+   "name": "Pływalność",
+   "short": "Zdolność unoszenia się w wodzie",
+   "text": [
+    "Każde ciało w wodzie jest wypychane do góry siłą równą ciężarowi wody, którą wypiera. Jeśli zwierzę jest lżejsze od tej wody, unosi się; jeśli cięższe – opada.",
+    "Zwierzęta regulują pływalność na różne sposoby: głowonogi gazem w komorach muszli, ryby pęcherzem pławnym, rekiny tłustą wątrobą. Dzięki temu mogą zawisnąć w wodzie bez wysiłku."
+   ]
+  }
+ ],
+ "notes": {
+  "uncertain": [
+   "Długość Cameroceras (dawne 9 m, nowsze do ok. 6 m) – podana jako niepewna.",
+   "Przypisanie Ampyksów w szeregach do migracji vs chowania się – opisane jako spór (z pamięci: Vannier i in. 2019).",
+   "Funkcje kolców i dziurkowanego brzegu u trinukleidów – hipotezy."
+  ],
+  "contested": [
+   "Konodonty w gałęzi krągłoustych (jak w grze) vs bliżej szczękowców albo jako wczesna gałąź kręgowców – opisane.",
+   "Eoceras (2026) jako najstarszy głowonóg – opisany jako możliwy.",
+   "Pochodzenie fakopidów – opisane jako niejasne."
+  ],
+  "fromMemory": [
+   "Wielkie Ordowickie Różnicowanie – potrojenie liczby rodzin (wspierane przez Yale Scientific); fauna paleozoiczna do końca permu.",
+   "Gondwana sięgająca bieguna południowego; Fezouata na wysokich szerokościach.",
+   "Kryzysy późnego kambru (tzw. biomery) i wymiana rodzin trylobitów.",
+   "Oczy schizochroalne Phacopsa; Calymene jako „szarańcza z Dudley”.",
+   "Ampyx w szeregach w Fezouacie (Vannier i in. 2019, Scientific Reports).",
+   "Neseuretus i ślady Cruziana; Neseuretus jako trylobit Gondwany.",
+   "Endoceraty z balastem w syfonie; ortoceraty jako krewni linii amonitów i dwuskrzelnych.",
+   "Rhabdinopora jako pierwszy planktonowy graptolit; graptolity jako skamieniałości przewodnie.",
+   "Minogi i śluzice jako krągłouste; ząbki minogów z keratyny.",
+   "Illaenus i Bumastus jako częściowo zakopane trylobity (illenidy)."
+  ],
+  "dataIssues": [
+   "W etapie 3 wiele rodzajów nie ma stanowiska (np. Isotelus, Cameroceras, Endoceras, Orthoceras, konodonty, proetidy). Stanowiska symulują epokę, więc wystarczy dopisać je do morskiego stanowiska o pasującym czasie (Fezouata, 487–471). Warunek: zgodne środowisko (zwierzęta morskie tylko na stanowiska morskie). Teksty mówią, skąd naprawdę pochodzą skamieniałości – to nie przeszkadza.",
+   "W gra-stanowiska.md są rodzaje Fezouaty, których nie ma w gra-drzewo.md w tym oknie albo w ogóle: Pradoella, Destombesiceras, Foulonia, Bathmoceras, Pterygometopus, Ormathops, Plaesiacomia (mają pierwsze pojawienie 479–472, więc trafiają do etapu 4) – sprawdzić spójność plików.",
+   "Colpocoryphe w gra-stanowiska.md ma rodzinę Homalonotidae, a w drzewie – Colpocoryphinae w Calymenina. Ujednolicić.",
+   "Oulodus (487–221) i Orthoceras (483–206) mają bardzo długie zakresy – prawdopodobnie zbiorcze przypisania w PBDB.",
+   "Konodonty w drzewie gry stoją w Cyclostomata; to jedna z kilku hipotez. Rozważyć osobny klad Conodonta bezpośrednio pod Vertebrata."
+  ],
+  "corrections": []
+ }
+}

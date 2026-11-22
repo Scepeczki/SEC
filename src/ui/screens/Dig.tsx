@@ -1,7 +1,9 @@
 import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
-  ArrowLeft, Bone, BookOpen, Check, ChevronDown, ChevronRight, Clock, Coins, Flame, Hammer, Layers, Lock, Map as MapIcon, Maximize2,
+  ArrowLeft, Bone, BookOpen, Check, ChevronDown, ChevronRight, Clock, Coins, Flame, Layers, Lock, Map as MapIcon, Maximize2,
   Microscope, Minimize2, Paintbrush, Pickaxe, Radar, Shell, Sparkles, Users, Archive, Volume2, VolumeX, Wrench, Bomb, Hexagon, MousePointer2,
+  Link2, RotateCw, Move, Copy, Star, Trophy, Hourglass, Skull, Lightbulb, Dna,
+  Film,
 } from 'lucide-react';
 import { genusSpec, spriteUrl } from '../sprites';
 import { Particles } from '../particles';
@@ -9,19 +11,25 @@ import { setVolume, sfx } from '../sound';
 import { GENERA, SITE_BY_ID } from '../../data/db';
 import { B, QUALITY_NAMES, RARITY_COLORS, RARITY_NAMES, fmt } from '../../game/balance';
 import {
-  CHEST_NAMES, blastCharge, chargeCells, claimGolden, crewMode, depthMeters, fossilRarityOdds, hammerCells, hammerRisk, hitTile, layerReward, layerShards, mineralChanceAt, qualityOddsAt, siteState,
+  CHEST_NAMES, DIR_NAMES, brushCells, canUseTool, claimGolden, comboMult, crewMode, depthMeters, dims, fossilRarityOdds, hitTile, layerReward, layerShards, layerStars,
+  isTreasure, mineralChanceAt, previewChain, qualityOddsAt, richness, siteState, useTool as applyTool, type ChainStep, type HitResult,
 } from '../../game/dig';
 import { Workshop } from '../dig/Workshop';
 import { ChestArt, ChestModal, TIER_COLOR } from '../dig/Chest';
 import { COMMON_MINERALS, MINERALS, MINERAL_BY_ID, type Mineral, siteMinerals, strataFrom, stratumAt } from '../../game/geology';
 import { mods, type Mods } from '../../game/mods';
 import { incomePerSec } from '../../game/park';
-import type { CrewMode, FindEntry, GameState, ItemKind, LayerItem, PendingChest, SiteState } from '../../game/state';
-import { periodLabel } from '../../data/geotime';
-import { GLOW_CSS, GW, GH, TS, type LayerArt, artFor, cachedArt, drawFrame, iconUrl, itemUrl, radarZones } from '../dig/art';
+import type { CrewMode, FindEntry, GameState, ItemKind, LayerItem, ModKind, PendingChest, PlayerTool, SiteState } from '../../game/state';
+import { EPOCHS, SITE_ORDER, newCladesAt } from '../../data/epochs';
+import { GLOW_CSS, MOD_CSS, TS, type LayerArt, artFor, cachedArt, drawFrame, iconUrl, itemUrl, radarZones } from '../dig/art';
 import { Bar, Btn, SpriteImg } from '../components';
 import { useGame, useStore } from '../store';
 import { WorldMap } from './WorldMap';
+import { LessonBtn } from '../Lesson';
+import { ChapterTree } from '../story/ChapterTree';
+import { useBeat } from '../story/Narrator';
+import { chapterNo, chapterProgress, rockFound, siteRocks } from '../../game/story';
+import { chapterTitle } from '../../data/story';
 
 interface Snap { key: string; site: string; hp: number[]; found: boolean[]; items: LayerItem[] }
 const snapOf = (key: string, site: string, st: SiteState): Snap => ({ key, site, hp: st.tiles.map((t) => t.hp), found: st.items.map((i) => i.found), items: st.items });
@@ -29,14 +37,15 @@ const snapOf = (key: string, site: string, st: SiteState): Snap => ({ key, site,
 const QUALITY_COLORS = ['#9a8f80', '#c9d3dc', '#f2c14e'];
 const KIND_COLOR: Record<ItemKind, string> = { fossil: '#eaa63a', minor: '#8fc7e8', amber: '#ff9d2e', mineral: '#c79bff' };
 const DUST = ['#5a4936', '#6d5a44', '#87715a', '#a08a70', '#4a3c2c'];
-const COLS = 'ABCDEFGHIJ';
+const COLS = 'ABCDEFGHIJKLMNOP';
 /** rarity names agreeing with „kość” (feminine) */
 const RARITY_F = ['Pospolita', 'Rzadka', 'Bardzo rzadka', 'Legendarna'];
 const reducedMotion = () => typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-const tileName = (i: number) => `${COLS[i % B.gridW]}${Math.floor(i / B.gridW) + 1}`;
 const pct = (x: number) => `${x < 0.01 && x > 0 ? '<1' : Math.round(x * 100)}%`;
 const plural = (n: number, one: string, few: string, many: string) => (n === 1 ? one : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? few : many);
 const hardness = (depth: number) => B.tileHpExp ** depth * (1 + depth * B.tileHpPerDepth);
+/** ms between two waves of a chain reaction on screen */
+const WAVE = 90;
 
 /** pixel icon of a minor find / amber / mineral */
 const smallIcon = (it: { kind: ItemKind; minorName?: string; mineralId?: string }, scale = 2) =>
@@ -47,19 +56,23 @@ type FoundOrder = WeakMap<LayerItem, number>;
 const stashList = (items: LayerItem[], ord: FoundOrder) =>
   items.map((it, i) => ({ it, r: ord.get(it) ?? i - 1e6 })).filter((x) => x.it.found).sort((a, b) => a.r - b.r).map((x) => x.it);
 
-// ---------------------------------------------------------------- dig rhythm (upgrade): streak → multiplier → fever
-interface Combo { n: number; last: number; feverUntil: number; coolUntil: number; best: number }
-const STREAK_WINDOW = 500;
-const FEVER_AT = 30;
-const FEVER_COOLDOWN = 3000;
-const comboMult = (n: number, lvl: number) => (!lvl || n < 10 ? 1 : n < 20 ? 1 + 0.5 * lvl : 1 + lvl);
-/** streak after idling: kept for 0.5 s, then fades by a quarter every 0.5 s, gone after 1.5 s */
-function streakNow(c: Combo, now: number): number {
-  const idle = now - c.last;
-  if (idle <= STREAK_WINDOW) return c.n;
-  if (idle >= 1500) return 0;
-  return Math.floor(c.n * (idle < 1000 ? 0.75 : 0.5));
-}
+// ---------------------------------------------------------------- modifiers and own tools: names and help
+
+export const MOD_INFO: Record<ModKind, { name: string; desc: string }> = {
+  arrow: { name: 'Iskra', desc: 'Rozbita niszczy pola w kierunku strzałki.' },
+  bomb: { name: 'Ładunek', desc: 'Rozbity wybucha i kruszy wszystko dookoła.' },
+  vein: { name: 'Żyła', desc: 'Rozsadza każdy kamień, który dotyka pustki połączonej z tym polem.' },
+  key: { name: 'Zwornik', desc: 'Rozbity jako ostatni kamień w swoim wierszu zawala całą kolumnę.' },
+  echo: { name: 'Rezonans', desc: 'Odpala najbliższe inne kamienie z modyfikatorami.' },
+  gem: { name: 'Kryształ', desc: 'Pęknięty w reakcji podwaja jej mnożnik nagród.' },
+};
+const TOOLS: { id: PlayerTool; key: string; name: string; icon: typeof Bomb; help: string; steps: 1 | 2 }[] = [
+  { id: 'bomb', key: '2', name: 'Ładunek', icon: Bomb, help: 'Kliknij kamień bez modyfikatora: dostanie ładunek, który wybuchnie, gdy kamień pęknie.', steps: 1 },
+  { id: 'link', key: '3', name: 'Połącz', icon: Link2, help: 'Kliknij dwa kamienie: gdy pęknie jeden, pęknie i drugi.', steps: 2 },
+  { id: 'rotate', key: '4', name: 'Obróć', icon: RotateCw, help: 'Kliknij strzałkę, żeby obrócić ją o 90°.', steps: 1 },
+  { id: 'move', key: '5', name: 'Przesuń', icon: Move, help: 'Kliknij kamień z modyfikatorem, a potem pusty kamień, na który ma przejść.', steps: 2 },
+  { id: 'copy', key: '6', name: 'Kopiuj', icon: Copy, help: 'Kliknij kamień z modyfikatorem, a potem kamień, który dostanie taki sam.', steps: 2 },
+];
 
 /** re-render every `ms` (small live readouts driven by refs) */
 function useTicker(ms: number) {
@@ -70,69 +83,55 @@ function useTicker(ms: number) {
   }, [ms]);
 }
 
-function ComboPill({ combo, m, openShop }: { combo: React.MutableRefObject<Combo>; m: Mods; openShop: () => void }) {
-  useTicker(100);
-  if (!m.combo) {
-    return (
-      <button className="combo locked" onClick={openShop} title="Seria i trafienia krytyczne to ulepszenia pędzla (Warsztat → Pędzel → Precyzyjny ruch, Rytm, Gorączka)">
-        <Lock className="ic" /><span className="note">{m.critBrush ? `Krytyk ${pct(m.critBrush)} · seria: odblokuj „Rytm”` : 'Krytyki i serie: odblokuj w Warsztacie'}</span>
-      </button>
-    );
-  }
-  const c = combo.current;
-  const now = performance.now();
-  const fever = now < c.feverUntil;
-  const n = streakNow(c, now);
-  const mult = comboMult(n, m.combo);
-  const lit = fever ? Math.ceil(((c.feverUntil - now) / (m.feverSec * 1000)) * 10) : Math.min(10, Math.floor(n / 3));
-  return (
-    <div className={`combo ${fever ? 'fever' : ''} ${n >= 20 ? 'm3' : ''}`} title={`Klikaj szybko i równo (co najmniej 2 razy na sekundę): seria mnoży szansę na krytyk.${m.feverSec ? ' Pełna seria (30) włącza Gorączkę.' : ''}`}>
-      <span className="muted">{fever ? 'Gorączka' : 'Seria'}</span>
-      <span className="mult">{fever ? <Flame className="ic" style={{ width: 20, height: 20 }} /> : `×${mult}`}</span>
-      <span className="segs">{Array.from({ length: 10 }, (_, k) => <i key={k} className={k < lit ? 'on' : ''} />)}</span>
-      <span className="note">{fever ? `${((c.feverUntil - now) / 1000).toFixed(1)} s · same krytyki` : n > 0 && now - c.last > STREAK_WINDOW ? 'gaśnie…' : `kryt. ${pct(Math.min(1, m.critBrush * mult))}`}</span>
-    </div>
-  );
-}
-
 interface Live { s: GameState; st: SiteState; art: LayerArt; m: Mods }
 interface HoverRef { idx: number; px: [number, number] | null }
 interface Flight { it: LayerItem; items: LayerItem[] }
 interface Glow { shown: number; open: number; flashUntil: number }
 interface Golden { idx: number; until: number; next: number; items: LayerItem[] | null }
-interface Msg { kind: 'hint' | 'rare1' | 'rare2' | 'rare3' | 'good' | 'fever'; text: string; sub?: string; until: number; icon?: 'bone' | 'sparkles' | 'flame' | 'check' }
+interface Msg { kind: 'hint' | 'rare1' | 'rare2' | 'rare3' | 'good' | 'fever'; text: string; sub?: string; until: number; icon?: 'bone' | 'sparkles' | 'flame' | 'check' | 'trophy' }
 interface ChestPop { chest: PendingChest; until: number }
+/** the last layer kept on screen while its final chain plays out */
+interface Hold { st: SiteState; art: LayerArt; until: number }
+interface LastChain { n: number; mult: number; open: boolean; at: number; gems: number }
+interface MineralPopT { id: string; isNew: boolean; coins: number; until: number; key: number }
+interface ToolState { tool: PlayerTool | null; picked: number }
 const nextGolden = (now: number, every = 1) => now + (60 + Math.random() * 120) * 1000 * every;
 
 /** tooltip next to the tile under the cursor */
-function TileTip({ live, hover, golden, scale }: { live: React.MutableRefObject<Live>; hover: React.MutableRefObject<HoverRef>; golden: React.MutableRefObject<Golden>; scale: number }) {
+function TileTip({ live, hover, golden, scale, preview, tool }: { live: React.MutableRefObject<Live>; hover: React.MutableRefObject<HoverRef>; golden: React.MutableRefObject<Golden>; scale: number; preview: React.MutableRefObject<ChainStep[] | null>; tool: ToolState }) {
   useTicker(100);
-  const { s, st, art, m } = live.current;
+  const { st, art, m } = live.current;
   const i = hover.current.idx;
-  if (i < 0 || !st.tiles[i]) return null;
+  if (i < 0 || !st.tiles[i] || tool.tool) return null;
+  const { w } = dims(st);
   const t = st.tiles[i];
   const it = t.item >= 0 ? st.items[t.item] : null;
   const lines: React.ReactNode[] = [];
   let title = art.tileRock[i];
-  const hammer = s.settings.tool === 'hammer' && m.hammer;
-  const power = hammer ? m.hammerPower : m.brushPower;
   if (t.hp > 0) {
-    const hits = Math.ceil(t.hp / power);
-    lines.push(<span key="h">{tileName(i)} · twardość ×{hardness(st.depth).toFixed(2)} · {hits} {plural(hits, 'uderzenie', 'uderzenia', 'uderzeń')} {hammer ? 'młotem' : 'pędzlem'}</span>);
+    const hits = Math.ceil(t.hp / m.brushPower);
+    lines.push(<span key="h">{COLS[i % w]}{Math.floor(i / w) + 1} · twardość ×{hardness(st.depth).toFixed(2)} · {hits} {plural(hits, 'pociągnięcie', 'pociągnięcia', 'pociągnięć')}</span>);
+    if (t.mod) lines.push(<span key="m" style={{ color: MOD_CSS[t.mod] }}><b style={{ display: 'inline', fontSize: 12 }}>{MOD_INFO[t.mod].name}{t.mod === 'arrow' ? ` (${DIR_NAMES[t.dir ?? 0]})` : ''}:</b> {MOD_INFO[t.mod].desc}</span>);
+    if (t.flint) lines.push(<span key="f" style={{ color: '#b9c8e6' }}><b style={{ display: 'inline', fontSize: 12 }}>Krzemień:</b> reakcja go nie skruszy (zatrzymuje łańcuch), tylko wybuch ładunku. Pędzlem rozbijesz go normalnie.</span>);
+    if (t.link !== undefined) lines.push(<span key="l" style={{ color: '#ffecbe' }}>Połączony z {COLS[t.link % w]}{Math.floor(t.link / w) + 1}: pękną razem</span>);
+    const p = preview.current;
+    if (p && p.length > 1) {
+      const waves = Math.max(...p.map((x) => x.gen));
+      const k = comboMult(p.length, m);
+      lines.push(<span key="c" className="gold">Reakcja: {p.length} {plural(p.length, 'pole', 'pola', 'pól')}{waves ? ` w ${waves + 1} falach` : ''}{k > 1 ? ` · mnożnik ×${k.toFixed(2)}` : ''}</span>);
+    }
     if (golden.current.idx === i) lines.push(<span key="g" className="gold">Złoty błysk — kliknij po nagrodę!</span>);
-    if (st.burns?.some((b) => b.tile === i)) lines.push(<span key="b" style={{ color: '#ffa860' }}>Tli się — samo słabnie</span>);
     if (it && !it.found && it.cells.some((c) => st.tiles[c].hp <= 0)) lines.push(<span key="p" className="gold">Tu leży dalsza część kości</span>);
     else if (m.scanner >= 3 && it && !it.found && radarZones(st, m.scanner).some((z) => z.item === t.item)) lines.push(<span key="s" style={{ color: KIND_COLOR[it.kind] }}>Georadar: {it.kind === 'fossil' ? 'kość' : it.kind === 'minor' ? 'drobna skamieniałość' : it.kind === 'amber' ? 'bursztyn' : 'minerał'}</span>);
     else if (m.scanner && radarZones(st, m.scanner).some((z) => z.tiles.has(i) && !st.items[z.item].found)) lines.push(<span key="s" className="blue">Georadar: {m.scanner >= 3 ? 'tuż obok coś leży' : 'coś leży w tej okolicy'}</span>);
-    if (hammer && hammerCells(st, i, m.hammerSquare).some((c) => hammerRisk(st, c, i, m))) lines.push(<span key="x" className="warn">Młot może uszkodzić kość ({pct(m.hammerRisk)})</span>);
   } else {
     if (it && !it.found) { title = 'Odsłonięta część znaleziska'; lines.push(<span key="p">Odkop pola ze złotymi narożnikami obok.</span>); }
     else return null;
   }
-  const segs = Math.min(8, Math.max(1, Math.ceil(t.max / power)));
+  const segs = Math.min(8, Math.max(1, Math.ceil(t.max / m.brushPower)));
   const on = Math.ceil((t.hp / t.max) * segs);
-  const x = (i % B.gridW) * TS * scale, y = Math.floor(i / B.gridW) * TS * scale;
-  const right = (i % B.gridW) < B.gridW - 3;
+  const x = (i % w) * TS * scale, y = Math.floor(i / w) * TS * scale;
+  const right = (i % w) < w - 3;
   return (
     <div className="tile-tip" style={{ left: 8 + (right ? x + TS * scale + 10 : x - 270), top: 8 + y - 4 }}>
       <b>{title}</b>
@@ -144,6 +143,7 @@ function TileTip({ live, hover, golden, scale }: { live: React.MutableRefObject<
 
 /** "Bone! 1/4" labels above partially uncovered finds */
 function FindLabels({ st, glow, scale }: { st: SiteState; glow: React.MutableRefObject<WeakMap<LayerItem, Glow>>; scale: number }) {
+  const { w } = dims(st);
   return (
     <>
       {st.items.map((it, k) => {
@@ -151,7 +151,7 @@ function FindLabels({ st, glow, scale }: { st: SiteState; glow: React.MutableRef
         const open = it.cells.filter((c) => st.tiles[c].hp <= 0);
         if (!open.length) return null;
         const lvl = glow.current.get(it)?.shown ?? 0;
-        const xs = it.cells.map((c) => (c % B.gridW) + 0.5), ys = it.cells.map((c) => Math.floor(c / B.gridW));
+        const xs = it.cells.map((c) => (c % w) + 0.5), ys = it.cells.map((c) => Math.floor(c / w));
         const cx = (xs.reduce((a, b) => a + b, 0) / xs.length) * TS * scale + 8, top = Math.min(...ys) * TS * scale + 8 - 4;
         return <span key={k} className={`find-label r${lvl}`} style={{ left: cx, top }}><Bone className="ic" style={{ width: 13, height: 13 }} />{lvl ? `${RARITY_F[lvl]} kość` : 'Kość'}! {open.length}/{it.cells.length} pola</span>;
       })}
@@ -163,11 +163,33 @@ function FieldMsg({ msg }: { msg: React.MutableRefObject<Msg | null> }) {
   useTicker(150);
   const m = msg.current;
   if (!m || m.until < performance.now()) return null;
-  const I = m.icon === 'flame' ? Flame : m.icon === 'check' ? Check : m.icon === 'bone' ? Bone : Sparkles;
+  const I = m.icon === 'flame' ? Flame : m.icon === 'check' ? Check : m.icon === 'bone' ? Bone : m.icon === 'trophy' ? Trophy : Sparkles;
   return (
     <div className={`field-msg ${m.kind}`}>
       <I className="ic" style={{ width: 20, height: 20 }} />
       <div>{m.text}{m.sub && <small>{m.sub}</small>}</div>
+    </div>
+  );
+}
+
+/** a mineral just came out of the rock: a big glowing card with the crystal */
+function MineralPop({ pops }: { pops: React.MutableRefObject<MineralPopT[]> }) {
+  useTicker(120);
+  const now = performance.now();
+  const p = pops.current.find((x) => x.until > now);
+  if (!p) return null;
+  const mn = MINERAL_BY_ID.get(p.id);
+  if (!mn) return null;
+  const c = RARITY_COLORS[mn.rarity];
+  return (
+    <div key={p.key} className="mineral-pop" style={{ ['--c' as string]: c, ['--g' as string]: mn.color }}>
+      <span className="mp-gem"><img className="pixel" src={iconUrl('mineral', mn.id, 5)} width={80} height={80} alt="" /></span>
+      <span className="mp-body">
+        <span className="mp-kicker">{p.isNew ? 'Nowy minerał!' : 'Minerał'}</span>
+        <b>{mn.name}</b>
+        <span className="mp-rar" style={{ color: c }}>{RARITY_NAMES[mn.rarity]}{p.isNew ? ' · do kolekcji' : ''}</span>
+        <span className="mp-coins"><Coins className="ic" />+{fmt(p.coins)}</span>
+      </span>
     </div>
   );
 }
@@ -200,6 +222,46 @@ function ChestWaiting({ s, onOpen }: { s: GameState; onOpen: (c: PendingChest) =
   );
 }
 
+/** the last chain, the open combo, manual breaks in this layer and the records */
+function ChainPill({ s, st, m, last, openShop }: { s: GameState; st: SiteState; m: Mods; last: React.MutableRefObject<LastChain | null>; openShop: () => void }) {
+  useTicker(150);
+  const l = last.current;
+  const fresh = l && performance.now() - l.at < 4000;
+  const manual = st.manual ?? 0;
+  const stars = layerStars(Math.max(1, manual), m);
+  const rec = s.digRecords ?? { combo: 0, fewest: 0, oneHit: 0, stars3: 0 };
+  const noMods = !Object.values(m.modRate).some((x) => x > 0) && !Object.values(m.uses).some((x) => x > 0);
+  if (noMods) {
+    return (
+      <button className="combo locked" onClick={openShop} title="Reakcje łańcuchowe odblokujesz w Warsztacie (gałąź Skała → Iskra)">
+        <Lock className="ic" /><span className="note">Reakcje łańcuchowe: odblokuj „Iskrę” w Warsztacie</span>
+      </button>
+    );
+  }
+  return (
+    <div className={`combo ${fresh && l!.n >= 10 ? 'm3' : ''} ${fresh && l!.n >= 20 ? 'fever' : ''}`}>
+      <span className="col" style={{ gap: 0 }}>
+        <span className="muted small">{st.combo ? 'Combo trwa' : 'Ostatnia reakcja'}</span>
+        <span className="mult">{st.combo ? st.combo.n : fresh ? l!.n : '–'}<small> {plural(st.combo ? st.combo.n : l?.n ?? 0, 'pole', 'pola', 'pól')}</small></span>
+      </span>
+      <span className="col" style={{ gap: 0 }} title={`Combo liczy się od ${m.comboMin} pól. Każde pole ponad próg: +${Math.round(m.comboStep * 100)}% odłamków i łupów.`}>
+        <span className="muted small">mnożnik</span>
+        <span className="mult blue">×{(st.combo ? comboMult(st.combo.n, m, st.combo.gems) : fresh ? l!.mult : 1).toFixed(2)}</span>
+      </span>
+      {st.combo && <span className="note"><Hourglass className="ic" style={{ width: 13, height: 13, verticalAlign: -2 }} /> jeszcze {st.combo.left} {plural(st.combo.left, 'rozbicie', 'rozbicia', 'rozbić')}</span>}
+      <span className="sep-v" />
+      <span className="col" style={{ gap: 0 }} title={`Ręczne rozbicia w tej warstwie. 3 gwiazdki do ${m.starsAt}, 2 do ${m.starsAt * 2 + 2}: lepsza nagroda za warstwę i większa szansa na lepszą skrzynię.`}>
+        <span className="muted small">ruchy w warstwie</span>
+        <span className="mult">{manual}<span className="stars">{[1, 2, 3].map((k) => <Star key={k} className={`ic ${k <= stars ? 'on' : ''}`} />)}</span></span>
+      </span>
+      <span className="col rec" style={{ gap: 0 }} title="Twoje rekordy: najdłuższe combo, najmniej ruchów na całą warstwę, warstwy jednym uderzeniem">
+        <span className="muted small"><Trophy className="ic" style={{ width: 12, height: 12, verticalAlign: -2 }} /> rekordy</span>
+        <span className="small"><b>{rec.combo}</b> combo · <b>{rec.fewest || '–'}</b> ruch.{rec.oneHit ? <> · <b>{rec.oneHit}</b>× jednym</> : null}</span>
+      </span>
+    </div>
+  );
+}
+
 // ---------------------------------------------------------------- the dig board (field + everything that talks to it)
 
 function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boolean; setFocus: (f: boolean) => void; openShop: () => void }) {
@@ -227,15 +289,24 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
   live.current = { s, st, art, m };
   const hover = useRef<HoverRef>({ idx: -1, px: null });
   const press = useRef(new Map<number, number>());
-  const combo = useRef<Combo>({ n: 0, last: 0, feverUntil: 0, coolUntil: 0, best: 0 });
+  const pending = useRef(new Map<number, number>());
+  const hold = useRef<Hold | null>(null);
+  const heat = useRef(0);
+  const lastChain = useRef<LastChain | null>(null);
+  const minerals = useRef<MineralPopT[]>([]);
+  const preview = useRef<ChainStep[] | null>(null);
+  const previewKey = useRef('');
   const golden = useRef<Golden>({ idx: -1, until: 0, next: nextGolden(performance.now(), m.goldenEvery), items: null });
   const glow = useRef(new WeakMap<LayerItem, Glow>());
   const msg = useRef<Msg | null>(null);
   const chest = useRef<ChestPop | null>(null);
   const [chestOpen, setChestOpen] = useState<PendingChest | null>(null);
+  const [tool, setToolState] = useState<ToolState>({ tool: null, picked: -1 });
+  const toolRef = useRef(tool);
+  toolRef.current = tool;
+  const setTool = (t: PlayerTool | null) => setToolState({ tool: t, picked: -1 });
   const [log, setLog] = useState(false);
   const fit = useFits();
-  const fuse = useRef(false);
   const hintShown = useRef(false);
   const say = (m2: Omit<Msg, 'until'>, ms = 3000) => { msg.current = { ...m2, until: performance.now() + ms }; };
 
@@ -250,21 +321,24 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     const el = fieldRef.current;
     if (!el) return;
     const ro = new ResizeObserver(() => {
-      const w = Math.floor((el.clientWidth - 24) / GW);
-      const h = focus || fitsWindow() ? Math.floor((el.clientHeight - 24) / GH) : 99;
+      const { art } = live.current;
+      const w = Math.floor((el.clientWidth - 24) / art.GW);
+      const h = focus || fitsWindow() ? Math.floor((el.clientHeight - 24) / art.GH) : 99;
       setScale(Math.max(2, Math.min(7, w, h)));
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, [focus, fit]);
+  }, [focus, fit, art.GW, art.GH]);
 
-  /** centre of a tile in particle-canvas coordinates (+ screen coordinates) */
+  /** centre of a tile in particle-canvas coordinates (+ screen coordinates); uses the layer on screen */
   const center = (idx: number) => {
     const c = canvasRef.current, f = fxRef.current;
     if (!c || !f) return { x: 0, y: 0, sx: 0, sy: 0 };
+    const view = hold.current && performance.now() < hold.current.until ? hold.current : live.current;
+    const W = view.art.w;
     const r = c.getBoundingClientRect(), fr = f.getBoundingClientRect();
-    const sz = r.width / B.gridW;
-    const sx = r.left + ((idx % B.gridW) + 0.5) * sz, sy = r.top + (Math.floor(idx / B.gridW) + 0.5) * sz;
+    const sz = r.width / W;
+    const sx = r.left + ((idx % W) + 0.5) * sz, sy = r.top + (Math.floor(idx / W) + 0.5) * sz;
     return { x: sx - fr.left, y: sy - fr.top, sx, sy };
   };
   const centerOf = (cells: number[]) => {
@@ -284,25 +358,36 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
   // ---- render loop: pixel field + lighting + overlays
   useEffect(() => {
     const c = canvasRef.current!;
-    c.width = GW;
-    c.height = GH;
-    const ctx = c.getContext('2d')!;
-    const img = ctx.createImageData(GW, GH);
+    let ctx = c.getContext('2d')!;
+    let img: ImageData | null = null;
     let raf = 0;
+    // a frame that throws must never stop the loop (a frozen canvas looks like rock that never breaks)
     const loop = () => {
+      try { frame(); } catch (e) { console.error('dig frame', e); }
+      raf = requestAnimationFrame(loop);
+    };
+    const frame = () => {
       const now = performance.now();
-      const { st, art, m, s } = live.current;
+      const h0 = hold.current && now < hold.current.until ? hold.current : null;
+      if (!h0 && hold.current) hold.current = null;
+      const { st: liveSt, art: liveArt, m, s } = live.current;
+      const st = h0?.st ?? liveSt, art = h0?.art ?? liveArt;
+      if (c.width !== art.GW || c.height !== art.GH || !img) {
+        c.width = art.GW; c.height = art.GH;
+        ctx = c.getContext('2d')!;
+        img = ctx.createImageData(art.GW, art.GH);
+      }
       const gd = golden.current;
-      if (gd.idx >= 0 && (now > gd.until || gd.items !== st.items || st.tiles[gd.idx].hp <= 0)) gd.idx = -1;
-      if (gd.idx < 0 && now > gd.next) {
-        const cand = st.tiles.map((t, i) => (t.hp > 0 && t.item < 0 ? i : -1)).filter((i) => i >= 0);
-        if (cand.length) { gd.idx = cand[Math.floor(Math.random() * cand.length)]; gd.until = now + 6000; gd.items = st.items; }
+      if (gd.idx >= 0 && (now > gd.until || gd.items !== liveSt.items || !liveSt.tiles[gd.idx] || liveSt.tiles[gd.idx].hp <= 0)) gd.idx = -1;
+      if (gd.idx < 0 && now > gd.next && !h0) {
+        const cand = liveSt.tiles.map((t, i) => (t.hp > 0 && t.item < 0 && !t.mod ? i : -1)).filter((i) => i >= 0);
+        if (cand.length) { gd.idx = cand[Math.floor(Math.random() * cand.length)]; gd.until = now + 6000; gd.items = liveSt.items; }
         gd.next = nextGolden(now, m.goldenEvery);
       }
       // rarity glow ladder: the first glimpse may undersell the bone; each newly uncovered cell can raise it
-      st.items.forEach((it) => {
+      if (!h0) liveSt.items.forEach((it) => {
         if (it.kind !== 'fossil' || it.found) return;
-        const open = it.cells.filter((ci) => st.tiles[ci].hp <= 0).length;
+        const open = it.cells.filter((ci) => liveSt.tiles[ci].hp <= 0 && !((pending.current.get(ci) ?? 0) > now)).length;
         if (!open) return;
         const rar = GENERA.get(it.genusId!)?.rarity ?? 0;
         const g = glow.current.get(it);
@@ -318,27 +403,41 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
           if (g.shown < rar && Math.random() < 0.5) {
             g.shown++;
             g.flashUntil = now + 300;
-            const p = centerOf(it.cells.filter((ci) => st.tiles[ci].hp <= 0));
+            const p = centerOf(it.cells.filter((ci) => liveSt.tiles[ci].hp <= 0));
             fx.sparks(p.x, p.y, 10, GLOW_CSS[g.shown]);
             sfx.reveal(g.shown);
             say({ kind: `rare${g.shown}` as Msg['kind'], icon: 'bone', text: `Blask rośnie: ${RARITY_F[g.shown].toLowerCase()} kość!`, sub: left ? `Zostało ${left} ${plural(left, 'pole', 'pola', 'pól')}` : undefined });
           }
         }
       });
+      // what would break from here (refreshed when the hover or the layer changes)
       const h = hover.current;
-      const charge = s.settings.tool === 'charge' && m.charge;
-      const hammer = (s.settings.tool === 'hammer' && m.hammer) || charge;
-      const area = h.idx < 0 ? [] : charge ? chargeCells(h.idx, m.chargeSize).filter((ci) => st.tiles[ci].hp > 0) : hammer ? hammerCells(st, h.idx, m.hammerSquare) : [];
-      const risk = new Set(charge ? [] : area.filter((ci) => (!m.hammerCenterRisk || ci === h.idx) && hammerRisk(st, ci, h.idx, m)));
+      const t = toolRef.current;
+      let area: number[] = [];
+      let pv: Map<number, number> | null = null;
+      if (!h0 && h.idx >= 0 && !t.tool && liveSt.tiles[h.idx]?.hp > 0) {
+        area = brushCells(liveSt, h.idx, m.brushArea);
+        const k = `${h.idx}:${liveSt.items.length}:${liveSt.tiles.reduce((a, x, i) => a + (x.hp > 0 ? i * 7 + (x.mod ? 3 : 0) + (x.dir ?? 0) + (x.link ?? 0) : 0), 0)}`;
+        if (k !== previewKey.current || !preview.current) { previewKey.current = k; preview.current = previewChain(liveSt, area, m); }
+        pv = new Map(preview.current.map((x) => [x.idx, x.gen]));
+      } else { preview.current = null; previewKey.current = ''; }
+      // own-modifier tool targets
+      let targets: Set<number> | null = null;
+      if (t.tool && !h0) {
+        targets = new Set();
+        const tl = t.tool;
+        liveSt.tiles.forEach((_, i) => { if (t.picked < 0 ? canUseTool(liveSt, tl, i).ok : canUseTool(liveSt, tl, t.picked, i).ok) targets!.add(i); });
+      }
+      heat.current = Math.max(0, heat.current - 0.012);
       drawFrame(img, {
-        st, art, t: now, hover: h.idx, hoverPx: h.px, hammer, area, risk,
-        scanner: m.scanner, fever: now < combo.current.feverUntil, golden: gd.idx, press: press.current,
+        st, art, t: now, hover: h0 ? -1 : h.idx, hoverPx: h.px, area, preview: pv,
+        scanner: m.scanner, golden: h0 ? -1 : gd.idx, press: press.current, pending: pending.current,
         glow: (k) => glow.current.get(st.items[k])?.shown ?? -1,
         glowFlash: (k) => Math.max(0, ((glow.current.get(st.items[k])?.flashUntil ?? 0) - now) / 300),
-        sonar: m.sonar, glintAll: m.radarGlint,
+        sonar: m.sonar, glintAll: m.radarGlint, targets, picked: t.picked, heat: heat.current,
       });
       ctx.putImageData(img, 0, 0);
-      raf = requestAnimationFrame(loop);
+      void s;
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
@@ -347,7 +446,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
   /** burst + label + sound where the item was dug out */
   const celebrate = (g: GameState, it: LayerItem) => {
     const { x, y } = centerOf(it.cells);
-    const f = (g.finds ?? []).slice(0, 12).find((e) => e.kind === it.kind && e.genusId === it.genusId && (it.kind === 'mineral' ? e.mineral === it.mineralId : e.name === it.minorName));
+    const f = (g.finds ?? []).slice(0, 16).find((e) => e.kind === it.kind && e.genusId === it.genusId && (it.kind === 'mineral' ? e.mineral === it.mineralId : e.name === it.minorName));
     const byCrew = f?.byCrew ?? false;
     if (it.kind === 'fossil') {
       const gen = GENERA.get(it.genusId!)!;
@@ -364,9 +463,16 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       if (!byCrew) { sfx.find('minor'); fx.text(x, y - 4, `+${fmt(f?.pb ?? B.minorPB)} 🔬  +${fmt(f?.coins ?? B.minorCoins)} 💰`, '#bfe3f5', 13); }
     } else if (it.kind === 'mineral') {
       const mn = MINERAL_BY_ID.get(it.mineralId ?? '');
-      fx.sparks(x, y, byCrew ? 10 : 20 + (mn?.rarity ?? 0) * 8, mn?.color ?? '#c79bff');
+      const col = mn?.color ?? '#c79bff';
+      // a mineral is a moment: a ring of crystal sparks, a flash, a chime and a card with the stone
+      fx.sparks(x, y, 34 + (mn?.rarity ?? 0) * 10, col);
+      fx.sparks(x, y, 18, '#ffffff');
+      fx.sparks(x, y, 14, RARITY_COLORS[mn?.rarity ?? 0]);
       sfx.find('mineral', mn?.rarity ?? 0);
-      fx.text(x, y - 4, `${f?.isNew ? 'Nowy minerał: ' : ''}${mn?.name ?? 'Minerał'} +${fmt(f?.coins ?? 0)} 💰`, '#e3cbff', 14);
+      sfx.crystal(mn?.rarity ?? 0);
+      if ((mn?.rarity ?? 0) >= 2 || f?.isNew) shake(false);
+      fx.text(x, y - 6, `${mn?.name ?? 'Minerał'} +${fmt(f?.coins ?? 0)} 💰`, '#efe0ff', 15);
+      if (it.mineralId) minerals.current = [...minerals.current.filter((p) => p.until > performance.now()), { id: it.mineralId, isNew: !!f?.isNew, coins: f?.coins ?? 0, until: performance.now() + 2800, key: Math.random() }];
     } else {
       fx.sparks(x, y, byCrew ? 10 : 22, '#ff9d2e');
       sfx.find('amber', 1);
@@ -398,7 +504,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     const img = document.createElement('img');
     img.className = 'pixel';
     const a = cachedArt(fl.items);
-    const k = Math.max(2, Math.round((canvasRef.current?.getBoundingClientRect().width ?? GW * 3) / GW));
+    const k = Math.max(2, Math.round((canvasRef.current?.getBoundingClientRect().width ?? 480) / (a?.GW ?? 160)));
     img.src = (a && itemUrl(a, fl.items.indexOf(fl.it), k)) || (fl.it.kind === 'fossil' ? spriteUrl(genusSpec(fl.it.genusId!), 1, 0, !s.hatched[fl.it.genusId!]).url : smallIcon(fl.it, 3));
     el.appendChild(img);
     document.body.appendChild(el);
@@ -412,7 +518,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     anim.onfinish = () => { el.remove(); land(); };
   };
 
-  // every render: diff against the last snapshot → dust where crews/embers dig, celebrate + fly every new find
+  // every render: diff against the last snapshot → dust where crews dig, celebrate + fly every new find (after its rock breaks on screen)
   useLayoutEffect(() => {
     const cur = snapOf(key, s.activeSite, st);
     const prev = snap.current;
@@ -427,59 +533,58 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
         if (cur.hp[i] < prev.hp[i] && !hits.has(i) && budget-- > 0) {
           const p = center(i);
           fx.dust(p.x, p.y, 3);
-          fx.chips(p.x, p.y, [art.tileCss[i], ...DUST], 2, 0.5);
+          fx.chips(p.x, p.y, [art.tileCss[i] ?? DUST[0], ...DUST], 2, 0.5);
         }
       }
     }
+    const now = performance.now();
     const fresh = prev.items.filter((it, j) => it.found && !prev.found[j]);
     for (const it of fresh) {
       order.current.set(it, ++orderSeq.current);
-      celebrate(s, it);
-      flights.current.push({ it, items: prev.items });
+      const at = Math.max(0, ...it.cells.map((c) => pending.current.get(c) ?? 0));
+      const go = () => { celebrate(live.current.s, it); flights.current.push({ it, items: prev.items }); launchReady(); };
+      if (at > now + 10) window.setTimeout(go, at - now + 60); else go();
     }
     if (newLayer) {
-      const el = stageRef.current;
-      if (el && !reducedMotion()) { el.classList.remove('descend'); void el.offsetWidth; el.classList.add('descend'); }
-      for (let c = 0; c < st.tiles.length; c += 3) { const p = center(c); fx.dust(p.x, p.y, 2, '#bba98a'); }
+      const wait = Math.max(0, (hold.current?.until ?? 0) - now);
       const out = st.lastDone;
-      if (out?.n === st.layersDone && out.chest && 'tier' in out.chest) {
-        chest.current = { chest: out.chest, until: performance.now() + 9000 };
-        const mid = center(Math.floor(B.gridH / 2) * B.gridW + Math.floor(B.gridW / 2));
-        fx.sparks(mid.x, mid.y, 50, '#ffcf4a');
-        sfx.chest();
-      } else sfx.layer();
-      const at = stratumAt(s.activeSite, st.depth), was = stratumAt(s.activeSite, st.depth - 1);
-      say(at.s.name !== was.s.name
-        ? { kind: 'good', icon: 'check', text: `Nowa skała: ${at.s.name}`, sub: `Warstwa ${st.depth + 1} · −${depthMeters(st.depth)} m` }
-        : { kind: 'good', icon: 'check', text: `Warstwa ${st.depth} wykopana!`, sub: out?.bonus ? `+${fmt(out.bonus.coins)} monet · +${out.bonus.pb} badań · +${layerShards(st.depth)} odłamków` : undefined }, 2600);
+      window.setTimeout(() => {
+        const el = stageRef.current;
+        if (el && !reducedMotion()) { el.classList.remove('descend'); void el.offsetWidth; el.classList.add('descend'); }
+        const { st: cst } = live.current;
+        for (let c = 0; c < cst.tiles.length; c += 3) { const p = center(c); fx.dust(p.x, p.y, 2, '#bba98a'); }
+        if (out?.n === cst.layersDone && out.chest && 'tier' in out.chest) {
+          chest.current = { chest: out.chest, until: performance.now() + 9000 };
+          const mid = center(Math.floor(cst.tiles.length / 2));
+          fx.sparks(mid.x, mid.y, 50, '#ffcf4a');
+          sfx.chest();
+        } else sfx.layer();
+        const at2 = stratumAt(s.activeSite, cst.depth), was = stratumAt(s.activeSite, cst.depth - 1);
+        const stars = out?.stars ? ` · ${'★'.repeat(out.stars)}${'☆'.repeat(3 - out.stars)}` : '';
+        const moves = out?.manual ? ` · ${out.manual} ${plural(out.manual, 'ruch', 'ruchy', 'ruchów')}` : '';
+        say(out?.manual === 1
+          ? { kind: 'fever', icon: 'trophy', text: 'Cała warstwa jednym uderzeniem!', sub: `Warstwa ${cst.depth}${stars}` }
+          : at2.s.name !== was.s.name
+            ? { kind: 'good', icon: 'check', text: `Nowa skała: ${at2.s.name}`, sub: `Warstwa ${cst.depth + 1} · −${depthMeters(cst.depth)} m${stars}${moves}` }
+            : { kind: 'good', icon: 'check', text: `Warstwa ${cst.depth} wykopana!${stars}`, sub: out?.bonus ? `+${fmt(out.bonus.coins)} monet · +${out.bonus.pb} badań · +${layerShards(cst.depth)} odłamków${moves}` : undefined }, 2800);
+      }, wait);
       clearTimeout(doneTimer.current);
       setDoneLayer(prev.items);
-      doneTimer.current = window.setTimeout(() => setDoneLayer(null), 2200);
+      doneTimer.current = window.setTimeout(() => setDoneLayer(null), 2200 + wait);
     }
     if (fresh.length) setArriving((a) => { const nx = new Set(a); fresh.forEach((it) => nx.add(it)); return nx; });
   });
 
   // launch queued flights once their stash slots are on screen
-  useLayoutEffect(() => {
-    if (!flights.current.length) return;
-    const shown = doneLayer ?? st.items;
+  const launchReady = () => {
+    const shown = doneLayerRef.current ?? live.current.st.items;
     const ready = flights.current.filter((f) => f.items === shown);
     flights.current = flights.current.filter((f) => f.items !== shown);
     ready.forEach(launch);
-  });
-
-  const startFever = (now: number) => {
-    const { m } = live.current;
-    if (!m.feverSec) return;
-    const c = combo.current;
-    c.feverUntil = now + m.feverSec * 1000;
-    c.coolUntil = c.feverUntil + FEVER_COOLDOWN;
-    c.n = 0;
-    const mid = center(Math.floor(B.gridH / 2) * B.gridW + Math.floor(B.gridW / 2));
-    fx.sparks(mid.x, mid.y, 36, '#ff9a3c');
-    say({ kind: 'fever', icon: 'flame', text: 'Gorączka!', sub: `Przez ${m.feverSec} s każde trafienie jest krytyczne` }, m.feverSec * 1000);
-    shake(false);
   };
+  const doneLayerRef = useRef<LayerItem[] | null>(null);
+  doneLayerRef.current = doneLayer;
+  useLayoutEffect(() => { if (flights.current.length) launchReady(); });
 
   const claimGoldenFlash = (i: number) => {
     golden.current.idx = -1;
@@ -487,76 +592,124 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     const p = center(i);
     fx.sparks(p.x, p.y, 30, '#ffd75a');
     sfx.golden();
-    const label = r.kind === 'coins' ? `+${fmt(r.amount)} 💰` : r.kind === 'pb' ? `+${fmt(r.amount)} 🔬` : r.kind === 'mutagen' ? '+1 🧪 mutagen' : r.kind === 'fever' ? 'Gorączka!' : 'Pewna kość';
+    const label = r.kind === 'coins' ? `+${fmt(r.amount)} 💰` : r.kind === 'pb' ? `+${fmt(r.amount)} 🔬` : r.kind === 'mutagen' ? '+1 🧪 mutagen' : r.kind === 'charge' ? '+1 ładunek do podłożenia' : 'Pewna kość';
     fx.text(p.x, p.y - 8, `✦ ${label}`, '#ffe27a', 16);
-    if (r.kind === 'fever') startFever(performance.now());
+    if (r.kind === 'charge') say({ kind: 'hint', icon: 'sparkles', text: 'Złoty błysk: darmowy ładunek!', sub: 'Wybierz „Ładunek” (klawisz 2) i podłóż go pod dowolny kamień' }, 3200);
     if (r.kind === 'reveal' && r.cell !== undefined) { const q = center(r.cell); fx.dust(q.x, q.y, 6, '#d8c49a'); fx.sparks(q.x, q.y, 12, '#ffd75a'); }
   };
 
-  /** light the fuse: a short hiss, then the blast */
-  const placeCharge = (i: number) => {
-    if (fuse.current) return;
-    if ((s.charges?.n ?? 0) < 1) { say({ kind: 'hint', icon: 'sparkles', text: 'Ładunek jeszcze się przygotowuje', sub: `następny za ${Math.ceil(m.chargeCd - (s.charges?.acc ?? 0))} s` }, 1800); return; }
-    fuse.current = true;
-    sfx.fuse();
-    const p = center(i);
-    let k = 0;
-    const spark = window.setInterval(() => { fx.sparks(p.x, p.y - 4, 4, k++ % 2 ? '#ffd27a' : '#ff8a3c'); }, 90);
-    press.current.set(i, performance.now() + 700);
+  /** play a chain reaction wave by wave, then show the combo */
+  const playChain = (res: HitResult, stepsArt: LayerArt) => {
+    const t0 = performance.now();
+    const byGen = new Map<number, ChainStep[]>();
+    for (const x of res.steps) {
+      pending.current.set(x.idx, t0 + x.gen * WAVE);
+      const arr = byGen.get(x.gen) ?? [];
+      arr.push(x);
+      byGen.set(x.gen, arr);
+    }
+    const last = Math.max(0, ...byGen.keys());
+    for (const [gen, list] of byGen) {
+      const run = () => {
+        for (const x of list) {
+          const p = center(x.idx);
+          const col = stepsArt.tileCss[x.idx] ?? DUST[0];
+          fx.chips(p.x, p.y, [col, col, ...DUST], x.cause === 'hit' ? 9 : 6, x.cause === 'bomb' ? 1.5 : 1.1);
+          fx.dust(p.x, p.y, 2, '#a8977a');
+          if (x.cause !== 'hit' && x.cause !== 'crew') fx.sparks(p.x, p.y, 3, x.cause === 'link' ? '#ffecbe' : MOD_CSS[x.cause as ModKind] ?? '#ffcf6a');
+          const t = (stepsArt === live.current.art ? live.current.st : hold.current?.st)?.tiles[x.idx];
+          if (t?.mod === 'bomb') { fx.sparks(p.x, p.y, 22, '#ffb347'); fx.sparks(p.x, p.y, 10, '#fff1b8'); }
+        }
+        if (gen > 0) sfx.chain(gen, list.length);
+        if (list.some((x) => x.cause === 'bomb')) { sfx.boom(list.length > 12); shake(true); }
+        else if (gen >= 3 && gen % 2) shake(false);
+      };
+      if (gen === 0) run(); else window.setTimeout(run, gen * WAVE);
+    }
+    const c = res.combo;
+    if (!c) return;
     window.setTimeout(() => {
-      clearInterval(spark);
-      fuse.current = false;
-      const { art } = live.current;
-      const res = act((g) => blastCharge(g, g.activeSite, i));
-      if (!res) return;
-      sfx.boom(res.blasts.length > 1);
-      shake(true);
-      for (const b of res.blasts) {
-        const c = center(b.center);
-        fx.sparks(c.x, c.y, 40, '#ffb347');
-        fx.sparks(c.x, c.y, 20, '#fff1b8');
-        for (const ci of b.cells) { const q = center(ci); fx.chips(q.x, q.y, [art.tileCss[ci], ...DUST], 8, 1.6); fx.dust(q.x, q.y, 4, '#a8977a'); playerHits.current.add(ci); }
-      }
-      if (res.shards) fx.text(p.x, p.y - 14, `+${fmt(res.shards)} odłamków`, '#e8dcb8', 14);
-      if (res.blasts.length > 1) { const c = center(res.blasts[1].center); fx.text(c.x, c.y - 10, 'REAKCJA ŁAŃCUCHOWA!', '#ffb347', 14); }
-    }, 700);
+      lastChain.current = { n: c.n, mult: c.mult, open: c.open, at: performance.now(), gems: c.gems };
+      if (c.added < 2 && !c.open) return;
+      const tail = res.steps.filter((x) => x.gen === last).map((x) => x.idx);
+      const p = centerOf(tail.length ? tail : [res.steps[0].idx]);
+      const big = c.n >= 10;
+      if (c.mult > 1) {
+        fx.text(p.x, p.y - 18, `COMBO ${c.n}! ×${c.mult.toFixed(2)}`, c.n >= 20 ? '#ff9a5a' : '#ffd76a', big ? 20 : 16);
+        sfx.combo(c.n);
+        if (big) heat.current = Math.min(1, 0.4 + c.n / 40);
+      } else if (c.n >= 3) fx.text(p.x, p.y - 14, `${c.n} pól`, '#f3e3bd', 14);
+      if (c.gems) fx.text(p.x, p.y + 6, `Kryształ ×${2 ** c.gems}!`, '#8af0b4', 14);
+      if (res.shards && c.mult > 1) fx.text(p.x, p.y + 22, `+${fmt(res.shards)} odłamków`, '#e8dcb8', 13);
+      c.loot.forEach((l, k) => {
+        const txt = l.kind === 'coins' ? `Łup: +${fmt(l.amount)} 💰` : l.kind === 'pb' ? `Łup: +${fmt(l.amount)} 🔬` : l.kind === 'mutagen' ? 'Łup: +1 🧪' : `Łup: ${MINERAL_BY_ID.get(l.mineralId ?? '')?.name ?? 'minerał'}`;
+        window.setTimeout(() => fx.text(p.x, p.y - 40, txt, '#ffe27a', 15), 250 * (k + 1));
+      });
+      if (c.record) say({ kind: 'rare3', icon: 'trophy', text: `Nowy rekord combo: ${c.n}!`, sub: 'Najdłuższa reakcja w całej grze' }, 3200);
+      else if (c.quake) say({ kind: 'fever', icon: 'flame', text: 'Wstrząs!', sub: 'Pozostałe kamienie popękały' }, 2200);
+      else if (c.refund) say({ kind: 'good', icon: 'sparkles', text: 'Oszczędna ręka', sub: 'Odzyskujesz po jednym użyciu narzędzi' }, 2200);
+      else if (c.open) say({ kind: 'hint', icon: 'sparkles', text: `Combo ${c.n} trwa`, sub: 'Następne ręczne rozbicie doliczy się do tej reakcji' }, 2000);
+    }, last * WAVE + 60);
   };
 
   const onHit = (i: number, auto = false) => {
     const now = performance.now();
+    if (hold.current && now < hold.current.until) return; // the last chain of the layer is still playing
     if (golden.current.idx === i) { if (!auto) claimGoldenFlash(i); return; }
-    if (s.settings.tool === 'charge' && m.charge) { placeCharge(i); return; }
-    const c = combo.current;
-    const fever = now < c.feverUntil;
-    if (!fever && m.combo && !auto) {
-      c.n = Math.min(FEVER_AT, streakNow(c, now) + 1);
-      c.best = Math.max(c.best, c.n);
-      if (c.n >= FEVER_AT && now > c.coolUntil && m.feverSec) startFever(now);
-    }
-    c.last = now;
-    const tool = s.settings.tool === 'hammer' && m.hammer ? 'hammer' : 'brush';
-    const base = tool === 'hammer' ? m.critHammer : m.critBrush;
-    const critChance = fever || now < c.feverUntil ? 1 : Math.min(1, base * comboMult(c.n, m.combo));
-    const cells = tool === 'hammer' ? hammerCells(st, i, m.hammerSquare) : [i];
-    const colors = cells.map((ci) => art.tileCss[ci]);
+    const { st: cst, art: cart, m: cm } = live.current;
+    const cells = brushCells(cst, i, cm.brushArea);
+    if (!cells.length) return;
+    const colors = cells.map((ci) => cart.tileCss[ci]);
     cells.forEach((ci) => { playerHits.current.add(ci); press.current.set(ci, now + 80); });
-    const before = cells.map((ci) => st.tiles[ci].hp);
-    const res = act((g) => hitTile(g, g.activeSite, i, g.settings.tool, undefined, { critChance }));
-    sfx.hit(tool, m.combo ? c.n : 0, res.crit);
-    const broke = res.layerDone || cells.some((ci, k) => before[k] > 0 && st.tiles[ci]?.hp <= 0);
-    if (broke) sfx.crumble(tool === 'hammer');
+    // keep the old layer for the animation in case this break finishes it
+    const before = { tiles: cst.tiles, items: cst.items, st: { ...cst }, art: cart };
+    for (const [k, v] of pending.current) if (v < now - 1500) pending.current.delete(k);
+    const res = act((g) => hitTile(g, g.activeSite, i));
+    sfx.hit('brush', 0, res.crit);
     cells.forEach((ci, k) => {
       const p = center(ci);
-      const big = ci === i;
-      fx.chips(p.x, p.y, [colors[k], colors[k], ...DUST], (big ? 9 : 5) * (res.crit && big ? 2 : 1), (tool === 'hammer' ? 1.3 : 1) * (res.crit && big ? 1.3 : 1));
-      fx.dust(p.x, p.y, big ? 3 : 2, '#a8977a');
+      fx.chips(p.x, p.y, [colors[k], colors[k], ...DUST], ci === i ? 6 : 4, 1);
+      fx.dust(p.x, p.y, 2, '#a8977a');
     });
-    if (res.crit && !fever) { const p = center(i); fx.text(p.x, p.y - 12, 'KRYT!', '#ffc45a', 13); shake(false); }
-    if (res.damaged) { const p = center(i); fx.text(p.x, p.y - 10, '💥 kość uszkodzona', '#ff8a7a', 14); }
-    for (const ci of res.extra ?? []) { const p = center(ci); fx.chips(p.x, p.y, [art.tileCss[ci], ...DUST], 6, 1); playerHits.current.add(ci); }
+    if (res.crit) { const p = center(i); fx.text(p.x, p.y - 12, 'KRYT!', '#ffc45a', 13); }
+    if (!res.steps.length) return;
+    res.steps.forEach((x) => playerHits.current.add(x.idx));
+    sfx.crumble(res.steps.length > 4);
+    const lastGen = Math.max(...res.steps.map((x) => x.gen));
+    if (res.layerDone) {
+      hold.current = { st: { ...before.st, tiles: before.tiles, items: before.items }, art: before.art, until: now + lastGen * WAVE + 450 };
+      setTool(null);
+    }
+    playChain(res, before.art);
   };
 
-  // automatic digging: the tool keeps hitting the tile under the cursor (workshop upgrades)
+  /** click with one of your own modifiers selected */
+  const onTool = (i: number) => {
+    const t = toolRef.current;
+    if (!t.tool) return;
+    const { st: cst } = live.current;
+    const def = TOOLS.find((x) => x.id === t.tool)!;
+    const p = center(i);
+    if (def.steps === 2 && t.picked < 0) {
+      const c = canUseTool(cst, t.tool, i);
+      if (!c.ok) { say({ kind: 'hint', icon: 'sparkles', text: c.why ?? 'Nie tutaj' }, 1600); return; }
+      setToolState({ tool: t.tool, picked: i });
+      sfx.click();
+      return;
+    }
+    const a = def.steps === 2 ? t.picked : i, b = def.steps === 2 ? i : undefined;
+    const c = canUseTool(cst, t.tool, a, b);
+    if (!c.ok) { say({ kind: 'hint', icon: 'sparkles', text: c.why ?? 'Nie tutaj' }, 1600); if (def.steps === 2) setToolState({ tool: t.tool, picked: -1 }); return; }
+    const tl = t.tool;
+    act((g) => applyTool(g, g.activeSite, tl, a, b));
+    sfx.tool();
+    fx.sparks(p.x, p.y, 12, '#9ff0b8');
+    if (b !== undefined) { const q = center(a); fx.sparks(q.x, q.y, 8, '#9ff0b8'); }
+    const left = live.current.st.uses?.[tl] ?? 0;
+    setToolState({ tool: left > 0 ? tl : null, picked: -1 });
+  };
+
+  // automatic digging: the brush keeps hitting the tile under the cursor (workshop upgrade)
   const onHitRef = useRef(onHit);
   onHitRef.current = onHit;
   useEffect(() => {
@@ -567,7 +720,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       last = now;
       const { s, st, m } = live.current;
       const i = hover.current.idx;
-      const rate = s.settings.autoDig === false ? 0 : s.settings.tool === 'hammer' && m.hammer ? m.autoHammer : s.settings.tool === 'brush' || (s.settings.tool === 'hammer' && !m.hammer) ? m.autoBrush : 0;
+      const rate = s.settings.autoDig === false || toolRef.current.tool ? 0 : m.autoBrush;
       if (!rate || i < 0 || !st.tiles[i] || st.tiles[i].hp <= 0 || document.hidden || !document.hasFocus()) { acc = 0; return; }
       acc += dt * rate;
       if (acc >= 1) { acc -= 1; onHitRef.current(i, true); }
@@ -575,19 +728,19 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
     return () => clearInterval(id);
   }, []);
 
-  // keyboard: 1 brush · 2 hammer · 3 charge · A auto-dig · F focus mode · Esc leave it · U workshop
+  // keyboard: 1 brush · 2–6 own modifiers · A auto-dig · F focus mode · Esc cancel / leave · U workshop
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null;
       if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
-      const { m } = live.current;
-      if (e.key === '1') act((g) => { g.settings.tool = 'brush'; });
-      else if (e.key === '2' && m.hammer) act((g) => { g.settings.tool = 'hammer'; });
-      else if (e.key === '3' && m.charge) act((g) => { g.settings.tool = 'charge'; });
-      else if ((e.key === 'a' || e.key === 'A') && (m.autoBrush || m.autoHammer)) act((g) => { g.settings.autoDig = g.settings.autoDig === false; });
+      const { m, st } = live.current;
+      const tl = TOOLS.find((x) => x.key === e.key);
+      if (e.key === '1') setTool(null);
+      else if (tl && (st.uses?.[tl.id] ?? 0) > 0) setTool(toolRef.current.tool === tl.id ? null : tl.id);
+      else if ((e.key === 'a' || e.key === 'A') && m.autoBrush) act((g) => { g.settings.autoDig = g.settings.autoDig === false; });
       else if (e.key === 'f' || e.key === 'F') setFocus(!focus);
       else if (e.key === 'u' || e.key === 'U') openShop();
-      else if (e.key === 'Escape' && focus) setFocus(false);
+      else if (e.key === 'Escape') { if (toolRef.current.tool) setTool(null); else if (focus) setFocus(false); }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
@@ -595,61 +748,78 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
 
   const toTile = (e: React.PointerEvent<HTMLCanvasElement>): HoverRef => {
     const r = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - r.left) / r.width) * GW, y = ((e.clientY - r.top) / r.height) * GH;
-    const inside = x >= 0 && y >= 0 && x < GW && y < GH;
-    return { idx: inside ? Math.floor(y / TS) * B.gridW + Math.floor(x / TS) : -1, px: inside ? [x, y] : null };
+    const { art: a } = live.current;
+    const x = ((e.clientX - r.left) / r.width) * a.GW, y = ((e.clientY - r.top) / r.height) * a.GH;
+    const inside = x >= 0 && y >= 0 && x < a.GW && y < a.GH;
+    return { idx: inside ? Math.floor(y / TS) * a.w + Math.floor(x / TS) : -1, px: inside ? [x, y] : null };
   };
 
+  const toolDef = tool.tool ? TOOLS.find((x) => x.id === tool.tool)! : null;
   const field = (
     <div ref={fieldRef} className="dig-main" style={focus || fit ? { height: '100%', justifyContent: 'center' } : undefined}>
-      <div ref={stageRef} className="dig-stage">
+      <div ref={stageRef} className={`dig-stage ${tool.tool ? 'tooling' : ''}`}>
         <canvas
           ref={canvasRef}
           className="dig-canvas pixel"
-          style={{ width: GW * scale, height: GH * scale, cursor: (s.settings.tool === 'hammer' && m.hammer) || (s.settings.tool === 'charge' && m.charge) ? 'crosshair' : 'pointer' }}
+          style={{ width: art.GW * scale, height: art.GH * scale, cursor: tool.tool ? 'crosshair' : 'pointer' }}
           onPointerMove={(e) => { hover.current = toTile(e); }}
           onPointerLeave={() => { hover.current = { idx: -1, px: null }; }}
+          onContextMenu={(e) => { if (toolRef.current.tool) { e.preventDefault(); setTool(null); } }}
           onPointerDown={(e) => {
             if (e.button !== 0) return;
             const t = toTile(e);
             hover.current = t;
-            if (t.idx >= 0 && st.tiles[t.idx].hp > 0) onHit(t.idx);
+            if (t.idx < 0) return;
+            if (toolRef.current.tool) { onTool(t.idx); return; }
+            if (st.tiles[t.idx]?.hp > 0) onHit(t.idx);
           }}
         />
         <FieldMsg msg={msg} />
+        <MineralPop pops={minerals} />
         <FindLabels st={st} glow={glow} scale={scale} />
-        <TileTip live={live} hover={hover} golden={golden} scale={scale} />
+        <TileTip live={live} hover={hover} golden={golden} scale={scale} preview={preview} tool={tool} />
         <ChestCard pop={chest} s={s} onOpen={setChestOpen} />
         <ChestWaiting s={s} onOpen={setChestOpen} />
+        {toolDef && (
+          <div className="tool-hint">
+            <toolDef.icon className="ic" />
+            <span><b>{toolDef.name}</b>{toolDef.steps === 2 && tool.picked >= 0 ? ' — teraz wskaż drugi kamień' : ` — ${toolDef.help}`}</span>
+            <button className="btn small" onClick={() => setTool(null)}>Anuluj <kbd>Esc</kbd></button>
+          </div>
+        )}
       </div>
       {chestOpen && <ChestModal s={s} chest={chestOpen} onClose={() => setChestOpen(null)} />}
     </div>
   );
+  const anyTool = TOOLS.some((x) => m.uses[x.id] > 0 || (st.uses?.[x.id] ?? 0) > 0);
   const toolbar = (
     <div className="toolbar">
-      <button className={`tool ${s.settings.tool === 'brush' || (s.settings.tool === 'hammer' && !m.hammer) || (s.settings.tool === 'charge' && !m.charge) ? 'on' : ''}`} onClick={() => act((g) => { g.settings.tool = 'brush'; })} title="Jedno pole, bez ryzyka dla kości">
-        <kbd className="key">1</kbd><Paintbrush className="ic" style={{ width: 22, height: 22 }} />Pędzel<small>moc {m.brushPower.toFixed(2)}</small>
+      <button className={`tool ${!tool.tool ? 'on' : ''}`} onClick={() => setTool(null)} title="Pędzel: kliknij kamień, żeby go rozbić. Najedź, a zobaczysz, jaką reakcję uruchomi.">
+        <kbd className="key">1</kbd><Paintbrush className="ic" style={{ width: 22, height: 22 }} />Pędzel<small>moc {m.brushPower.toFixed(2)}{m.brushArea ? ` · ${m.brushArea === 1 ? '2 pola' : '2×2'}` : ''}</small>
       </button>
-      <button className={`tool ${s.settings.tool === 'hammer' && m.hammer ? 'on' : ''}`} onClick={() => (m.hammer ? act((g) => { g.settings.tool = 'hammer'; }) : openShop())}
-        title={m.hammer ? `${m.hammerSquare ? 'Kwadrat 3×3' : 'Plus z 5 pól'}. ${pct(m.hammerRisk)} ryzyka, gdy przebija się do kości (pola świecą na czerwono).` : 'Odblokuj w Warsztacie: Młot pneumatyczny'}>
-        <kbd className="key">2</kbd>{!m.hammer && <Lock className="lock" />}<Hammer className="ic" style={{ width: 22, height: 22 }} />Młot<small>{m.hammer ? `moc ${m.hammerPower.toFixed(2)}` : 'Warsztat'}</small>
-      </button>
-      <button className={`tool ${s.settings.tool === 'charge' && m.charge ? 'on' : ''}`} onClick={() => (m.charge ? act((g) => { g.settings.tool = 'charge'; }) : openShop())}
-        title={m.charge ? 'Kliknij pole: po krótkim loncie wybuch kruszy skałę dookoła. Pola ze znaleziskami tylko pękają — dokopujesz je sam.' : 'Odblokuj w Warsztacie: Ładunek prochowy'}>
-        <kbd className="key">3</kbd>{!m.charge && <Lock className="lock" />}<Bomb className="ic" style={{ width: 22, height: 22 }} />Ładunek
-        <small>{m.charge ? <ChargeMeter s={s} m={m} /> : 'Warsztat'}</small>
-        {m.charge && (s.charges?.n ?? 0) < m.chargeMax && <span className="tool-cd" style={{ width: `${((s.charges?.acc ?? 0) / m.chargeCd) * 100}%` }} />}
-      </button>
+      {TOOLS.map((x) => {
+        const max = m.uses[x.id], left = st.uses?.[x.id] ?? 0;
+        const locked = max === 0 && left === 0;
+        if (locked && !anyTool && x.id !== 'bomb') return null;
+        return (
+          <button key={x.id} className={`tool ${tool.tool === x.id ? 'on' : ''} ${locked ? 'locked' : ''}`} disabled={!locked && left <= 0}
+            onClick={() => (locked ? openShop() : setTool(tool.tool === x.id ? null : x.id))}
+            title={locked ? `Odblokuj w Warsztacie (Ręka geologa): ${x.name}` : `${x.help} Zostało ${left} w tej warstwie.`}>
+            <kbd className="key">{x.key}</kbd>{locked && <Lock className="lock" />}<x.icon className="ic" style={{ width: 22, height: 22 }} />{x.name}
+            <small>{locked ? 'Warsztat' : `${left}/${Math.max(max, left)}`}</small>
+          </button>
+        );
+      })}
       <button className={`tool passive ${m.scanner ? 'on' : ''}`} onClick={openShop} title={m.scanner ? `Georadar poziom ${m.scanner}: działa sam. Ulepszaj w Warsztacie.` : 'Odblokuj w Warsztacie: Georadar'}>
         {!m.scanner && <Lock className="lock" />}<Radar className="ic" style={{ width: 22, height: 22 }} />Georadar<small>{m.scanner ? `poziom ${['', 'I', 'II', 'III', 'IV'][m.scanner]}` : 'Warsztat'}</small>
       </button>
-      {(m.autoBrush > 0 || m.autoHammer > 0) && (
+      {m.autoBrush > 0 && (
         <button className={`tool auto ${s.settings.autoDig !== false ? 'on' : ''}`} onClick={() => act((g) => { g.settings.autoDig = g.settings.autoDig === false; })}
-          title="Automatyczne kopanie: narzędzie samo uderza w pole pod kursorem — wystarczy wodzić myszką (klawisz A)">
-          <kbd className="key">A</kbd><MousePointer2 className="ic" style={{ width: 22, height: 22 }} />Auto<small>{s.settings.autoDig !== false ? `${s.settings.tool === 'hammer' && m.hammer ? m.autoHammer : m.autoBrush}/s` : 'wyłączone'}</small>
+          title="Automatyczne kopanie: pędzel sam uderza w pole pod kursorem — wystarczy wodzić myszką (klawisz A)">
+          <kbd className="key">A</kbd><MousePointer2 className="ic" style={{ width: 22, height: 22 }} />Auto<small>{s.settings.autoDig !== false ? `${m.autoBrush}/s` : 'wyłączone'}</small>
         </button>
       )}
-      <button className="tool shop" onClick={openShop} title="Drzewko ulepszeń narzędzi i ekip (klawisz U)">
+      <button className="tool shop" onClick={openShop} title="Drzewko umiejętności: reakcje, modyfikatory, narzędzia i ekipy (klawisz U)">
         <kbd className="key">U</kbd><Wrench className="ic" style={{ width: 22, height: 22 }} />Warsztat<small><Hexagon className="ic" style={{ width: 11, height: 11, verticalAlign: -1 }} /> {fmt(s.shards ?? 0)}</small>
       </button>
     </div>
@@ -677,7 +847,7 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
             <div className="muted small" style={{ marginTop: 6 }}>warstwa {st.depth + 1} · {at.s.name}</div>
             <EpochDots depth={st.depth} />
           </div>
-          <div className="hud col" style={{ gap: 10 }}><span className="lbl">Seria</span><ComboPill combo={combo} m={m} openShop={openShop} /></div>
+          <div className="hud col" style={{ gap: 10 }}><span className="lbl">Reakcje</span><ChainPill s={s} st={st} m={m} last={lastChain} openShop={openShop} /></div>
         </div>
         <div className="f-mid" style={{ position: 'relative' }}>{field}<canvas ref={fxRef} className="dig-fx" /></div>
         <div className="f-right">
@@ -698,9 +868,13 @@ function DigBoard({ s, focus, setFocus, openShop }: { s: GameState; focus: boole
       <LeftPanel s={s} st={st} />
       <div className="panel dig-center">
         <div className="dig-center-head">
-          <div className="title"><span className="lbl">Warstwa {st.depth + 1}</span><b>{at.s.name}</b></div>
-          <ComboPill combo={combo} m={m} openShop={openShop} />
-          <span className="reward" title="Nagroda po wykopaniu całej warstwy (każdego pola)">Za warstwę <b>+{fmt(reward.coins)}</b><Coins className="ic" style={{ color: 'var(--accent)' }} /><b className="blue">+{reward.pb}</b><Microscope className="ic" style={{ color: 'var(--blue)' }} /></span>
+          <div className="title"><span className="lbl">Warstwa {st.depth + 1} · {dims(st).w}×{dims(st).h}</span><b>{at.s.name}</b>
+            <span className={`rich ${isTreasure(st.depth) ? 'treasure' : richness(st.depth) < 1 ? 'lean' : richness(st.depth) > 1 ? 'good' : ''}`} title="Rytm epoki (5 warstw): uboga warstwa po skrzyni, zwykłe, bogatsza i warstwa skarbów przed skrzynią — z podwójną liczbą modyfikatorów.">
+              {isTreasure(st.depth) ? <><Sparkles className="ic" />Warstwa skarbów · odłamki ×{richness(st.depth)}</> : `odłamki ×${richness(st.depth)}`}
+            </span>
+          </div>
+          <ChainPill s={s} st={st} m={m} last={lastChain} openShop={openShop} />
+          <span className="reward" title="Nagroda po wykopaniu całej warstwy (każdego pola). Gwiazdki za mało ruchów ją zwiększają.">Za warstwę <b>+{fmt(reward.coins)}</b><Coins className="ic" style={{ color: 'var(--accent)' }} /><b className="blue">+{reward.pb}</b><Microscope className="ic" style={{ color: 'var(--blue)' }} /></span>
         </div>
         <div className="dig-wrap">{field}<canvas ref={fxRef} className="dig-fx" /></div>
         {toolbar}
@@ -730,39 +904,120 @@ function useFits(): boolean {
   return fit;
 }
 
-// ---------------------------------------------------------------- left: section · fauna · minerals · new discoveries
+// ---------------------------------------------------------------- left: what this site holds and how much of it you have
 
-type LeftTab = 'section' | 'fauna' | 'minerals' | 'new';
+type LeftTab = 'fauna' | 'guests' | 'minerals' | 'rocks';
 let leftTabMemo: LeftTab = 'fauna';
 
 function LeftPanel({ s, st }: { s: GameState; st: SiteState }) {
   const [tab, setTab] = useState<LeftTab>(leftTabMemo);
-  const unseen = (s.discoveries ?? []).filter((d) => !d.seen).length;
+  const openCutscene = useStore((x) => x.openCutscene);
   const site = SITE_BY_ID.get(s.activeSite)!;
-  const disc = site.fauna.filter((f) => s.discovered[f.genusId]).length;
+  const pr = chapterProgress(s, site.id);
   const own = siteMinerals(s.activeSite);
-  const tabs: [LeftTab, string, string?][] = [
-    ['section', 'Przekrój'],
-    ['fauna', 'Fauna', `${disc}/${site.fauna.length}`],
-    ['minerals', 'Minerały', `${own.filter((x) => s.minerals?.[x.id]).length}/${own.length}`],
-    ['new', 'Odkrycia', unseen ? (unseen > 99 ? '99+' : String(unseen)) : undefined],
-  ];
+  const minHave = own.filter((x) => s.minerals?.[x.id]).length;
+  const rocks = siteRocks(s.activeSite);
+  const rockHave = rocks.filter((r) => rockFound(s, r)).length;
+  const no = chapterNo(site.id);
   const pick = (t: LeftTab) => { leftTabMemo = t; setTab(t); };
+  const cards: [LeftTab, string, number, number, string][] = [
+    ['fauna', 'Zwierzęta', pr.nativeFound, pr.native, 'var(--accent)'],
+    ...(pr.guests ? [['guests', 'Goście epoki', pr.guestsFound, pr.guests, '#9fc5e8'] as [LeftTab, string, number, number, string]] : []),
+    ['minerals', 'Minerały', minHave, own.length, 'var(--purple)'],
+    ['rocks', 'Skały', rockHave, rocks.length, '#c9b98a'],
+  ];
   return (
     <div className="panel dig-left">
-      <div className="seg-tabs" role="tablist" aria-label="Stanowisko">
-        {tabs.map(([id, label, n]) => (
-          <button key={id} role="tab" aria-selected={tab === id} className={tab === id ? 'on' : ''} onClick={() => pick(id)}>
-            {label}{n && <span className={id === 'new' ? 'count' : 'n'}>{n}</span>}
+      <button className="inv-chapter" onClick={() => openCutscene(site.id)} title="Obejrzyj wstęp do rozdziału">
+        <span className="inv-no">{no}</span>
+        <span className="col" style={{ gap: 0, minWidth: 0 }}><small className="lbl">Rozdział {no} · {site.period}</small><b>{chapterTitle(site.id)}</b></span>
+        <Film className="ic" />
+      </button>
+      <div className="inv-cards" role="tablist" aria-label="Co kryje stanowisko">
+        {cards.map(([id, label, have, all, col]) => (
+          <button key={id} role="tab" aria-selected={tab === id} className={`inv-card ${tab === id ? 'on' : ''}`} onClick={() => pick(id)}>
+            <small>{label}</small>
+            <b><span style={{ color: col }}>{have}</span>/{all}</b>
+            <i><em style={{ width: `${all ? (have / all) * 100 : 0}%`, background: col }} /></i>
           </button>
         ))}
       </div>
       <div className="dig-left-body">
-        {tab === 'section' && <StrataColumn s={s} st={st} />}
-        {tab === 'fauna' && <FaunaTab s={s} />}
+        {tab === 'fauna' && <ChapterTree s={s} siteId={site.id} compact />}
+        {tab === 'guests' && <><p className="muted small" style={{ margin: '0 0 8px' }}>Goście epoki żyli w tym czasie i środowisku, ale ich skamieniałości znaleziono gdzie indziej. To dodatkowa kolekcja: rozdział zamyka się bez nich.</p><ChapterTree s={s} siteId={site.id} compact part="guests" /></>}
         {tab === 'minerals' && <MineralsTab s={s} />}
-        {tab === 'new' && <Discoveries s={s} />}
+        {tab === 'rocks' && <RocksTab s={s} st={st} />}
       </div>
+    </div>
+  );
+}
+
+function RocksTab({ s, st }: { s: GameState; st: SiteState }) {
+  const rocks = siteRocks(s.activeSite);
+  return (
+    <div className="col" style={{ gap: 10 }}>
+      <StrataColumn s={s} st={st} />
+      <div className="cx-rocks">
+        {rocks.map((r) => {
+          const f = rockFound(s, r);
+          return (
+            <div key={r.index} className={`cx-rock ${f ? 'have' : ''}`}>
+              <i style={{ background: f ? r.color : '#2a271e' }} />
+              <span className="col" style={{ gap: 0 }}><b>{f ? r.name : '???'}</b><small>{f ? r.desc : `od −${depthMeters(r.startDepth)} m`}</small></span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/** the evolutionary stage this site stands for: what happened, what is new on the tree of life, a fact */
+export function EpochTab({ s, compact }: { s: GameState; compact?: boolean }) {
+  const openClade = useStore((x) => x.openClade);
+  const setTreeFocus = useStore((x) => x.setTreeFocus);
+  const site = SITE_BY_ID.get(s.activeSite)!;
+  const ep = EPOCHS[site.id];
+  const k = SITE_ORDER.indexOf(site.id);
+  const fresh = newCladesAt(site.id).filter((x) => x.clade.leafCount < 1500).slice(0, compact ? 4 : 7);
+  if (!ep) return null;
+  const prev = SITE_ORDER[k - 1], next = SITE_ORDER[k + 1];
+  return (
+    <div className="epoch col">
+      <div className="epoch-head">
+        <span className="lbl">Etap {k + 1} z {SITE_ORDER.length} · {site.period}</span>
+        <b>{ep.title}</b>
+        <span className="small muted">{Math.round(site.fromMa)}–{Math.round(site.toMa) || '<1'} mln lat temu</span>
+      </div>
+      <div className="epoch-steps" aria-hidden="true">
+        {SITE_ORDER.map((id, i) => <i key={id} className={i < k ? 'past' : i === k ? 'now' : ''} title={`${i + 1}. ${EPOCHS[id]?.title ?? id}`} />)}
+      </div>
+      <LessonBtn to={{ kind: 'site', id: site.id }}>Pokaz stanowiska: oś czasu, fauna, nowości</LessonBtn>
+      <p className="epoch-story">{ep.story}</p>
+      <div className="col" style={{ gap: 4 }}>
+        <span className="lbl"><Lightbulb className="ic" style={{ width: 12, height: 12, verticalAlign: -2 }} /> Nowe w ewolucji</span>
+        <ul className="epoch-list">{ep.innovations.map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
+      {fresh.length > 0 && (
+        <div className="col" style={{ gap: 6 }}>
+          <span className="lbl"><Dna className="ic" style={{ width: 12, height: 12, verticalAlign: -2 }} /> Po raz pierwszy na drzewie życia</span>
+          <div className="epoch-clades">
+            {fresh.map((x) => (
+              <button key={x.clade.id} className="chip" onClick={() => openClade(x.clade.id)} onDoubleClick={() => setTreeFocus(x.clade.id)} title={`${x.clade.name}: ${x.genera} ${plural(x.genera, 'rodzaj', 'rodzaje', 'rodzajów')} na tym stanowisku. Kliknij po więcej.`}>
+                {x.clade.namePl}<small>{x.genera}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      <div className="epoch-fact"><Sparkles className="ic" /><span><b>Ciekawostka.</b> {ep.fact}</span></div>
+      {ep.extinction && <div className="epoch-ext"><Skull className="ic" /><span>{ep.extinction}</span></div>}
+      {!compact && (
+        <div className="row small muted" style={{ justifyContent: 'space-between', gap: 8 }}>
+          <span>{prev ? <>← {EPOCHS[prev]?.title}</> : 'Początek drogi'}</span>
+          <span style={{ textAlign: 'right' }}>{next ? <>{EPOCHS[next]?.title} →</> : 'Koniec drogi'}</span>
+        </div>
+      )}
     </div>
   );
 }
@@ -906,7 +1161,7 @@ function OddsPanel({ s, compact, onLog }: { s: GameState; compact?: boolean; onL
   const [open, setOpen] = useState(true);
   const st = siteState(s, s.activeSite);
   const m = mods(s);
-  const rar = fossilRarityOdds(s.activeSite, st.depth, m);
+  const rar = fossilRarityOdds(s, s.activeSite, st.depth, m);
   const q = qualityOddsAt(st.depth, m);
   return (
     <div className="panel">
@@ -942,8 +1197,8 @@ function OddsPanel({ s, compact, onLog }: { s: GameState; compact?: boolean; onL
 
 const CREW_MODES: [CrewMode, string, string][] = [
   ['off', 'Wyłączone', 'Ekipy nie kopią — wszystko odkrywasz sam.'],
-  ['helpers', 'Pomocnicy', 'Kruszą zwykłą skałę. Pola, pod którymi coś leży, tylko osłabiają — ostatnie uderzenie i odkrycie zostawiają Tobie.'],
-  ['full', 'Automat', 'Wykopują wszystko same, także offline. Nowe gatunki trafiają do skrzynki „Nowe odkrycia”.'],
+  ['helpers', 'Pomocnicy', 'Kruszą zwykłą skałę. Kamienie ze znaleziskami, modyfikatorami i połączeniami tylko osłabiają do jednego pociągnięcia — rozbicie (i reakcję) zostawiają Tobie.'],
+  ['full', 'Automat', 'Wykopują wszystko same, także offline, i odpalają modyfikatory (bez nagród za combo). Nowe gatunki trafiają do skrzynki „Nowe odkrycia”.'],
 ];
 
 function CrewSwitch({ s, short }: { s: GameState; short?: boolean }) {
@@ -965,51 +1220,8 @@ function CrewSwitch({ s, short }: { s: GameState; short?: boolean }) {
   );
 }
 
-function ChargeMeter({ s, m }: { s: GameState; m: Mods }) {
-  const n = s.charges?.n ?? 0;
-  return <>{n}/{m.chargeMax}{n < m.chargeMax ? ` · ${Math.ceil(m.chargeCd - (s.charges?.acc ?? 0))} s` : ' gotowe'}</>;
-}
 
 // ---------------------------------------------------------------- lower row: fauna / minerals · dig log
-
-/** how far a species is: discovered → genome → in the park */
-const speciesProgress = (s: GameState, id: number) => (s.hatched[id] ? 1 : Math.min(0.95, ((s.genome[id] ?? 0) / 100) * 0.95));
-
-function FaunaTab({ s }: { s: GameState }) {
-  const openGenus = useStore((x) => x.openGenus);
-  const [filter, setFilter] = useState<'all' | 'known' | 'missing'>('all');
-  const site = SITE_BY_ID.get(s.activeSite)!;
-  const list = site.fauna.map((f) => GENERA.get(f.genusId)).filter((g): g is NonNullable<typeof g> => !!g);
-  const known = (id: number) => !!s.discovered[id] || s.settings.revealAll;
-  const shown = list.filter((g) => filter === 'all' || (filter === 'known') === known(g.id));
-  const disc = list.filter((g) => s.discovered[g.id]).length;
-  const hatched = list.filter((g) => s.hatched[g.id]).length;
-  return (
-    <div className="col" style={{ gap: 10 }}>
-      <div className="segmented">
-        {([['all', 'Wszystkie'], ['known', 'Odkryte'], ['missing', 'Brakujące']] as const).map(([id, label]) => <button key={id} className={filter === id ? 'on' : ''} onClick={() => setFilter(id)}>{label}</button>)}
-      </div>
-      <span style={{ color: 'var(--accent)', fontWeight: 900 }}>{disc} / {list.length} odkryte · {hatched} w parku</span>
-      <div className="fauna-shelf">
-        <div className="shelf">
-          {shown.map((g) => {
-            const k = known(g.id);
-            const p = speciesProgress(s, g.id);
-            return (
-              <span key={g.id} className={k ? 'known clickable' : 'unknown'} onClick={() => k && openGenus(g.id)}
-                title={k ? `${g.name} · ${RARITY_NAMES[g.rarity]} · genom ${Math.floor(s.genome[g.id] ?? 0)}%${s.hatched[g.id] ? ' · w parku' : ''}` : 'Nieodkryty — szukaj jego kości'}>
-                <SpriteImg genusId={g.id} scale={2} silhouette={!s.hatched[g.id]} title={k ? g.name : '???'} />
-                {k && <i className="prog" style={{ borderColor: RARITY_COLORS[g.rarity] }}><b style={{ width: `${p * 100}%`, background: s.hatched[g.id] ? 'var(--accent2)' : 'var(--blue)' }} /></i>}
-              </span>
-            );
-          })}
-        </div>
-      </div>
-      <Bar value={disc + hatched} max={list.length * 2} kind="gold" title="Ukończenie fauny stanowiska (odkrycia + hodowla)" />
-      <span className="small muted">Pasek pod zwierzęciem: postęp genomu, zielony = już w parku. Kliknij, by otworzyć kartę gatunku. Dane: Paleobiology Database.</span>
-    </div>
-  );
-}
 
 function MineralsTab({ s }: { s: GameState }) {
   const [sel, setSel] = useState<string | null>(null);
@@ -1097,51 +1309,14 @@ function DigLog({ s }: { s: GameState }) {
         <p><b>Warstwa</b> kończy się dopiero, gdy wykopiesz każdy kamień. Ile w niej kości i skarbów — nie wiesz, dopóki ich nie odkopiesz.</p>
         <p><b>Kość</b> zajmuje 2–4 pola i zalicza się po odsłonięciu wszystkich. Obwódka świeci kolorem rzadkości i może urosnąć, gdy odsłaniasz więcej.</p>
         <p><b>Drobne</b> dają punkty badań i monety, <b>bursztyn</b> mutagen, <b>minerał</b> monety i miejsce w kolekcji. Bursztyn i minerały błyskają przez popękaną skałę.</p>
-        <p><b>Warsztat</b> (klawisz U): siła, krytyki, seria, Gorączka, rozprysk i tlenie pędzla, młot i georadar. <b>Złoty błysk</b>: kliknij po nagrodę.</p>
+        <p><b>Reakcje łańcuchowe</b>: kamień z modyfikatorem po rozbiciu odpala kolejne (strzałka, ładunek, żyła, zwornik, rezonans, kryształ). Wszystko, co pęknie z jednego Twojego rozbicia, to combo: od kilku pól rośnie mnożnik odłamków i łupów. Najedź na kamień, żeby zobaczyć podgląd reakcji.</p>
+        <p><b>Warsztat</b> (klawisz U): modyfikatory w skale, własne narzędzia (ładunek, połączenie, obrót, przesunięcie, kopia), zasady combo, pędzel, georadar i ekipy. <b>Gwiazdki</b> za warstwę wykopaną małą liczbą ruchów. <b>Złoty błysk</b>: kliknij po nagrodę.</p>
       </details>
     </div>
   );
 }
 
 /** new species found by the crews while you were away or busy */
-function Discoveries({ s }: { s: GameState }) {
-  const act = useStore((x) => x.act);
-  const openGenus = useStore((x) => x.openGenus);
-  const unseen = (s.discoveries ?? []).filter((d) => !d.seen);
-  if (!unseen.length) {
-    return (
-      <div className="col small muted" style={{ gap: 8, padding: '6px 2px' }}>
-        <span><Sparkles className="ic" style={{ verticalAlign: -2, marginRight: 6, color: 'var(--accent)' }} /><b style={{ color: 'var(--text)' }}>Nic nowego</b></span>
-        <span>Gatunki, które odkryją ekipy (także gdy gra jest wyłączona), pojawią się tutaj — z liczbą na zakładce.</span>
-      </div>
-    );
-  }
-  return (
-    <div className="col" style={{ gap: 10 }}>
-      <div className="row">
-        <b style={{ color: 'var(--accent)' }}><Sparkles className="ic" style={{ verticalAlign: -2, marginRight: 6 }} />Nowe odkrycia ({unseen.length})</b>
-        <span className="spacer" />
-        <Btn small onClick={() => act((g) => g.discoveries.forEach((d) => { d.seen = true; }))}>Obejrzane</Btn>
-      </div>
-      <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: 8 }}>
-        {unseen.slice(0, 24).map((d) => {
-          const g = GENERA.get(d.genusId)!;
-          return (
-            <div key={d.genusId} className="item clickable" style={{ flexDirection: 'column', alignItems: 'flex-start' }}
-              onClick={() => { act((st) => { const x = st.discoveries.find((y) => y.genusId === d.genusId); if (x) x.seen = true; }); openGenus(d.genusId); }}>
-              <div style={{ alignSelf: 'center', minHeight: 50, display: 'flex', alignItems: 'flex-end' }}><SpriteImg genusId={g.id} scale={2} silhouette={!s.hatched[g.id]} /></div>
-              <b><i>{g.name}</i></b>
-              <span className="small muted">{periodLabel(g.fromMa, g.toMa)} · {Math.round(g.fromMa)}–{Math.round(g.toMa)} mln lat</span>
-              <span className="small muted">{SITE_BY_ID.get(d.siteId)?.name}{d.byCrew ? ' · znalazła ekipa' : ' · Twoje znalezisko'}</span>
-            </div>
-          );
-        })}
-      </div>
-      {unseen.length > 24 && <div className="small muted">…i {unseen.length - 24} więcej</div>}
-    </div>
-  );
-}
-
 // ---------------------------------------------------------------- screen
 
 export function SoundControl({ s }: { s: GameState }) {
@@ -1181,7 +1356,22 @@ export function DigScreen() {
   const [focus, setFocus] = useState(false);
   const [shop, setShop] = useState(false);
   useEffect(() => { setVolume(s.settings.sound ?? 0.6); }, []);
+  const owned = !!s.unlockedSites[s.activeSite];
+  useBeat('nosite', !owned && view === 'dig');
+  useBeat('dig', owned && view === 'dig');
   if (view === 'map') return <WorldMap s={s} onDig={() => setView('dig')} />;
+  if (!owned) {
+    return (
+      <div className="dig-screen nosite">
+        <div className="panel nosite-card">
+          <MapIcon className="ic" />
+          <h2>Nie masz jeszcze wykopaliska</h2>
+          <p className="muted">Każde stanowisko to rozdział historii życia. Pierwszy, kambryjskie morze Chengjiang, czeka na mapie świata: kup pozwolenie i zaczynaj kopać.</p>
+          <Btn kind="primary" big onClick={() => setView('map')}><MapIcon className="ic" />Otwórz mapę świata</Btn>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="dig-screen">
       <SiteHead s={s} openMap={() => setView('map')} setFocus={setFocus} />

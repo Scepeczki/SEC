@@ -1,0 +1,1609 @@
+{
+ "batch": "etap-01a",
+ "stage": {
+  "nr": 1,
+  "id": "etap-01",
+  "title": "Eksplozja kambryjska",
+  "window": "pierwsze pojawienia ok. 539–521 mln lat temu; główne stanowisko: Chengjiang (ok. 518 mln lat temu)",
+  "genera": 71,
+  "mainBranch": "Arthropoda",
+  "route": [
+   "Protostomia",
+   "Ecdysozoa",
+   "Panarthropoda",
+   "Onychophora",
+   "Hallucigeniidae",
+   "Arthropoda",
+   "Radiodonta",
+   "Anomalocarididae",
+   "Amplectobeluidae",
+   "Tamisiocarididae",
+   "Hurdiidae",
+   "Artiopoda",
+   "Trilobita",
+   "Redlichiida",
+   "Redlichiina",
+   "Redlichiidae",
+   "Ellipsocephaloidea",
+   "Corynexochida",
+   "Nektaspidida",
+   "Naraoiidae",
+   "Petalopleura",
+   "Conciliterga",
+   "Vicissicaudata",
+   "Deuteropoda",
+   "Megacheira",
+   "Leanchoiliidae",
+   "Chelicerata",
+   "Mollisoniida",
+   "Mandibulata",
+   "Hymenocarina",
+   "Pancrustacea",
+   "Hymenostraca",
+   "Bradoriida",
+   "Scalidophora",
+   "Spiralia",
+   "Brachiopoda",
+   "Mollusca",
+   "Deuterostomia",
+   "Cambroernida",
+   "Chordata",
+   "Vetulicolida",
+   "Vertebrata",
+   "Myllokunmingiidae",
+   "Porifera",
+   "Archaeocyatha",
+   "Ctenophora",
+   "Cnidaria",
+   "Anthozoa"
+  ],
+  "routeNote": "Kolejność wędrówki po drzewie etapu. Węzły od Deuteropoda do końca są w paczce etap-01b. Najpierw główna gałąź (stawonogi), potem boczne wątki: robaki linienne, Spiralia, nasza linia (wtórouste), a na końcu starsze gałęzie zwierząt (gąbki, żebropławy, parzydełkowce). Liczby uwzględniają uzupełnienia z zmiany-danych-01.json.",
+  "intro": [
+   {
+    "kind": "swiat",
+    "title": "Muliste morze Junnanu",
+    "text": "Jest ok. 518 mln lat temu. Tam, gdzie dziś leży chińska prowincja Junnan, rozciąga się płytkie, ciepłe morze. Na lądzie nie ma ani jednej rośliny – tylko nagie skały i może cienki nalot mikrobów. Całe życie zwierząt mieszka w wodzie. Co jakiś czas sztormy albo osuwiska mułu zasypują dno w jednej chwili. Zwierzęta giną pod warstwą drobnego iłu, gdzie jest mało tlenu, więc ich ciała nie zdążą zgnić. Dzięki temu w skałach Chengjiang zachowały się nie tylko pancerze, ale też oczy, skrzela, jelita, a nawet mózgi. Od 2012 r. to miejsce jest na liście światowego dziedzictwa UNESCO.",
+    "visual": "Przekrój płytkiego morza: u góry jasna woda z pływającymi stawonogami, na dnie miękki muł, z boku spływa chmura osadu przykrywająca zwierzęta."
+   },
+   {
+    "kind": "nowosc",
+    "title": "Czym jest eksplozja kambryjska?",
+    "text": "W skałach starszych niż ok. 539 mln lat zwierząt jest mało: odciski miękkich istot ediakarskich i drobne ślady pełzania. Potem, w ciągu kilkudziesięciu milionów lat, w skamieniałościach pojawia się niemal każdy wielki plan budowy zwierząt, który znamy dziś: stawonogi, mięczaki, strunowce i wiele innych. Badacze nazywają to eksplozją kambryjską. Słowo „eksplozja” jest przesadą – to trwało miliony lat, a zegary molekularne (zegar-molekularny) mówią, że wiele linii rozdzieliło się wcześniej. Ale w skałach widać to naprawdę jako nagły wysyp. Pojawiają się twarde pancerze, oczy, drapieżniki i ofiary – a z nimi wyścig zbrojeń.",
+    "visual": "Oś czasu od 600 do 480 mln lat temu; przed 539 kilka skromnych ikon, po 539 gęsty „wybuch” kolorowych ikon różnych grup zwierząt."
+   },
+   {
+    "kind": "rozwidlenie",
+    "title": "Kto tu rządzi?",
+    "text": "W tym etapie gra ma 71 rodzajów zwierząt, które pojawiają się tu po raz pierwszy (liczba uwzględnia uzupełnienia danych). Aż 45 z nich to stawonogi (Arthropoda) i ich najbliżsi krewni – zwierzęta z twardym pancerzem i nogami ze stawami. Dlatego to one są główną gałęzią tej wędrówki. Obok nich spotkasz robaki na nóżkach i robaki ryjące w mule, ramienionogi w dwuczęściowych muszelkach, kolczaste krewne mięczaków, gąbki, pierwszy koralowiec i żebropława. Jest też siedem rodzajów z naszej linii – strunowców, wśród nich najstarsze znane ryby. Proporcje są uczciwe: w kambryjskich skałach stawonogów naprawdę jest najwięcej, bo ich pancerz łatwiej się zachowuje.",
+    "visual": "Wykres słupkowy (opis w visuals: sklad-etapu-01): długi słupek stawonogów i krótkie słupki pozostałych grup."
+   },
+   {
+    "kind": "punkt-wyjscia",
+    "title": "Jak czytać ten etap",
+    "text": "Zaczynamy tam, gdzie skończył się pień: w miejscu, gdzie zwierzęta dwubocznie symetryczne dzielą się na pierwouste i wtórouste. Najpierw pójdziemy w stronę pierwoustych, do zwierząt, które linieją, czyli zrzucają skórkę. Stamtąd dojdziemy do stawonogów i rozejrzymy się po ich najważniejszych odgałęzieniach: wielkich drapieżnikach radiodontach, trylobitach i ich kuzynach. Potem odwiedzimy krewnych krabów, pająków i owadów. Potem odwiedzimy robaki ryjące w mule, ramienionogi i mięczaki, a następnie wrócimy do drugiej, mniejszej gałęzi – do pierwszych strunowców i ryb. Na koniec zajrzymy do starszych gałęzi zwierząt: gąbek, żebropławów i koralowców. Przy każdym rozwidleniu dowiesz się, co nowego się pojawiło i dlaczego się opłaciło.",
+    "visual": "Uproszczony diagram drzewa etapu (opis w visuals: drzewo-etapu-01) ze świecącą ścieżką i ponumerowanymi przystankami."
+   }
+  ],
+  "visuals": [
+   {
+    "id": "os-czasu-etap-01",
+    "kind": "oś czasu",
+    "title": "Gdzie jesteśmy w czasie",
+    "purpose": "Pokazać, że etap 1 to krótki odcinek na samym początku historii zwierząt, a Chengjiang leży tuż po początku kambru.",
+    "howTo": "Pozioma oś od 4600 do 0 mln lat temu w skali logarytmicznej albo z „lupą”: cała historia Ziemi jako cienki pasek, a pod nim powiększony odcinek 560–480 mln lat. Na powiększeniu zaznacz: koniec ediakaru (539), pierwsze trylobity (521), Chengjiang (518), Burgess (508). Okno etapu 1 (539–521, pierwsze pojawienia) wypełnij kolorem głównej gałęzi.",
+    "data": {
+     "events": [
+      {
+       "mln": 539,
+       "label": "początek kambru"
+      },
+      {
+       "mln": 521,
+       "label": "pierwsze trylobity"
+      },
+      {
+       "mln": 518,
+       "label": "Chengjiang"
+      },
+      {
+       "mln": 508,
+       "label": "Burgess (etap 2)"
+      }
+     ]
+    }
+   },
+   {
+    "id": "sklad-etapu-01",
+    "kind": "wykres słupkowy",
+    "title": "Kto pojawia się w etapie 1",
+    "purpose": "Pokazać, że stawonogi zdecydowanie dominują, a w środku stawonogów – radiodonty i artiopody.",
+    "howTo": "Poziome słupki posortowane malejąco. Słupek stawonogów podziel na segmenty według podgrup. Liczby nad słupkami. Kliknięcie w słupek otwiera węzeł drzewa.",
+    "data": {
+     "Stawonogi (razem)": 45,
+     "w tym radiodonty": 10,
+     "w tym artiopody i trylobity": 13,
+     "w tym Deuteropoda": 12,
+     "w tym inne stawonogi": 10,
+     "Strunowce": 7,
+     "Gąbki, koralowiec, żebropław": 5,
+     "Ramienionogi": 4,
+     "Mięczaki i krewni": 3,
+     "Pazurnice i krewni": 3,
+     "Robaki linienne (niezmogowce)": 2,
+     "Eldonia": 1,
+     "Dickinsonia (pień)": 1
+    }
+   },
+   {
+    "id": "drzewo-etapu-01",
+    "kind": "diagram drzewa",
+    "title": "Mapa wędrówki po etapie 1",
+    "purpose": "Pokazać kolejność przystanków (pole stage.route) i to, które gałęzie są duże.",
+    "howTo": "Drzewo poziome, od lewej Eubilateria. Grubość gałęzi proporcjonalna do liczby rodzajów etapu w danej gałęzi. Przystanki ponumerowane według route. Gałęzie ciemne, dopóki gracz ich nie zapali.",
+    "data": "liczby rodzajów z etapy.json (stage 1) według ścieżek z gra-drzewo.md"
+   },
+   {
+    "id": "skala-etap-01",
+    "kind": "porównanie wielkości",
+    "title": "Jak duże były zwierzęta Chengjiang?",
+    "purpose": "Uświadomić, że większość zwierząt była mała, a radiodonty były olbrzymami swoich czasów.",
+    "howTo": "Sylwetki na wspólnej podziałce z ludzką dłonią (ok. 18 cm) jako odniesieniem. Sylwetki: Anomalocaris (do ok. 60 cm – A. canadensis z Burgess), Haikouichthys (ok. 3 cm), Hallucigenia (ok. 1–3 cm), typowy trylobit Eoredlichia (kilka cm), Kunmingella (kilka mm).",
+    "data": {
+     "Anomalocaris_cm": 60,
+     "Haikouichthys_cm": 3,
+     "Hallucigenia_cm": 2,
+     "Eoredlichia_cm": 5,
+     "Kunmingella_cm": 0.5,
+     "dlon_cm": 18
+    }
+   }
+  ],
+  "outro": [],
+  "site": "chengjiang"
+ },
+ "nodes": [
+  {
+   "id": "Protostomia",
+   "inGame": true,
+   "namePl": "Pierwouste",
+   "parent": "Eubilateria",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "zegary molekularne: późny ediakar (ok. 570–550 mln lat temu, niepewnie)",
+    "firstFossils": "pewne skamieniałości od wczesnego kambru, ok. 535–520 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Wielka rodzina pancernych i miękkich bezkręgowców",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Morze pełne nowych kształtów",
+     "text": "W morzach wczesnego kambru zaczyna się tłok. Po dnie suną pancerne stworzenia, w mule ryją robaki, a w toni pływają pierwsze duże drapieżniki. Większość tych zwierząt należy do jednej wielkiej gałęzi – pierwoustych. To ta połowa drzewa, która nie prowadzi do nas, tylko do owadów, krabów, ślimaków i dżdżownic. W etapie 1 to pierwouste są niemal wszystkim: 57 z 71 rodzajów.",
+     "visual": "Panorama kambryjskiego dna: tłum stawonogów, robaków i jeden kolczasty „pancernik” (Wiwaxia), wszystkie w ciepłych barwach; z boku mała, szara sylwetka ryby."
+    },
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Przodek: robak z jelitem na przelot",
+     "text": "Wspólny przodek pierwoustych był najpewniej niedużym robakiem z jelitem na przelot (jelito-drozne) i prostymi nerkami. W jego zarodku pierwszy otwór, pragęba, stawał się ustami. Stąd nazwa: „pierwsze usta”. Główny pień nerwowy biegł mu prawdopodobnie po stronie brzusznej. Nie miał jeszcze pancerza ani nóg. Był, mówiąc obrazowo, „surowym materiałem”, z którego wyrosły zupełnie różne plany budowy.",
+     "visual": "Mały, różowawy robak w przekroju: jelito od ust do odbytu, pod jelitem biegnie podświetlony sznur nerwowy."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Dwie drogi: linienie i spirala",
+     "text": "Pierwouste szybko rozdzieliły się na dwie wielkie linie. Linienne (Ecdysozoa) mają twardą zewnętrzną skórkę, którą co jakiś czas zrzucają, by urosnąć. Należą tu stawonogi i nicienie. Spiralia to drugi świat: mięczaki, pierścienice, ramienionogi i inne. U wielu z nich wczesny zarodek dzieli się tak, że komórki układają się skośnie, jak schodki spirali. Spiralia nie zrzucają skórki – rosną stopniowo, a mięczaki dobudowują muszlę od brzegu.",
+     "visual": "Dwa panele: po lewej stawonóg wychodzący ze starej skórki; po prawej ślimak dobudowujący muszlę przy krawędzi, z zaznaczonymi przyrostami."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego to rozwidlenie ma znaczenie",
+     "text": "Sposób wzrostu to nie drobiazg. Twarda skórka linniennych chroni i podpiera ciało, ale ma cenę: na czas linienia zwierzę jest miękkie i bezbronne. Spiralia rosną bez takich przerw, ale ich ciało jest zwykle miękkie albo chronione jedną muszlą. Te dwa sposoby „rozwiązania” problemu ochrony i wzrostu dały dwie zupełnie różne rodziny kształtów. Żaden nie jest lepszy: obie linie żyją do dziś i obie są ogromne.",
+     "visual": "Schemat wzrostu w czasie: u stawonoga schodki (skoki wielkości po każdym linieniu), u ślimaka gładka, rosnąca linia."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Co spotkasz w tym etapie",
+     "text": "Większość pierwoustych etapu 1 to linienne: stawonogi, ich krewni na nóżkach i robaki ryjące w mule. Spiralia są tu mniej liczne, ale bardzo różnorodne. Ramienionogi siedzą na dnie w dwuczęściowych muszelkach i filtrują wodę. Wiwaxia i Halkieria to kolczaste „pancerniki” pełzające po dnie, krewni mięczaków, a Nectocaris to zagadkowe pływające zwierzę z dwiema mackami. Ta nierównowaga to po części sprawa przypadku: miękkie robaki i ślimaki rzadziej zostawiają ślady niż zwierzęta w pancerzu.",
+     "visual": "Rozwidlenie: gruba gałąź z sylwetkami stawonogów (Linienne) i cieńsza z ramienionogiem, kolczastą Wiwaxią i Halkierią (Spiralia)."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Ecdysozoa",
+     "namePl": "Linienne",
+     "trait": "Zewnętrzna skórka zrzucana podczas wzrostu",
+     "became": "Stawonogi, pazurnice, niesporczaki, nicienie, niezmogowce",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Spiralia",
+     "namePl": "Spiralia",
+     "trait": "Bez linienia; wiele grup z muszlą albo osłoną z łusek",
+     "became": "Mięczaki, ramienionogi, pierścienice, mszywioły",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Połowa drzewa zwierząt zaraz zapłonie – ta, która nie prowadzi do Ciebie.",
+    "lit": "Pierwouste: owady, kraby, ślimaki i robaki wychodzą z jednego korzenia."
+   },
+   "concepts": [
+    "pierwouste-i-wtorouste",
+    "jelito-drozne",
+    "linienie"
+   ],
+   "misconception": "Pierwouste to nie „niższe” zwierzęta. To nasi kuzyni – i dziś najliczniejsza część królestwa zwierząt.",
+   "sources": [
+    {
+     "title": "Kapli i in. 2021, Science Advances",
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7978419",
+     "claim": "Monofiletyzm pierwoustych silnie wsparty"
+    },
+    {
+     "title": "Smith i Caron 2015, Hallucigenia’s head…, Nature 523",
+     "url": "https://doi.org/10.1038/nature14573",
+     "claim": "Linienne łączy linienie; obejmują panarthropody i robaki cycloneuralia"
+    }
+   ]
+  },
+  {
+   "id": "Ecdysozoa",
+   "inGame": true,
+   "namePl": "Linienne",
+   "parent": "Protostomia",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "zegary molekularne: późny ediakar",
+    "firstFossils": "ślady pazurków i drobne skamieniałości od ok. 535 mln lat temu; bogata fauna od ok. 521 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Zwierzęta w zbroi, którą trzeba co jakiś czas zdjąć",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Robak w płaszczu",
+     "text": "Przodek linniennych był najpewniej robakiem pokrytym cienką, twardą warstwą – kutykulą. To jak płaszcz zrobiony z materiału podobnego do paznokci. Płaszcz chronił przed uszkodzeniami i wysychaniem, a mięśnie mogły się o niego zapierać. Badania Hallucigenii z 2015 r. sugerują, że ten przodek miał też usta otoczone wieńcem twardych płytek i gardło wyłożone drobnymi ząbkami.",
+     "visual": "Pierścieniowany robak w lekko błyszczącej, przezroczystej kutykuli; zbliżenie na pyszczek z wieńcem płytek i ząbkami w gardle."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Linienie, czyli zmiana zbroi",
+     "text": "Twardy płaszcz nie rośnie razem ze zwierzęciem. Dlatego linienne co jakiś czas linieją (linienie): pod starą kutykulą tworzą nową, miękką i pomarszczoną, potem stara pęka i zwierzę się z niej wyczołguje. Nowa szybko się rozprostowuje i twardnieje. Ten sam mechanizm łączy tak różne zwierzęta jak pająk, krab, owad i nicień. To właśnie po nim – a nie po wyglądzie – rozpoznano tę grupę w badaniach genetycznych.",
+     "visual": "Trzy klatki: owad pod pękającą starą skórką, wychodzący miękki, blady owad, i ten sam owad już twardy i ciemny; obok pusta wylinka."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Cena i zysk zbroi",
+     "text": "Kutykula to dobra ochrona przed drapieżnikami, uszkodzeniami i odwodnieniem. Daje też szkielet, do którego przyczepiają się mięśnie. W świecie, gdzie pojawiały się coraz lepiej uzbrojone drapieżniki, osobniki z mocniejszą osłoną częściej dożywały rozrodu. Ceną jest ryzyko: tuż po linieniu zwierzę jest miękkie i łatwe do zjedzenia. Dlatego wiele dzisiejszych linniennych chowa się w tym czasie. Analogia z rycerzem w zbroi pasuje – z tym że rycerz musi co jakiś czas wykuć sobie nową, większą.",
+     "visual": "Krab w kryjówce między kamieniami tuż po linieniu, z pustą wylinką obok; w tle przepływająca ryba-drapieżnik."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Na nóżkach i bez nóżek",
+     "text": "Linienne rozdzieliły się na dwie grupy. Jedna to robaki bez nóg ryjące w mule – niezmogowce, nicienie i ich krewni. W etapie 1 gra pokazuje dwa takie rodzaje: Maotianshania i Selkirkia. Druga to Panarthropoda – zwierzęta z parami nóg wzdłuż ciała. Należą tu stawonogi, pazurnice (dzisiejsze „aksamitne robaki”) i maleńkie niesporczaki. W etapie 1 gra pokazuje z tej grupy 48 rodzajów.",
+     "visual": "Rozwidlenie: lewa gałąź z robakiem wysuwającym kolczastą trąbkę z mułu (niezmogowiec), prawa z robakiem na krótkich nóżkach i stawonogiem."
+    },
+    {
+     "kind": "skutki",
+     "title": "Najliczniejsza linia zwierząt",
+     "text": "Linienne to dziś prawdopodobnie najbogatsza w gatunki część królestwa zwierząt. Same stawonogi to ponad trzy czwarte wszystkich opisanych gatunków zwierząt. Do tego dochodzą nicienie, które żyją w glebie, wodzie i wewnątrz innych organizmów w niewyobrażalnych liczbach. Wszystko zaczęło się od niepozornego robaka w płaszczu, którego potomkowie zrzucali go co jakiś czas, by urosnąć.",
+     "visual": "Mozaika dzisiejszych linniennych: chrząszcz, pająk, krab, krewetka, nicień i niesporczak, ułożone wokół jednej wylinki."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Panarthropoda",
+     "namePl": "Panarthropoda",
+     "trait": "Pary nóg wzdłuż ciała",
+     "became": "Stawonogi, pazurnice, niesporczaki",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Scalidophora",
+     "namePl": "Niezmogowce i krewni",
+     "trait": "Bez nóg; wywracana trąbka obsadzona kolcami",
+     "became": "Niezmogowce, nitnikowce i ich kambryjscy krewni",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Ktoś tu zaraz zrzuci skórę – i zrobi to jeszcze miliardy razy.",
+    "lit": "Linienne: od tej pory wzrost oznacza zmianę zbroi."
+   },
+   "concepts": [
+    "linienie"
+   ],
+   "misconception": "Linienie to nie choroba ani utrata skóry jak u węża. U linniennych to jedyny sposób, żeby urosnąć.",
+   "sources": [
+    {
+     "title": "Smith i Caron 2015, Nature 523",
+     "url": "https://doi.org/10.1038/nature14573",
+     "claim": "Linienne obejmują panarthropody i cycloneuralia, łączy je linienie; przodek z uzbrojonym gardłem"
+    },
+    {
+     "title": "ScienceDaily 2015, Hallucigenia…",
+     "url": "https://www.sciencedaily.com/releases/2015/06/150624140239.htm",
+     "claim": "Przodkowie linniennych: pierścieniowane robaki z uzbrojonym gardłem i ustami otoczonymi kolcami"
+    },
+    {
+     "title": "Liu i in. 2022 (Nature Communications)",
+     "url": "https://link.springer.com/10.1038/s41467-022-34204-w",
+     "claim": "Euarthropoda to ponad trzy czwarte żyjących gatunków zwierząt"
+    }
+   ]
+  },
+  {
+   "id": "Panarthropoda",
+   "inGame": true,
+   "namePl": "Panarthropoda (zwierzęta z nóżkami)",
+   "parent": "Ecdysozoa",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "późny ediakar albo samo początek kambru (ok. 540 mln lat temu)",
+    "firstFossils": "Microdictyon i inne lobopodia od ok. 535–521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Robaki na nóżkach – od nich zaczynają się stawonogi",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Lobopod, czyli nóżka bez stawów",
+     "text": "Przodek Panarthropoda był robakiem z parami krótkich, miękkich nóżek wzdłuż ciała. Takie nóżki nazywamy lobopodami. Przypominały pulchne wypustki, często zakończone pazurkiem, i działały trochę jak nogi pluszowej zabawki: bez stawów, poruszane ciśnieniem płynu w ciele i mięśniami. Takie zwierzęta – lobopodia – są w Chengjiang szczególnie liczne. Badacze uważają, że ok. 540 mln lat temu z podobnego robaka wyszły stawonogi.",
+     "visual": "Długi, miękki robak z kilkunastoma parami pulchnych nóżek zakończonych haczykowatymi pazurkami, kroczący po dnie."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Nogi zamiast pełzania",
+     "text": "Nóżki zmieniły sposób poruszania. Robak bez nóg musi pchać całe ciało przez muł albo po nim pełznąć. Zwierzę z nóżkami może kroczyć po dnie, wspinać się na gąbki, chwytać się podłoża pazurkami i trzymać się prądu. Pary nóżek powtarzają się w kolejnych odcinkach ciała. Te powtarzające się odcinki – segmenty – staną się podstawą budowy stawonogów: każdy segment może się wyspecjalizować w czym innym.",
+     "visual": "Porównanie: robak pełznący płasko po mule i lobopod stojący na gąbce, trzymający się jej pazurkami."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Od pazurków do płetw",
+     "text": "Wśród krewnych stawonogów z kambru widać, jak takie ciało mogło się zmieniać krok po kroku. Kerygmachela z Grenlandii (w grze w etapie 1) miała jeszcze nóżki lobopodów, ale wzdłuż boków także płaty do pływania i dwie duże „ręce” z przodu głowy. Opabinia z Burgess (etap 2) zgubiła nóżki, a zachowała płaty. Radiodonty, wielkie drapieżniki, poszły jeszcze dalej. Każdy z tych etapów działał na swój sposób: nikt tu nie był „niedokończony”.",
+     "visual": "Szereg czterech sylwetek od lewej: lobopod na nóżkach, Kerygmachela z nóżkami i płatami, Opabinia z płatami i trąbą, Anomalocaris z płatami i chwytnymi ramionami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Trzy rodziny z nóżkami",
+     "text": "Panarthropoda dzielą się na trzy linie, które żyją do dziś. Pazurnice (Onychophora) zachowały miękkie lobopody; dziś żyją w wilgotnej ściółce tropików. Niesporczaki to mikroskopijne „misie wodne” na ośmiu tłustych nóżkach (w grze ich nie ma). Stawonogi (Arthropoda) dostały twardy pancerz i nogi ze stawami. Kolejność rozejścia się tych trzech linii nie jest pewna. Wiadomo za to, że wiele kambryjskich lobopodiów stoi gdzieś po drodze: blisko korzenia stawonogów albo pazurnic.",
+     "visual": "Trójdzielne rozwidlenie: pazurnica w liściach, niesporczak w kropli wody (oznaczony „spoza gry”), stawonóg w pancerzu."
+    },
+    {
+     "kind": "skutki",
+     "title": "Segmenty – wielki wynalazek",
+     "text": "Ciało zbudowane z powtarzających się segmentów z parą nóg to pomysł, który okazał się niezwykle podatny na zmiany. U stawonogów nogi z różnych segmentów zamieniały się w czułki, szczęki, szczypce, skrzela, nogi do chodzenia albo pływania. To trochę jak klocki: ten sam element, różne zastosowania. Dzięki temu stawonogi mogły zająć niemal każde środowisko na Ziemi. Ale zacznijmy od tych, które zachowały nóżki niemal bez zmian – od pazurnic.",
+     "visual": "Schemat stawonoga, w którym każdy segment ma inny kolor, a odpowiadające mu nogi są przekształcone: czułek, żuwaczka, noga, skrzele, płetwa ogonowa."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Onychophora",
+     "namePl": "Pazurnice i krewni",
+     "trait": "Miękkie nóżki-lobopody z pazurkami",
+     "became": "Kambryjskie lobopodia morskie, dziś lądowe pazurnice",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Arthropoda",
+     "namePl": "Stawonogi",
+     "trait": "Twardy pancerz i nogi ze stawami",
+     "became": "Trylobity, kraby, pająki, owady, wije i wiele wymarłych grup",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Tardigrada",
+     "namePl": "Niesporczaki (spoza gry)",
+     "trait": "Mikroskopijne, osiem krótkich nóżek",
+     "became": "„Misie wodne” odporne na wysuszenie",
+     "fate": "żyją do dziś"
+    }
+   ],
+   "narrator": {
+    "teaser": "Robak, który dostał nogi. Nic wielkiego? Poczekaj, aż zobaczysz, co z tego wyrosło.",
+    "lit": "Panarthropoda: na drzewie pojawiają się nogi – i nic już nie będzie takie samo."
+   },
+   "concepts": [
+    "linienie",
+    "stawonogi-odnoza"
+   ],
+   "misconception": "Lobopodia nie były „próbą” zrobienia stawonoga. To pełnoprawne zwierzęta, z których część miała potomków, a część nie.",
+   "sources": [
+    {
+     "title": "Smith i Caron 2015, Nature 523",
+     "url": "https://doi.org/10.1038/nature14573",
+     "claim": "Panarthropody: stawonogi, pazurnice, niesporczaki"
+    },
+    {
+     "title": "Lerosey-Aubril i Ortega-Hernández 2022 (PalAss)",
+     "url": "https://palass.org/node/5711",
+     "claim": "Segmentowane ciało stawonogów wyewoluowało z lobopodiowego przodka ok. 540 mln lat temu"
+    },
+    {
+     "title": "Liu i in. 2022, Nature Communications",
+     "url": "https://link.springer.com/10.1038/s41467-022-34204-w",
+     "claim": "Przemiana od lobopodiów z płatami (Kerygmachela) przez Opabinia do radiodontów i stawonogów"
+    },
+    {
+     "title": "Wikipedia, Maotianshan Shales",
+     "url": "https://en.wikipedia.org/wiki/Maotianshan_Shales",
+     "claim": "Chengjiang to najbogatsze źródło lobopodiów"
+    }
+   ]
+  },
+  {
+   "id": "Onychophora",
+   "inGame": true,
+   "namePl": "Pazurnice i ich kambryjscy krewni",
+   "parent": "Panarthropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr albo wcześniej",
+    "firstFossils": "Microdictyon ok. 535–521 mln lat temu; Hallucigenia od ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Robaki z kolcami, płytkami i pazurkami – i ich dzisiejsi potomkowie",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Ogród gąbek",
+     "text": "Na dnie płytkiego morza stoją gąbki – miękkie, porowate „krzaczki”, które filtrują wodę. Na nich i między nimi kroczą dziwaczne robaki na nóżkach. Niektóre mają na grzbiecie rzędy kolców, inne – siateczkowate płytki jak małe tarcze. Prawdopodobnie zdrapywały albo wysysały pokarm z gąbek lub z mułu. Kolce i płytki mogły je chronić przed drapieżnikami, które właśnie zaczęły pojawiać się w morzu.",
+     "visual": "Kępa gąbek; na nich różowa Hallucigenia z rzędem kolców i żółtawy Microdictyon z okrągłymi płytkami na bokach."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Hallucigenia – stwór do góry nogami",
+     "text": "Gdy w latach 70. XX w. opisano Hallucigenię, zrekonstruowano ją do góry nogami i tyłem do przodu: kolce wzięto za nogi, nogi za czułki na grzbiecie, a głowę za ogon. Nazwa pochodzi od słowa „halucynacja”. Dopiero kolejne znaleziska, m.in. z Chengjiang, pozwoliły ją odwrócić. W 2015 r. badacze odsłonili głowę: wydłużoną, z parą prostych oczu, otworem gębowym otoczonym wieńcem płytek i gardłem wyłożonym igiełkowatymi ząbkami.",
+     "visual": "Dwie rekonstrukcje obok siebie: stara, przekreślona (na kolcach jak na szczudłach) i obecna (na nóżkach, kolce na grzbiecie, głowa z oczkami)."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Po co kolce i tarcze?",
+     "text": "Kolce Hallucigenii i płytki Microdictyona były twarde, w przeciwieństwie do miękkiego ciała. Najprostsze wyjaśnienie: ochrona. Drapieżnik, który próbował złapać takiego robaka, ryzykował ukłucie albo dostawał kęs twardej płytki. Płytki Microdictyona znajdowano przez dziesięciolecia osobno, jako drobne, siateczkowate skamieniałości, zanim odkryto, do kogo należą. To dobry przykład, jak trudno złożyć zwierzę z rozsypanych kawałków.",
+     "visual": "Zbliżenie siateczkowatej płytki Microdictyona pod mikroskopem, obok to samo zwierzę w całości z rzędem takich płytek."
+    },
+    {
+     "kind": "skutki",
+     "title": "Z morza do lasu",
+     "text": "Dzisiejsze pazurnice (Onychophora) żyją wyłącznie na lądzie, w wilgotnej ściółce lasów tropikalnych. Polują, strzelając w ofiarę lepkim śluzem. Ich morscy kuzyni z kambru dawno wymarli, ale budowa nóżek i ciała zdradza pokrewieństwo. Badania z 2015 r. sugerują, że Hallucigenia leży na linii prowadzącej do pazurnic.",
+     "visual": "Dzisiejsza pazurnica w mchu wyrzucająca dwie nitki śluzu na świerszcza; w rogu mała ramka z kambryjską Hallucigenią."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Hallucigeniidae",
+     "namePl": "Halucygeniowate",
+     "trait": "Rzędy kolców na grzbiecie, cienkie nóżki z pazurkami",
+     "became": "Hallucigenia i Cardiodictyon – morskie lobopodia z gąbczastych ogrodów",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Microdictyon",
+     "namePl": "Microdictyon (rodzaj bez rodziny w grze)",
+     "trait": "Siateczkowate płytki na bokach ciała",
+     "became": "Lobopod znany głównie z rozsypanych płytek",
+     "fate": "wymarł w kambrze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Ktoś tu przez lata chodził na głowie – a raczej tak go narysowano.",
+    "lit": "Pazurnice i ich kambryjscy krewni: kolce, tarcze i pazurki na pulchnych nóżkach."
+   },
+   "concepts": [
+    "skamienialosc"
+   ],
+   "misconception": "Hallucigenia nie była „pomyłką natury”. Pomylili się ludzie, którzy pierwsi ją składali z płaskiego odcisku.",
+   "sources": [
+    {
+     "title": "Smith i Caron 2015, Nature 523 (Durham repository)",
+     "url": "https://durham-repository.worktribe.com/output/1430240/hallucigenias-head-and-the-pharyngeal-armature-of-early-ecdysozoans",
+     "claim": "Hallucigenia jako przedstawiciel linii pazurnic; głowa z oczami, wieniec płytek, ząbki w gardle"
+    },
+    {
+     "title": "University of Toronto 2015",
+     "url": "https://www.artsci.utoronto.ca/node/2907",
+     "claim": "Hallucigenię pierwotnie zrekonstruowano do góry nogami i tyłem do przodu"
+    },
+    {
+     "title": "National Geographic (Ed Yong) 2015",
+     "url": "https://phenomena.nationalgeographic.com/2015/06/24/scientists-finally-decide-which-bit-of-this-weird-animal-is-the-head/",
+     "claim": "Głowa po stronie przeciwnej do „balonika”; oczy i usta z wieńcem kolców"
+    }
+   ]
+  },
+  {
+   "id": "Hallucigeniidae",
+   "inGame": true,
+   "namePl": "Halucygeniowate",
+   "parent": "Onychophora",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (Chengjiang)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Kolczaste robaki z gąbczastych ogrodów",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kolce w parach",
+     "text": "Halucygeniowate wyróżniają się parami twardych kolców na grzbiecie, ustawionymi nad parami nóżek. Przednie nóżki były cienkie i długie, być może służyły do podawania pokarmu do pyszczka, tylne – krótsze, z pazurkami do trzymania się podłoża. W grze są dwa rodzaje: Hallucigenia, znana z Chengjiang i z Burgess, oraz Cardiodictyon, mniejszy krewny z Chengjiang.",
+     "visual": "Hallucigenia trzymająca się tylnymi nóżkami gąbki i sięgająca przednimi w stronę pożywienia; kolce w parach na grzbiecie."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Dwa rodzaje, jeden plan",
+     "text": "Hallucigenia i Cardiodictyon różnią się szczegółami: liczbą i kształtem kolców i płytek oraz długością nóżek. Żyły podobnie, przyczepione do gąbek albo dna. Obie linie wymarły w kambrze – w późniejszych skałach takich zwierząt już nie ma. Ich najbliżsi żyjący kuzyni to lądowe pazurnice.",
+     "visual": "Dwie sylwetki obok siebie w tej samej skali: smukła Hallucigenia z długimi kolcami i krępy Cardiodictyon z guzkami zamiast kolców."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Na gąbce coś się porusza – i najeżone jest kolcami.",
+    "lit": "Halucygeniowate: pancerz z kolców na miękkim ciele."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Smith i Caron 2015, Nature 523",
+     "url": "https://doi.org/10.1038/nature14573",
+     "claim": "Hallucigenia jako przedstawiciel linii pazurnic"
+    }
+   ]
+  },
+  {
+   "id": "Arthropoda",
+   "inGame": true,
+   "namePl": "Stawonogi",
+   "parent": "Panarthropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "ok. 540 mln lat temu albo nieco wcześniej (zegary)",
+    "firstFossils": "ślady drapania i chodzenia od ok. 535 mln lat temu; pełne ciała od ok. 521 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Pancerz i nogi ze stawami – przepis na sukces",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Morze stawonogów",
+     "text": "Gdyby zanurkować w morzu Chengjiang, najczęściej widziałbyś stawonogi. Pływają w toni, kroczą po dnie, ryją w mule. Są maleńkie jak ziarenko maku i wielkie jak przedramię. Jedne filtrują wodę, inne polują, jeszcze inne zjadają resztki. To pierwszy znany moment w historii, gdy ekosystem morski ma tak wiele pięter: od planktonu przez zjadaczy dna po wielkie drapieżniki. Głównymi aktorami na każdym z tych pięter są stawonogi.",
+     "visual": "Pionowy przekrój morza: u góry drobny plankton i pływające Waptia, w środku wielki Anomalocaris, na dnie trylobity i Naraoia, w mule ryjące małe stawonogi."
+    },
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Od miękkich nóżek do twardych odnóży",
+     "text": "Przodkiem stawonogów był lobopod – robak z miękkimi nóżkami. Taki robak był powolny, a jego nóżki mogły tylko kroczyć. Jak zbudować coś szybszego i bardziej zręcznego? Potrzebny jest twardy szkielet, o który mięśnie mogą się zaprzeć, i dźwignie, które wzmacniają ruch. U stawonogów kutykula stwardniała w płytki. Między płytkami została miękka, giętka skórka, która działa jak zawias.",
+     "visual": "Porównanie przekroju nóżki: miękki lobopod (rurka z płynem) i noga stawonoga (rurki pancerza połączone zawiasami, w środku mięśnie)."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Zbroja z zawiasami",
+     "text": "Stawonogi mają szkielet zewnętrzny – pancerz z twardych płytek, połączonych giętką błoną. Ich nogi to rurki pancerza połączone stawami, a mięśnie są przyczepione od środka. To odwrotność naszego ciała: my mamy kości w środku i mięśnie na zewnątrz. Analogia: noga stawonoga działa jak ramię koparki, w którym siłowniki są schowane w rurach. Przy okazji pancerz tworzy też oczy z soczewkami, szczęki i kolce. Stawonogi linieją jak inni linienni, ale ich zbroja jest dużo bardziej złożona.",
+     "visual": "Przekrój nogi stawonoga obok przekroju ludzkiej nogi: pancerz z mięśniami w środku kontra kość z mięśniami na zewnątrz; ikona ramienia koparki."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego stawonogi wygrały kambr",
+     "text": "Twardy pancerz z zawiasami dał trzy przewagi naraz. Ochronę: w morzu pełnym drapieżników osobniki w twardszej zbroi częściej przeżywały. Precyzyjny ruch: nogi ze stawami mogą chodzić, kopać, chwytać i pływać. I możliwość specjalizacji: każda para nóg mogła się zmieniać niezależnie, w czułek, szczękę albo wiosło. Ale uwaga na pułapkę: stawonogi nie „wygrały” dlatego, że były lepsze od wszystkich. Ich pancerz po prostu dobrze się zachowuje w skałach, więc widzimy je częściej niż miękkie zwierzęta.",
+     "visual": "Trzy ikony obok siebie z podpisami: tarcza (ochrona), staw (precyzja), klocki o różnych kształtach (specjalizacja nóg)."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Cztery wielkie odgałęzienia",
+     "text": "W etapie 1 stawonogi rozchodzą się w kilka stron. Radiodonty (Radiodonta) to wielkie pływające drapieżniki z chwytnymi ramionami przy głowie. Artiopody (Artiopoda) to płaskie zjadacze dna; należą do nich trylobity. Deuteropoda to linia z wyraźną głową i nowymi odnóżami – prowadzi do pająków, krabów i owadów. Bradoriidy to drobne stawonogi w dwuczęściowych skorupkach. Do tego kilka rodzajów, których miejsca na drzewie nikt jeszcze pewnie nie ustalił – gra pokazuje je bezpośrednio pod „Stawonogami”.",
+     "visual": "Rozwidlenie na cztery: Anomalocaris (radiodonty), trylobit (artiopody), Leanchoilia (Deuteropoda), maleńka skorupka Kunmingelli (bradoriidy)."
+    },
+    {
+     "kind": "skutki",
+     "title": "Największa rodzina zwierząt",
+     "text": "Od kambru do dziś stawonogi nie zeszły ze sceny. Opanowały morza, potem ląd, potem powietrze. Dziś to ponad trzy czwarte wszystkich opisanych gatunków zwierząt: owady, pająki, skorupiaki, wije. Większość kambryjskich linii wymarła – nie ma już radiodontów ani trylobitów. Ale z jednej gałęzi, Deuteropoda, wyrosły wszystkie dzisiejsze stawonogi. W tym etapie zobaczysz ich wspólnych przodków i kuzynów w pełnym rozkwicie.",
+     "visual": "Drzewo stawonogów rozszerzające się w czasie: wymarłe gałęzie zakończone szarym krzyżykiem, żyjące rozkwitające w sylwetki owada, pająka, kraba i wija."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Radiodonta",
+     "namePl": "Radiodonty",
+     "trait": "Dwa chwytne ramiona przy głowie, okrągły pyszczek, płaty do pływania",
+     "became": "Wielkie drapieżniki i filtratory kambru",
+     "fate": "wymarły ok. 480 mln lat temu albo później (możliwe ślady do dewonu)"
+    },
+    {
+     "id": "Artiopoda",
+     "namePl": "Artiopody",
+     "trait": "Płaskie ciało pod szerokim pancerzem, podobne do siebie nogi",
+     "became": "Trylobity i ich miękkopancerni kuzyni",
+     "fate": "wymarły ok. 252 mln lat temu (ostatnie trylobity)"
+    },
+    {
+     "id": "Deuteropoda",
+     "namePl": "Deuteropoda",
+     "trait": "Wyraźna głowa z nowym zestawem odnóży",
+     "became": "Szczękoczułkowce, skorupiaki, owady, wije i ich kambryjscy krewni",
+     "fate": "żyją do dziś"
+    },
+    {
+     "id": "Bradoriida",
+     "namePl": "Bradoriidy",
+     "trait": "Ciało w maleńkiej dwuczęściowej skorupce",
+     "became": "Drobne, bardzo liczne stawonogi kambru",
+     "fate": "wymarły w ordowiku"
+    }
+   ],
+   "narrator": {
+    "teaser": "Zaraz pojawi się zbroja, która przetrwa pół miliarda lat.",
+    "lit": "Stawonogi! Pancerz i stawy – a za nimi ponad trzy czwarte wszystkich zwierząt świata."
+   },
+   "concepts": [
+    "stawonogi-odnoza",
+    "linienie",
+    "oko-zlozone"
+   ],
+   "misconception": "Trylobity nie są przodkami owadów ani krabów. To kuzyni, którzy odgałęzili się wcześnie i wymarli bez potomków.",
+   "sources": [
+    {
+     "title": "Liu i in. 2022, Nature Communications",
+     "url": "https://link.springer.com/10.1038/s41467-022-34204-w",
+     "claim": "Euarthropoda – ponad trzy czwarte żyjących gatunków zwierząt; przejście od lobopodiowego przodka"
+    },
+    {
+     "title": "Lerosey-Aubril i Ortega-Hernández 2022",
+     "url": "https://palass.org/node/5711",
+     "claim": "Ciało stawonogów z lobopodiowego przodka ok. 540 mln lat temu"
+    },
+    {
+     "title": "De Vivo i in. 2021, Proc. R. Soc. B",
+     "url": "https://zendy.io/pdf-viewer/10.1098/rspb.2021.1176",
+     "claim": "Radiodonty istniały do ordowiku, być może do dewonu"
+    }
+   ]
+  },
+  {
+   "id": "Radiodonta",
+   "inGame": true,
+   "namePl": "Radiodonty",
+   "parent": "Arthropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "przed ok. 521 mln lat temu",
+    "firstFossils": "ok. 521 mln lat temu – już wtedy z wieloma różnymi kształtami ramion",
+    "confidence": "pewne"
+   },
+   "headline": "Pierwsze wielkie drapieżniki – i pierwsze olbrzymy filtrujące plankton",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Król kambryjskiego morza",
+     "text": "Radiodonty to krewni stawonogów, którzy zatrzymali się w połowie drogi: mieli twarde elementy na głowie i ramionach, ale miękkie ciało bez pancerza z zawiasami. Za to byli duzi. Anomalocaris z Burgess dorastał do ok. 60 cm – w świecie, gdzie większość zwierząt miała kilka centymetrów. Pływali, falując rzędami płatów po bokach ciała, jak płaszczka skrzydłami. Mieli wielkie oczy na słupkach i okrągły pyszczek wyłożony płytkami.",
+     "visual": "Anomalocaris w toni, płaty po bokach falują; obok dla skali ludzka dłoń i stadko maleńkich, kilkucentymetrowych stawonogów."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Ramiona z przodu głowy",
+     "text": "Najbardziej charakterystyczne są dwa wielkie ramiona z przodu głowy, zwane przednimi odnóżami. Zbudowane z odcinków, miały na spodzie kolce albo szczecinki. Pyszczek był okrągły, otoczony płytkami jak u ananasa w przekroju – stąd nazwa grupy: „promieniste zęby”. Kształt ramion bardzo się różnił między rodzajami. To zdradza, że radiodonty od samego początku jadły różne rzeczy: jedne polowały, inne przesiewały muł albo filtrowały wodę.",
+     "visual": "Plansza czterech typów ramion: chwytne z kolcami (Anomalocaris), z pazurem (Amplectobelua), grabie z długimi kolcami (Hurdia), sitko z gęstą szczoteczką (Tamisiocaris)."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Drapieżnik, ale nie kruszyciel",
+     "text": "Przez lata uważano, że Anomalocaris łamał pancerze trylobitów. Modele komputerowe z 2023 r. pokazały jednak, że jego ramiona wygięłyby się na twardym pancerzu. Pasują raczej do łapania szybkich, miękkich ofiar w dobrze oświetlonej wodzie. Dlaczego bycie dużym drapieżnikiem się opłacało? W morzu pełnym drobnych zwierząt ten, kto mógł je łapać, miał pod dostatkiem jedzenia. A duże ciało dawało szybkość i chroniło przed innymi drapieżnikami. Jednocześnie radiodonty wywierały presję na ofiary: osobniki z mocniejszym pancerzem albo kolcami częściej przeżywały.",
+     "visual": "Anomalocaris chwytający ramionami miękkie, pływające zwierzę; obok przekreślona scena z trylobitem w ramionach i podpisem „za twardy”."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Cztery rodziny, cztery kuchnie",
+     "text": "W etapie 1 gra pokazuje cztery rodziny radiodontów. Anomalokaridy (Anomalocarididae) – zwinni łowcy, np. Anomalocaris. Amplektobeluidy (Amplectobeluidae) – łowcy z pazurem na ramieniu, np. Amplectobelua i Lyrarapax. Tamisiokaridy (Tamisiocarididae) – filtratory z ramionami jak sitko. Hurdiidy (Hurdiidae) – zwierzęta z wielkim pancerzem na głowie i ramionami jak grabie. Obok nich w tym etapie pływa Kerygmachela – starszy kuzyn radiodontów, który miał jeszcze nóżki pod ciałem.",
+     "visual": "Cztery sylwetki w rzędzie, każda z innym ramieniem w zbliżeniu i ikoną pokarmu: ryba-ofiara, robak, plankton, muł."
+    },
+    {
+     "kind": "skutki",
+     "title": "Wieloryby kambru",
+     "text": "Najbardziej zaskakujące są filtratory. Tamisiocaris z Grenlandii ok. 520 mln lat temu przesiewał plankton gęstą szczoteczką na ramionach, podobnie jak dziś płetwal błękitny czy rekin wielorybi. Taki sposób życia pojawiał się w historii wiele razy, niezależnie: u rekinów, ryb kostnych i wielorybów. Radiodonty były pierwsze. Przetrwały co najmniej do ordowiku – w etapie 3 spotkasz olbrzymie filtratory z Fezouaty. Potem zniknęły bez potomków.",
+     "visual": "Porównanie sylwetek: Tamisiocaris filtrujący plankton i płetwal błękitny z otwartą paszczą; między nimi strzałka z napisem „ten sam pomysł, 500 mln lat później”."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Anomalocarididae",
+     "namePl": "Anomalokaridy",
+     "trait": "Smukłe ciało, chwytne ramiona z kolcami",
+     "became": "Szybcy łowcy miękkich ofiar",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Amplectobeluidae",
+     "namePl": "Amplektobeluidy",
+     "trait": "Ramiona z dużym kolcem jak pazur",
+     "became": "Łowcy ściskający ofiarę jak szczypcami",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Tamisiocarididae",
+     "namePl": "Tamisiokaridy",
+     "trait": "Ramiona z gęstymi szczecinkami jak sitko",
+     "became": "Filtratory planktonu",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Hurdiidae",
+     "namePl": "Hurdiidy",
+     "trait": "Wielki pancerz na głowie, ramiona jak grabie",
+     "became": "Przesiewacze mułu i filtratory, aż po olbrzymy ordowiku",
+     "fate": "wymarły w ordowiku albo później"
+    }
+   ],
+   "narrator": {
+    "teaser": "Na horyzoncie pojawia się cień – większy od wszystkiego, co dotąd pływało.",
+    "lit": "Radiodonty: pierwsze wielkie drapieżniki i pierwsi olbrzymi filtratorzy."
+   },
+   "concepts": [
+    "lancuch-pokarmowy",
+    "biocenoza"
+   ],
+   "misconception": "Anomalocaris prawdopodobnie nie kruszył trylobitów. Jego ramiona były stworzone do szybkiego łapania miękkich ofiar.",
+   "sources": [
+    {
+     "title": "Bicknell i in. 2023, Raptorial appendages of… Anomalocaris canadensis…, Proc. R. Soc. B",
+     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10320336/",
+     "claim": "Ramiona Anomalocaris do łapania miękkiej, szybkiej zdobyczy, nie do kruszenia pancerzy"
+    },
+    {
+     "title": "Sci.News 2023",
+     "url": "https://www.sci.news/paleontology/anomalocaris-canadensis-appendages-12065.html",
+     "claim": "Anomalocaris canadensis ok. 60 cm; polował w dobrze oświetlonej toni"
+    },
+    {
+     "title": "De Vivo i in. 2021, Proc. R. Soc. B",
+     "url": "https://zendy.io/pdf-viewer/10.1098/rspb.2021.1176",
+     "claim": "Radiodonty z różnymi typami ramion już ok. 521 mln lat temu; przetrwały do ordowiku, może do dewonu"
+    },
+    {
+     "title": "Vinther i in. 2014, A suspension-feeding anomalocarid…, Nature 507",
+     "url": "https://dro.dur.ac.uk/21270",
+     "claim": "Tamisiocaris z Sirius Passet filtrował plankton"
+    },
+    {
+     "title": "University of Bristol 2014",
+     "url": "https://bristol.ac.uk/news/2014/march/ancient-sea-creatures.html",
+     "claim": "Analogia z rekinami i wielorybami; filtrowanie małych skorupiaków"
+    },
+    {
+     "title": "Liu i in. 2022, Nature Communications",
+     "url": "https://link.springer.com/10.1038/s41467-022-34204-w",
+     "claim": "Kerygmachela jako lobopodium z płatami, przed radiodontami"
+    }
+   ]
+  },
+  {
+   "id": "Anomalocarididae",
+   "inGame": true,
+   "namePl": "Anomalokaridy",
+   "parent": "Radiodonta",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Smukli, szybcy łowcy z kolczastymi ramionami",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Łowcy z otwartej wody",
+     "text": "Anomalokaridy miały wydłużone, opływowe ciało, długi rząd płatów do pływania i ogon z wachlarzem płetw. Ich ramiona miały na spodzie pary kolców ułożone jak zęby grzebienia – dobre do chwytania i przytrzymywania. W grze są tu trzy rodzaje: Anomalocaris, najsłynniejszy drapieżnik kambru, Parapeytoia z Chengjiang i Paranomalocaris. Anomalocaris występuje i w Chengjiang, i w Burgess.",
+     "visual": "Anomalocaris w pościgu za ławicą drobnych stawonogów, z ogonowym wachlarzem i rozwiniętymi ramionami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Czym różnią się od sióstr",
+     "text": "W porównaniu z hurdiidami anomalokaridy miały mniejszy pancerz na głowie i smuklejsze ciało – były zbudowane do szybkości, nie do przesiewania mułu. W porównaniu z amplektobeluidami ich ramiona nie miały jednego wielkiego „pazura”. Uwaga na nazwy: dawniej wszystkie radiodonty nazywano „anomalokarydami”. Dziś ta nazwa oznacza tylko jedną ich rodzinę.",
+     "visual": "Trzy sylwetki z góry: smukły anomalokaryd, krępy hurdiid z wielkim pancerzem głowy, amplektobeluid z pazurem na ramieniu."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Coś szybkiego mknie przez toń.",
+    "lit": "Anomalokaridy – sprinterzy wśród radiodontów."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "Bicknell i in. 2023, Proc. R. Soc. B",
+     "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10320336/",
+     "claim": "Anomalocaris – zwinny drapieżnik toni wodnej"
+    }
+   ]
+  },
+  {
+   "id": "Amplectobeluidae",
+   "inGame": true,
+   "namePl": "Amplektobeluidy",
+   "parent": "Radiodonta",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Radiodonty z pazurem jak szczypce",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Szczypce zamiast grzebienia",
+     "text": "U amplektobeluidów jeden z kolców na ramieniu był dużo większy od pozostałych i wystawał do przodu. Razem z końcówką ramienia działał jak szczypce: ofiarę można było nie tylko złapać, ale i ścisnąć. W grze są trzy rodzaje: Amplectobelua, Lyrarapax i Guanshancaris. U Lyrarapaxa z Chengjiang zachował się nawet ślad mózgu – jeden z najstarszych znanych mózgów w historii.",
+     "visual": "Zbliżenie ramienia Amplectobelui: rząd małych kolców i jeden duży, zakrzywiony, ściskający małego robaka jak szczypce."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Specjaliści od chwytu",
+     "text": "Amplektobeluidy były raczej mniejsze od Anomalocarisa, ale ich ramiona zdradzają specjalizację w mocnym chwycie. Różne kształty ramion u sióstr pokazują, że już ok. 520 mln lat temu radiodonty podzieliły między siebie pokarm. Ograniczało to konkurencję: zamiast walczyć o te same ofiary, różne rodziny zjadały różne rzeczy.",
+     "visual": "Schemat podziału pokarmu: cztery rodziny radiodontów i strzałki do różnych ofiar – szybkie pływaki, robaki z dna, plankton, muł."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ramiona ze szczypcami? W kambrze to nic dziwnego.",
+    "lit": "Amplektobeluidy: chwyt jak imadło."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "De Vivo i in. 2021, Proc. R. Soc. B",
+     "url": "https://zendy.io/pdf-viewer/10.1098/rspb.2021.1176",
+     "claim": "Różne kształty ramion radiodontów i podział nisz pokarmowych od ok. 521 mln lat temu"
+    }
+   ]
+  },
+  {
+   "id": "Tamisiocarididae",
+   "inGame": true,
+   "namePl": "Tamisiokaridy",
+   "parent": "Radiodonta",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 520 mln lat temu (Sirius Passet, Chengjiang)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Łagodni olbrzymi z sitkami zamiast szponów",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Sitko na ramieniu",
+     "text": "Tamisiokaridy miały ramiona gęsto obsadzone długimi, cienkimi kolcami, a na nich jeszcze drobniejsze szczecinki. Gdy ramię się zwijało, tworzyło koszyk, który zatrzymywał drobne zwierzęta planktonu, nawet półmilimetrowe. W grze są dwa rodzaje: Tamisiocaris z Grenlandii i Houcaris z Chengjiang.",
+     "visual": "Zwinięte ramię Tamisiocarisa jako koszyk ze szczotki, w którym utknęły drobne skorupiaki planktonu."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Od łowcy do filtratora",
+     "text": "Tamisiokaridy pokazują, że z tego samego narzędzia – ramienia radiodonta – mogło powstać coś zupełnie innego. Gdy w morzu było dużo planktonu, osobniki z gęstszymi kolcami lepiej go zbierały i zostawiały więcej potomstwa. Ten sam scenariusz powtórzył się później u rekinów i wielorybów: z drapieżników wyrastają filtratory, często bardzo duże.",
+     "visual": "Seria trzech ramion od grzebienia z rzadkimi kolcami do gęstej szczotki; podpis „kolejne pokolenia, kolejne kroki”."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Nie każdy olbrzym poluje na dużą zdobycz.",
+    "lit": "Tamisiokaridy – pierwsi zjadacze planktonu wśród olbrzymów."
+   },
+   "concepts": [
+    "lancuch-pokarmowy"
+   ],
+   "sources": [
+    {
+     "title": "Vinther i in. 2014, Nature 507 (Phys.org)",
+     "url": "https://phys.org/news/2014-03-ancient-sea-creatures-filtered-food.pdf",
+     "claim": "Tamisiocaris filtrował organizmy do ok. 0,5 mm, ok. 520 mln lat temu"
+    }
+   ]
+  },
+  {
+   "id": "Hurdiidae",
+   "inGame": true,
+   "namePl": "Hurdiidy",
+   "parent": "Radiodonta",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Radiodonty z wielką tarczą na głowie",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Hełm i grabie",
+     "text": "Hurdiidy miały na głowie wielki, wydłużony pancerz – jak hełm albo dziób łodzi. Ich ramiona przypominały grabie: kolce były długie, równe i ustawione blisko siebie. Najpewniej przeczesywały nimi muł albo wodę przy dnie i wyłapywały drobne zwierzęta. W tym etapie gra pokazuje Hurdię, znaną z Burgess. Hurdiidy okazały się bardzo trwałą linią: przetrwały dłużej niż inne radiodonty.",
+     "visual": "Hurdia tuż nad dnem, z wielkim pancerzem głowy wysuniętym do przodu, przeczesująca muł ramionami-grabiami."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ostatni z radiodontów",
+     "text": "To właśnie hurdiidy dały ostatnie olbrzymie radiodonty. W ordowickiej Fezouacie w Maroku (etap 3) żyły hurdiidy długie na ok. 2 m, filtrujące plankton. Potem i one zniknęły. Ich nagła wielkość w ordowiku pokazuje, jak bardzo zmieniało się morze: pojawiło się więcej planktonu, więc bardziej opłacało się być wielkim filtratorem.",
+     "visual": "Porównanie wielkości: kambryjska Hurdia (kilkadziesiąt cm) i ordowicki olbrzymi hurdiid obok nurka."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Hełm, grabie i cierpliwość – tak też da się żyć.",
+    "lit": "Hurdiidy: radiodonty, które przetrwały najdłużej."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "De Vivo i in. 2021, Proc. R. Soc. B",
+     "url": "https://zendy.io/pdf-viewer/10.1098/rspb.2021.1176",
+     "claim": "Radiodonty przetrwały do ordowiku; różne typy ramion i diety"
+    }
+   ]
+  },
+  {
+   "id": "Artiopoda",
+   "inGame": true,
+   "namePl": "Artiopody",
+   "parent": "Arthropoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "przed ok. 521 mln lat temu",
+    "firstFossils": "ok. 531–521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Płaskie pancerne zwierzęta dna – trylobity i ich kuzyni",
+   "scene": [
+    {
+     "kind": "punkt-wyjscia",
+     "title": "Życie na dnie",
+     "text": "Dno kambryjskiego morza to miękki muł pełen resztek organicznych, mikrobów i drobnych zwierząt. Kto potrafi po nim chodzić i z niego jeść, ma pod dostatkiem pożywienia. Artiopody to stawonogi przystosowane właśnie do tego: płaskie, szerokie, przykryte od góry pancerną tarczą, z rzędem podobnych do siebie nóg pod spodem. Każda noga miała dwie gałęzie: jedną do chodzenia, drugą – pierzastą – prawdopodobnie do oddychania.",
+     "visual": "Artiopod od spodu: szeroka tarcza, pod nią rząd jednakowych nóg, każda z gałęzią do chodzenia i pierzastą gałęzią skrzelową."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Tarcza nad głową",
+     "text": "Najważniejsza cecha artiopodów to szeroki, płaski pancerz grzbietowy, który zakrywa nogi i boki ciała jak parasol. Z przodu jest para długich czułków. Większość artiopodów miała pancerz z twardej, ale niezmineralizowanej kutykuli. Jedna grupa – trylobity – wzmocniła go kalcytem, czyli tym samym minerałem, z którego zbudowany jest wapień. To ich główna różnica wobec reszty artiopodów i powód, dla którego trylobity znamy z tysięcy skamieniałości.",
+     "visual": "Dwa artiopody obok siebie: Naraoia z miękką, matową tarczą i trylobit z błyszczącym, kamiennym pancerzem; nad trylobitem ikona kryształu kalcytu."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego płaskie się opłacało",
+     "text": "Płaskie ciało z tarczą na górze jest dobre na dnie: trudno je przewrócić, łatwo przykryć się mułem, a pancerz chroni od góry, skąd atakują drapieżniki. Nogi pod spodem mogą jednocześnie chodzić, rozgrzebywać muł i podawać pokarm do pyszczka. Takie ciało sprawdzało się tak dobrze, że artiopody były w kambrze jedną z najliczniejszych grup. Ich kształt przypomina dzisiejsze skrzypłocze, ale to podobieństwo powstało niezależnie.",
+     "visual": "Artiopod wkopany w muł, widoczna tylko krawędź tarczy i oczy; nad nim cień przepływającego radiodonta."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Trylobity i miękkopancerni kuzyni",
+     "text": "Artiopody w etapie 1 dzielą się na kilka linii. Trylobity (Trilobita) – z kamiennym pancerzem. Nektaspidy (Nektaspidida), np. Naraoia, Misszhouia, Xandarella – podobne do trylobitów, ale z miękkim pancerzem. Conciliterga, np. Kuamaia i Saperion – płaskie, owalne, z tarczą zrośniętą w jedną całość. Vicissicaudata, np. Parapaleomerus – z nietypowo zbudowanym ogonem. Do tego Retifacies, którego gra wiesza bezpośrednio pod Artiopoda. Wszyscy oni są kuzynami, a nie przodkami trylobitów.",
+     "visual": "Rozwidlenie na cztery: trylobit, Naraoia, owalna Kuamaia, Parapaleomerus z wyraźnym ogonem; wszystkie od góry w tej samej skali."
+    },
+    {
+     "kind": "skutki",
+     "title": "270 milionów lat panowania",
+     "text": "Większość miękkopancernych artiopodów zniknęła w kambrze i ordowiku. Trylobity przetrwały aż ok. 270 mln lat, do wielkiego wymierania pod koniec permu ok. 252 mln lat temu. Stały się jedną z najlepiej znanych grup skamieniałości: opisano ponad 20 tysięcy gatunków. Miejsce artiopodów wśród stawonogów wciąż jest niepewne: niektórzy łączą je z linią prowadzącą do pająków, inni – z linią krabów i owadów.",
+     "visual": "Oś czasu 521–252 mln lat z rozszerzającym się i zwężającym „wrzecionem” różnorodności trylobitów; obok krótkie, szybko kończące się wrzeciono miękkopancernych artiopodów."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Trilobita",
+     "namePl": "Trylobity",
+     "trait": "Pancerz wzmocniony kalcytem, oczy z kalcytowymi soczewkami",
+     "became": "Najliczniejsze stawonogi paleozoicznych mórz",
+     "fate": "wymarły ok. 252 mln lat temu"
+    },
+    {
+     "id": "Nektaspidida",
+     "namePl": "Nektaspidy",
+     "trait": "Trylobitopodobne, ale z miękkim pancerzem",
+     "became": "Naraoia, Misszhouia i ich krewni",
+     "fate": "wymarły w sylurze (ostatnia Naraoia)"
+    },
+    {
+     "id": "Conciliterga",
+     "namePl": "Conciliterga",
+     "trait": "Owalna tarcza zrośnięta w całość",
+     "became": "Kuamaia, Saperion",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Vicissicaudata",
+     "namePl": "Vicissicaudata",
+     "trait": "Nietypowo zbudowany tył ciała i ogon",
+     "became": "Parapaleomerus i inni",
+     "fate": "wymarły w karbonie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Pod stopami tej panoramy roi się od płaskich tarcz.",
+    "lit": "Artiopody: tarcza nad głową, nogi pod spodem – i trylobity w ich szeregach."
+   },
+   "concepts": [
+    "stawonogi-odnoza",
+    "skamienialosc"
+   ],
+   "misconception": "Naraoia to nie „trylobit bez pancerza”. To osobny kuzyn trylobitów, który nigdy nie miał pancerza z kalcytu.",
+   "sources": [
+    {
+     "title": "HandWiki, Trilobite (i źródła)",
+     "url": "https://handwiki.org/wiki/Biology:Trilobite",
+     "claim": "Trylobity w Artiopoda; artiopody w większości niezmineralizowane; położenie Artiopoda wśród stawonogów niepewne"
+    },
+    {
+     "title": "HandWiki, Trilobita",
+     "url": "https://handwiki.org/wiki/Biology:Trilobita",
+     "claim": "Ostatnie trylobity zniknęły ok. 251,9 mln lat temu"
+    },
+    {
+     "title": "Wikipedia, Meraspid / Trilobite",
+     "url": "https://en.wikipedia.com/wiki/Meraspid",
+     "claim": "Ponad 22 tys. opisanych gatunków; ok. 270 mln lat istnienia"
+    }
+   ]
+  },
+  {
+   "id": "Trilobita",
+   "inGame": true,
+   "namePl": "Trylobity",
+   "parent": "Artiopoda",
+   "size": "duze",
+   "revision": true,
+   "when": {
+    "split": "przed ok. 521 mln lat temu",
+    "firstFossils": "ok. 521 mln lat temu – ich pojawienie się wyznacza początek 3. piętra kambru",
+    "confidence": "pewne"
+   },
+   "headline": "Pancerz z kamienia i najstarsze oczy, jakie znamy",
+   "scene": [
+    {
+     "kind": "swiat",
+     "title": "Nagle są wszędzie",
+     "text": "Ok. 521 mln lat temu trylobity pojawiają się w skałach niemal na całym świecie jednocześnie: w Chinach, Syberii, Ameryce Północnej, Afryce. Są od razu zróżnicowane i rozprzestrzenione. Geolodzy używają ich pojawienia się jako znacznika czasu: wyznacza ono początek jednego z pięter kambru. To mocna wskazówka, że ich przodkowie żyli już wcześniej, tylko bez twardego pancerza nie zostawili śladów.",
+     "visual": "Mapa świata z kambru (kontynenty w innych miejscach) z jednocześnie zapalającymi się ikonami trylobitów w kilku miejscach."
+    },
+    {
+     "kind": "nowosc",
+     "title": "Trzy płaty i kamienny pancerz",
+     "text": "Nazwa „trylobit” znaczy „trójpłatowy”. Ich pancerz dzieli się wzdłuż na trzy pasy: wypukły środek i dwa płaskie boki. W poprzek dzieli się na głowę, tułów ze stawowo połączonych odcinków i ogon. Pancerz był wzmocniony kalcytem, minerałem wapienia. Trylobity miały też najstarszy dobrze zachowany układ wzrokowy: oczy złożone (oko-zlozone) z wielu soczewek, każda z kryształu kalcytu. Od początku ich historii oczy były już złożone i sprawne.",
+     "visual": "Trylobit od góry z zaznaczonymi trzema pasami wzdłuż i trzema częściami w poprzek; zbliżenie oka z siateczką kalcytowych soczewek."
+    },
+    {
+     "kind": "dlaczego",
+     "title": "Dlaczego kamień?",
+     "text": "Kalcyt robi z cienkiej kutykuli twardą skorupę. W morzu, w którym pojawiły się radiodonty i inne drapieżniki, twardszy pancerz zmniejszał szanse, że zwierzę zostanie zjedzone. Kalcyt był też łatwo dostępny w wodzie morskiej. Dla oczu miał dodatkową zaletę: jest przezroczysty, więc mógł służyć jako soczewka. Ceną było linienie: za każdym razem trzeba było zrzucić ciężki pancerz i zbudować nowy. Dlatego tak wiele skamieniałości trylobitów to puste wylinki.",
+     "visual": "Pusta wylinka trylobita z pękniętą głową, obok trylobit, który właśnie z niej wyszedł, jeszcze bladoszary."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Pierwsze rzędy trylobitów",
+     "text": "W etapie 1 gra pokazuje pięć wczesnych trylobitów. Większość to redlichiidy (Redlichiida) – najstarsza grupa, z dużą głową, licznymi odcinkami tułowia i małym ogonem: Eoredlichia, Redlichia, Yunnanocephalus z Chengjiang i Olenellus z Ameryki Północnej. Piąty, Kootenia, należy do korynekschidów (Corynexochida), które rozkwitną w etapie 2. Redlichiidy uważa się za grupę najbliższą przodkom wszystkich trylobitów.",
+     "visual": "Pięć trylobitów od góry w rzędzie, z podpisami, od dużogłowej Eoredlichii do Kootenii z szerokim ogonem."
+    },
+    {
+     "kind": "skutki",
+     "title": "Żywe kalendarze skał",
+     "text": "Trylobity zmieniały się szybko i były liczne, więc dla geologów to idealne „skamieniałości przewodnie”: po gatunku trylobita da się określić wiek skały. Ich historia to wiele rozkwitów i wymierań. Najbogatsze były w późnym kambrze i ordowiku (etapy 3–4). Potem stopniowo ubywało ich linii, a ostatnie zniknęły ok. 252 mln lat temu. Nie zostawiły potomków.",
+     "visual": "Geolog z lupą przy skale z warstwami, w każdej warstwie inny gatunek trylobita i podpisany wiek."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Redlichiida",
+     "namePl": "Redlichiidy",
+     "trait": "Duża głowa, wiele odcinków tułowia, mały ogon",
+     "became": "Najstarsze trylobity",
+     "fate": "wymarły ok. 500 mln lat temu"
+    },
+    {
+     "id": "Corynexochida",
+     "namePl": "Korynekschidy",
+     "trait": "Wydłużona środkowa część głowy, często duży ogon",
+     "became": "Liczne trylobity środkowego kambru",
+     "fate": "wymarły w dewonie"
+    }
+   ],
+   "narrator": {
+    "teaser": "Ktoś tu nosi pancerz z kamienia i patrzy kryształowymi oczami.",
+    "lit": "Trylobity! Kamienna zbroja i najstarsze oczy, jakie znamy."
+   },
+   "concepts": [
+    "oko-zlozone",
+    "linienie",
+    "skamienialosc",
+    "czas-geologiczny"
+   ],
+   "misconception": "Trylobity nie były „prymitywnymi” stawonogami. Miały złożone oczy i trwały na Ziemi ok. 270 mln lat.",
+   "sources": [
+    {
+     "title": "AMNH, The First Trilobites",
+     "url": "https://www.amnh.org/our-research/paleontology/paleontology-faq/trilobite-website/the-trilobite-files/the-first-trilobites",
+     "claim": "Ok. 521 mln lat temu trylobity z rozwiniętymi oczami i kalcytowym pancerzem"
+    },
+    {
+     "title": "HandWiki, Trilobite",
+     "url": "https://handwiki.org/wiki/Biology:Trilobite",
+     "claim": "Pojawienie się trylobitów wyznacza początek 3. piętra kambru; od razu zróżnicowane"
+    },
+    {
+     "title": "Clarkson i in. 2006, The eyes of trilobites, Arthropod Structure & Development",
+     "url": "https://arago.elte.hu/sites/default/files/TrilobiteEye_ASD.pdf",
+     "claim": "Najstarsze zachowane układy wzrokowe; kalcyt w kutykuli"
+    },
+    {
+     "title": "HandWiki, Redlichiida",
+     "url": "https://handwiki.org/wiki/Biology:Redlichiida",
+     "claim": "Redlichiidy wśród najstarszych trylobitów, prawdopodobnie przodkowe wobec innych rzędów"
+    }
+   ]
+  },
+  {
+   "id": "Redlichiida",
+   "inGame": true,
+   "namePl": "Redlichiidy",
+   "parent": "Trilobita",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "pewne"
+   },
+   "headline": "Najstarsze trylobity: duże głowy, długie tułowie",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Pierwszy model trylobita",
+     "text": "Redlichiidy mają cechy, które badacze uważają za pierwotne dla trylobitów: dużą, półkolistą głowę z długimi kolcami na rogach, długi tułów z wieloma odcinkami i bardzo mały ogon. Oczy były długie i wygięte jak półksiężyce. W grze do tej grupy należą Eoredlichia, Redlichia, Yunnanocephalus i Olenellus.",
+     "visual": "Redlichiid od góry z podpisanymi cechami: kolce na rogach głowy, półksiężycowate oczy, długi tułów, maleńki ogon."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Dwie drogi wśród redlichiidów",
+     "text": "W etapie 1 redlichiidy dzielą się na dwie linie. Jedna to podrząd Redlichiina, do którego należą Eoredlichia, Redlichia i Yunnanocephalus. Druga to olenelidy – w grze Olenellus, którego gra wiesza bezpośrednio pod Redlichiida. Olenellus żył głównie na terenie dzisiejszej Ameryki Północnej, a Redlichiina – na terenach dzisiejszych Chin i Australii. Rzędy i podrzędy są nazwane od typowych rodzajów.",
+     "visual": "Mapa kambryjskiego świata: ikony olenelidów na jednym kontynencie, redlichiin na drugim."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Redlichiina",
+     "namePl": "Redlichiina",
+     "trait": "Kolce na rogach głowy, liczne odcinki tułowia",
+     "became": "Eoredlichia, Redlichia, Yunnanocephalus",
+     "fate": "wymarły ok. 500 mln lat temu"
+    }
+   ],
+   "narrator": {
+    "teaser": "Najstarsze trylobity wyglądają na… bardzo trylobitowe.",
+    "lit": "Redlichiidy: początek trylobitowej historii."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "HandWiki, Redlichiida",
+     "url": "https://handwiki.org/wiki/Biology:Redlichiida",
+     "claim": "Redlichiida, 521–500 mln lat; wśród najstarszych trylobitów"
+    }
+   ]
+  },
+  {
+   "id": "Redlichiina",
+   "inGame": true,
+   "namePl": "Redlichiina",
+   "parent": "Redlichiida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Główny podrząd najstarszych trylobitów",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kuzyni z Chin i Australii",
+     "text": "Redlichiina to podrząd redlichiidów, który dominował w kambryjskich morzach na terenie dzisiejszych Chin, Australii i Antarktydy. W etapie 1 gra pokazuje z tej grupy dwie rodziny: Redlichiidae (Eoredlichia, Redlichia) oraz nadrodzinę Ellipsocephaloidea (Yunnanocephalus).",
+     "visual": "Mały kambryjski globus z zaznaczonym kontynentem Gondwaną i rozsianymi ikonami Redlichiina."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Duże i małe głowy",
+     "text": "Redlichiidae miały duże głowy i długie kolce. Ellipsocephaloidea – mniejsze, gładsze głowy i krótsze kolce. Te różnice mogły odpowiadać innym sposobom życia, np. rozgrzebywaniu mułu albo pływaniu tuż nad dnem, ale bezpośrednich dowodów na to nie ma.",
+     "visual": "Dwa trylobity obok siebie: Eoredlichia z dużą głową i kolcami oraz Yunnanocephalus z mniejszą, gładką głową."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Redlichiidae",
+     "namePl": "Redlichiowate",
+     "trait": "Duże głowy z długimi kolcami",
+     "became": "Eoredlichia, Redlichia",
+     "fate": "wymarły w kambrze"
+    },
+    {
+     "id": "Ellipsocephaloidea",
+     "namePl": "Ellipsocephaloidea",
+     "trait": "Mniejsze, gładsze głowy",
+     "became": "Yunnanocephalus",
+     "fate": "wymarły w kambrze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Wśród najstarszych trylobitów też były rodziny.",
+    "lit": "Redlichiina – trylobity Gondwany."
+   },
+   "concepts": [],
+   "sources": [
+    {
+     "title": "HandWiki, Redlichiida",
+     "url": "https://handwiki.org/wiki/Biology:Redlichiida",
+     "claim": "Redlichiina jako podrząd najstarszych trylobitów"
+    }
+   ]
+  },
+  {
+   "id": "Redlichiidae",
+   "inGame": true,
+   "namePl": "Redlichiowate",
+   "parent": "Redlichiina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 531–521 mln lat temu (wg danych gry Eoredlichia od 531)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Eoredlichia i Redlichia – klasyka wczesnego kambru",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Trylobit z Chengjiang",
+     "text": "Eoredlichia to jeden z najczęstszych trylobitów Chengjiang. Był ważnym znacznikiem czasu: skały Chengjiang leżą w strefie nazwanej od Eoredlichii. Dzięki wyjątkowemu zachowaniu znamy u niej także nogi i czułki, a nie tylko pancerz. Redlichia to jej krewny, szeroko rozprzestrzeniony w morzach Gondwany.",
+     "visual": "Eoredlichia od spodu, z widocznymi czułkami i rzędem nóg; obok ta sama od góry jako zwykła skamieniałość pancerza."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ślady miękkich części",
+     "text": "Redlichiowate pokazują, jak ważne są wyjątkowe stanowiska. W zwykłych skałach trylobit zostawia tylko pancerz. W Chengjiang zachowały się czułki i nogi, więc wiemy, że Eoredlichia miała pod tarczą rząd podobnych odnóży, jak inne artiopody.",
+     "visual": "Dwie skamieniałości obok siebie: zwykły pancerz z wapienia i płaski odcisk z Chengjiang z czułkami i nogami."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Najczęstszy trylobit tego morza właśnie wychodzi z mułu.",
+    "lit": "Redlichiowate – twarz wczesnych trylobitów."
+   },
+   "concepts": [
+    "skamienialosc"
+   ],
+   "sources": [
+    {
+     "title": "Wikipedia (cavac mirror), Maotianshan Shales",
+     "url": "https://cavac.at/cavacopedia/Maotianshan_Shales",
+     "claim": "Chengjiang leży w strefie Eoredlichia–Wutingaspis"
+    }
+   ]
+  },
+  {
+   "id": "Ellipsocephaloidea",
+   "inGame": true,
+   "namePl": "Ellipsocephaloidea",
+   "parent": "Redlichiina",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Małe trylobity o gładkich głowach",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Yunnanocephalus",
+     "text": "Yunnanocephalus to niewielki trylobit z Chengjiang o stosunkowo gładkiej głowie i krótkich kolcach. Należy do nadrodziny Ellipsocephaloidea. Był bardzo liczny, co pokazuje, że w tym samym morzu żyło obok siebie kilka rodzajów trylobitów, zajmując nieco inne miejsca na dnie.",
+     "visual": "Mała grupka Yunnanocephalusów na mule, obok dla porównania jedna większa Eoredlichia."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Siostra redlichiowatych",
+     "text": "Ellipsocephaloidea i redlichiowate to siostrzane gałęzie wewnątrz Redlichiina. Oba plany budowy przetrwały tylko w kambrze. Ale rodzinne „rodzeństwo” w jednym morzu to typowy obraz eksplozji kambryjskiej: wiele bliskich linii powstających szybko, obok siebie.",
+     "visual": "Mini-drzewko: Redlichiina rozwidla się na Redlichiidae (duża głowa) i Ellipsocephaloidea (mała głowa)."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Mniejszy, gładszy – i bardzo liczny.",
+    "lit": "Ellipsocephaloidea: trylobity o łagodnych głowach."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Corynexochida",
+   "inGame": true,
+   "namePl": "Korynekschidy",
+   "parent": "Trilobita",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu (Kootenia według danych gry)",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity z dużym ogonem – zapowiedź etapu 2",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kootenia",
+     "text": "Kootenia to trylobit z wyraźnie wydłużoną środkową częścią głowy i dużym, szerokim ogonem z kolcami. Duży ogon to cecha nowa wobec redlichiidów, które miały ogon maleńki. W grze Kootenia występuje w Burgess, ale według danych pojawia się już ok. 521 mln lat temu, więc trafia do etapu 1.",
+     "visual": "Kootenia od góry, z podświetlonym dużym ogonem i porównawczą sylwetką redlichiida z maleńkim ogonem."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Ogon jako druga tarcza",
+     "text": "Większy ogon pozwalał trylobitowi zwinąć się tak, by głowa i ogon zakrywały miękki spód – jak u dzisiejszego stonogi. Ta umiejętność stawała się coraz ważniejsza w świecie drapieżników. Korynekschidy rozkwitną w środkowym kambrze, więc więcej o nich w etapie 2.",
+     "visual": "Trylobit zwinięty w kulkę: głowa i ogon stykają się, chowając nogi; obok stonoga zwinięta w kulkę."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ktoś tu ma ogon większy niż zwykle.",
+    "lit": "Korynekschidy – pierwszy przedsmak etapu 2."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Nektaspidida",
+   "inGame": true,
+   "namePl": "Nektaspidy",
+   "parent": "Artiopoda",
+   "size": "male",
+   "revision": true,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Trylobity bez kamienia",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Miękka tarcza",
+     "text": "Nektaspidy wyglądają jak trylobity, ale ich pancerz nie był wzmocniony kalcytem. Dlatego zachowują się tylko w wyjątkowych miejscach, takich jak Chengjiang i Burgess. Wiele z nich ma bardzo krótki tułów albo nie ma go wcale: tarcza głowowa styka się wprost z wielką tarczą ogonową. Pod spodem miały takie same dwugałęziste nogi jak trylobity, a w jelicie – boczne kieszenie, które pomagały trawić pokarm.",
+     "visual": "Naraoia od góry: dwie wielkie tarcze (głowa i ogon) bez odcinków tułowia; obok przekrój z rozgałęzionym jelitem."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Dwie linie nektaspidów",
+     "text": "W etapie 1 gra pokazuje dwie gałęzie nektaspidów. Naraoiidae – bez tułowia, z dwiema tarczami: Naraoia i Misszhouia. Petalopleura – z kilkoma odcinkami tułowia i szerokim pancerzem: Xandarella i Cindarella. Naraoia okazała się wyjątkowo trwała: w danych gry żyje od 521 do ok. 420 mln lat temu.",
+     "visual": "Dwa nektaspidy obok siebie: Naraoia (dwie tarcze) i Xandarella (głowa, kilka odcinków, ogon)."
+    },
+    {
+     "kind": "skutki",
+     "title": "Pancerz, który znika",
+     "text": "Nektaspidy przypominają, że w skałach widzimy tylko część dawnego życia. Gdyby nie wyjątkowe stanowiska, nie wiedzielibyśmy, że obok trylobitów żyły ich miękkopancerne odpowiedniki. Ile podobnych grup przepadło bez śladu? Tego nie wiadomo.",
+     "visual": "Dwie warstwy skały: w zwykłej tylko pancerze trylobitów, w wyjątkowej obok nich odciski nektaspidów."
+    }
+   ],
+   "branches": [
+    {
+     "id": "Naraoiidae",
+     "namePl": "Naraoiowate",
+     "trait": "Dwie tarcze, brak odcinków tułowia",
+     "became": "Naraoia, Misszhouia",
+     "fate": "wymarły w sylurze"
+    },
+    {
+     "id": "Petalopleura",
+     "namePl": "Petalopleura",
+     "trait": "Szeroki pancerz z kilkoma odcinkami tułowia",
+     "became": "Xandarella, Cindarella",
+     "fate": "wymarły w kambrze"
+    }
+   ],
+   "narrator": {
+    "teaser": "Trylobit, któremu zabrakło kamienia?",
+    "lit": "Nektaspidy – miękkopancerni kuzyni trylobitów."
+   },
+   "concepts": [
+    "skamienialosc"
+   ],
+   "sources": [
+    {
+     "title": "HandWiki, Trilobite",
+     "url": "https://handwiki.org/wiki/Biology:Trilobite",
+     "claim": "Artiopody poza trylobitami w większości niezmineralizowane"
+    }
+   ]
+  },
+  {
+   "id": "Naraoiidae",
+   "inGame": true,
+   "namePl": "Naraoiowate",
+   "parent": "Nektaspidida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Dwie tarcze i nic pomiędzy",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Naraoia i Misszhouia",
+     "text": "Naraoiowate mają ciało przykryte tylko dwiema tarczami: głowową i ogonową, bez odcinków tułowia. Naraoia była szeroka i owalna, Misszhouia – smuklejsza. Obie żyły na dnie, prawdopodobnie zjadając drobne zwierzęta i resztki. Obie występują w grze i w Chengjiang, i w Burgess.",
+     "visual": "Naraoia i Misszhouia od góry w tej samej skali; obie z dwiema tarczami, różnią się kształtem."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Długowieczna rodzina",
+     "text": "Naraoia jest jednym z najdłużej żyjących rodzajów w etapie 1: według danych gry od ok. 521 do ok. 420 mln lat temu. Prosty, sprawdzony plan budowy mógł przetrwać tak długo, bo nie wymagał kalcytu i nadawał się do wielu środowisk. To przykład, że „prosty” nie znaczy „gorszy”.",
+     "visual": "Pasek czasu od 521 do 420 mln lat z sylwetką Naraoii przechodzącą przez kilka etapów gry."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Dwie tarcze – i żadnych podziałów.",
+    "lit": "Naraoiowate – minimalizm, który przetrwał 100 mln lat."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Petalopleura",
+   "inGame": true,
+   "namePl": "Petalopleura",
+   "parent": "Nektaspidida",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Szerokie tarcze z odcinkami",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Xandarella i Cindarella",
+     "text": "Petalopleura mają szeroki pancerz głowowy, kilka odcinków tułowia i tarczę ogonową. Xandarella miała oczy wyrastające po bokach głowy, a Cindarella – oczy na krótkich słupkach i bardzo duże oczy złożone. Obie żyły w morzu Chengjiang.",
+     "visual": "Xandarella i Cindarella od góry; u Cindarelli zbliżenie dużych oczu na słupkach."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Oczy jak peryskopy",
+     "text": "Duże oczy Cindarelli sugerują, że wzrok był dla niej bardzo ważny – może do wykrywania drapieżników albo zdobyczy. W kambrze widać wiele takich „eksperymentów” z oczami: pojawienie się widzących drapieżników sprawiało, że opłacało się dobrze widzieć.",
+     "visual": "Cindarella na dnie, nad nią cień radiodonta odbijający się w dużych oczach."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Ktoś tu patrzy bardzo uważnie.",
+    "lit": "Petalopleura – nektaspidy z wielkimi oczami."
+   },
+   "concepts": [
+    "oko-zlozone"
+   ],
+   "sources": []
+  },
+  {
+   "id": "Conciliterga",
+   "inGame": true,
+   "namePl": "Conciliterga",
+   "parent": "Artiopoda",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Owalne tarcze w jednym kawałku",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Kuamaia i Saperion",
+     "text": "Conciliterga to artiopody o płaskim, owalnym pancerzu, w którym odcinki tułowia są ze sobą ściśle połączone. Wyglądają jak gładka, szeroka tarcza. Kuamaia była drapieżnikiem albo padlinożercą dna. Saperion miał bardzo płaskie, szerokie ciało. Oba rodzaje występują w Chengjiang.",
+     "visual": "Kuamaia i Saperion od góry jako gładkie, owalne tarcze; delikatne linie odcinków tułowia ledwo widoczne."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Jedna z wielu dróg",
+     "text": "Conciliterga to kolejna gałąź artiopodów, która nie przetrwała długo – w danych gry tylko ok. 521–515 mln lat temu. Pokazuje, ile różnych wersji płaskiego pancernego zwierzęcia dna powstało w krótkim czasie. Z nich wszystkich tylko trylobity utrzymały się do permu.",
+     "visual": "Krzaczek artiopodów: wiele krótkich gałązek kończących się w kambrze i jedna długa (trylobity) biegnąca dalej."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Gładka tarcza sunie po mule.",
+    "lit": "Conciliterga – owalni wędrowcy dna."
+   },
+   "concepts": [],
+   "sources": []
+  },
+  {
+   "id": "Vicissicaudata",
+   "inGame": true,
+   "namePl": "Vicissicaudata",
+   "parent": "Artiopoda",
+   "size": "male",
+   "revision": false,
+   "when": {
+    "split": "wczesny kambr",
+    "firstFossils": "ok. 521 mln lat temu",
+    "confidence": "prawdopodobne"
+   },
+   "headline": "Artiopody z niezwykłym ogonem",
+   "scene": [
+    {
+     "kind": "nowosc",
+     "title": "Parapaleomerus",
+     "text": "Vicissicaudata to artiopody, których tył ciała był zbudowany inaczej niż u reszty: ostatnie odcinki nie miały zwykłych nóg, a ogon kończył się parą płaskich wyrostków albo kolców. Parapaleomerus z Chengjiang to duży, szeroki przedstawiciel tej grupy.",
+     "visual": "Parapaleomerus od góry z podświetlonym ogonem bez nóg i parą płaskich wyrostków na końcu."
+    },
+    {
+     "kind": "rozwidlenie",
+     "title": "Najdłużej żyjący kuzyni",
+     "text": "W danych gry Vicissicaudata trwają od ok. 521 do ok. 307 mln lat temu – dłużej niż jakakolwiek inna grupa artiopodów poza trylobitami. Część badaczy uważa, że są blisko spokrewnione z linią pająków i skrzypłoczy, ale to wciąż przedmiot sporu.",
+     "visual": "Pasek czasu od kambru do karbonu z sylwetkami Vicissicaudata w kilku punktach."
+    }
+   ],
+   "branches": [],
+   "narrator": {
+    "teaser": "Na końcu tego pancerza czeka niespodzianka.",
+    "lit": "Vicissicaudata – artiopody z innym ogonem."
+   },
+   "concepts": [],
+   "sources": []
+  }
+ ],
+ "newConcepts": [],
+ "notes": {
+  "uncertain": [
+   "Długości ciał w opisie wizualnym skala-etap-01 (poza Anomalocarisem) podane z pamięci, w przybliżeniu.",
+   "Wielkość ordowickich hurdiidów z Fezouaty (ok. 2 m) – z pamięci, do sprawdzenia przy etapie 3.",
+   "Szczegóły budowy Petalopleura (oczy Cindarelli) i Vicissicaudata – z pamięci."
+  ],
+  "contested": [
+   "Kerygmachela: po poprawce danych stoi pod Arthropoda (przed radiodontami), zgodnie z Liu i in. 2022; opisana jako starszy kuzyn radiodontów.",
+   "Położenie Artiopoda wśród stawonogów (bliżej szczękoczułkowców czy żuwaczkowców) – opisane jako niepewne.",
+   "Vicissicaudata jako krewni szczękoczułkowców – opisane jako spór.",
+   "Hallucigenia na linii pazurnic (Smith i Caron 2015) – przyjęte, z zaznaczeniem, że to interpretacja.",
+   "Wiwaxia w grze jest w Mollusca; jej pokrewieństwo (mięczaki czy pierścienice) jest sporne – opisane w paczce etap-01b."
+  ],
+  "fromMemory": [
+   "Pazurnice żyją dziś w wilgotnej ściółce tropików i strzelają śluzem.",
+   "Niesporczaki – osiem nóżek, odporność na wysuszenie.",
+   "Płytki Microdictyona znane długo jako osobne mikroskamieniałości.",
+   "Lyrarapax z zachowanym mózgiem (Cong i in. 2014).",
+   "Hurdiidy z wielkim pancerzem głowy; ordowickie olbrzymie hurdiidy z Fezouaty (Van Roy i in. 2015).",
+   "Dwugałęziste nogi artiopodów i boczne kieszenie jelita u nektaspidów.",
+   "Trylobity zwijające się w kulkę; trylobity jako skamieniałości przewodnie.",
+   "Olenellus głównie w Laurencji (Ameryka Północna); Redlichiina w Gondwanie."
+  ],
+  "dataIssues": [
+   "Onychophora w drzewie gry jest siostrą Panarthropoda pod Ecdysozoa. Według nauki pazurnice należą do Panarthropoda. Proponowana poprawka: przenieść Onychophora pod Panarthropoda. → ujęte w zmiany-danych-01.json.",
+   "Kerygmachela w drzewie gry jest w Radiodonta; lepiej przenieść ją pod Arthropoda (pień) albo Panarthropoda jako lobopodium z płatami. → ujęte w zmiany-danych-01.json.",
+   "Haikouichthys i Myllokunmingia SĄ w drzewie gry (rodzina Myllokunmingiidae, 521–516 mln lat), ale nie są przypisane do stanowiska Chengjiang. Wystarczy dopisać im stanowisko. → ujęte w zmiany-danych-01.json.",
+   "Dieta „rośliny” u Hallucigenia, Cardiodictyon i Microdictyon (gra-stanowiska.md) jest myląca: w kambrze nie było roślin; zwierzęta te żywiły się najpewniej tkankami gąbek albo cząstkami z wody i mułu. Proponowana kategoria: „filtrator/drobny pokarm” albo „wszystkożerca”. → ujęte w zmiany-danych-01.json.",
+   "Primicaris ma w gra-stanowiska.md rodzinę „Parvancorinidae”, czyli rodzinę ediakarskiej Parvancoriny. To prawdopodobnie błąd przypisania. → ujęte w zmiany-danych-01.json.",
+   "Kootenia (Burgess) ma w danych pierwsze wystąpienie 521 mln lat temu, więc trafia do etapu 1, choć w grze występuje dopiero na stanowisku z etapu 2."
+  ],
+  "corrections": [
+   "Format paczki rozszerzono o obiekt „stage” (wstęp etapu, kolejność wędrówki „route”, opisy wizualizacji „visuals”). Węzły mają format z sekcji 7 promptu, karty do ok. 150 słów.",
+   "Istniejących tekstów gry (lore.ts) nie czytano – brak dostępu do repozytorium; wszystkie węzły z „ma dlaczego” napisano od nowa z revision: true."
+  ]
+ }
+}
